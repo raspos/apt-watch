@@ -1,0 +1,6010 @@
+[
+  {
+    "complex": "100500",
+    "district": "11110",
+    "dong": "내수동",
+    "jibun": "72",
+    "name": "경희궁의아침3단지",
+    "naver_name": "경희궁의아침3단지(주상복합)",
+    "tradeComplex": [
+      "11110",
+      "내수동",
+      "72",
+      "경희궁의아침3단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 36
+  },
+  {
+    "complex": "100502",
+    "district": "11110",
+    "dong": "내수동",
+    "jibun": "73",
+    "name": "경희궁의아침4단지",
+    "naver_name": "경희궁의아침4단지(주상복합)",
+    "tradeComplex": [
+      "11110",
+      "내수동",
+      "73",
+      "경희궁의아침4단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 25
+  },
+  {
+    "complex": "12239",
+    "district": "11110",
+    "dong": "내수동",
+    "jibun": "71",
+    "name": "경희궁의아침2단지",
+    "naver_name": "경희궁의아침2단지(주상복합)",
+    "tradeComplex": [
+      "11110",
+      "내수동",
+      "71",
+      "경희궁의아침2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 17
+  },
+  {
+    "complex": "10988",
+    "district": "11110",
+    "dong": "교북동",
+    "jibun": "101",
+    "name": "동아",
+    "naver_name": "동아",
+    "tradeComplex": [
+      "11110",
+      "교북동",
+      "101",
+      "동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 17
+  },
+  {
+    "complex": "25690",
+    "district": "11110",
+    "dong": "견지동",
+    "jibun": "110",
+    "name": "대성스카이렉스",
+    "naver_name": "종로1가대성스카이렉스(주상복합)",
+    "tradeComplex": [
+      "11110",
+      "견지동",
+      "110",
+      "대성스카이렉스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 16
+  },
+  {
+    "complex": "793",
+    "district": "11110",
+    "dong": "명륜2가",
+    "jibun": "236",
+    "name": "아남2",
+    "naver_name": "아남",
+    "tradeComplex": [
+      "11110",
+      "명륜2가",
+      "236",
+      "아남2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 16
+  },
+  {
+    "complex": "128388",
+    "district": "11110",
+    "dong": "구기동",
+    "jibun": "125-5",
+    "name": "마운틴뷰",
+    "naver_name": "마운틴뷰",
+    "tradeComplex": [
+      "11110",
+      "구기동",
+      "125-5",
+      "마운틴뷰"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 14
+  },
+  {
+    "complex": "102798",
+    "district": "11110",
+    "dong": "명륜1가",
+    "jibun": "2-12",
+    "name": "송림아마레스아파트",
+    "naver_name": "송림아마레스",
+    "tradeComplex": [
+      "11110",
+      "명륜1가",
+      "2-12",
+      "송림아마레스아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 12
+  },
+  {
+    "complex": "120174",
+    "district": "11110",
+    "dong": "내수동",
+    "jibun": "110-15",
+    "name": "킹스매너",
+    "naver_name": "킹스매너",
+    "tradeComplex": [
+      "11110",
+      "내수동",
+      "110-15",
+      "킹스매너"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 9
+  },
+  {
+    "complex": "1279",
+    "district": "11110",
+    "dong": "당주동",
+    "jibun": "100",
+    "name": "세종",
+    "naver_name": "세종(주상복합)",
+    "tradeComplex": [
+      "11110",
+      "당주동",
+      "100",
+      "세종"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 8
+  },
+  {
+    "complex": "7959",
+    "district": "11110",
+    "dong": "내수동",
+    "jibun": "167",
+    "name": "세종로대우",
+    "naver_name": "세종로대우(주상복합)",
+    "tradeComplex": [
+      "11110",
+      "내수동",
+      "167",
+      "세종로대우"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 6
+  },
+  {
+    "complex": "22314",
+    "district": "11110",
+    "dong": "명륜1가",
+    "jibun": "23",
+    "name": "건양하늘터",
+    "naver_name": "건양하늘터",
+    "tradeComplex": [
+      "11110",
+      "명륜1가",
+      "23",
+      "건양하늘터"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 5
+  },
+  {
+    "complex": "24627",
+    "district": "11110",
+    "dong": "명륜1가",
+    "jibun": "33-85",
+    "name": "리치캐슬아파트",
+    "naver_name": "리치캐슬",
+    "tradeComplex": [
+      "11110",
+      "명륜1가",
+      "33-85",
+      "리치캐슬아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 5
+  },
+  {
+    "complex": "121145",
+    "district": "11110",
+    "dong": "명륜3가",
+    "jibun": "1-30",
+    "name": "한빛",
+    "naver_name": "한빛",
+    "tradeComplex": [
+      "11110",
+      "명륜3가",
+      "1-30",
+      "한빛"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 5
+  },
+  {
+    "complex": "102033",
+    "district": "11110",
+    "dong": "명륜1가",
+    "jibun": "19",
+    "name": "렉스빌",
+    "naver_name": "렉스빌",
+    "tradeComplex": [
+      "11110",
+      "명륜1가",
+      "19",
+      "렉스빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 4
+  },
+  {
+    "complex": "3833",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "844",
+    "name": "남산타운",
+    "naver_name": "남산타운",
+    "tradeComplex": [
+      "11140",
+      "신당동",
+      "844",
+      "남산타운"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 969
+  },
+  {
+    "complex": "24845",
+    "district": "11140",
+    "dong": "황학동",
+    "jibun": "2545",
+    "name": "롯데캐슬",
+    "naver_name": "롯데캐슬베네치아(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "황학동",
+      "2545",
+      "롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 653
+  },
+  {
+    "complex": "1238",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "842",
+    "name": "약수하이츠",
+    "naver_name": "약수하이츠",
+    "tradeComplex": [
+      "11140",
+      "신당동",
+      "842",
+      "약수하이츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 581
+  },
+  {
+    "complex": "100310",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "852",
+    "name": "청구e편한세상",
+    "naver_name": "청구e편한세상",
+    "tradeComplex": [
+      "11140",
+      "신당동",
+      "852",
+      "청구e편한세상"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 224
+  },
+  {
+    "complex": "797",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "840",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11140",
+      "신당동",
+      "840",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 221
+  },
+  {
+    "complex": "101771",
+    "district": "11140",
+    "dong": "회현동1가",
+    "jibun": "208",
+    "name": "남산롯데캐슬아이리스",
+    "naver_name": "남산롯데캐슬아이리스(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "회현동1가",
+      "208",
+      "남산롯데캐슬아이리스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 150
+  },
+  {
+    "complex": "3832",
+    "district": "11140",
+    "dong": "중림동",
+    "jibun": "200",
+    "name": "삼성사이버빌리지",
+    "naver_name": "중림삼성사이버빌리지",
+    "tradeComplex": [
+      "11140",
+      "중림동",
+      "200",
+      "삼성사이버빌리지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 144
+  },
+  {
+    "complex": "13845",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "850",
+    "name": "신당푸르지오",
+    "naver_name": "신당푸르지오",
+    "tradeComplex": [
+      "11140",
+      "신당동",
+      "850",
+      "신당푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 131
+  },
+  {
+    "complex": "26394",
+    "district": "11140",
+    "dong": "황학동",
+    "jibun": "2523",
+    "name": "황학아크로타워",
+    "naver_name": "황학아크로타워(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "황학동",
+      "2523",
+      "황학아크로타워"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 98
+  },
+  {
+    "complex": "107404",
+    "district": "11140",
+    "dong": "순화동",
+    "jibun": "217",
+    "name": "덕수궁롯데캐슬",
+    "naver_name": "덕수궁롯데캐슬(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "순화동",
+      "217",
+      "덕수궁롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 84
+  },
+  {
+    "complex": "24911",
+    "district": "11140",
+    "dong": "충무로4가",
+    "jibun": "306",
+    "name": "남산센트럴자이",
+    "naver_name": "남산센트럴자이(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "충무로4가",
+      "306",
+      "남산센트럴자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 80
+  },
+  {
+    "complex": "104133",
+    "district": "11140",
+    "dong": "흥인동",
+    "jibun": "13-1",
+    "name": "청계천두산위브더제니스",
+    "naver_name": "청계천두산위브더제니스(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "흥인동",
+      "13-1",
+      "청계천두산위브더제니스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 80
+  },
+  {
+    "complex": "106449",
+    "district": "11140",
+    "dong": "흥인동",
+    "jibun": "119",
+    "name": "동대문와이즈캐슬",
+    "naver_name": "동대문와이즈캐슬(도시형)",
+    "tradeComplex": [
+      "11140",
+      "흥인동",
+      "119",
+      "동대문와이즈캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 74
+  },
+  {
+    "complex": "115966",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "856",
+    "name": "신당KCC스위첸",
+    "naver_name": "신당KCC스위첸",
+    "tradeComplex": [
+      "11140",
+      "신당동",
+      "856",
+      "신당KCC스위첸"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 70
+  },
+  {
+    "complex": "27378",
+    "district": "11140",
+    "dong": "회현동2가",
+    "jibun": "87",
+    "name": "쌍용남산플래티넘",
+    "naver_name": "쌍용남산플래티넘(주상복합)",
+    "tradeComplex": [
+      "11140",
+      "회현동2가",
+      "87",
+      "쌍용남산플래티넘"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 68
+  },
+  {
+    "complex": "867",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "404",
+    "name": "한가람",
+    "naver_name": "한가람",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "404",
+      "한가람"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 558
+  },
+  {
+    "complex": "3459",
+    "district": "11170",
+    "dong": "도원동",
+    "jibun": "23",
+    "name": "삼성래미안",
+    "naver_name": "도원삼성래미안",
+    "tradeComplex": [
+      "11170",
+      "도원동",
+      "23",
+      "삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 361
+  },
+  {
+    "complex": "3803",
+    "district": "11170",
+    "dong": "산천동",
+    "jibun": "193",
+    "name": "리버힐삼성",
+    "naver_name": "리버힐삼성",
+    "tradeComplex": [
+      "11170",
+      "산천동",
+      "193",
+      "리버힐삼성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 260
+  },
+  {
+    "complex": "102737",
+    "district": "11170",
+    "dong": "한남동",
+    "jibun": "810",
+    "name": "한남더힐",
+    "naver_name": "한남더힐",
+    "tradeComplex": [
+      "11170",
+      "한남동",
+      "810",
+      "한남더힐"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 254
+  },
+  {
+    "complex": "761",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "402",
+    "name": "강촌",
+    "naver_name": "강촌",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "402",
+      "강촌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 237
+  },
+  {
+    "complex": "892",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "412",
+    "name": "이촌코오롱(A)",
+    "naver_name": "이촌코오롱",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "412",
+      "이촌코오롱(A)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 202
+  },
+  {
+    "complex": "769",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "301-160",
+    "name": "현대맨숀",
+    "naver_name": "현대맨숀",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "301-160",
+      "현대맨숀"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 166
+  },
+  {
+    "complex": "775",
+    "district": "11170",
+    "dong": "이태원동",
+    "jibun": "22-2",
+    "name": "청화1",
+    "naver_name": "청화",
+    "tradeComplex": [
+      "11170",
+      "이태원동",
+      "22-2",
+      "청화1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 158
+  },
+  {
+    "complex": "27355",
+    "district": "11170",
+    "dong": "신계동",
+    "jibun": "48",
+    "name": "용산e편한세상",
+    "naver_name": "용산e-편한세상",
+    "tradeComplex": [
+      "11170",
+      "신계동",
+      "48",
+      "용산e편한세상"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 152
+  },
+  {
+    "complex": "117804",
+    "district": "11170",
+    "dong": "한강로3가",
+    "jibun": "98",
+    "name": "센트럴파크",
+    "naver_name": "센트럴파크(주상복합)",
+    "tradeComplex": [
+      "11170",
+      "한강로3가",
+      "98",
+      "센트럴파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 151
+  },
+  {
+    "complex": "968",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "411",
+    "name": "동아그린",
+    "naver_name": "그린",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "411",
+      "동아그린"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 137
+  },
+  {
+    "complex": "3143",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "430",
+    "name": "LG한강자이",
+    "naver_name": "LG한강자이",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "430",
+      "LG한강자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 128
+  },
+  {
+    "complex": "102329",
+    "district": "11170",
+    "dong": "원효로1가",
+    "jibun": "41",
+    "name": "용산더프라임",
+    "naver_name": "용산더프라임(주상복합)",
+    "tradeComplex": [
+      "11170",
+      "원효로1가",
+      "41",
+      "용산더프라임"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 127
+  },
+  {
+    "complex": "108392",
+    "district": "11170",
+    "dong": "이촌동",
+    "jibun": "436",
+    "name": "래미안첼리투스",
+    "naver_name": "래미안첼리투스",
+    "tradeComplex": [
+      "11170",
+      "이촌동",
+      "436",
+      "래미안첼리투스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 112
+  },
+  {
+    "complex": "1222",
+    "district": "11170",
+    "dong": "원효로4가",
+    "jibun": "178",
+    "name": "강변삼성스위트",
+    "naver_name": "강변삼성스위트",
+    "tradeComplex": [
+      "11170",
+      "원효로4가",
+      "178",
+      "강변삼성스위트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 103
+  },
+  {
+    "complex": "109910",
+    "district": "11200",
+    "dong": "하왕십리동",
+    "jibun": "1070",
+    "name": "센트라스",
+    "naver_name": "센트라스",
+    "tradeComplex": [
+      "11200",
+      "하왕십리동",
+      "1070",
+      "센트라스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 870
+  },
+  {
+    "complex": "1286",
+    "district": "11200",
+    "dong": "금호동1가",
+    "jibun": "633",
+    "name": "벽산",
+    "naver_name": "벽산",
+    "tradeComplex": [
+      "11200",
+      "금호동1가",
+      "633",
+      "벽산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 767
+  },
+  {
+    "complex": "1172",
+    "district": "11200",
+    "dong": "사근동",
+    "jibun": "314",
+    "name": "벽산",
+    "naver_name": "사근벽산",
+    "tradeComplex": [
+      "11200",
+      "사근동",
+      "314",
+      "벽산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 767
+  },
+  {
+    "complex": "573",
+    "district": "11200",
+    "dong": "하왕십리동",
+    "jibun": "258",
+    "name": "벽산",
+    "naver_name": "청계벽산",
+    "tradeComplex": [
+      "11200",
+      "하왕십리동",
+      "258",
+      "벽산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 767
+  },
+  {
+    "complex": "878",
+    "district": "11200",
+    "dong": "행당동",
+    "jibun": "346",
+    "name": "행당한진타운",
+    "naver_name": "행당한진타운",
+    "tradeComplex": [
+      "11200",
+      "행당동",
+      "346",
+      "행당한진타운"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 718
+  },
+  {
+    "complex": "100692",
+    "district": "11200",
+    "dong": "옥수동",
+    "jibun": "561",
+    "name": "래미안 옥수 리버젠",
+    "naver_name": "래미안옥수리버젠",
+    "tradeComplex": [
+      "11200",
+      "옥수동",
+      "561",
+      "래미안 옥수 리버젠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 532
+  },
+  {
+    "complex": "877",
+    "district": "11200",
+    "dong": "마장동",
+    "jibun": "818",
+    "name": "현대",
+    "naver_name": "청계현대",
+    "tradeComplex": [
+      "11200",
+      "마장동",
+      "818",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 496
+  },
+  {
+    "complex": "2977",
+    "district": "11200",
+    "dong": "행당동",
+    "jibun": "349",
+    "name": "서울숲 한신 더 휴",
+    "naver_name": "서울숲한신더휴",
+    "tradeComplex": [
+      "11200",
+      "행당동",
+      "349",
+      "서울숲 한신 더 휴"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 488
+  },
+  {
+    "complex": "547",
+    "district": "11200",
+    "dong": "금호동3가",
+    "jibun": "1331",
+    "name": "두산",
+    "naver_name": "두산",
+    "tradeComplex": [
+      "11200",
+      "금호동3가",
+      "1331",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 471
+  },
+  {
+    "complex": "8854",
+    "district": "11200",
+    "dong": "행당동",
+    "jibun": "345",
+    "name": "두산",
+    "naver_name": "두산",
+    "tradeComplex": [
+      "11200",
+      "행당동",
+      "345",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 471
+  },
+  {
+    "complex": "568",
+    "district": "11200",
+    "dong": "응봉동",
+    "jibun": "275",
+    "name": "신동아",
+    "naver_name": "신동아",
+    "tradeComplex": [
+      "11200",
+      "응봉동",
+      "275",
+      "신동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 416
+  },
+  {
+    "complex": "332",
+    "district": "11200",
+    "dong": "행당동",
+    "jibun": "344",
+    "name": "신동아",
+    "naver_name": "신동아",
+    "tradeComplex": [
+      "11200",
+      "행당동",
+      "344",
+      "신동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 416
+  },
+  {
+    "complex": "110226",
+    "district": "11200",
+    "dong": "금호동2가",
+    "jibun": "1",
+    "name": "신금호파크자이",
+    "naver_name": "신금호파크자이",
+    "tradeComplex": [
+      "11200",
+      "금호동2가",
+      "1",
+      "신금호파크자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 414
+  },
+  {
+    "complex": "1179",
+    "district": "11200",
+    "dong": "옥수동",
+    "jibun": "250",
+    "name": "옥수삼성",
+    "naver_name": "옥수삼성",
+    "tradeComplex": [
+      "11200",
+      "옥수동",
+      "250",
+      "옥수삼성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 398
+  },
+  {
+    "complex": "2976",
+    "district": "11200",
+    "dong": "응봉동",
+    "jibun": "15",
+    "name": "대림강변타운",
+    "naver_name": "대림강변타운",
+    "tradeComplex": [
+      "11200",
+      "응봉동",
+      "15",
+      "대림강변타운"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 382
+  },
+  {
+    "complex": "84",
+    "district": "11215",
+    "dong": "구의동",
+    "jibun": "631-1",
+    "name": "현대프라임",
+    "naver_name": "현대프라임",
+    "tradeComplex": [
+      "11215",
+      "구의동",
+      "631-1",
+      "현대프라임"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 448
+  },
+  {
+    "complex": "74",
+    "district": "11215",
+    "dong": "광장동",
+    "jibun": "484",
+    "name": "현대3",
+    "naver_name": "광장현대3단지",
+    "tradeComplex": [
+      "11215",
+      "광장동",
+      "484",
+      "현대3"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 404
+  },
+  {
+    "complex": "103",
+    "district": "11215",
+    "dong": "자양동",
+    "jibun": "670",
+    "name": "현대3",
+    "naver_name": "자양현대3차",
+    "tradeComplex": [
+      "11215",
+      "자양동",
+      "670",
+      "현대3"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 404
+  },
+  {
+    "complex": "13457",
+    "district": "11215",
+    "dong": "자양동",
+    "jibun": "227-7",
+    "name": "더샵스타시티",
+    "naver_name": "더샵스타시티(주상복합)",
+    "tradeComplex": [
+      "11215",
+      "자양동",
+      "227-7",
+      "더샵스타시티"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 394
+  },
+  {
+    "complex": "24721",
+    "district": "11215",
+    "dong": "광장동",
+    "jibun": "577",
+    "name": "현대파크빌",
+    "naver_name": "광장현대파크빌10차",
+    "tradeComplex": [
+      "11215",
+      "광장동",
+      "577",
+      "현대파크빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 341
+  },
+  {
+    "complex": "81",
+    "district": "11215",
+    "dong": "구의동",
+    "jibun": "611",
+    "name": "구의현대2단지",
+    "naver_name": "구의현대2단지",
+    "tradeComplex": [
+      "11215",
+      "구의동",
+      "611",
+      "구의현대2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 287
+  },
+  {
+    "complex": "73",
+    "district": "11215",
+    "dong": "광장동",
+    "jibun": "566",
+    "name": "청구",
+    "naver_name": "청구",
+    "tradeComplex": [
+      "11215",
+      "광장동",
+      "566",
+      "청구"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 250
+  },
+  {
+    "complex": "112339",
+    "district": "11215",
+    "dong": "구의동",
+    "jibun": "668",
+    "name": "래미안파크스위트",
+    "naver_name": "래미안파크스위트",
+    "tradeComplex": [
+      "11215",
+      "구의동",
+      "668",
+      "래미안파크스위트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 207
+  },
+  {
+    "complex": "90",
+    "district": "11215",
+    "dong": "자양동",
+    "jibun": "579",
+    "name": "우성1",
+    "naver_name": "우성1차",
+    "tradeComplex": [
+      "11215",
+      "자양동",
+      "579",
+      "우성1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 206
+  },
+  {
+    "complex": "77",
+    "district": "11215",
+    "dong": "광장동",
+    "jibun": "576",
+    "name": "광장현대9단지",
+    "naver_name": "현대9단지",
+    "tradeComplex": [
+      "11215",
+      "광장동",
+      "576",
+      "광장현대9단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 175
+  },
+  {
+    "complex": "97",
+    "district": "11215",
+    "dong": "자양동",
+    "jibun": "783-1",
+    "name": "자양우성7",
+    "naver_name": "우성7차",
+    "tradeComplex": [
+      "11215",
+      "자양동",
+      "783-1",
+      "자양우성7"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 175
+  },
+  {
+    "complex": "105911",
+    "district": "11215",
+    "dong": "화양동",
+    "jibun": "113-1",
+    "name": "광진코지웰",
+    "naver_name": "광진코지웰(도시형)",
+    "tradeComplex": [
+      "11215",
+      "화양동",
+      "113-1",
+      "광진코지웰"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 148
+  },
+  {
+    "complex": "75",
+    "district": "11215",
+    "dong": "광장동",
+    "jibun": "554-7",
+    "name": "현대5",
+    "naver_name": "광장현대5단지",
+    "tradeComplex": [
+      "11215",
+      "광장동",
+      "554-7",
+      "현대5"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 147
+  },
+  {
+    "complex": "100514",
+    "district": "11215",
+    "dong": "광장동",
+    "jibun": "582",
+    "name": "광장힐스테이트",
+    "naver_name": "광장힐스테이트",
+    "tradeComplex": [
+      "11215",
+      "광장동",
+      "582",
+      "광장힐스테이트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 134
+  },
+  {
+    "complex": "3186",
+    "district": "11215",
+    "dong": "군자동",
+    "jibun": "99",
+    "name": "일성파크",
+    "naver_name": "일성파크",
+    "tradeComplex": [
+      "11215",
+      "군자동",
+      "99",
+      "일성파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 134
+  },
+  {
+    "complex": "104202",
+    "district": "11230",
+    "dong": "답십리동",
+    "jibun": "1003",
+    "name": "래미안위브",
+    "naver_name": "래미안위브",
+    "tradeComplex": [
+      "11230",
+      "답십리동",
+      "1003",
+      "래미안위브"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 849
+  },
+  {
+    "complex": "103797",
+    "district": "11230",
+    "dong": "전농동",
+    "jibun": "690",
+    "name": "래미안크레시티",
+    "naver_name": "래미안크레시티",
+    "tradeComplex": [
+      "11230",
+      "전농동",
+      "690",
+      "래미안크레시티"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 715
+  },
+  {
+    "complex": "3276",
+    "district": "11230",
+    "dong": "전농동",
+    "jibun": "10",
+    "name": "전농SK",
+    "naver_name": "전농SK",
+    "tradeComplex": [
+      "11230",
+      "전농동",
+      "10",
+      "전농SK"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 598
+  },
+  {
+    "complex": "3275",
+    "district": "11230",
+    "dong": "이문동",
+    "jibun": "64",
+    "name": "쌍용",
+    "naver_name": "쌍용",
+    "tradeComplex": [
+      "11230",
+      "이문동",
+      "64",
+      "쌍용"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 462
+  },
+  {
+    "complex": "345",
+    "district": "11230",
+    "dong": "장안동",
+    "jibun": "555-1",
+    "name": "한신아파트",
+    "naver_name": "한신",
+    "tradeComplex": [
+      "11230",
+      "장안동",
+      "555-1",
+      "한신아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 400
+  },
+  {
+    "complex": "3277",
+    "district": "11230",
+    "dong": "제기동",
+    "jibun": "1212",
+    "name": "한신아파트",
+    "naver_name": "한신",
+    "tradeComplex": [
+      "11230",
+      "제기동",
+      "1212",
+      "한신아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 400
+  },
+  {
+    "complex": "346",
+    "district": "11230",
+    "dong": "전농동",
+    "jibun": "6",
+    "name": "전농우성",
+    "naver_name": "전농우성",
+    "tradeComplex": [
+      "11230",
+      "전농동",
+      "6",
+      "전농우성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 360
+  },
+  {
+    "complex": "3270",
+    "district": "11230",
+    "dong": "답십리동",
+    "jibun": "10",
+    "name": "동아",
+    "naver_name": "동아",
+    "tradeComplex": [
+      "11230",
+      "답십리동",
+      "10",
+      "동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 334
+  },
+  {
+    "complex": "1126",
+    "district": "11230",
+    "dong": "전농동",
+    "jibun": "645-2",
+    "name": "동아",
+    "naver_name": "동아",
+    "tradeComplex": [
+      "11230",
+      "전농동",
+      "645-2",
+      "동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 334
+  },
+  {
+    "complex": "1125",
+    "district": "11230",
+    "dong": "이문동",
+    "jibun": "54",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11230",
+      "이문동",
+      "54",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 326
+  },
+  {
+    "complex": "1127",
+    "district": "11230",
+    "dong": "제기동",
+    "jibun": "892-66",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11230",
+      "제기동",
+      "892-66",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 326
+  },
+  {
+    "complex": "350",
+    "district": "11230",
+    "dong": "청량리동",
+    "jibun": "234-2",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11230",
+      "청량리동",
+      "234-2",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 326
+  },
+  {
+    "complex": "3000",
+    "district": "11230",
+    "dong": "휘경동",
+    "jibun": "363",
+    "name": "현대",
+    "naver_name": "휘경베스트빌현대",
+    "tradeComplex": [
+      "11230",
+      "휘경동",
+      "363",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 326
+  },
+  {
+    "complex": "3273",
+    "district": "11230",
+    "dong": "답십리동",
+    "jibun": "80",
+    "name": "답십리청솔우성",
+    "naver_name": "답십리청솔우성",
+    "tradeComplex": [
+      "11230",
+      "답십리동",
+      "80",
+      "답십리청솔우성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 306
+  },
+  {
+    "complex": "110935",
+    "district": "11230",
+    "dong": "답십리동",
+    "jibun": "1009",
+    "name": "힐스테이트청계",
+    "naver_name": "힐스테이트청계",
+    "tradeComplex": [
+      "11230",
+      "답십리동",
+      "1009",
+      "힐스테이트청계"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 298
+  },
+  {
+    "complex": "824",
+    "district": "11260",
+    "dong": "중화동",
+    "jibun": "450",
+    "name": "한신아파트상가동유치원동(103~109)",
+    "naver_name": "한신",
+    "tradeComplex": [
+      "11260",
+      "중화동",
+      "450",
+      "한신아파트상가동유치원동(103~109)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 589
+  },
+  {
+    "complex": "817",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "657",
+    "name": "신내9진흥",
+    "naver_name": "신내9단지진흥",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "657",
+      "신내9진흥"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 518
+  },
+  {
+    "complex": "802",
+    "district": "11260",
+    "dong": "면목동",
+    "jibun": "193-1",
+    "name": "면목한신",
+    "naver_name": "면목한신",
+    "tradeComplex": [
+      "11260",
+      "면목동",
+      "193-1",
+      "면목한신"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 468
+  },
+  {
+    "complex": "10528",
+    "district": "11260",
+    "dong": "묵동",
+    "jibun": "13",
+    "name": "신내",
+    "naver_name": "신내4단지",
+    "tradeComplex": [
+      "11260",
+      "묵동",
+      "13",
+      "신내"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 423
+  },
+  {
+    "complex": "119588",
+    "district": "11260",
+    "dong": "면목동",
+    "jibun": "1545",
+    "name": "사가정센트럴아이파크",
+    "naver_name": "사가정센트럴아이파크",
+    "tradeComplex": [
+      "11260",
+      "면목동",
+      "1545",
+      "사가정센트럴아이파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 303
+  },
+  {
+    "complex": "1248",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "397",
+    "name": "동성1",
+    "naver_name": "동성1,2차",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "397",
+      "동성1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 295
+  },
+  {
+    "complex": "816",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "783",
+    "name": "성원",
+    "naver_name": "성원",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "783",
+      "성원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 251
+  },
+  {
+    "complex": "809",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "661",
+    "name": "신내11대명",
+    "naver_name": "신내11단지대명",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "661",
+      "신내11대명"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 248
+  },
+  {
+    "complex": "813",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "618",
+    "name": "동성3",
+    "naver_name": "동성3차",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "618",
+      "동성3"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 224
+  },
+  {
+    "complex": "806",
+    "district": "11260",
+    "dong": "상봉동",
+    "jibun": "63",
+    "name": "건영2차아파트",
+    "naver_name": "건영2차",
+    "tradeComplex": [
+      "11260",
+      "상봉동",
+      "63",
+      "건영2차아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 214
+  },
+  {
+    "complex": "822",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "479",
+    "name": "중앙하이츠",
+    "naver_name": "중앙하이츠",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "479",
+      "중앙하이츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 207
+  },
+  {
+    "complex": "835",
+    "district": "11260",
+    "dong": "면목동",
+    "jibun": "1077-1",
+    "name": "용마한신",
+    "naver_name": "용마한신",
+    "tradeComplex": [
+      "11260",
+      "면목동",
+      "1077-1",
+      "용마한신"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 205
+  },
+  {
+    "complex": "108142",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "816",
+    "name": "신내우디안1단지",
+    "naver_name": "신내우디안1단지",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "816",
+      "신내우디안1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 192
+  },
+  {
+    "complex": "107073",
+    "district": "11260",
+    "dong": "신내동",
+    "jibun": "817",
+    "name": "신내 데시앙포레",
+    "naver_name": "신내데시앙포레",
+    "tradeComplex": [
+      "11260",
+      "신내동",
+      "817",
+      "신내 데시앙포레"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 191
+  },
+  {
+    "complex": "103566",
+    "district": "11260",
+    "dong": "망우동",
+    "jibun": "508-17",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11260",
+      "망우동",
+      "508-17",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 188
+  },
+  {
+    "complex": "3426",
+    "district": "11290",
+    "dong": "정릉동",
+    "jibun": "239",
+    "name": "정릉풍림아이원",
+    "naver_name": "정릉풍림아이원",
+    "tradeComplex": [
+      "11290",
+      "정릉동",
+      "239",
+      "정릉풍림아이원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 861
+  },
+  {
+    "complex": "2990",
+    "district": "11290",
+    "dong": "하월곡동",
+    "jibun": "222",
+    "name": "월곡두산위브",
+    "naver_name": "월곡두산위브",
+    "tradeComplex": [
+      "11290",
+      "하월곡동",
+      "222",
+      "월곡두산위브"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 702
+  },
+  {
+    "complex": "8082",
+    "district": "11290",
+    "dong": "길음동",
+    "jibun": "1280",
+    "name": "길음뉴타운2단지푸르지오",
+    "naver_name": "길음뉴타운2단지푸르지오",
+    "tradeComplex": [
+      "11290",
+      "길음동",
+      "1280",
+      "길음뉴타운2단지푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 584
+  },
+  {
+    "complex": "26251",
+    "district": "11290",
+    "dong": "길음동",
+    "jibun": "1285",
+    "name": "길음뉴타운7단지두산위브",
+    "naver_name": "길음뉴타운7단지두산위브",
+    "tradeComplex": [
+      "11290",
+      "길음동",
+      "1285",
+      "길음뉴타운7단지두산위브"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 580
+  },
+  {
+    "complex": "1183",
+    "district": "11290",
+    "dong": "석관동",
+    "jibun": "10",
+    "name": "두산",
+    "naver_name": "두산",
+    "tradeComplex": [
+      "11290",
+      "석관동",
+      "10",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 580
+  },
+  {
+    "complex": "582",
+    "district": "11290",
+    "dong": "돈암동",
+    "jibun": "609-1",
+    "name": "한신,한진",
+    "naver_name": "한신,한진",
+    "tradeComplex": [
+      "11290",
+      "돈암동",
+      "609-1",
+      "한신,한진"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 523
+  },
+  {
+    "complex": "17700",
+    "district": "11290",
+    "dong": "하월곡동",
+    "jibun": "225",
+    "name": "래미안월곡",
+    "naver_name": "래미안월곡",
+    "tradeComplex": [
+      "11290",
+      "하월곡동",
+      "225",
+      "래미안월곡"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 418
+  },
+  {
+    "complex": "3006",
+    "district": "11290",
+    "dong": "종암동",
+    "jibun": "80",
+    "name": "래미안크리시엘",
+    "naver_name": "래미안크리시엘",
+    "tradeComplex": [
+      "11290",
+      "종암동",
+      "80",
+      "래미안크리시엘"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 416
+  },
+  {
+    "complex": "111330",
+    "district": "11290",
+    "dong": "길음동",
+    "jibun": "1288",
+    "name": "래미안길음센터피스",
+    "naver_name": "래미안길음센터피스",
+    "tradeComplex": [
+      "11290",
+      "길음동",
+      "1288",
+      "래미안길음센터피스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 411
+  },
+  {
+    "complex": "15713",
+    "district": "11290",
+    "dong": "종암동",
+    "jibun": "127",
+    "name": "에스케이",
+    "naver_name": "에스케이",
+    "tradeComplex": [
+      "11290",
+      "종암동",
+      "127",
+      "에스케이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 378
+  },
+  {
+    "complex": "25827",
+    "district": "11290",
+    "dong": "종암동",
+    "jibun": "133",
+    "name": "래미안세레니티",
+    "naver_name": "래미안세레니티",
+    "tradeComplex": [
+      "11290",
+      "종암동",
+      "133",
+      "래미안세레니티"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 330
+  },
+  {
+    "complex": "8596",
+    "district": "11290",
+    "dong": "정릉동",
+    "jibun": "1028",
+    "name": "정릉e-편한세상1차",
+    "naver_name": "정릉e-편한세상1차",
+    "tradeComplex": [
+      "11290",
+      "정릉동",
+      "1028",
+      "정릉e-편한세상1차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 329
+  },
+  {
+    "complex": "586",
+    "district": "11290",
+    "dong": "정릉동",
+    "jibun": "1015",
+    "name": "길음뉴타운경남아너스빌",
+    "naver_name": "길음뉴타운경남아너스빌",
+    "tradeComplex": [
+      "11290",
+      "정릉동",
+      "1015",
+      "길음뉴타운경남아너스빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 322
+  },
+  {
+    "complex": "114972",
+    "district": "11290",
+    "dong": "석관동",
+    "jibun": "410",
+    "name": "래미안아트리치",
+    "naver_name": "래미안아트리치",
+    "tradeComplex": [
+      "11290",
+      "석관동",
+      "410",
+      "래미안아트리치"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 299
+  },
+  {
+    "complex": "26130",
+    "district": "11290",
+    "dong": "하월곡동",
+    "jibun": "228",
+    "name": "꿈의숲푸르지오",
+    "naver_name": "꿈의숲푸르지오",
+    "tradeComplex": [
+      "11290",
+      "하월곡동",
+      "228",
+      "꿈의숲푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 295
+  },
+  {
+    "complex": "3099",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "1354",
+    "name": "벽산라이브파크",
+    "naver_name": "벽산라이브파크",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "1354",
+      "벽산라이브파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 607
+  },
+  {
+    "complex": "8206",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "1357",
+    "name": "삼각산아이원",
+    "naver_name": "삼각산아이원",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "1357",
+      "삼각산아이원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 522
+  },
+  {
+    "complex": "27413",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "811",
+    "name": "두산위브트레지움",
+    "naver_name": "두산위브트레지움",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "811",
+      "두산위브트레지움"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 466
+  },
+  {
+    "complex": "25972",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "812",
+    "name": "삼성래미안트리베라2단지",
+    "naver_name": "삼성래미안트리베라2차",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "812",
+      "삼성래미안트리베라2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 440
+  },
+  {
+    "complex": "1344",
+    "district": "11305",
+    "dong": "수유동",
+    "jibun": "205",
+    "name": "수유벽산1차",
+    "naver_name": "수유벽산1차",
+    "tradeComplex": [
+      "11305",
+      "수유동",
+      "205",
+      "수유벽산1차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 354
+  },
+  {
+    "complex": "25971",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "813",
+    "name": "래미안트리베라1단지",
+    "naver_name": "래미안트리베라1차",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "813",
+      "래미안트리베라1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 328
+  },
+  {
+    "complex": "116048",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "1369",
+    "name": "꿈의숲해링턴플레이스",
+    "naver_name": "꿈의숲해링턴플레이스",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "1369",
+      "꿈의숲해링턴플레이스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 283
+  },
+  {
+    "complex": "1302",
+    "district": "11305",
+    "dong": "번동",
+    "jibun": "234",
+    "name": "주공4단지",
+    "naver_name": "번동주공4단지",
+    "tradeComplex": [
+      "11305",
+      "번동",
+      "234",
+      "주공4단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 185
+  },
+  {
+    "complex": "17516",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "474",
+    "name": "미아동부센트레빌",
+    "naver_name": "미아동부센트레빌",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "474",
+      "미아동부센트레빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 167
+  },
+  {
+    "complex": "109039",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "4",
+    "name": "꿈의숲롯데캐슬",
+    "naver_name": "꿈의숲롯데캐슬",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "4",
+      "꿈의숲롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 166
+  },
+  {
+    "complex": "105879",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "160-3",
+    "name": "푸르지오시티",
+    "naver_name": "수유역푸르지오시티(도시형)",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "160-3",
+      "푸르지오시티"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 135
+  },
+  {
+    "complex": "3128",
+    "district": "11305",
+    "dong": "번동",
+    "jibun": "136",
+    "name": "번동솔그린",
+    "naver_name": "번동솔그린",
+    "tradeComplex": [
+      "11305",
+      "번동",
+      "136",
+      "번동솔그린"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 131
+  },
+  {
+    "complex": "1343",
+    "district": "11305",
+    "dong": "수유동",
+    "jibun": "553-61",
+    "name": "극동",
+    "naver_name": "극동",
+    "tradeComplex": [
+      "11305",
+      "수유동",
+      "553-61",
+      "극동"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 130
+  },
+  {
+    "complex": "9345",
+    "district": "11305",
+    "dong": "번동",
+    "jibun": "139",
+    "name": "해모로아파트",
+    "naver_name": "해모로",
+    "tradeComplex": [
+      "11305",
+      "번동",
+      "139",
+      "해모로아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 129
+  },
+  {
+    "complex": "26885",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "461",
+    "name": "송천센트레빌",
+    "naver_name": "송천센트레빌",
+    "tradeComplex": [
+      "11305",
+      "미아동",
+      "461",
+      "송천센트레빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 113
+  },
+  {
+    "complex": "267",
+    "district": "11320",
+    "dong": "도봉동",
+    "jibun": "30-1",
+    "name": "한신",
+    "naver_name": "도봉한신",
+    "tradeComplex": [
+      "11320",
+      "도봉동",
+      "30-1",
+      "한신"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 819
+  },
+  {
+    "complex": "326",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "347",
+    "name": "창동주공3단지(해등마을)",
+    "naver_name": "창동주공3단지",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "347",
+      "창동주공3단지(해등마을)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 719
+  },
+  {
+    "complex": "1120",
+    "district": "11320",
+    "dong": "도봉동",
+    "jibun": "641",
+    "name": "서원",
+    "naver_name": "서원",
+    "tradeComplex": [
+      "11320",
+      "도봉동",
+      "641",
+      "서원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 619
+  },
+  {
+    "complex": "301",
+    "district": "11320",
+    "dong": "쌍문동",
+    "jibun": "59",
+    "name": "한양2",
+    "naver_name": "한양2,3,4차",
+    "tradeComplex": [
+      "11320",
+      "쌍문동",
+      "59",
+      "한양2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 564
+  },
+  {
+    "complex": "292",
+    "district": "11320",
+    "dong": "쌍문동",
+    "jibun": "56",
+    "name": "삼익세라믹",
+    "naver_name": "삼익세라믹",
+    "tradeComplex": [
+      "11320",
+      "쌍문동",
+      "56",
+      "삼익세라믹"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 509
+  },
+  {
+    "complex": "312",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "808",
+    "name": "동아청솔",
+    "naver_name": "동아청솔",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "808",
+      "동아청솔"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 477
+  },
+  {
+    "complex": "9106",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "825",
+    "name": "북한산아이파크5차",
+    "naver_name": "북한산아이파크",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "825",
+      "북한산아이파크5차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 397
+  },
+  {
+    "complex": "313",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "45",
+    "name": "삼성래미안",
+    "naver_name": "삼성래미안",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "45",
+      "삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 324
+  },
+  {
+    "complex": "3265",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "804",
+    "name": "대우",
+    "naver_name": "대우그린",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "804",
+      "대우"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 308
+  },
+  {
+    "complex": "322",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "807",
+    "name": "쌍용",
+    "naver_name": "쌍용",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "807",
+      "쌍용"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 298
+  },
+  {
+    "complex": "323",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "30",
+    "name": "창동주공18단지",
+    "naver_name": "창동주공1단지",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "30",
+      "창동주공18단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 288
+  },
+  {
+    "complex": "281",
+    "district": "11320",
+    "dong": "방학동",
+    "jibun": "734",
+    "name": "청구아파트",
+    "naver_name": "청구",
+    "tradeComplex": [
+      "11320",
+      "방학동",
+      "734",
+      "청구아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 285
+  },
+  {
+    "complex": "2980",
+    "district": "11320",
+    "dong": "방학동",
+    "jibun": "720-1",
+    "name": "대상타운현대아파트",
+    "naver_name": "대상타운현대",
+    "tradeComplex": [
+      "11320",
+      "방학동",
+      "720-1",
+      "대상타운현대아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 284
+  },
+  {
+    "complex": "325",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "316",
+    "name": "창동주공2단지",
+    "naver_name": "창동주공2단지",
+    "tradeComplex": [
+      "11320",
+      "창동",
+      "316",
+      "창동주공2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 228
+  },
+  {
+    "complex": "279",
+    "district": "11320",
+    "dong": "방학동",
+    "jibun": "507",
+    "name": "우성아파트1",
+    "naver_name": "우성1차",
+    "tradeComplex": [
+      "11320",
+      "방학동",
+      "507",
+      "우성아파트1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 226
+  },
+  {
+    "complex": "227",
+    "district": "11350",
+    "dong": "월계동",
+    "jibun": "556",
+    "name": "주공2",
+    "naver_name": "월계주공2단지",
+    "tradeComplex": [
+      "11350",
+      "월계동",
+      "556",
+      "주공2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1147
+  },
+  {
+    "complex": "1109",
+    "district": "11350",
+    "dong": "중계동",
+    "jibun": "369",
+    "name": "주공2",
+    "naver_name": "중계주공2단지",
+    "tradeComplex": [
+      "11350",
+      "중계동",
+      "369",
+      "주공2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1147
+  },
+  {
+    "complex": "925",
+    "district": "11350",
+    "dong": "중계동",
+    "jibun": "512",
+    "name": "중계무지개",
+    "naver_name": "중계무지개",
+    "tradeComplex": [
+      "11350",
+      "중계동",
+      "512",
+      "중계무지개"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 899
+  },
+  {
+    "complex": "206",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "670",
+    "name": "상계주공9(고층)",
+    "naver_name": "상계주공9단지",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "670",
+      "상계주공9(고층)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 848
+  },
+  {
+    "complex": "1094",
+    "district": "11350",
+    "dong": "공릉동",
+    "jibun": "81",
+    "name": "태강아파트(아이파크)",
+    "naver_name": "태강",
+    "tradeComplex": [
+      "11350",
+      "공릉동",
+      "81",
+      "태강아파트(아이파크)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 827
+  },
+  {
+    "complex": "3367",
+    "district": "11350",
+    "dong": "월계동",
+    "jibun": "18",
+    "name": "한진한화그랑빌",
+    "naver_name": "그랑빌",
+    "tradeComplex": [
+      "11350",
+      "월계동",
+      "18",
+      "한진한화그랑빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 812
+  },
+  {
+    "complex": "184",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "173-1",
+    "name": "벽산",
+    "naver_name": "벽산",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "173-1",
+      "벽산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 722
+  },
+  {
+    "complex": "245",
+    "district": "11350",
+    "dong": "중계동",
+    "jibun": "359-1",
+    "name": "주공5",
+    "naver_name": "중계주공5단지",
+    "tradeComplex": [
+      "11350",
+      "중계동",
+      "359-1",
+      "주공5"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 710
+  },
+  {
+    "complex": "201",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "624",
+    "name": "상계주공16(고층)",
+    "naver_name": "상계주공16단지",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "624",
+      "상계주공16(고층)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 699
+  },
+  {
+    "complex": "199",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "626",
+    "name": "상계주공14(고층)",
+    "naver_name": "상계주공14단지",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "626",
+      "상계주공14(고층)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 657
+  },
+  {
+    "complex": "197",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "647",
+    "name": "상계주공12(고층)",
+    "naver_name": "상계주공12단지",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "647",
+      "상계주공12(고층)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 539
+  },
+  {
+    "complex": "3249",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "1255",
+    "name": "은빛1단지",
+    "naver_name": "은빛1단지",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "1255",
+      "은빛1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 482
+  },
+  {
+    "complex": "1118",
+    "district": "11350",
+    "dong": "하계동",
+    "jibun": "270",
+    "name": "현대",
+    "naver_name": "하계현대",
+    "tradeComplex": [
+      "11350",
+      "하계동",
+      "270",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 469
+  },
+  {
+    "complex": "3250",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "1256",
+    "name": "은빛2단지",
+    "naver_name": "은빛2단지",
+    "tradeComplex": [
+      "11350",
+      "상계동",
+      "1256",
+      "은빛2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 445
+  },
+  {
+    "complex": "128",
+    "district": "11350",
+    "dong": "하계동",
+    "jibun": "354",
+    "name": "학여울청구",
+    "naver_name": "학여울청구",
+    "tradeComplex": [
+      "11350",
+      "하계동",
+      "354",
+      "학여울청구"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 398
+  },
+  {
+    "complex": "119275",
+    "district": "11380",
+    "dong": "응암동",
+    "jibun": "769",
+    "name": "녹번역e편한세상캐슬",
+    "naver_name": "녹번역e편한세상캐슬",
+    "tradeComplex": [
+      "11380",
+      "응암동",
+      "769",
+      "녹번역e편한세상캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 581
+  },
+  {
+    "complex": "107610",
+    "district": "11380",
+    "dong": "녹번동",
+    "jibun": "281",
+    "name": "북한산푸르지오",
+    "naver_name": "북한산푸르지오",
+    "tradeComplex": [
+      "11380",
+      "녹번동",
+      "281",
+      "북한산푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 397
+  },
+  {
+    "complex": "26191",
+    "district": "11380",
+    "dong": "불광동",
+    "jibun": "641",
+    "name": "북한산현대힐스테이트3차아파트",
+    "naver_name": "북한산현대힐스테이트3차",
+    "tradeComplex": [
+      "11380",
+      "불광동",
+      "641",
+      "북한산현대힐스테이트3차아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 388
+  },
+  {
+    "complex": "27501",
+    "district": "11380",
+    "dong": "응암동",
+    "jibun": "759",
+    "name": "백련산힐스테이트1차",
+    "naver_name": "백련산힐스테이트1차",
+    "tradeComplex": [
+      "11380",
+      "응암동",
+      "759",
+      "백련산힐스테이트1차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 381
+  },
+  {
+    "complex": "27502",
+    "district": "11380",
+    "dong": "응암동",
+    "jibun": "760",
+    "name": "백련산힐스테이트2차",
+    "naver_name": "백련산힐스테이트2차",
+    "tradeComplex": [
+      "11380",
+      "응암동",
+      "760",
+      "백련산힐스테이트2차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 354
+  },
+  {
+    "complex": "3462",
+    "district": "11380",
+    "dong": "수색동",
+    "jibun": "415-1",
+    "name": "e편한세상 수색 에코포레",
+    "naver_name": "e편한세상수색에코포레",
+    "tradeComplex": [
+      "11380",
+      "수색동",
+      "415-1",
+      "e편한세상 수색 에코포레"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 336
+  },
+  {
+    "complex": "111575",
+    "district": "11380",
+    "dong": "녹번동",
+    "jibun": "283",
+    "name": "래미안베라힐즈",
+    "naver_name": "래미안베라힐즈",
+    "tradeComplex": [
+      "11380",
+      "녹번동",
+      "283",
+      "래미안베라힐즈"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 306
+  },
+  {
+    "complex": "111964",
+    "district": "11380",
+    "dong": "녹번동",
+    "jibun": "282",
+    "name": "힐스테이트녹번",
+    "naver_name": "힐스테이트녹번",
+    "tradeComplex": [
+      "11380",
+      "녹번동",
+      "282",
+      "힐스테이트녹번"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 274
+  },
+  {
+    "complex": "27264",
+    "district": "11380",
+    "dong": "응암동",
+    "jibun": "761",
+    "name": "백련산힐스테이트3차",
+    "naver_name": "백련산힐스테이트3차",
+    "tradeComplex": [
+      "11380",
+      "응암동",
+      "761",
+      "백련산힐스테이트3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 260
+  },
+  {
+    "complex": "118025",
+    "district": "11380",
+    "dong": "수색동",
+    "jibun": "417",
+    "name": "DMC롯데캐슬더퍼스트",
+    "naver_name": "DMC롯데캐슬더퍼스트",
+    "tradeComplex": [
+      "11380",
+      "수색동",
+      "417",
+      "DMC롯데캐슬더퍼스트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 252
+  },
+  {
+    "complex": "113021",
+    "district": "11380",
+    "dong": "응암동",
+    "jibun": "766",
+    "name": "백련산파크자이",
+    "naver_name": "백련산파크자이",
+    "tradeComplex": [
+      "11380",
+      "응암동",
+      "766",
+      "백련산파크자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 223
+  },
+  {
+    "complex": "24199",
+    "district": "11380",
+    "dong": "불광동",
+    "jibun": "635",
+    "name": "북한산힐스테이트1차아파트",
+    "naver_name": "북한산힐스테이트1차",
+    "tradeComplex": [
+      "11380",
+      "불광동",
+      "635",
+      "북한산힐스테이트1차아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 208
+  },
+  {
+    "complex": "26897",
+    "district": "11380",
+    "dong": "불광동",
+    "jibun": "643",
+    "name": "북한산힐스테이트7차",
+    "naver_name": "북한산힐스테이트7차",
+    "tradeComplex": [
+      "11380",
+      "불광동",
+      "643",
+      "북한산힐스테이트7차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 204
+  },
+  {
+    "complex": "103025",
+    "district": "11380",
+    "dong": "불광동",
+    "jibun": "645",
+    "name": "불광롯데캐슬",
+    "naver_name": "불광롯데캐슬",
+    "tradeComplex": [
+      "11380",
+      "불광동",
+      "645",
+      "불광롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 178
+  },
+  {
+    "complex": "123961",
+    "district": "11380",
+    "dong": "응암동",
+    "jibun": "770",
+    "name": "힐스테이트녹번역",
+    "naver_name": "힐스테이트녹번역",
+    "tradeComplex": [
+      "11380",
+      "응암동",
+      "770",
+      "힐스테이트녹번역"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 173
+  },
+  {
+    "complex": "101160",
+    "district": "11410",
+    "dong": "북가좌동",
+    "jibun": "481",
+    "name": "DMC래미안e편한세상",
+    "naver_name": "DMC래미안e편한세상",
+    "tradeComplex": [
+      "11410",
+      "북가좌동",
+      "481",
+      "DMC래미안e편한세상"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 861
+  },
+  {
+    "complex": "108064",
+    "district": "11410",
+    "dong": "남가좌동",
+    "jibun": "385",
+    "name": "DMC파크뷰자이1단지",
+    "naver_name": "DMC파크뷰자이",
+    "tradeComplex": [
+      "11410",
+      "남가좌동",
+      "385",
+      "DMC파크뷰자이1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 700
+  },
+  {
+    "complex": "849",
+    "district": "11410",
+    "dong": "북아현동",
+    "jibun": "1009",
+    "name": "두산",
+    "naver_name": "두산",
+    "tradeComplex": [
+      "11410",
+      "북아현동",
+      "1009",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 490
+  },
+  {
+    "complex": "850",
+    "district": "11410",
+    "dong": "홍은동",
+    "jibun": "456",
+    "name": "두산",
+    "naver_name": "두산",
+    "tradeComplex": [
+      "11410",
+      "홍은동",
+      "456",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 490
+  },
+  {
+    "complex": "3479",
+    "district": "11410",
+    "dong": "남가좌동",
+    "jibun": "377",
+    "name": "DMC래미안클라시스",
+    "naver_name": "DMC래미안클라시스",
+    "tradeComplex": [
+      "11410",
+      "남가좌동",
+      "377",
+      "DMC래미안클라시스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 410
+  },
+  {
+    "complex": "11567",
+    "district": "11410",
+    "dong": "천연동",
+    "jibun": "145",
+    "name": "천연뜨란채",
+    "naver_name": "천연뜨란채",
+    "tradeComplex": [
+      "11410",
+      "천연동",
+      "145",
+      "천연뜨란채"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 400
+  },
+  {
+    "complex": "941",
+    "district": "11410",
+    "dong": "현저동",
+    "jibun": "200",
+    "name": "독립문극동(200-0)",
+    "naver_name": "독립문극동",
+    "tradeComplex": [
+      "11410",
+      "현저동",
+      "200",
+      "독립문극동(200-0)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 376
+  },
+  {
+    "complex": "7961",
+    "district": "11410",
+    "dong": "홍제동",
+    "jibun": "82",
+    "name": "홍제한양",
+    "naver_name": "홍제한양",
+    "tradeComplex": [
+      "11410",
+      "홍제동",
+      "82",
+      "홍제한양"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 342
+  },
+  {
+    "complex": "110092",
+    "district": "11410",
+    "dong": "북아현동",
+    "jibun": "1011",
+    "name": "신촌푸르지오",
+    "naver_name": "신촌푸르지오",
+    "tradeComplex": [
+      "11410",
+      "북아현동",
+      "1011",
+      "신촌푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 330
+  },
+  {
+    "complex": "423",
+    "district": "11410",
+    "dong": "대현동",
+    "jibun": "144",
+    "name": "신촌럭키",
+    "naver_name": "신촌럭키",
+    "tradeComplex": [
+      "11410",
+      "대현동",
+      "144",
+      "신촌럭키"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 279
+  },
+  {
+    "complex": "112802",
+    "district": "11410",
+    "dong": "남가좌동",
+    "jibun": "388",
+    "name": "DMC센트럴아이파크",
+    "naver_name": "DMC센트럴아이파크",
+    "tradeComplex": [
+      "11410",
+      "남가좌동",
+      "388",
+      "DMC센트럴아이파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 278
+  },
+  {
+    "complex": "9905",
+    "district": "11410",
+    "dong": "연희동",
+    "jibun": "740",
+    "name": "성원",
+    "naver_name": "성원상떼빌팰리스",
+    "tradeComplex": [
+      "11410",
+      "연희동",
+      "740",
+      "성원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 275
+  },
+  {
+    "complex": "1163",
+    "district": "11410",
+    "dong": "홍제동",
+    "jibun": "456",
+    "name": "성원",
+    "naver_name": "홍제성원",
+    "tradeComplex": [
+      "11410",
+      "홍제동",
+      "456",
+      "성원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 275
+  },
+  {
+    "complex": "110209",
+    "district": "11410",
+    "dong": "북아현동",
+    "jibun": "1013",
+    "name": "e편한세상신촌1단지",
+    "naver_name": "e편한세상신촌",
+    "tradeComplex": [
+      "11410",
+      "북아현동",
+      "1013",
+      "e편한세상신촌1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 273
+  },
+  {
+    "complex": "1159",
+    "district": "11410",
+    "dong": "홍제동",
+    "jibun": "463",
+    "name": "문화촌현대",
+    "naver_name": "문화촌현대",
+    "tradeComplex": [
+      "11410",
+      "홍제동",
+      "463",
+      "문화촌현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 267
+  },
+  {
+    "complex": "104917",
+    "district": "11440",
+    "dong": "아현동",
+    "jibun": "777",
+    "name": "마포래미안푸르지오",
+    "naver_name": "마포래미안푸르지오",
+    "tradeComplex": [
+      "11440",
+      "아현동",
+      "777",
+      "마포래미안푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 407
+  },
+  {
+    "complex": "405",
+    "district": "11440",
+    "dong": "도화동",
+    "jibun": "82",
+    "name": "도화3지구우성",
+    "naver_name": "도화3지구우성",
+    "tradeComplex": [
+      "11440",
+      "도화동",
+      "82",
+      "도화3지구우성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 317
+  },
+  {
+    "complex": "12240",
+    "district": "11440",
+    "dong": "도화동",
+    "jibun": "555",
+    "name": "마포한화오벨리스크(주상복합)",
+    "naver_name": "마포한화오벨리스크(주상복합)",
+    "tradeComplex": [
+      "11440",
+      "도화동",
+      "555",
+      "마포한화오벨리스크(주상복합)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 291
+  },
+  {
+    "complex": "13940",
+    "district": "11440",
+    "dong": "상암동",
+    "jibun": "1637",
+    "name": "상암월드컵파크2단지",
+    "naver_name": "상암월드컵파크2단지",
+    "tradeComplex": [
+      "11440",
+      "상암동",
+      "1637",
+      "상암월드컵파크2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 272
+  },
+  {
+    "complex": "121608",
+    "district": "11440",
+    "dong": "염리동",
+    "jibun": "532",
+    "name": "마포프레스티지자이",
+    "naver_name": "마포프레스티지자이",
+    "tradeComplex": [
+      "11440",
+      "염리동",
+      "532",
+      "마포프레스티지자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 269
+  },
+  {
+    "complex": "403",
+    "district": "11440",
+    "dong": "공덕동",
+    "jibun": "371",
+    "name": "공덕삼성",
+    "naver_name": "공덕삼성",
+    "tradeComplex": [
+      "11440",
+      "공덕동",
+      "371",
+      "공덕삼성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 247
+  },
+  {
+    "complex": "404",
+    "district": "11440",
+    "dong": "도화동",
+    "jibun": "550",
+    "name": "삼성",
+    "naver_name": "삼성",
+    "tradeComplex": [
+      "11440",
+      "도화동",
+      "550",
+      "삼성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 247
+  },
+  {
+    "complex": "3306",
+    "district": "11440",
+    "dong": "공덕동",
+    "jibun": "43",
+    "name": "삼성래미안공덕2차",
+    "naver_name": "삼성래미안공덕2차",
+    "tradeComplex": [
+      "11440",
+      "공덕동",
+      "43",
+      "삼성래미안공덕2차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 247
+  },
+  {
+    "complex": "841",
+    "district": "11440",
+    "dong": "도화동",
+    "jibun": "353",
+    "name": "현대홈타운",
+    "naver_name": "현대홈타운",
+    "tradeComplex": [
+      "11440",
+      "도화동",
+      "353",
+      "현대홈타운"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 246
+  },
+  {
+    "complex": "100627",
+    "district": "11440",
+    "dong": "공덕동",
+    "jibun": "469",
+    "name": "래미안공덕5차",
+    "naver_name": "래미안공덕5차",
+    "tradeComplex": [
+      "11440",
+      "공덕동",
+      "469",
+      "래미안공덕5차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 245
+  },
+  {
+    "complex": "13325",
+    "district": "11440",
+    "dong": "공덕동",
+    "jibun": "464",
+    "name": "래미안공덕4차",
+    "naver_name": "래미안공덕4차",
+    "tradeComplex": [
+      "11440",
+      "공덕동",
+      "464",
+      "래미안공덕4차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 234
+  },
+  {
+    "complex": "114542",
+    "district": "11440",
+    "dong": "대흥동",
+    "jibun": "806",
+    "name": "마포그랑자이",
+    "naver_name": "마포그랑자이",
+    "tradeComplex": [
+      "11440",
+      "대흥동",
+      "806",
+      "마포그랑자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 233
+  },
+  {
+    "complex": "844",
+    "district": "11440",
+    "dong": "염리동",
+    "jibun": "515-1",
+    "name": "상록",
+    "naver_name": "상록",
+    "tradeComplex": [
+      "11440",
+      "염리동",
+      "515-1",
+      "상록"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 219
+  },
+  {
+    "complex": "23620",
+    "district": "11440",
+    "dong": "상암동",
+    "jibun": "1655",
+    "name": "상암월드컵파크4단지",
+    "naver_name": "상암월드컵파크4단지",
+    "tradeComplex": [
+      "11440",
+      "상암동",
+      "1655",
+      "상암월드컵파크4단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 202
+  },
+  {
+    "complex": "3299",
+    "district": "11440",
+    "dong": "염리동",
+    "jibun": "520",
+    "name": "염리삼성래미안",
+    "naver_name": "염리삼성래미안",
+    "tradeComplex": [
+      "11440",
+      "염리동",
+      "520",
+      "염리삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 200
+  },
+  {
+    "complex": "672",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1259",
+    "name": "신트리1",
+    "naver_name": "신트리1단지",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1259",
+      "신트리1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 845,
+    "trade_count": 407
+  },
+  {
+    "complex": "8742",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "337",
+    "name": "목동우성2",
+    "naver_name": "목동우성2차",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "337",
+      "목동우성2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 1140,
+    "trade_count": 371
+  },
+  {
+    "complex": "3444",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1277",
+    "name": "신트리4",
+    "naver_name": "신트리4단지",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1277",
+      "신트리4"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 366
+  },
+  {
+    "complex": "10498",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1309",
+    "name": "롯데캐슬",
+    "naver_name": "롯데캐슬",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1309",
+      "롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 360
+  },
+  {
+    "complex": "108438",
+    "district": "11470",
+    "dong": "신월동",
+    "jibun": "1063",
+    "name": "롯데캐슬",
+    "naver_name": "목동힐스테이트",
+    "tradeComplex": [
+      "11470",
+      "신월동",
+      "1063",
+      "롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 930,
+    "trade_count": 360
+  },
+  {
+    "complex": "661",
+    "district": "11470",
+    "dong": "목동",
+    "jibun": "929",
+    "name": "목동청구한신아파트",
+    "naver_name": "목동한신청구",
+    "tradeComplex": [
+      "11470",
+      "목동",
+      "929",
+      "목동청구한신아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 1512,
+    "trade_count": 360
+  },
+  {
+    "complex": "107728",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1323",
+    "name": "목동힐스테이트",
+    "naver_name": "신정뉴타운롯데캐슬",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1323",
+      "목동힐스테이트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 1081,
+    "trade_count": 337
+  },
+  {
+    "complex": "10307",
+    "district": "11470",
+    "dong": "목동",
+    "jibun": "956",
+    "name": "롯데캐슬위너",
+    "naver_name": "목동롯데캐슬위너",
+    "tradeComplex": [
+      "11470",
+      "목동",
+      "956",
+      "롯데캐슬위너"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 1066,
+    "trade_count": 263
+  },
+  {
+    "complex": "3784",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1293",
+    "name": "학마을1단지",
+    "naver_name": "학마을1단지",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1293",
+      "학마을1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 243
+  },
+  {
+    "complex": "675",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1279",
+    "name": "목동현대3차",
+    "naver_name": "목동현대",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1279",
+      "목동현대3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 509,
+    "trade_count": 224
+  },
+  {
+    "complex": "121979",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1326",
+    "name": "래미안목동아델리체(101동~118동)",
+    "naver_name": "래미안목동아델리체",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1326",
+      "래미안목동아델리체(101동~118동)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 213
+  },
+  {
+    "complex": "117329",
+    "district": "11470",
+    "dong": "신월동",
+    "jibun": "1075",
+    "name": "목동센트럴아이파크위브1단지",
+    "naver_name": "목동센트럴아이파크위브",
+    "tradeComplex": [
+      "11470",
+      "신월동",
+      "1075",
+      "목동센트럴아이파크위브1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "total_households": 3045,
+    "trade_count": 203
+  },
+  {
+    "complex": "3786",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1281",
+    "name": "푸른마을2",
+    "naver_name": "푸른마을2단지",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1281",
+      "푸른마을2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 181
+  },
+  {
+    "complex": "113008",
+    "district": "11470",
+    "dong": "목동",
+    "jibun": "965",
+    "name": "목동롯데캐슬마에스트로",
+    "naver_name": "목동롯데캐슬마에스트로",
+    "tradeComplex": [
+      "11470",
+      "목동",
+      "965",
+      "목동롯데캐슬마에스트로"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 170
+  },
+  {
+    "complex": "3787",
+    "district": "11470",
+    "dong": "신정동",
+    "jibun": "1283",
+    "name": "푸른마을3",
+    "naver_name": "푸른마을3단지",
+    "tradeComplex": [
+      "11470",
+      "신정동",
+      "1283",
+      "푸른마을3"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 152
+  },
+  {
+    "complex": "103305",
+    "district": "11500",
+    "dong": "화곡동",
+    "jibun": "1165",
+    "name": "강서힐스테이트",
+    "naver_name": "강서힐스테이트",
+    "tradeComplex": [
+      "11500",
+      "화곡동",
+      "1165",
+      "강서힐스테이트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 781
+  },
+  {
+    "complex": "1346",
+    "district": "11500",
+    "dong": "가양동",
+    "jibun": "1475",
+    "name": "강변",
+    "naver_name": "강변3단지",
+    "tradeComplex": [
+      "11500",
+      "가양동",
+      "1475",
+      "강변"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 625
+  },
+  {
+    "complex": "1347",
+    "district": "11500",
+    "dong": "가양동",
+    "jibun": "1485",
+    "name": "가양6단지",
+    "naver_name": "가양6단지",
+    "tradeComplex": [
+      "11500",
+      "가양동",
+      "1485",
+      "가양6단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 564
+  },
+  {
+    "complex": "24",
+    "district": "11500",
+    "dong": "방화동",
+    "jibun": "814",
+    "name": "방화5",
+    "naver_name": "방화5단지",
+    "tradeComplex": [
+      "11500",
+      "방화동",
+      "814",
+      "방화5"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 557
+  },
+  {
+    "complex": "11337",
+    "district": "11500",
+    "dong": "내발산동",
+    "jibun": "657",
+    "name": "우장산힐스테이트",
+    "naver_name": "우장산힐스테이트",
+    "tradeComplex": [
+      "11500",
+      "내발산동",
+      "657",
+      "우장산힐스테이트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 526
+  },
+  {
+    "complex": "109799",
+    "district": "11500",
+    "dong": "마곡동",
+    "jibun": "748",
+    "name": "마곡13단지힐스테이트마스터",
+    "naver_name": "마곡13단지힐스테이트마스터",
+    "tradeComplex": [
+      "11500",
+      "마곡동",
+      "748",
+      "마곡13단지힐스테이트마스터"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 476
+  },
+  {
+    "complex": "3330",
+    "district": "11500",
+    "dong": "화곡동",
+    "jibun": "1091",
+    "name": "화곡푸르지오",
+    "naver_name": "화곡푸르지오",
+    "tradeComplex": [
+      "11500",
+      "화곡동",
+      "1091",
+      "화곡푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 429
+  },
+  {
+    "complex": "13",
+    "district": "11500",
+    "dong": "등촌동",
+    "jibun": "695",
+    "name": "주공5",
+    "naver_name": "등촌주공5단지",
+    "tradeComplex": [
+      "11500",
+      "등촌동",
+      "695",
+      "주공5"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 393
+  },
+  {
+    "complex": "905",
+    "district": "11500",
+    "dong": "방화동",
+    "jibun": "852",
+    "name": "마곡중앙하이츠아파트",
+    "naver_name": "마곡중앙하이츠",
+    "tradeComplex": [
+      "11500",
+      "방화동",
+      "852",
+      "마곡중앙하이츠아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 377
+  },
+  {
+    "complex": "12",
+    "district": "11500",
+    "dong": "등촌동",
+    "jibun": "688",
+    "name": "주공3",
+    "naver_name": "등촌주공3단지",
+    "tradeComplex": [
+      "11500",
+      "등촌동",
+      "688",
+      "주공3"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 370
+  },
+  {
+    "complex": "25",
+    "district": "11500",
+    "dong": "방화동",
+    "jibun": "817",
+    "name": "동성",
+    "naver_name": "동성",
+    "tradeComplex": [
+      "11500",
+      "방화동",
+      "817",
+      "동성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 297
+  },
+  {
+    "complex": "26123",
+    "district": "11500",
+    "dong": "내발산동",
+    "jibun": "753",
+    "name": "마곡수명산파크4단지",
+    "naver_name": "마곡수명산파크4단지",
+    "tradeComplex": [
+      "11500",
+      "내발산동",
+      "753",
+      "마곡수명산파크4단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 293
+  },
+  {
+    "complex": "3331",
+    "district": "11500",
+    "dong": "화곡동",
+    "jibun": "1145",
+    "name": "우장산롯데캐슬",
+    "naver_name": "우장산롯데캐슬",
+    "tradeComplex": [
+      "11500",
+      "화곡동",
+      "1145",
+      "우장산롯데캐슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 285
+  },
+  {
+    "complex": "1012",
+    "district": "11500",
+    "dong": "가양동",
+    "jibun": "448-1",
+    "name": "가양강나루현대",
+    "naver_name": "강나루현대",
+    "tradeComplex": [
+      "11500",
+      "가양동",
+      "448-1",
+      "가양강나루현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 242
+  },
+  {
+    "complex": "7",
+    "district": "11500",
+    "dong": "등촌동",
+    "jibun": "691-3",
+    "name": "부영",
+    "naver_name": "부영",
+    "tradeComplex": [
+      "11500",
+      "등촌동",
+      "691-3",
+      "부영"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 238
+  },
+  {
+    "complex": "106",
+    "district": "11530",
+    "dong": "개봉동",
+    "jibun": "476",
+    "name": "한마을",
+    "naver_name": "한마을",
+    "tradeComplex": [
+      "11530",
+      "개봉동",
+      "476",
+      "한마을"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 672
+  },
+  {
+    "complex": "912",
+    "district": "11530",
+    "dong": "구로동",
+    "jibun": "1265",
+    "name": "구로두산",
+    "naver_name": "구로두산",
+    "tradeComplex": [
+      "11530",
+      "구로동",
+      "1265",
+      "구로두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 625
+  },
+  {
+    "complex": "1062",
+    "district": "11530",
+    "dong": "개봉동",
+    "jibun": "478",
+    "name": "한진",
+    "naver_name": "개봉한진타운",
+    "tradeComplex": [
+      "11530",
+      "개봉동",
+      "478",
+      "한진"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 479
+  },
+  {
+    "complex": "3354",
+    "district": "11530",
+    "dong": "신도림동",
+    "jibun": "642",
+    "name": "대림1",
+    "naver_name": "신도림대림1,2차(e편한세상)",
+    "tradeComplex": [
+      "11530",
+      "신도림동",
+      "642",
+      "대림1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 422
+  },
+  {
+    "complex": "3204",
+    "district": "11530",
+    "dong": "구로동",
+    "jibun": "1267",
+    "name": "신도림태영타운",
+    "naver_name": "신도림태영타운",
+    "tradeComplex": [
+      "11530",
+      "구로동",
+      "1267",
+      "신도림태영타운"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 396
+  },
+  {
+    "complex": "3349",
+    "district": "11530",
+    "dong": "개봉동",
+    "jibun": "480",
+    "name": "현대홈타운",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11530",
+      "개봉동",
+      "480",
+      "현대홈타운"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 362
+  },
+  {
+    "complex": "1068",
+    "district": "11530",
+    "dong": "고척동",
+    "jibun": "296",
+    "name": "대우",
+    "naver_name": "고척대우",
+    "tradeComplex": [
+      "11530",
+      "고척동",
+      "296",
+      "대우"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 358
+  },
+  {
+    "complex": "8073",
+    "district": "11530",
+    "dong": "구로동",
+    "jibun": "256-1",
+    "name": "삼성래미안",
+    "naver_name": "삼성래미안",
+    "tradeComplex": [
+      "11530",
+      "구로동",
+      "256-1",
+      "삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 329
+  },
+  {
+    "complex": "26639",
+    "district": "11530",
+    "dong": "온수동",
+    "jibun": "155",
+    "name": "온수힐스테이트",
+    "naver_name": "온수힐스테이트",
+    "tradeComplex": [
+      "11530",
+      "온수동",
+      "155",
+      "온수힐스테이트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 319
+  },
+  {
+    "complex": "18914",
+    "district": "11530",
+    "dong": "구로동",
+    "jibun": "1278",
+    "name": "구로두산위브",
+    "naver_name": "구로두산위브",
+    "tradeComplex": [
+      "11530",
+      "구로동",
+      "1278",
+      "구로두산위브"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 307
+  },
+  {
+    "complex": "140",
+    "district": "11530",
+    "dong": "구로동",
+    "jibun": "1259",
+    "name": "구일우성",
+    "naver_name": "구일우성",
+    "tradeComplex": [
+      "11530",
+      "구로동",
+      "1259",
+      "구일우성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 303
+  },
+  {
+    "complex": "104934",
+    "district": "11530",
+    "dong": "개봉동",
+    "jibun": "492",
+    "name": "개봉푸르지오",
+    "naver_name": "개봉푸르지오",
+    "tradeComplex": [
+      "11530",
+      "개봉동",
+      "492",
+      "개봉푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 294
+  },
+  {
+    "complex": "1076",
+    "district": "11530",
+    "dong": "오류동",
+    "jibun": "338",
+    "name": "동부골든",
+    "naver_name": "동부골든",
+    "tradeComplex": [
+      "11530",
+      "오류동",
+      "338",
+      "동부골든"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 288
+  },
+  {
+    "complex": "1074",
+    "district": "11530",
+    "dong": "신도림동",
+    "jibun": "643",
+    "name": "동아1",
+    "naver_name": "신도림동아1차",
+    "tradeComplex": [
+      "11530",
+      "신도림동",
+      "643",
+      "동아1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 283
+  },
+  {
+    "complex": "115",
+    "district": "11530",
+    "dong": "개봉동",
+    "jibun": "470",
+    "name": "삼환",
+    "naver_name": "삼환",
+    "tradeComplex": [
+      "11530",
+      "개봉동",
+      "470",
+      "삼환"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 279
+  },
+  {
+    "complex": "104347",
+    "district": "11545",
+    "dong": "시흥동",
+    "jibun": "1026",
+    "name": "남서울힐스테이트",
+    "naver_name": "남서울힐스테이트",
+    "tradeComplex": [
+      "11545",
+      "시흥동",
+      "1026",
+      "남서울힐스테이트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 485
+  },
+  {
+    "complex": "169",
+    "district": "11545",
+    "dong": "시흥동",
+    "jibun": "1010",
+    "name": "벽산",
+    "naver_name": "벽산1단지",
+    "tradeComplex": [
+      "11545",
+      "시흥동",
+      "1010",
+      "벽산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 470
+  },
+  {
+    "complex": "107929",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "1147",
+    "name": "금천롯데캐슬골드파크1차",
+    "naver_name": "롯데캐슬골드파크1차",
+    "tradeComplex": [
+      "11545",
+      "독산동",
+      "1147",
+      "금천롯데캐슬골드파크1차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 427
+  },
+  {
+    "complex": "10783",
+    "district": "11545",
+    "dong": "가산동",
+    "jibun": "769",
+    "name": "두산",
+    "naver_name": "두산(772,주상복합)",
+    "tradeComplex": [
+      "11545",
+      "가산동",
+      "769",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 414
+  },
+  {
+    "complex": "164",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "711-2",
+    "name": "금천현대",
+    "naver_name": "금천현대",
+    "tradeComplex": [
+      "11545",
+      "독산동",
+      "711-2",
+      "금천현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 364
+  },
+  {
+    "complex": "109956",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "1155",
+    "name": "금천롯데캐슬골드파크3차",
+    "naver_name": "금천롯데캐슬골드파크3차",
+    "tradeComplex": [
+      "11545",
+      "독산동",
+      "1155",
+      "금천롯데캐슬골드파크3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 336
+  },
+  {
+    "complex": "161",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "1088",
+    "name": "독산주공14단지",
+    "naver_name": "주공14단지",
+    "tradeComplex": [
+      "11545",
+      "독산동",
+      "1088",
+      "독산주공14단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 314
+  },
+  {
+    "complex": "160",
+    "district": "11545",
+    "dong": "가산동",
+    "jibun": "234-46",
+    "name": "삼익",
+    "naver_name": "삼익",
+    "tradeComplex": [
+      "11545",
+      "가산동",
+      "234-46",
+      "삼익"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 268
+  },
+  {
+    "complex": "1080",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "956",
+    "name": "삼익",
+    "naver_name": "삼익",
+    "tradeComplex": [
+      "11545",
+      "독산동",
+      "956",
+      "삼익"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 268
+  },
+  {
+    "complex": "3235",
+    "district": "11545",
+    "dong": "시흥동",
+    "jibun": "5-13",
+    "name": "삼익",
+    "naver_name": "삼익",
+    "tradeComplex": [
+      "11545",
+      "시흥동",
+      "5-13",
+      "삼익"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 268
+  },
+  {
+    "complex": "162",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "1093-4",
+    "name": "한신아파트",
+    "naver_name": "한신",
+    "tradeComplex": [
+      "11545",
+      "독산동",
+      "1093-4",
+      "한신아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 252
+  },
+  {
+    "complex": "3360",
+    "district": "11545",
+    "dong": "시흥동",
+    "jibun": "1011",
+    "name": "우방",
+    "naver_name": "관악우방",
+    "tradeComplex": [
+      "11545",
+      "시흥동",
+      "1011",
+      "우방"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 212
+  },
+  {
+    "complex": "167",
+    "district": "11545",
+    "dong": "시흥동",
+    "jibun": "1002-1",
+    "name": "럭키남서울아파트",
+    "naver_name": "럭키",
+    "tradeComplex": [
+      "11545",
+      "시흥동",
+      "1002-1",
+      "럭키남서울아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 202
+  },
+  {
+    "complex": "165",
+    "district": "11545",
+    "dong": "시흥동",
+    "jibun": "384-12",
+    "name": "남서울건영2",
+    "naver_name": "건영2차",
+    "tradeComplex": [
+      "11545",
+      "시흥동",
+      "384-12",
+      "남서울건영2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 199
+  },
+  {
+    "complex": "105929",
+    "district": "11545",
+    "dong": "가산동",
+    "jibun": "140-36",
+    "name": "비즈트위트바이올렛5차",
+    "naver_name": "비즈트위트바이올렛5차(도시형)",
+    "tradeComplex": [
+      "11545",
+      "가산동",
+      "140-36",
+      "비즈트위트바이올렛5차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 160
+  },
+  {
+    "complex": "3457",
+    "district": "11560",
+    "dong": "영등포동",
+    "jibun": "647",
+    "name": "영등포푸르지오",
+    "naver_name": "영등포푸르지오",
+    "tradeComplex": [
+      "11560",
+      "영등포동",
+      "647",
+      "영등포푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 682
+  },
+  {
+    "complex": "698",
+    "district": "11560",
+    "dong": "대림동",
+    "jibun": "608-1",
+    "name": "현대3차",
+    "naver_name": "현대3차",
+    "tradeComplex": [
+      "11560",
+      "대림동",
+      "608-1",
+      "현대3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 545
+  },
+  {
+    "complex": "1214",
+    "district": "11560",
+    "dong": "문래동5가",
+    "jibun": "21",
+    "name": "현대3차",
+    "naver_name": "현대3차",
+    "tradeComplex": [
+      "11560",
+      "문래동5가",
+      "21",
+      "현대3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 545
+  },
+  {
+    "complex": "738",
+    "district": "11560",
+    "dong": "양평동3가",
+    "jibun": "79",
+    "name": "현대3차",
+    "naver_name": "현대3차",
+    "tradeComplex": [
+      "11560",
+      "양평동3가",
+      "79",
+      "현대3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 545
+  },
+  {
+    "complex": "719",
+    "district": "11560",
+    "dong": "신길동",
+    "jibun": "897-1",
+    "name": "삼환",
+    "naver_name": "삼환",
+    "tradeComplex": [
+      "11560",
+      "신길동",
+      "897-1",
+      "삼환"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 530
+  },
+  {
+    "complex": "3799",
+    "district": "11560",
+    "dong": "양평동1가",
+    "jibun": "245",
+    "name": "삼환",
+    "naver_name": "삼환",
+    "tradeComplex": [
+      "11560",
+      "양평동1가",
+      "245",
+      "삼환"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 530
+  },
+  {
+    "complex": "967",
+    "district": "11560",
+    "dong": "영등포동8가",
+    "jibun": "76-1",
+    "name": "삼환",
+    "naver_name": "영등포삼환",
+    "tradeComplex": [
+      "11560",
+      "영등포동8가",
+      "76-1",
+      "삼환"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 530
+  },
+  {
+    "complex": "109434",
+    "district": "11560",
+    "dong": "신길동",
+    "jibun": "4950",
+    "name": "래미안에스티움",
+    "naver_name": "래미안에스티움",
+    "tradeComplex": [
+      "11560",
+      "신길동",
+      "4950",
+      "래미안에스티움"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 528
+  },
+  {
+    "complex": "735",
+    "district": "11560",
+    "dong": "양평동5가",
+    "jibun": "76",
+    "name": "양평한신",
+    "naver_name": "양평한신",
+    "tradeComplex": [
+      "11560",
+      "양평동5가",
+      "76",
+      "양평한신"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 409
+  },
+  {
+    "complex": "729",
+    "district": "11560",
+    "dong": "양평동2가",
+    "jibun": "38-1",
+    "name": "삼성래미안",
+    "naver_name": "삼성래미안",
+    "tradeComplex": [
+      "11560",
+      "양평동2가",
+      "38-1",
+      "삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 384
+  },
+  {
+    "complex": "109205",
+    "district": "11560",
+    "dong": "영등포동7가",
+    "jibun": "203",
+    "name": "아크로타워스퀘어",
+    "naver_name": "아크로타워스퀘어",
+    "tradeComplex": [
+      "11560",
+      "영등포동7가",
+      "203",
+      "아크로타워스퀘어"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 382
+  },
+  {
+    "complex": "1210",
+    "district": "11560",
+    "dong": "당산동4가",
+    "jibun": "30-1",
+    "name": "당산현대5차",
+    "naver_name": "당산현대5차",
+    "tradeComplex": [
+      "11560",
+      "당산동4가",
+      "30-1",
+      "당산현대5차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 372
+  },
+  {
+    "complex": "2981",
+    "district": "11560",
+    "dong": "당산동5가",
+    "jibun": "42",
+    "name": "당산삼성래미안4차",
+    "naver_name": "당산삼성래미안",
+    "tradeComplex": [
+      "11560",
+      "당산동5가",
+      "42",
+      "당산삼성래미안4차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 351
+  },
+  {
+    "complex": "736",
+    "district": "11560",
+    "dong": "양평동3가",
+    "jibun": "55-1",
+    "name": "경남아너스빌",
+    "naver_name": "경남아너스빌",
+    "tradeComplex": [
+      "11560",
+      "양평동3가",
+      "55-1",
+      "경남아너스빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 340
+  },
+  {
+    "complex": "1217",
+    "district": "11560",
+    "dong": "양평동4가",
+    "jibun": "51-1",
+    "name": "경남아너스빌",
+    "naver_name": "경남아너스빌",
+    "tradeComplex": [
+      "11560",
+      "양평동4가",
+      "51-1",
+      "경남아너스빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 340
+  },
+  {
+    "complex": "3280",
+    "district": "11590",
+    "dong": "노량진동",
+    "jibun": "325",
+    "name": "신동아리버파크",
+    "naver_name": "신동아리버파크",
+    "tradeComplex": [
+      "11590",
+      "노량진동",
+      "325",
+      "신동아리버파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 575
+  },
+  {
+    "complex": "22491",
+    "district": "11590",
+    "dong": "상도동",
+    "jibun": "531",
+    "name": "힐스테이트 상도 센트럴파크",
+    "naver_name": "힐스테이트상도센트럴파크",
+    "tradeComplex": [
+      "11590",
+      "상도동",
+      "531",
+      "힐스테이트 상도 센트럴파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 513
+  },
+  {
+    "complex": "374",
+    "district": "11590",
+    "dong": "사당동",
+    "jibun": "105",
+    "name": "극동(105)",
+    "naver_name": "극동",
+    "tradeComplex": [
+      "11590",
+      "사당동",
+      "105",
+      "극동(105)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 497
+  },
+  {
+    "complex": "364",
+    "district": "11590",
+    "dong": "대방동",
+    "jibun": "501",
+    "name": "대림아파트",
+    "naver_name": "대방대림",
+    "tradeComplex": [
+      "11590",
+      "대방동",
+      "501",
+      "대림아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 479
+  },
+  {
+    "complex": "387",
+    "district": "11590",
+    "dong": "상도동",
+    "jibun": "411",
+    "name": "대림아파트",
+    "naver_name": "대림(411)",
+    "tradeComplex": [
+      "11590",
+      "상도동",
+      "411",
+      "대림아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 479
+  },
+  {
+    "complex": "9194",
+    "district": "11590",
+    "dong": "상도동",
+    "jibun": "431",
+    "name": "래미안상도3차",
+    "naver_name": "래미안상도3차",
+    "tradeComplex": [
+      "11590",
+      "상도동",
+      "431",
+      "래미안상도3차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 422
+  },
+  {
+    "complex": "9311",
+    "district": "11590",
+    "dong": "본동",
+    "jibun": "492",
+    "name": "삼성래미안",
+    "naver_name": "삼성래미안",
+    "tradeComplex": [
+      "11590",
+      "본동",
+      "492",
+      "삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 415
+  },
+  {
+    "complex": "3382",
+    "district": "11590",
+    "dong": "사당동",
+    "jibun": "1133",
+    "name": "삼성래미안",
+    "naver_name": "동작삼성래미안",
+    "tradeComplex": [
+      "11590",
+      "사당동",
+      "1133",
+      "삼성래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 415
+  },
+  {
+    "complex": "384",
+    "district": "11590",
+    "dong": "사당동",
+    "jibun": "169-32",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11590",
+      "사당동",
+      "169-32",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 334
+  },
+  {
+    "complex": "396",
+    "district": "11590",
+    "dong": "신대방동",
+    "jibun": "707",
+    "name": "현대",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11590",
+      "신대방동",
+      "707",
+      "현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 334
+  },
+  {
+    "complex": "380",
+    "district": "11590",
+    "dong": "사당동",
+    "jibun": "105",
+    "name": "사당우성2",
+    "naver_name": "사당우성2단지",
+    "tradeComplex": [
+      "11590",
+      "사당동",
+      "105",
+      "사당우성2"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 322
+  },
+  {
+    "complex": "372",
+    "district": "11590",
+    "dong": "본동",
+    "jibun": "481",
+    "name": "신동아",
+    "naver_name": "본동신동아",
+    "tradeComplex": [
+      "11590",
+      "본동",
+      "481",
+      "신동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 303
+  },
+  {
+    "complex": "935",
+    "district": "11590",
+    "dong": "신대방동",
+    "jibun": "360-17",
+    "name": "신동아",
+    "naver_name": "신동아",
+    "tradeComplex": [
+      "11590",
+      "신대방동",
+      "360-17",
+      "신동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 303
+  },
+  {
+    "complex": "3386",
+    "district": "11590",
+    "dong": "신대방동",
+    "jibun": "713",
+    "name": "롯데낙천대",
+    "naver_name": "보라매롯데낙천대",
+    "tradeComplex": [
+      "11590",
+      "신대방동",
+      "713",
+      "롯데낙천대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 296
+  },
+  {
+    "complex": "391",
+    "district": "11590",
+    "dong": "신대방동",
+    "jibun": "565",
+    "name": "우성1차",
+    "naver_name": "우성1차",
+    "tradeComplex": [
+      "11590",
+      "신대방동",
+      "565",
+      "우성1차"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 294
+  },
+  {
+    "complex": "2988",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1717",
+    "name": "관악푸르지오",
+    "naver_name": "관악푸르지오",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1717",
+      "관악푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 834
+  },
+  {
+    "complex": "2986",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1718",
+    "name": "벽산블루밍",
+    "naver_name": "벽산블루밍1차",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1718",
+      "벽산블루밍"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 786
+  },
+  {
+    "complex": "14233",
+    "district": "11620",
+    "dong": "신림동",
+    "jibun": "1733",
+    "name": "벽산블루밍",
+    "naver_name": "벽산블루밍",
+    "tradeComplex": [
+      "11620",
+      "신림동",
+      "1733",
+      "벽산블루밍"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 786
+  },
+  {
+    "complex": "8895",
+    "district": "11620",
+    "dong": "신림동",
+    "jibun": "1735",
+    "name": "관악산휴먼시아2단지",
+    "naver_name": "관악산휴먼시아2단지",
+    "tradeComplex": [
+      "11620",
+      "신림동",
+      "1735",
+      "관악산휴먼시아2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 710
+  },
+  {
+    "complex": "3034",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1708",
+    "name": "두산",
+    "naver_name": "두산",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1708",
+      "두산"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 640
+  },
+  {
+    "complex": "45",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1000",
+    "name": "현대(관악)",
+    "naver_name": "현대",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1000",
+      "현대(관악)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 553
+  },
+  {
+    "complex": "58",
+    "district": "11620",
+    "dong": "신림동",
+    "jibun": "1694",
+    "name": "신림현대",
+    "naver_name": "신림현대",
+    "tradeComplex": [
+      "11620",
+      "신림동",
+      "1694",
+      "신림현대"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 467
+  },
+  {
+    "complex": "55",
+    "district": "11620",
+    "dong": "신림동",
+    "jibun": "1703-1",
+    "name": "LIG대학마을(건영아파트3차)",
+    "naver_name": "건영3차",
+    "tradeComplex": [
+      "11620",
+      "신림동",
+      "1703-1",
+      "LIG대학마을(건영아파트3차)"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 243
+  },
+  {
+    "complex": "114809",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1730",
+    "name": "e편한세상서울대입구1단지",
+    "naver_name": "e편한세상서울대입구",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1730",
+      "e편한세상서울대입구1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 199
+  },
+  {
+    "complex": "48",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1698-1",
+    "name": "보라매삼성",
+    "naver_name": "보라매삼성",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1698-1",
+      "보라매삼성"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 180
+  },
+  {
+    "complex": "107439",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1728",
+    "name": "관악파크푸르지오",
+    "naver_name": "관악파크푸르지오",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1728",
+      "관악파크푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 172
+  },
+  {
+    "complex": "108126",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1730-1",
+    "name": "e편한세상서울대입구2단지",
+    "naver_name": "e편한세상서울대입구2차",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1730-1",
+      "e편한세상서울대입구2단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 155
+  },
+  {
+    "complex": "100344",
+    "district": "11620",
+    "dong": "신림동",
+    "jibun": "1735-1",
+    "name": "관악산휴먼시아1단지",
+    "naver_name": "관악산휴먼시아1단지",
+    "tradeComplex": [
+      "11620",
+      "신림동",
+      "1735-1",
+      "관악산휴먼시아1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 153
+  },
+  {
+    "complex": "3030",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1707-1",
+    "name": "은천2단지아파트",
+    "naver_name": "은천2단지",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1707-1",
+      "은천2단지아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 149
+  },
+  {
+    "complex": "9497",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1719",
+    "name": "관악동부센트레빌",
+    "naver_name": "관악동부센트레빌",
+    "tradeComplex": [
+      "11620",
+      "봉천동",
+      "1719",
+      "관악동부센트레빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 143
+  },
+  {
+    "complex": "22853",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "20-43",
+    "name": "반포자이",
+    "naver_name": "반포자이",
+    "tradeComplex": [
+      "11650",
+      "반포동",
+      "20-43",
+      "반포자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 741
+  },
+  {
+    "complex": "23759",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "18-1",
+    "name": "래미안퍼스티지",
+    "naver_name": "래미안퍼스티지",
+    "tradeComplex": [
+      "11650",
+      "반포동",
+      "18-1",
+      "래미안퍼스티지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 554
+  },
+  {
+    "complex": "107613",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "2-12",
+    "name": "아크로리버파크",
+    "naver_name": "아크로리버파크",
+    "tradeComplex": [
+      "11650",
+      "반포동",
+      "2-12",
+      "아크로리버파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 413
+  },
+  {
+    "complex": "481",
+    "district": "11650",
+    "dong": "서초동",
+    "jibun": "1685",
+    "name": "삼풍아파트",
+    "naver_name": "삼풍",
+    "tradeComplex": [
+      "11650",
+      "서초동",
+      "1685",
+      "삼풍아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 366
+  },
+  {
+    "complex": "101887",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "30-26",
+    "name": "반포리체",
+    "naver_name": "반포리체",
+    "tradeComplex": [
+      "11650",
+      "반포동",
+      "30-26",
+      "반포리체"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 291
+  },
+  {
+    "complex": "132779",
+    "district": "11650",
+    "dong": "우면동",
+    "jibun": "788",
+    "name": "호반써밋서초파크",
+    "naver_name": "호반써밋서초파크",
+    "tradeComplex": [
+      "11650",
+      "우면동",
+      "788",
+      "호반써밋서초파크"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 290
+  },
+  {
+    "complex": "3009",
+    "district": "11650",
+    "dong": "잠원동",
+    "jibun": "157",
+    "name": "동아",
+    "naver_name": "동아",
+    "tradeComplex": [
+      "11650",
+      "잠원동",
+      "157",
+      "동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 257
+  },
+  {
+    "complex": "103577",
+    "district": "11650",
+    "dong": "우면동",
+    "jibun": "773",
+    "name": "서초힐스",
+    "naver_name": "서초힐스",
+    "tradeComplex": [
+      "11650",
+      "우면동",
+      "773",
+      "서초힐스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 253
+  },
+  {
+    "complex": "107901",
+    "district": "11650",
+    "dong": "내곡동",
+    "jibun": "411",
+    "name": "서초더샵포레",
+    "naver_name": "서초더샵포레",
+    "tradeComplex": [
+      "11650",
+      "내곡동",
+      "411",
+      "서초더샵포레"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 246
+  },
+  {
+    "complex": "11844",
+    "district": "11650",
+    "dong": "서초동",
+    "jibun": "1312-3",
+    "name": "롯데캐슬클래식",
+    "naver_name": "롯데캐슬클래식",
+    "tradeComplex": [
+      "11650",
+      "서초동",
+      "1312-3",
+      "롯데캐슬클래식"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 214
+  },
+  {
+    "complex": "445",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "60-4",
+    "name": "반포미도",
+    "naver_name": "반포미도2차",
+    "tradeComplex": [
+      "11650",
+      "반포동",
+      "60-4",
+      "반포미도"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 212
+  },
+  {
+    "complex": "1285",
+    "district": "11650",
+    "dong": "서초동",
+    "jibun": "1682",
+    "name": "서초래미안",
+    "naver_name": "서초래미안",
+    "tradeComplex": [
+      "11650",
+      "서초동",
+      "1682",
+      "서초래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 205
+  },
+  {
+    "complex": "142155",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "1",
+    "name": "래미안원베일리",
+    "naver_name": "래미안원베일리",
+    "tradeComplex": [
+      "11650",
+      "반포동",
+      "1",
+      "래미안원베일리"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 204
+  },
+  {
+    "complex": "11539",
+    "district": "11650",
+    "dong": "서초동",
+    "jibun": "1445-4",
+    "name": "래미안서초유니빌",
+    "naver_name": "래미안서초유니빌(주상복합)",
+    "tradeComplex": [
+      "11650",
+      "서초동",
+      "1445-4",
+      "래미안서초유니빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 185
+  },
+  {
+    "complex": "124311",
+    "district": "11650",
+    "dong": "서초동",
+    "jibun": "1755",
+    "name": "래미안 리더스원",
+    "naver_name": "래미안리더스원",
+    "tradeComplex": [
+      "11650",
+      "서초동",
+      "1755",
+      "래미안 리더스원"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 182
+  },
+  {
+    "complex": "11698",
+    "district": "11680",
+    "dong": "도곡동",
+    "jibun": "527",
+    "name": "도곡렉슬",
+    "naver_name": "도곡렉슬",
+    "tradeComplex": [
+      "11680",
+      "도곡동",
+      "527",
+      "도곡렉슬"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 688
+  },
+  {
+    "complex": "483",
+    "district": "11680",
+    "dong": "개포동",
+    "jibun": "12",
+    "name": "성원대치2단지아파트",
+    "naver_name": "대치2단지",
+    "tradeComplex": [
+      "11680",
+      "개포동",
+      "12",
+      "성원대치2단지아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 623
+  },
+  {
+    "complex": "641",
+    "district": "11680",
+    "dong": "수서동",
+    "jibun": "746",
+    "name": "까치마을",
+    "naver_name": "까치마을",
+    "tradeComplex": [
+      "11680",
+      "수서동",
+      "746",
+      "까치마을"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 577
+  },
+  {
+    "complex": "112228",
+    "district": "11680",
+    "dong": "개포동",
+    "jibun": "1280",
+    "name": "래미안블레스티지",
+    "naver_name": "래미안블레스티지",
+    "tradeComplex": [
+      "11680",
+      "개포동",
+      "1280",
+      "래미안블레스티지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 397
+  },
+  {
+    "complex": "671",
+    "district": "11680",
+    "dong": "수서동",
+    "jibun": "736",
+    "name": "신동아",
+    "naver_name": "신동아",
+    "tradeComplex": [
+      "11680",
+      "수서동",
+      "736",
+      "신동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 384
+  },
+  {
+    "complex": "8478",
+    "district": "11680",
+    "dong": "청담동",
+    "jibun": "134-16",
+    "name": "신동아",
+    "naver_name": "신동아",
+    "tradeComplex": [
+      "11680",
+      "청담동",
+      "134-16",
+      "신동아"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 384
+  },
+  {
+    "complex": "119219",
+    "district": "11680",
+    "dong": "개포동",
+    "jibun": "1282",
+    "name": "개포래미안포레스트",
+    "naver_name": "개포래미안포레스트",
+    "tradeComplex": [
+      "11680",
+      "개포동",
+      "1282",
+      "개포래미안포레스트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 356
+  },
+  {
+    "complex": "3038",
+    "district": "11680",
+    "dong": "도곡동",
+    "jibun": "467",
+    "name": "타워팰리스1",
+    "naver_name": "타워팰리스1차(주상복합)",
+    "tradeComplex": [
+      "11680",
+      "도곡동",
+      "467",
+      "타워팰리스1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 280
+  },
+  {
+    "complex": "983",
+    "district": "11680",
+    "dong": "일원동",
+    "jibun": "719",
+    "name": "푸른마을아파트101동~111동",
+    "naver_name": "푸른마을",
+    "tradeComplex": [
+      "11680",
+      "일원동",
+      "719",
+      "푸른마을아파트101동~111동"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 278
+  },
+  {
+    "complex": "13814",
+    "district": "11680",
+    "dong": "역삼동",
+    "jibun": "757",
+    "name": "역삼래미안",
+    "naver_name": "역삼래미안",
+    "tradeComplex": [
+      "11680",
+      "역삼동",
+      "757",
+      "역삼래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 275
+  },
+  {
+    "complex": "180280",
+    "district": "11680",
+    "dong": "대치동",
+    "jibun": "1027",
+    "name": "래미안대치팰리스",
+    "naver_name": "래미안대치팰리스",
+    "tradeComplex": [
+      "11680",
+      "대치동",
+      "1027",
+      "래미안대치팰리스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 270
+  },
+  {
+    "complex": "103578",
+    "district": "11680",
+    "dong": "세곡동",
+    "jibun": "533",
+    "name": "세곡푸르지오",
+    "naver_name": "세곡푸르지오",
+    "tradeComplex": [
+      "11680",
+      "세곡동",
+      "533",
+      "세곡푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 266
+  },
+  {
+    "complex": "8936",
+    "district": "11680",
+    "dong": "논현동",
+    "jibun": "275",
+    "name": "동부센트레빌",
+    "naver_name": "논현동부센트레빌",
+    "tradeComplex": [
+      "11680",
+      "논현동",
+      "275",
+      "동부센트레빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 261
+  },
+  {
+    "complex": "8710",
+    "district": "11680",
+    "dong": "대치동",
+    "jibun": "670",
+    "name": "동부센트레빌",
+    "naver_name": "동부센트레빌",
+    "tradeComplex": [
+      "11680",
+      "대치동",
+      "670",
+      "동부센트레빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 261
+  },
+  {
+    "complex": "588",
+    "district": "11680",
+    "dong": "역삼동",
+    "jibun": "716",
+    "name": "동부센트레빌",
+    "naver_name": "동부센트레빌",
+    "tradeComplex": [
+      "11680",
+      "역삼동",
+      "716",
+      "동부센트레빌"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 261
+  },
+  {
+    "complex": "22675",
+    "district": "11710",
+    "dong": "신천동",
+    "jibun": "17",
+    "name": "파크리오",
+    "naver_name": "파크리오",
+    "tradeComplex": [
+      "11710",
+      "신천동",
+      "17",
+      "파크리오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1889
+  },
+  {
+    "complex": "111515",
+    "district": "11710",
+    "dong": "가락동",
+    "jibun": "913",
+    "name": "헬리오시티",
+    "naver_name": "헬리오시티",
+    "tradeComplex": [
+      "11710",
+      "가락동",
+      "913",
+      "헬리오시티"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1419
+  },
+  {
+    "complex": "22746",
+    "district": "11710",
+    "dong": "잠실동",
+    "jibun": "22",
+    "name": "리센츠",
+    "naver_name": "리센츠",
+    "tradeComplex": [
+      "11710",
+      "잠실동",
+      "22",
+      "리센츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1252
+  },
+  {
+    "complex": "22627",
+    "district": "11710",
+    "dong": "잠실동",
+    "jibun": "19",
+    "name": "잠실엘스",
+    "naver_name": "잠실엘스",
+    "tradeComplex": [
+      "11710",
+      "잠실동",
+      "19",
+      "잠실엘스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1125
+  },
+  {
+    "complex": "19127",
+    "district": "11710",
+    "dong": "잠실동",
+    "jibun": "35",
+    "name": "트리지움",
+    "naver_name": "트리지움",
+    "tradeComplex": [
+      "11710",
+      "잠실동",
+      "35",
+      "트리지움"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 818
+  },
+  {
+    "complex": "609",
+    "district": "11710",
+    "dong": "문정동",
+    "jibun": "145",
+    "name": "문정시영",
+    "naver_name": "문정시영",
+    "tradeComplex": [
+      "11710",
+      "문정동",
+      "145",
+      "문정시영"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 645
+  },
+  {
+    "complex": "15011",
+    "district": "11710",
+    "dong": "잠실동",
+    "jibun": "44",
+    "name": "레이크팰리스",
+    "naver_name": "레이크팰리스",
+    "tradeComplex": [
+      "11710",
+      "잠실동",
+      "44",
+      "레이크팰리스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 592
+  },
+  {
+    "complex": "104122",
+    "district": "11710",
+    "dong": "장지동",
+    "jibun": "879",
+    "name": "송파더센트레",
+    "naver_name": "송파더센트레",
+    "tradeComplex": [
+      "11710",
+      "장지동",
+      "879",
+      "송파더센트레"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 497
+  },
+  {
+    "complex": "352",
+    "district": "11710",
+    "dong": "거여동",
+    "jibun": "290",
+    "name": "거여1단지",
+    "naver_name": "거여1단지",
+    "tradeComplex": [
+      "11710",
+      "거여동",
+      "290",
+      "거여1단지"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 416
+  },
+  {
+    "complex": "3033",
+    "district": "11710",
+    "dong": "문정동",
+    "jibun": "1",
+    "name": "문정래미안",
+    "naver_name": "문정래미안",
+    "tradeComplex": [
+      "11710",
+      "문정동",
+      "1",
+      "문정래미안"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 406
+  },
+  {
+    "complex": "595",
+    "district": "11710",
+    "dong": "가락동",
+    "jibun": "70-19",
+    "name": "대림",
+    "naver_name": "가락대림",
+    "tradeComplex": [
+      "11710",
+      "가락동",
+      "70-19",
+      "대림"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 385
+  },
+  {
+    "complex": "107544",
+    "district": "11710",
+    "dong": "문정동",
+    "jibun": "618",
+    "name": "파크하비오",
+    "naver_name": "송파파크하비오푸르지오",
+    "tradeComplex": [
+      "11710",
+      "문정동",
+      "618",
+      "파크하비오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 334
+  },
+  {
+    "complex": "103139",
+    "district": "11710",
+    "dong": "송파동",
+    "jibun": "243",
+    "name": "래미안송파파인탑",
+    "naver_name": "래미안송파파인탑",
+    "tradeComplex": [
+      "11710",
+      "송파동",
+      "243",
+      "래미안송파파인탑"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 308
+  },
+  {
+    "complex": "594",
+    "district": "11710",
+    "dong": "가락동",
+    "jibun": "95-1",
+    "name": "가락금호아파트",
+    "naver_name": "가락금호",
+    "tradeComplex": [
+      "11710",
+      "가락동",
+      "95-1",
+      "가락금호아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 301
+  },
+  {
+    "complex": "628",
+    "district": "11710",
+    "dong": "오금동",
+    "jibun": "165",
+    "name": "상아2차아파트",
+    "naver_name": "상아2차",
+    "tradeComplex": [
+      "11710",
+      "오금동",
+      "165",
+      "상아2차아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 279
+  },
+  {
+    "complex": "113907",
+    "district": "11740",
+    "dong": "고덕동",
+    "jibun": "693",
+    "name": "고덕그라시움",
+    "naver_name": "고덕그라시움",
+    "tradeComplex": [
+      "11740",
+      "고덕동",
+      "693",
+      "고덕그라시움"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1092
+  },
+  {
+    "complex": "3118",
+    "district": "11740",
+    "dong": "암사동",
+    "jibun": "509",
+    "name": "선사현대아파트",
+    "naver_name": "선사현대",
+    "tradeComplex": [
+      "11740",
+      "암사동",
+      "509",
+      "선사현대아파트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1018
+  },
+  {
+    "complex": "22570",
+    "district": "11740",
+    "dong": "암사동",
+    "jibun": "414-2",
+    "name": "롯데캐슬퍼스트",
+    "naver_name": "강동롯데캐슬퍼스트",
+    "tradeComplex": [
+      "11740",
+      "암사동",
+      "414-2",
+      "롯데캐슬퍼스트"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 1007
+  },
+  {
+    "complex": "119341",
+    "district": "11740",
+    "dong": "상일동",
+    "jibun": "519",
+    "name": "고덕아르테온",
+    "naver_name": "고덕아르테온",
+    "tradeComplex": [
+      "11740",
+      "상일동",
+      "519",
+      "고덕아르테온"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 785
+  },
+  {
+    "complex": "19578",
+    "district": "11740",
+    "dong": "암사동",
+    "jibun": "413",
+    "name": "프라이어팰리스",
+    "naver_name": "프라이어팰리스",
+    "tradeComplex": [
+      "11740",
+      "암사동",
+      "413",
+      "프라이어팰리스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 558
+  },
+  {
+    "complex": "113432",
+    "district": "11740",
+    "dong": "명일동",
+    "jibun": "359",
+    "name": "래미안솔베뉴",
+    "naver_name": "래미안솔베뉴",
+    "tradeComplex": [
+      "11740",
+      "명일동",
+      "359",
+      "래미안솔베뉴"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 528
+  },
+  {
+    "complex": "117309",
+    "district": "11740",
+    "dong": "상일동",
+    "jibun": "514",
+    "name": "고덕롯데캐슬베네루체",
+    "naver_name": "고덕롯데캐슬베네루체",
+    "tradeComplex": [
+      "11740",
+      "상일동",
+      "514",
+      "고덕롯데캐슬베네루체"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 437
+  },
+  {
+    "complex": "107537",
+    "district": "11740",
+    "dong": "천호동",
+    "jibun": "571",
+    "name": "래미안강동팰리스",
+    "naver_name": "래미안강동팰리스(주상복합)",
+    "tradeComplex": [
+      "11740",
+      "천호동",
+      "571",
+      "래미안강동팰리스"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 399
+  },
+  {
+    "complex": "27212",
+    "district": "11740",
+    "dong": "둔촌동",
+    "jibun": "630",
+    "name": "둔촌푸르지오",
+    "naver_name": "둔촌푸르지오",
+    "tradeComplex": [
+      "11740",
+      "둔촌동",
+      "630",
+      "둔촌푸르지오"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 334
+  },
+  {
+    "complex": "121977",
+    "district": "11740",
+    "dong": "상일동",
+    "jibun": "521",
+    "name": "고덕자이",
+    "naver_name": "고덕자이",
+    "tradeComplex": [
+      "11740",
+      "상일동",
+      "521",
+      "고덕자이"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 318
+  },
+  {
+    "complex": "1324",
+    "district": "11740",
+    "dong": "상일동",
+    "jibun": "476",
+    "name": "중앙하이츠",
+    "naver_name": "명일중앙하이츠",
+    "tradeComplex": [
+      "11740",
+      "상일동",
+      "476",
+      "중앙하이츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 311
+  },
+  {
+    "complex": "3321",
+    "district": "11740",
+    "dong": "성내동",
+    "jibun": "410-2",
+    "name": "중앙하이츠",
+    "naver_name": "중앙하이츠",
+    "tradeComplex": [
+      "11740",
+      "성내동",
+      "410-2",
+      "중앙하이츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 311
+  },
+  {
+    "complex": "904",
+    "district": "11740",
+    "dong": "암사동",
+    "jibun": "493-14",
+    "name": "중앙하이츠",
+    "naver_name": "중앙하이츠",
+    "tradeComplex": [
+      "11740",
+      "암사동",
+      "493-14",
+      "중앙하이츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 311
+  },
+  {
+    "complex": "1261",
+    "district": "11740",
+    "dong": "천호동",
+    "jibun": "305",
+    "name": "중앙하이츠",
+    "naver_name": "중앙하이츠",
+    "tradeComplex": [
+      "11740",
+      "천호동",
+      "305",
+      "중앙하이츠"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 311
+  },
+  {
+    "complex": "1156",
+    "district": "11740",
+    "dong": "고덕동",
+    "jibun": "486",
+    "name": "아남1",
+    "naver_name": "아남",
+    "tradeComplex": [
+      "11740",
+      "고덕동",
+      "486",
+      "아남1"
+    ],
+    "tradeCrosswalkVerified": true,
+    "trade_count": 291
+  }
+]

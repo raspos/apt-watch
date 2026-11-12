@@ -1,0 +1,252 @@
+[
+  {
+    "complex": "793",
+    "district": "11110",
+    "dong": "명륜2가",
+    "jibun": "236",
+    "name": "아남2",
+    "naver_name": "아남",
+    "deal_count": 9,
+    "total_households": 436
+  },
+  {
+    "complex": "3833",
+    "district": "11140",
+    "dong": "신당동",
+    "jibun": "844",
+    "name": "남산타운",
+    "naver_name": "남산타운",
+    "deal_count": 100,
+    "total_households": 5150
+  },
+  {
+    "complex": "117804",
+    "district": "11170",
+    "dong": "한강로3가",
+    "jibun": "98",
+    "name": "센트럴파크",
+    "naver_name": "센트럴파크(주상복합)",
+    "deal_count": 108,
+    "total_households": 1140
+  },
+  {
+    "complex": "1286",
+    "district": "11200",
+    "dong": "금호동1가",
+    "jibun": "633",
+    "name": "벽산",
+    "naver_name": "벽산",
+    "deal_count": 176,
+    "total_households": 1707
+  },
+  {
+    "complex": "13457",
+    "district": "11215",
+    "dong": "자양동",
+    "jibun": "227-7",
+    "name": "더샵스타시티",
+    "naver_name": "더샵스타시티(주상복합)",
+    "deal_count": 64,
+    "total_households": 1177
+  },
+  {
+    "complex": "163360",
+    "district": "11230",
+    "dong": "이문동",
+    "jibun": "432",
+    "name": "래미안라그란데",
+    "naver_name": "래미안라그란데",
+    "deal_count": 128,
+    "total_households": 3069
+  },
+  {
+    "complex": "119588",
+    "district": "11260",
+    "dong": "면목동",
+    "jibun": "1545",
+    "name": "사가정센트럴아이파크",
+    "naver_name": "사가정센트럴아이파크",
+    "deal_count": 68,
+    "total_households": 1505
+  },
+  {
+    "complex": "582",
+    "district": "11290",
+    "dong": "돈암동",
+    "jibun": "",
+    "name": "한신,한진",
+    "naver_name": "한신,한진",
+    "deal_count": 104,
+    "total_households": 4509
+  },
+  {
+    "complex": "146699",
+    "district": "11305",
+    "dong": "미아동",
+    "jibun": "1374",
+    "name": "북서울자이폴라리스(1단지)",
+    "naver_name": "북서울자이폴라리스",
+    "deal_count": 74,
+    "total_households": 1045
+  },
+  {
+    "complex": "9106",
+    "district": "11320",
+    "dong": "창동",
+    "jibun": "825",
+    "name": "북한산아이파크5차",
+    "naver_name": "북한산아이파크",
+    "deal_count": 70,
+    "total_households": 2061
+  },
+  {
+    "complex": "206",
+    "district": "11350",
+    "dong": "상계동",
+    "jibun": "670",
+    "name": "상계주공9(고층)",
+    "naver_name": "상계주공9단지",
+    "deal_count": 110,
+    "total_households": 2830
+  },
+  {
+    "complex": "134528",
+    "district": "11380",
+    "dong": "수색동",
+    "jibun": "419",
+    "name": "DMCSK뷰아이파크포레",
+    "naver_name": "DMCSK뷰아이파크포레",
+    "deal_count": 74,
+    "total_households": 1486
+  },
+  {
+    "complex": "108064",
+    "district": "11410",
+    "dong": "남가좌동",
+    "jibun": "385",
+    "name": "DMC파크뷰자이1단지",
+    "naver_name": "DMC파크뷰자이",
+    "deal_count": 135,
+    "total_households": 4300
+  },
+  {
+    "complex": "104917",
+    "district": "11440",
+    "dong": "아현동",
+    "jibun": "",
+    "name": "마포래미안푸르지오",
+    "naver_name": "마포래미안푸르지오",
+    "deal_count": 165,
+    "total_households": 3885
+  },
+  {
+    "complex": "117329",
+    "district": "11470",
+    "dong": "신월동",
+    "jibun": "1075",
+    "name": "목동센트럴아이파크위브1단지",
+    "naver_name": "목동센트럴아이파크위브",
+    "deal_count": 108,
+    "total_households": 3045
+  },
+  {
+    "complex": "103305",
+    "district": "11500",
+    "dong": "화곡동",
+    "jibun": "1165",
+    "name": "강서힐스테이트",
+    "naver_name": "강서힐스테이트",
+    "deal_count": 113,
+    "total_households": 2603
+  },
+  {
+    "complex": "3349",
+    "district": "11530",
+    "dong": "개봉동",
+    "jibun": "480",
+    "name": "현대홈타운",
+    "naver_name": "현대",
+    "deal_count": 61,
+    "total_households": 2412
+  },
+  {
+    "complex": "107929",
+    "district": "11545",
+    "dong": "독산동",
+    "jibun": "1147",
+    "name": "금천롯데캐슬골드파크1차",
+    "naver_name": "롯데캐슬골드파크1차",
+    "deal_count": 67,
+    "total_households": 1743
+  },
+  {
+    "complex": "109434",
+    "district": "11560",
+    "dong": "신길동",
+    "jibun": "4950",
+    "name": "래미안에스티움",
+    "naver_name": "래미안에스티움",
+    "deal_count": 72,
+    "total_households": 1722
+  },
+  {
+    "complex": "374",
+    "district": "11590",
+    "dong": "사당동",
+    "jibun": "105",
+    "name": "극동(105)",
+    "naver_name": "극동",
+    "deal_count": 85,
+    "total_households": 1550
+  },
+  {
+    "complex": "2986",
+    "district": "11620",
+    "dong": "봉천동",
+    "jibun": "1718",
+    "name": "벽산블루밍",
+    "naver_name": "벽산블루밍1차",
+    "deal_count": 96,
+    "total_households": 2105
+  },
+  {
+    "complex": "142155",
+    "district": "11650",
+    "dong": "반포동",
+    "jibun": "1",
+    "name": "래미안원베일리",
+    "naver_name": "래미안원베일리",
+    "deal_count": 920,
+    "total_households": 2990
+  },
+  {
+    "complex": "134062",
+    "district": "11680",
+    "dong": "개포동",
+    "jibun": "660-4",
+    "name": "디에이치퍼스티어아이파크",
+    "naver_name": "디에이치퍼스티어아이파크",
+    "deal_count": 445,
+    "total_households": 6702
+  },
+  {
+    "complex": "111515",
+    "district": "11710",
+    "dong": "가락동",
+    "jibun": "913",
+    "name": "헬리오시티",
+    "naver_name": "헬리오시티",
+    "deal_count": 975,
+    "total_households": 9510
+  },
+  {
+    "complex": "155817",
+    "district": "11740",
+    "dong": "둔촌동",
+    "jibun": "633",
+    "name": "올림픽파크포레온",
+    "naver_name": "올림픽파크포레온",
+    "deal_count": 1141,
+    "total_households": 12032
+  }
+]

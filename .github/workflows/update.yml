@@ -1,8 +1,9 @@
-name: Update APT WATCH
+name: Update APT WATCH (Manual / Cloud S3 Backup)
+# NOTE: Active daily operation runs via local Windows Task Scheduler at 06:00 KST.
+# Cloud S3 runner is reserved for manual workflow_dispatch when cloud storage credentials are configured.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 21 * * *'
+
 permissions:
   contents: read
   pages: write

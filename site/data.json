@@ -27255,7 +27255,7 @@
   },
   "districtMonths": 2375,
   "version": "stratum-month-fixed-effects-v1",
-  "calculatedAt": "2026-11-12T16:58:52+09:00",
+  "calculatedAt": "2026-11-12T17:20:04+09:00",
   "researchSeries": {
     "all": [
       {
@@ -49542,10 +49542,10 @@
   },
   "publicationRule": "provisional-seoul-min-100-v1",
   "asking": {
-    "lastSuccess": "2026-11-12T04:43:51Z",
-    "successes": 108,
+    "lastSuccess": "2026-11-12T08:17:39Z",
+    "successes": 110,
     "failures": 0,
-    "listings": 11702,
+    "listings": 11993,
     "target": null,
     "sentiment": null,
     "premium": null,
@@ -49609,8 +49609,8 @@
     "regions": {
       "all": {
         "coverage": {
-          "roster": 108,
-          "success": 108
+          "roster": 110,
+          "success": 110
         },
         "concessions": {
           "1": {
@@ -49670,28 +49670,28 @@
           "percent": null
         },
         "spread": {
-          "sample": 57,
-          "percent": 5.392156862745101,
-          "medianBenchmarkAgeDays": 25,
+          "sample": 60,
+          "percent": 5.297168608111558,
+          "medianBenchmarkAgeDays": 25.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "reason": "90일 표본 57개 그룹 정상 산출",
+          "reason": "90일 표본 60개 그룹 정상 산출",
           "actual90d": {
-            "sample": 57,
-            "percent": 5.392156862745101,
-            "groups": 57
+            "sample": 60,
+            "percent": 5.297168608111558,
+            "groups": 60
           },
           "longTerm180d": {
-            "sample": 184,
-            "percent": 6.680613668061364,
-            "groups": 184,
+            "sample": 194,
+            "percent": 6.697963483719571,
+            "groups": 194,
             "medianBenchmarkAgeDays": 40.0
           },
           "modelEst": {
-            "sample": 395,
-            "percent": 7.254971060232562,
-            "groups": 395,
+            "sample": 410,
+            "percent": 7.263005945969181,
+            "groups": 410,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -49714,7 +49714,7 @@
           {
             "day": "2026-11-12",
             "index": 100.0,
-            "matched": 11702,
+            "matched": 11993,
             "baseDay": "2026-11-12"
           }
         ]
@@ -50953,8 +50953,8 @@
       },
       "11380": {
         "coverage": {
-          "roster": 4,
-          "success": 4
+          "roster": 5,
+          "success": 5
         },
         "concessions": {
           "1": {
@@ -51027,15 +51027,15 @@
             "groups": 2
           },
           "longTerm180d": {
-            "sample": 7,
-            "percent": 7.658157602663707,
-            "groups": 7,
-            "medianBenchmarkAgeDays": 49
+            "sample": 12,
+            "percent": 7.969206189866885,
+            "groups": 12,
+            "medianBenchmarkAgeDays": 45.5
           },
           "modelEst": {
-            "sample": 17,
-            "percent": 8.176541452798759,
-            "groups": 17,
+            "sample": 24,
+            "percent": 8.047577046139077,
+            "groups": 24,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51058,15 +51058,15 @@
           {
             "day": "2026-11-12",
             "index": 100.0,
-            "matched": 340,
+            "matched": 510,
             "baseDay": "2026-11-12"
           }
         ]
       },
       "11410": {
         "coverage": {
-          "roster": 4,
-          "success": 4
+          "roster": 5,
+          "success": 5
         },
         "concessions": {
           "1": {
@@ -51126,28 +51126,28 @@
           "percent": null
         },
         "spread": {
-          "sample": 1,
-          "percent": 1.7543859649122862,
-          "medianBenchmarkAgeDays": 22,
+          "sample": 4,
+          "percent": 4.090189873417726,
+          "medianBenchmarkAgeDays": 24.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "reason": "90일 표본 1개 그룹 정상 산출",
+          "reason": "90일 표본 4개 그룹 정상 산출",
           "actual90d": {
-            "sample": 1,
-            "percent": 1.7543859649122862,
-            "groups": 1
+            "sample": 4,
+            "percent": 4.090189873417726,
+            "groups": 4
           },
           "longTerm180d": {
-            "sample": 5,
-            "percent": 5.231689088191338,
-            "groups": 5,
-            "medianBenchmarkAgeDays": 25
+            "sample": 10,
+            "percent": 6.589669554058386,
+            "groups": 10,
+            "medianBenchmarkAgeDays": 28.5
           },
           "modelEst": {
-            "sample": 14,
-            "percent": 6.049011346441957,
-            "groups": 14,
+            "sample": 22,
+            "percent": 6.436249922966352,
+            "groups": 22,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51170,7 +51170,7 @@
           {
             "day": "2026-11-12",
             "index": 100.0,
-            "matched": 223,
+            "matched": 344,
             "baseDay": "2026-11-12"
           }
         ]
@@ -52523,33 +52523,33 @@
     "spreadHistory": {},
     "validation": "hypotheses-only",
     "pressure": {
-      "spreadPct": 5.392156862745101,
+      "spreadPct": 5.297168608111558,
       "cutSharePct": null,
       "absorptionPct": null,
       "tenure": {
-        "count": 11702,
-        "medianDays": 6.0,
+        "count": 11993,
+        "medianDays": 6,
         "meanDays": 8.7,
         "minDays": 0,
         "maxDays": 30
       },
       "weightsComparison": {
-        "equalWeight": 205492.2,
-        "stockWeight": 217794.9,
-        "stratifiedWeight": 157768.9,
-        "equalWeightEok": 20.55,
-        "stockWeightEok": 21.78,
+        "equalWeight": 204581.1,
+        "stockWeight": 217404.0,
+        "stratifiedWeight": 157770.2,
+        "equalWeightEok": 20.46,
+        "stockWeightEok": 21.74,
         "stratifiedWeightEok": 15.78,
-        "analyzedComplexes": 101,
-        "analyzedListings": 11702,
-        "stockVsEqualDiffPct": 5.99
+        "analyzedComplexes": 103,
+        "analyzedListings": 11993,
+        "stockVsEqualDiffPct": 6.27
       },
       "regime": {
         "regime": "데이터 축적 중",
         "explanation": "서울 아파트 시장심리지수는 현재 1일차 기준선 구축 단계로, 7일/30일 연속 수집을 통해 가격 조정 및 거래 활력 지표를 축적하고 있습니다.",
         "leverage": "데이터 축적 중 (판별 유예)",
-        "spreadStatus": "비교 표본 축적 중 (참고 괴리율 +5.4%)",
-        "tenureStatus": "중위 체류기간 6.0일 (평균 7.9일)"
+        "spreadStatus": "비교 표본 축적 중 (참고 괴리율 +5.3%)",
+        "tenureStatus": "중위 체류기간 6일 (평균 7.9일)"
       }
     }
   }

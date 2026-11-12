@@ -135,11 +135,26 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600)
     # 9. Full Test Suite Verification
     print("\n[Step 7] Full Test Suite Verification...")
     test_res = subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'],
-                              capture_output=True, text=True, encoding='utf-8')
+                              cwd=str(ROOT), capture_output=True, text=True, encoding='utf-8')
     if test_res.returncode != 0:
         print(f"Unit test failure:\n{test_res.stderr}\n{test_res.stdout}")
         raise RuntimeError("Post-run unit tests failed")
     print("All unit tests passed successfully!")
+    
+    # 10. Automated Public Deployment via GitHub
+    print("\n[Step 8] Pushing verified site payload to GitHub...")
+    subprocess.run(['git', 'add', 'site/data.json'], cwd=str(ROOT), capture_output=True, text=True)
+    git_diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], cwd=str(ROOT))
+    if git_diff.returncode != 0:
+        commit_msg = f"data: daily update {target_day}"
+        subprocess.run(['git', 'commit', '-m', commit_msg], cwd=str(ROOT), capture_output=True, text=True)
+        push_res = subprocess.run(['git', 'push', 'origin', 'main'], cwd=str(ROOT), capture_output=True, text=True)
+        if push_res.returncode == 0:
+            print(f"Successfully pushed daily update ({target_day}) to GitHub origin main.")
+        else:
+            print(f"Warning: git push returned code {push_res.returncode}: {push_res.stderr}")
+    else:
+        print("site/data.json is unchanged; no new git commit needed.")
     
     end_time = datetime.now(ZoneInfo('Asia/Seoul'))
     total_elapsed = (end_time - start_time).total_seconds()
