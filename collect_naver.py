@@ -224,22 +224,54 @@ def main():
                         continue
                 observed_utc = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
                 print(f'{observed_utc} opening complex {key} ({target.get("name")})', flush=True)
+                t_start = time.monotonic()
+                err_msg = None
                 try:
                     rows, groups = collect(page, target)
                     success = True
                 except PermissionError as error:
+                    err_msg = str(error)
+                    duration_sec = round(time.monotonic() - t_start, 2)
                     import_delivery(db, manifest, [dict(complex=key, observed=observed_utc,
                                     success=False, rows=[])], day, args.district)
+                    db.execute('''
+                        CREATE TABLE IF NOT EXISTS collection_telemetry (
+                            day TEXT, complex TEXT, district TEXT, name TEXT,
+                            started_at TEXT, duration_sec REAL, listings_count INTEGER,
+                            expected_count INTEGER, success INTEGER, error_message TEXT,
+                            PRIMARY KEY(day, complex)
+                        )
+                    ''')
+                    db.execute('INSERT OR REPLACE INTO collection_telemetry VALUES (?,?,?,?,?,?,?,?,?,?)',
+                               (day, key, target.get('district'), target.get('name'), observed_utc, duration_sec, 0, 0, 0, err_msg))
                     print(json.dumps(dict(complex=key, error=str(error))), flush=True)
                     return 75
                 except (ValueError, RuntimeError, BrowserError) as error:
                     rows, groups, success = [], None, False
+                    err_msg = str(error)
                     print(json.dumps(dict(complex=key, error=str(error))), flush=True)
+                
+                duration_sec = round(time.monotonic() - t_start, 2)
                 batch = dict(complex=key, observed=observed_utc, success=success, rows=rows,
                              expectedCount=len(rows))
                 result = import_delivery(db, manifest, [batch], day, args.district)
+                
+                try:
+                    db.execute('''
+                        CREATE TABLE IF NOT EXISTS collection_telemetry (
+                            day TEXT, complex TEXT, district TEXT, name TEXT,
+                            started_at TEXT, duration_sec REAL, listings_count INTEGER,
+                            expected_count INTEGER, success INTEGER, error_message TEXT,
+                            PRIMARY KEY(day, complex)
+                        )
+                    ''')
+                    db.execute('INSERT OR REPLACE INTO collection_telemetry VALUES (?,?,?,?,?,?,?,?,?,?)',
+                               (day, key, target.get('district'), target.get('name'), observed_utc, duration_sec, len(rows), groups or 0, 1 if success else 0, err_msg))
+                except Exception as db_err:
+                    pass
+
                 print(json.dumps(dict(complex=key, groups=groups, fetched=len(rows),
-                                      success=success, **{'coverage': result})), flush=True)
+                                      duration_sec=duration_sec, success=success, **{'coverage': result})), flush=True)
                 time.sleep(1)
         finally:
             browser.close()
