@@ -54,16 +54,18 @@ p{overflow-wrap:anywhere}
 /* 본문 */
 main{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter) 24px}
 .sec{margin-top:28px}
-.sec>.hd{display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap;margin-bottom:10px}
+.sec>.hd{display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap;margin-bottom:12px}
 .sec .step{font-size:11px;color:var(--ink-3);letter-spacing:.06em;margin-bottom:2px}
 .sec .q{font-size:13px;color:var(--ink-2);margin:2px 0 0}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.panel-sub{margin-top:14px}
+.panel-sub-title{font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 8px}
 .tools-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .seg{display:inline-flex}
 .seg button{border-radius:0;margin-left:-1px;min-height:30px}
 .seg button:first-child{border-radius:var(--radius-sm) 0 0 var(--radius-sm);margin-left:0}
 .seg button:last-child{border-radius:0 var(--radius-sm) var(--radius-sm) 0}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
+.seg button.seg-on,.seg button[aria-pressed="true"],.seg button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
 .chart{position:relative}
 canvas{display:block;width:100%;height:300px;touch-action:pan-y}
 .readout{font-size:13px;color:var(--ink-2);margin:8px 0 0;min-height:1.5em}
@@ -74,13 +76,71 @@ canvas{display:block;width:100%;height:300px;touch-action:pan-y}
 .kv span{display:block;font-size:12px;color:var(--ink-3)}
 .kv b{font-size:20px}
 
+/* ==========================================================================
+   서울 25개 구 시장심리 지도 (Interactive Map)
+   ========================================================================== */
+.map-summary-bar{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;margin-bottom:14px}
+.map-summary-item{display:inline-flex;align-items:center;gap:6px;color:var(--ink-2)}
+.map-summary-item b{color:var(--ink);font-variant-numeric:tabular-nums}
+.map-summary-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid var(--line)}
+.map-summary-pill.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.map-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,1fr);gap:16px;align-items:start}
+.map-container{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;position:relative}
+.map-svg-wrap{width:100%;aspect-ratio:640/520;position:relative;overflow:hidden;border-radius:var(--radius-sm);background:transparent}
+.map-svg{width:100%;height:100%;display:block;user-select:none}
+
+.district-path{cursor:pointer;stroke:#ffffff;stroke-width:1.2px;stroke-linejoin:round;stroke-linecap:round;transition:fill .15s ease,stroke .15s ease,filter .15s ease}
+[data-theme="dark"] .district-path{stroke:#1a1a19}
+.district-path:hover{filter:brightness(1.12);stroke:var(--ink);stroke-width:2.2px}
+.district-path.selected{stroke:var(--ink);stroke-width:3px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.35))}
+.district-path.tier-180{stroke-dasharray:4 2;stroke-width:2.2px;stroke:var(--ink-2)}
+.district-path.tier-insufficient{stroke-dasharray:2 2;stroke-width:1.4px;stroke:var(--ink-3)}
+
+.district-label{font-size:11px;font-weight:600;text-anchor:middle;dominant-baseline:central;pointer-events:none;fill:var(--ink);transition:fill .15s ease}
+[data-theme="dark"] .district-label{fill:#f6f6f4}
+.district-val{font-size:9.5px;font-weight:700;text-anchor:middle;pointer-events:none}
+
+.map-legend{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px;font-size:11px;color:var(--ink-2)}
+.legend-bar-wrap{display:flex;align-items:center;gap:10px}
+.legend-bar{flex:1;height:10px;border-radius:3px;background:linear-gradient(to right, #2a78d6, #bad4f5 35%, #e8e8e5 50%, #f4c7b8 65%, #d95926);border:1px solid var(--line)}
+.legend-labels{display:flex;justify-content:space-between;width:100%;font-size:10px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.legend-swatches{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:2px}
+.legend-swatch{display:inline-flex;align-items:center;gap:4px}
+.swatch-box{width:12px;height:12px;border-radius:2px;display:inline-block;border:1px solid var(--line)}
+.swatch-box.tier-180{border:1.5px dashed var(--ink-2);background:#fef7e0}
+[data-theme="dark"] .swatch-box.tier-180{background:rgba(249,171,0,0.25)}
+.swatch-box.insufficient{background:#deded9;border:1.5px dashed var(--ink-3)}
+[data-theme="dark"] .swatch-box.insufficient{background:#2b2b28}
+
+/* 선택 자치구 상세 카드 */
+.district-detail-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:14px}
+.detail-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.detail-head h3{font-size:20px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.detail-main{display:flex;flex-direction:column;gap:4px}
+.detail-val{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.15;font-variant-numeric:tabular-nums}
+.detail-sub{font-size:12px;color:var(--ink-2)}
+
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:12px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line)}
+.detail-cell{display:flex;flex-direction:column}
+.detail-cell-l{font-size:11px;color:var(--ink-3)}
+.detail-cell-v{font-size:15px;font-weight:700;color:var(--ink);margin-top:2px;font-variant-numeric:tabular-nums}
+.detail-cell-v.small{font-size:13px;font-weight:600}
+
+.detail-note{background:var(--surface-2);border-radius:var(--radius-sm);padding:8px 10px;font-size:11.5px;color:var(--ink-2);line-height:1.45;border-left:3px solid var(--line)}
+.detail-note.warn{border-left-color:var(--up)}
+.detail-foot{font-size:11px;color:var(--ink-3);display:flex;justify-content:space-between;align-items:center}
+
 /* 표 */
 .tbl{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th,td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{font-size:12px;color:var(--ink-3);font-weight:600}
 td.na{color:var(--ink-3)}
+tbody tr{cursor:pointer;transition:background .1s ease}
+tbody tr:hover{background:var(--surface-2)}
+tbody tr.row-selected{background:var(--surface-2);font-weight:700;outline:2px solid var(--accent);outline-offset:-2px}
 
 /* 접기 */
 details.more{margin-top:28px}
@@ -94,6 +154,15 @@ details.more p{font-size:13px;color:var(--ink-2)}
 footer{max-width:var(--wrap);margin:0 auto;padding:16px var(--gutter) 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line)}
 footer a{color:var(--ink-3)}
 
+/* ==========================================================================
+   반응형 브레이크포인트
+   ========================================================================== */
+@media(max-width:840px){
+  .map-grid{grid-template-columns:1fr}
+  .district-detail-card{order:2}
+  .map-container{order:1}
+}
+
 @media(max-width:760px){
   .top{grid-template-columns:1fr auto}.meta{grid-column:1/-1;order:3}
   .strip{grid-template-columns:1fr}
@@ -101,5 +170,13 @@ footer a{color:var(--ink-3)}
   .tile .v{font-size:24px}
   canvas{height:230px}
   th,td{padding:7px 4px;font-size:13px}
+  .map-summary-bar{font-size:12px;padding:8px 10px;gap:6px 12px}
+  .district-detail-card{padding:14px}
+  .detail-val{font-size:26px}
 }
-@media(max-width:360px){.brand h1{font-size:20px}.tools button{padding:5px 8px}}
+
+@media(max-width:360px){
+  .brand h1{font-size:20px}
+  .tools button{padding:5px 8px}
+  .map-summary-bar{flex-direction:column;align-items:flex-start}
+}

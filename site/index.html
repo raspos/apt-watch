@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>APT워치</title>
-<meta name="description" content="서울 아파트 호가와 실거래가격의 차이로 시장심리를 읽는 모니터.">
+<title>APT워치 · 서울 아파트 시장심리 지도</title>
+<meta name="description" content="서울 25개 자치구 아파트 호가와 실거래가격의 차이, 호가조정 및 거래활력을 인터랙티브 지도로 관측하는 모니터.">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="watch-tokens.css">
 <link rel="stylesheet" href="style.css">
@@ -27,7 +27,7 @@
   <div class="tools"><button id="theme" type="button" aria-label="화면 테마 전환">테마</button></div>
 </header>
 
-<!-- ① 지금 시장은 어떤 상태인가 -->
+<!-- ① 서울 아파트 시장심리 (핵심 3대 지표) -->
 <p class="lede" id="marketState"></p>
 <section class="strip" aria-label="핵심 3대 지표">
   <article class="tile" id="card-divergence">
@@ -54,11 +54,55 @@
 </section>
 
 <main>
-  <!-- ② 최근 어떤 변화가 있었나 -->
-  <section class="sec" aria-labelledby="h-series">
+  <!-- ② 서울 25개 구 시장심리 지도 (메인 시각화) -->
+  <section class="sec sec-map" id="section-map" aria-labelledby="h-map">
+    <div class="hd hd-map">
+      <div>
+        <div class="step">01 · 공간 시각화</div>
+        <h2 id="h-map">서울 25개 구 시장심리 지도</h2>
+        <p class="q">서울 자치구별 가격괴리 수준과 호가 조정 움직임을 실제 행정경계 지도에서 관측합니다.</p>
+      </div>
+      <!-- 3개 모드 선택기 -->
+      <div class="seg" id="mapModeSeg" role="tablist" aria-label="지도 분석 모드">
+        <button type="button" role="tab" class="seg-on" id="mode-spread" aria-selected="true" data-mode="spread">가격괴리</button>
+        <button type="button" role="tab" id="mode-concession" aria-selected="false" data-mode="concession">호가조정</button>
+        <button type="button" role="tab" id="mode-vitality" aria-selected="false" data-mode="vitality">거래활력</button>
+      </div>
+    </div>
+
+    <!-- 시장 전체 방향성 요약 바 -->
+    <div class="map-summary-bar" id="mapSummaryBar" role="status">
+      <!-- 동적으로 계산되어 주입됩니다 -->
+    </div>
+
+    <!-- 메인 지도 & 선택 자치구 상세 카드 (Desktop: 2열 / Mobile: 1열) -->
+    <div class="map-grid">
+      <div class="map-container">
+        <div class="map-svg-wrap" id="mapSvgWrap" role="region" aria-label="서울 25개 구 시장심리 지도">
+          <!-- SVG가 JS로 렌더링됩니다 -->
+        </div>
+        <div class="map-legend" id="mapLegend">
+          <!-- 모드별 범례가 렌더링됩니다 -->
+        </div>
+      </div>
+
+      <!-- 선택 자치구 상세 분석 패널 -->
+      <aside class="district-detail-card" id="districtDetailCard" aria-live="polite">
+        <!-- 클릭된 자치구의 상세 통계가 렌더링됩니다 -->
+      </aside>
+    </div>
+  </section>
+
+  <!-- ③ 서울 시장심리 변화 (시계열 & 관측일 선택) -->
+  <section class="sec" id="section-change" aria-labelledby="h-series">
     <div class="hd">
-      <div><div class="step">01 · 변화</div><h2 id="h-series">실거래가격지수와 호가</h2><p class="q" id="seriesQ">월별 실거래가격지수와 일별 호가지수는 집계 주기가 달라 한 축에 겹치지 않습니다.</p></div>
+      <div>
+        <div class="step">02 · 시계열 변화</div>
+        <h2 id="h-series">서울 시장심리 변화</h2>
+        <p class="q" id="seriesQ">관측일마다 집계된 호가와 실거래 기준가격의 시계열 추이입니다.</p>
+      </div>
       <div class="tools-row">
+        <label>기준일 <select id="obsDateSelect"><option value="2026-11-12">2026-11-12 (최초 기준선)</option></select></label>
         <label>지역 <select id="district"><option value="all">서울 전체</option></select></label>
         <div class="seg" id="metricSeg" role="group" aria-label="지표">
           <button type="button" data-metric="price" aria-pressed="true">실거래 (월별)</button>
@@ -77,40 +121,49 @@
       <p class="readout" id="readout" aria-live="polite"></p>
       <p class="note" id="chartNote"></p>
     </div>
-  </section>
 
-  <!-- ③ 무엇이 변화를 만들었나 -->
-  <section class="sec" aria-labelledby="h-spread">
-    <div class="hd">
-      <div><div class="step">02 · 원인</div><h2 id="h-spread">가격괴리의 변화</h2><p class="q">관측일마다 계산한 호가와 실거래 기준가격의 차이(%)입니다.</p></div>
-    </div>
-    <div class="panel">
+    <!-- 관측일별 가격괴리율 차트 -->
+    <div class="panel panel-sub">
+      <h3 class="panel-sub-title">관측일별 가격괴리율 이력</h3>
       <div class="chart"><canvas id="chart2" tabindex="0" role="img" aria-label="관측일별 가격괴리율"></canvas></div>
       <p class="readout" id="readout2" aria-live="polite"></p>
     </div>
-  </section>
 
-  <!-- ④ 호가 인상·인하 -->
-  <section class="sec" aria-labelledby="h-adj">
-    <div class="hd">
-      <div><div class="step">03 · 호가</div><h2 id="h-adj">호가 인상·인하 움직임</h2><p class="q">같은 매물 ID가 이틀 이상 연속 관측될 때부터 산출합니다.</p></div>
+    <!-- 호가조정 통계 요약 -->
+    <div class="panel panel-sub">
+      <h3 class="panel-sub-title">동일 매물 연속 관측 통계</h3>
+      <div class="kv" id="adjKv"></div>
     </div>
-    <div class="panel"><div class="kv" id="adjKv"></div></div>
   </section>
 
-  <!-- ⑤ 어디서 차이가 나타나는가 -->
-  <section class="sec" aria-labelledby="h-region">
+  <!-- ④ 서울 25개 구 비교표 (지도와 양방향 연동) -->
+  <section class="sec" id="section-table" aria-labelledby="h-region">
     <div class="hd">
-      <div><div class="step">04 · 지역</div><h2 id="h-region">서울 25개 구 비교</h2><p class="q" id="regionQ"></p></div>
+      <div>
+        <div class="step">03 · 상세 수치</div>
+        <h2 id="h-region">서울 25개 구 비교표</h2>
+        <p class="q" id="regionQ"></p>
+      </div>
       <label>정렬 <select id="ranking"><option value="district">자치구</option><option value="spread">가격괴리율</option><option value="listings">호가 매물수</option><option value="cuts">호가조정 (7일)</option><option value="absorption">거래활력</option></select></label>
     </div>
     <div class="panel tbl">
-      <table><thead><tr><th>자치구</th><th>호가 관측</th><th>호가조정</th><th>가격괴리율 (구분)</th><th>거래활력</th></tr></thead><tbody id="districtRows"></tbody></table>
+      <table>
+        <thead>
+          <tr>
+            <th>자치구</th>
+            <th>호가 관측</th>
+            <th>호가조정</th>
+            <th>가격괴리율 (구분)</th>
+            <th>거래활력</th>
+          </tr>
+        </thead>
+        <tbody id="districtRows"></tbody>
+      </table>
     </div>
-    <p class="note">가격괴리지수 구분: 90일 실거래(동일 평형·층 국토부 실거래 3건 이상), 180일 실거래(장기 실측 참고치), 비교자료 부족(12개월 내 비교 실거래 부족).</p>
+    <p class="note">가격괴리지수 구분: 90일 실거래(동일 평형·층 국토부 실거래 3건 이상), 180일 실거래(장기 실측 참고치), 비교자료 부족(12개월 내 비교 실거래 부족). 표 행을 클릭하면 상단 지도의 해당 자치구가 연동 선택됩니다.</p>
   </section>
 
-  <!-- ⑥ 신뢰도 -->
+  <!-- ⑤ 데이터 출처와 산출 방법 -->
   <details class="more" id="method">
     <summary>데이터 출처와 산출 방법</summary>
     <p>가격괴리지수는 동일 단지·전용면적·층 구간의 현재 호가와 실거래 기준가격의 차이를 % 단위로 측정합니다. 비교 표본이 부족한 초기에는 대표지수를 산출하지 않고 참고치로만 안내합니다.</p>
@@ -121,6 +174,7 @@
   </details>
 </main>
 <footer><a href="https://raspos.github.io/databrew/">© 2026 databrew</a><a href="https://www.data.go.kr/data/15126468/openapi.do">국토교통부 실거래 자료</a></footer>
+<script src="seoul-districts-svg.js"></script>
 <script src="app.js" defer></script>
 </body>
 </html>

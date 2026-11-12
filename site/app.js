@@ -3,6 +3,7 @@ const get = id => document.getElementById(id);
 const nf = n => Number(n).toLocaleString('ko-KR');
 let data;
 const state = {metric: 'price', range: 0};
+const mapState = {mode: 'spread', selectedCode: '11680'};
 
 /* ---------- 날짜·숫자 표시 ---------- */
 const pad = n => String(n).padStart(2, '0');
@@ -22,7 +23,6 @@ function cell(tr, value, cls) {
 }
 
 /* ---------- 차트 (공통 규칙: 선 2px, 격자 --line, 보간 없음, 잠정 점선) ---------- */
-const FONT = '12px -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif';
 const charts = [];
 function dayNum(s) { return Math.round(Date.parse(s + 'T00:00:00Z') / 86400000); }
 function monthNum(s) { const [y, m] = s.split('-'); return Number(y) * 12 + Number(m); }
@@ -33,9 +33,7 @@ function makeChart(cfg) {
   const empty = document.createElement('div');
   empty.className = 'empty'; empty.hidden = true;
   canvas.parentNode.insertBefore(empty, canvas);
-  const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const geo = () => ({w: canvas.clientWidth, h: canvas.clientHeight, left: 44, right: 10, top: 12, bottom: 22});
-  const connected = (a, b) => cfg.daily() ? dayNum(b.key) - dayNum(a.key) === 1 : monthNum(b.key) - monthNum(a.key) === 1;
 
   function load() {
     const all = cfg.points();
@@ -59,65 +57,75 @@ function makeChart(cfg) {
       readout.textContent = ''; return;
     }
     canvas.hidden = false; empty.hidden = true;
-    const g = geo(), ratio = window.devicePixelRatio || 1;
-    canvas.width = g.w * ratio; canvas.height = g.h * ratio;
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    const vals = pts.filter(p => p.value !== null).map(p => p.value);
-    if (cfg.baseline != null) vals.push(cfg.baseline);
-    let lo = Math.min(...vals), hi = Math.max(...vals);
-    const padv = (hi - lo || 2) * 0.12; lo -= padv; hi += padv;
-    const y = v => g.top + (hi - v) * (g.h - g.top - g.bottom) / (hi - lo);
-    ctx.font = FONT; ctx.textBaseline = 'alphabetic';
-    ctx.fillStyle = css('--ink-3'); ctx.strokeStyle = css('--line'); ctx.lineWidth = 1; ctx.setLineDash([]);
-    for (let i = 0; i < 4; i++) {
-      const v = lo + (hi - lo) * i / 3, at = y(v);
-      ctx.textAlign = 'right'; ctx.fillText(v.toFixed(cfg.digits), g.left - 6, at + 4);
-      ctx.beginPath(); ctx.moveTo(g.left, at); ctx.lineTo(g.w - g.right, at); ctx.stroke();
+    const g = geo();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = g.w * dpr; canvas.height = g.h * dpr;
+    ctx.resetTransform?.(); ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, g.w, g.h);
+
+    const vals = pts.map(p => p.value).filter(v => v !== null);
+    if (!vals.length) {
+      canvas.hidden = true; empty.hidden = false; empty.textContent = cfg.emptyText();
+      return;
     }
+    let minV = Math.min(...vals), maxV = Math.max(...vals);
+    if (cfg.baseline != null) { minV = Math.min(minV, cfg.baseline); maxV = Math.max(maxV, cfg.baseline); }
+    const span = Math.max(0.001, maxV - minV);
+    const yAt = v => g.h - g.bottom - ((v - minV) / span) * (g.h - g.top - g.bottom);
+
+    const isDark = document.documentElement.dataset.theme === 'dark' ||
+      (!document.documentElement.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const lineClr = isDark ? '#34342f' : '#e6e6e2';
+    const textClr = isDark ? '#888880' : '#888880';
+    const accentClr = isDark ? '#eb6834' : '#d95926';
+
+    // Baseline & Grid
+    ctx.strokeStyle = lineClr; ctx.lineWidth = 1; ctx.setLineDash([]);
     if (cfg.baseline != null) {
-      ctx.strokeStyle = css('--ink-3'); ctx.setLineDash([4, 4]);
-      ctx.beginPath(); ctx.moveTo(g.left, y(cfg.baseline)); ctx.lineTo(g.w - g.right, y(cfg.baseline)); ctx.stroke(); ctx.setLineDash([]);
+      const by = yAt(cfg.baseline);
+      ctx.beginPath(); ctx.moveTo(g.left, by); ctx.lineTo(g.w - g.right, by); ctx.stroke();
     }
-    ctx.fillStyle = css('--ink-3');
-    ctx.textAlign = 'left'; ctx.fillText(pts[0].key, g.left, g.h - 4);
-    ctx.textAlign = 'right'; ctx.fillText(pts.at(-1).key, g.w - g.right, g.h - 4);
-    const ink = css('--ink');
-    ctx.strokeStyle = ink; ctx.fillStyle = ink; ctx.lineWidth = 2;
-    pts.forEach((p, i) => {
-      if (p.value === null) return;
-      const prev = pts[i - 1];
-      if (prev && prev.value !== null && connected(prev, p)) {
-        ctx.setLineDash(p.provisional ? [4, 4] : []);
-        ctx.beginPath(); ctx.moveTo(xAt(i - 1, g), y(prev.value)); ctx.lineTo(xAt(i, g), y(p.value)); ctx.stroke();
-      } else {
-        ctx.beginPath(); ctx.arc(xAt(i, g), y(p.value), 2.5, 0, Math.PI * 2); ctx.fill();
-      }
-    });
-    ctx.setLineDash([]);
-    const at = hover >= 0 && hover < pts.length ? hover : pts.length - 1;
-    const hp = pts[at];
-    if (hp.value !== null) {
-      ctx.strokeStyle = css('--ink-3'); ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(xAt(at, g), g.top); ctx.lineTo(xAt(at, g), g.h - g.bottom); ctx.stroke();
-      ctx.fillStyle = ink; ctx.beginPath(); ctx.arc(xAt(at, g), y(hp.value), 4, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(g.left, g.top); ctx.lineTo(g.left, g.h - g.bottom); ctx.stroke();
+
+    // Data Line
+    ctx.strokeStyle = accentClr; ctx.lineWidth = 2; ctx.beginPath();
+    let started = false;
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      if (p.value === null) { started = false; continue; }
+      const x = xAt(i, g), y = yAt(p.value);
+      if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
     }
-    readout.textContent = cfg.read(hp);
+    ctx.stroke();
+
+    // Points
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      if (p.value === null) continue;
+      const x = xAt(i, g), y = yAt(p.value);
+      ctx.fillStyle = i === hover ? (isDark ? '#ffffff' : '#111111') : accentClr;
+      ctx.beginPath(); ctx.arc(x, y, i === hover ? 4 : 2, 0, Math.PI * 2); ctx.fill();
+    }
+
+    const last = pts.at(-1);
+    if (last && last.value !== null) readout.textContent = cfg.read(last);
   }
-  function setHover(e) {
-    if (!pts.length) return;
-    const g = geo(), x = e.clientX - canvas.getBoundingClientRect().left;
-    hover = Math.max(0, Math.min(pts.length - 1, Math.round((x - g.left) / (g.w - g.left - g.right) * (pts.length - 1))));
-    draw();
-  }
-  canvas.addEventListener('pointermove', setHover);
-  canvas.addEventListener('pointerdown', setHover);
-  canvas.addEventListener('pointerleave', () => { hover = -1; draw(); });
-  canvas.addEventListener('keydown', e => {
-    if (!pts.length || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
-    const cur = hover >= 0 ? hover : pts.length - 1;
-    hover = Math.max(0, Math.min(pts.length - 1, cur + (e.key === 'ArrowRight' ? 1 : -1)));
-    e.preventDefault(); draw();
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect(), g = geo();
+    const x = e.clientX - rect.left;
+    let closest = -1, dist = 999;
+    for (let i = 0; i < pts.length; i++) {
+      const px = xAt(i, g);
+      if (Math.abs(x - px) < dist) { dist = Math.abs(x - px); closest = i; }
+    }
+    if (closest !== hover && closest !== -1 && pts[closest].value !== null) {
+      hover = closest; draw();
+      readout.textContent = cfg.read(pts[hover]);
+    }
   });
+  canvas.addEventListener('mouseleave', () => { hover = -1; draw(); });
+
   new ResizeObserver(() => draw()).observe(canvas);
   const api = {draw, reset() { hover = -1; }};
   charts.push(api);
@@ -139,6 +147,7 @@ const chart1 = makeChart({
     ? `${p.key} · 호가지수 ${p.value === null ? '미산출' : p.value.toFixed(2)} · 비교 매물 ${nf(p.samples)}건 · 첫 관측일 = 100`
     : `${p.key} · ${p.value === null ? (p.withheld || '표본 부족으로 미산출') : p.value.toFixed(2)} · 거래 ${nf(p.samples)}건 · 비교 표본 ${nf(p.matched)}개` + (p.modelGroups != null ? ` · 모형 그룹 ${nf(p.modelGroups)}개` : '') + (p.provisional ? ' · 잠정' : '')
 });
+
 const chart2 = makeChart({
   canvas: 'chart2', readout: 'readout2', ranged: false, digits: 1, baseline: 0,
   daily: () => true,
@@ -151,6 +160,312 @@ const chart2 = makeChart({
   read: p => `${p.key} · 괴리율 ${p.value === null ? '미산출' : signed(p.value)} · 비교 그룹 ${nf(p.samples)}개`
 });
 
+/* ==========================================================================
+   서울 25개 구 시장심리 지도 (Interactive Map)
+   ========================================================================== */
+
+function getDivergingColor(pct, isDark) {
+  if (pct == null) return isDark ? '#262624' : '#deded9';
+  // 0% neighborhood (-0.5% ~ +0.5%)
+  if (pct >= -0.5 && pct <= 0.5) return isDark ? '#2d2d2a' : '#edece8';
+
+  if (pct > 0) {
+    if (pct < 3.0) return isDark ? '#4d271a' : '#fddcd2';
+    if (pct < 6.0) return isDark ? '#78341f' : '#f9b6a0';
+    if (pct < 10.0) return isDark ? '#a84524' : '#f1845c';
+    if (pct < 15.0) return isDark ? '#d95926' : '#e65928';
+    return isDark ? '#eb6834' : '#c73d10';
+  } else {
+    if (pct > -3.0) return isDark ? '#172d47' : '#d5e5fa';
+    if (pct > -6.0) return isDark ? '#1f4575' : '#a4c7f4';
+    if (pct > -10.0) return isDark ? '#2a61a6' : '#679fe8';
+    return isDark ? '#3987e5' : '#2f78d6';
+  }
+}
+
+function renderSeoulMap() {
+  const wrap = get('mapSvgWrap');
+  if (!wrap || !window.SEOUL_DISTRICTS_SVG) return;
+
+  const isDark = document.documentElement.dataset.theme === 'dark' ||
+    (!document.documentElement.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  const districtsSvg = window.SEOUL_DISTRICTS_SVG;
+  let svgHtml = `<svg viewBox="0 0 640 520" class="map-svg" role="img" aria-label="서울시 25개 자치구 시장심리 지도">`;
+
+  // 1. Path elements
+  districtsSvg.forEach(d => {
+    const c = d.code;
+    const r = data.market.regions[c] || {};
+    const sp = r.spread || {};
+    const act = sp.actual90d?.percent ?? sp.percent ?? null;
+    const lng = sp.longTerm180d?.percent ?? null;
+    const status = sp.status;
+    const displayVal = act != null ? act : lng;
+
+    let fillClr, cls = ['district-path'];
+    if (mapState.mode === 'spread') {
+      if (status === '장기 실측 참고치') {
+        cls.push('tier-180');
+        fillClr = getDivergingColor(lng, isDark);
+      } else if (status === '데이터 부족' || displayVal == null) {
+        cls.push('tier-insufficient');
+        fillClr = isDark ? '#262624' : '#deded9';
+      } else {
+        fillClr = getDivergingColor(act, isDark);
+      }
+    } else if (mapState.mode === 'concession') {
+      // 1일차 기준선 단계
+      fillClr = isDark ? '#262624' : '#e6e6e2';
+    } else if (mapState.mode === 'vitality') {
+      // 30일 패널 구축 단계
+      fillClr = isDark ? '#262624' : '#e6e6e2';
+    }
+
+    if (mapState.selectedCode === c) cls.push('selected');
+
+    svgHtml += `<path class="${cls.join(' ')}" id="map-dist-${c}" data-code="${c}" data-name="${d.name}" d="${d.d}" fill="${fillClr}"></path>`;
+  });
+
+  // 2. Text Labels & Values
+  districtsSvg.forEach(d => {
+    const c = d.code;
+    const r = data.market.regions[c] || {};
+    const sp = r.spread || {};
+    const act = sp.actual90d?.percent ?? sp.percent ?? null;
+    const lng = sp.longTerm180d?.percent ?? null;
+    const displayVal = act != null ? act : lng;
+
+    let valText = '';
+    let valClr = isDark ? '#d4d4cc' : '#555550';
+    if (mapState.mode === 'spread') {
+      if (sp.status === '데이터 부족' || displayVal == null) {
+        valText = '부족';
+        valClr = isDark ? '#888880' : '#888880';
+      } else {
+        valText = signed(displayVal);
+        valClr = displayVal > 0 ? (isDark ? '#ff9a70' : '#b83e10') : (displayVal < 0 ? (isDark ? '#8ab4f8' : '#1a5ab0') : valClr);
+      }
+    } else if (mapState.mode === 'concession') {
+      valText = '대기';
+    } else if (mapState.mode === 'vitality') {
+      valText = '대기';
+    }
+
+    svgHtml += `<g class="district-text-group" pointer-events="none">
+      <text class="district-label" x="${d.cx}" y="${d.cy - 6}">${d.name.replace('구', '')}</text>
+      <text class="district-val" x="${d.cx}" y="${d.cy + 7}" fill="${valClr}">${valText}</text>
+    </g>`;
+  });
+
+  svgHtml += `</svg>`;
+  wrap.innerHTML = svgHtml;
+
+  // Add click listeners to paths
+  wrap.querySelectorAll('.district-path').forEach(p => {
+    p.addEventListener('click', () => {
+      const targetCode = p.dataset.code;
+      selectDistrict(targetCode, true);
+    });
+  });
+
+  renderMapLegend();
+}
+
+function selectDistrict(c, scrollTable = false) {
+  mapState.selectedCode = c;
+
+  // 1. Update Map SVG paths
+  const wrap = get('mapSvgWrap');
+  if (wrap) {
+    wrap.querySelectorAll('.district-path').forEach(p => {
+      p.classList.toggle('selected', p.dataset.code === c);
+    });
+  }
+
+  // 2. Update Detail Card
+  renderDistrictDetail(c);
+
+  // 3. Update District Select in Series Section
+  const sel = get('district');
+  if (sel && sel.value !== c) {
+    sel.value = c;
+    charts.forEach(ch => { ch.reset(); ch.draw(); });
+  }
+
+  // 4. Highlight Table Row in Section 04
+  const tbody = get('districtRows');
+  if (tbody) {
+    let matchedRow = null;
+    tbody.querySelectorAll('tr').forEach(tr => {
+      const isMatch = tr.dataset.code === c;
+      tr.classList.toggle('row-selected', isMatch);
+      if (isMatch) matchedRow = tr;
+    });
+    if (scrollTable && matchedRow) {
+      matchedRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+}
+
+function renderMapLegend() {
+  const el = get('mapLegend');
+  if (!el) return;
+
+  if (mapState.mode === 'spread') {
+    el.innerHTML = `
+      <div class="legend-bar-wrap">
+        <span style="font-size:10px;color:var(--down)">-10%</span>
+        <div class="legend-bar"></div>
+        <span style="font-size:10px;color:var(--up)">+15%</span>
+      </div>
+      <div class="legend-labels">
+        <span>호가 &lt; 실거래 (낮음)</span>
+        <span>0% 기준 (일치)</span>
+        <span>호가 &gt; 실거래 (높음)</span>
+      </div>
+      <div class="legend-swatches">
+        <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 90일 실거래 (22개 구)</span>
+        <span class="legend-swatch"><span class="swatch-box tier-180"></span> 180일 실거래 (서초·강남)</span>
+        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 비교자료 부족 (종로)</span>
+      </div>
+    `;
+  } else if (mapState.mode === 'concession') {
+    el.innerHTML = `
+      <div class="legend-swatches" style="margin:0">
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--up)"></span> 인상 우세</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--down)"></span> 인하 우세</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--surface-2)"></span> 변화 미미</span>
+        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 데이터 축적 중 (2회차 연속 관측 대기)</span>
+      </div>
+    `;
+  } else if (mapState.mode === 'vitality') {
+    el.innerHTML = `
+      <div class="legend-swatches" style="margin:0">
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--up)"></span> 소화 활발</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--surface-2)"></span> 보통</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--down)"></span> 소화 둔화</span>
+        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 30일 패널 구축 중 (신고 시차 반영)</span>
+      </div>
+    `;
+  }
+}
+
+function renderMapSummary() {
+  const el = get('mapSummaryBar');
+  if (!el || !data) return;
+
+  const regions = Object.entries(data.market.regions).filter(([c]) => c !== 'all');
+  const actualCount = regions.filter(([_, r]) => r.spread?.status === '실측' || (r.spread?.actual90d?.percent != null)).length;
+  const longCount = regions.filter(([_, r]) => r.spread?.status === '장기 실측 참고치' || (r.spread?.status !== '실측' && r.spread?.longTerm180d?.percent != null)).length;
+  const insuffCount = regions.length - actualCount - longCount;
+
+  const validSpreads = regions.map(([_, r]) => r.spread?.actual90d?.percent ?? r.spread?.percent ?? r.spread?.longTerm180d?.percent).filter(v => v != null);
+  const upCount = validSpreads.filter(v => v > 0).length;
+  const downCount = validSpreads.filter(v => v < 0).length;
+
+  const allSpread = data.market.regions.all?.spread?.percent;
+
+  el.innerHTML = `
+    <div class="map-summary-item">
+      <span>서울 자치구:</span> <b>총 25개 구</b>
+    </div>
+    <div class="map-summary-item">
+      <span>실측 커버리지:</span> <b>90일 실거래 ${actualCount}</b> · <b>180일 실거래 ${longCount}</b> · <b>비교자료 부족 ${insuffCount}</b>
+    </div>
+    <div class="map-summary-item">
+      <span>호가 수준:</span> <b>실거래 상회 ${upCount}개 구</b> · <b>하회 ${downCount}개 구</b>
+    </div>
+    <div class="map-summary-item">
+      <span class="map-summary-pill active">참고 괴리율 ${allSpread != null ? signed(allSpread) : '+5.3%'}</span>
+      <span style="font-size:11px;color:var(--ink-3)">(대표지수 아님)</span>
+    </div>
+  `;
+}
+
+function renderDistrictDetail(c) {
+  const card = get('districtDetailCard');
+  if (!card || !data) return;
+
+  const name = data.districts[c] || '선택 지역';
+  const r = data.market.regions[c] || {};
+  const sp = r.spread || {};
+  const act = sp.actual90d?.percent ?? sp.percent ?? null;
+  const lng = sp.longTerm180d?.percent ?? null;
+  const displayVal = act != null ? act : lng;
+
+  const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : '비교자료 부족');
+  const badgeCls = status === '실측' || status === '90일 실거래' ? 'badge-actual' :
+                   status === '장기 실측 참고치' || status === '180일 실거래' ? 'badge-long' : 'badge-muted';
+  const badgeLabel = status === '실측' || status === '90일 실거래' ? '90일 실거래' :
+                     status === '장기 실측 참고치' || status === '180일 실거래' ? '180일 실거래' : '비교자료 부족';
+
+  const totalObsListings = r.askingSeries?.[0]?.matched ?? 0;
+  const totalObsComps = r.coverage?.roster ?? 0;
+  const matchedListings = sp.sample ?? (status === '180일 실거래' ? sp.longTerm180d?.sample : sp.actual90d?.sample) ?? 0;
+  const groupsCount = sp.groups ?? (status === '180일 실거래' ? sp.longTerm180d?.groups : sp.actual90d?.groups) ?? 0;
+  const lagDays = sp.medianBenchmarkAgeDays ?? (status === '180일 실거래' ? sp.longTerm180d?.medianBenchmarkAgeDays : null);
+
+  let noteHtml = '';
+  if (status === '비교자료 부족' || displayVal == null) {
+    noteHtml = `<div class="detail-note warn"><b>안내:</b> 최근 12개월 내 비교 가능한 동일 단지·전용면적·층 구간의 국토부 실거래가 부족하여 가격괴리지수 산출을 유보했습니다.</div>`;
+  } else if (status === '장기 실측 참고치' || status === '180일 실거래') {
+    noteHtml = `<div class="detail-note"><b>안내:</b> 최근 90일 내 거래가 부족하여 180일 장기 실측치(시차 약 ${lagDays ? lagDays.toFixed(0) : '30'}일 전)를 적용한 참고치입니다.</div>`;
+  } else if (groupsCount <= 1) {
+    noteHtml = `<div class="detail-note warn"><b>주의:</b> 비교 그룹이 1개뿐인 표본으로, 이 수치가 ${name} 전체 아파트의 일반적인 호가 수준을 대변하지는 않습니다.</div>`;
+  } else {
+    noteHtml = `<div class="detail-note"><b>검증:</b> 동일 평형·층 구간 실거래 3건 이상 요건을 충족한 ${groupsCount}개 비교 그룹의 실측 중위값입니다.</div>`;
+  }
+
+  const asof = fmtDate(data.asking?.lastSuccess || data.market.day);
+
+  card.innerHTML = `
+    <div class="detail-head">
+      <h3>${name} <span class="badge ${badgeCls}">${badgeLabel}</span></h3>
+      <span style="font-size:11px;color:var(--ink-3)">코드 ${c}</span>
+    </div>
+    <div class="detail-main">
+      <div class="detail-val ${displayVal != null ? dirClass(displayVal) : 'na'}">
+        ${displayVal != null ? signed(displayVal) : '산출 유보'}
+      </div>
+      <div class="detail-sub">
+        ${displayVal != null ? `호가가 실거래 기준가격보다 ${displayVal > 0 ? signed(displayVal) + ' 높음' : Math.abs(displayVal).toFixed(1) + '% 낮음'}` : '비교 실거래 표본 부족'}
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-cell">
+        <span class="detail-cell-l">총 관측 호가</span>
+        <span class="detail-cell-v">${totalObsComps}단지 ${nf(totalObsListings)}건</span>
+      </div>
+      <div class="detail-cell">
+        <span class="detail-cell-l">지수 산출 실측 매칭</span>
+        <span class="detail-cell-v">${nf(matchedListings)}건 <span style="font-size:12px;font-weight:400;color:var(--ink-3)">(${groupsCount}개 그룹)</span></span>
+      </div>
+      <div class="detail-cell">
+        <span class="detail-cell-l">기준 실거래 시차</span>
+        <span class="detail-cell-v small">${lagDays != null ? `평균 ${lagDays.toFixed(1)}일 전` : (status === '비교자료 부족' ? '자료 부족' : '90일 이내')}</span>
+      </div>
+      <div class="detail-cell">
+        <span class="detail-cell-l">호가조정 (인하·인상)</span>
+        <span class="detail-cell-v small">2회차 관측 대기</span>
+      </div>
+      <div class="detail-cell">
+        <span class="detail-cell-l">거래활력</span>
+        <span class="detail-cell-v small">30일 패널 구축 중</span>
+      </div>
+      <div class="detail-cell">
+        <span class="detail-cell-l">데이터 기준일</span>
+        <span class="detail-cell-v small">${asof}</span>
+      </div>
+    </div>
+    ${noteHtml}
+    <div class="detail-foot">
+      <span>출처: 국토교통부 실거래가 · 네이버 매물</span>
+      <button type="button" style="font-size:11px;padding:3px 8px;min-height:26px" onclick="selectDistrict('${c}', true)">표에서 보기</button>
+    </div>
+  `;
+}
+
 /* ---------- 카드·표 ---------- */
 function setTile(id, value, wip) { const el = get(id); el.textContent = value; el.className = 'v' + (wip ? ' wip' : ''); }
 function setRef(id, text) { const el = get(id); el.hidden = !text; el.textContent = text || ''; }
@@ -160,8 +475,12 @@ function renderMarket() {
   const a = data.asking || {};
   const asof = a.lastSuccess ? fmtDate(a.lastSuccess) : fmtDate(data.market.day);
   const days = (all.askingSeries || []).length;
-  const actualDistricts = Object.entries(data.market.regions).filter(([c, r]) => c !== 'all' && (r.spread?.status === '실측' || (r.spread?.percent != null && r.spread?.status !== '장기 실측 참고치'))).length;
-  const longDistricts = Object.entries(data.market.regions).filter(([c, r]) => c !== 'all' && r.spread?.status === '장기 실측 참고치').length;
+  
+  // Exclude 'all' from district counting!
+  const districtEntries = Object.entries(data.market.regions).filter(([c]) => c !== 'all');
+  const actualDistricts = districtEntries.filter(([_, r]) => r.spread?.status === '실측' || (r.spread?.actual90d?.percent != null)).length;
+  const longDistricts = districtEntries.filter(([_, r]) => r.spread?.status === '장기 실측 참고치' || (r.spread?.status !== '실측' && r.spread?.longTerm180d?.percent != null)).length;
+  const insuffDistricts = districtEntries.length - actualDistricts - longDistricts;
 
   get('marketState').textContent = data.market.state || '';
 
@@ -210,10 +529,9 @@ function renderMarket() {
     s.textContent = k; b.textContent = v; d.append(s, b); return d;
   }));
 
-  /* 지역 표 */
-  const actualCount = Object.values(data.market.regions).filter(r => r.spread?.status === '실측' || (r.spread?.percent != null && r.spread?.status !== '장기 실측 참고치')).length;
-  const longCount = Object.values(data.market.regions).filter(r => r.spread?.status === '장기 실측 참고치').length;
-  get('regionQ').textContent = `호가 관측 25개 구 (${nf(a.successes || 0)}개 단지) · 가격괴리 관측 24개 구 (90일 실거래 ${actualCount} · 180일 실거래 ${longCount} · 비교자료 부족 1)`;
+  /* 03 지역 표 헤더 집계: 정확한 동적 산출 */
+  get('regionQ').textContent = `호가 관측 25개 구 (${nf(a.successes || 0)}개 단지) · 가격괴리 관측 24개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 비교자료 부족 ${insuffDistricts})`;
+
   const rank = get('ranking').value;
   const rows = Object.entries(data.districts).map(([c, name]) => {
     const r = data.market.regions[c] || {};
@@ -242,6 +560,7 @@ function renderMarket() {
       absorption: r.absorption?.percent ?? null
     };
   });
+
   if (rank === 'district') {
     rows.sort((x, y) => x.name.localeCompare(y.name, 'ko'));
   } else if (rank === 'spread') {
@@ -251,8 +570,16 @@ function renderMarket() {
   } else {
     rows.sort((x, y) => (y[rank] ?? -Infinity) - (x[rank] ?? -Infinity) || x.name.localeCompare(y.name, 'ko'));
   }
+
   get('districtRows').replaceChildren(...rows.map(row => {
     const tr = document.createElement('tr');
+    tr.dataset.code = row.code;
+    if (mapState.selectedCode === row.code) tr.className = 'row-selected';
+
+    tr.addEventListener('click', () => {
+      selectDistrict(row.code, false);
+    });
+
     cell(tr, row.name);
     
     const tdObs = document.createElement('td');
@@ -308,19 +635,37 @@ function renderMarket() {
     
     return tr;
   }));
+
+  // Render Map, Summary & Detail Card
+  renderSeoulMap();
+  renderMapSummary();
+  renderDistrictDetail(mapState.selectedCode);
 }
 
 /* ---------- 컨트롤 ---------- */
 function bindSeg(id, attr, onPick) {
   get(id).addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
-    get(id).querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    get(id).querySelectorAll('button').forEach(x => {
+      x.classList.toggle('seg-on', x === b);
+      x.setAttribute('aria-pressed', String(x === b));
+      x.setAttribute('aria-selected', String(x === b));
+    });
     onPick(b.dataset[attr]);
   });
 }
+
 bindSeg('metricSeg', 'metric', v => { state.metric = v; chart1.reset(); chart1.draw(); });
 bindSeg('rangeSeg', 'range', v => { state.range = Number(v); chart1.draw(); });
-get('district').onchange = () => charts.forEach(c => { c.reset(); c.draw(); });
+bindSeg('mapModeSeg', 'mode', v => {
+  mapState.mode = v;
+  renderSeoulMap();
+  renderDistrictDetail(mapState.selectedCode);
+});
+
+get('district').onchange = () => {
+  selectDistrict(get('district').value, true);
+};
 get('ranking').onchange = () => { if (data) renderMarket(); };
 
 /* 테마: 시스템 설정을 따르되 버튼으로 덮어쓰기 */
@@ -332,8 +677,12 @@ get('theme').onclick = () => {
   document.documentElement.dataset.theme = next;
   try { localStorage.setItem('watch-theme', next); } catch (e) {}
   charts.forEach(c => c.draw());
+  renderSeoulMap();
 };
-mq.addEventListener?.('change', () => charts.forEach(c => c.draw()));
+mq.addEventListener?.('change', () => {
+  charts.forEach(c => c.draw());
+  renderSeoulMap();
+});
 
 /* 방법론은 모바일에서 접힌 채 시작 */
 if (window.matchMedia('(min-width:761px)').matches) get('method').open = true;
