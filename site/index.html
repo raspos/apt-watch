@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>APT워치</title>
+<meta name="description" content="서울 아파트 호가와 실거래가격의 차이로 시장심리를 읽는 모니터.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="watch-tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="svc" aria-label="서비스 전환">
+  <span class="svc-l">서비스</span>
+  <a href="https://bokwatch.pages.dev/" rel="noopener">BOK워치 · 금통위 금리 결정 ↗</a>
+  <a href="https://raspos.github.io/fx-odds/" rel="noopener">FX워치 · 환율의 확률과 압력 ↗</a>
+  <a href="https://debtwatch.pages.dev/" rel="noopener">DEBT워치 · 빚과 차환압력 ↗</a>
+  <a class="svc-on" href="./" aria-current="page">APT워치 · 서울 아파트 시장심리</a>
+</nav>
+
+<header class="top">
+  <a class="brand" href="./" title="처음 화면으로 새로고침">
+    <img class="logo" src="logo.svg" alt="" width="40" height="40">
+    <div><h1>APT워치</h1><span class="en">APT Watch · 서울 아파트 시장심리지수</span></div>
+  </a>
+  <div class="meta" id="meta" role="status">자료 불러오는 중</div>
+  <div class="tools"><button id="theme" type="button" aria-label="화면 테마 전환">테마</button></div>
+</header>
+
+<!-- ① 지금 시장은 어떤 상태인가 -->
+<p class="lede" id="marketState"></p>
+<section class="strip" aria-label="핵심 3대 지표">
+  <article class="tile" id="card-divergence">
+    <div class="k">가격괴리지수</div>
+    <div class="v" id="premium"></div>
+    <p class="s">호가와 실거래 기준가격의 차이</p>
+    <div class="ref" id="premiumRef" hidden></div>
+    <div class="asof" id="premiumAsof"></div>
+  </article>
+  <article class="tile" id="card-adjustment">
+    <div class="k">호가조정지수</div>
+    <div class="v" id="cuts"></div>
+    <p class="s">매도자의 호가 인상·인하 움직임</p>
+    <div class="ref" id="cutRef" hidden></div>
+    <div class="asof" id="cutAsof"></div>
+  </article>
+  <article class="tile" id="card-vitality">
+    <div class="k">거래활력지수</div>
+    <div class="v" id="absorption"></div>
+    <p class="s">매물 규모 대비 실제 거래 수준</p>
+    <div class="ref" id="absorptionRef" hidden></div>
+    <div class="asof" id="absorptionAsof"></div>
+  </article>
+</section>
+
+<main>
+  <!-- ② 최근 어떤 변화가 있었나 -->
+  <section class="sec" aria-labelledby="h-series">
+    <div class="hd">
+      <div><div class="step">01 · 변화</div><h2 id="h-series">실거래가격지수와 호가</h2><p class="q" id="seriesQ">월별 실거래가격지수와 일별 호가지수는 집계 주기가 달라 한 축에 겹치지 않습니다.</p></div>
+      <div class="tools-row">
+        <label>지역 <select id="district"><option value="all">서울 전체</option></select></label>
+        <div class="seg" id="metricSeg" role="group" aria-label="지표">
+          <button type="button" data-metric="price" aria-pressed="true">실거래 (월별)</button>
+          <button type="button" data-metric="ask" aria-pressed="false">호가 (일별)</button>
+        </div>
+        <div class="seg" id="rangeSeg" role="group" aria-label="기간">
+          <button type="button" data-range="0" aria-pressed="true">전체</button>
+          <button type="button" data-range="60" aria-pressed="false">5년</button>
+          <button type="button" data-range="12" aria-pressed="false">1년</button>
+          <button type="button" data-range="3" aria-pressed="false">3개월</button>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="chart"><canvas id="chart" tabindex="0" role="img" aria-label="월별 실거래가격지수"></canvas></div>
+      <p class="readout" id="readout" aria-live="polite"></p>
+      <p class="note" id="chartNote"></p>
+    </div>
+  </section>
+
+  <!-- ③ 무엇이 변화를 만들었나 -->
+  <section class="sec" aria-labelledby="h-spread">
+    <div class="hd">
+      <div><div class="step">02 · 원인</div><h2 id="h-spread">가격괴리의 변화</h2><p class="q">관측일마다 계산한 호가와 실거래 기준가격의 차이(%)입니다.</p></div>
+    </div>
+    <div class="panel">
+      <div class="chart"><canvas id="chart2" tabindex="0" role="img" aria-label="관측일별 가격괴리율"></canvas></div>
+      <p class="readout" id="readout2" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ④ 호가 인상·인하 -->
+  <section class="sec" aria-labelledby="h-adj">
+    <div class="hd">
+      <div><div class="step">03 · 호가</div><h2 id="h-adj">호가 인상·인하 움직임</h2><p class="q">같은 매물 ID가 이틀 이상 연속 관측될 때부터 산출합니다.</p></div>
+    </div>
+    <div class="panel"><div class="kv" id="adjKv"></div></div>
+  </section>
+
+  <!-- ⑤ 어디서 차이가 나타나는가 -->
+  <section class="sec" aria-labelledby="h-region">
+    <div class="hd">
+      <div><div class="step">04 · 지역</div><h2 id="h-region">서울 25개 구 비교</h2><p class="q" id="regionQ"></p></div>
+      <label>정렬 <select id="ranking"><option value="district">자치구</option><option value="spread">가격괴리율</option><option value="listings">호가 매물수</option><option value="cuts">호가조정 (7일)</option><option value="absorption">거래활력</option></select></label>
+    </div>
+    <div class="panel tbl">
+      <table><thead><tr><th>자치구</th><th>호가 관측</th><th>호가조정</th><th>가격괴리율 (구분)</th><th>거래활력</th></tr></thead><tbody id="districtRows"></tbody></table>
+    </div>
+    <p class="note">가격괴리지수 구분: 90일 실거래(동일 평형·층 국토부 실거래 3건 이상), 180일 실거래(장기 실측 참고치), 비교자료 부족(12개월 내 비교 실거래 부족).</p>
+  </section>
+
+  <!-- ⑥ 신뢰도 -->
+  <details class="more" id="method">
+    <summary>데이터 출처와 산출 방법</summary>
+    <p>가격괴리지수는 동일 단지·전용면적·층 구간의 현재 호가와 실거래 기준가격의 차이를 % 단위로 측정합니다. 비교 표본이 부족한 초기에는 대표지수를 산출하지 않고 참고치로만 안내합니다.</p>
+    <p>호가조정지수는 매일 연속 수집한 동일 매물 ID의 가격 인상·인하 행동을 추적합니다. 거래활력지수는 30일 계약 건수 대비 일평균 관측 매물 수의 비율로 시장의 거래 소화력을 나타냅니다.</p>
+    <p>실거래가격지수는 월별, 호가지수는 일별, 가격괴리율은 관측일별, 거래활력지수는 30일 기준입니다. 자료가 없는 기간은 보간하지 않고 선을 끊어 표시합니다.</p>
+    <p>모형 추정치(고정효과 모델 기반 스케일링)는 외표본 검증(MdAPE 4.49%)을 통과한 보조 정보로, 실거래 기반 수치와 혼합하지 않고 검증용 정보로만 분리 관리합니다.</p>
+    <p id="coverage"></p>
+  </details>
+</main>
+<footer><a href="https://raspos.github.io/databrew/">© 2026 databrew</a><a href="https://www.data.go.kr/data/15126468/openapi.do">국토교통부 실거래 자료</a></footer>
+<script src="app.js" defer></script>
+</body>
+</html>

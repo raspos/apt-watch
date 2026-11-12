@@ -1,0 +1,48 @@
+name: Update APT WATCH
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: apt-watch-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.APT_WATCH_STORAGE_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.APT_WATCH_STORAGE_SECRET }}
+      AWS_DEFAULT_REGION: auto
+      AWS_ENDPOINT_URL: ${{ vars.APT_WATCH_STORAGE_ENDPOINT }}
+      APT_WATCH_BUCKET: ${{ vars.APT_WATCH_BUCKET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read private input and observation state
+        run: |
+          mkdir -p data
+          aws s3 cp "s3://$APT_WATCH_BUCKET/tracker.sqlite3" data/tracker.sqlite3
+          aws s3 cp "s3://$APT_WATCH_BUCKET/history.sqlite3" data/history.sqlite3
+          aws s3 cp "s3://$APT_WATCH_BUCKET/listings.jsonl" data/listings.jsonl
+          aws s3 cp "s3://$APT_WATCH_BUCKET/complexes.json" data/complexes.json
+      - name: Validate and build
+        run: |
+          python -m unittest discover -s tests -v
+          python seoul_feed.py --manifest data/complexes.json --feed data/listings.jsonl --day "$(TZ=Asia/Seoul date +%F)"
+          python apt_watch.py --tracker data/tracker.sqlite3
+          aws s3 cp data/history.sqlite3 "s3://$APT_WATCH_BUCKET/history.sqlite3"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deploy

@@ -1,0 +1,44 @@
+/* WATCH SERIES 공통 디자인 토큰 v1 (BOK워치·DEBT워치와 동일 값, FX워치 기준 수렴 대상)
+   규칙: docs/WATCH-DESIGN.md. 이 파일은 4개 서비스에서 값을 바꾸지 않고 복사해 쓴다. */
+:root {
+  color-scheme: light;
+  --bg: #f6f6f4;
+  --surface: #fcfcfb;
+  --surface-2: #efeeea;
+  --line: #dcdbd6;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --ink-3: #7a7974;
+  /* 방향 색: 값이 오르면 up, 내리면 down. 좋고 나쁨을 뜻하지 않는다. */
+  --hike: #eb6834; --up: #eb6834;
+  --hold: #8a8984;
+  --cut: #2a78d6;  --down: #2a78d6;
+  --accent: #2a78d6;
+  --warn-bg: #fff3d6; --warn-ink: #6b4a00; --warn-line: #e3b74a;
+  --bad-bg: #fde4e4; --bad-ink: #7d1f1f;
+  /* 잠정·데이터 축적 중 */
+  --wip-bg: #efeeea; --wip-ink: #52514e;
+  --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --radius: 10px; --radius-sm: 6px;
+  --wrap: 1180px; --gutter: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --line: #34342f;
+    --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #95948c;
+    --hike: #d95926; --up: #d95926; --hold: #7d7c76; --cut: #3987e5; --down: #3987e5; --accent: #3987e5;
+    --warn-bg: #3a2e0f; --warn-ink: #f3d68a; --warn-line: #8a6a1f;
+    --bad-bg: #3d1717; --bad-ink: #f4b4b4;
+    --wip-bg: #232321; --wip-ink: #c3c2b7;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --line: #34342f;
+  --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #95948c;
+  --hike: #d95926; --up: #d95926; --hold: #7d7c76; --cut: #3987e5; --down: #3987e5; --accent: #3987e5;
+  --warn-bg: #3a2e0f; --warn-ink: #f3d68a; --warn-line: #8a6a1f;
+  --bad-bg: #3d1717; --bad-ink: #f4b4b4;
+  --wip-bg: #232321; --wip-ink: #c3c2b7;
+}
