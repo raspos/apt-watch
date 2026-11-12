@@ -247,6 +247,45 @@ def build(args):
                               target=None, sentiment=None, premium=None, changes=asking_metrics(db, day))
         data['market'] = build_market(db, events(db), day, DISTRICTS, coverage, trades,
                                       observed, read_trade_vintage)
+
+        # Build empirical observability telemetry
+        day_date = date.fromisoformat(day)
+        day_7d = (day_date - timedelta(days=6)).isoformat()
+        day_30d = (day_date - timedelta(days=29)).isoformat()
+        obs_7d = db.execute("SELECT COUNT(DISTINCT complex) FROM batches WHERE day >= ? AND day <= ? AND success=1", (day_7d, day)).fetchone()[0]
+        obs_30d = db.execute("SELECT COUNT(DISTINCT complex) FROM batches WHERE day >= ? AND day <= ? AND success=1", (day_30d, day)).fetchone()[0]
+        
+        expanded_path = ROOT / 'data' / 'seoul-expanded-manifest.json'
+        core_target_cnt = 375
+        if expanded_path.exists():
+            try:
+                core_target_cnt = len(json.loads(expanded_path.read_text(encoding='utf-8')))
+            except Exception:
+                pass
+                
+        comps_path = ROOT / 'data' / 'complexes.json'
+        universe_cnt = 5821
+        if comps_path.exists():
+            try:
+                universe_cnt = len(json.loads(comps_path.read_text(encoding='utf-8')))
+            except Exception:
+                pass
+
+        data['observability'] = {
+            'asOf': day,
+            'lastSuccessObserved': last,
+            'todayCoreSuccess': ok,
+            'todayCoreFailures': failed,
+            'todayCoreTarget': ok + failed if (ok + failed) > 0 else core_target_cnt,
+            'todayCoreSuccessRate': round(ok / max(1, ok + failed) * 100, 1),
+            'observed7d': obs_7d,
+            'observed30d': obs_30d,
+            'activeListings': count,
+            'coreSampleCount': core_target_cnt,
+            'mappedUniverseCount': universe_cnt,
+            'panelType': '고정 표본 (연속 패널 375개 단지)',
+            'rollingType': '비핵심 순환 관측 (5개 권역 5,446개 단지)'
+        }
         payload=json.dumps(data,ensure_ascii=False,allow_nan=False)
         save_trade_vintage(db, observed, coverage, trades)
         db.execute('INSERT INTO publications VALUES (?,?)',(data['calculatedAt'],payload))

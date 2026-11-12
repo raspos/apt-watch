@@ -59,9 +59,23 @@ def sync_universe_tracking(db_path):
         last_success_day TEXT,
         failure_count INTEGER DEFAULT 0,
         consecutive_success INTEGER DEFAULT 0,
-        zone TEXT
+        zone TEXT,
+        verification_status TEXT,
+        trade_crosswalk_verified INTEGER DEFAULT 0,
+        audit_reason TEXT,
+        molit_name TEXT
     )
     ''')
+    # Check if columns exist (for existing tables)
+    existing_cols = {c[1] for c in conn.execute("PRAGMA table_info(complex_universe_tracking)").fetchall()}
+    for col_name, col_def in [
+        ('verification_status', 'TEXT'),
+        ('trade_crosswalk_verified', 'INTEGER DEFAULT 0'),
+        ('audit_reason', 'TEXT'),
+        ('molit_name', 'TEXT')
+    ]:
+        if col_name not in existing_cols:
+            conn.execute(f"ALTER TABLE complex_universe_tracking ADD COLUMN {col_name} {col_def}")
 
     history = {}
     for row in conn.execute('''
@@ -89,13 +103,20 @@ def sync_universe_tracking(db_path):
         fail_cnt = h[3] if h else 0
         succ_cnt = h[4] if h else 0
         tc = c.get('trade_count', 0)
+        v_stat = c.get('verification_status', 'UNVERIFIED_PENDING')
+        v_flag = 1 if c.get('tradeCrosswalkVerified') else 0
+        v_reason = c.get('audit_reason', '')
+        t_complex = c.get('tradeComplex')
+        m_name = t_complex[3] if t_complex and len(t_complex) >= 4 else name
 
         conn.execute('''
         INSERT OR REPLACE INTO complex_universe_tracking
         (complex, district, name, dong, jibun, naver_name, is_core, trade_count, 
-         last_observed_day, last_success_day, failure_count, consecutive_success, zone)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (cid, dist, name, dong, jibun, naver_name, is_c, tc, last_obs, last_succ, fail_cnt, succ_cnt, zone))
+         last_observed_day, last_success_day, failure_count, consecutive_success, zone,
+         verification_status, trade_crosswalk_verified, audit_reason, molit_name)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (cid, dist, name, dong, jibun, naver_name, is_c, tc, last_obs, last_succ, fail_cnt, succ_cnt, zone,
+              v_stat, v_flag, v_reason, m_name))
 
     conn.commit()
     conn.close()
@@ -107,7 +128,8 @@ def select_targets(db_path, mode='core', zone=None, district=None, limit=None, d
 
     query = """
     SELECT complex, district, name, dong, jibun, naver_name, is_core, trade_count,
-           last_observed_day, last_success_day, failure_count, zone
+           last_observed_day, last_success_day, failure_count, zone,
+           verification_status, trade_crosswalk_verified, audit_reason, molit_name
     FROM complex_universe_tracking
     WHERE 1=1
     """
@@ -158,8 +180,10 @@ def select_targets(db_path, mode='core', zone=None, district=None, limit=None, d
             'last_success_day': r[9],
             'failure_count': r[10],
             'zone': r[11],
-            'tradeComplex': [r[1], r[3], r[4], r[2]],
-            'tradeCrosswalkVerified': True
+            'verification_status': r[12] or 'UNVERIFIED_PENDING',
+            'tradeCrosswalkVerified': bool(r[13]),
+            'audit_reason': r[14] or '',
+            'tradeComplex': [r[1], r[3], r[4], r[15] or r[2]]
         })
     return targets
 

@@ -116,6 +116,49 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
     print(f"Saved {count:,} listings to {raw_file.name}")
     db.close()
     
+    # 4-1. Strict Quality Gate Check (Denominator: Total Planned Manifest Targets)
+    with open(manifest_file, encoding='utf-8') as f:
+        planned_targets = json.load(f)
+    planned_count = len(planned_targets)
+
+    db = sqlite3.connect(db_file)
+    cur = db.cursor()
+    success_ids = {str(r[0]) for r in cur.execute("SELECT complex FROM batches WHERE day=? AND success=1", (target_day,)).fetchall()}
+    db.close()
+
+    planned_ids = {str(c['complex']) for c in planned_targets}
+    successful_planned = len(planned_ids.intersection(success_ids))
+    success_rate = (successful_planned / planned_count) if planned_count > 0 else 0.0
+
+    print(f"\n[Quality Gate Audit]")
+    print(f"  당일 수집 예정 단지(분모): {planned_count}개")
+    print(f"  실제 정상 수집 단지(분자): {successful_planned}개")
+    print(f"  핵심 표본 수집 성공률:     {success_rate*100:.1f}%")
+
+    if success_rate < 0.80:
+        operational_status = 'CORE_QUALITY_BREACH'
+        err_msg = f"핵심 표본 수집 성공률({success_rate*100:.1f}%)이 최소 품질 기준(80.0%)에 미달했습니다. 새로운 확정값 공표 및 배포를 중단하고 기존 확정값을 보존합니다."
+        print(f"\n[CRITICAL QUALITY FAILURE] {err_msg}")
+        incident_file = ROOT / 'data' / 'logs' / f'incident_{target_day}.json'
+        incident_file.parent.mkdir(parents=True, exist_ok=True)
+        incident_file.write_text(json.dumps({
+            'day': target_day,
+            'status': operational_status,
+            'planned_count': planned_count,
+            'successful_count': successful_planned,
+            'success_rate_pct': round(success_rate * 100, 2),
+            'message': err_msg,
+            'timestamp': datetime.now(timezone.utc).isoformat()
+        }, ensure_ascii=False, indent=2), encoding='utf-8')
+        return 1
+
+    elif success_rate < 0.95:
+        operational_status = 'PARTIAL_SUCCESS'
+        print(f"\n[NOTICE] 부분 수집 완료 ({success_rate*100:.1f}%). 데이터 분석을 부분 관측 상태로 진행합니다.")
+    else:
+        operational_status = 'FULL_SUCCESS'
+        print(f"\n[PASS] 정상 수집 완료 ({success_rate*100:.1f}%). 정규 분석 및 공표 파이프라인을 진행합니다.")
+
     # 5. Post-collection analytics
     print("\n[Step 3] Running Analytical Pipeline...")
     run_step("1. Consecutive Observation Analysis", ROOT / 'scripts' / 'analyze_consecutive_observation.py')

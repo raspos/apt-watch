@@ -27255,7 +27255,7 @@
   },
   "districtMonths": 2375,
   "version": "stratum-month-fixed-effects-v1",
-  "calculatedAt": "2026-11-12T21:26:55+09:00",
+  "calculatedAt": "2026-11-12T21:55:56+09:00",
   "researchSeries": {
     "all": [
       {
@@ -54039,5 +54039,20 @@
         "tenureStatus": "중위 체류기간 6일 (평균 7.9일)"
       }
     }
+  },
+  "observability": {
+    "asOf": "2026-11-12",
+    "lastSuccessObserved": "2026-11-12T08:17:39Z",
+    "todayCoreSuccess": 110,
+    "todayCoreFailures": 0,
+    "todayCoreTarget": 110,
+    "todayCoreSuccessRate": 100.0,
+    "observed7d": 110,
+    "observed30d": 110,
+    "activeListings": 11993,
+    "coreSampleCount": 375,
+    "mappedUniverseCount": 5821,
+    "panelType": "고정 표본 (연속 패널 375개 단지)",
+    "rollingType": "비핵심 순환 관측 (5개 권역 5,446개 단지)"
   }
 }

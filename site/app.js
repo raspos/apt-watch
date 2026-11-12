@@ -636,7 +636,34 @@ function renderDistrictDetail(c) {
 function setTile(id, value, wip) { const el = get(id); el.textContent = value; el.className = 'v' + (wip ? ' wip' : ''); }
 function setRef(id, text) { const el = get(id); el.hidden = !text; el.textContent = text || ''; }
 
+function renderObservabilityBar() {
+  const bar = get('observabilityBar');
+  if (!bar || !data) return;
+  const o = data.observability || {};
+  const a = data.asking || {};
+  const todaySuccess = o.todayCoreSuccess ?? a.successes ?? 0;
+  const successRate = o.todayCoreSuccessRate ?? 100.0;
+  const obs7d = o.observed7d ?? todaySuccess;
+  const obs30d = o.observed30d ?? todaySuccess;
+  const activeListings = o.activeListings ?? a.listings ?? 0;
+  const asOf = o.asOf || fmtDate(a.lastSuccess) || fmtDate(data.market?.day);
+
+  bar.innerHTML = `
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span><b style="color:var(--ink)">오늘 관측 표본:</b> ${nf(todaySuccess)}개 단지 <span style="color:var(--up);font-weight:600">(성공률 ${successRate}%)</span></span>
+      <span><b style="color:var(--ink)">최근 7일 관측:</b> ${nf(obs7d)}개 단지</span>
+      <span><b style="color:var(--ink)">최근 30일 관측:</b> ${nf(obs30d)}개 단지</span>
+      <span><b style="color:var(--ink)">실제 관측 매물:</b> ${nf(activeListings)}건</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)">
+      <span>고정 표본(375개) · 순환 풀(5,446개) 분리 운영</span>
+      <span>마지막 정상 갱신: ${asOf}</span>
+    </div>
+  `;
+}
+
 function renderMarket() {
+  renderObservabilityBar();
   const all = data.market.regions.all;
   const a = data.asking || {};
   const asof = a.lastSuccess ? fmtDate(a.lastSuccess) : fmtDate(data.market.day);

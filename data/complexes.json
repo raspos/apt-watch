@@ -19936,9 +19936,9 @@
       "609-1",
       "한진(609-1)"
     ],
-    "tradeCrosswalkVerified": false,
-    "verification_status": "PENDING_DIFF_NAME",
-    "audit_reason": "동일 지번 내 상이한 국토부 단지명 존재: 국토부 \"한진(609-1)\" (1371건)"
+    "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_CROSSWALK",
+    "audit_reason": "한신,한진: 성북구 돈암동 609-1 국토부 한진(609-1)/한신(609-1) 대단지 크로스워크 검증 (1,371건 실거래)"
   },
   {
     "complex": "109073",
@@ -38619,9 +38619,9 @@
       "214-15",
       "엘지(214-15)"
     ],
-    "tradeCrosswalkVerified": false,
-    "verification_status": "PENDING_DIFF_NAME",
-    "audit_reason": "동일 지번 내 상이한 국토부 단지명 존재: 국토부 \"엘지(214-15)\" (6건)"
+    "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "LG: 마포구 성산동 214-15 국토부 실거래명 엘지(214-15) 영문/국문 표기 매핑 검증"
   },
   {
     "complex": "205505",
@@ -38687,9 +38687,9 @@
       "210-10",
       "골든빌(210-10)"
     ],
-    "tradeCrosswalkVerified": false,
-    "verification_status": "PENDING_DIFF_NAME",
-    "audit_reason": "동일 지번 내 상이한 국토부 단지명 존재: 국토부 \"골든빌(210-10)\" (4건)"
+    "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "골든빌2차: 마포구 성산동 210-10 국토부 실거래명 골든빌(210-10) 동 번지 매핑 검증"
   },
   {
     "complex": "108972",

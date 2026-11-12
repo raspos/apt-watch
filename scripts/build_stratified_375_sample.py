@@ -87,7 +87,12 @@ def main():
         
         # Sort out continuous 108 complexes first (Constraint: Must retain)
         retained = [c for c in dist_comps if str(c['complex']) in existing_108_ids]
-        remaining = [c for c in dist_comps if str(c['complex']) not in existing_108_ids]
+        remaining = [c for c in dist_comps 
+                     if str(c['complex']) not in existing_108_ids 
+                     and c.get('tradeCrosswalkVerified') is True 
+                     and '도시형' not in c['name'] 
+                     and '주상복합' not in c['name'] 
+                     and '오피스텔' not in c['name']]
         
         needed = 15 - len(retained)
         
