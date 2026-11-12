@@ -48,7 +48,7 @@ def main():
     # 7. Run Unit Tests
     cmd = [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v']
     print(f"\n>>> Running: 7. Full Test Suite Verification")
-    res = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
+    res = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True, encoding='utf-8')
     print(res.stdout)
     if res.returncode != 0:
         print(res.stderr)

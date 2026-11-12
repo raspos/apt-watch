@@ -49,7 +49,7 @@ def run_step(name, script_path, args=None):
 def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600):
     start_time = datetime.now(ZoneInfo('Asia/Seoul'))
     target_day = day or start_time.date().isoformat()
-    manifest_file = Path(manifest_path) if manifest_path else (ROOT / 'data' / 'seoul-100-run-manifest.json')
+    manifest_file = Path(manifest_path) if manifest_path else (ROOT / 'data' / 'seoul-expanded-manifest.json')
     db_file = ROOT / 'data' / 'history.sqlite3'
     
     print("="*80)
