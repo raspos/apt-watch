@@ -418,11 +418,17 @@ def build_market(db, history, day, districts, coverage, trades, observed, vintag
         db.execute('INSERT OR IGNORE INTO market_daily VALUES (?,?,?,?)',
                    (day,code,observed,json.dumps(spread,ensure_ascii=False)))
     spread_history=defaultdict(list)
+    daily_snapshots=defaultdict(dict)
     for date_key,code,payload in db.execute(
             'SELECT day,district,payload FROM market_daily m WHERE captured=('
-            'SELECT MIN(captured) FROM market_daily WHERE day=m.day AND district=m.district) '
-            'AND day<=? ORDER BY day',(day,)):
+            'SELECT MAX(captured) FROM market_daily WHERE day=m.day AND district=m.district) '
+            'AND day<=? ORDER BY day, district',(day,)):
         point=json.loads(payload)
-        if point['percent'] is not None:
+        val = point.get('actual90d', {}).get('percent') if point.get('actual90d') else point.get('percent')
+        if val is None and point.get('longTerm180d'):
+            val = point['longTerm180d'].get('percent')
+        if val is not None or point.get('status') == '데이터 부족':
             spread_history[code].append(dict(day=date_key,**point))
-    return dict(day=day,state=None,regions=scope_meta,spreadHistory=dict(spread_history),validation='hypotheses-only')
+        daily_snapshots[date_key][code] = point
+    return dict(day=day,state=None,regions=scope_meta,spreadHistory=dict(spread_history),
+                dailySnapshots=dict(daily_snapshots),validation='hypotheses-only')

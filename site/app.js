@@ -2,7 +2,7 @@
 const get = id => document.getElementById(id);
 const nf = n => Number(n).toLocaleString('ko-KR');
 let data;
-const state = {metric: 'price', range: 0};
+const state = {metric: 'price', range: 0, selectedDate: null};
 const mapState = {mode: 'spread', selectedCode: '11680'};
 
 /* ---------- 날짜·숫자 표시 ---------- */
@@ -46,7 +46,22 @@ function makeChart(cfg) {
     }
     return all.slice(-m);
   }
-  const xAt = (i, g) => g.left + i * (g.w - g.left - g.right) / Math.max(1, pts.length - 1);
+
+  const isDaily = cfg.daily();
+  const timeOf = k => {
+    if (!k) return 0;
+    return Date.parse(k.length === 10 ? k + 'T00:00:00Z' : k + '-01T00:00:00Z');
+  };
+  const xAt = (i, g) => {
+    if (!pts.length) return g.left;
+    if (isDaily && pts.length > 1) {
+      const tMin = timeOf(pts[0].key), tMax = timeOf(pts.at(-1).key);
+      if (tMax > tMin) {
+        return g.left + ((timeOf(pts[i].key) - tMin) / (tMax - tMin)) * (g.w - g.left - g.right);
+      }
+    }
+    return g.left + i * (g.w - g.left - g.right) / Math.max(1, pts.length - 1);
+  };
 
   function draw() {
     if (!data) return;
@@ -87,16 +102,43 @@ function makeChart(cfg) {
     }
     ctx.beginPath(); ctx.moveTo(g.left, g.top); ctx.lineTo(g.left, g.h - g.bottom); ctx.stroke();
 
-    // Data Line
-    ctx.strokeStyle = accentClr; ctx.lineWidth = 2; ctx.beginPath();
-    let started = false;
+    // Data Line: Draw solid for continuous days, dashed across unobserved date gaps (>1.5 days)
+    let prevValid = -1;
     for (let i = 0; i < pts.length; i++) {
       const p = pts[i];
-      if (p.value === null) { started = false; continue; }
-      const x = xAt(i, g), y = yAt(p.value);
-      if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
+      if (p.value === null) {
+        prevValid = -1;
+        continue;
+      }
+      if (prevValid !== -1) {
+        const x1 = xAt(prevValid, g), y1 = yAt(pts[prevValid].value);
+        const x2 = xAt(i, g), y2 = yAt(p.value);
+        let hasGap = false;
+        if (isDaily) {
+          const dayGap = (timeOf(p.key) - timeOf(pts[prevValid].key)) / 86400000;
+          if (dayGap > 1.5) hasGap = true;
+        }
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        if (hasGap) {
+          ctx.save();
+          ctx.setLineDash([3, 3]);
+          ctx.strokeStyle = isDark ? '#666660' : '#a0a098';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+          ctx.restore();
+        } else {
+          ctx.save();
+          ctx.setLineDash([]);
+          ctx.strokeStyle = accentClr;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+      prevValid = i;
     }
-    ctx.stroke();
 
     // Points
     for (let i = 0; i < pts.length; i++) {
@@ -153,20 +195,48 @@ const chart2 = makeChart({
   daily: () => true,
   label: () => '관측일별 가격괴리율',
   emptyText: () => {
-    const sp = data.market.regions.all.spread;
+    const sp = data.market.regions.all?.spread;
     return '관측일별 괴리율 이력은 비교 표본이 확보된 날부터 쌓입니다.' + (sp && sp.percent != null ? ` 현재 참고 괴리율 ${signed(sp.percent)} (대표지수 아님)` : '');
   },
-  points: () => (data.market.spreadHistory?.[code()] || []).map(p => ({key: p.day, value: p.percent, samples: p.sample})),
-  read: p => `${p.key} · 괴리율 ${p.value === null ? '미산출' : signed(p.value)} · 비교 그룹 ${nf(p.samples)}개`
+  points: () => (data.market.spreadHistory?.[code()] || []).map(p => {
+    const v = p.actual90d?.percent ?? p.percent ?? p.longTerm180d?.percent ?? null;
+    const is180 = (p.status === '장기 실측 참고치' || (p.longTerm180d?.percent != null && p.actual90d?.percent == null));
+    const samp = is180 ? (p.longTerm180d?.sample ?? 0) : (p.actual90d?.sample ?? p.sample ?? 0);
+    return {key: p.day, value: v, samples: samp, status: p.status};
+  }),
+  read: p => `${p.key} · 괴리율 ${p.value === null ? '미산출' : signed(p.value)} · 비교 그룹 ${nf(p.samples)}개` + (p.status ? ` (${p.status})` : '')
 });
 
 /* ==========================================================================
    서울 25개 구 시장심리 지도 (Interactive Map)
    ========================================================================== */
 
+function getRegionData(c, targetDate = state.selectedDate) {
+  if (!data || !data.market) return {};
+  const currentDay = data.market.day;
+  const base = data.market.regions[c] || {};
+  if (!targetDate || targetDate === currentDay) {
+    return base;
+  }
+  const snap = data.market.dailySnapshots?.[targetDate]?.[c];
+  if (snap) {
+    return { ...base, spread: snap };
+  }
+  return base;
+}
+
+function getAllSpread(targetDate = state.selectedDate) {
+  if (!data || !data.market) return null;
+  const currentDay = data.market.day;
+  if (!targetDate || targetDate === currentDay) {
+    return data.market.regions.all?.spread?.percent ?? null;
+  }
+  const snap = data.market.dailySnapshots?.[targetDate]?.all;
+  return snap ? (snap.percent ?? null) : (data.market.regions.all?.spread?.percent ?? null);
+}
+
 function getDivergingColor(pct, isDark) {
   if (pct == null) return isDark ? '#262624' : '#deded9';
-  // 0% neighborhood (-0.5% ~ +0.5%)
   if (pct >= -0.5 && pct <= 0.5) return isDark ? '#2d2d2a' : '#edece8';
 
   if (pct > 0) {
@@ -183,6 +253,15 @@ function getDivergingColor(pct, isDark) {
   }
 }
 
+function getVitalityColor(val, isDark) {
+  if (val == null) return isDark ? '#262624' : '#deded9';
+  if (val < 1.0) return isDark ? '#1a2e3b' : '#deebf7';
+  if (val < 2.0) return isDark ? '#1e445d' : '#c6dbef';
+  if (val < 3.0) return isDark ? '#235e82' : '#9ecae1';
+  if (val < 5.0) return isDark ? '#2a7aa8' : '#6baed6';
+  return isDark ? '#3599d1' : '#3182bd';
+}
+
 function renderSeoulMap() {
   const wrap = get('mapSvgWrap');
   if (!wrap || !window.SEOUL_DISTRICTS_SVG) return;
@@ -193,63 +272,95 @@ function renderSeoulMap() {
   const districtsSvg = window.SEOUL_DISTRICTS_SVG;
   let svgHtml = `<svg viewBox="0 0 640 520" class="map-svg" role="img" aria-label="서울시 25개 자치구 시장심리 지도">`;
 
-  // 1. Path elements
-  districtsSvg.forEach(d => {
+  // Compute stats across all 25 districts for mode rendering
+  const districtEntries = districtsSvg.map(d => {
     const c = d.code;
-    const r = data.market.regions[c] || {};
+    const r = getRegionData(c);
     const sp = r.spread || {};
     const act = sp.actual90d?.percent ?? sp.percent ?? null;
     const lng = sp.longTerm180d?.percent ?? null;
     const status = sp.status;
     const displayVal = act != null ? act : lng;
 
+    // Concession
+    const c1 = r.concessions?.['1'] || {}, c7 = r.concessions?.['7'] || {};
+    const cc = (c1.sample >= 10 && c1.cutShare != null) ? c1 : ((c7.sample >= 10 && c7.cutShare != null) ? c7 : (r.concessions?.['30']?.sample >= 10 ? r.concessions?.['30'] : null));
+    const net = (cc && cc.cutShare != null) ? ((cc.riseShare || 0) - (cc.cutShare || 0)) : null;
+
+    // Vitality
+    const ab = r.absorption, prov = r.provisionalAbsorption;
+    const vitVal = (ab && ab.percent != null) ? ab.percent : ((prov && prov.percent != null) ? prov.percent : null);
+
+    return { code: c, svg: d, r, sp, act, lng, status, displayVal, cc, net, vitVal, isProv: (!ab || ab.percent == null) };
+  });
+
+  // 1. Path elements
+  districtEntries.forEach(item => {
+    const c = item.code;
+    const d = item.svg;
     let fillClr, cls = ['district-path'];
+
     if (mapState.mode === 'spread') {
-      if (status === '장기 실측 참고치') {
+      if (item.status === '장기 실측 참고치' || (item.lng != null && item.act == null)) {
         cls.push('tier-180');
-        fillClr = getDivergingColor(lng, isDark);
-      } else if (status === '데이터 부족' || displayVal == null) {
+        fillClr = getDivergingColor(item.lng, isDark);
+      } else if (item.status === '데이터 부족' || item.displayVal == null) {
         cls.push('tier-insufficient');
         fillClr = isDark ? '#262624' : '#deded9';
       } else {
-        fillClr = getDivergingColor(act, isDark);
+        fillClr = getDivergingColor(item.act, isDark);
       }
     } else if (mapState.mode === 'concession') {
-      // 1일차 기준선 단계
-      fillClr = isDark ? '#262624' : '#e6e6e2';
+      if (item.net != null) {
+        fillClr = getDivergingColor(item.net, isDark);
+      } else {
+        cls.push('tier-insufficient');
+        fillClr = isDark ? '#262624' : '#deded9';
+      }
     } else if (mapState.mode === 'vitality') {
-      // 30일 패널 구축 단계
-      fillClr = isDark ? '#262624' : '#e6e6e2';
+      if (item.vitVal != null) {
+        fillClr = getVitalityColor(item.vitVal, isDark);
+        if (item.isProv) cls.push('tier-180');
+      } else {
+        cls.push('tier-insufficient');
+        fillClr = isDark ? '#262624' : '#deded9';
+      }
     }
 
     if (mapState.selectedCode === c) cls.push('selected');
-
     svgHtml += `<path class="${cls.join(' ')}" id="map-dist-${c}" data-code="${c}" data-name="${d.name}" d="${d.d}" fill="${fillClr}"></path>`;
   });
 
   // 2. Text Labels & Values
-  districtsSvg.forEach(d => {
-    const c = d.code;
-    const r = data.market.regions[c] || {};
-    const sp = r.spread || {};
-    const act = sp.actual90d?.percent ?? sp.percent ?? null;
-    const lng = sp.longTerm180d?.percent ?? null;
-    const displayVal = act != null ? act : lng;
-
+  districtEntries.forEach(item => {
+    const d = item.svg;
     let valText = '';
     let valClr = isDark ? '#d4d4cc' : '#555550';
+
     if (mapState.mode === 'spread') {
-      if (sp.status === '데이터 부족' || displayVal == null) {
+      if (item.status === '데이터 부족' || item.displayVal == null) {
         valText = '부족';
         valClr = isDark ? '#888880' : '#888880';
       } else {
-        valText = signed(displayVal);
-        valClr = displayVal > 0 ? (isDark ? '#ff9a70' : '#b83e10') : (displayVal < 0 ? (isDark ? '#8ab4f8' : '#1a5ab0') : valClr);
+        valText = signed(item.displayVal);
+        valClr = item.displayVal > 0 ? (isDark ? '#ff9a70' : '#b83e10') : (item.displayVal < 0 ? (isDark ? '#8ab4f8' : '#1a5ab0') : valClr);
       }
     } else if (mapState.mode === 'concession') {
-      valText = '대기';
+      if (item.net != null) {
+        valText = signed(item.net, '%p');
+        valClr = item.net > 0 ? (isDark ? '#ff9a70' : '#b83e10') : (item.net < 0 ? (isDark ? '#8ab4f8' : '#1a5ab0') : valClr);
+      } else {
+        valText = '대기';
+        valClr = isDark ? '#888880' : '#888880';
+      }
     } else if (mapState.mode === 'vitality') {
-      valText = '대기';
+      if (item.vitVal != null) {
+        valText = `${item.vitVal.toFixed(1)}건${item.isProv ? '*' : ''}`;
+        valClr = isDark ? '#d4d4cc' : '#333330';
+      } else {
+        valText = '대기';
+        valClr = isDark ? '#888880' : '#888880';
+      }
     }
 
     svgHtml += `<g class="district-text-group" pointer-events="none">
@@ -310,7 +421,18 @@ function selectDistrict(c, scrollTable = false) {
 
 function renderMapLegend() {
   const el = get('mapLegend');
-  if (!el) return;
+  if (!el || !data) return;
+
+  const regions = Object.entries(data.market.regions).filter(([c]) => c !== 'all');
+  const actualCount = regions.filter(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.status === '실측' || (sp.actual90d?.percent != null);
+  }).length;
+  const longCount = regions.filter(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.status === '장기 실측 참고치' || (sp.status !== '실측' && sp.longTerm180d?.percent != null);
+  }).length;
+  const insuffCount = regions.length - actualCount - longCount;
 
   if (mapState.mode === 'spread') {
     el.innerHTML = `
@@ -325,9 +447,9 @@ function renderMapLegend() {
         <span>호가 &gt; 실거래 (높음)</span>
       </div>
       <div class="legend-swatches">
-        <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 90일 실거래 (22개 구)</span>
-        <span class="legend-swatch"><span class="swatch-box tier-180"></span> 180일 실거래 (서초·강남)</span>
-        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 비교자료 부족 (종로)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 90일 실거래 (${actualCount}개 구)</span>
+        <span class="legend-swatch"><span class="swatch-box tier-180"></span> 180일 실거래 (${longCount}개 구)</span>
+        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 비교자료 부족 (${insuffCount}개 구)</span>
       </div>
     `;
   } else if (mapState.mode === 'concession') {
@@ -342,9 +464,9 @@ function renderMapLegend() {
   } else if (mapState.mode === 'vitality') {
     el.innerHTML = `
       <div class="legend-swatches" style="margin:0">
-        <span class="legend-swatch"><span class="swatch-box" style="background:var(--up)"></span> 소화 활발</span>
-        <span class="legend-swatch"><span class="swatch-box" style="background:var(--surface-2)"></span> 보통</span>
-        <span class="legend-swatch"><span class="swatch-box" style="background:var(--down)"></span> 소화 둔화</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#3182bd"></span> 활발 (3.0건 이상)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#9ecae1"></span> 보통 (1.0~3.0건)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#deebf7"></span> 둔화 (1.0건 미만)</span>
         <span class="legend-swatch"><span class="swatch-box insufficient"></span> 30일 패널 구축 중 (신고 시차 반영)</span>
       </div>
     `;
@@ -356,19 +478,28 @@ function renderMapSummary() {
   if (!el || !data) return;
 
   const regions = Object.entries(data.market.regions).filter(([c]) => c !== 'all');
-  const actualCount = regions.filter(([_, r]) => r.spread?.status === '실측' || (r.spread?.actual90d?.percent != null)).length;
-  const longCount = regions.filter(([_, r]) => r.spread?.status === '장기 실측 참고치' || (r.spread?.status !== '실측' && r.spread?.longTerm180d?.percent != null)).length;
+  const actualCount = regions.filter(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.status === '실측' || (sp.actual90d?.percent != null);
+  }).length;
+  const longCount = regions.filter(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.status === '장기 실측 참고치' || (sp.status !== '실측' && sp.longTerm180d?.percent != null);
+  }).length;
   const insuffCount = regions.length - actualCount - longCount;
 
-  const validSpreads = regions.map(([_, r]) => r.spread?.actual90d?.percent ?? r.spread?.percent ?? r.spread?.longTerm180d?.percent).filter(v => v != null);
+  const validSpreads = regions.map(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.actual90d?.percent ?? sp.percent ?? sp.longTerm180d?.percent ?? null;
+  }).filter(v => v != null);
   const upCount = validSpreads.filter(v => v > 0).length;
   const downCount = validSpreads.filter(v => v < 0).length;
 
-  const allSpread = data.market.regions.all?.spread?.percent;
+  const allSpread = getAllSpread();
 
   el.innerHTML = `
     <div class="map-summary-item">
-      <span>서울 자치구:</span> <b>총 25개 구</b>
+      <span>서울 자치구:</span> <b>총 ${regions.length}개 구</b>
     </div>
     <div class="map-summary-item">
       <span>실측 커버리지:</span> <b>90일 실거래 ${actualCount}</b> · <b>180일 실거래 ${longCount}</b> · <b>비교자료 부족 ${insuffCount}</b>
@@ -377,7 +508,7 @@ function renderMapSummary() {
       <span>호가 수준:</span> <b>실거래 상회 ${upCount}개 구</b> · <b>하회 ${downCount}개 구</b>
     </div>
     <div class="map-summary-item">
-      <span class="map-summary-pill active">참고 괴리율 ${allSpread != null ? signed(allSpread) : '+5.3%'}</span>
+      <span class="map-summary-pill active">참고 괴리율 ${allSpread != null ? signed(allSpread) : '산출 유보'}</span>
       <span style="font-size:11px;color:var(--ink-3)">(대표지수 아님)</span>
     </div>
   `;
@@ -388,36 +519,71 @@ function renderDistrictDetail(c) {
   if (!card || !data) return;
 
   const name = data.districts[c] || '선택 지역';
-  const r = data.market.regions[c] || {};
+  const r = getRegionData(c);
   const sp = r.spread || {};
   const act = sp.actual90d?.percent ?? sp.percent ?? null;
   const lng = sp.longTerm180d?.percent ?? null;
   const displayVal = act != null ? act : lng;
 
   const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : '비교자료 부족');
-  const badgeCls = status === '실측' || status === '90일 실거래' ? 'badge-actual' :
-                   status === '장기 실측 참고치' || status === '180일 실거래' ? 'badge-long' : 'badge-muted';
-  const badgeLabel = status === '실측' || status === '90일 실거래' ? '90일 실거래' :
-                     status === '장기 실측 참고치' || status === '180일 실거래' ? '180일 실거래' : '비교자료 부족';
+  const is180 = (status === '장기 실측 참고치' || status === '180일 실거래' || (sp.longTerm180d?.percent != null && act == null));
+  const isInsufficient = (status === '데이터 부족' || status === '비교자료 부족' || (act == null && lng == null));
 
-  const totalObsListings = r.askingSeries?.[0]?.matched ?? 0;
-  const totalObsComps = r.coverage?.roster ?? 0;
-  const matchedListings = sp.sample ?? (status === '180일 실거래' ? sp.longTerm180d?.sample : sp.actual90d?.sample) ?? 0;
-  const groupsCount = sp.groups ?? (status === '180일 실거래' ? sp.longTerm180d?.groups : sp.actual90d?.groups) ?? 0;
-  const lagDays = sp.medianBenchmarkAgeDays ?? (status === '180일 실거래' ? sp.longTerm180d?.medianBenchmarkAgeDays : null);
+  const badgeCls = (!is180 && !isInsufficient) ? 'badge-actual' : (is180 ? 'badge-long' : 'badge-muted');
+  const badgeLabel = (!is180 && !isInsufficient) ? '90일 실거래' : (is180 ? '180일 실거래' : '비교자료 부족');
+
+  const totalObsListings = r.askingSeries?.[0]?.matched ?? (data.market.regions[c]?.askingSeries?.[0]?.matched ?? 0);
+  const totalObsComps = r.coverage?.roster ?? (data.market.regions[c]?.coverage?.roster ?? 0);
+
+  let matchedListings = 0;
+  let groupsCount = 0;
+  let lagDays = null;
+
+  if (isInsufficient) {
+    matchedListings = 0;
+    groupsCount = 0;
+    lagDays = null;
+  } else if (is180) {
+    matchedListings = sp.longTerm180d?.sample ?? 0;
+    groupsCount = sp.longTerm180d?.groups ?? (sp.longTerm180d?.sample ?? 0);
+    lagDays = sp.longTerm180d?.medianBenchmarkAgeDays ?? null;
+  } else {
+    matchedListings = sp.actual90d?.sample ?? (status === '실측' ? sp.sample : 0) ?? 0;
+    groupsCount = sp.actual90d?.groups ?? (status === '실측' ? sp.groups : 0) ?? (matchedListings > 0 ? matchedListings : 0);
+    lagDays = sp.medianBenchmarkAgeDays ?? null;
+  }
 
   let noteHtml = '';
-  if (status === '비교자료 부족' || displayVal == null) {
+  if (isInsufficient || displayVal == null) {
     noteHtml = `<div class="detail-note warn"><b>안내:</b> 최근 12개월 내 비교 가능한 동일 단지·전용면적·층 구간의 국토부 실거래가 부족하여 가격괴리지수 산출을 유보했습니다.</div>`;
-  } else if (status === '장기 실측 참고치' || status === '180일 실거래') {
-    noteHtml = `<div class="detail-note"><b>안내:</b> 최근 90일 내 거래가 부족하여 180일 장기 실측치(시차 약 ${lagDays ? lagDays.toFixed(0) : '30'}일 전)를 적용한 참고치입니다.</div>`;
+  } else if (is180) {
+    noteHtml = `<div class="detail-note"><b>안내:</b> 최근 90일 내 거래가 부족하여 180일 장기 실측치(시차 약 ${lagDays != null ? lagDays.toFixed(0) : '30'}일 전)를 적용한 참고치입니다.</div>`;
   } else if (groupsCount <= 1) {
     noteHtml = `<div class="detail-note warn"><b>주의:</b> 비교 그룹이 1개뿐인 표본으로, 이 수치가 ${name} 전체 아파트의 일반적인 호가 수준을 대변하지는 않습니다.</div>`;
   } else {
     noteHtml = `<div class="detail-note"><b>검증:</b> 동일 평형·층 구간 실거래 3건 이상 요건을 충족한 ${groupsCount}개 비교 그룹의 실측 중위값입니다.</div>`;
   }
 
+  // Concession info
+  const c1 = r.concessions?.['1'] || {}, c7 = r.concessions?.['7'] || {};
+  const cc = (c1.sample >= 10 && c1.cutShare != null) ? c1 : ((c7.sample >= 10 && c7.cutShare != null) ? c7 : null);
+  let adjText = '2회차 관측 대기';
+  if (cc && cc.cutShare != null) {
+    const net = (cc.riseShare || 0) - (cc.cutShare || 0);
+    adjText = `${signed(net, '%p')} (인하 ${cc.cutShare.toFixed(1)}% · 인상 ${(cc.riseShare || 0).toFixed(1)}%)`;
+  }
+
+  // Vitality info
+  const ab = r.absorption, prov = r.provisionalAbsorption;
+  let vitText = '30일 패널 구축 중';
+  if (ab && ab.percent != null) {
+    vitText = `100건당 ${ab.percent.toFixed(1)}건`;
+  } else if (prov && prov.percent != null) {
+    vitText = `100건당 ${prov.percent.toFixed(1)}건 (잠정)`;
+  }
+
   const asof = fmtDate(data.asking?.lastSuccess || data.market.day);
+  const dateSuffix = state.selectedDate ? ` (${state.selectedDate})` : '';
 
   card.innerHTML = `
     <div class="detail-head">
@@ -443,19 +609,19 @@ function renderDistrictDetail(c) {
       </div>
       <div class="detail-cell">
         <span class="detail-cell-l">기준 실거래 시차</span>
-        <span class="detail-cell-v small">${lagDays != null ? `평균 ${lagDays.toFixed(1)}일 전` : (status === '비교자료 부족' ? '자료 부족' : '90일 이내')}</span>
+        <span class="detail-cell-v small">${lagDays != null ? `평균 ${lagDays.toFixed(1)}일 전` : (isInsufficient ? '자료 부족' : '90일 이내')}</span>
       </div>
       <div class="detail-cell">
         <span class="detail-cell-l">호가조정 (인하·인상)</span>
-        <span class="detail-cell-v small">2회차 관측 대기</span>
+        <span class="detail-cell-v small">${adjText}</span>
       </div>
       <div class="detail-cell">
         <span class="detail-cell-l">거래활력</span>
-        <span class="detail-cell-v small">30일 패널 구축 중</span>
+        <span class="detail-cell-v small">${vitText}</span>
       </div>
       <div class="detail-cell">
         <span class="detail-cell-l">데이터 기준일</span>
-        <span class="detail-cell-v small">${asof}</span>
+        <span class="detail-cell-v small">${asof}${dateSuffix}</span>
       </div>
     </div>
     ${noteHtml}
@@ -478,17 +644,24 @@ function renderMarket() {
   
   // Exclude 'all' from district counting!
   const districtEntries = Object.entries(data.market.regions).filter(([c]) => c !== 'all');
-  const actualDistricts = districtEntries.filter(([_, r]) => r.spread?.status === '실측' || (r.spread?.actual90d?.percent != null)).length;
-  const longDistricts = districtEntries.filter(([_, r]) => r.spread?.status === '장기 실측 참고치' || (r.spread?.status !== '실측' && r.spread?.longTerm180d?.percent != null)).length;
+  const actualDistricts = districtEntries.filter(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.status === '실측' || (sp.actual90d?.percent != null);
+  }).length;
+  const longDistricts = districtEntries.filter(([c]) => {
+    const sp = getRegionData(c).spread || {};
+    return sp.status === '장기 실측 참고치' || (sp.status !== '실측' && sp.longTerm180d?.percent != null);
+  }).length;
   const insuffDistricts = districtEntries.length - actualDistricts - longDistricts;
+  const obsSpreadCount = actualDistricts + longDistricts;
 
   get('marketState').textContent = data.market.state || '';
 
   /* 가격괴리지수: 대표지수 공표 전에는 참고치를 작은 보조 줄로만 */
-  const sp = all.spread;
+  const allSpread = getAllSpread();
   setTile('premium', '데이터 축적 중', true);
-  setRef('premiumRef', sp && sp.percent != null
-    ? `참고 괴리율 ${signed(sp.percent)} · 90일 실거래 ${actualDistricts}개 구 · 180일 실거래 ${longDistricts}개 구 (비교 ${nf(sp.sample)}개 그룹 · 대표지수 아님)` : '');
+  setRef('premiumRef', allSpread != null
+    ? `참고 괴리율 ${signed(allSpread)} · 90일 실거래 ${actualDistricts}개 구 · 180일 실거래 ${longDistricts}개 구 (대표지수 아님)` : '');
   get('premiumAsof').textContent = `기준일 ${asof}`;
 
   /* 호가조정지수 */
@@ -530,19 +703,19 @@ function renderMarket() {
   }));
 
   /* 03 지역 표 헤더 집계: 정확한 동적 산출 */
-  get('regionQ').textContent = `호가 관측 25개 구 (${nf(a.successes || 0)}개 단지) · 가격괴리 관측 24개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 비교자료 부족 ${insuffDistricts})`;
+  get('regionQ').textContent = `호가 관측 ${districtEntries.length}개 구 (${nf(a.successes || 0)}개 단지) · 가격괴리 관측 ${obsSpreadCount}개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 비교자료 부족 ${insuffDistricts})`;
 
   const rank = get('ranking').value;
   const rows = Object.entries(data.districts).map(([c, name]) => {
-    const r = data.market.regions[c] || {};
+    const r = getRegionData(c);
     const sp = r.spread || {};
     const act = sp.actual90d?.percent ?? sp.percent ?? null;
     const lng = sp.longTerm180d?.percent ?? null;
     const mdl = sp.modelEst?.percent ?? null;
     const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : mdl != null ? '모형 추정' : '비교자료 부족');
     const displayVal = act != null ? act : lng != null ? lng : mdl != null ? mdl : null;
-    const listingsCount = r.askingSeries?.[0]?.matched ?? 0;
-    const compsCount = r.coverage?.roster ?? 0;
+    const listingsCount = r.askingSeries?.[0]?.matched ?? (data.market.regions[c]?.askingSeries?.[0]?.matched ?? 0);
+    const compsCount = r.coverage?.roster ?? (data.market.regions[c]?.coverage?.roster ?? 0);
     
     return {
       code: c,
@@ -642,11 +815,59 @@ function renderMarket() {
   renderDistrictDetail(mapState.selectedCode);
 }
 
+/* ---------- 날짜 선택 및 뷰 갱신 ---------- */
+function initDateSelect() {
+  const selList = [get('obsDateSelect'), get('mapDateSelect')].filter(Boolean);
+  if (!selList.length || !data) return;
+
+  const snaps = data.market.dailySnapshots || {};
+  const dates = Array.from(new Set([
+    ...Object.keys(snaps),
+    data.market.day,
+    ...(data.market.regions.all?.askingSeries || []).map(p => p.day)
+  ].filter(Boolean))).sort();
+
+  selList.forEach(sel => {
+    sel.replaceChildren(...dates.map(d => {
+      const opt = document.createElement('option');
+      opt.value = d;
+      const isLatest = d === data.market.day;
+      opt.textContent = `${d}${isLatest ? ' (최신 관측일)' : ''}`;
+      return opt;
+    }));
+  });
+
+  if (dates.length) {
+    if (!state.selectedDate || !dates.includes(state.selectedDate)) {
+      state.selectedDate = dates.at(-1);
+    }
+    selList.forEach(sel => sel.value = state.selectedDate);
+  }
+
+  selList.forEach(sel => {
+    sel.addEventListener('change', e => {
+      state.selectedDate = e.target.value;
+      selList.forEach(s => { if (s !== sel) s.value = state.selectedDate; });
+      updateDateView();
+    });
+  });
+}
+
+function updateDateView() {
+  renderSeoulMap();
+  renderMapSummary();
+  renderDistrictDetail(mapState.selectedCode);
+  renderMarket();
+  charts.forEach(ch => { ch.reset(); ch.draw(); });
+}
+
 /* ---------- 컨트롤 ---------- */
 function bindSeg(id, attr, onPick) {
-  get(id).addEventListener('click', e => {
+  const el = get(id);
+  if (!el) return;
+  el.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
-    get(id).querySelectorAll('button').forEach(x => {
+    el.querySelectorAll('button').forEach(x => {
       x.classList.toggle('seg-on', x === b);
       x.setAttribute('aria-pressed', String(x === b));
       x.setAttribute('aria-selected', String(x === b));
@@ -695,6 +916,7 @@ fetch('./data.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).t
     ['실거래 갱신', `${fmtDateTime(data.asOf)} KST`],
     ['호가 관측', a.lastSuccess ? `${fmtDate(a.lastSuccess)} · ${nf(a.successes)}개 단지 ${nf(a.listings)}건` : '자료 없음']
   ].map(([k, v]) => { const s = document.createElement('span'), b = document.createElement('b'); s.append(k + ' '); b.textContent = v; s.append(b); return s; }));
+  initDateSelect();
   renderMarket();
   get('coverage').textContent = `${nf(data.districtMonths)}개 구·월 · 원자료 ${nf(data.raw)}건 · 분석 대상 ${nf(data.eligibleTrades)}건 · ${data.version}`;
   get('chartNote').textContent = '점선은 잠정 구간(신고 시차 미반영), 끊긴 선은 자료가 없는 기간입니다. 지수는 기준 시점 = 100.';
