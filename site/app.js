@@ -532,8 +532,8 @@ function renderDistrictDetail(c) {
   const badgeCls = (!is180 && !isInsufficient) ? 'badge-actual' : (is180 ? 'badge-long' : 'badge-muted');
   const badgeLabel = (!is180 && !isInsufficient) ? '90일 실거래' : (is180 ? '180일 실거래' : '비교자료 부족');
 
-  const totalObsListings = r.askingSeries?.[0]?.matched ?? (data.market.regions[c]?.askingSeries?.[0]?.matched ?? 0);
-  const totalObsComps = r.coverage?.roster ?? (data.market.regions[c]?.coverage?.roster ?? 0);
+  const totalObsListings = r.coverage?.listings ?? (r.askingSeries?.[0]?.matched ?? 0);
+  const totalObsComps = r.coverage?.success ?? (r.coverage?.roster ?? 0);
 
   let matchedListings = 0;
   let groupsCount = 0;
@@ -544,11 +544,11 @@ function renderDistrictDetail(c) {
     groupsCount = 0;
     lagDays = null;
   } else if (is180) {
-    matchedListings = sp.longTerm180d?.sample ?? 0;
+    matchedListings = sp.longTerm180d?.matchedListings ?? sp.longTerm180d?.sample ?? 0;
     groupsCount = sp.longTerm180d?.groups ?? (sp.longTerm180d?.sample ?? 0);
     lagDays = sp.longTerm180d?.medianBenchmarkAgeDays ?? null;
   } else {
-    matchedListings = sp.actual90d?.sample ?? (status === '실측' ? sp.sample : 0) ?? 0;
+    matchedListings = sp.actual90d?.matchedListings ?? sp.actual90d?.sample ?? (status === '실측' ? sp.sample : 0) ?? 0;
     groupsCount = sp.actual90d?.groups ?? (status === '실측' ? sp.groups : 0) ?? (matchedListings > 0 ? matchedListings : 0);
     lagDays = sp.medianBenchmarkAgeDays ?? null;
   }
@@ -642,7 +642,10 @@ function renderObservabilityBar() {
   const o = data.observability || {};
   const a = data.asking || {};
   const todaySuccess = o.todayCoreSuccess ?? a.successes ?? 0;
-  const successRate = o.todayCoreSuccessRate ?? 100.0;
+  const todayTarget = o.todayCoreTarget ?? (todaySuccess + (o.todayCoreFailures ?? 0));
+  const successRate = o.todayCoreSuccessRate != null ? `${o.todayCoreSuccessRate}%` : (a.successes != null && (a.successes + (a.failures || 0)) > 0 ? `${(a.successes / (a.successes + (a.failures || 0)) * 100).toFixed(1)}%` : '미확인');
+  const coreTotal = o.coreSampleCount ?? 375;
+  const coreCovRate = o.coreCoverageRate != null ? `${o.coreCoverageRate}%` : (todaySuccess > 0 ? `${(todaySuccess / coreTotal * 100).toFixed(1)}%` : '미확인');
   const obs7d = o.observed7d ?? todaySuccess;
   const obs30d = o.observed30d ?? todaySuccess;
   const activeListings = o.activeListings ?? a.listings ?? 0;
@@ -650,9 +653,10 @@ function renderObservabilityBar() {
 
   bar.innerHTML = `
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <span><b style="color:var(--ink)">오늘 관측 표본:</b> ${nf(todaySuccess)}개 단지 <span style="color:var(--up);font-weight:600">(성공률 ${successRate}%)</span></span>
-      <span><b style="color:var(--ink)">최근 7일 관측:</b> ${nf(obs7d)}개 단지</span>
-      <span><b style="color:var(--ink)">최근 30일 관측:</b> ${nf(obs30d)}개 단지</span>
+      <span><b style="color:var(--ink)">오늘 관측 표본:</b> ${nf(todaySuccess)}개 단지 <span style="color:var(--up);font-weight:600">(작업 성공률 ${successRate})</span></span>
+      <span><b style="color:var(--ink)">핵심 표본 커버리지:</b> ${nf(todaySuccess)}/${coreTotal}개 <span style="color:var(--ink-2);font-weight:600">(${coreCovRate})</span></span>
+      <span><b style="color:var(--ink)">최근 7일:</b> ${nf(obs7d)}개 단지</span>
+      <span><b style="color:var(--ink)">최근 30일:</b> ${nf(obs30d)}개 단지</span>
       <span><b style="color:var(--ink)">실제 관측 매물:</b> ${nf(activeListings)}건</span>
     </div>
     <div style="display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)">
@@ -741,8 +745,8 @@ function renderMarket() {
     const mdl = sp.modelEst?.percent ?? null;
     const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : mdl != null ? '모형 추정' : '비교자료 부족');
     const displayVal = act != null ? act : lng != null ? lng : mdl != null ? mdl : null;
-    const listingsCount = r.askingSeries?.[0]?.matched ?? (data.market.regions[c]?.askingSeries?.[0]?.matched ?? 0);
-    const compsCount = r.coverage?.roster ?? (data.market.regions[c]?.coverage?.roster ?? 0);
+    const listingsCount = r.coverage?.listings ?? (r.askingSeries?.[0]?.matched ?? 0);
+    const compsCount = r.coverage?.success ?? (r.coverage?.roster ?? 0);
     
     return {
       code: c,

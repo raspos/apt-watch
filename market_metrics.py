@@ -145,14 +145,16 @@ def model_estimated_spread(listings, trades, day, captured, maximum_age=365):
             continue
 
     values = []
+    matched_listings = 0
     for key, prices in asks.items():
         benchmark = trades_by_key[key]
         if len(benchmark) < 2:
             continue
         values.append(100 * (median(prices) / median(p for p, _ in benchmark) - 1))
+        matched_listings += len(prices)
         
     return dict(sample=len(values), percent=median(values) if values else None,
-                groups=len(values), validationMdAPE=4.49, tradeVintage=captured)
+                groups=len(values), matchedListings=matched_listings, validationMdAPE=4.49, tradeVintage=captured)
 
 
 def estimated_spread(listings, trades, day, captured, maximum_age=90):
@@ -184,13 +186,16 @@ def estimated_spread(listings, trades, day, captured, maximum_age=90):
         except (KeyError,ValueError,TypeError,OverflowError):
             continue
     values,ages=[],[]
+    matched_listings = 0
     for key,prices in asks.items():
         benchmark=trades_by_key[key]
         if len(benchmark)<3:
             continue
         values.append(100*(median(prices)/median(p for p,_ in benchmark)-1))
+        matched_listings += len(prices)
         ages.append((end-date.fromisoformat(max(d for _,d in benchmark))).days)
-    return dict(sample=len(values),percent=median(values) if values else None,
+    return dict(sample=len(values),groups=len(values),matchedListings=matched_listings,
+                percent=median(values) if values else None,
                 medianBenchmarkAgeDays=median(ages) if ages else None,tradeVintage=captured)
 
 
@@ -388,12 +393,14 @@ def build_market(db, history, day, districts, coverage, trades, observed, vintag
                     'actual90d': {
                         'sample': spread.get('sample', 0),
                         'percent': spread.get('percent'),
-                        'groups': spread.get('sample', 0)
+                        'groups': spread.get('groups', spread.get('sample', 0)),
+                        'matchedListings': spread.get('matchedListings', 0)
                     },
                     'longTerm180d': {
                         'sample': spread_180.get('sample', 0),
                         'percent': spread_180.get('percent'),
-                        'groups': spread_180.get('sample', 0),
+                        'groups': spread_180.get('groups', spread_180.get('sample', 0)),
+                        'matchedListings': spread_180.get('matchedListings', 0),
                         'medianBenchmarkAgeDays': spread_180.get('medianBenchmarkAgeDays')
                     },
                     'modelEst': spread_model
@@ -411,7 +418,12 @@ def build_market(db, history, day, districts, coverage, trades, observed, vintag
         end_provisional=date.fromisoformat(day)
         provisional_window=market_window(db,targets,end_provisional,30,coverage,trades,require_mature=False)
 
-        scope_meta[code]=dict(coverage=dict(roster=len(eligible),success=len(eligible & snapshots[day].keys())),
+        scope_meta[code]=dict(
+            coverage=dict(
+                roster=len(eligible),
+                success=len(eligible & snapshots[day].keys()),
+                listings=sum(len(todays[cid]) for cid in (eligible & snapshots[day].keys()))
+            ),
             concessions={str(n):concession(history,day,n,eligible & complete_complexes(db,day,n)) for n in (1,7,30)},
             realized=realized_nego([link for link in linked if link['complex'] in eligible]),
             spread=spread,absorption=window,provisionalAbsorption=provisional_window,askingSeries=points)

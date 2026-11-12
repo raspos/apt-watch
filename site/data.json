@@ -27255,7 +27255,7 @@
   },
   "districtMonths": 2375,
   "version": "stratum-month-fixed-effects-v1",
-  "calculatedAt": "2026-11-12T21:55:56+09:00",
+  "calculatedAt": "2026-11-12T23:18:27+09:00",
   "researchSeries": {
     "all": [
       {
@@ -49610,7 +49610,8 @@
       "all": {
         "coverage": {
           "roster": 110,
-          "success": 110
+          "success": 110,
+          "listings": 11993
         },
         "concessions": {
           "1": {
@@ -49671,6 +49672,8 @@
         },
         "spread": {
           "sample": 60,
+          "groups": 60,
+          "matchedListings": 2147,
           "percent": 5.297168608111558,
           "medianBenchmarkAgeDays": 25.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -49680,18 +49683,21 @@
           "actual90d": {
             "sample": 60,
             "percent": 5.297168608111558,
-            "groups": 60
+            "groups": 60,
+            "matchedListings": 2147
           },
           "longTerm180d": {
             "sample": 194,
             "percent": 6.697963483719571,
             "groups": 194,
+            "matchedListings": 5150,
             "medianBenchmarkAgeDays": 40.0
           },
           "modelEst": {
             "sample": 410,
             "percent": 7.263005945969181,
             "groups": 410,
+            "matchedListings": 8160,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -49722,7 +49728,8 @@
       "11110": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 22
         },
         "concessions": {
           "1": {
@@ -49783,6 +49790,8 @@
         },
         "spread": {
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -49792,18 +49801,21 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 0,
             "percent": null,
             "groups": 0,
+            "matchedListings": 0,
             "medianBenchmarkAgeDays": null
           },
           "modelEst": {
             "sample": 0,
             "percent": null,
             "groups": 0,
+            "matchedListings": 0,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -49834,7 +49846,8 @@
       "11140": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 254
         },
         "concessions": {
           "1": {
@@ -49895,6 +49908,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 51,
           "percent": -2.0076221587042253,
           "medianBenchmarkAgeDays": 14.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -49904,18 +49919,21 @@
           "actual90d": {
             "sample": 2,
             "percent": -2.0076221587042253,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 51
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 4.533120510774147,
             "groups": 8,
+            "matchedListings": 119,
             "medianBenchmarkAgeDays": 29.5
           },
           "modelEst": {
             "sample": 11,
             "percent": 3.851963583793938,
             "groups": 11,
+            "matchedListings": 188,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -49946,7 +49964,8 @@
       "11170": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 386
         },
         "concessions": {
           "1": {
@@ -50007,6 +50026,8 @@
         },
         "spread": {
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 24,
           "percent": 1.1213047910295648,
           "medianBenchmarkAgeDays": 19,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50016,18 +50037,21 @@
           "actual90d": {
             "sample": 3,
             "percent": 1.1213047910295648,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 24
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 1.9151138716356098,
             "groups": 8,
+            "matchedListings": 191,
             "medianBenchmarkAgeDays": 56.5
           },
           "modelEst": {
             "sample": 16,
             "percent": -0.14304453653189997,
             "groups": 16,
+            "matchedListings": 288,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50058,7 +50082,8 @@
       "11200": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 833
         },
         "concessions": {
           "1": {
@@ -50119,6 +50144,8 @@
         },
         "spread": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 301,
           "percent": 1.1525105417951154,
           "medianBenchmarkAgeDays": 25.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50128,18 +50155,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 1.1525105417951154,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 301
           },
           "longTerm180d": {
             "sample": 7,
             "percent": 1.1997913406364136,
             "groups": 7,
+            "matchedListings": 480,
             "medianBenchmarkAgeDays": 36
           },
           "modelEst": {
             "sample": 11,
             "percent": -0.4552352048558417,
             "groups": 11,
+            "matchedListings": 642,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50170,7 +50200,8 @@
       "11215": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 342
         },
         "concessions": {
           "1": {
@@ -50231,6 +50262,8 @@
         },
         "spread": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 27,
           "percent": 10.294117647058831,
           "medianBenchmarkAgeDays": 14,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50240,18 +50273,21 @@
           "actual90d": {
             "sample": 1,
             "percent": 10.294117647058831,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 27
           },
           "longTerm180d": {
             "sample": 2,
             "percent": 8.68423961096375,
             "groups": 2,
+            "matchedListings": 44,
             "medianBenchmarkAgeDays": 58.5
           },
           "modelEst": {
             "sample": 11,
             "percent": -0.3510542078162815,
             "groups": 11,
+            "matchedListings": 236,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50282,7 +50318,8 @@
       "11230": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 1014
         },
         "concessions": {
           "1": {
@@ -50343,6 +50380,8 @@
         },
         "spread": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 185,
           "percent": 5.4697081187147445,
           "medianBenchmarkAgeDays": 9,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50352,18 +50391,21 @@
           "actual90d": {
             "sample": 1,
             "percent": 5.4697081187147445,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 185
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 9.411039529149766,
             "groups": 6,
+            "matchedListings": 321,
             "medianBenchmarkAgeDays": 54.0
           },
           "modelEst": {
             "sample": 13,
             "percent": 8.694403294221043,
             "groups": 13,
+            "matchedListings": 463,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50394,7 +50436,8 @@
       "11260": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 196
         },
         "concessions": {
           "1": {
@@ -50455,6 +50498,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 17,
           "percent": 15.54545454545454,
           "medianBenchmarkAgeDays": 73.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50464,18 +50509,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 15.54545454545454,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 17
           },
           "longTerm180d": {
             "sample": 5,
             "percent": 11.363636363636353,
             "groups": 5,
+            "matchedListings": 61,
             "medianBenchmarkAgeDays": 76
           },
           "modelEst": {
             "sample": 12,
             "percent": 12.091405548170487,
             "groups": 12,
+            "matchedListings": 128,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50506,7 +50554,8 @@
       "11290": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 672
         },
         "concessions": {
           "1": {
@@ -50567,6 +50616,8 @@
         },
         "spread": {
           "sample": 8,
+          "groups": 8,
+          "matchedListings": 177,
           "percent": 7.038590228582409,
           "medianBenchmarkAgeDays": 34.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50576,18 +50627,21 @@
           "actual90d": {
             "sample": 8,
             "percent": 7.038590228582409,
-            "groups": 8
+            "groups": 8,
+            "matchedListings": 177
           },
           "longTerm180d": {
             "sample": 17,
             "percent": 8.55614973262031,
             "groups": 17,
+            "matchedListings": 381,
             "medianBenchmarkAgeDays": 35
           },
           "modelEst": {
             "sample": 30,
             "percent": 13.340974774500115,
             "groups": 30,
+            "matchedListings": 563,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50618,7 +50672,8 @@
       "11305": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 374
         },
         "concessions": {
           "1": {
@@ -50679,6 +50734,8 @@
         },
         "spread": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 75,
           "percent": 7.337662337662342,
           "medianBenchmarkAgeDays": 18.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50688,18 +50745,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 7.337662337662342,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 75
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 13.825637303819283,
             "groups": 10,
+            "matchedListings": 143,
             "medianBenchmarkAgeDays": 31.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 16.045366741283672,
             "groups": 20,
+            "matchedListings": 313,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50730,7 +50790,8 @@
       "11320": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 306
         },
         "concessions": {
           "1": {
@@ -50791,6 +50852,8 @@
         },
         "spread": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 115,
           "percent": 6.615208690680385,
           "medianBenchmarkAgeDays": 19.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50800,18 +50863,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 6.615208690680385,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 115
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 9.938271604938276,
             "groups": 12,
+            "matchedListings": 204,
             "medianBenchmarkAgeDays": 34.5
           },
           "modelEst": {
             "sample": 24,
             "percent": 12.094382551078874,
             "groups": 24,
+            "matchedListings": 240,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50842,7 +50908,8 @@
       "11350": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 160
         },
         "concessions": {
           "1": {
@@ -50903,6 +50970,8 @@
         },
         "spread": {
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 23,
           "percent": 14.705882352941169,
           "medianBenchmarkAgeDays": 22,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -50912,18 +50981,21 @@
           "actual90d": {
             "sample": 3,
             "percent": 14.705882352941169,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 23
           },
           "longTerm180d": {
             "sample": 11,
             "percent": 13.636363636363647,
             "groups": 11,
+            "matchedListings": 103,
             "medianBenchmarkAgeDays": 62
           },
           "modelEst": {
             "sample": 23,
             "percent": 12.629701386803571,
             "groups": 23,
+            "matchedListings": 153,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -50954,7 +51026,8 @@
       "11380": {
         "coverage": {
           "roster": 5,
-          "success": 5
+          "success": 5,
+          "listings": 510
         },
         "concessions": {
           "1": {
@@ -51015,6 +51088,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 24,
           "percent": 3.9772727272727293,
           "medianBenchmarkAgeDays": 44.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51024,18 +51099,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 3.9772727272727293,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 24
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 7.969206189866885,
             "groups": 12,
+            "matchedListings": 286,
             "medianBenchmarkAgeDays": 45.5
           },
           "modelEst": {
             "sample": 24,
             "percent": 8.047577046139077,
             "groups": 24,
+            "matchedListings": 425,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51066,7 +51144,8 @@
       "11410": {
         "coverage": {
           "roster": 5,
-          "success": 5
+          "success": 5,
+          "listings": 344
         },
         "concessions": {
           "1": {
@@ -51127,6 +51206,8 @@
         },
         "spread": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 70,
           "percent": 4.090189873417726,
           "medianBenchmarkAgeDays": 24.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51136,18 +51217,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 4.090189873417726,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 70
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 6.589669554058386,
             "groups": 10,
+            "matchedListings": 194,
             "medianBenchmarkAgeDays": 28.5
           },
           "modelEst": {
             "sample": 22,
             "percent": 6.436249922966352,
             "groups": 22,
+            "matchedListings": 299,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51178,7 +51262,8 @@
       "11440": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 743
         },
         "concessions": {
           "1": {
@@ -51239,6 +51324,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 188,
           "percent": 4.751644889259564,
           "medianBenchmarkAgeDays": 56.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51248,18 +51335,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 4.751644889259564,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 188
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 3.377609108159396,
             "groups": 6,
+            "matchedListings": 426,
             "medianBenchmarkAgeDays": 56.5
           },
           "modelEst": {
             "sample": 15,
             "percent": 4.102047460100788,
             "groups": 15,
+            "matchedListings": 608,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51290,7 +51380,8 @@
       "11470": {
         "coverage": {
           "roster": 12,
-          "success": 12
+          "success": 12,
+          "listings": 1461
         },
         "concessions": {
           "1": {
@@ -51351,6 +51442,8 @@
         },
         "spread": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 14,
           "percent": -0.7981755986317007,
           "medianBenchmarkAgeDays": 8,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51360,18 +51453,21 @@
           "actual90d": {
             "sample": 1,
             "percent": -0.7981755986317007,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 14
           },
           "longTerm180d": {
             "sample": 3,
             "percent": 3.825136612021862,
             "groups": 3,
+            "matchedListings": 433,
             "medianBenchmarkAgeDays": 27
           },
           "modelEst": {
             "sample": 11,
             "percent": 8.003801907010644,
             "groups": 11,
+            "matchedListings": 711,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51402,7 +51498,8 @@
       "11500": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 348
         },
         "concessions": {
           "1": {
@@ -51463,6 +51560,8 @@
         },
         "spread": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 130,
           "percent": 3.3475349969567803,
           "medianBenchmarkAgeDays": 14.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51472,18 +51571,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 3.3475349969567803,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 130
           },
           "longTerm180d": {
             "sample": 16,
             "percent": 6.211695607763024,
             "groups": 16,
+            "matchedListings": 206,
             "medianBenchmarkAgeDays": 39.5
           },
           "modelEst": {
             "sample": 25,
             "percent": 7.254971060232562,
             "groups": 25,
+            "matchedListings": 321,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51514,7 +51616,8 @@
       "11530": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 400
         },
         "concessions": {
           "1": {
@@ -51575,6 +51678,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 13,
           "percent": 12.488391726466862,
           "medianBenchmarkAgeDays": 28.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51584,18 +51689,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 12.488391726466862,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 13
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 18.454103910121177,
             "groups": 8,
+            "matchedListings": 111,
             "medianBenchmarkAgeDays": 45.0
           },
           "modelEst": {
             "sample": 21,
             "percent": 26.426378572330613,
             "groups": 21,
+            "matchedListings": 269,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51626,7 +51734,8 @@
       "11545": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 465
         },
         "concessions": {
           "1": {
@@ -51687,6 +51796,8 @@
         },
         "spread": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 212,
           "percent": 8.837408837408844,
           "medianBenchmarkAgeDays": 28.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51696,18 +51807,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 8.837408837408844,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 212
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 8.940681513730741,
             "groups": 10,
+            "matchedListings": 313,
             "medianBenchmarkAgeDays": 34.0
           },
           "modelEst": {
             "sample": 16,
             "percent": 10.898953631700149,
             "groups": 16,
+            "matchedListings": 332,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51738,7 +51852,8 @@
       "11560": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 326
         },
         "concessions": {
           "1": {
@@ -51799,6 +51914,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 9,
           "percent": 8.578431372549023,
           "medianBenchmarkAgeDays": 29.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51808,18 +51925,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 8.578431372549023,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 9
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 7.055389965226023,
             "groups": 8,
+            "matchedListings": 64,
             "medianBenchmarkAgeDays": 53.0
           },
           "modelEst": {
             "sample": 20,
             "percent": 8.398391854254017,
             "groups": 20,
+            "matchedListings": 193,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51850,7 +51970,8 @@
       "11590": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 532
         },
         "concessions": {
           "1": {
@@ -51911,6 +52032,8 @@
         },
         "spread": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 48,
           "percent": 3.6144578313253017,
           "medianBenchmarkAgeDays": 69,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -51920,18 +52043,21 @@
           "actual90d": {
             "sample": 1,
             "percent": 3.6144578313253017,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 48
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 4.076042443987404,
             "groups": 6,
+            "matchedListings": 201,
             "medianBenchmarkAgeDays": 70.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 1.3686120546595792,
             "groups": 20,
+            "matchedListings": 424,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -51962,7 +52088,8 @@
       "11620": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 480
         },
         "concessions": {
           "1": {
@@ -52023,6 +52150,8 @@
         },
         "spread": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 187,
           "percent": 1.3557929334428898,
           "medianBenchmarkAgeDays": 24.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52032,18 +52161,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 1.3557929334428898,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 187
           },
           "longTerm180d": {
             "sample": 4,
             "percent": 3.404088050314469,
             "groups": 4,
+            "matchedListings": 313,
             "medianBenchmarkAgeDays": 24.0
           },
           "modelEst": {
             "sample": 7,
             "percent": 5.463701210263094,
             "groups": 7,
+            "matchedListings": 358,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52074,7 +52206,8 @@
       "11650": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 428
         },
         "concessions": {
           "1": {
@@ -52135,6 +52268,8 @@
         },
         "spread": {
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52144,18 +52279,21 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 2,
             "percent": 2.789508118717654,
             "groups": 2,
+            "matchedListings": 65,
             "medianBenchmarkAgeDays": 29.5
           },
           "modelEst": {
             "sample": 16,
             "percent": -1.3379915553475674,
             "groups": 16,
+            "matchedListings": 228,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52186,7 +52324,8 @@
       "11680": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 309
         },
         "concessions": {
           "1": {
@@ -52247,6 +52386,8 @@
         },
         "spread": {
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52256,18 +52397,21 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 0.3688604154533093,
             "groups": 6,
+            "matchedListings": 52,
             "medianBenchmarkAgeDays": 30.5
           },
           "modelEst": {
             "sample": 9,
             "percent": -4.904658213380364,
             "groups": 9,
+            "matchedListings": 70,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52298,7 +52442,8 @@
       "11710": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 648
         },
         "concessions": {
           "1": {
@@ -52359,6 +52504,8 @@
         },
         "spread": {
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 141,
           "percent": 2.4590163934426146,
           "medianBenchmarkAgeDays": 19,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52368,18 +52515,21 @@
           "actual90d": {
             "sample": 3,
             "percent": 2.4590163934426146,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 141
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 3.8074712643678232,
             "groups": 12,
+            "matchedListings": 269,
             "medianBenchmarkAgeDays": 36.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 6.46698341622386,
             "groups": 20,
+            "matchedListings": 407,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52410,7 +52560,8 @@
       "11740": {
         "coverage": {
           "roster": 4,
-          "success": 4
+          "success": 4,
+          "listings": 440
         },
         "concessions": {
           "1": {
@@ -52471,6 +52622,8 @@
         },
         "spread": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 116,
           "percent": -5.602716468590829,
           "medianBenchmarkAgeDays": 45,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52480,18 +52633,21 @@
           "actual90d": {
             "sample": 1,
             "percent": -5.602716468590829,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 116
           },
           "longTerm180d": {
             "sample": 5,
             "percent": 0.9584664536741228,
             "groups": 5,
+            "matchedListings": 170,
             "medianBenchmarkAgeDays": 40
           },
           "modelEst": {
             "sample": 13,
             "percent": 3.3544867896391883,
             "groups": 13,
+            "matchedListings": 301,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52525,6 +52681,8 @@
         {
           "day": "2026-11-12",
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52534,18 +52692,21 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 0,
             "percent": null,
             "groups": 0,
+            "matchedListings": 0,
             "medianBenchmarkAgeDays": null
           },
           "modelEst": {
             "sample": 0,
             "percent": null,
             "groups": 0,
+            "matchedListings": 0,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52555,6 +52716,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 51,
           "percent": -2.0076221587042253,
           "medianBenchmarkAgeDays": 14.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52564,18 +52727,21 @@
           "actual90d": {
             "sample": 2,
             "percent": -2.0076221587042253,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 51
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 4.533120510774147,
             "groups": 8,
+            "matchedListings": 119,
             "medianBenchmarkAgeDays": 29.5
           },
           "modelEst": {
             "sample": 11,
             "percent": 3.851963583793938,
             "groups": 11,
+            "matchedListings": 188,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52585,6 +52751,8 @@
         {
           "day": "2026-11-12",
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 24,
           "percent": 1.1213047910295648,
           "medianBenchmarkAgeDays": 19,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52594,18 +52762,21 @@
           "actual90d": {
             "sample": 3,
             "percent": 1.1213047910295648,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 24
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 1.9151138716356098,
             "groups": 8,
+            "matchedListings": 191,
             "medianBenchmarkAgeDays": 56.5
           },
           "modelEst": {
             "sample": 16,
             "percent": -0.14304453653189997,
             "groups": 16,
+            "matchedListings": 288,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52615,6 +52786,8 @@
         {
           "day": "2026-11-12",
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 301,
           "percent": 1.1525105417951154,
           "medianBenchmarkAgeDays": 25.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52624,18 +52797,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 1.1525105417951154,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 301
           },
           "longTerm180d": {
             "sample": 7,
             "percent": 1.1997913406364136,
             "groups": 7,
+            "matchedListings": 480,
             "medianBenchmarkAgeDays": 36
           },
           "modelEst": {
             "sample": 11,
             "percent": -0.4552352048558417,
             "groups": 11,
+            "matchedListings": 642,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52645,6 +52821,8 @@
         {
           "day": "2026-11-12",
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 27,
           "percent": 10.294117647058831,
           "medianBenchmarkAgeDays": 14,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52654,18 +52832,21 @@
           "actual90d": {
             "sample": 1,
             "percent": 10.294117647058831,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 27
           },
           "longTerm180d": {
             "sample": 2,
             "percent": 8.68423961096375,
             "groups": 2,
+            "matchedListings": 44,
             "medianBenchmarkAgeDays": 58.5
           },
           "modelEst": {
             "sample": 11,
             "percent": -0.3510542078162815,
             "groups": 11,
+            "matchedListings": 236,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52675,6 +52856,8 @@
         {
           "day": "2026-11-12",
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 185,
           "percent": 5.4697081187147445,
           "medianBenchmarkAgeDays": 9,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52684,18 +52867,21 @@
           "actual90d": {
             "sample": 1,
             "percent": 5.4697081187147445,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 185
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 9.411039529149766,
             "groups": 6,
+            "matchedListings": 321,
             "medianBenchmarkAgeDays": 54.0
           },
           "modelEst": {
             "sample": 13,
             "percent": 8.694403294221043,
             "groups": 13,
+            "matchedListings": 463,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52705,6 +52891,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 17,
           "percent": 15.54545454545454,
           "medianBenchmarkAgeDays": 73.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52714,18 +52902,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 15.54545454545454,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 17
           },
           "longTerm180d": {
             "sample": 5,
             "percent": 11.363636363636353,
             "groups": 5,
+            "matchedListings": 61,
             "medianBenchmarkAgeDays": 76
           },
           "modelEst": {
             "sample": 12,
             "percent": 12.091405548170487,
             "groups": 12,
+            "matchedListings": 128,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52735,6 +52926,8 @@
         {
           "day": "2026-11-12",
           "sample": 8,
+          "groups": 8,
+          "matchedListings": 177,
           "percent": 7.038590228582409,
           "medianBenchmarkAgeDays": 34.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52744,18 +52937,21 @@
           "actual90d": {
             "sample": 8,
             "percent": 7.038590228582409,
-            "groups": 8
+            "groups": 8,
+            "matchedListings": 177
           },
           "longTerm180d": {
             "sample": 17,
             "percent": 8.55614973262031,
             "groups": 17,
+            "matchedListings": 381,
             "medianBenchmarkAgeDays": 35
           },
           "modelEst": {
             "sample": 30,
             "percent": 13.340974774500115,
             "groups": 30,
+            "matchedListings": 563,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52765,6 +52961,8 @@
         {
           "day": "2026-11-12",
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 75,
           "percent": 7.337662337662342,
           "medianBenchmarkAgeDays": 18.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52774,18 +52972,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 7.337662337662342,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 75
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 13.825637303819283,
             "groups": 10,
+            "matchedListings": 143,
             "medianBenchmarkAgeDays": 31.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 16.045366741283672,
             "groups": 20,
+            "matchedListings": 313,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52795,6 +52996,8 @@
         {
           "day": "2026-11-12",
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 115,
           "percent": 6.615208690680385,
           "medianBenchmarkAgeDays": 19.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52804,18 +53007,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 6.615208690680385,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 115
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 9.938271604938276,
             "groups": 12,
+            "matchedListings": 204,
             "medianBenchmarkAgeDays": 34.5
           },
           "modelEst": {
             "sample": 24,
             "percent": 12.094382551078874,
             "groups": 24,
+            "matchedListings": 240,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52825,6 +53031,8 @@
         {
           "day": "2026-11-12",
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 23,
           "percent": 14.705882352941169,
           "medianBenchmarkAgeDays": 22,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52834,18 +53042,21 @@
           "actual90d": {
             "sample": 3,
             "percent": 14.705882352941169,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 23
           },
           "longTerm180d": {
             "sample": 11,
             "percent": 13.636363636363647,
             "groups": 11,
+            "matchedListings": 103,
             "medianBenchmarkAgeDays": 62
           },
           "modelEst": {
             "sample": 23,
             "percent": 12.629701386803571,
             "groups": 23,
+            "matchedListings": 153,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52855,6 +53066,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 24,
           "percent": 3.9772727272727293,
           "medianBenchmarkAgeDays": 44.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52864,18 +53077,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 3.9772727272727293,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 24
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 7.969206189866885,
             "groups": 12,
+            "matchedListings": 286,
             "medianBenchmarkAgeDays": 45.5
           },
           "modelEst": {
             "sample": 24,
             "percent": 8.047577046139077,
             "groups": 24,
+            "matchedListings": 425,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52885,6 +53101,8 @@
         {
           "day": "2026-11-12",
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 70,
           "percent": 4.090189873417726,
           "medianBenchmarkAgeDays": 24.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52894,18 +53112,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 4.090189873417726,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 70
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 6.589669554058386,
             "groups": 10,
+            "matchedListings": 194,
             "medianBenchmarkAgeDays": 28.5
           },
           "modelEst": {
             "sample": 22,
             "percent": 6.436249922966352,
             "groups": 22,
+            "matchedListings": 299,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52915,6 +53136,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 188,
           "percent": 4.751644889259564,
           "medianBenchmarkAgeDays": 56.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52924,18 +53147,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 4.751644889259564,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 188
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 3.377609108159396,
             "groups": 6,
+            "matchedListings": 426,
             "medianBenchmarkAgeDays": 56.5
           },
           "modelEst": {
             "sample": 15,
             "percent": 4.102047460100788,
             "groups": 15,
+            "matchedListings": 608,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52945,6 +53171,8 @@
         {
           "day": "2026-11-12",
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 14,
           "percent": -0.7981755986317007,
           "medianBenchmarkAgeDays": 8,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52954,18 +53182,21 @@
           "actual90d": {
             "sample": 1,
             "percent": -0.7981755986317007,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 14
           },
           "longTerm180d": {
             "sample": 3,
             "percent": 3.825136612021862,
             "groups": 3,
+            "matchedListings": 433,
             "medianBenchmarkAgeDays": 27
           },
           "modelEst": {
             "sample": 11,
             "percent": 8.003801907010644,
             "groups": 11,
+            "matchedListings": 711,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -52975,6 +53206,8 @@
         {
           "day": "2026-11-12",
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 130,
           "percent": 3.3475349969567803,
           "medianBenchmarkAgeDays": 14.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -52984,18 +53217,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 3.3475349969567803,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 130
           },
           "longTerm180d": {
             "sample": 16,
             "percent": 6.211695607763024,
             "groups": 16,
+            "matchedListings": 206,
             "medianBenchmarkAgeDays": 39.5
           },
           "modelEst": {
             "sample": 25,
             "percent": 7.254971060232562,
             "groups": 25,
+            "matchedListings": 321,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53005,6 +53241,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 13,
           "percent": 12.488391726466862,
           "medianBenchmarkAgeDays": 28.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53014,18 +53252,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 12.488391726466862,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 13
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 18.454103910121177,
             "groups": 8,
+            "matchedListings": 111,
             "medianBenchmarkAgeDays": 45.0
           },
           "modelEst": {
             "sample": 21,
             "percent": 26.426378572330613,
             "groups": 21,
+            "matchedListings": 269,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53035,6 +53276,8 @@
         {
           "day": "2026-11-12",
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 212,
           "percent": 8.837408837408844,
           "medianBenchmarkAgeDays": 28.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53044,18 +53287,21 @@
           "actual90d": {
             "sample": 4,
             "percent": 8.837408837408844,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 212
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 8.940681513730741,
             "groups": 10,
+            "matchedListings": 313,
             "medianBenchmarkAgeDays": 34.0
           },
           "modelEst": {
             "sample": 16,
             "percent": 10.898953631700149,
             "groups": 16,
+            "matchedListings": 332,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53065,6 +53311,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 9,
           "percent": 8.578431372549023,
           "medianBenchmarkAgeDays": 29.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53074,18 +53322,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 8.578431372549023,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 9
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 7.055389965226023,
             "groups": 8,
+            "matchedListings": 64,
             "medianBenchmarkAgeDays": 53.0
           },
           "modelEst": {
             "sample": 20,
             "percent": 8.398391854254017,
             "groups": 20,
+            "matchedListings": 193,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53095,6 +53346,8 @@
         {
           "day": "2026-11-12",
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 48,
           "percent": 3.6144578313253017,
           "medianBenchmarkAgeDays": 69,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53104,18 +53357,21 @@
           "actual90d": {
             "sample": 1,
             "percent": 3.6144578313253017,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 48
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 4.076042443987404,
             "groups": 6,
+            "matchedListings": 201,
             "medianBenchmarkAgeDays": 70.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 1.3686120546595792,
             "groups": 20,
+            "matchedListings": 424,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53125,6 +53381,8 @@
         {
           "day": "2026-11-12",
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 187,
           "percent": 1.3557929334428898,
           "medianBenchmarkAgeDays": 24.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53134,18 +53392,21 @@
           "actual90d": {
             "sample": 2,
             "percent": 1.3557929334428898,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 187
           },
           "longTerm180d": {
             "sample": 4,
             "percent": 3.404088050314469,
             "groups": 4,
+            "matchedListings": 313,
             "medianBenchmarkAgeDays": 24.0
           },
           "modelEst": {
             "sample": 7,
             "percent": 5.463701210263094,
             "groups": 7,
+            "matchedListings": 358,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53155,6 +53416,8 @@
         {
           "day": "2026-11-12",
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53164,18 +53427,21 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 2,
             "percent": 2.789508118717654,
             "groups": 2,
+            "matchedListings": 65,
             "medianBenchmarkAgeDays": 29.5
           },
           "modelEst": {
             "sample": 16,
             "percent": -1.3379915553475674,
             "groups": 16,
+            "matchedListings": 228,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53185,6 +53451,8 @@
         {
           "day": "2026-11-12",
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53194,18 +53462,21 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 0.3688604154533093,
             "groups": 6,
+            "matchedListings": 52,
             "medianBenchmarkAgeDays": 30.5
           },
           "modelEst": {
             "sample": 9,
             "percent": -4.904658213380364,
             "groups": 9,
+            "matchedListings": 70,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53215,6 +53486,8 @@
         {
           "day": "2026-11-12",
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 141,
           "percent": 2.4590163934426146,
           "medianBenchmarkAgeDays": 19,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53224,18 +53497,21 @@
           "actual90d": {
             "sample": 3,
             "percent": 2.4590163934426146,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 141
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 3.8074712643678232,
             "groups": 12,
+            "matchedListings": 269,
             "medianBenchmarkAgeDays": 36.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 6.46698341622386,
             "groups": 20,
+            "matchedListings": 407,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53245,6 +53521,8 @@
         {
           "day": "2026-11-12",
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 116,
           "percent": -5.602716468590829,
           "medianBenchmarkAgeDays": 45,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53254,18 +53532,21 @@
           "actual90d": {
             "sample": 1,
             "percent": -5.602716468590829,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 116
           },
           "longTerm180d": {
             "sample": 5,
             "percent": 0.9584664536741228,
             "groups": 5,
+            "matchedListings": 170,
             "medianBenchmarkAgeDays": 40
           },
           "modelEst": {
             "sample": 13,
             "percent": 3.3544867896391883,
             "groups": 13,
+            "matchedListings": 301,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53275,6 +53556,8 @@
         {
           "day": "2026-11-12",
           "sample": 60,
+          "groups": 60,
+          "matchedListings": 2147,
           "percent": 5.297168608111558,
           "medianBenchmarkAgeDays": 25.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53284,18 +53567,21 @@
           "actual90d": {
             "sample": 60,
             "percent": 5.297168608111558,
-            "groups": 60
+            "groups": 60,
+            "matchedListings": 2147
           },
           "longTerm180d": {
             "sample": 194,
             "percent": 6.697963483719571,
             "groups": 194,
+            "matchedListings": 5150,
             "medianBenchmarkAgeDays": 40.0
           },
           "modelEst": {
             "sample": 410,
             "percent": 7.263005945969181,
             "groups": 410,
+            "matchedListings": 8160,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -53306,6 +53592,8 @@
       "2026-11-12": {
         "11110": {
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53315,24 +53603,29 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 0,
             "percent": null,
             "groups": 0,
+            "matchedListings": 0,
             "medianBenchmarkAgeDays": null
           },
           "modelEst": {
             "sample": 0,
             "percent": null,
             "groups": 0,
+            "matchedListings": 0,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11140": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 51,
           "percent": -2.0076221587042253,
           "medianBenchmarkAgeDays": 14.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53342,24 +53635,29 @@
           "actual90d": {
             "sample": 2,
             "percent": -2.0076221587042253,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 51
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 4.533120510774147,
             "groups": 8,
+            "matchedListings": 119,
             "medianBenchmarkAgeDays": 29.5
           },
           "modelEst": {
             "sample": 11,
             "percent": 3.851963583793938,
             "groups": 11,
+            "matchedListings": 188,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11170": {
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 24,
           "percent": 1.1213047910295648,
           "medianBenchmarkAgeDays": 19,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53369,24 +53667,29 @@
           "actual90d": {
             "sample": 3,
             "percent": 1.1213047910295648,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 24
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 1.9151138716356098,
             "groups": 8,
+            "matchedListings": 191,
             "medianBenchmarkAgeDays": 56.5
           },
           "modelEst": {
             "sample": 16,
             "percent": -0.14304453653189997,
             "groups": 16,
+            "matchedListings": 288,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11200": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 301,
           "percent": 1.1525105417951154,
           "medianBenchmarkAgeDays": 25.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53396,24 +53699,29 @@
           "actual90d": {
             "sample": 4,
             "percent": 1.1525105417951154,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 301
           },
           "longTerm180d": {
             "sample": 7,
             "percent": 1.1997913406364136,
             "groups": 7,
+            "matchedListings": 480,
             "medianBenchmarkAgeDays": 36
           },
           "modelEst": {
             "sample": 11,
             "percent": -0.4552352048558417,
             "groups": 11,
+            "matchedListings": 642,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11215": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 27,
           "percent": 10.294117647058831,
           "medianBenchmarkAgeDays": 14,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53423,24 +53731,29 @@
           "actual90d": {
             "sample": 1,
             "percent": 10.294117647058831,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 27
           },
           "longTerm180d": {
             "sample": 2,
             "percent": 8.68423961096375,
             "groups": 2,
+            "matchedListings": 44,
             "medianBenchmarkAgeDays": 58.5
           },
           "modelEst": {
             "sample": 11,
             "percent": -0.3510542078162815,
             "groups": 11,
+            "matchedListings": 236,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11230": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 185,
           "percent": 5.4697081187147445,
           "medianBenchmarkAgeDays": 9,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53450,24 +53763,29 @@
           "actual90d": {
             "sample": 1,
             "percent": 5.4697081187147445,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 185
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 9.411039529149766,
             "groups": 6,
+            "matchedListings": 321,
             "medianBenchmarkAgeDays": 54.0
           },
           "modelEst": {
             "sample": 13,
             "percent": 8.694403294221043,
             "groups": 13,
+            "matchedListings": 463,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11260": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 17,
           "percent": 15.54545454545454,
           "medianBenchmarkAgeDays": 73.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53477,24 +53795,29 @@
           "actual90d": {
             "sample": 2,
             "percent": 15.54545454545454,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 17
           },
           "longTerm180d": {
             "sample": 5,
             "percent": 11.363636363636353,
             "groups": 5,
+            "matchedListings": 61,
             "medianBenchmarkAgeDays": 76
           },
           "modelEst": {
             "sample": 12,
             "percent": 12.091405548170487,
             "groups": 12,
+            "matchedListings": 128,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11290": {
           "sample": 8,
+          "groups": 8,
+          "matchedListings": 177,
           "percent": 7.038590228582409,
           "medianBenchmarkAgeDays": 34.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53504,24 +53827,29 @@
           "actual90d": {
             "sample": 8,
             "percent": 7.038590228582409,
-            "groups": 8
+            "groups": 8,
+            "matchedListings": 177
           },
           "longTerm180d": {
             "sample": 17,
             "percent": 8.55614973262031,
             "groups": 17,
+            "matchedListings": 381,
             "medianBenchmarkAgeDays": 35
           },
           "modelEst": {
             "sample": 30,
             "percent": 13.340974774500115,
             "groups": 30,
+            "matchedListings": 563,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11305": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 75,
           "percent": 7.337662337662342,
           "medianBenchmarkAgeDays": 18.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53531,24 +53859,29 @@
           "actual90d": {
             "sample": 4,
             "percent": 7.337662337662342,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 75
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 13.825637303819283,
             "groups": 10,
+            "matchedListings": 143,
             "medianBenchmarkAgeDays": 31.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 16.045366741283672,
             "groups": 20,
+            "matchedListings": 313,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11320": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 115,
           "percent": 6.615208690680385,
           "medianBenchmarkAgeDays": 19.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53558,24 +53891,29 @@
           "actual90d": {
             "sample": 4,
             "percent": 6.615208690680385,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 115
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 9.938271604938276,
             "groups": 12,
+            "matchedListings": 204,
             "medianBenchmarkAgeDays": 34.5
           },
           "modelEst": {
             "sample": 24,
             "percent": 12.094382551078874,
             "groups": 24,
+            "matchedListings": 240,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11350": {
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 23,
           "percent": 14.705882352941169,
           "medianBenchmarkAgeDays": 22,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53585,24 +53923,29 @@
           "actual90d": {
             "sample": 3,
             "percent": 14.705882352941169,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 23
           },
           "longTerm180d": {
             "sample": 11,
             "percent": 13.636363636363647,
             "groups": 11,
+            "matchedListings": 103,
             "medianBenchmarkAgeDays": 62
           },
           "modelEst": {
             "sample": 23,
             "percent": 12.629701386803571,
             "groups": 23,
+            "matchedListings": 153,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11380": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 24,
           "percent": 3.9772727272727293,
           "medianBenchmarkAgeDays": 44.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53612,24 +53955,29 @@
           "actual90d": {
             "sample": 2,
             "percent": 3.9772727272727293,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 24
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 7.969206189866885,
             "groups": 12,
+            "matchedListings": 286,
             "medianBenchmarkAgeDays": 45.5
           },
           "modelEst": {
             "sample": 24,
             "percent": 8.047577046139077,
             "groups": 24,
+            "matchedListings": 425,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11410": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 70,
           "percent": 4.090189873417726,
           "medianBenchmarkAgeDays": 24.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53639,24 +53987,29 @@
           "actual90d": {
             "sample": 4,
             "percent": 4.090189873417726,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 70
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 6.589669554058386,
             "groups": 10,
+            "matchedListings": 194,
             "medianBenchmarkAgeDays": 28.5
           },
           "modelEst": {
             "sample": 22,
             "percent": 6.436249922966352,
             "groups": 22,
+            "matchedListings": 299,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11440": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 188,
           "percent": 4.751644889259564,
           "medianBenchmarkAgeDays": 56.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53666,24 +54019,29 @@
           "actual90d": {
             "sample": 2,
             "percent": 4.751644889259564,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 188
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 3.377609108159396,
             "groups": 6,
+            "matchedListings": 426,
             "medianBenchmarkAgeDays": 56.5
           },
           "modelEst": {
             "sample": 15,
             "percent": 4.102047460100788,
             "groups": 15,
+            "matchedListings": 608,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11470": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 14,
           "percent": -0.7981755986317007,
           "medianBenchmarkAgeDays": 8,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53693,24 +54051,29 @@
           "actual90d": {
             "sample": 1,
             "percent": -0.7981755986317007,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 14
           },
           "longTerm180d": {
             "sample": 3,
             "percent": 3.825136612021862,
             "groups": 3,
+            "matchedListings": 433,
             "medianBenchmarkAgeDays": 27
           },
           "modelEst": {
             "sample": 11,
             "percent": 8.003801907010644,
             "groups": 11,
+            "matchedListings": 711,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11500": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 130,
           "percent": 3.3475349969567803,
           "medianBenchmarkAgeDays": 14.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53720,24 +54083,29 @@
           "actual90d": {
             "sample": 4,
             "percent": 3.3475349969567803,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 130
           },
           "longTerm180d": {
             "sample": 16,
             "percent": 6.211695607763024,
             "groups": 16,
+            "matchedListings": 206,
             "medianBenchmarkAgeDays": 39.5
           },
           "modelEst": {
             "sample": 25,
             "percent": 7.254971060232562,
             "groups": 25,
+            "matchedListings": 321,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11530": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 13,
           "percent": 12.488391726466862,
           "medianBenchmarkAgeDays": 28.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53747,24 +54115,29 @@
           "actual90d": {
             "sample": 2,
             "percent": 12.488391726466862,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 13
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 18.454103910121177,
             "groups": 8,
+            "matchedListings": 111,
             "medianBenchmarkAgeDays": 45.0
           },
           "modelEst": {
             "sample": 21,
             "percent": 26.426378572330613,
             "groups": 21,
+            "matchedListings": 269,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11545": {
           "sample": 4,
+          "groups": 4,
+          "matchedListings": 212,
           "percent": 8.837408837408844,
           "medianBenchmarkAgeDays": 28.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53774,24 +54147,29 @@
           "actual90d": {
             "sample": 4,
             "percent": 8.837408837408844,
-            "groups": 4
+            "groups": 4,
+            "matchedListings": 212
           },
           "longTerm180d": {
             "sample": 10,
             "percent": 8.940681513730741,
             "groups": 10,
+            "matchedListings": 313,
             "medianBenchmarkAgeDays": 34.0
           },
           "modelEst": {
             "sample": 16,
             "percent": 10.898953631700149,
             "groups": 16,
+            "matchedListings": 332,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11560": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 9,
           "percent": 8.578431372549023,
           "medianBenchmarkAgeDays": 29.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53801,24 +54179,29 @@
           "actual90d": {
             "sample": 2,
             "percent": 8.578431372549023,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 9
           },
           "longTerm180d": {
             "sample": 8,
             "percent": 7.055389965226023,
             "groups": 8,
+            "matchedListings": 64,
             "medianBenchmarkAgeDays": 53.0
           },
           "modelEst": {
             "sample": 20,
             "percent": 8.398391854254017,
             "groups": 20,
+            "matchedListings": 193,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11590": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 48,
           "percent": 3.6144578313253017,
           "medianBenchmarkAgeDays": 69,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53828,24 +54211,29 @@
           "actual90d": {
             "sample": 1,
             "percent": 3.6144578313253017,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 48
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 4.076042443987404,
             "groups": 6,
+            "matchedListings": 201,
             "medianBenchmarkAgeDays": 70.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 1.3686120546595792,
             "groups": 20,
+            "matchedListings": 424,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11620": {
           "sample": 2,
+          "groups": 2,
+          "matchedListings": 187,
           "percent": 1.3557929334428898,
           "medianBenchmarkAgeDays": 24.0,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53855,24 +54243,29 @@
           "actual90d": {
             "sample": 2,
             "percent": 1.3557929334428898,
-            "groups": 2
+            "groups": 2,
+            "matchedListings": 187
           },
           "longTerm180d": {
             "sample": 4,
             "percent": 3.404088050314469,
             "groups": 4,
+            "matchedListings": 313,
             "medianBenchmarkAgeDays": 24.0
           },
           "modelEst": {
             "sample": 7,
             "percent": 5.463701210263094,
             "groups": 7,
+            "matchedListings": 358,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11650": {
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53882,24 +54275,29 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 2,
             "percent": 2.789508118717654,
             "groups": 2,
+            "matchedListings": 65,
             "medianBenchmarkAgeDays": 29.5
           },
           "modelEst": {
             "sample": 16,
             "percent": -1.3379915553475674,
             "groups": 16,
+            "matchedListings": 228,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11680": {
           "sample": 0,
+          "groups": 0,
+          "matchedListings": 0,
           "percent": null,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53909,24 +54307,29 @@
           "actual90d": {
             "sample": 0,
             "percent": null,
-            "groups": 0
+            "groups": 0,
+            "matchedListings": 0
           },
           "longTerm180d": {
             "sample": 6,
             "percent": 0.3688604154533093,
             "groups": 6,
+            "matchedListings": 52,
             "medianBenchmarkAgeDays": 30.5
           },
           "modelEst": {
             "sample": 9,
             "percent": -4.904658213380364,
             "groups": 9,
+            "matchedListings": 70,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11710": {
           "sample": 3,
+          "groups": 3,
+          "matchedListings": 141,
           "percent": 2.4590163934426146,
           "medianBenchmarkAgeDays": 19,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53936,24 +54339,29 @@
           "actual90d": {
             "sample": 3,
             "percent": 2.4590163934426146,
-            "groups": 3
+            "groups": 3,
+            "matchedListings": 141
           },
           "longTerm180d": {
             "sample": 12,
             "percent": 3.8074712643678232,
             "groups": 12,
+            "matchedListings": 269,
             "medianBenchmarkAgeDays": 36.5
           },
           "modelEst": {
             "sample": 20,
             "percent": 6.46698341622386,
             "groups": 20,
+            "matchedListings": 407,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "11740": {
           "sample": 1,
+          "groups": 1,
+          "matchedListings": 116,
           "percent": -5.602716468590829,
           "medianBenchmarkAgeDays": 45,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53963,24 +54371,29 @@
           "actual90d": {
             "sample": 1,
             "percent": -5.602716468590829,
-            "groups": 1
+            "groups": 1,
+            "matchedListings": 116
           },
           "longTerm180d": {
             "sample": 5,
             "percent": 0.9584664536741228,
             "groups": 5,
+            "matchedListings": 170,
             "medianBenchmarkAgeDays": 40
           },
           "modelEst": {
             "sample": 13,
             "percent": 3.3544867896391883,
             "groups": 13,
+            "matchedListings": 301,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
         },
         "all": {
           "sample": 60,
+          "groups": 60,
+          "matchedListings": 2147,
           "percent": 5.297168608111558,
           "medianBenchmarkAgeDays": 25.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
@@ -53990,18 +54403,21 @@
           "actual90d": {
             "sample": 60,
             "percent": 5.297168608111558,
-            "groups": 60
+            "groups": 60,
+            "matchedListings": 2147
           },
           "longTerm180d": {
             "sample": 194,
             "percent": 6.697963483719571,
             "groups": 194,
+            "matchedListings": 5150,
             "medianBenchmarkAgeDays": 40.0
           },
           "modelEst": {
             "sample": 410,
             "percent": 7.263005945969181,
             "groups": 410,
+            "matchedListings": 8160,
             "validationMdAPE": 4.49,
             "tradeVintage": "2026-11-12T12:43:38+09:00"
           }
@@ -54047,10 +54463,11 @@
     "todayCoreFailures": 0,
     "todayCoreTarget": 110,
     "todayCoreSuccessRate": 100.0,
+    "coreSampleCount": 375,
+    "coreCoverageRate": 29.3,
     "observed7d": 110,
     "observed30d": 110,
     "activeListings": 11993,
-    "coreSampleCount": 375,
     "mappedUniverseCount": 5821,
     "panelType": "고정 표본 (연속 패널 375개 단지)",
     "rollingType": "비핵심 순환 관측 (5개 권역 5,446개 단지)"

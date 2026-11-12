@@ -17,7 +17,7 @@ import sqlite3
 import subprocess
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -45,6 +45,29 @@ def run_step(name, script_path, args=None):
     if res.stdout:
         print(res.stdout.strip())
     return res.stdout
+
+def evaluate_quality_gate(planned_count, successful_count):
+    """Evaluate quality gate based on planned denominator vs successful numerator.
+    Returns (status, success_rate, error_message or None).
+    Status policies:
+      - FULL_SUCCESS (>= 95.0%): Normal analytics & official index publication allowed.
+      - PARTIAL_SUCCESS (80.0% <= rate < 95.0%): Internal data & logs preserved, official public release deferred.
+      - CORE_QUALITY_BREACH (< 80.0%): Analytics & release aborted, error logged.
+    """
+    if planned_count <= 0:
+        return 'CORE_QUALITY_BREACH', 0.0, "당일 수집 예정 단지 수가 0 이하입니다."
+    
+    rate = successful_count / planned_count
+    rate_pct = round(rate * 100, 2)
+    
+    if rate < 0.80:
+        msg = f"핵심 표본 수집 성공률({rate_pct}%)이 최소 품질 기준(80.0%)에 미달했습니다."
+        return 'CORE_QUALITY_BREACH', rate, msg
+    elif rate < 0.95:
+        msg = f"부분 수집 완료 ({rate_pct}%). 품질 기준(95.0%) 미달로 공식 확정지수 공표가 유예됩니다."
+        return 'PARTIAL_SUCCESS', rate, msg
+    else:
+        return 'FULL_SUCCESS', rate, None
 
 def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600, workers=8):
     start_time = datetime.now(ZoneInfo('Asia/Seoul'))
@@ -128,17 +151,18 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
 
     planned_ids = {str(c['complex']) for c in planned_targets}
     successful_planned = len(planned_ids.intersection(success_ids))
-    success_rate = (successful_planned / planned_count) if planned_count > 0 else 0.0
+    
+    operational_status, success_rate, gate_msg = evaluate_quality_gate(planned_count, successful_planned)
 
     print(f"\n[Quality Gate Audit]")
     print(f"  당일 수집 예정 단지(분모): {planned_count}개")
     print(f"  실제 정상 수집 단지(분자): {successful_planned}개")
     print(f"  핵심 표본 수집 성공률:     {success_rate*100:.1f}%")
+    print(f"  판정 상태:                 {operational_status}")
 
-    if success_rate < 0.80:
-        operational_status = 'CORE_QUALITY_BREACH'
-        err_msg = f"핵심 표본 수집 성공률({success_rate*100:.1f}%)이 최소 품질 기준(80.0%)에 미달했습니다. 새로운 확정값 공표 및 배포를 중단하고 기존 확정값을 보존합니다."
-        print(f"\n[CRITICAL QUALITY FAILURE] {err_msg}")
+    if operational_status == 'CORE_QUALITY_BREACH':
+        print(f"\n[CRITICAL QUALITY FAILURE] {gate_msg}")
+        print("새로운 확정값 공표 및 배포를 중단하고 기존 확정값을 보존합니다.")
         incident_file = ROOT / 'data' / 'logs' / f'incident_{target_day}.json'
         incident_file.parent.mkdir(parents=True, exist_ok=True)
         incident_file.write_text(json.dumps({
@@ -147,16 +171,15 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
             'planned_count': planned_count,
             'successful_count': successful_planned,
             'success_rate_pct': round(success_rate * 100, 2),
-            'message': err_msg,
+            'message': gate_msg,
             'timestamp': datetime.now(timezone.utc).isoformat()
         }, ensure_ascii=False, indent=2), encoding='utf-8')
         return 1
 
-    elif success_rate < 0.95:
-        operational_status = 'PARTIAL_SUCCESS'
-        print(f"\n[NOTICE] 부분 수집 완료 ({success_rate*100:.1f}%). 데이터 분석을 부분 관측 상태로 진행합니다.")
+    elif operational_status == 'PARTIAL_SUCCESS':
+        print(f"\n[NOTICE] {gate_msg}")
+        print("내부 관측 데이터 및 스냅샷은 안전하게 보존하며, 확정지수 공식 공표는 유예합니다.")
     else:
-        operational_status = 'FULL_SUCCESS'
         print(f"\n[PASS] 정상 수집 완료 ({success_rate*100:.1f}%). 정규 분석 및 공표 파이프라인을 진행합니다.")
 
     # 5. Post-collection analytics
@@ -197,26 +220,41 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
         raise RuntimeError("Post-run unit tests failed")
     print("All unit tests passed successfully!")
     
-    # 10. Automated Public Deployment via GitHub
-    print("\n[Step 8] Pushing verified site payload to GitHub...")
-    subprocess.run(['git', 'add', 'site/data.json'], cwd=str(ROOT), capture_output=True, text=True)
-    git_diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], cwd=str(ROOT))
-    if git_diff.returncode != 0:
-        commit_msg = f"data: daily update {target_day}"
-        subprocess.run(['git', 'commit', '-m', commit_msg], cwd=str(ROOT), capture_output=True, text=True)
-        push_res = subprocess.run(['git', 'push', 'origin', 'main'], cwd=str(ROOT), capture_output=True, text=True)
-        if push_res.returncode == 0:
-            print(f"Successfully pushed daily update ({target_day}) to GitHub origin main.")
+    # 10. Automated Public Deployment via GitHub (FULL_SUCCESS Only)
+    if operational_status == 'FULL_SUCCESS':
+        print("\n[Step 8] Pushing verified site payload to GitHub (FULL_SUCCESS Mode)...")
+        subprocess.run(['git', 'add', 'site/data.json'], cwd=str(ROOT), capture_output=True, text=True)
+        git_diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], cwd=str(ROOT))
+        if git_diff.returncode != 0:
+            commit_msg = f"data: daily update {target_day}"
+            subprocess.run(['git', 'commit', '-m', commit_msg], cwd=str(ROOT), capture_output=True, text=True)
+            push_res = subprocess.run(['git', 'push', 'origin', 'main'], cwd=str(ROOT), capture_output=True, text=True)
+            if push_res.returncode == 0:
+                print(f"Successfully pushed daily update ({target_day}) to GitHub origin main.")
+            else:
+                err_msg = f"git push failed with code {push_res.returncode}: {push_res.stderr.strip()}"
+                print(f"[CRITICAL DEPLOYMENT FAILURE] {err_msg}")
+                incident_file = ROOT / 'data' / 'logs' / f'incident_{target_day}.json'
+                incident_file.parent.mkdir(parents=True, exist_ok=True)
+                incident_file.write_text(json.dumps({
+                    'day': target_day,
+                    'status': 'DEPLOY_FAILED',
+                    'message': err_msg,
+                    'timestamp': datetime.now(timezone.utc).isoformat()
+                }, ensure_ascii=False, indent=2), encoding='utf-8')
+                return 2  # Return code 2 indicates Deployment Failure
         else:
-            print(f"Warning: git push returned code {push_res.returncode}: {push_res.stderr}")
+            print("site/data.json is unchanged; no new git commit needed.")
     else:
-        print("site/data.json is unchanged; no new git commit needed.")
+        print(f"\n[Step 8] Skipping public GitHub deployment (Status: {operational_status}).")
+        print("Internal data, snapshots, and audit metrics are safely preserved locally; public benchmark publication is deferred.")
     
     end_time = datetime.now(ZoneInfo('Asia/Seoul'))
     total_elapsed = (end_time - start_time).total_seconds()
     print("="*80)
-    print(f"APT WATCH DAILY OPERATION [{target_day}] COMPLETED IN {total_elapsed:.2f}s")
+    print(f"APT WATCH DAILY OPERATION [{target_day}] COMPLETED ({operational_status}) IN {total_elapsed:.2f}s")
     print("="*80)
+    return 0
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -227,10 +265,11 @@ if __name__ == '__main__':
     parser.add_argument('--workers', type=int, default=8, help='Number of parallel browser workers (default: 8)')
     args = parser.parse_args()
     
-    run_daily_operation(
+    exit_code = run_daily_operation(
         day=args.day,
         manifest_path=args.manifest,
         resume=not args.no_resume,
         timeout=args.timeout,
         workers=args.workers
     )
+    sys.exit(exit_code)

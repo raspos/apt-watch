@@ -65,45 +65,77 @@ def ensure_tables(db):
     );
     """)
 
-def merge_staging_to_main(staging_db_path, main_db_path):
-    """Safely merge a worker's staging SQLite DB into the main history DB using single writer transaction."""
-    if not staging_db_path.exists():
-        return 0, 0, 0
+def merge_all_staging_atomic(worker_stores, main_store_path):
+    """Atomically merge all worker staging SQLite DBs into the main history DB.
+    Guarantees:
+      1. All-or-nothing atomicity: Reads all valid staging DBs first, writes in a single unified transaction.
+      2. Integrity pre-checks: Verifies each staging DB is uncorrupted before touching main DB.
+      3. Idempotent: Can be safely re-run multiple times without duplicate keys or corruption.
+      4. Safe rollback: If any DB write fails, main DB transaction rolls back completely.
+    """
+    all_batches = []
+    all_listings = []
+    all_telemetry = []
+    corrupted_stores = []
 
-    s_conn = sqlite3.connect(staging_db_path)
-    ensure_tables(s_conn)
-    s_batches = s_conn.execute("SELECT day, complex, observed, success FROM batches").fetchall()
-    s_listings = s_conn.execute("SELECT day, complex, id, price, payload FROM listings").fetchall()
-    s_telemetry = s_conn.execute("SELECT day, complex, district, name, started_at, duration_sec, listings_count, expected_count, success, error_message FROM collection_telemetry").fetchall()
-    s_conn.close()
+    for w_store in worker_stores:
+        if not w_store.exists():
+            continue
+        s_conn = None
+        try:
+            s_conn = sqlite3.connect(w_store)
+            chk = s_conn.execute("PRAGMA integrity_check").fetchone()
+            if chk != ('ok',):
+                corrupted_stores.append((w_store, f"Integrity check failed: {chk}"))
+                continue
+            ensure_tables(s_conn)
+            s_batches = s_conn.execute("SELECT day, complex, observed, success FROM batches").fetchall()
+            s_listings = s_conn.execute("SELECT day, complex, id, price, payload FROM listings").fetchall()
+            s_telemetry = s_conn.execute("SELECT day, complex, district, name, started_at, duration_sec, listings_count, expected_count, success, error_message FROM collection_telemetry").fetchall()
 
-    if not s_batches and not s_listings and not s_telemetry:
-        return 0, 0, 0
+            all_batches.extend(s_batches)
+            all_listings.extend(s_listings)
+            all_telemetry.extend(s_telemetry)
+        except Exception as e:
+            corrupted_stores.append((w_store, str(e)))
+        finally:
+            if s_conn is not None:
+                try:
+                    s_conn.close()
+                except Exception:
+                    pass
 
-    m_conn = sqlite3.connect(main_db_path, timeout=60.0)
+    if not all_batches and not all_listings and not all_telemetry:
+        return 0, 0, 0, corrupted_stores
+
+    m_conn = sqlite3.connect(main_store_path, timeout=60.0)
     m_conn.execute("PRAGMA busy_timeout=60000")
     m_conn.execute("PRAGMA journal_mode=WAL")
     ensure_tables(m_conn)
 
-    with m_conn:
-        m_conn.executemany("""
-        INSERT OR REPLACE INTO batches (day, complex, observed, success)
-        VALUES (?, ?, ?, ?)
-        """, s_batches)
+    try:
+        with m_conn:
+            m_conn.executemany("""
+            INSERT OR REPLACE INTO batches (day, complex, observed, success)
+            VALUES (?, ?, ?, ?)
+            """, all_batches)
 
-        m_conn.executemany("""
-        INSERT OR REPLACE INTO listings (day, complex, id, price, payload)
-        VALUES (?, ?, ?, ?, ?)
-        """, s_listings)
+            m_conn.executemany("""
+            INSERT OR REPLACE INTO listings (day, complex, id, price, payload)
+            VALUES (?, ?, ?, ?, ?)
+            """, all_listings)
 
-        m_conn.executemany("""
-        INSERT OR REPLACE INTO collection_telemetry 
-        (day, complex, district, name, started_at, duration_sec, listings_count, expected_count, success, error_message)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, s_telemetry)
+            m_conn.executemany("""
+            INSERT OR REPLACE INTO collection_telemetry 
+            (day, complex, district, name, started_at, duration_sec, listings_count, expected_count, success, error_message)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, all_telemetry)
+    except Exception as e:
+        m_conn.close()
+        raise RuntimeError(f"Atomic merge to main database failed: {e}")
 
     m_conn.close()
-    return len(s_batches), len(s_listings), len(s_telemetry)
+    return len(all_batches), len(all_listings), len(all_telemetry), corrupted_stores
 
 def run_worker_pool(targets, day, main_store_path, num_workers=8, timeout_per_worker=1800, resume=True):
     start_time = time.monotonic()
@@ -246,20 +278,18 @@ def run_worker_pool(targets, day, main_store_path, num_workers=8, timeout_per_wo
             except Exception:
                 pass
 
-    # 3. Single Ingestion Phase: Atomically merge staging DBs into main history DB
+    # 3. Single Ingestion Phase: Atomically merge staging DBs into main history DB in a single transaction
     print("-" * 80)
-    print("[Single Ingestor] Merging staged worker databases into main history.sqlite3...")
-    total_merged_batches = 0
-    total_merged_listings = 0
-    total_merged_telemetry = 0
+    print("[Single Ingestor] Merging all staged worker databases into main history.sqlite3 atomically...")
+    total_merged_batches, total_merged_listings, total_merged_telemetry, corrupted_stores = merge_all_staging_atomic(
+        worker_stores, main_store_path
+    )
+    if corrupted_stores:
+        print(f"[WARNING] {len(corrupted_stores)} worker staging stores failed integrity checks: {corrupted_stores}")
 
     per_worker_summary = []
     for w_idx, w_store in enumerate(worker_stores):
         m = worker_metas[w_idx]
-        b_cnt, l_cnt, t_cnt = merge_staging_to_main(w_store, main_store_path)
-        total_merged_batches += b_cnt
-        total_merged_listings += l_cnt
-        total_merged_telemetry += t_cnt
         
         # Calculate worker-specific telemetry
         durs = []
@@ -267,11 +297,13 @@ def run_worker_pool(targets, day, main_store_path, num_workers=8, timeout_per_wo
         fail_cnt = 0
         lock_errors = 0
         net_errors = 0
+        w_listings = 0
         
         if w_store.exists():
             w_conn = sqlite3.connect(w_store)
             ensure_tables(w_conn)
             t_rows = w_conn.execute("SELECT duration_sec, success, error_message FROM collection_telemetry").fetchall()
+            w_listings = w_conn.execute("SELECT COUNT(*) FROM listings").fetchone()[0]
             for r in t_rows:
                 if r[0] is not None: durs.append(r[0])
                 if r[1] == 1: succ_cnt += 1
@@ -299,7 +331,7 @@ def run_worker_pool(targets, day, main_store_path, num_workers=8, timeout_per_wo
         m['exit_code'] = processes[w_idx][0].returncode
         m['successful_complexes'] = succ_cnt
         m['failed_complexes'] = fail_cnt
-        m['collected_listings'] = l_cnt
+        m['collected_listings'] = w_listings
         m['sqlite_lock_errors'] = lock_errors
         m['network_errors'] = net_errors
         m['mean_duration_sec'] = round(mean(durs), 2) if durs else 0.0
