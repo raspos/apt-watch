@@ -46,7 +46,7 @@ def run_step(name, script_path, args=None):
         print(res.stdout.strip())
     return res.stdout
 
-def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600):
+def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600, workers=8):
     start_time = datetime.now(ZoneInfo('Asia/Seoul'))
     target_day = day or start_time.date().isoformat()
     manifest_file = Path(manifest_path) if manifest_path else (ROOT / 'data' / 'seoul-expanded-manifest.json')
@@ -54,7 +54,7 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600)
     
     print("="*80)
     print(f"APT WATCH DAILY OPERATION [{target_day}] START")
-    print(f"Manifest: {manifest_file.name}, DB: {db_file.name}, Resume: {resume}")
+    print(f"Manifest: {manifest_file.name}, DB: {db_file.name}, Resume: {resume}, Workers: {workers}")
     print("="*80)
     
     # 1. Pre-execution DB integrity check
@@ -65,20 +65,33 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600)
     snapshot_dir = ROOT / 'data' / 'snapshots' / target_day
     snapshot_dir.mkdir(parents=True, exist_ok=True)
     
-    # 3. Supervised Collection
-    collector_args = [
-        sys.executable,
-        str(ROOT / 'supervise_naver.py'),
-        '--timeout', str(timeout),
-        '--',
-        '--manifest', str(manifest_file),
-        '--store', str(db_file),
-        '--day', target_day
-    ]
-    if resume:
-        collector_args.append('--resume')
+    # 3. Supervised Multi-Worker Collection
+    if workers > 1:
+        collector_args = [
+            sys.executable,
+            str(ROOT / 'scripts' / 'parallel_collector.py'),
+            '--manifest', str(manifest_file),
+            '--store', str(db_file),
+            '--workers', str(workers),
+            '--timeout', str(timeout),
+            '--day', target_day
+        ]
+        if not resume:
+            collector_args.append('--no-resume')
+    else:
+        collector_args = [
+            sys.executable,
+            str(ROOT / 'supervise_naver.py'),
+            '--timeout', str(timeout),
+            '--',
+            '--manifest', str(manifest_file),
+            '--store', str(db_file),
+            '--day', target_day
+        ]
+        if resume:
+            collector_args.append('--resume')
         
-    print(f"\n[Step 1] Starting supervised Naver collection (timeout: {timeout}s)...")
+    print(f"\n[Step 1] Starting supervised Naver collection (workers: {workers}, timeout: {timeout}s)...")
     col_t0 = time.time()
     col_res = subprocess.run(collector_args, capture_output=True, text=True, encoding='utf-8')
     col_elapsed = time.time() - col_t0
@@ -168,11 +181,13 @@ if __name__ == '__main__':
     parser.add_argument('--manifest', help='Path to manifest JSON')
     parser.add_argument('--no-resume', action='store_true', help='Force re-scrape all complexes')
     parser.add_argument('--timeout', type=int, default=3600, help='Collector timeout in seconds')
+    parser.add_argument('--workers', type=int, default=8, help='Number of parallel browser workers (default: 8)')
     args = parser.parse_args()
     
     run_daily_operation(
         day=args.day,
         manifest_path=args.manifest,
         resume=not args.no_resume,
-        timeout=args.timeout
+        timeout=args.timeout,
+        workers=args.workers
     )

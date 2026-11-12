@@ -164,14 +164,14 @@ def select_targets(db_path, mode='core', zone=None, district=None, limit=None, d
     return targets
 
 def run_universe_collector(mode='core', zone=None, district=None, limit=None, day=None, 
-                           timeout=3600, resume=True, skip_pipeline=False):
+                           timeout=3600, workers=8, resume=True, skip_pipeline=False):
     start_time = datetime.now(ZoneInfo('Asia/Seoul'))
     target_day = day or start_time.date().isoformat()
     db_path = ROOT / 'data' / 'history.sqlite3'
 
     print("=" * 80)
     print(f"APT WATCH UNIVERSE COLLECTOR [{target_day}]")
-    print(f"Mode: {mode} | Zone: {zone or 'ALL'} | District: {district or 'ALL'} | Limit: {limit or 'NONE'}")
+    print(f"Mode: {mode} | Zone: {zone or 'ALL'} | District: {district or 'ALL'} | Limit: {limit or 'NONE'} | Workers: {workers}")
     print("=" * 80)
 
     # 1. Synchronize tracking table
@@ -205,19 +205,32 @@ def run_universe_collector(mode='core', zone=None, district=None, limit=None, da
 
     col_success = False
     try:
-        col_cmd = [
-            sys.executable,
-            str(ROOT / 'supervise_naver.py'),
-            '--timeout', str(timeout),
-            '--',
-            '--manifest', str(batch_manifest),
-            '--store', str(db_path),
-            '--day', target_day
-        ]
-        if resume:
-            col_cmd.append('--resume')
+        if workers > 1:
+            col_cmd = [
+                sys.executable,
+                str(ROOT / 'scripts' / 'parallel_collector.py'),
+                '--manifest', str(batch_manifest),
+                '--store', str(db_path),
+                '--workers', str(workers),
+                '--timeout', str(timeout),
+                '--day', target_day
+            ]
+            if not resume:
+                col_cmd.append('--no-resume')
+        else:
+            col_cmd = [
+                sys.executable,
+                str(ROOT / 'supervise_naver.py'),
+                '--timeout', str(timeout),
+                '--',
+                '--manifest', str(batch_manifest),
+                '--store', str(db_path),
+                '--day', target_day
+            ]
+            if resume:
+                col_cmd.append('--resume')
 
-        print(f"\n[Step 1] Running supervised collection ({len(pending):,} complexes, timeout: {timeout}s)...")
+        print(f"\n[Step 1] Running supervised collection ({len(pending):,} complexes, workers: {workers}, timeout: {timeout}s)...")
         col_t0 = time.time()
         col_proc = subprocess.run(col_cmd, cwd=str(ROOT))
         col_elapsed = time.time() - col_t0
@@ -274,6 +287,7 @@ if __name__ == '__main__':
     parser.add_argument('--district', help="Filter by 5-digit district code")
     parser.add_argument('--limit', type=int, help="Limit number of complexes")
     parser.add_argument('--day', help="Target observation day (YYYY-MM-DD)")
+    parser.add_argument('--workers', type=int, default=8, help="Number of concurrent browser workers (default: 8)")
     parser.add_argument('--timeout', type=int, default=3600, help="Supervised collector timeout in seconds")
     parser.add_argument('--no-resume', action='store_true', help="Do not skip already collected complexes")
     parser.add_argument('--skip-pipeline', action='store_true', help="Skip analytical post-processing")
@@ -286,6 +300,7 @@ if __name__ == '__main__':
         limit=args.limit,
         day=args.day,
         timeout=args.timeout,
+        workers=args.workers,
         resume=not args.no_resume,
         skip_pipeline=args.skip_pipeline
     )

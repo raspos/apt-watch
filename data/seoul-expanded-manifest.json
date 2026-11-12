@@ -13,6 +13,8 @@
       "경희궁의아침2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (17건 거래)",
     "total_households": 90,
     "trade_count": 17,
     "median_price_eok": 17.5,
@@ -32,6 +34,8 @@
       "경희궁의아침3단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (36건 거래)",
     "total_households": 150,
     "trade_count": 36,
     "median_price_eok": 17.75,
@@ -51,6 +55,8 @@
       "경희궁의아침4단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (25건 거래)",
     "total_households": 120,
     "trade_count": 25,
     "median_price_eok": 19.4,
@@ -70,6 +76,8 @@
       "마운틴뷰"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (14건 거래)",
     "total_households": 28,
     "trade_count": 14,
     "median_price_eok": 5.77,
@@ -89,6 +97,8 @@
       "아남2"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (16건 거래)",
     "total_households": 436,
     "trade_count": 16,
     "median_price_eok": 8.88,
@@ -108,6 +118,8 @@
       "동아"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (17건 거래)",
     "total_households": 48,
     "trade_count": 17,
     "median_price_eok": 8.23,
@@ -127,6 +139,8 @@
       "대성스카이렉스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (16건 거래)",
     "total_households": 54,
     "trade_count": 16,
     "median_price_eok": 10.38,
@@ -146,6 +160,8 @@
       "킹스매너"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (9건 거래)",
     "total_households": 18,
     "trade_count": 9,
     "median_price_eok": 14.2,
@@ -165,6 +181,8 @@
       "세종"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (8건 거래)",
     "total_households": 72,
     "trade_count": 8,
     "median_price_eok": 8.65,
@@ -184,6 +202,8 @@
       "송림아마레스아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (7건 거래)",
     "total_households": 18,
     "trade_count": 7,
     "median_price_eok": 4.8,
@@ -203,6 +223,8 @@
       "세종로대우"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (6건 거래)",
     "total_households": 60,
     "trade_count": 6,
     "median_price_eok": 8.56,
@@ -222,6 +244,8 @@
       "건양하늘터"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (5건 거래)",
     "total_households": 55,
     "trade_count": 5,
     "median_price_eok": 6.9,
@@ -241,6 +265,8 @@
       "리치캐슬아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (5건 거래)",
     "total_households": 19,
     "trade_count": 5,
     "median_price_eok": 5.0,
@@ -260,6 +286,8 @@
       "한빛"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (5건 거래)",
     "total_households": 19,
     "trade_count": 5,
     "median_price_eok": 3.5,
@@ -279,6 +307,8 @@
       "렉스빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (4건 거래)",
     "total_households": 19,
     "trade_count": 4,
     "median_price_eok": 8.9,
@@ -298,6 +328,8 @@
       "남산타운"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (971건 거래)",
     "total_households": 5150,
     "trade_count": 971,
     "median_price_eok": 12.0,
@@ -317,6 +349,8 @@
       "남산트라팰리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (26건 거래)",
     "total_households": 136,
     "trade_count": 26,
     "median_price_eok": 18.5,
@@ -336,6 +370,8 @@
       "장충레지던스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (4건 거래)",
     "total_households": 15,
     "trade_count": 4,
     "median_price_eok": 10.5,
@@ -355,6 +391,8 @@
       "하이"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1건 거래)",
     "total_households": 784,
     "trade_count": 1,
     "median_price_eok": 7.3,
@@ -374,6 +412,8 @@
       "청구e편한세상"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (224건 거래)",
     "total_households": 895,
     "trade_count": 224,
     "median_price_eok": 14.95,
@@ -393,6 +433,8 @@
       "현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (221건 거래)",
     "total_households": 942,
     "trade_count": 221,
     "median_price_eok": 8.9,
@@ -412,6 +454,8 @@
       "남산롯데캐슬아이리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (150건 거래)",
     "total_households": 386,
     "trade_count": 150,
     "median_price_eok": 14.3,
@@ -431,6 +475,8 @@
       "삼성사이버빌리지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (144건 거래)",
     "total_households": 712,
     "trade_count": 144,
     "median_price_eok": 12.95,
@@ -450,6 +496,8 @@
       "신당푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (131건 거래)",
     "total_households": 461,
     "trade_count": 131,
     "median_price_eok": 11.65,
@@ -469,6 +517,8 @@
       "황학아크로타워"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (98건 거래)",
     "total_households": 263,
     "trade_count": 98,
     "median_price_eok": 10.9,
@@ -488,6 +538,8 @@
       "덕수궁롯데캐슬"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (84건 거래)",
     "total_households": 296,
     "trade_count": 84,
     "median_price_eok": 12.93,
@@ -507,6 +559,8 @@
       "남산센트럴자이"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (80건 거래)",
     "total_households": 273,
     "trade_count": 80,
     "median_price_eok": 12.27,
@@ -526,6 +580,8 @@
       "롯데캐슬"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (653건 거래)",
     "total_households": 1870,
     "trade_count": 653,
     "median_price_eok": 9.25,
@@ -545,6 +601,8 @@
       "약수하이츠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (581건 거래)",
     "total_households": 2282,
     "trade_count": 581,
     "median_price_eok": 11.0,
@@ -564,6 +622,8 @@
       "서울역센트럴자이(임대)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1건 거래)",
     "total_households": 1341,
     "trade_count": 1,
     "median_price_eok": 16.1,
@@ -583,6 +643,8 @@
       "나인원한남"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (38건 거래)",
     "total_households": 341,
     "trade_count": 38,
     "median_price_eok": 106.5,
@@ -602,6 +664,8 @@
       "삼성래미안"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (361건 거래)",
     "total_households": 1458,
     "trade_count": 361,
     "median_price_eok": 12.0,
@@ -621,6 +685,8 @@
       "프라임펠리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (38건 거래)",
     "total_households": 81,
     "trade_count": 38,
     "median_price_eok": 1.67,
@@ -640,6 +706,8 @@
       "한가람"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (558건 거래)",
     "total_households": 2036,
     "trade_count": 558,
     "median_price_eok": 17.43,
@@ -659,6 +727,8 @@
       "한남더힐"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (254건 거래)",
     "total_households": 600,
     "trade_count": 254,
     "median_price_eok": 45.75,
@@ -678,6 +748,8 @@
       "이촌코오롱(A)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (202건 거래)",
     "total_households": 834,
     "trade_count": 202,
     "median_price_eok": 16.45,
@@ -697,6 +769,8 @@
       "현대맨숀"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (166건 거래)",
     "total_households": 653,
     "trade_count": 166,
     "median_price_eok": 19.75,
@@ -716,6 +790,8 @@
       "청화1"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (158건 거래)",
     "total_households": 578,
     "trade_count": 158,
     "median_price_eok": 22.25,
@@ -735,6 +811,8 @@
       "용산e편한세상"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (152건 거래)",
     "total_households": 867,
     "trade_count": 152,
     "median_price_eok": 17.6,
@@ -754,6 +832,8 @@
       "한강타운"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (103건 거래)",
     "total_households": 289,
     "trade_count": 103,
     "median_price_eok": 8.27,
@@ -773,6 +853,8 @@
       "우성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (90건 거래)",
     "total_households": 243,
     "trade_count": 90,
     "median_price_eok": 14.56,
@@ -792,6 +874,8 @@
       "신동아1"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (82건 거래)",
     "total_households": 226,
     "trade_count": 82,
     "median_price_eok": 22.05,
@@ -811,6 +895,8 @@
       "센트레빌아스테리움서울"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (76건 거래)",
     "total_households": 278,
     "trade_count": 76,
     "median_price_eok": 16.8,
@@ -830,6 +916,8 @@
       "리버힐삼성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (260건 거래)",
     "total_households": 1102,
     "trade_count": 260,
     "median_price_eok": 11.47,
@@ -849,6 +937,8 @@
       "강촌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (238건 거래)",
     "total_households": 1001,
     "trade_count": 238,
     "median_price_eok": 18.5,
@@ -868,6 +958,8 @@
       "상리제나우스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (49건 거래)",
     "total_households": 70,
     "trade_count": 49,
     "median_price_eok": 1.33,
@@ -887,6 +979,8 @@
       "센트라스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (870건 거래)",
     "total_households": 2529,
     "trade_count": 870,
     "median_price_eok": 14.6,
@@ -906,6 +1000,8 @@
       "아크로서울포레스트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (35건 거래)",
     "total_households": 280,
     "trade_count": 35,
     "median_price_eok": 65.0,
@@ -925,6 +1021,8 @@
       "행당한진타운"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (718건 거래)",
     "total_households": 2123,
     "trade_count": 718,
     "median_price_eok": 11.2,
@@ -944,6 +1042,8 @@
       "래미안하이리버"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (329건 거래)",
     "total_households": 847,
     "trade_count": 329,
     "median_price_eok": 13.8,
@@ -963,6 +1063,8 @@
       "왕십리자이"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (324건 거래)",
     "total_households": 713,
     "trade_count": 324,
     "median_price_eok": 11.5,
@@ -982,6 +1084,8 @@
       "왕십리풍림아이원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (324건 거래)",
     "total_households": 758,
     "trade_count": 324,
     "median_price_eok": 9.9,
@@ -1001,6 +1105,8 @@
       "서울숲푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (306건 거래)",
     "total_households": 888,
     "trade_count": 306,
     "median_price_eok": 14.54,
@@ -1020,6 +1126,8 @@
       "극동"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (291건 거래)",
     "total_households": 583,
     "trade_count": 291,
     "median_price_eok": 13.2,
@@ -1039,6 +1147,8 @@
       "트리마제"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (270건 거래)",
     "total_households": 688,
     "trade_count": 270,
     "median_price_eok": 31.25,
@@ -1058,6 +1168,8 @@
       "왕십리KCC스위첸"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (166건 거래)",
     "total_households": 272,
     "trade_count": 166,
     "median_price_eok": 10.47,
@@ -1077,6 +1189,8 @@
       "라봄성동"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (91건 거래)",
     "total_households": 299,
     "trade_count": 91,
     "median_price_eok": 3.31,
@@ -1096,6 +1210,8 @@
       "행당브라운스톤"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (84건 거래)",
     "total_households": 208,
     "trade_count": 84,
     "median_price_eok": 10.7,
@@ -1115,6 +1231,8 @@
       "래미안 옥수 리버젠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (532건 거래)",
     "total_households": 1511,
     "trade_count": 532,
     "median_price_eok": 17.0,
@@ -1134,6 +1252,8 @@
       "서울숲 한신 더 휴"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (488건 거래)",
     "total_households": 1410,
     "trade_count": 488,
     "median_price_eok": 12.0,
@@ -1153,6 +1273,8 @@
       "광진코지웰"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (148건 거래)",
     "total_households": 296,
     "trade_count": 148,
     "median_price_eok": 1.45,
@@ -1172,6 +1294,8 @@
       "구의현대2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (287건 거래)",
     "total_households": 1606,
     "trade_count": 287,
     "median_price_eok": 14.45,
@@ -1191,6 +1315,8 @@
       "워커힐리버빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (2건 거래)",
     "total_households": 18,
     "trade_count": 2,
     "median_price_eok": 19.6,
@@ -1210,6 +1336,8 @@
       "현대프라임"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (448건 거래)",
     "total_households": 1592,
     "trade_count": 448,
     "median_price_eok": 11.79,
@@ -1229,6 +1357,8 @@
       "청구"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (250건 거래)",
     "total_households": 654,
     "trade_count": 250,
     "median_price_eok": 10.4,
@@ -1248,6 +1378,8 @@
       "래미안파크스위트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (207건 거래)",
     "total_households": 854,
     "trade_count": 207,
     "median_price_eok": 13.5,
@@ -1267,6 +1399,8 @@
       "우성1"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (206건 거래)",
     "total_households": 656,
     "trade_count": 206,
     "median_price_eok": 9.82,
@@ -1286,6 +1420,8 @@
       "광장현대9단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (175건 거래)",
     "total_households": 437,
     "trade_count": 175,
     "median_price_eok": 12.18,
@@ -1305,6 +1441,8 @@
       "자양우성7"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (175건 거래)",
     "total_households": 625,
     "trade_count": 175,
     "median_price_eok": 11.5,
@@ -1324,6 +1462,8 @@
       "현대5"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (147건 거래)",
     "total_households": 581,
     "trade_count": 147,
     "median_price_eok": 14.35,
@@ -1343,6 +1483,8 @@
       "금호베스트빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (90건 거래)",
     "total_households": 242,
     "trade_count": 90,
     "median_price_eok": 10.47,
@@ -1362,6 +1504,8 @@
       "워커힐푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (88건 거래)",
     "total_households": 200,
     "trade_count": 88,
     "median_price_eok": 10.32,
@@ -1381,6 +1525,8 @@
       "이튼타워리버5차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (86건 거래)",
     "total_households": 279,
     "trade_count": 86,
     "median_price_eok": 16.8,
@@ -1400,6 +1546,8 @@
       "더샵스타시티"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (394건 거래)",
     "total_households": 1177,
     "trade_count": 394,
     "median_price_eok": 19.0,
@@ -1419,6 +1567,8 @@
       "현대파크빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (341건 거래)",
     "total_households": 1170,
     "trade_count": 341,
     "median_price_eok": 13.95,
@@ -1438,6 +1588,8 @@
       "래미안라그란데"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (14건 거래)",
     "total_households": 3069,
     "trade_count": 14,
     "median_price_eok": 13.7,
@@ -1457,6 +1609,8 @@
       "전농SK"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (600건 거래)",
     "total_households": 1830,
     "trade_count": 600,
     "median_price_eok": 7.98,
@@ -1476,6 +1630,8 @@
       "주성아우라"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (12건 거래)",
     "total_households": 29,
     "trade_count": 12,
     "median_price_eok": 0.82,
@@ -1495,6 +1651,8 @@
       "청량리역롯데캐슬 SKY-L65"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (96건 거래)",
     "total_households": 1425,
     "trade_count": 96,
     "median_price_eok": 18.49,
@@ -1514,6 +1672,8 @@
       "힐스테이트청계"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (299건 거래)",
     "total_households": 764,
     "trade_count": 299,
     "median_price_eok": 12.1,
@@ -1533,6 +1693,8 @@
       "장안힐스테이트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (286건 거래)",
     "total_households": 859,
     "trade_count": 286,
     "median_price_eok": 9.0,
@@ -1552,6 +1714,8 @@
       "래미안 허브리츠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (271건 거래)",
     "total_households": 844,
     "trade_count": 271,
     "median_price_eok": 11.2,
@@ -1571,6 +1735,8 @@
       "두산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (264건 거래)",
     "total_households": 739,
     "trade_count": 264,
     "median_price_eok": 7.45,
@@ -1590,6 +1756,8 @@
       "청계한신휴플러스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (250건 거래)",
     "total_households": 725,
     "trade_count": 250,
     "median_price_eok": 11.03,
@@ -1609,6 +1777,8 @@
       "신동아"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (234건 거래)",
     "total_households": 772,
     "trade_count": 234,
     "median_price_eok": 6.88,
@@ -1628,6 +1798,8 @@
       "청계푸르지오시티"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (168건 거래)",
     "total_households": 298,
     "trade_count": 168,
     "median_price_eok": 1.5,
@@ -1647,6 +1819,8 @@
       "베라체캠퍼스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (118건 거래)",
     "total_households": 264,
     "trade_count": 118,
     "median_price_eok": 2.5,
@@ -1666,6 +1840,8 @@
       "현대썬앤빌청계"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (118건 거래)",
     "total_households": 269,
     "trade_count": 118,
     "median_price_eok": 1.33,
@@ -1685,6 +1861,8 @@
       "신답극동"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (89건 거래)",
     "total_households": 225,
     "trade_count": 89,
     "median_price_eok": 6.98,
@@ -1704,6 +1882,8 @@
       "래미안위브"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (850건 거래)",
     "total_households": 2652,
     "trade_count": 850,
     "median_price_eok": 12.2,
@@ -1723,6 +1903,8 @@
       "상봉듀오트리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (75건 거래)",
     "total_households": 264,
     "trade_count": 75,
     "median_price_eok": 11.7,
@@ -1742,6 +1924,8 @@
       "신내 데시앙포레"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (191건 거래)",
     "total_households": 1896,
     "trade_count": 191,
     "median_price_eok": 7.2,
@@ -1761,6 +1945,8 @@
       "한신아파트상가동유치원동(103~109)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (590건 거래)",
     "total_households": 1544,
     "trade_count": 590,
     "median_price_eok": 6.25,
@@ -1780,6 +1966,8 @@
       "헤르만스테이트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (56건 거래)",
     "total_households": 49,
     "trade_count": 56,
     "median_price_eok": 0.95,
@@ -1799,6 +1987,8 @@
       "성원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (251건 거래)",
     "total_households": 876,
     "trade_count": 251,
     "median_price_eok": 6.25,
@@ -1818,6 +2008,8 @@
       "신내11대명"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (248건 거래)",
     "total_households": 804,
     "trade_count": 248,
     "median_price_eok": 4.05,
@@ -1837,6 +2029,8 @@
       "동성3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (224건 거래)",
     "total_households": 800,
     "trade_count": 224,
     "median_price_eok": 5.59,
@@ -1856,6 +2050,8 @@
       "중앙하이츠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (207건 거래)",
     "total_households": 704,
     "trade_count": 207,
     "median_price_eok": 5.8,
@@ -1875,6 +2071,8 @@
       "용마한신"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (205건 거래)",
     "total_households": 565,
     "trade_count": 205,
     "median_price_eok": 4.25,
@@ -1894,6 +2092,8 @@
       "현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (186건 거래)",
     "total_households": 626,
     "trade_count": 186,
     "median_price_eok": 6.78,
@@ -1913,6 +2113,8 @@
       "벽산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (112건 거래)",
     "total_households": 284,
     "trade_count": 112,
     "median_price_eok": 4.96,
@@ -1932,6 +2134,8 @@
       "라이프미성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (96건 거래)",
     "total_households": 277,
     "trade_count": 96,
     "median_price_eok": 3.9,
@@ -1951,6 +2155,8 @@
       "현대휴온"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (91건 거래)",
     "total_households": 149,
     "trade_count": 91,
     "median_price_eok": 2.32,
@@ -1970,6 +2176,8 @@
       "신내9진흥"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (518건 거래)",
     "total_households": 1650,
     "trade_count": 518,
     "median_price_eok": 3.31,
@@ -1989,6 +2197,8 @@
       "면목한신"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (468건 거래)",
     "total_households": 1362,
     "trade_count": 468,
     "median_price_eok": 3.69,
@@ -2008,6 +2218,8 @@
       "롯데캐슬클라시아"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (292건 거래)",
     "total_households": 0,
     "trade_count": 292,
     "median_price_eok": 13.65,
@@ -2024,9 +2236,11 @@
       "11290",
       "하월곡동",
       "88-510",
-      "삼전솔하임3차(도시형)"
+      "삼전솔하임3차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"삼전솔하임3차\" (96건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2046,6 +2260,8 @@
       "정릉풍림아이원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (861건 거래)",
     "total_households": 0,
     "trade_count": 861,
     "median_price_eok": 5.5,
@@ -2062,9 +2278,11 @@
       "11290",
       "돈암동",
       "609-1",
-      "한신,한진"
+      "한진(609-1)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "PENDING_DIFF_NAME",
+    "audit_reason": "동일 지번 내 상이한 국토부 단지명 존재: 국토부 \"한진(609-1)\" (1371건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2083,7 +2301,9 @@
       "90-1261",
       "HK팰리스(주상복합)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "NON_APARTMENT_MIX",
+    "audit_reason": "도시형생활주택/주상복합/비전형단지 (실거래 비교 주의)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2102,7 +2322,9 @@
       "206-101",
       "가온팰리스(도시형)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "NON_APARTMENT_MIX",
+    "audit_reason": "도시형생활주택/주상복합/비전형단지 (실거래 비교 주의)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2119,9 +2341,11 @@
       "11290",
       "정릉동",
       "150-27",
-      "갤럭시더정릉(도시형)"
+      "갤럭시더정릉"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"갤럭시더정릉\" (61건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2140,7 +2364,9 @@
       "90-260",
       "갤럭시하월곡(주상복합)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "NON_APARTMENT_MIX",
+    "audit_reason": "도시형생활주택/주상복합/비전형단지 (실거래 비교 주의)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2159,7 +2385,9 @@
       "189-25",
       "골든캐슬12차(도시형)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "NON_APARTMENT_MIX",
+    "audit_reason": "도시형생활주택/주상복합/비전형단지 (실거래 비교 주의)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2179,6 +2407,8 @@
       "광남캐스빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (8건 거래)",
     "total_households": 0,
     "trade_count": 8,
     "median_price_eok": 6.95,
@@ -2198,6 +2428,8 @@
       "극동"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (78건 거래)",
     "total_households": 0,
     "trade_count": 78,
     "median_price_eok": 6.45,
@@ -2214,9 +2446,11 @@
       "11290",
       "정릉동",
       "1034",
-      "길음뉴타운10단지라온유"
+      "라온유"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"라온유\" (79건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2233,9 +2467,11 @@
       "11290",
       "길음동",
       "1287-1",
-      "길음뉴타운11단지롯데캐슬골든힐스"
+      "롯데캐슬골든힐스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"롯데캐슬골든힐스\" (138건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -2255,6 +2491,8 @@
       "길음뉴타운2단지푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (584건 거래)",
     "total_households": 0,
     "trade_count": 584,
     "median_price_eok": 8.1,
@@ -2274,6 +2512,8 @@
       "길음뉴타운3단지푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (186건 거래)",
     "total_households": 0,
     "trade_count": 186,
     "median_price_eok": 7.2,
@@ -2293,6 +2533,8 @@
       "벽산라이브파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (608건 거래)",
     "total_households": 1585,
     "trade_count": 608,
     "median_price_eok": 5.7,
@@ -2312,6 +2554,8 @@
       "삼각산아이원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (522건 거래)",
     "total_households": 1344,
     "trade_count": 522,
     "median_price_eok": 6.9,
@@ -2331,6 +2575,8 @@
       "송천센트레빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (113건 거래)",
     "total_households": 376,
     "trade_count": 113,
     "median_price_eok": 9.0,
@@ -2350,6 +2596,8 @@
       "수유프리미어엠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (38건 거래)",
     "total_households": 110,
     "trade_count": 38,
     "median_price_eok": 1.1,
@@ -2369,6 +2617,8 @@
       "주공4단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (185건 거래)",
     "total_households": 900,
     "trade_count": 185,
     "median_price_eok": 4.15,
@@ -2388,6 +2638,8 @@
       "미아동부센트레빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (167건 거래)",
     "total_households": 480,
     "trade_count": 167,
     "median_price_eok": 7.74,
@@ -2407,6 +2659,8 @@
       "꿈의숲롯데캐슬"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (166건 거래)",
     "total_households": 615,
     "trade_count": 166,
     "median_price_eok": 8.7,
@@ -2426,6 +2680,8 @@
       "번동솔그린"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (131건 거래)",
     "total_households": 380,
     "trade_count": 131,
     "median_price_eok": 4.3,
@@ -2445,6 +2701,8 @@
       "극동"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (130건 거래)",
     "total_households": 574,
     "trade_count": 130,
     "median_price_eok": 5.2,
@@ -2464,6 +2722,8 @@
       "푸르지오시티"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (135건 거래)",
     "total_households": 298,
     "trade_count": 135,
     "median_price_eok": 1.39,
@@ -2483,6 +2743,8 @@
       "기산그린"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (103건 거래)",
     "total_households": 263,
     "trade_count": 103,
     "median_price_eok": 4.03,
@@ -2502,6 +2764,8 @@
       "한원힐트리움수유"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (93건 거래)",
     "total_households": 66,
     "trade_count": 93,
     "median_price_eok": 2.48,
@@ -2521,6 +2785,8 @@
       "신원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (85건 거래)",
     "total_households": 285,
     "trade_count": 85,
     "median_price_eok": 4.33,
@@ -2540,6 +2806,8 @@
       "두산위브트레지움"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (466건 거래)",
     "total_households": 1370,
     "trade_count": 466,
     "median_price_eok": 7.67,
@@ -2559,6 +2827,8 @@
       "삼성래미안트리베라2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (440건 거래)",
     "total_households": 1330,
     "trade_count": 440,
     "median_price_eok": 8.0,
@@ -2578,6 +2848,8 @@
       "북한산아이파크5차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (398건 거래)",
     "total_households": 2061,
     "trade_count": 398,
     "median_price_eok": 9.0,
@@ -2597,6 +2869,8 @@
       "월가타워"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (51건 거래)",
     "total_households": 120,
     "trade_count": 51,
     "median_price_eok": 0.95,
@@ -2616,6 +2890,8 @@
       "창동주공3단지(해등마을)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (720건 거래)",
     "total_households": 2856,
     "trade_count": 720,
     "median_price_eok": 5.99,
@@ -2635,6 +2911,8 @@
       "한신"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (819건 거래)",
     "total_households": 2678,
     "trade_count": 819,
     "median_price_eok": 5.5,
@@ -2654,6 +2932,8 @@
       "대우"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (308건 거래)",
     "total_households": 366,
     "trade_count": 308,
     "median_price_eok": 5.5,
@@ -2673,6 +2953,8 @@
       "창동주공18단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (288건 거래)",
     "total_households": 808,
     "trade_count": 288,
     "median_price_eok": 4.7,
@@ -2692,6 +2974,8 @@
       "청구아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (285건 거래)",
     "total_households": 978,
     "trade_count": 285,
     "median_price_eok": 5.0,
@@ -2711,6 +2995,8 @@
       "창동주공2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (228건 거래)",
     "total_households": 750,
     "trade_count": 228,
     "median_price_eok": 4.2,
@@ -2730,6 +3016,8 @@
       "우성아파트1"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (227건 거래)",
     "total_households": 658,
     "trade_count": 227,
     "median_price_eok": 4.15,
@@ -2749,6 +3037,8 @@
       "금호1"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (214건 거래)",
     "total_households": 690,
     "trade_count": 214,
     "median_price_eok": 3.8,
@@ -2768,6 +3058,8 @@
       "경남"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (99건 거래)",
     "total_households": 264,
     "trade_count": 99,
     "median_price_eok": 2.67,
@@ -2787,6 +3079,8 @@
       "대원그린아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (89건 거래)",
     "total_households": 220,
     "trade_count": 89,
     "median_price_eok": 2.55,
@@ -2806,6 +3100,8 @@
       "현대3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (83건 거래)",
     "total_households": 287,
     "trade_count": 83,
     "median_price_eok": 4.43,
@@ -2825,6 +3121,8 @@
       "현대조합"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (71건 거래)",
     "total_households": 205,
     "trade_count": 71,
     "median_price_eok": 5.53,
@@ -2844,6 +3142,8 @@
       "서원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (619건 거래)",
     "total_households": 2450,
     "trade_count": 619,
     "median_price_eok": 3.38,
@@ -2863,6 +3163,8 @@
       "대림벽산(363)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (110건 거래)",
     "total_households": 400,
     "trade_count": 110,
     "median_price_eok": 12.78,
@@ -2882,6 +3184,8 @@
       "진명비베레"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (47건 거래)",
     "total_households": 72,
     "trade_count": 47,
     "median_price_eok": 0.84,
@@ -2901,6 +3205,8 @@
       "태강아파트(아이파크)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (827건 거래)",
     "total_households": 1676,
     "trade_count": 827,
     "median_price_eok": 4.98,
@@ -2920,6 +3226,8 @@
       "한진한화그랑빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (813건 거래)",
     "total_households": 3003,
     "trade_count": 813,
     "median_price_eok": 8.11,
@@ -2939,6 +3247,8 @@
       "상계주공13(고층)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (333건 거래)",
     "total_households": 939,
     "trade_count": 333,
     "median_price_eok": 3.9,
@@ -2958,6 +3268,8 @@
       "비선아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (286건 거래)",
     "total_households": 700,
     "trade_count": 286,
     "median_price_eok": 4.25,
@@ -2977,6 +3289,8 @@
       "사슴3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (267건 거래)",
     "total_households": 884,
     "trade_count": 267,
     "median_price_eok": 3.4,
@@ -2996,6 +3310,8 @@
       "건영3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (259건 거래)",
     "total_households": 948,
     "trade_count": 259,
     "median_price_eok": 10.5,
@@ -3015,6 +3331,8 @@
       "청구3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (256건 거래)",
     "total_households": 780,
     "trade_count": 256,
     "median_price_eok": 11.5,
@@ -3034,6 +3352,8 @@
       "상계대림"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (173건 거래)",
     "total_households": 230,
     "trade_count": 173,
     "median_price_eok": 4.9,
@@ -3053,6 +3373,8 @@
       "신안"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (118건 거래)",
     "total_households": 250,
     "trade_count": 118,
     "median_price_eok": 7.03,
@@ -3072,6 +3394,8 @@
       "동부아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (107건 거래)",
     "total_households": 295,
     "trade_count": 107,
     "median_price_eok": 5.0,
@@ -3091,6 +3415,8 @@
       "우방"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (97건 거래)",
     "total_households": 288,
     "trade_count": 97,
     "median_price_eok": 5.0,
@@ -3110,6 +3436,8 @@
       "중계무지개"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (901건 거래)",
     "total_households": 2433,
     "trade_count": 901,
     "median_price_eok": 4.57,
@@ -3129,6 +3457,8 @@
       "상계주공9(고층)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (849건 거래)",
     "total_households": 2830,
     "trade_count": 849,
     "median_price_eok": 4.83,
@@ -3148,6 +3478,8 @@
       "DMC센트럴자이(1단지)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (24건 거래)",
     "total_households": 1256,
     "trade_count": 24,
     "median_price_eok": 15.55,
@@ -3167,6 +3499,8 @@
       "e편한세상 수색 에코포레"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (337건 거래)",
     "total_households": 976,
     "trade_count": 337,
     "median_price_eok": 6.85,
@@ -3186,6 +3520,8 @@
       "녹번역e편한세상캐슬"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (581건 거래)",
     "total_households": 2569,
     "trade_count": 581,
     "median_price_eok": 11.0,
@@ -3205,6 +3541,8 @@
       "제이타워3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (8건 거래)",
     "total_households": 17,
     "trade_count": 8,
     "median_price_eok": 1.0,
@@ -3224,6 +3562,8 @@
       "힐스테이트녹번"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (274건 거래)",
     "total_households": 952,
     "trade_count": 274,
     "median_price_eok": 10.45,
@@ -3243,6 +3583,8 @@
       "백련산힐스테이트3차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (260건 거래)",
     "total_households": 967,
     "trade_count": 260,
     "median_price_eok": 7.94,
@@ -3262,6 +3604,8 @@
       "백련산파크자이"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (223건 거래)",
     "total_households": 678,
     "trade_count": 223,
     "median_price_eok": 8.4,
@@ -3281,6 +3625,8 @@
       "북한산힐스테이트1차아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (208건 거래)",
     "total_households": 603,
     "trade_count": 208,
     "median_price_eok": 7.72,
@@ -3300,6 +3646,8 @@
       "북한산힐스테이트7차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (204건 거래)",
     "total_households": 882,
     "trade_count": 204,
     "median_price_eok": 10.5,
@@ -3319,6 +3667,8 @@
       "신사씨티"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (133건 거래)",
     "total_households": 290,
     "trade_count": 133,
     "median_price_eok": 3.95,
@@ -3338,6 +3688,8 @@
       "은평뉴타운솔하임"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (117건 거래)",
     "total_households": 260,
     "trade_count": 117,
     "median_price_eok": 5.25,
@@ -3357,6 +3709,8 @@
       "DMC 진흥"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (106건 거래)",
     "total_households": 280,
     "trade_count": 106,
     "median_price_eok": 6.49,
@@ -3376,6 +3730,8 @@
       "은평뉴타운엘크루"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (84건 거래)",
     "total_households": 146,
     "trade_count": 84,
     "median_price_eok": 7.0,
@@ -3395,6 +3751,8 @@
       "북한산푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (398건 거래)",
     "total_households": 1230,
     "trade_count": 398,
     "median_price_eok": 10.11,
@@ -3414,6 +3772,8 @@
       "북한산현대힐스테이트3차아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (388건 거래)",
     "total_households": 1185,
     "trade_count": 388,
     "median_price_eok": 8.0,
@@ -3433,6 +3793,8 @@
       "DMC래미안클라시스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (411건 거래)",
     "total_households": 1114,
     "trade_count": 411,
     "median_price_eok": 7.99,
@@ -3452,6 +3814,8 @@
       "DMC파크뷰자이1단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (700건 거래)",
     "total_households": 4300,
     "trade_count": 700,
     "median_price_eok": 12.7,
@@ -3471,6 +3835,8 @@
       "연희베벌리힐즈"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (3건 거래)",
     "total_households": 14,
     "trade_count": 3,
     "median_price_eok": 14.3,
@@ -3490,6 +3856,8 @@
       "연희웨스트팰리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (34건 거래)",
     "total_households": 89,
     "trade_count": 34,
     "median_price_eok": 1.54,
@@ -3509,6 +3877,8 @@
       "두산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (379건 거래)",
     "total_households": 956,
     "trade_count": 379,
     "median_price_eok": 8.49,
@@ -3528,6 +3898,8 @@
       "홍제한양"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (342건 거래)",
     "total_households": 998,
     "trade_count": 342,
     "median_price_eok": 7.26,
@@ -3547,6 +3919,8 @@
       "신촌푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (330건 거래)",
     "total_households": 940,
     "trade_count": 330,
     "median_price_eok": 13.94,
@@ -3566,6 +3940,8 @@
       "신촌럭키"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (279건 거래)",
     "total_households": 855,
     "trade_count": 279,
     "median_price_eok": 9.2,
@@ -3585,6 +3961,8 @@
       "문화촌현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (267건 거래)",
     "total_households": 768,
     "trade_count": 267,
     "median_price_eok": 6.6,
@@ -3604,6 +3982,8 @@
       "독립문삼호"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (260건 거래)",
     "total_households": 895,
     "trade_count": 260,
     "median_price_eok": 10.15,
@@ -3623,6 +4003,8 @@
       "성원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (185건 거래)",
     "total_households": 119,
     "trade_count": 185,
     "median_price_eok": 7.2,
@@ -3642,6 +4024,8 @@
       "독립문파크빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (121건 거래)",
     "total_households": 290,
     "trade_count": 121,
     "median_price_eok": 6.2,
@@ -3661,6 +4045,8 @@
       "두산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (111건 거래)",
     "total_households": 294,
     "trade_count": 111,
     "median_price_eok": 6.2,
@@ -3680,6 +4066,8 @@
       "DMC래미안e편한세상"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (861건 거래)",
     "total_households": 3293,
     "trade_count": 861,
     "median_price_eok": 11.9,
@@ -3699,6 +4087,8 @@
       "천연뜨란채"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (400건 거래)",
     "total_households": 1008,
     "trade_count": 400,
     "median_price_eok": 7.9,
@@ -3715,9 +4105,11 @@
       "11440",
       "도화동",
       "82",
-      "도화3지구우성"
+      "우성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"우성\" (317건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3734,9 +4126,11 @@
       "11440",
       "공덕동",
       "467",
-      "롯데캐슬프레지던트(주상복합)"
+      "롯데캐슬프레지던트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"롯데캐슬프레지던트\" (33건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3753,9 +4147,11 @@
       "11440",
       "아현동",
       "777",
-      "마포래미안푸르지오"
+      "마포래미안푸르지오1단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_CROSSWALK",
+    "audit_reason": "마포래미안푸르지오: 국토부 1~4단지 4개 실거래 단지와 네이버 104917 매핑 검증",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3772,9 +4168,11 @@
       "11440",
       "공덕동",
       "30-10",
-      "솔리스타(도시형)"
+      "솔리스타"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"솔리스타\" (34건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3794,6 +4192,8 @@
       "DMC상암센트럴파크1단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (52건 거래)",
     "total_households": 0,
     "trade_count": 52,
     "median_price_eok": 11.15,
@@ -3813,6 +4213,8 @@
       "DMC상암센트럴파크2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (86건 거래)",
     "total_households": 0,
     "trade_count": 86,
     "median_price_eok": 7.34,
@@ -3829,9 +4231,11 @@
       "11440",
       "성산동",
       "214-15",
-      "LG"
+      "엘지(214-15)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "PENDING_DIFF_NAME",
+    "audit_reason": "동일 지번 내 상이한 국토부 단지명 존재: 국토부 \"엘지(214-15)\" (6건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3850,7 +4254,9 @@
       "608-11",
       "SELECTED2호점(도시형)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "NON_APARTMENT_MIX",
+    "audit_reason": "도시형생활주택/주상복합/비전형단지 (실거래 비교 주의)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3869,7 +4275,9 @@
       "218",
       "갤럭시(도시형)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "NON_APARTMENT_MIX",
+    "audit_reason": "도시형생활주택/주상복합/비전형단지 (실거래 비교 주의)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3886,9 +4294,11 @@
       "11440",
       "도화동",
       "544",
-      "고려(주상복합)"
+      "고려"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"고려\" (8건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3905,9 +4315,11 @@
       "11440",
       "성산동",
       "210-10",
-      "골든빌2차"
+      "골든빌(210-10)"
     ],
-    "tradeCrosswalkVerified": true,
+    "tradeCrosswalkVerified": false,
+    "verification_status": "PENDING_DIFF_NAME",
+    "audit_reason": "동일 지번 내 상이한 국토부 단지명 존재: 국토부 \"골든빌(210-10)\" (4건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3927,6 +4339,8 @@
       "골든빌3차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1건 거래)",
     "total_households": 0,
     "trade_count": 1,
     "median_price_eok": 4.59,
@@ -3946,6 +4360,8 @@
       "골든빌6차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (3건 거래)",
     "total_households": 0,
     "trade_count": 3,
     "median_price_eok": 4.95,
@@ -3962,9 +4378,11 @@
       "11440",
       "공덕동",
       "479",
-      "공덕SK리더스뷰(주상복합)"
+      "공덕SK리더스뷰"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"공덕SK리더스뷰\" (48건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -3981,9 +4399,11 @@
       "11440",
       "공덕동",
       "478",
-      "공덕더샵(주상복합)"
+      "공덕더샵"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_ALIAS",
+    "audit_reason": "지번 일치 및 단지명 별칭/약칭 매핑: 국토부 \"공덕더샵\" (33건)",
     "total_households": 0,
     "trade_count": 0,
     "median_price_eok": 0.0,
@@ -4004,6 +4424,8 @@
     ],
     "tradeCrosswalkVerified": true,
     "total_households": 3045,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (203건 거래)",
     "trade_count": 203,
     "median_price_eok": 10.3,
     "build_year": 2020
@@ -4023,6 +4445,8 @@
     ],
     "tradeCrosswalkVerified": true,
     "total_households": 997,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (410건 거래)",
     "trade_count": 410,
     "median_price_eok": 6.34,
     "build_year": 1999
@@ -4041,6 +4465,8 @@
       "양천홈타운1차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (7건 거래)",
     "total_households": 21,
     "trade_count": 7,
     "median_price_eok": 2.4,
@@ -4060,6 +4486,8 @@
       "트라팰리스웨스턴에비뉴"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (68건 거래)",
     "total_households": 264,
     "trade_count": 68,
     "median_price_eok": 27.5,
@@ -4079,6 +4507,8 @@
       "신트리4"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (366건 거래)",
     "total_households": 845,
     "trade_count": 366,
     "median_price_eok": 5.88,
@@ -4098,6 +4528,8 @@
       "학마을1단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (243건 거래)",
     "total_households": 639,
     "trade_count": 243,
     "median_price_eok": 5.2,
@@ -4118,6 +4550,8 @@
     ],
     "tradeCrosswalkVerified": true,
     "total_households": 972,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (224건 거래)",
     "trade_count": 224,
     "median_price_eok": 12.93,
     "build_year": 1997
@@ -4136,6 +4570,8 @@
       "푸른마을2"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (181건 거래)",
     "total_households": 470,
     "trade_count": 181,
     "median_price_eok": 5.18,
@@ -4155,6 +4591,8 @@
       "목동롯데캐슬마에스트로"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (170건 거래)",
     "total_households": 410,
     "trade_count": 170,
     "median_price_eok": 11.0,
@@ -4174,6 +4612,8 @@
       "목동에버하임"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (142건 거래)",
     "total_households": 117,
     "trade_count": 142,
     "median_price_eok": 4.1,
@@ -4193,6 +4633,8 @@
       "대림e-편한세상"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (100건 거래)",
     "total_households": 210,
     "trade_count": 100,
     "median_price_eok": 8.2,
@@ -4212,6 +4654,8 @@
       "경남아너스빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (97건 거래)",
     "total_households": 292,
     "trade_count": 97,
     "median_price_eok": 12.8,
@@ -4232,6 +4676,8 @@
     ],
     "tradeCrosswalkVerified": true,
     "total_households": 1140,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (372건 거래)",
     "trade_count": 372,
     "median_price_eok": 9.4,
     "build_year": 2000
@@ -4251,6 +4697,8 @@
     ],
     "tradeCrosswalkVerified": true,
     "total_households": 1081,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (320건 거래)",
     "trade_count": 320,
     "median_price_eok": 9.32,
     "build_year": 2014
@@ -4270,6 +4718,8 @@
     ],
     "tradeCrosswalkVerified": true,
     "total_households": 1067,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (263건 거래)",
     "trade_count": 263,
     "median_price_eok": 11.5,
     "build_year": 2005
@@ -4288,6 +4738,8 @@
       "강변"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (625건 거래)",
     "total_households": 1556,
     "trade_count": 625,
     "median_price_eok": 5.85,
@@ -4307,6 +4759,8 @@
       "강서힐스테이트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (781건 거래)",
     "total_households": 2603,
     "trade_count": 781,
     "median_price_eok": 12.5,
@@ -4326,6 +4780,8 @@
       "마곡엠밸리7단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (128건 거래)",
     "total_households": 1004,
     "trade_count": 128,
     "median_price_eok": 16.88,
@@ -4345,6 +4801,8 @@
       "한양아이클래스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (76건 거래)",
     "total_households": 251,
     "trade_count": 76,
     "median_price_eok": 0.8,
@@ -4364,6 +4822,8 @@
       "마곡중앙하이츠아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (377건 거래)",
     "total_households": 930,
     "trade_count": 377,
     "median_price_eok": 4.84,
@@ -4383,6 +4843,8 @@
       "마곡수명산파크4단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (293건 거래)",
     "total_households": 919,
     "trade_count": 293,
     "median_price_eok": 8.25,
@@ -4402,6 +4864,8 @@
       "가양강나루현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (242건 거래)",
     "total_households": 642,
     "trade_count": 242,
     "median_price_eok": 8.32,
@@ -4421,6 +4885,8 @@
       "부영"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (235건 거래)",
     "total_households": 712,
     "trade_count": 235,
     "median_price_eok": 9.0,
@@ -4440,6 +4906,8 @@
       "마곡수명산파크5단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (233건 거래)",
     "total_households": 948,
     "trade_count": 233,
     "median_price_eok": 8.0,
@@ -4459,6 +4927,8 @@
       "주공10"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (232건 거래)",
     "total_households": 566,
     "trade_count": 232,
     "median_price_eok": 6.75,
@@ -4478,6 +4948,8 @@
       "중앙화곡하이츠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (163건 거래)",
     "total_households": 15,
     "trade_count": 163,
     "median_price_eok": 4.2,
@@ -4497,6 +4969,8 @@
       "대림"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (140건 거래)",
     "total_households": 222,
     "trade_count": 140,
     "median_price_eok": 9.75,
@@ -4516,6 +4990,8 @@
       "성원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (131건 거래)",
     "total_households": 297,
     "trade_count": 131,
     "median_price_eok": 7.5,
@@ -4535,6 +5011,8 @@
       "개화"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (119건 거래)",
     "total_households": 91,
     "trade_count": 119,
     "median_price_eok": 7.85,
@@ -4554,6 +5032,8 @@
       "가양6단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (564건 거래)",
     "total_households": 1476,
     "trade_count": 564,
     "median_price_eok": 7.17,
@@ -4573,6 +5053,8 @@
       "디큐브시티"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (181건 거래)",
     "total_households": 524,
     "trade_count": 181,
     "median_price_eok": 13.3,
@@ -4592,6 +5074,8 @@
       "코원"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (9건 거래)",
     "total_households": 45,
     "trade_count": 9,
     "median_price_eok": 0.77,
@@ -4611,6 +5095,8 @@
       "한마을"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (672건 거래)",
     "total_households": 1983,
     "trade_count": 672,
     "median_price_eok": 7.3,
@@ -4630,6 +5116,8 @@
       "현대홈타운"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (363건 거래)",
     "total_households": 2412,
     "trade_count": 363,
     "median_price_eok": 6.9,
@@ -4649,6 +5137,8 @@
       "대우"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (358건 거래)",
     "total_households": 987,
     "trade_count": 358,
     "median_price_eok": 5.95,
@@ -4668,6 +5158,8 @@
       "온수힐스테이트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (319건 거래)",
     "total_households": 999,
     "trade_count": 319,
     "median_price_eok": 7.2,
@@ -4687,6 +5179,8 @@
       "구로두산위브"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (308건 거래)",
     "total_households": 660,
     "trade_count": 308,
     "median_price_eok": 5.12,
@@ -4706,6 +5200,8 @@
       "구일우성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (303건 거래)",
     "total_households": 829,
     "trade_count": 303,
     "median_price_eok": 5.5,
@@ -4725,6 +5221,8 @@
       "개봉푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (295건 거래)",
     "total_households": 978,
     "trade_count": 295,
     "median_price_eok": 7.85,
@@ -4744,6 +5242,8 @@
       "새솔금호"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (109건 거래)",
     "total_households": 272,
     "trade_count": 109,
     "median_price_eok": 5.05,
@@ -4763,6 +5263,8 @@
       "대상"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (105건 거래)",
     "total_households": 208,
     "trade_count": 105,
     "median_price_eok": 4.57,
@@ -4782,6 +5284,8 @@
       "현대홈타운아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (100건 거래)",
     "total_households": 260,
     "trade_count": 100,
     "median_price_eok": 7.72,
@@ -4801,6 +5305,8 @@
       "금강"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (97건 거래)",
     "total_households": 247,
     "trade_count": 97,
     "median_price_eok": 3.68,
@@ -4820,6 +5326,8 @@
       "구로두산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (625건 거래)",
     "total_households": 1285,
     "trade_count": 625,
     "median_price_eok": 4.7,
@@ -4839,6 +5347,8 @@
       "한진"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (480건 거래)",
     "total_households": 1371,
     "trade_count": 480,
     "median_price_eok": 5.48,
@@ -4858,6 +5368,8 @@
       "금천롯데캐슬골드파크1차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (428건 거래)",
     "total_households": 1743,
     "trade_count": 428,
     "median_price_eok": 10.4,
@@ -4877,6 +5389,8 @@
       "금천현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (364건 거래)",
     "total_households": 996,
     "trade_count": 364,
     "median_price_eok": 5.51,
@@ -4896,6 +5410,8 @@
       "벽산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (471건 거래)",
     "total_households": 2336,
     "trade_count": 471,
     "median_price_eok": 4.6,
@@ -4915,6 +5431,8 @@
       "와이즈플레이스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (50건 거래)",
     "total_households": 98,
     "trade_count": 50,
     "median_price_eok": 0.92,
@@ -4934,6 +5452,8 @@
       "독산주공14단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (314건 거래)",
     "total_households": 840,
     "trade_count": 314,
     "median_price_eok": 3.65,
@@ -4953,6 +5473,8 @@
       "우방"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (212건 거래)",
     "total_households": 671,
     "trade_count": 212,
     "median_price_eok": 4.9,
@@ -4972,6 +5494,8 @@
       "럭키남서울아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (202건 거래)",
     "total_households": 986,
     "trade_count": 202,
     "median_price_eok": 5.0,
@@ -4991,6 +5515,8 @@
       "남서울건영2"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (199건 거래)",
     "total_households": 619,
     "trade_count": 199,
     "median_price_eok": 3.3,
@@ -5010,6 +5536,8 @@
       "삼익"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (188건 거래)",
     "total_households": 786,
     "trade_count": 188,
     "median_price_eok": 4.54,
@@ -5029,6 +5557,8 @@
       "두산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (416건 거래)",
     "total_households": 56,
     "trade_count": 416,
     "median_price_eok": 6.33,
@@ -5048,6 +5578,8 @@
       "비즈트위트바이올렛5차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (160건 거래)",
     "total_households": 299,
     "trade_count": 160,
     "median_price_eok": 1.1,
@@ -5067,6 +5599,8 @@
       "현대(209)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (68건 거래)",
     "total_households": 197,
     "trade_count": 68,
     "median_price_eok": 4.14,
@@ -5086,6 +5620,8 @@
       "명도힐스티지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (65건 거래)",
     "total_households": 42,
     "trade_count": 65,
     "median_price_eok": 2.8,
@@ -5105,6 +5641,8 @@
       "남서울힐스테이트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (485건 거래)",
     "total_households": 1764,
     "trade_count": 485,
     "median_price_eok": 8.56,
@@ -5124,6 +5662,8 @@
       "금천롯데캐슬골드파크3차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (336건 거래)",
     "total_households": 1236,
     "trade_count": 336,
     "median_price_eok": 9.51,
@@ -5143,6 +5683,8 @@
       "브라이튼여의도"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (115건 거래)",
     "total_households": 454,
     "trade_count": 115,
     "median_price_eok": 43.0,
@@ -5162,6 +5704,8 @@
       "쌍용플래티넘S"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (173건 거래)",
     "total_households": 291,
     "trade_count": 173,
     "median_price_eok": 1.0,
@@ -5181,6 +5725,8 @@
       "영등포푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (682건 거래)",
     "total_households": 2462,
     "trade_count": 682,
     "median_price_eok": 10.6,
@@ -5200,6 +5746,8 @@
       "현대3차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (450건 거래)",
     "total_households": 1162,
     "trade_count": 450,
     "median_price_eok": 8.2,
@@ -5219,6 +5767,8 @@
       "당산현대5차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (372건 거래)",
     "total_households": 976,
     "trade_count": 372,
     "median_price_eok": 11.25,
@@ -5238,6 +5788,8 @@
       "양평현대6차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (314건 거래)",
     "total_households": 770,
     "trade_count": 314,
     "median_price_eok": 9.49,
@@ -5257,6 +5809,8 @@
       "강변래미안"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (258건 거래)",
     "total_households": 801,
     "trade_count": 258,
     "median_price_eok": 12.05,
@@ -5276,6 +5830,8 @@
       "당산대우"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (233건 거래)",
     "total_households": 536,
     "trade_count": 233,
     "median_price_eok": 3.69,
@@ -5295,6 +5851,8 @@
       "당산2가현대홈타운"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (214건 거래)",
     "total_households": 783,
     "trade_count": 214,
     "median_price_eok": 10.45,
@@ -5314,6 +5872,8 @@
       "지엘리베라움"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (176건 거래)",
     "total_households": 88,
     "trade_count": 176,
     "median_price_eok": 1.63,
@@ -5333,6 +5893,8 @@
       "당산계룡리슈빌3단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (128건 거래)",
     "total_households": 149,
     "trade_count": 128,
     "median_price_eok": 7.5,
@@ -5352,6 +5914,8 @@
       "당산반도유보라팰리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (115건 거래)",
     "total_households": 299,
     "trade_count": 115,
     "median_price_eok": 14.8,
@@ -5371,6 +5935,8 @@
       "한강아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (111건 거래)",
     "total_households": 265,
     "trade_count": 111,
     "median_price_eok": 8.9,
@@ -5390,6 +5956,8 @@
       "래미안에스티움"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (528건 거래)",
     "total_households": 1722,
     "trade_count": 528,
     "median_price_eok": 13.45,
@@ -5409,6 +5977,8 @@
       "양평한신"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (409건 거래)",
     "total_households": 1215,
     "trade_count": 409,
     "median_price_eok": 8.8,
@@ -5428,6 +5998,8 @@
       "극동(105)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (497건 거래)",
     "total_households": 1550,
     "trade_count": 497,
     "median_price_eok": 9.7,
@@ -5447,6 +6019,8 @@
       "신동아리버파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (575건 거래)",
     "total_households": 1696,
     "trade_count": 575,
     "median_price_eok": 10.0,
@@ -5466,6 +6040,8 @@
       "아크로리버하임"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (247건 거래)",
     "total_households": 1073,
     "trade_count": 247,
     "median_price_eok": 21.0,
@@ -5485,6 +6061,8 @@
       "진성마블로스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (20건 거래)",
     "total_households": 60,
     "trade_count": 20,
     "median_price_eok": 1.2,
@@ -5504,6 +6082,8 @@
       "롯데낙천대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (296건 거래)",
     "total_households": 734,
     "trade_count": 296,
     "median_price_eok": 8.6,
@@ -5523,6 +6103,8 @@
       "흑석한강푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (288건 거래)",
     "total_households": 863,
     "trade_count": 288,
     "median_price_eok": 14.85,
@@ -5542,6 +6124,8 @@
       "사당자이"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (285건 거래)",
     "total_households": 719,
     "trade_count": 285,
     "median_price_eok": 8.58,
@@ -5561,6 +6145,8 @@
       "사당우성3"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (281건 거래)",
     "total_households": 855,
     "trade_count": 281,
     "median_price_eok": 10.0,
@@ -5580,6 +6166,8 @@
       "사당롯데캐슬골든포레"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (280건 거래)",
     "total_households": 959,
     "trade_count": 280,
     "median_price_eok": 12.0,
@@ -5599,6 +6187,8 @@
       "우성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (276건 거래)",
     "total_households": 901,
     "trade_count": 276,
     "median_price_eok": 9.5,
@@ -5618,6 +6208,8 @@
       "상도휴엔하임"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (151건 거래)",
     "total_households": 298,
     "trade_count": 151,
     "median_price_eok": 1.47,
@@ -5637,6 +6229,8 @@
       "대방동현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (146건 거래)",
     "total_households": 12,
     "trade_count": 146,
     "median_price_eok": 9.43,
@@ -5656,6 +6250,8 @@
       "경동윈츠리버"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (124건 거래)",
     "total_households": 272,
     "trade_count": 124,
     "median_price_eok": 9.0,
@@ -5675,6 +6271,8 @@
       "메가스터디타워"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (110건 거래)",
     "total_households": 299,
     "trade_count": 110,
     "median_price_eok": 1.7,
@@ -5694,6 +6292,8 @@
       "힐스테이트 상도 센트럴파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (513건 거래)",
     "total_households": 1559,
     "trade_count": 513,
     "median_price_eok": 13.75,
@@ -5713,6 +6313,8 @@
       "관악산휴먼시아2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (710건 거래)",
     "total_households": 2265,
     "trade_count": 710,
     "median_price_eok": 6.4,
@@ -5732,6 +6334,8 @@
       "관악푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (835건 거래)",
     "total_households": 2104,
     "trade_count": 835,
     "median_price_eok": 8.05,
@@ -5751,6 +6355,8 @@
       "보라매롯데캐슬"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (20건 거래)",
     "total_households": 98,
     "trade_count": 20,
     "median_price_eok": 13.85,
@@ -5770,6 +6376,8 @@
       "코스모그린"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (38건 거래)",
     "total_households": 77,
     "trade_count": 38,
     "median_price_eok": 1.03,
@@ -5789,6 +6397,8 @@
       "LIG대학마을(건영아파트3차)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (244건 거래)",
     "total_households": 783,
     "trade_count": 244,
     "median_price_eok": 5.99,
@@ -5808,6 +6418,8 @@
       "보라매삼성"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (180건 거래)",
     "total_households": 710,
     "trade_count": 180,
     "median_price_eok": 8.75,
@@ -5827,6 +6439,8 @@
       "관악파크푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (172건 거래)",
     "total_households": 363,
     "trade_count": 172,
     "median_price_eok": 8.47,
@@ -5846,6 +6460,8 @@
       "e편한세상서울대입구2단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (155건 거래)",
     "total_households": 519,
     "trade_count": 155,
     "median_price_eok": 11.8,
@@ -5865,6 +6481,8 @@
       "관악산휴먼시아1단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (153건 거래)",
     "total_households": 545,
     "trade_count": 153,
     "median_price_eok": 6.25,
@@ -5884,6 +6502,8 @@
       "은천2단지아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (149건 거래)",
     "total_households": 384,
     "trade_count": 149,
     "median_price_eok": 5.8,
@@ -5903,6 +6523,8 @@
       "프라비다2"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (102건 거래)",
     "total_households": 208,
     "trade_count": 102,
     "median_price_eok": 1.77,
@@ -5922,6 +6544,8 @@
       "벽산블루밍3차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (94건 거래)",
     "total_households": 281,
     "trade_count": 94,
     "median_price_eok": 8.25,
@@ -5941,6 +6565,8 @@
       "일두(1021)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (80건 거래)",
     "total_households": 204,
     "trade_count": 80,
     "median_price_eok": 3.58,
@@ -5960,6 +6586,8 @@
       "벽산블루밍"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (755건 거래)",
     "total_households": 2105,
     "trade_count": 755,
     "median_price_eok": 7.78,
@@ -5979,6 +6607,8 @@
       "두산"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (640건 거래)",
     "total_households": 2001,
     "trade_count": 640,
     "median_price_eok": 9.25,
@@ -5998,6 +6628,8 @@
       "래미안원펜타스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (14건 거래)",
     "total_households": 641,
     "trade_count": 14,
     "median_price_eok": 70.4,
@@ -6017,6 +6649,8 @@
       "반포자이"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (741건 거래)",
     "total_households": 3410,
     "trade_count": 741,
     "median_price_eok": 34.3,
@@ -6036,6 +6670,8 @@
       "삼풍아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (366건 거래)",
     "total_households": 2390,
     "trade_count": 366,
     "median_price_eok": 26.8,
@@ -6055,6 +6691,8 @@
       "한라비발디스튜디오193"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (70건 거래)",
     "total_households": 149,
     "trade_count": 70,
     "median_price_eok": 2.6,
@@ -6074,6 +6712,8 @@
       "호반써밋서초파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (290건 거래)",
     "total_households": 424,
     "trade_count": 290,
     "median_price_eok": 7.1,
@@ -6093,6 +6733,8 @@
       "동아"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (257건 거래)",
     "total_households": 991,
     "trade_count": 257,
     "median_price_eok": 21.2,
@@ -6112,6 +6754,8 @@
       "롯데캐슬클래식"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (214건 거래)",
     "total_households": 990,
     "trade_count": 214,
     "median_price_eok": 22.65,
@@ -6131,6 +6775,8 @@
       "반포미도"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (212건 거래)",
     "total_households": 435,
     "trade_count": 212,
     "median_price_eok": 23.55,
@@ -6150,6 +6796,8 @@
       "래미안서초유니빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (185건 거래)",
     "total_households": 440,
     "trade_count": 185,
     "median_price_eok": 4.6,
@@ -6169,6 +6817,8 @@
       "한신"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (115건 거래)",
     "total_households": 250,
     "trade_count": 115,
     "median_price_eok": 23.1,
@@ -6188,6 +6838,8 @@
       "킴스빌리지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (82건 거래)",
     "total_households": 160,
     "trade_count": 82,
     "median_price_eok": 8.69,
@@ -6207,6 +6859,8 @@
       "엠브이아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (79건 거래)",
     "total_households": 154,
     "trade_count": 79,
     "median_price_eok": 17.2,
@@ -6226,6 +6880,8 @@
       "대우아이빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (78건 거래)",
     "total_households": 168,
     "trade_count": 78,
     "median_price_eok": 6.05,
@@ -6245,6 +6901,8 @@
       "래미안퍼스티지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (554건 거래)",
     "total_households": 2444,
     "trade_count": 554,
     "median_price_eok": 37.9,
@@ -6264,6 +6922,8 @@
       "아크로리버파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (413건 거래)",
     "total_households": 1612,
     "trade_count": 413,
     "median_price_eok": 39.5,
@@ -6283,6 +6943,8 @@
       "PH129"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (10건 거래)",
     "total_households": 29,
     "trade_count": 10,
     "median_price_eok": 115.0,
@@ -6302,6 +6964,8 @@
       "디에이치퍼스티어아이파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (7건 거래)",
     "total_households": 6702,
     "trade_count": 7,
     "median_price_eok": 16.5,
@@ -6321,6 +6985,8 @@
       "성원대치2단지아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (624건 거래)",
     "total_households": 1758,
     "trade_count": 624,
     "median_price_eok": 11.9,
@@ -6340,6 +7006,8 @@
       "요진와이시티미니"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (20건 거래)",
     "total_households": 91,
     "trade_count": 20,
     "median_price_eok": 1.8,
@@ -6359,6 +7027,8 @@
       "푸른마을아파트101동~111동"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (278건 거래)",
     "total_households": 930,
     "trade_count": 278,
     "median_price_eok": 15.4,
@@ -6378,6 +7048,8 @@
       "세곡푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (266건 거래)",
     "total_households": 912,
     "trade_count": 266,
     "median_price_eok": 13.7,
@@ -6397,6 +7069,8 @@
       "삼익대청아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (250건 거래)",
     "total_households": 822,
     "trade_count": 250,
     "median_price_eok": 13.6,
@@ -6416,6 +7090,8 @@
       "강남데시앙포레"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (224건 거래)",
     "total_households": 787,
     "trade_count": 224,
     "median_price_eok": 16.3,
@@ -6435,6 +7111,8 @@
       "e-편한세상"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (217건 거래)",
     "total_households": 840,
     "trade_count": 217,
     "median_price_eok": 20.5,
@@ -6454,6 +7132,8 @@
       "강남자곡아이파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (217건 거래)",
     "total_households": 716,
     "trade_count": 217,
     "median_price_eok": 14.5,
@@ -6473,6 +7153,8 @@
       "신동아(22)"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (187건 거래)",
     "total_households": 12,
     "trade_count": 187,
     "median_price_eok": 11.5,
@@ -6492,6 +7174,8 @@
       "대우디오빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (164건 거래)",
     "total_households": 168,
     "trade_count": 164,
     "median_price_eok": 3.4,
@@ -6511,6 +7195,8 @@
       "마일스디오빌"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (109건 거래)",
     "total_households": 260,
     "trade_count": 109,
     "median_price_eok": 3.78,
@@ -6530,6 +7216,8 @@
       "도곡렉슬"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (688건 거래)",
     "total_households": 3002,
     "trade_count": 688,
     "median_price_eok": 28.0,
@@ -6549,6 +7237,8 @@
       "까치마을"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (577건 거래)",
     "total_households": 1404,
     "trade_count": 577,
     "median_price_eok": 10.0,
@@ -6568,6 +7258,8 @@
       "문정시영"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (646건 거래)",
     "total_households": 1316,
     "trade_count": 646,
     "median_price_eok": 6.5,
@@ -6587,6 +7279,8 @@
       "올림픽파크리움"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (20건 거래)",
     "total_households": 51,
     "trade_count": 20,
     "median_price_eok": 2.02,
@@ -6606,6 +7300,8 @@
       "잠실르엘"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (10건 거래)",
     "total_households": 1865,
     "trade_count": 10,
     "median_price_eok": 34.92,
@@ -6625,6 +7321,8 @@
       "헬리오시티"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1419건 거래)",
     "total_households": 9510,
     "trade_count": 1419,
     "median_price_eok": 20.9,
@@ -6644,6 +7342,8 @@
       "파크하비오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (334건 거래)",
     "total_households": 999,
     "trade_count": 334,
     "median_price_eok": 14.72,
@@ -6663,6 +7363,8 @@
       "래미안송파파인탑"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (308건 거래)",
     "total_households": 794,
     "trade_count": 308,
     "median_price_eok": 14.88,
@@ -6682,6 +7384,8 @@
       "가락금호아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (301건 거래)",
     "total_households": 915,
     "trade_count": 301,
     "median_price_eok": 11.9,
@@ -6701,6 +7405,8 @@
       "상아2차아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (279건 거래)",
     "total_households": 750,
     "trade_count": 279,
     "median_price_eok": 8.95,
@@ -6720,6 +7426,8 @@
       "래미안파크팰리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (272건 거래)",
     "total_households": 919,
     "trade_count": 272,
     "median_price_eok": 15.7,
@@ -6739,6 +7447,8 @@
       "거여4단지"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (248건 거래)",
     "total_households": 546,
     "trade_count": 248,
     "median_price_eok": 7.34,
@@ -6758,6 +7468,8 @@
       "한양아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (137건 거래)",
     "total_households": 64,
     "trade_count": 137,
     "median_price_eok": 15.2,
@@ -6777,6 +7489,8 @@
       "현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (124건 거래)",
     "total_households": 243,
     "trade_count": 124,
     "median_price_eok": 9.72,
@@ -6796,6 +7510,8 @@
       "송파두산위브"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (121건 거래)",
     "total_households": 269,
     "trade_count": 121,
     "median_price_eok": 10.2,
@@ -6815,6 +7531,8 @@
       "잠실푸르지오월드마크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (91건 거래)",
     "total_households": 288,
     "trade_count": 91,
     "median_price_eok": 18.45,
@@ -6834,6 +7552,8 @@
       "파크리오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1889건 거래)",
     "total_households": 6864,
     "trade_count": 1889,
     "median_price_eok": 19.9,
@@ -6853,6 +7573,8 @@
       "선사현대아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1018건 거래)",
     "total_households": 2938,
     "trade_count": 1018,
     "median_price_eok": 9.67,
@@ -6872,6 +7594,8 @@
       "올림픽파크포레온"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (140건 거래)",
     "total_households": 12032,
     "trade_count": 140,
     "median_price_eok": 22.75,
@@ -6891,6 +7615,8 @@
       "청구빌라트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (6건 거래)",
     "total_households": 16,
     "trade_count": 6,
     "median_price_eok": 19.05,
@@ -6910,6 +7636,8 @@
       "한양립스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (27건 거래)",
     "total_households": 54,
     "trade_count": 27,
     "median_price_eok": 1.08,
@@ -6929,6 +7657,8 @@
       "래미안강동팰리스"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (399건 거래)",
     "total_households": 999,
     "trade_count": 399,
     "median_price_eok": 13.5,
@@ -6948,6 +7678,8 @@
       "둔촌푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (334건 거래)",
     "total_households": 800,
     "trade_count": 334,
     "median_price_eok": 12.0,
@@ -6967,6 +7699,8 @@
       "아남1"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (291건 거래)",
     "total_households": 807,
     "trade_count": 291,
     "median_price_eok": 10.33,
@@ -6986,6 +7720,8 @@
       "배재현대"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (221건 거래)",
     "total_households": 448,
     "trade_count": 221,
     "median_price_eok": 10.0,
@@ -7005,6 +7741,8 @@
       "고덕센트럴푸르지오"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (197건 거래)",
     "total_households": 656,
     "trade_count": 197,
     "median_price_eok": 11.3,
@@ -7024,6 +7762,8 @@
       "고덕숲아이파크"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (193건 거래)",
     "total_households": 687,
     "trade_count": 193,
     "median_price_eok": 12.95,
@@ -7043,6 +7783,8 @@
       "둔촌하이츠"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (121건 거래)",
     "total_households": 232,
     "trade_count": 121,
     "median_price_eok": 8.3,
@@ -7062,6 +7804,8 @@
       "미사아름채아파트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (119건 거래)",
     "total_households": 130,
     "trade_count": 119,
     "median_price_eok": 2.4,
@@ -7081,6 +7825,8 @@
       "거산유팰리스2차"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (111건 거래)",
     "total_households": 108,
     "trade_count": 111,
     "median_price_eok": 4.11,
@@ -7100,6 +7846,8 @@
       "고덕그라시움"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1092건 거래)",
     "total_households": 4932,
     "trade_count": 1092,
     "median_price_eok": 15.7,
@@ -7119,6 +7867,8 @@
       "롯데캐슬퍼스트"
     ],
     "tradeCrosswalkVerified": true,
+    "verification_status": "VERIFIED_EXACT",
+    "audit_reason": "국토부 실거래 4개 식별자 완전 일치 (1007건 거래)",
     "total_households": 3226,
     "trade_count": 1007,
     "median_price_eok": 13.0,
