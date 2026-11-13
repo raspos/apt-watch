@@ -9,9 +9,7 @@ from pathlib import Path
 from apt_watch import ROOT, now, read_trades, store
 from seoul_feed import import_delivery
 
-sys.path.insert(0, str(ROOT.parent))
-from pyungchon_land.collectors.naver_browser import MOBILE_COMPLEX_PAGE, _rendered_articles
-from pyungchon_land.normalization import price_manwon
+from naver_compat import price_manwon
 
 
 COMPLEX_URL = 'https://fin.land.naver.com/complexes/{complex_no}'
