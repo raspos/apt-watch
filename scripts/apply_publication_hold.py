@@ -179,6 +179,10 @@ def evaluate_gate(site, hold, min_rate=0.95):
     vint = (((site.get('market') or {}).get('spreadDynamics') or {}).get('qualityCounts') or {}).get('pointInTimeVintageAudit') or {}
     if vint.get('targetDay') != day or not vint.get('isContemporaneousLiveVintage'):
         level.append(f'{day} trade benchmark is not a verified point-in-time (live) vintage')
+    # Snapshot-level fetch dates do not prove each trade was visible on that day. Until every trade in
+    # the benchmark has a recorded first-seen date (tradeLevelFirstSeenVerified), the official index stays held.
+    if hold.get('requireTradeFirstSeenVerification', True) and not vint.get('tradeLevelFirstSeenVerified'):
+        level.append(f'{day} per-trade first-seen dates are not verified (snapshot-level only)')
     min_ref = hold.get('minReferenceDay')
     for h, ch in ((site.get('negoIndex') or {}).get('changes') or {}).items():
         ref = (ch or {}).get('referenceDay')

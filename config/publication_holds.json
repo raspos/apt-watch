@@ -10,5 +10,7 @@
     "note": "11월 12일 +5.12%는 사후 재구성 실거래 기준의 잠정값이며 품질 검증 완료 전까지 공표하지 않습니다."
   },
   "minReferenceDay": "2026-11-14",
-  "minValidRate": 0.95
+  "minValidRate": 0.95,
+  "requireTradeFirstSeenVerification": true,
+  "tradeTimingNote": "공식 실시간 지수는 개별 거래의 최초 확인일이 검증된 경우에만 공표. 월별 스냅샷 수집일 기준 판정만으로는 공표하지 않음(내부 산출은 계속)."
 }

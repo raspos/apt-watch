@@ -116,6 +116,13 @@ class PublicationGateTest(unittest.TestCase):
         level, _ = aph.evaluate_gate(site, {'holdDays': []})
         self.assertTrue(any('vintage' in r for r in level))
 
+    def test_snapshot_only_vintage_is_held_by_gate(self):
+        site = {'negoIndex': {'asOf': '2099-01-03', 'changes': {}},
+                'market': {'spreadDynamics': {'qualityCounts': {'pointInTimeVintageAudit': {
+                    'targetDay': '2099-01-03', 'isContemporaneousLiveVintage': True}}}}}
+        level, _ = aph.evaluate_gate(site, {'holdDays': []})
+        self.assertTrue(any('first-seen' in r for r in level))
+
     def test_unassessed_day_is_held_by_gate(self):
         site = {'negoIndex': {'asOf': '2099-01-01', 'changes': {}}, 'market': {}}
         level, _ = aph.evaluate_gate(site, {'holdDays': []})
