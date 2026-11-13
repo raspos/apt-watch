@@ -54739,7 +54739,7 @@
           "percent": null,
           "groups90d": 0,
           "groups180d": 0,
-          "observedComplexes": 3,
+          "observedComplexes": 4,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -55126,7 +55126,7 @@
           "percent": null,
           "groups90d": 0,
           "groups180d": 0,
-          "observedComplexes": 9,
+          "observedComplexes": 10,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -55255,7 +55255,7 @@
           "percent": null,
           "groups90d": 0,
           "groups180d": 0,
-          "observedComplexes": 2,
+          "observedComplexes": 3,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -55427,7 +55427,7 @@
           "percent": null,
           "groups90d": 0,
           "groups180d": 0,
-          "observedComplexes": 2,
+          "observedComplexes": 3,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -55596,8 +55596,8 @@
       "qualityCounts": {
         "targetDay": "2026-11-13",
         "engineVersion": "v1.2.0-shapley",
-        "observedComplexesCount": 78,
-        "totalActiveListings": 9881,
+        "observedComplexesCount": 82,
+        "totalActiveListings": 10039,
         "matchedStrataGroups90d": 50,
         "matchedStrataGroups180d": 204,
         "analyzedListingsInGroups": 1921,

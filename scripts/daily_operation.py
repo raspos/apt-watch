@@ -22,6 +22,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / 'scripts'))
+import observation_quality as oq  # noqa: E402
 
 def check_db_integrity(db_path):
     print(f"[DB Check] Verifying integrity for {db_path.name}...")
@@ -159,9 +161,7 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
             retry_mf_path = ROOT / 'data' / 'staging' / f'retry_{target_day}_manifest.json'
             retry_mf_path.parent.mkdir(parents=True, exist_ok=True)
             retry_mf_path.write_text(json.dumps(retry_manifest, ensure_ascii=False, indent=2), encoding='utf-8')
-            retry_store = ROOT / 'data' / 'staging' / f'retry_{target_day}_temp.sqlite3'
-            if retry_store.exists():
-                retry_store.unlink()
+            retry_store = ROOT / 'data' / 'staging' / f'retry_{target_day}_{datetime.now().strftime("%H%M%S")}.sqlite3'
             cmd_retry = [
                 sys.executable, '-u', str(ROOT / 'collect_naver.py'),
                 '--manifest', str(retry_mf_path),
@@ -175,13 +175,26 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
             except subprocess.TimeoutExpired:
                 print("[Step 1-1] WARNING: retry collector timed out after 1800s; merging only what was stored.")
             if retry_store.exists():
+                # Retry data is judged in the staging store BEFORE it can touch the main DB.
                 with sqlite3.connect(retry_store) as rdb, sqlite3.connect(db_file) as mdb:
-                    r_batches = rdb.execute("SELECT day, complex, observed, success FROM batches").fetchall()
-                    r_listings = rdb.execute("SELECT day, complex, id, price, payload FROM listings").fetchall()
-                    mdb.executemany("INSERT OR REPLACE INTO batches VALUES (?, ?, ?, ?)", r_batches)
-                    mdb.executemany("INSERT OR REPLACE INTO listings VALUES (?, ?, ?, ?, ?)", r_listings)
-                print(f"[Step 1-1] Auto-retry merged {len(r_batches)} batches and {len(r_listings)} listings.")
-        
+                    verdicts = oq.validate_retry_store(mdb, rdb, target_day, retry_manifest)
+                    accepted = [cx for cx, (ok_, _) in verdicts.items() if ok_]
+                    rejected = {cx: why for cx, (ok_, why) in verdicts.items() if not ok_}
+                    for cx in accepted:
+                        mdb.executemany("INSERT OR REPLACE INTO batches VALUES (?, ?, ?, ?)",
+                                        rdb.execute("SELECT day, complex, observed, success FROM batches WHERE complex=?", (cx,)).fetchall())
+                        mdb.executemany("INSERT OR REPLACE INTO listings VALUES (?, ?, ?, ?, ?)",
+                                        rdb.execute("SELECT day, complex, id, price, payload FROM listings WHERE complex=?", (cx,)).fetchall())
+                    mdb.commit()
+                print(f"[Step 1-1] Retry validation: accepted {len(accepted)}, rejected {len(rejected)} (rejected data stays in {retry_store.name}, never merged).")
+                for cx, why in rejected.items():
+                    print(f"  - rejected {cx}: {why}")
+
+    # 3-2. Observation quality assessment (VALID / SUSPECT / INVALID / UNKNOWN) before the gate
+    with sqlite3.connect(db_file) as qdb:
+        qsum = oq.assess_day(qdb, target_day, json.loads(manifest_file.read_text(encoding='utf-8-sig')))
+    print(f"[Quality] {qsum}")
+
     # 4. Save raw listings snapshot to JSONL
     print(f"\n[Step 2] Dumping raw snapshot to {snapshot_dir}...")
     db = sqlite3.connect(db_file)
@@ -201,14 +214,13 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
         planned_targets = json.load(f)
     planned_count = len(planned_targets)
 
-    db = sqlite3.connect(db_file)
-    cur = db.cursor()
-    success_ids = {str(r[0]) for r in cur.execute("SELECT complex FROM batches WHERE day=? AND success=1", (target_day,)).fetchall()}
-    suspect_ids = find_suspect_collections(cur, target_day, success_ids)
-    db.close()
-    if suspect_ids:
-        print(f"  [SUSPECT] 직전 관측일 대비 매물이 급감/소멸한 단지 {len(suspect_ids)}개는 정상 수집으로 인정하지 않습니다: {sorted(suspect_ids)[:20]}")
-    success_ids -= suspect_ids
+    with sqlite3.connect(db_file) as qdb:
+        success_ids = {str(c) for c in oq.valid_complexes(qdb, target_day)}   # collected AND quality-verified
+        _all_ok = {str(r[0]) for r in qdb.execute("SELECT complex FROM batches WHERE day=? AND success=1", (target_day,))}
+    print(f"  수집 성공 {len(_all_ok)}개 중 품질 검증 통과 {len(success_ids)}개 (나머지는 SUSPECT/INVALID/UNKNOWN)")
+    quality_file = ROOT / 'data' / 'logs' / f'quality_{target_day}.json'
+    quality_file.parent.mkdir(parents=True, exist_ok=True)
+    quality_file.write_text(json.dumps(qsum, ensure_ascii=False, indent=2), encoding='utf-8')
 
     planned_ids = {str(c['complex']) for c in planned_targets}
     successful_planned = len(planned_ids.intersection(success_ids))
@@ -256,6 +268,8 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
     run_step("6. Rebuild nego_pressure", ROOT / 'nego_pressure.py')
     run_step("6-1. Divergence Dynamics & 3-Way Decomposition", ROOT / 'scripts' / 'divergence_dynamics.py', ['--day', target_day])
     
+    run_step("6-2. Publication gate (withhold unverified NEGO values)", ROOT / 'scripts' / 'apply_publication_hold.py')
+
     # 7. Post-run Automated 10-Point Quality Audit & Backup
     print("\n[Step 5] Post-run Automated Quality Verification...")
     run_step("7. 10-Point Data Quality Audit", ROOT / 'scripts' / 'audit_quality_checks.py', [target_day])

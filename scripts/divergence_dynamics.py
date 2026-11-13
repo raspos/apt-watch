@@ -134,6 +134,15 @@ def decompose_stratum_ask_turnover(a0, a1, r0, r1, identical_pairs):
 def extract_listings_for_day(hdb, target_day, crosswalk):
     """Extract and structure all listings for a given date, tracking failure status."""
     rows = hdb.execute("SELECT complex, id, price, payload FROM listings WHERE day=?", (target_day,)).fetchall()
+    # Only quality-verified complexes enter the index. If the day was never assessed we keep the
+    # legacy behaviour here, but the publication gate (apply_publication_hold) withholds the result.
+    try:
+        assessed = hdb.execute("SELECT COUNT(*) FROM observation_quality WHERE day=?", (target_day,)).fetchone()[0] > 0
+        if assessed:
+            ok_cx = {r[0] for r in hdb.execute("SELECT complex FROM observation_quality WHERE day=? AND status='VALID'", (target_day,))}
+            rows = [r for r in rows if r[0] in ok_cx]
+    except sqlite3.OperationalError:
+        pass
     listings_by_id = {}
     listings_by_stratum = defaultdict(list)
     complex_set = set()
@@ -529,28 +538,40 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
     identical_ask_change_med = round(median(identical_price_changes), 2) if identical_price_changes else 0.0
     identical_ask_change_mean = round(mean(identical_price_changes), 2) if identical_price_changes else 0.0
 
+    # Ensure rounded representations preserve exact identities without 0.01%p rounding divergence
+    r_fixed_delta = round(fixed_delta, 2)
+    r_contrib_ask = round(contrib_ask, 2)
+    r_contrib_trade = round(contrib_trade, 2)
+    r_contrib_identical_ask = round(contrib_identical_ask, 2)
+    r_contrib_within_turnover = round(r_contrib_ask - r_contrib_identical_ask, 2)
+    r_delta_full_mean = round(delta_full_reported, 2)
+    r_contrib_strata_comp = round(r_delta_full_mean - r_fixed_delta, 2)
+
     return {
         'status': 'VALID',
-        'matchedSampleChange': round(fixed_delta, 2),
-        'deltaPctPoint': round(fixed_delta, 2),
-        'deltaTotalPctPoint': round(fixed_delta, 2),
-        'deltaFullMeanPctPoint': round(delta_full_reported, 2),
+        'matchedSampleChange': r_fixed_delta,
+        'deltaPctPoint': r_fixed_delta,
+        'deltaTotalPctPoint': r_fixed_delta,
+        'deltaFullMeanPctPoint': r_delta_full_mean,
         'medianLevelChange': round(delta_median_level, 2),
-        'discrepancyMedianVersusMean': round(discrepancy_median_vs_matched, 2),
-        'contribAskPctPoint': round(contrib_ask, 2),
-        'contribIdenticalAskPctPoint': round(contrib_identical_ask, 2),
-        'contribWithinStratumTurnoverPctPoint': round(contrib_within_turnover, 2),
-        'contribWithinTurnoverPctPoint': round(contrib_within_turnover, 2),
-        'contribTradeBenchmarkPctPoint': round(contrib_trade, 2),
-        'contribSampleCompositionPctPoint': round(contrib_strata_comp, 2),
+        'discrepancyMedianVersusMean': round(delta_median_level - r_fixed_delta, 2),
+        'contribAskPctPoint': r_contrib_ask,
+        'contribIdenticalAskPctPoint': r_contrib_identical_ask,
+        'contribWithinStratumTurnoverPctPoint': r_contrib_within_turnover,
+        'contribWithinTurnoverPctPoint': r_contrib_within_turnover,
+        'contribTradeBenchmarkPctPoint': r_contrib_trade,
+        'contribSampleCompositionPctPoint': r_contrib_strata_comp,
         'unidentifiedEffectPctPoint': 0.0,
-        'fixedSampleSpreadChange': round(fixed_delta, 2),
+        'fixedSampleSpreadChange': r_fixed_delta,
         'matchedStrataCount': len(matched_keys),
         'matchedListingsCount': len(identical_ids),
         'mathematicalIdentities': {
             'matchedIdentityHolds': abs(fixed_delta - (contrib_ask + contrib_trade)) < 1e-4,
             'askSubdecompositionHolds': abs(contrib_ask - (contrib_identical_ask + contrib_within_turnover)) < 1e-4,
-            'fullMeanIdentityHolds': abs(delta_full_reported - (contrib_identical_ask + contrib_within_turnover + contrib_trade + contrib_strata_comp)) < 1e-4
+            'fullMeanIdentityHolds': abs(delta_full_reported - (contrib_identical_ask + contrib_within_turnover + contrib_trade + contrib_strata_comp)) < 1e-4,
+            'roundedMatchedIdentityHolds': abs(r_fixed_delta - (r_contrib_ask + r_contrib_trade)) < 1e-4,
+            'roundedAskSubdecompositionHolds': abs(r_contrib_ask - (r_contrib_identical_ask + r_contrib_within_turnover)) < 1e-4,
+            'roundedFullMeanIdentityHolds': abs(r_delta_full_mean - (r_fixed_delta + r_contrib_strata_comp)) < 1e-4
         },
         'identicalListingStats': {
             'identicalCount': len(identical_ids),
@@ -573,6 +594,46 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
             f"중위값-평균 불일치: {signed(round(discrepancy_median_vs_matched, 2), '%p')})"
         )
     }
+
+MIN_MATCHED_GROUPS = 30          # fewer common groups -> no daily change is published
+GROUP_OUTLIER_PCT_POINT = 15.0   # a single group moving more than this needs re-verification
+
+
+def decompose_with_stability_guard(curr_strata, prev_strata, curr_listings, prev_listings, prev_failed_complexes=None, min_groups=None):
+    """Core Shapley decomposition + stability guard.
+
+    The guard never deletes data. When the matched panel is too small, or any matched group moves
+    by more than GROUP_OUTLIER_PCT_POINT, the change and its decomposition are withheld pending
+    re-verification, so one erroneous group cannot move the published change.
+    """
+    res = decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, prev_listings, prev_failed_complexes)
+    if not isinstance(res, dict) or res.get('status') != 'VALID':
+        return res
+    matched = set(curr_strata) & set(prev_strata)
+    moves = {k: curr_strata[k]['spreadPct'] - prev_strata[k]['spreadPct'] for k in matched}
+    flagged = sorted((k for k, v in moves.items() if abs(v) > GROUP_OUTLIER_PCT_POINT), key=lambda k: -abs(moves[k]))
+    total_abs = sum(abs(v) for v in moves.values()) or 1.0
+    top_share = max((abs(v) for v in moves.values()), default=0.0) / total_abs
+    res['stability'] = {
+        'matchedGroups': len(matched),
+        'minMatchedGroups': MIN_MATCHED_GROUPS if min_groups is None else min_groups,
+        'flaggedGroups': [{'group': [str(x) for x in k], 'changePctPoint': round(moves[k], 2)} for k in flagged[:10]],
+        'flaggedGroupCount': len(flagged),
+        'topGroupShareOfAbsChange': round(top_share, 3),
+    }
+    reason = None
+    need = MIN_MATCHED_GROUPS if min_groups is None else min_groups
+    if len(matched) < need:
+        reason = f'공통 비교 그룹 {len(matched)}개 < 최소 {need}개'
+    elif flagged:
+        reason = f'비교 그룹 {len(flagged)}개의 변화가 ±{GROUP_OUTLIER_PCT_POINT:g}%p 초과 — 재검증 필요'
+    if reason:
+        for k in list(res.keys()):
+            if k.endswith('PctPoint') or k in ('matchedSampleChange', 'fixedSampleSpreadChange', 'medianLevelChange', 'discrepancyMedianVersusMean'):
+                res[k] = None
+        res['status'] = 'WITHHELD_STABILITY'
+        res['explanation'] = '변화폭 공표 유예: ' + reason
+    return res
 
 # Export alias for backwards compatibility and test imports
 decompose_spread_change = decompose_spread_change_shapley
@@ -658,7 +719,7 @@ def run_spread_dynamics(target_day=None):
         def build_horizon_change(day_k, label, days_req):
             if day_k in horizon_cache:
                 l_k_id, s_k, f_k = horizon_cache[day_k]
-                decomp = decompose_spread_change_shapley(strata_90d, s_k, l_curr_id, l_k_id, f_k)
+                decomp = decompose_with_stability_guard(strata_90d, s_k, l_curr_id, l_k_id, f_k)
                 decomp['period'] = label
                 decomp['referenceDay'] = day_k
                 return decomp
@@ -709,7 +770,7 @@ def run_spread_dynamics(target_day=None):
                     l_k_id, s_k, f_k = horizon_cache[day_k]
                     d_k_strata = {k: v for k, v in s_k.items() if k[0] == d}
                     d_k_listings = {k: v for k, v in l_k_id.items() if v['district'] == d}
-                    return decompose_spread_change_shapley(d_strata_90, d_k_strata, d_listings_curr, d_k_listings)
+                    return decompose_with_stability_guard(d_strata_90, d_k_strata, d_listings_curr, d_k_listings, min_groups=3)
                 return {
                     'status': f'축적 중 ({days_req}일차 대기)',
                     'deltaPctPoint': None,
@@ -948,6 +1009,9 @@ def run_spread_dynamics(target_day=None):
             })
             site_data_path.write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding='utf-8')
             print(f"[Spread Dynamics] site/data.json successfully updated.")
+            # No execution path may leave ungated NEGO values in site/data.json
+            import apply_publication_hold
+            apply_publication_hold.main()
 
     return dynamics_data
 

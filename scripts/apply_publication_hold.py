@@ -143,18 +143,124 @@ def apply_hold(site, hold):
     return True
 
 
+def _quality(day, planned):
+    """Quality summary for a day from history.sqlite3 (None if the day was never assessed)."""
+    import sqlite3
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import observation_quality as oq
+    db_path = ROOT / 'data' / 'history.sqlite3'
+    if not db_path.exists() or not day:
+        return None
+    with sqlite3.connect(f'file:{db_path}?mode=ro', uri=True) as db:
+        try:
+            if db.execute("SELECT COUNT(*) FROM observation_quality WHERE day=?", (day,)).fetchone()[0] == 0:
+                return None
+        except sqlite3.OperationalError:
+            return None
+        rows = db.execute("SELECT status, COUNT(*) FROM observation_quality WHERE day=? GROUP BY status", (day,)).fetchall()
+    valid = dict(rows).get('VALID', 0)
+    return {'valid': valid, 'planned': planned, 'rate': valid / planned if planned else 0.0}
+
+
+def evaluate_gate(site, hold, min_rate=0.95):
+    """Return (level_reasons, {horizon: reason}) -- reasons are empty when publication is allowed."""
+    n = site.get('negoIndex') or {}
+    day = n.get('asOf') or (site.get('market') or {}).get('day')
+    panel = ROOT / 'data' / 'fixed-110-panel.json'
+    planned = len(json.loads(panel.read_text(encoding='utf-8-sig'))) if panel.exists() else 110
+    level, changes = [], {}
+    if day in set(hold.get('holdDays', [])):
+        level.append(f'{day} is a held day')
+    q = _quality(day, planned)
+    if q is None:
+        level.append(f'{day} observations have no quality assessment')
+    elif q['rate'] < min_rate:
+        level.append(f'{day} quality-verified complexes {q["valid"]}/{q["planned"]} < {min_rate:.0%}')
+    min_ref = hold.get('minReferenceDay')
+    for h, ch in ((site.get('negoIndex') or {}).get('changes') or {}).items():
+        ref = (ch or {}).get('referenceDay')
+        if ch is None or ch.get('deltaPctPoint') is None:
+            continue
+        if not ref:
+            changes[h] = 'no reference day recorded'
+        elif min_ref and ref < min_ref:
+            changes[h] = f'reference day {ref} precedes first verified live baseline {min_ref}'
+        else:
+            rq = _quality(ref, planned)
+            if rq is None or rq['rate'] < min_rate:
+                changes[h] = f'reference day {ref} not quality-verified'
+    return level, changes
+
+
+def scrub_held_day_points(site, hold):
+    """Drop per-day points (series / history / snapshots) for explicitly held days. Idempotent."""
+    days = set(hold.get('holdDays', []))
+    market = site.get('market') or {}
+    for pts in (market.get('spreadHistory') or {}).values():
+        for p in pts:
+            if p.get('day') in days:
+                _hold_spread_node(p)
+    for d in list((market.get('dailySnapshots') or {}).keys()):
+        if d in days:
+            for node in market['dailySnapshots'][d].values():
+                _hold_spread_node(node)
+    so = (market.get('spreadDynamics') or {}).get('seoulOverall') or {}
+    for k in ('seriesA_FullCrossSection', 'seriesB_FixedSamplePanel'):
+        if so.get(k):
+            so[k] = [p for p in so[k] if p.get('day') not in days]
+    n = site.get('negoIndex') or {}
+    for k in ('seriesA_FullCrossSection', 'seriesB_FixedSamplePanel'):
+        if n.get(k):
+            n[k] = [p for p in n[k] if p.get('day') not in days]
+
+
+def hold_changes_only(site, horizons, reasons):
+    held = {'status': HELD_CODE, 'deltaPctPoint': None, 'reason': HELD_STATUS}
+    containers = [(site.get('negoIndex') or {}).get('changes'),
+                  ((site.get('market') or {}).get('spreadDynamics') or {}).get('seoulOverall', {}).get('changes'),
+                  ((site.get('market') or {}).get('pressure') or {}).get('spreadDynamics', {}).get('changes')]
+    for c in containers:
+        if isinstance(c, dict):
+            for h in horizons:
+                if h in c:
+                    c[h] = dict(held)
+    so = ((site.get('market') or {}).get('spreadDynamics') or {}).get('seoulOverall') or {}
+    if '1d' in horizons:
+        so['decomposition'] = {'status': HELD_CODE, 'reason': HELD_STATUS}
+        so['seriesB_FixedSamplePanel'] = []
+    log = site.setdefault('dataChangeLog', [])
+    log.append({'id': f"CHANGE-HOLD-{(site.get('negoIndex') or {}).get('asOf')}-{','.join(sorted(horizons))}",
+                'at': datetime.now(timezone(timedelta(hours=9))).isoformat(timespec='seconds'),
+                'action': '변화폭 공표 유예', 'reason': '; '.join(reasons.values())})
+
+
 def main():
     hold = load_holds()
     if not hold:
         print('[hold] no publication_holds.json; nothing to do')
         return 0
     site = json.loads(SITE_FILE.read_text(encoding='utf-8'))
-    changed = apply_hold(site, hold)
-    if changed:
-        SITE_FILE.write_text(json.dumps(site, ensure_ascii=False, indent=2), encoding='utf-8')
-        print('[hold] publication hold applied to site/data.json')
+    before = json.dumps(site, sort_keys=True)
+    scrub_held_day_points(site, hold)
+    level_reasons, change_reasons = evaluate_gate(site, hold)
+    if level_reasons:
+        # static hold days use the logged reason; dynamic failures log their own
+        h2 = dict(hold)
+        if not any('held day' in r for r in level_reasons):
+            h2['id'] = f"GATE-{(site.get('negoIndex') or {}).get('asOf')}"
+            h2['holdDays'] = sorted(set(hold.get('holdDays', [])) | {(site.get('negoIndex') or {}).get('asOf')})
+            h2['reason'] = '자동 품질 게이트 미통과: ' + '; '.join(level_reasons)
+            h2['loggedAt'] = datetime.now(timezone(timedelta(hours=9))).isoformat(timespec='seconds')
+        apply_hold(site, h2)
+        print('[hold] LEVEL held:', '; '.join(level_reasons))
+    elif change_reasons:
+        hold_changes_only(site, set(change_reasons), change_reasons)
+        print('[hold] CHANGES held:', change_reasons)
     else:
-        print('[hold] site data does not reference a held day; no change')
+        print('[hold] gate passed; nothing withheld')
+    if json.dumps(site, sort_keys=True) != before:
+        SITE_FILE.write_text(json.dumps(site, ensure_ascii=False, indent=2), encoding='utf-8')
+        print('[hold] site/data.json updated')
     return 0
 
 
