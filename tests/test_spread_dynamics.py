@@ -242,21 +242,21 @@ class TestSpreadDynamicsExhaustive(unittest.TestCase):
         # When history duration is less than 7 days, 7d change must be withheld
         self.assertIn('7d', changes)
         if changes['7d']['deltaPctPoint'] is None:
-            self.assertIn('축적 중', changes['7d']['status'])
+            self.assertTrue('축적 중' in changes['7d']['status'] or changes['7d']['status'] == 'HELD_VERIFICATION')
         else:
             self.assertEqual(changes['7d']['status'], 'VALID')
 
         # When history duration is less than 28 days, 28d change must be withheld
         self.assertIn('28d', changes)
         if changes['28d']['deltaPctPoint'] is None:
-            self.assertIn('축적 중', changes['28d']['status'])
+            self.assertTrue('축적 중' in changes['28d']['status'] or changes['28d']['status'] == 'HELD_VERIFICATION')
         else:
             self.assertEqual(changes['28d']['status'], 'VALID')
 
         # 25 districts structure validation
         self.assertEqual(len(dyn['districts']), 25)
         for d_code, d_info in dyn['districts'].items():
-            self.assertIn(d_info['status'], ['실측', '장기 실측 참고치', '정상', '데이터 부족', '산출 유보', 'VALID', 'INSUFFICIENT_DATA', 'NO_DATA'])
+            self.assertIn(d_info['status'], ['실측', '장기 실측 참고치', '정상', '데이터 부족', '산출 유보', 'VALID', 'INSUFFICIENT_DATA', 'NO_DATA', '수집 데이터 검증 중'])
             self.assertIn('1d', d_info['changes'])
             self.assertIn('7d', d_info['changes'])
             self.assertIn('28d', d_info['changes'])

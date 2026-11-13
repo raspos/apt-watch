@@ -52,9 +52,15 @@ class TestNegoIndex(unittest.TestCase):
         nego = data['negoIndex']
 
         # NEGO INDEX 2.0 Status & Operational Gate check
-        self.assertEqual(nego['status'], 'ACTIVE_OPERATIONAL')
-        self.assertTrue(nego['officialPublicationAllowed'])
-        self.assertIn('네고 압력', nego['statusLabel'])
+        if nego['status'] == 'HELD_VERIFICATION':
+            # Publication hold: no official number may be exposed.
+            self.assertFalse(nego['officialPublicationAllowed'])
+            self.assertIsNone(nego['currentNegoLevel'])
+            self.assertIn('검증', nego['statusLabel'])
+        else:
+            self.assertEqual(nego['status'], 'ACTIVE_OPERATIONAL')
+            self.assertTrue(nego['officialPublicationAllowed'])
+            self.assertIn('네고 압력', nego['statusLabel'])
 
         # Grade A: Unverified independent evidence must not emit false official numbers
         grade_a = nego['gradeA']

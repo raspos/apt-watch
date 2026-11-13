@@ -705,6 +705,20 @@ function renderNegoHero() {
   const asofEl = get('negoAsof');
   if (asofEl) asofEl.textContent = asof;
 
+  if (n.status === 'HELD_VERIFICATION') {
+    const heldSample = get('negoSampleCount');
+    if (heldSample) heldSample.textContent = '비교 표본 검증 중';
+    [['negoCurrentVal', 'negoCurrentSub', '수집 데이터 품질 검증 후 공표'],
+     ['negoDodChange', 'negoDodSub', '검증 완료 전까지 변화폭 미공표'],
+     ['negoWowChange', 'negoWowSub', '유효 비교 관측 확보 후 산출'],
+     ['negoMomChange', 'negoMomSub', '유효 비교 관측 확보 후 산출']].forEach(([vId, sId, sub]) => {
+      const v = get(vId); const s = get(sId);
+      if (v) { v.textContent = '수집 데이터 검증 중'; v.className = 'metric-value na'; }
+      if (s) s.textContent = sub;
+    });
+    return;
+  }
+
   const dyn = data.market?.spreadDynamics?.seoulOverall?.allSample || {};
   const validGroups = dyn.sampleGroups ?? (data.observability?.todayCoreSuccess ?? 35);
   const sampleEl = get('negoSampleCount');

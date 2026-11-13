@@ -285,6 +285,8 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
     # 10. Automated Public Deployment via GitHub (FULL_SUCCESS Only)
     if operational_status == 'FULL_SUCCESS':
         print("\n[Step 8] Pushing verified site payload to GitHub (FULL_SUCCESS Mode)...")
+        hold_res = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'apply_publication_hold.py')], cwd=str(ROOT), capture_output=True, text=True, encoding='utf-8')
+        print(hold_res.stdout.strip())
         subprocess.run(['git', 'add', 'site/data.json'], cwd=str(ROOT), capture_output=True, text=True)
         git_diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], cwd=str(ROOT))
         if git_diff.returncode != 0:
