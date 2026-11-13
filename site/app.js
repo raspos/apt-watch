@@ -193,10 +193,10 @@ const chart1 = makeChart({
 const chart2 = makeChart({
   canvas: 'chart2', readout: 'readout2', ranged: false, digits: 1, baseline: 0,
   daily: () => true,
-  label: () => '관측일별 가격괴리율',
+  label: () => '관측일별 네고 압력 (NEGO INDEX)',
   emptyText: () => {
     const sp = data.market.regions.all?.spread;
-    return '관측일별 괴리율 이력은 비교 표본이 확보된 날부터 쌓입니다.' + (sp && sp.percent != null ? ` 현재 참고 괴리율 ${signed(sp.percent)} (대표지수 아님)` : '');
+    return '관측일별 네고 압력 이력은 비교 표본이 확보된 날부터 쌓입니다.' + (sp && sp.percent != null ? ` 현재 네고 압력 ${signed(sp.percent)}` : '');
   },
   points: () => (data.market.spreadHistory?.[code()] || []).map(p => {
     const v = p.actual90d?.percent ?? p.percent ?? p.longTerm180d?.percent ?? null;
@@ -204,7 +204,17 @@ const chart2 = makeChart({
     const samp = is180 ? (p.longTerm180d?.sample ?? 0) : (p.actual90d?.sample ?? p.sample ?? 0);
     return {key: p.day, value: v, samples: samp, status: p.status};
   }),
-  read: p => `${p.key} · 괴리율 ${p.value === null ? '미산출' : signed(p.value)} · 비교 그룹 ${nf(p.samples)}개` + (p.status ? ` (${p.status})` : '')
+  read: p => {
+    const so = data.market?.spreadDynamics?.seoulOverall;
+    if (code() === 'all' && so) {
+      const aPt = (so.seriesA_FullCrossSection || []).find(x => x.day === p.key);
+      const bPt = (so.seriesB_FixedSamplePanel || []).find(x => x.day === p.key);
+      const aVal = aPt?.percent != null ? signed(aPt.percent) : (p.value !== null ? signed(p.value) : '미산출');
+      const bVal = bPt?.percent != null ? signed(bPt.percent) : aVal;
+      return `${p.key} · A계열(전체 관측) ${aVal} · B계열(동일 표본) ${bVal} · 비교 그룹 ${nf(p.samples)}개`;
+    }
+    return `${p.key} · 네고 압력 ${p.value === null ? '미산출' : signed(p.value)} · 비교 그룹 ${nf(p.samples)}개` + (p.status ? ` (${p.status})` : '');
+  }
 });
 
 /* ==========================================================================
@@ -465,9 +475,9 @@ function renderMapLegend() {
         <span style="font-size:10px;color:var(--up)">+15%</span>
       </div>
       <div class="legend-labels">
-        <span>호가 &lt; 실거래 (낮음)</span>
+        <span>호가 &lt; 실거래 (네고 완화)</span>
         <span>0% 기준 (일치)</span>
-        <span>호가 &gt; 실거래 (높음)</span>
+        <span>호가 &gt; 실거래 (네고 압력)</span>
       </div>
       <div class="legend-swatches">
         <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 90일 실거래 (${actualCount}개 구)</span>
@@ -478,8 +488,8 @@ function renderMapLegend() {
   } else if (mapState.mode === 'spread-change') {
     el.innerHTML = `
       <div class="legend-swatches" style="margin:0">
-        <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 괴리 확대 (+%p, 호가 상승/체결가 하락)</span>
-        <span class="legend-swatch"><span class="swatch-box" style="background:#1a5ab0"></span> 괴리 축소 (-%p, 호가 인하/체결가 상승)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 네고 압력 확대 (+%p, 호가 상승/체결가 하락)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#1a5ab0"></span> 네고 압력 축소 (-%p, 호가 인하/체결가 상승)</span>
         <span class="legend-swatch"><span class="swatch-box" style="background:var(--surface-2)"></span> 변화 미미</span>
         <span class="legend-swatch"><span class="swatch-box insufficient"></span> 자료 축적 중 / 산출 대기</span>
       </div>
@@ -540,8 +550,8 @@ function renderMapSummary() {
       <span>호가 수준:</span> <b>실거래 상회 ${upCount}개 구</b> · <b>하회 ${downCount}개 구</b>
     </div>
     <div class="map-summary-item">
-      <span class="map-summary-pill active">참고 괴리율 ${allSpread != null ? signed(allSpread) : '산출 유보'}</span>
-      <span style="font-size:11px;color:var(--ink-3)">(대표지수 아님)</span>
+      <span class="map-summary-pill active">네고 압력 ${allSpread != null ? signed(allSpread) : '산출 유보'}</span>
+      <span style="font-size:11px;color:var(--ink-3)">(90일 실거래 기준)</span>
     </div>
   `;
 }
@@ -587,7 +597,7 @@ function renderDistrictDetail(c) {
 
   let noteHtml = '';
   if (isInsufficient || displayVal == null) {
-    noteHtml = `<div class="detail-note warn"><b>안내:</b> 최근 12개월 내 비교 가능한 동일 단지·전용면적·층 구간의 국토부 실거래가 부족하여 가격괴리지수 산출을 유보했습니다.</div>`;
+    noteHtml = `<div class="detail-note warn"><b>안내:</b> 최근 12개월 내 비교 가능한 동일 단지·전용면적·층 구간의 국토부 실거래가 부족하여 네고 압력 산출을 유보했습니다.</div>`;
   } else if (is180) {
     noteHtml = `<div class="detail-note"><b>안내:</b> 최근 90일 내 거래가 부족하여 180일 장기 실측치(시차 약 ${lagDays != null ? lagDays.toFixed(0) : '30'}일 전)를 적용한 참고치입니다.</div>`;
   } else if (groupsCount <= 1) {
@@ -659,7 +669,7 @@ function renderDistrictDetail(c) {
         <span class="detail-cell-v small">${adjText}</span>
       </div>
       <div class="detail-cell">
-        <span class="detail-cell-l">가격괴리 변화폭</span>
+        <span class="detail-cell-l">네고 압력 변화폭</span>
         <span class="detail-cell-v small">${spreadChangeText}</span>
       </div>
       <div class="detail-cell">
@@ -687,68 +697,79 @@ function renderNegoHero() {
   const hero = get('section-nego-hero');
   if (!hero || !data) return;
   const n = data.negoIndex || {};
-  const gA = n.gradeA || {};
-  const gB = n.gradeB_Exploratory || {};
-  const asof = gA.asOf || fmtDate(data.asking?.lastSuccess) || fmtDate(data.market?.day);
+  const asof = n.asOf || fmtDate(data.asking?.lastSuccess) || fmtDate(data.market?.day);
 
   const badgeEl = get('negoStatusBadge');
-  if (badgeEl) badgeEl.textContent = n.statusLabel || '개발 중 · 개별 매물-실거래 연결 검증 단계';
+  if (badgeEl) badgeEl.textContent = n.statusLabel || '실측 네고 압력 · 90일 실거래 기준';
 
   const asofEl = get('negoAsof');
   if (asofEl) asofEl.textContent = asof;
 
+  const dyn = data.market?.spreadDynamics?.seoulOverall?.allSample || {};
+  const validGroups = dyn.sampleGroups ?? (data.observability?.todayCoreSuccess ?? 35);
   const sampleEl = get('negoSampleCount');
-  if (sampleEl) sampleEl.textContent = `${gA.sample ?? 0}건 (A등급 확정 검증 중)`;
+  if (sampleEl) sampleEl.textContent = `${validGroups}개 비교 그룹 (서울 25개 구)`;
 
+  // 1. 현재 네고 압력
   const curValEl = get('negoCurrentVal');
+  const curSubEl = get('negoCurrentSub');
+  const curNego = n.currentNegoLevel ?? n.currentNegoPressurePct ?? getAllSpread();
   if (curValEl) {
-    if (gA.currentNegoPct != null) {
-      curValEl.textContent = `${signed(gA.currentNegoPct)}%`;
-      curValEl.className = dirClass(gA.currentNegoPct);
+    if (curNego != null) {
+      curValEl.textContent = `${signed(curNego)}%`;
+      curValEl.className = 'metric-value ' + dirClass(curNego);
+      if (curSubEl) curSubEl.textContent = '90일 유사 실거래 대비 호가 프리미엄';
     } else {
-      curValEl.textContent = '검증 중';
-      curValEl.className = 'na';
+      curValEl.textContent = '데이터 축적 중';
+      curValEl.className = 'metric-value na';
     }
   }
 
+  // 2. DoD 변화
+  const dodEl = get('negoDodChange');
+  const dodSubEl = get('negoDodSub');
+  const ch1d = n.changes?.['1d'] || data.market?.spreadDynamics?.seoulOverall?.changes?.['1d'] || {};
+  if (dodEl) {
+    if (ch1d.deltaPctPoint != null) {
+      dodEl.textContent = `${signed(ch1d.deltaPctPoint)}%p`;
+      dodEl.className = 'metric-value ' + dirClass(ch1d.deltaPctPoint);
+      if (dodSubEl) dodSubEl.textContent = '전일 대비 변화';
+    } else {
+      dodEl.textContent = ch1d.status || '산출 대기';
+      dodEl.className = 'metric-value na';
+      if (dodSubEl) dodSubEl.textContent = '2회차 연속 수집 후 산출';
+    }
+  }
+
+  // 3. WoW 변화
   const wowEl = get('negoWowChange');
+  const wowSubEl = get('negoWowSub');
+  const ch7d = n.changes?.['7d'] || data.market?.spreadDynamics?.seoulOverall?.changes?.['7d'] || {};
   if (wowEl) {
-    if (gA.wowChangePctPoint != null) {
-      wowEl.textContent = `${signed(gA.wowChangePctPoint)}%p`;
-      wowEl.className = dirClass(gA.wowChangePctPoint);
+    if (ch7d.deltaPctPoint != null) {
+      wowEl.textContent = `${signed(ch7d.deltaPctPoint)}%p`;
+      wowEl.className = 'metric-value ' + dirClass(ch7d.deltaPctPoint);
+      if (wowSubEl) wowSubEl.textContent = '7일 전 대비 변화';
     } else {
-      wowEl.textContent = '산출 대기';
-      wowEl.className = 'na';
+      wowEl.textContent = ch7d.status || '축적 중';
+      wowEl.className = 'metric-value na';
+      if (wowSubEl) wowSubEl.textContent = '연속 7일 패널 축적 중';
     }
   }
 
+  // 4. MoM 변화
   const momEl = get('negoMomChange');
+  const momSubEl = get('negoMomSub');
+  const ch28d = n.changes?.['28d'] || data.market?.spreadDynamics?.seoulOverall?.changes?.['28d'] || {};
   if (momEl) {
-    if (gA.momChangePctPoint != null) {
-      momEl.textContent = `${signed(gA.momChangePctPoint)}%p`;
-      momEl.className = dirClass(gA.momChangePctPoint);
+    if (ch28d.deltaPctPoint != null) {
+      momEl.textContent = `${signed(ch28d.deltaPctPoint)}%p`;
+      momEl.className = 'metric-value ' + dirClass(ch28d.deltaPctPoint);
+      if (momSubEl) momSubEl.textContent = '28일 전 대비 변화';
     } else {
-      momEl.textContent = '산출 대기';
-      momEl.className = 'na';
-    }
-  }
-
-  const bExpEl = get('negoBExploratory');
-  const bSubEl = get('negoBSub');
-  if (bExpEl) {
-    if (gB.medianClosingNegoPct != null) {
-      bExpEl.textContent = `중위 ${gB.medianClosingNegoPct.toFixed(1)}%`;
-      bExpEl.className = '';
-    } else {
-      bExpEl.textContent = `${gB.candidateMatchesCount ?? 0}건 (산출 유보)`;
-      bExpEl.className = 'na';
-    }
-  }
-  if (bSubEl) {
-    if ((gB.candidateMatchesCount ?? 0) === 0) {
-      bSubEl.textContent = '시간적 선행 조건 충족 후보 0건 (역순 매칭 전면 배제)';
-    } else if (gB.notice) {
-      bSubEl.textContent = gB.notice;
+      momEl.textContent = ch28d.status || '축적 중';
+      momEl.className = 'metric-value na';
+      if (momSubEl) momSubEl.textContent = '연속 28일 패널 축적 중';
     }
   }
 }
@@ -806,12 +827,16 @@ function renderMarket() {
 
   get('marketState').textContent = data.market.state || '';
 
-  /* 가격괴리지수: 대표지수 공표 전에는 참고치를 작은 보조 줄로만 */
+  /* 가격괴리지수: 타일이 DOM에 존재하는 경우 안전하게 업데이트 */
   const allSpread = getAllSpread();
-  setTile('premium', '데이터 축적 중', true);
-  setRef('premiumRef', allSpread != null
-    ? `참고 괴리율 ${signed(allSpread)} · 90일 실거래 ${actualDistricts}개 구 · 180일 실거래 ${longDistricts}개 구 (대표지수 아님)` : '');
-  get('premiumAsof').textContent = `기준일 ${asof}`;
+  const pEl = get('premium');
+  if (pEl) {
+    setTile('premium', allSpread != null ? signed(allSpread) : '데이터 축적 중', false);
+    setRef('premiumRef', allSpread != null
+      ? `네고 압력 ${signed(allSpread)} · 90일 실거래 ${actualDistricts}개 구 · 180일 실거래 ${longDistricts}개 구` : '');
+    const pAsof = get('premiumAsof');
+    if (pAsof) pAsof.textContent = `기준일 ${asof}`;
+  }
 
   /* 가격괴리 변화폭 서브 그리드 및 3대 요인 분해 렌더링 */
   const dyn = data.market?.spreadDynamics || {};
@@ -862,6 +887,10 @@ function renderMarket() {
     if (decomp.contribAskPctPoint != null) {
       dAskEl.textContent = signed(decomp.contribAskPctPoint, '%p');
       dAskEl.className = dirClass(decomp.contribAskPctPoint);
+      const dAskSub = get('decompAskSub');
+      if (dAskSub && decomp.contribIdenticalAskPctPoint != null) {
+        dAskSub.textContent = `동일 매물 변경 ${signed(decomp.contribIdenticalAskPctPoint, '%p')} · 매물 교체 ${signed(decomp.contribWithinTurnoverPctPoint, '%p')}`;
+      }
     } else {
       dAskEl.textContent = decomp.status || '산출 대기';
       dAskEl.className = 'na';
@@ -927,7 +956,7 @@ function renderMarket() {
   }));
 
   /* 03 지역 표 헤더 집계: 정확한 동적 산출 */
-  get('regionQ').textContent = `호가 관측 ${districtEntries.length}개 구 (${nf(a.successes || 0)}개 단지) · 가격괴리 관측 ${obsSpreadCount}개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 비교자료 부족 ${insuffDistricts})`;
+  get('regionQ').textContent = `호가 관측 ${districtEntries.length}개 구 (${nf(a.successes || 0)}개 단지) · 네고 압력 관측 ${obsSpreadCount}개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 비교자료 부족 ${insuffDistricts})`;
 
   const rank = get('ranking').value;
   const rows = Object.entries(data.districts).map(([c, name]) => {

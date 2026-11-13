@@ -156,42 +156,57 @@ def run_analysis(target_day=None):
     summary_counts = matching_audit.get('summaryCounts', {})
     valid_b_count = summary_counts.get('gradeB_UniqueCandidateMatches', 0)
     
-    # 4. NEGO INDEX Architecture (Core Research Metric)
+    # 4. NEGO INDEX 2.0 Architecture (Core Market Sentiment & Pricing Gap Index)
     site_data['negoIndex'] = {
-        'status': 'VERIFICATION_STAGE',
-        'statusLabel': '개발 중 · 개별 매물-실거래 연결 검증 단계',
-        'description': '아파트 매도 호가가 실제 계약 테이블에서 얼마나 깎이는지(네고율)와 그 변화폭을 추적하는 APT WATCH의 핵심 연구 지표입니다.',
-        'officialPublicationAllowed': False,
+        'version': '2.0',
+        'title': 'NEGO INDEX — 네고 압력지수',
+        'definition': '동일한 특성을 가진 아파트의 매도 호가와 최근 실거래가격 사이의 상대적 간격을 측정하는 지표 (NEGO = (A/R - 1) × 100)',
+        'interpretation': '매도자의 요구가격(A)이 최근 확인된 거래가격(R)보다 몇 % 높게 형성되었는지를 관측하며, 실제 계약 협상 할인율이 아닌 시장 매도-체결 간격의 확대·축소를 측정합니다.',
+        'status': 'ACTIVE_OPERATIONAL',
+        'statusLabel': '정상 운영 · 실측 네고 압력',
+        'officialPublicationAllowed': True,
+        'asOf': day,
+        'currentNegoPressurePct': round(spread_pct, 2) if spread_pct is not None else None,
+        'currentNegoLevel': round(spread_pct, 2) if spread_pct is not None else None,
+        'sampleType': '관측 표본 기준 (동일 단지·전용면적·층구간 90일 실거래 매칭)',
+        'changes': {
+            '1d': {'deltaPctPoint': None, 'status': '산출 대기 (2회차 수집 대기)'},
+            '7d': {'deltaPctPoint': None, 'status': '축적 중 (7일차 대기)'},
+            '28d': {'deltaPctPoint': None, 'status': '축적 중 (28일차 대기)'}
+        },
+        'exploratoryTradeMatching': {
+            'role': '내부 학술 탐색 연구 (독립 과제)',
+            'notice': '개별 매물과 실제 계약의 1:1 확정 연결은 공개 데이터의 한계로 인해 공식 NEGO INDEX 산출 조건에서 제외하며 연구용으로 분리 보존합니다.',
+            'gradeA': {
+                'sample': 0,
+                'status': 'EXPLORATORY_RESEARCH'
+            },
+            'gradeB_Exploratory': {
+                'candidateMatchesCount': valid_b_count,
+                'status': 'WITHHELD_ZERO_VALID_SAMPLES' if valid_b_count == 0 else 'ACTIVE'
+            }
+        },
         'gradeA': {
             'sample': 0,
             'currentNegoPct': None,
             'wowChangePctPoint': None,
             'momChangePctPoint': None,
-            'direction': '검증 중',
-            'reliability': '독립 증빙(중개업소 확약/계약서) 미확보로 공표 유예',
-            'asOf': day
+            'reliability': '공표 유예 (1:1 매칭 연구 분리)'
         },
         'gradeB_Exploratory': {
             'candidateMatchesCount': valid_b_count,
-            'ambiguousMatchesCount': summary_counts.get('gradeB_DuplicateAmbiguousMatches', 0),
-            'reverseTemporalMatchesCount': summary_counts.get('gradeB_ReverseTemporalMatches', 0),
-            'medianClosingNegoPct': b_stats.get('medianClosingNegoPct', None),
-            'meanClosingNegoPct': b_stats.get('meanClosingNegoPct', None),
-            'medianInitialDiscountPct': b_stats.get('medianInitialDiscountPct', None),
-            'medianPublicAskingCutPct': b_stats.get('medianPublicAskingCutPct', None),
-            'iqrRange': b_stats.get('interquartileRange', None),
+            'medianClosingNegoPct': None,
             'status': 'WITHHELD_ZERO_VALID_SAMPLES' if valid_b_count == 0 else 'ACTIVE',
-            'notice': '시간적 선행 조건(t_first <= t_contract)을 만족하는 유효 표본 0건으로 산출 유보 (계약 후 등록된 역순 매칭 원천 배제)' if valid_b_count == 0 else '시간적 선행 조건을 만족하는 고유 단일 후보 분석치'
+            'notice': '시간적 선행 조건 충족 후보 0건으로 산출 유보' if valid_b_count == 0 else ''
         },
         'gradeC_ProxyDivergence': {
             'role': '선행·대리 지표 (Proxy Leading Indicator)',
-            'currentDivergencePct': spread_pct,
-            'explanation': '개별 매물 연결 확정 전까지, 동일 스트라텀의 집단적 호가 프리미엄 수준을 통해 향후 네고율 확대/축소 가능성을 탐색하는 선행 보조 지표입니다.'
+            'currentDivergencePct': round(spread_pct, 2) if spread_pct is not None else None
         },
         'researchQuestions': [
-            'Q1. 매도자가 요구하는 호가와 실제 거래가격 사이에 얼마나 차이가 발생하는가?',
-            'Q2. 그 네고 폭은 시간에 따라 확대되는가, 축소되는가? (전주 대비, 4주 전 대비 %p)',
-            'Q3. 네고 폭의 변화가 향후 4~12주 후 실거래가격 및 거래량을 기존 통계(부동산원·KB)보다 먼저 설명하는가?'
+            'Q1. 매도자가 요구하는 호가와 최근 거래가격 사이에 얼마나 차이가 발생하는가?',
+            'Q2. 그 차이(네고 압력)는 시간에 따라 확대되는가, 축소되는가? (전일, 7일, 28일 변화 %p)',
+            'Q3. 네고 압력의 확대·축소 변화가 향후 주택가격 및 거래량의 변화와 어떤 관계가 있는가?'
         ]
     }
 

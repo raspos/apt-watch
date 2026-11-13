@@ -155,12 +155,36 @@ footer{max-width:var(--wrap);margin:0 auto;padding:16px var(--gutter) 28px;displ
 footer a{color:var(--ink-3)}
 
 /* ==========================================================================
+   NEGO INDEX 2.0 Components
+   ========================================================================== */
+.sec-nego-hero{margin:14px auto 18px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);max-width:var(--wrap)}
+.nego-hero-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+.nego-hero-header h2{font-size:22px;font-weight:700;margin:0 0 6px;color:var(--ink);display:flex;align-items:baseline;gap:8px}
+.nego-hero-header .sub-title{font-size:15px;font-weight:500;color:var(--ink-2)}
+.nego-desc{font-size:13px;color:var(--ink-2);margin:0;max-width:760px;line-height:1.55}
+.nego-meta-right{text-align:right}
+.asof-text,.sample-text{font-size:11px;color:var(--muted);display:block}
+
+.nego-metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.metric-card{padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);display:flex;flex-direction:column}
+.metric-card.primary-metric{border-left:3px solid var(--ink)}
+.card-label{font-size:11px;font-weight:600;color:var(--ink-3);letter-spacing:.02em}
+.card-val{font-size:24px;font-weight:700;color:var(--ink);margin:4px 0 2px;line-height:1.2}
+.card-val.na{color:var(--muted);font-size:18px}
+.card-sub{font-size:11px;color:var(--muted)}
+
+.badge-live{background:#e8f0fe;color:#1a73e8;border:1px solid #c2e7ff;font-weight:700;padding:2px 8px;border-radius:4px;font-size:11px}
+[data-theme="dark"] .badge-live{background:rgba(26,115,232,0.25);color:#8ab4f8;border-color:#1a73e8}
+
+/* ==========================================================================
    반응형 브레이크포인트
    ========================================================================== */
 @media(max-width:840px){
   .map-grid{grid-template-columns:1fr}
   .district-detail-card{order:2}
   .map-container{order:1}
+  .nego-metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .nego-meta-right{text-align:left}
 }
 
 @media(max-width:760px){
@@ -173,6 +197,12 @@ footer a{color:var(--ink-3)}
   .map-summary-bar{font-size:12px;padding:8px 10px;gap:6px 12px}
   .district-detail-card{padding:14px}
   .detail-val{font-size:26px}
+}
+
+@media(max-width:390px){
+  .nego-metrics-grid{grid-template-columns:1fr}
+  .card-val{font-size:22px}
+  .nego-hero-header h2{font-size:19px;flex-direction:column;gap:2px}
 }
 
 @media(max-width:360px){

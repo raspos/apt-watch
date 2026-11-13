@@ -887,6 +887,44 @@ def run_spread_dynamics(target_day=None):
                 'changes': dynamics_data['seoulOverall']['changes'],
                 'decomposition': dynamics_data['seoulOverall']['decomposition']
             }
+
+            # Unify NEGO INDEX 2.0 with primary calculation
+            if 'negoIndex' not in site_data:
+                site_data['negoIndex'] = {}
+            site_data['negoIndex'].update({
+                'version': '2.0',
+                'title': 'NEGO INDEX — 네고 압력지수',
+                'definition': '동일한 특성을 가진 아파트의 매도 호가와 최근 실거래가격 사이의 상대적 간격을 측정하는 지표 (NEGO = (A/R - 1) × 100)',
+                'interpretation': '매도자의 요구가격(A)이 최근 확인된 거래가격(R)보다 몇 % 높게 형성되었는지를 관측하며, 실제 계약 협상 할인율이 아닌 시장 매도-체결 간격의 확대·축소를 측정합니다.',
+                'status': 'ACTIVE_OPERATIONAL',
+                'statusLabel': '정상 운영 · 실측 네고 압력',
+                'officialPublicationAllowed': True,
+                'asOf': target_day,
+                'currentNegoPressurePct': curr_val,
+                'currentNegoLevel': curr_val,
+                'sampleType': '관측 표본 기준 (동일 단지·전용면적·층구간 90일 실거래 매칭)',
+                'changes': dynamics_data['seoulOverall']['changes'],
+                'decomposition': dynamics_data['seoulOverall']['decomposition'],
+                'seriesA_FullCrossSection': series_a,
+                'seriesB_FixedSamplePanel': series_b,
+                'gradeA': {
+                    'sample': 0,
+                    'currentNegoPct': None,
+                    'wowChangePctPoint': None,
+                    'momChangePctPoint': None,
+                    'reliability': '공표 유예 (1:1 매칭 연구 분리)'
+                },
+                'gradeB_Exploratory': {
+                    'candidateMatchesCount': 0,
+                    'medianClosingNegoPct': None,
+                    'status': 'WITHHELD_ZERO_VALID_SAMPLES',
+                    'notice': '시간적 선행 조건 충족 후보 0건으로 산출 유보'
+                },
+                'gradeC_ProxyDivergence': {
+                    'role': '선행·대리 지표 (Proxy Leading Indicator)',
+                    'currentDivergencePct': curr_val
+                }
+            })
             site_data_path.write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding='utf-8')
             print(f"[Spread Dynamics] site/data.json successfully updated.")
 

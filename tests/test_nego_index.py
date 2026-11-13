@@ -51,10 +51,10 @@ class TestNegoIndex(unittest.TestCase):
         self.assertIn('negoIndex', data)
         nego = data['negoIndex']
 
-        # Status & Quality Gate check
-        self.assertEqual(nego['status'], 'VERIFICATION_STAGE')
-        self.assertFalse(nego['officialPublicationAllowed'])
-        self.assertIn('검증 단계', nego['statusLabel'])
+        # NEGO INDEX 2.0 Status & Operational Gate check
+        self.assertEqual(nego['status'], 'ACTIVE_OPERATIONAL')
+        self.assertTrue(nego['officialPublicationAllowed'])
+        self.assertIn('네고 압력', nego['statusLabel'])
 
         # Grade A: Unverified independent evidence must not emit false official numbers
         grade_a = nego['gradeA']
