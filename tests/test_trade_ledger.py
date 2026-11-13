@@ -103,6 +103,13 @@ class LedgerTest(unittest.TestCase):
             f.write(b'tampered')
         self.assertFalse(self.asof('2026-11-14')[1]['tradeLevelFirstSeenVerified'])
 
+    def test_seoul_verification_requires_all_25_districts(self):
+        self.rec('2026-11-14T07:00:00+09:00', [item(day=10)])
+        rows, audit = tl.trades_as_of(self.db, '2026-11-14', window_days=10)   # default = all of Seoul
+        self.assertEqual(audit['districts'], 25)
+        self.assertFalse(audit['tradeLevelFirstSeenVerified'])
+        self.assertEqual(len(audit['districtMonthsMissing']), 24)
+
     def test_incomplete_page_set_is_rejected(self):
         with self.assertRaises(ValueError):
             tl.record_snapshot(self.db, D, M, '2026-11-14T07:00:00+09:00', [xml([item()])], 2, evidence_dir=self.ev)

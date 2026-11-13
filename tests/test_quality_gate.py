@@ -114,14 +114,36 @@ class PublicationGateTest(unittest.TestCase):
                 'market': {'spreadDynamics': {'qualityCounts': {'pointInTimeVintageAudit': {
                     'targetDay': '2099-01-02', 'isContemporaneousLiveVintage': False}}}}}
         level, _ = aph.evaluate_gate(site, {'holdDays': []})
-        self.assertTrue(any('vintage' in r for r in level))
+        self.assertTrue(any('ledger' in r for r in level))
 
     def test_snapshot_only_vintage_is_held_by_gate(self):
         site = {'negoIndex': {'asOf': '2099-01-03', 'changes': {}},
                 'market': {'spreadDynamics': {'qualityCounts': {'pointInTimeVintageAudit': {
                     'targetDay': '2099-01-03', 'isContemporaneousLiveVintage': True}}}}}
         level, _ = aph.evaluate_gate(site, {'holdDays': []})
-        self.assertTrue(any('first-seen' in r for r in level))
+        self.assertTrue(any('ledger' in r for r in level))
+
+    def _ledger_site(self, day, **over):
+        ledger = {'tradeLevelFirstSeenVerified': True, 'cutoff': f'{day}T23:59:59+09:00', 'districts': 25,
+                  'districtMonthsMissing': [], 'evidenceProblems': []}
+        ledger.update(over.pop('ledger', {}))
+        v = {'targetDay': day, 'isContemporaneousLiveVintage': False, 'benchmarkSource': 'APT_WATCH_TRADE_LEDGER',
+             'tradeLevelFirstSeenVerified': True, 'tradeLedger': ledger}
+        v.update(over)
+        return {'negoIndex': {'asOf': day, 'changes': {}},
+                'market': {'spreadDynamics': {'qualityCounts': {'pointInTimeVintageAudit': v}}}}
+
+    def test_verified_ledger_is_not_blocked_by_legacy_snapshot_flag(self):
+        level, _ = aph.evaluate_gate(self._ledger_site('2099-02-01'), {'holdDays': []})
+        self.assertFalse(any('ledger' in r for r in level), level)
+        self.assertTrue(any('quality assessment' in r for r in level))   # other gates still apply
+
+    def test_ledger_missing_districts_or_evidence_is_held(self):
+        for over in ({'ledger': {'districts': 24}}, {'ledger': {'districtMonthsMissing': ['11110-202611']}},
+                     {'ledger': {'evidenceProblems': ['x']}}, {'benchmarkSource': 'TRACKER'},
+                     {'tradeLevelFirstSeenVerified': False}, {'ledger': {'cutoff': '2099-01-31T23:59:59+09:00'}}):
+            level, _ = aph.evaluate_gate(self._ledger_site('2099-02-01', **dict(over)), {'holdDays': []})
+            self.assertTrue(any('ledger' in r for r in level), over)
 
     def test_unassessed_day_is_held_by_gate(self):
         site = {'negoIndex': {'asOf': '2099-01-01', 'changes': {}}, 'market': {}}

@@ -177,12 +177,22 @@ def evaluate_gate(site, hold, min_rate=0.95):
     elif q['rate'] < min_rate:
         level.append(f'{day} quality-verified complexes {q["valid"]}/{q["planned"]} < {min_rate:.0%}')
     vint = (((site.get('market') or {}).get('spreadDynamics') or {}).get('qualityCounts') or {}).get('pointInTimeVintageAudit') or {}
-    if vint.get('targetDay') != day or not vint.get('isContemporaneousLiveVintage'):
-        level.append(f'{day} trade benchmark is not a verified point-in-time (live) vintage')
-    # Snapshot-level fetch dates do not prove each trade was visible on that day. Until every trade in
-    # the benchmark has a recorded first-seen date (tradeLevelFirstSeenVerified), the official index stays held.
-    if hold.get('requireTradeFirstSeenVerification', True) and not vint.get('tradeLevelFirstSeenVerified'):
-        level.append(f'{day} per-trade first-seen dates are not verified (snapshot-level only)')
+    # The official benchmark must be the point-in-time trade ledger, verified for this exact day
+    # (per-trade first-seen times, raw evidence, all 25 districts x window months). The legacy
+    # snapshot-level flag (isContemporaneousLiveVintage) describes the tracker benchmark only and is
+    # neither required nor sufficient once the ledger is the benchmark.
+    ledger = vint.get('tradeLedger') or {}
+    ledger_ok = (vint.get('targetDay') == day
+                 and vint.get('benchmarkSource') == 'APT_WATCH_TRADE_LEDGER'
+                 and vint.get('tradeLevelFirstSeenVerified') is True
+                 and ledger.get('tradeLevelFirstSeenVerified') is True
+                 and ledger.get('cutoff', '')[:10] == day
+                 and ledger.get('districts') == 25
+                 and not ledger.get('districtMonthsMissing')
+                 and not ledger.get('evidenceProblems'))
+    if hold.get('requireTradeFirstSeenVerification', True) and not ledger_ok:
+        level.append(f'{day} trade benchmark is not the verified point-in-time ledger '
+                     f'(per-trade first-seen / evidence / 25-district completeness)')
     min_ref = hold.get('minReferenceDay')
     for h, ch in ((site.get('negoIndex') or {}).get('changes') or {}).items():
         ref = (ch or {}).get('referenceDay')

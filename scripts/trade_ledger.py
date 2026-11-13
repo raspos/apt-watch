@@ -47,6 +47,9 @@ EVIDENCE_DIR = ROOT / 'data' / 'trade_evidence'
 KST = ZoneInfo('Asia/Seoul')
 KEY_FIELDS = ('sggCd', 'umdCd', 'jibun', 'aptSeq', 'aptDong', 'excluUseAr', 'floor', 'dealYear', 'dealMonth', 'dealDay')
 DAILY_CALL_LIMIT = 500
+SEOUL_DISTRICTS = ('11110', '11140', '11170', '11200', '11215', '11230', '11260', '11290', '11305', '11320',
+                   '11350', '11380', '11410', '11440', '11470', '11500', '11530', '11545', '11560', '11590',
+                   '11620', '11650', '11680', '11710', '11740')
 
 DDL = """
 CREATE TABLE IF NOT EXISTS fetches(
@@ -189,7 +192,8 @@ def cutoff_for(day):
 def trades_as_of(db, day, window_days=90, districts=None, verify_files=True):
     """Return (rows, audit). rows: parsed trade dicts with first_seen_at, contract day within window."""
     months, start, end = window_months(day, window_days)
-    districts = districts or sorted({r[0] for r in db.execute("SELECT DISTINCT district FROM fetches")})
+    # Official Seoul verification always covers all 25 districts, whether or not they were ever fetched.
+    districts = districts or list(SEOUL_DISTRICTS)
     cutoff = cutoff_for(day)
     rows, missing, bad_evidence, fetch_ids = [], [], [], []
     for d in districts:
