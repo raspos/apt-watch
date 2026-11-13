@@ -210,7 +210,7 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
     db.close()
     
     # 4-1. Strict Quality Gate Check (Denominator: Total Planned Manifest Targets)
-    with open(manifest_file, encoding='utf-8') as f:
+    with open(manifest_file, encoding='utf-8-sig') as f:
         planned_targets = json.load(f)
     planned_count = len(planned_targets)
 
