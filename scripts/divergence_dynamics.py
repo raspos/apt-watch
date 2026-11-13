@@ -294,6 +294,39 @@ def extract_trades_up_to_day(tdb, target_day, window_days=90, mode='CONTEMPORANE
     else:
         return trades_contemporaneous, trades_reconstructed, audit_meta
 
+def apply_trade_ledger(target_day, tracker_trades, meta, window_days=90):
+    """Use the point-in-time trade ledger if it fully covers the window; otherwise keep the tracker
+    benchmark and mark tradeLevelFirstSeenVerified False (the publication gate then withholds)."""
+    meta = dict(meta)
+    meta['tradeLevelFirstSeenVerified'] = False
+    try:
+        import trade_ledger
+        if not trade_ledger.LEDGER_DB.exists():
+            meta['tradeLedger'] = {'status': 'NO_LEDGER'}
+            return tracker_trades, meta
+        db = trade_ledger.connect()
+        rows, audit = trade_ledger.trades_as_of(db, target_day, window_days)
+        db.close()
+        meta['tradeLedger'] = audit
+        if not audit.get('tradeLevelFirstSeenVerified'):
+            return tracker_trades, meta
+        end = date.fromisoformat(target_day)
+        out = defaultdict(list)
+        for p in rows:
+            if p.get('cancelled') or float(p.get('price') or 0) <= 0:
+                continue
+            t_date = date.fromisoformat(p['day'])
+            out[trade_key(p)].append({'price': float(p['price']), 'day': p['day'], 'ageDays': (end - t_date).days,
+                                      'isContemporaneous': True, 'classification': 'LEDGER_FIRST_SEEN_VERIFIED',
+                                      'fetchedAt': p.get('firstSeenAt')})
+        meta['tradeLevelFirstSeenVerified'] = True
+        meta['benchmarkSource'] = 'APT_WATCH_TRADE_LEDGER'
+        return out, meta
+    except Exception as e:  # ledger problems must never stop the internal computation
+        meta['tradeLedger'] = {'status': 'ERROR', 'error': repr(e)[:200]}
+        return tracker_trades, meta
+
+
 def calculate_strata_divergence(listings_by_stratum, trades_by_stratum, min_trades=3):
     """Compute stratum-level divergence for all valid groups."""
     strata_results = {}
@@ -691,6 +724,10 @@ def run_spread_dynamics(target_day=None):
         else:
             vintage_meta_90['seriesClassification'] = 'CONTEMPORANEOUS_LIVE_VINTAGE'
 
+        # Per-trade first-seen ledger: replaces the 90-day benchmark only when every district-month
+        # of the window was queried by APT WATCH on/before the index day with intact raw evidence.
+        trades_90d, vintage_meta_90 = apply_trade_ledger(target_day, trades_90d, vintage_meta_90)
+
         strata_90d = calculate_strata_divergence(l_curr_strata, trades_90d, min_trades=3)
         strata_180d = calculate_strata_divergence(l_curr_strata, trades_180d, min_trades=2)
 
@@ -706,6 +743,7 @@ def run_spread_dynamics(target_day=None):
         elapsed_days = (target_dt - date.fromisoformat(earliest_day)).days + 1
 
         # Precompute horizon datasets once to avoid redundant expensive DB scans
+        ref_verified = {}
         horizon_cache = {}
         for day_k in [day_1d, day_7d, day_28d]:
             if day_k in available_days:
@@ -713,6 +751,8 @@ def run_spread_dynamics(target_day=None):
                 t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='CONTEMPORANEOUS_ONLY')
                 if not t_k:
                     t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='EX_POST_RECONSTRUCTED')
+                t_k, m_k = apply_trade_ledger(day_k, t_k, {})
+                ref_verified[day_k] = bool(m_k.get('tradeLevelFirstSeenVerified'))
                 s_k = calculate_strata_divergence(l_k_strata, t_k, min_trades=3)
                 horizon_cache[day_k] = (l_k_id, s_k, f_k)
 
@@ -722,6 +762,7 @@ def run_spread_dynamics(target_day=None):
                 decomp = decompose_with_stability_guard(strata_90d, s_k, l_curr_id, l_k_id, f_k)
                 decomp['period'] = label
                 decomp['referenceDay'] = day_k
+                decomp['referenceTradeLevelFirstSeenVerified'] = ref_verified.get(day_k, False)
                 return decomp
             else:
                 return {

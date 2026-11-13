@@ -190,6 +190,8 @@ def evaluate_gate(site, hold, min_rate=0.95):
             continue
         if not ref:
             changes[h] = 'no reference day recorded'
+        elif not ch.get('referenceTradeLevelFirstSeenVerified'):
+            changes[h] = f'reference day {ref} trade benchmark lacks per-trade first-seen verification'
         elif min_ref and ref < min_ref:
             changes[h] = f'reference day {ref} precedes first verified live baseline {min_ref}'
         else:

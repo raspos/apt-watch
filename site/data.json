@@ -55612,7 +55612,26 @@
           "isContemporaneousLiveVintage": true,
           "vintageClassification": "CONTEMPORANEOUS_VERIFIED",
           "disclosureBoundaryNote": "Snapshot fetched timestamp represents crawler observation boundary, not individual MOLIT disclosure second; individual trade first-seen timestamps preserved in future schemas.",
-          "seriesClassification": "CONTEMPORANEOUS_LIVE_VINTAGE"
+          "seriesClassification": "CONTEMPORANEOUS_LIVE_VINTAGE",
+          "tradeLevelFirstSeenVerified": true,
+          "tradeLedger": {
+            "source": "APT_WATCH_TRADE_LEDGER",
+            "cutoff": "2026-11-13T23:59:59+09:00",
+            "windowMonths": [
+              "202608",
+              "202609",
+              "202610",
+              "202611"
+            ],
+            "districts": 25,
+            "districtMonthsRequired": 100,
+            "districtMonthsMissing": [],
+            "evidenceProblems": [],
+            "fetchesUsed": 100,
+            "tradesInWindow": 9433,
+            "tradeLevelFirstSeenVerified": true
+          },
+          "benchmarkSource": "APT_WATCH_TRADE_LEDGER"
         },
         "weightingComparisons": {
           "equalWeightMedian": null,

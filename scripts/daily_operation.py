@@ -255,6 +255,17 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=10800
     else:
         print(f"\n[PASS] 정상 수집 완료 ({success_rate*100:.1f}%). 정규 분석 및 공표 파이프라인을 진행합니다.")
 
+    # 4-2. Point-in-time trade ledger (own MOLIT queries -> per-trade first_seen_at). Non-fatal:
+    # if it fails, the index is still computed internally but publication stays withheld.
+    print("[Step 2-1] Recording MOLIT trade observations into the point-in-time ledger...")
+    try:
+        lr = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'trade_ledger.py'), '--day', target_day],
+                            cwd=str(ROOT), capture_output=True, text=True, encoding='utf-8', timeout=1800)
+        print(f"[Step 2-1] trade ledger exit code {lr.returncode}")
+        print((lr.stdout or '')[-1500:])
+    except subprocess.TimeoutExpired:
+        print("[Step 2-1] WARNING: trade ledger timed out; publication will stay withheld")
+
     # 5. Post-collection analytics
     print("\n[Step 3] Running Analytical Pipeline...")
     run_step("1. Consecutive Observation Analysis", ROOT / 'scripts' / 'analyze_consecutive_observation.py')
