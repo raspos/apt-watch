@@ -44,6 +44,7 @@ def main():
     # 5. Pipeline rebuild (apt_watch and nego_pressure)
     run_step("5. Rebuild apt_watch", ROOT / 'apt_watch.py')
     run_step("6. Rebuild nego_pressure", ROOT / 'nego_pressure.py')
+    run_step("6-1. Divergence Dynamics & 3-Way Decomposition", ROOT / 'scripts' / 'divergence_dynamics.py')
     
     # 7. Run Unit Tests
     cmd = [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v']

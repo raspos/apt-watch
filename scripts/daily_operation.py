@@ -193,6 +193,7 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
     print("\n[Step 4] Rebuilding Site Data...")
     run_step("5. Rebuild apt_watch", ROOT / 'apt_watch.py', ['--day', target_day])
     run_step("6. Rebuild nego_pressure", ROOT / 'nego_pressure.py')
+    run_step("6-1. Divergence Dynamics & 3-Way Decomposition", ROOT / 'scripts' / 'divergence_dynamics.py', ['--day', target_day])
     
     # 7. Post-run Automated 10-Point Quality Audit & Backup
     print("\n[Step 5] Post-run Automated Quality Verification...")
