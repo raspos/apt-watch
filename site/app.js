@@ -13,7 +13,7 @@ function kst(iso) {
 }
 const fmtDate = iso => { const k = kst(iso); return k ? `${k.getFullYear()}-${pad(k.getMonth() + 1)}-${pad(k.getDate())}` : (iso ? String(iso).slice(0, 10) : ''); };
 const fmtDateTime = iso => { const k = kst(iso); return k ? `${fmtDate(iso)} ${pad(k.getHours())}:${pad(k.getMinutes())}` : (iso ? String(iso).replace('T', ' ').slice(0, 16) : ''); };
-const signed = (v, unit = '%') => (v > 0 ? '+' : '') + v.toFixed(1) + unit;
+const signed = (v, unit = '%') => v == null || isNaN(v) ? '–' : ((v > 0 ? '+' : '') + Number(v).toFixed(1) + unit);
 const dirClass = v => v > 0 ? 'up' : v < 0 ? 'down' : '';
 function cell(tr, value, cls) {
   const td = document.createElement('td');
@@ -716,7 +716,7 @@ function renderNegoHero() {
   const curNego = n.currentNegoLevel ?? n.currentNegoPressurePct ?? getAllSpread();
   if (curValEl) {
     if (curNego != null) {
-      curValEl.textContent = `${signed(curNego)}%`;
+      curValEl.textContent = signed(curNego);
       curValEl.className = 'metric-value ' + dirClass(curNego);
       if (curSubEl) curSubEl.textContent = '90일 유사 실거래 대비 호가 프리미엄';
     } else {
@@ -729,10 +729,11 @@ function renderNegoHero() {
   const dodEl = get('negoDodChange');
   const dodSubEl = get('negoDodSub');
   const ch1d = n.changes?.['1d'] || data.market?.spreadDynamics?.seoulOverall?.changes?.['1d'] || {};
+  const dodVal = ch1d.deltaPctPoint ?? ch1d.deltaTotalPctPoint ?? ch1d.matchedSampleChange ?? ch1d.fixedSampleSpreadChange;
   if (dodEl) {
-    if (ch1d.deltaPctPoint != null) {
-      dodEl.textContent = `${signed(ch1d.deltaPctPoint)}%p`;
-      dodEl.className = 'metric-value ' + dirClass(ch1d.deltaPctPoint);
+    if (dodVal != null) {
+      dodEl.textContent = signed(dodVal, '%p');
+      dodEl.className = 'metric-value ' + dirClass(dodVal);
       if (dodSubEl) dodSubEl.textContent = '전일 대비 변화';
     } else {
       dodEl.textContent = ch1d.status || '산출 대기';
@@ -848,9 +849,10 @@ function renderMarket() {
   const momEl = get('spreadMomVal');
 
   if (dodEl) {
-    if (changes['1d']?.deltaPctPoint != null) {
-      dodEl.textContent = signed(changes['1d'].deltaPctPoint, '%p');
-      dodEl.className = dirClass(changes['1d'].deltaPctPoint);
+    const dodVal = changes['1d']?.deltaPctPoint ?? changes['1d']?.deltaTotalPctPoint ?? changes['1d']?.matchedSampleChange;
+    if (dodVal != null) {
+      dodEl.textContent = signed(dodVal, '%p');
+      dodEl.className = dirClass(dodVal);
     } else {
       dodEl.textContent = changes['1d']?.status || '산출 대기';
       dodEl.className = 'na';
@@ -858,9 +860,10 @@ function renderMarket() {
   }
 
   if (wowEl) {
-    if (changes['7d']?.deltaPctPoint != null) {
-      wowEl.textContent = signed(changes['7d'].deltaPctPoint, '%p');
-      wowEl.className = dirClass(changes['7d'].deltaPctPoint);
+    const wowVal = changes['7d']?.deltaPctPoint ?? changes['7d']?.deltaTotalPctPoint ?? changes['7d']?.matchedSampleChange;
+    if (wowVal != null) {
+      wowEl.textContent = signed(wowVal, '%p');
+      wowEl.className = dirClass(wowVal);
     } else {
       wowEl.textContent = changes['7d']?.status || '축적 중';
       wowEl.className = 'na';
@@ -868,9 +871,10 @@ function renderMarket() {
   }
 
   if (momEl) {
-    if (changes['28d']?.deltaPctPoint != null) {
-      momEl.textContent = signed(changes['28d'].deltaPctPoint, '%p');
-      momEl.className = dirClass(changes['28d'].deltaPctPoint);
+    const momVal = changes['28d']?.deltaPctPoint ?? changes['28d']?.deltaTotalPctPoint ?? changes['28d']?.matchedSampleChange;
+    if (momVal != null) {
+      momEl.textContent = signed(momVal, '%p');
+      momEl.className = dirClass(momVal);
     } else {
       momEl.textContent = changes['28d']?.status || '축적 중';
       momEl.className = 'na';
@@ -889,7 +893,8 @@ function renderMarket() {
       dAskEl.className = dirClass(decomp.contribAskPctPoint);
       const dAskSub = get('decompAskSub');
       if (dAskSub && decomp.contribIdenticalAskPctPoint != null) {
-        dAskSub.textContent = `동일 매물 변경 ${signed(decomp.contribIdenticalAskPctPoint, '%p')} · 매물 교체 ${signed(decomp.contribWithinTurnoverPctPoint, '%p')}`;
+        const turnoverVal = decomp.contribWithinStratumTurnoverPctPoint ?? decomp.contribWithinTurnoverPctPoint;
+        dAskSub.textContent = `동일 매물 변경 ${signed(decomp.contribIdenticalAskPctPoint, '%p')} · 매물 교체 ${signed(turnoverVal, '%p')}`;
       }
     } else {
       dAskEl.textContent = decomp.status || '산출 대기';

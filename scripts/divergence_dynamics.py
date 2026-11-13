@@ -532,6 +532,7 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
     return {
         'status': 'VALID',
         'matchedSampleChange': round(fixed_delta, 2),
+        'deltaPctPoint': round(fixed_delta, 2),
         'deltaTotalPctPoint': round(fixed_delta, 2),
         'deltaFullMeanPctPoint': round(delta_full_reported, 2),
         'medianLevelChange': round(delta_median_level, 2),
@@ -539,6 +540,7 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
         'contribAskPctPoint': round(contrib_ask, 2),
         'contribIdenticalAskPctPoint': round(contrib_identical_ask, 2),
         'contribWithinStratumTurnoverPctPoint': round(contrib_within_turnover, 2),
+        'contribWithinTurnoverPctPoint': round(contrib_within_turnover, 2),
         'contribTradeBenchmarkPctPoint': round(contrib_trade, 2),
         'contribSampleCompositionPctPoint': round(contrib_strata_comp, 2),
         'unidentifiedEffectPctPoint': 0.0,
