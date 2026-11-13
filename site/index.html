@@ -27,25 +27,86 @@
   <div class="tools"><button id="theme" type="button" aria-label="화면 테마 전환">테마</button></div>
 </header>
 
-<!-- ① 서울 아파트 시장심리 (핵심 3대 지표) -->
+<!-- ① 핵심 연구 지표: 네고지수 (NEGO INDEX) -->
+<section class="sec sec-nego-hero" id="section-nego-hero" aria-labelledby="h-nego" style="margin:16px 0 20px;padding:20px;background:var(--card-bg);border:1px solid var(--line);border-radius:10px;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span class="badge" style="background:#e8f0fe;color:#1a73e8;border:1px solid #c2e7ff;font-weight:600;padding:2px 8px;border-radius:4px;font-size:11px;">핵심 연구 지표</span>
+        <span class="badge badge-long" id="negoStatusBadge">개발 중 · 개별 매물-실거래 연결 검증 단계</span>
+      </div>
+      <h2 id="h-nego" style="font-size:20px;font-weight:700;margin:0 0 6px;color:var(--ink);">네고지수 <span style="font-size:14px;font-weight:400;color:var(--ink-2);">(NEGO INDEX · 호가-실거래가 할인율)</span></h2>
+      <p style="font-size:13px;color:var(--ink-2);margin:0;max-width:760px;line-height:1.5;">
+        "아파트 매도 호가는 실제 계약 테이블에서 얼마나 깎이는가? 그 할인율의 확대·축소 변화가 향후 집값의 선행 신호인가?"<br>
+        <span style="font-size:12px;color:var(--ink-3);">※ APT WATCH의 핵심 연구 지표로, 개별 매물의 포털 호가와 국토부 실거래가 1:1로 확정된 거래(A등급)에 한해 공식 산출됩니다.</span>
+      </p>
+    </div>
+    <div style="text-align:right;">
+      <span style="font-size:11px;color:var(--muted);display:block;">자료 기준일: <span id="negoAsof">2026-11-12</span></span>
+      <span style="font-size:11px;color:var(--muted);display:block;">독립 검증 표본: <span id="negoSampleCount">0건 (검증 진행 중)</span></span>
+    </div>
+  </div>
+
+  <!-- 네고지수 4대 핵심 수치 그리드 -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:12px;margin-top:16px;">
+    <div style="padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;">
+      <span style="font-size:11px;color:var(--ink-3);display:block;">현재 확정 네고율 (A등급)</span>
+      <div style="font-size:22px;font-weight:700;color:var(--ink);margin:4px 0;" id="negoCurrentVal">검증 중</div>
+      <span style="font-size:11px;color:var(--muted);" id="negoCurrentSub">독립 확인 증빙 확보 시 공표</span>
+    </div>
+    <div style="padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;">
+      <span style="font-size:11px;color:var(--ink-3);display:block;">전주 대비 변화폭 (%p)</span>
+      <div style="font-size:22px;font-weight:700;color:var(--ink);margin:4px 0;" id="negoWowChange">산출 대기</div>
+      <span style="font-size:11px;color:var(--muted);" id="negoWowSub">연속 주간 패널 축적 중</span>
+    </div>
+    <div style="padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;">
+      <span style="font-size:11px;color:var(--ink-3);display:block;">최근 4주 변화폭 (%p)</span>
+      <div style="font-size:22px;font-weight:700;color:var(--ink);margin:4px 0;" id="negoMomChange">산출 대기</div>
+      <span style="font-size:11px;color:var(--muted);" id="negoMomSub">30일 신고 시차 반영 후 확정</span>
+    </div>
+    <div style="padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:8px;">
+      <span style="font-size:11px;color:var(--ink-3);display:block;">탐색적 추정 네고율 (B등급 82건)</span>
+      <div style="font-size:22px;font-weight:700;color:var(--ink);margin:4px 0;" id="negoBExploratory">중위 9.0%</div>
+      <span style="font-size:11px;color:var(--muted);" id="negoBSub">동일 단지·면적·층수 고유후보 (내부연구용)</span>
+    </div>
+  </div>
+
+  <!-- 접기/펼치기: 네고지수 연구 질문 및 방법론 -->
+  <details style="margin-top:14px;padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--ink-2);">
+    <summary style="font-weight:600;cursor:pointer;color:var(--ink);">네고지수 연구 질문 및 3대 가격·할인율 산출 체계 보기</summary>
+    <div style="margin-top:10px;line-height:1.6;">
+      <p style="margin:4px 0;"><b>3대 연구 질문:</b> ① 호가와 실거래가의 격차는 얼마인가? ② 그 격차(네고 폭)는 시간에 따라 확대되는가 축소되는가? ③ 네고 폭의 변화가 4~12주 후 실제 주택가격 및 거래량을 기존 통계(부동산원·KB)보다 먼저 설명하는가?</p>
+      <p style="margin:4px 0;"><b>3대 가격 분리:</b> 최초 등록 호가($P_{\text{ask},0}$), 최종 확인 호가($P_{\text{ask},\text{last}}$), 실제 계약가격($P_{\text{contract}}$)</p>
+      <p style="margin:4px 0;"><b>3대 산식:</b> ① 최초 호가 할인율 = $(P_{\text{ask},0} - P_{\text{contract}})/P_{\text{ask},0}$, ② 최종 호가 네고율 = $(P_{\text{ask},\text{last}} - P_{\text{contract}})/P_{\text{ask},\text{last}}$, ③ 공개 호가 조정률 = $(P_{\text{ask},0} - P_{\text{ask},\text{last}})/P_{\text{ask},0}$</p>
+      <p style="margin:4px 0;"><b>매칭 검증 등급:</b> A등급(중개업소 확약 등 독립 증빙 확인 $\rightarrow$ 공식 네고지수), B등급(동일 단지·면적·층수 단일후보 $\rightarrow$ 내부 학술 연구용), C등급(동일 스트라텀 코호트 중위값 $\rightarrow$ 가격괴리지수)</p>
+      <p style="margin:4px 0;color:var(--ink-3);">※ 현재 하단의 3대 지표(가격괴리지수·호가조정지수·거래활력지수)는 네고지수의 개발을 위한 선행 및 대리 지표군(Proxy Indicators)으로 운영됩니다.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ② 선행 및 보조 지표군 (기존 3대 지표) -->
+<div style="margin:16px 0 8px;display:flex;align-items:center;gap:8px;">
+  <span style="font-size:13px;font-weight:600;color:var(--ink-2);">선행 및 보조 지표군 (Proxy Indicators)</span>
+  <span style="font-size:11px;color:var(--muted);">· 실제 네고율 확정 전 시장 협상력과 가격 기대를 탐색하는 독립 관측치</span>
+</div>
 <p class="lede" id="marketState"></p>
-<section class="strip" aria-label="핵심 3대 지표">
+<section class="strip" aria-label="선행 및 보조 3대 지표">
   <article class="tile" id="card-divergence">
-    <div class="k">가격괴리지수</div>
+    <div class="k">가격괴리지수 <span style="font-size:11px;font-weight:400;color:var(--ink-3)">(선행 대리)</span></div>
     <div class="v" id="premium"></div>
     <p class="s">호가와 실거래 기준가격의 차이</p>
     <div class="ref" id="premiumRef" hidden></div>
     <div class="asof" id="premiumAsof"></div>
   </article>
   <article class="tile" id="card-adjustment">
-    <div class="k">호가조정지수</div>
+    <div class="k">호가조정지수 <span style="font-size:11px;font-weight:400;color:var(--ink-3)">(사전 양보)</span></div>
     <div class="v" id="cuts"></div>
     <p class="s">매도자의 호가 인상·인하 움직임</p>
     <div class="ref" id="cutRef" hidden></div>
     <div class="asof" id="cutAsof"></div>
   </article>
   <article class="tile" id="card-vitality">
-    <div class="k">거래활력지수</div>
+    <div class="k">거래활력지수 <span style="font-size:11px;font-weight:400;color:var(--ink-3)">(시장 회전)</span></div>
     <div class="v" id="absorption"></div>
     <p class="s">매물 규모 대비 실제 거래 수준</p>
     <div class="ref" id="absorptionRef" hidden></div>

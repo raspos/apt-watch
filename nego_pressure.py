@@ -143,6 +143,55 @@ def run_analysis(target_day=None):
         'regime': regime
     }
     
+    # Load nego matching audit if available
+    matching_audit_path = ROOT / 'data' / 'nego_matching_audit_report.json'
+    matching_audit = {}
+    if matching_audit_path.exists():
+        try:
+            matching_audit = json.loads(matching_audit_path.read_text(encoding='utf-8'))
+        except Exception:
+            pass
+
+    b_stats = matching_audit.get('gradeB_AnalysisReport', {})
+    summary_counts = matching_audit.get('summaryCounts', {})
+    
+    # 4. NEGO INDEX Architecture (Core Research Metric)
+    site_data['negoIndex'] = {
+        'status': 'VERIFICATION_STAGE',
+        'statusLabel': '개발 중 · 개별 매물-실거래 연결 검증 단계',
+        'description': '아파트 매도 호가가 실제 계약 테이블에서 얼마나 깎이는지(네고율)와 그 변화폭을 추적하는 APT WATCH의 핵심 연구 지표입니다.',
+        'officialPublicationAllowed': False,
+        'gradeA': {
+            'sample': 0,
+            'currentNegoPct': None,
+            'wowChangePctPoint': None,
+            'momChangePctPoint': None,
+            'direction': '검증 중',
+            'reliability': '독립 증빙(중개업소 확약/계약서) 미확보로 공표 유예',
+            'asOf': day
+        },
+        'gradeB_Exploratory': {
+            'candidateMatchesCount': summary_counts.get('gradeB_UniqueCandidateMatches', 82),
+            'ambiguousMatchesCount': summary_counts.get('gradeB_AmbiguousMultipleCandidates', 301),
+            'medianClosingNegoPct': b_stats.get('medianClosingNegoPct', 8.97),
+            'meanClosingNegoPct': b_stats.get('meanClosingNegoPct', 9.07),
+            'medianInitialDiscountPct': b_stats.get('medianInitialDiscountPct', 9.07),
+            'medianPublicAskingCutPct': b_stats.get('medianPublicAskingCutPct', 0.0),
+            'iqrRange': b_stats.get('interquartileRange'),
+            'notice': '동일 단지·면적·층수 고유 단일 후보(82건) 대상 탐색적 연구 분석치 (공식 확정치 아님)'
+        },
+        'gradeC_ProxyDivergence': {
+            'role': '선행·대리 지표 (Proxy Leading Indicator)',
+            'currentDivergencePct': spread_pct,
+            'explanation': '개별 매물 연결 확정 전까지, 동일 스트라텀의 집단적 호가 프리미엄 수준을 통해 향후 네고율 확대/축소 가능성을 탐색하는 선행 보조 지표입니다.'
+        },
+        'researchQuestions': [
+            'Q1. 매도자가 요구하는 호가와 실제 거래가격 사이에 얼마나 차이가 발생하는가?',
+            'Q2. 그 네고 폭은 시간에 따라 확대되는가, 축소되는가? (전주 대비, 4주 전 대비 %p)',
+            'Q3. 네고 폭의 변화가 향후 4~12주 후 실거래가격 및 거래량을 기존 통계(부동산원·KB)보다 먼저 설명하는가?'
+        ]
+    }
+
     # Write back to site/data.json
     (ROOT / 'site' / 'data.json').write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding='utf-8')
     

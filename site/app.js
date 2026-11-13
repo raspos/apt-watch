@@ -636,6 +636,68 @@ function renderDistrictDetail(c) {
 function setTile(id, value, wip) { const el = get(id); el.textContent = value; el.className = 'v' + (wip ? ' wip' : ''); }
 function setRef(id, text) { const el = get(id); el.hidden = !text; el.textContent = text || ''; }
 
+function renderNegoHero() {
+  const hero = get('section-nego-hero');
+  if (!hero || !data) return;
+  const n = data.negoIndex || {};
+  const gA = n.gradeA || {};
+  const gB = n.gradeB_Exploratory || {};
+  const asof = gA.asOf || fmtDate(data.asking?.lastSuccess) || fmtDate(data.market?.day);
+
+  const badgeEl = get('negoStatusBadge');
+  if (badgeEl) badgeEl.textContent = n.statusLabel || '개발 중 · 개별 매물-실거래 연결 검증 단계';
+
+  const asofEl = get('negoAsof');
+  if (asofEl) asofEl.textContent = asof;
+
+  const sampleEl = get('negoSampleCount');
+  if (sampleEl) sampleEl.textContent = `${gA.sample ?? 0}건 (A등급 확정 검증 중)`;
+
+  const curValEl = get('negoCurrentVal');
+  if (curValEl) {
+    if (gA.currentNegoPct != null) {
+      curValEl.textContent = `${signed(gA.currentNegoPct)}%`;
+      curValEl.className = dirClass(gA.currentNegoPct);
+    } else {
+      curValEl.textContent = '검증 중';
+      curValEl.className = 'na';
+    }
+  }
+
+  const wowEl = get('negoWowChange');
+  if (wowEl) {
+    if (gA.wowChangePctPoint != null) {
+      wowEl.textContent = `${signed(gA.wowChangePctPoint)}%p`;
+      wowEl.className = dirClass(gA.wowChangePctPoint);
+    } else {
+      wowEl.textContent = '산출 대기';
+      wowEl.className = 'na';
+    }
+  }
+
+  const momEl = get('negoMomChange');
+  if (momEl) {
+    if (gA.momChangePctPoint != null) {
+      momEl.textContent = `${signed(gA.momChangePctPoint)}%p`;
+      momEl.className = dirClass(gA.momChangePctPoint);
+    } else {
+      momEl.textContent = '산출 대기';
+      momEl.className = 'na';
+    }
+  }
+
+  const bExpEl = get('negoBExploratory');
+  if (bExpEl) {
+    if (gB.medianClosingNegoPct != null) {
+      bExpEl.textContent = `중위 ${gB.medianClosingNegoPct.toFixed(1)}%`;
+      bExpEl.className = '';
+    } else {
+      bExpEl.textContent = '분석 중';
+      bExpEl.className = 'na';
+    }
+  }
+}
+
 function renderObservabilityBar() {
   const bar = get('observabilityBar');
   if (!bar || !data) return;
@@ -667,6 +729,7 @@ function renderObservabilityBar() {
 }
 
 function renderMarket() {
+  renderNegoHero();
   renderObservabilityBar();
   const all = data.market.regions.all;
   const a = data.asking || {};
