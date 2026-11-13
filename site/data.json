@@ -54453,6 +54453,1024 @@
         "leverage": "데이터 축적 중 (판별 유예)",
         "spreadStatus": "비교 표본 축적 중 (참고 괴리율 +5.3%)",
         "tenureStatus": "중위 체류기간 6일 (평균 7.9일)"
+      },
+      "spreadDynamics": {
+        "spreadPct": 5.12,
+        "changes": {
+          "1d": {
+            "period": "전일 대비 (DoD)",
+            "deltaPctPoint": null,
+            "status": "산출 유보",
+            "sampleCount": 0,
+            "repeatListingsCount": 0
+          },
+          "7d": {
+            "period": "7일 변화 (WoW)",
+            "deltaPctPoint": null,
+            "status": "축적 중 (7일차 대기)",
+            "sampleCount": 0
+          },
+          "28d": {
+            "period": "28일 변화 (MoM)",
+            "deltaPctPoint": null,
+            "status": "축적 중 (28일차 대기)",
+            "sampleCount": 0
+          }
+        },
+        "decomposition": {
+          "title": "가격괴리는 왜 변했나 (3대 요인 분해)",
+          "activePeriod": "전일 대비 (DoD)",
+          "status": "산출 유보",
+          "contribAskPctPoint": null,
+          "contribTradeBenchmarkPctPoint": null,
+          "contribSampleCompositionPctPoint": null,
+          "explanation": "현재 1일차 기준선 단계로, 2회차 연속 관측 시 호가 인하·기준가 갱신·표본 교체 요인이 수치로 분해됩니다.",
+          "mathematicalIdentity": "ΔSpread_total = Contrib_ask + Contrib_trade + Contrib_composition"
+        }
+      }
+    },
+    "spreadDynamics": {
+      "asOf": "2026-11-12",
+      "status": "ACTIVE_MONITORING",
+      "description": "매도 호가와 최근 실거래 기준가격의 간격이 시간에 따라 확대(벌어짐)되는지 축소(좁혀짐)되는지 관측하는 시계열 동학 지표 체계",
+      "seoulOverall": {
+        "currentSpreadPct": 5.12,
+        "currentSpreadStatus": "실측",
+        "sampleGroupsCount": 68,
+        "matchedListingsCount": 2395,
+        "changes": {
+          "1d": {
+            "period": "전일 대비 (DoD)",
+            "deltaPctPoint": null,
+            "status": "산출 유보",
+            "sampleCount": 0,
+            "repeatListingsCount": 0
+          },
+          "7d": {
+            "period": "7일 변화 (WoW)",
+            "deltaPctPoint": null,
+            "status": "축적 중 (7일차 대기)",
+            "sampleCount": 0
+          },
+          "28d": {
+            "period": "28일 변화 (MoM)",
+            "deltaPctPoint": null,
+            "status": "축적 중 (28일차 대기)",
+            "sampleCount": 0
+          }
+        },
+        "decomposition": {
+          "title": "가격괴리는 왜 변했나 (3대 요인 분해)",
+          "activePeriod": "전일 대비 (DoD)",
+          "status": "산출 유보",
+          "contribAskPctPoint": null,
+          "contribTradeBenchmarkPctPoint": null,
+          "contribSampleCompositionPctPoint": null,
+          "explanation": "현재 1일차 기준선 단계로, 2회차 연속 관측 시 호가 인하·기준가 갱신·표본 교체 요인이 수치로 분해됩니다.",
+          "mathematicalIdentity": "ΔSpread_total = Contrib_ask + Contrib_trade + Contrib_composition"
+        },
+        "seriesA_FullCrossSection": [
+          {
+            "day": "2026-11-12",
+            "percent": 5.12,
+            "groups": 68,
+            "listings": 2395,
+            "type": "FULL_CROSS_SECTION",
+            "label": "A계열: 전체 관측 가격괴리율"
+          }
+        ],
+        "seriesB_FixedSamplePanel": [
+          {
+            "day": "2026-11-12",
+            "percent": 5.12,
+            "groups": 68,
+            "listings": 2395,
+            "type": "FIXED_SAMPLE_PANEL",
+            "label": "B계열: 동일 표본 가격괴리 변화 (기준선)"
+          }
+        ]
+      },
+      "districts": {
+        "11110": {
+          "district": "11110",
+          "status": "데이터 부족",
+          "statusCode": "INSUFFICIENT",
+          "percent": null,
+          "groups90d": 0,
+          "groups180d": 0,
+          "observedComplexes": 3,
+          "matchedListings": 0,
+          "actual90d": {
+            "sample": 0,
+            "groups": 0,
+            "percent": null,
+            "matchedListings": 0
+          },
+          "longTerm180d": {
+            "sample": 0,
+            "groups": 0,
+            "percent": null,
+            "matchedListings": 0
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11140": {
+          "district": "11140",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 1.9,
+          "groups90d": 3,
+          "groups180d": 10,
+          "observedComplexes": 3,
+          "matchedListings": 77,
+          "actual90d": {
+            "sample": 3,
+            "groups": 3,
+            "percent": 1.899,
+            "matchedListings": 77
+          },
+          "longTerm180d": {
+            "sample": 10,
+            "groups": 10,
+            "percent": 6.018000000000001,
+            "matchedListings": 172
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11170": {
+          "district": "11170",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 1.12,
+          "groups90d": 3,
+          "groups180d": 8,
+          "observedComplexes": 4,
+          "matchedListings": 24,
+          "actual90d": {
+            "sample": 3,
+            "groups": 3,
+            "percent": 1.121,
+            "matchedListings": 24
+          },
+          "longTerm180d": {
+            "sample": 8,
+            "groups": 8,
+            "percent": 1.915,
+            "matchedListings": 191
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11200": {
+          "district": "11200",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 1.15,
+          "groups90d": 4,
+          "groups180d": 9,
+          "observedComplexes": 4,
+          "matchedListings": 301,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 1.1525,
+            "matchedListings": 301
+          },
+          "longTerm180d": {
+            "sample": 9,
+            "groups": 9,
+            "percent": 1.2,
+            "matchedListings": 629
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11215": {
+          "district": "11215",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 10.29,
+          "groups90d": 1,
+          "groups180d": 6,
+          "observedComplexes": 4,
+          "matchedListings": 27,
+          "actual90d": {
+            "sample": 1,
+            "groups": 1,
+            "percent": 10.294,
+            "matchedListings": 27
+          },
+          "longTerm180d": {
+            "sample": 6,
+            "groups": 6,
+            "percent": 5.8885000000000005,
+            "matchedListings": 196
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11230": {
+          "district": "11230",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 4.31,
+          "groups90d": 2,
+          "groups180d": 8,
+          "observedComplexes": 4,
+          "matchedListings": 191,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 4.31,
+            "matchedListings": 191
+          },
+          "longTerm180d": {
+            "sample": 8,
+            "groups": 8,
+            "percent": 9.411000000000001,
+            "matchedListings": 384
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11260": {
+          "district": "11260",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 15.55,
+          "groups90d": 2,
+          "groups180d": 9,
+          "observedComplexes": 4,
+          "matchedListings": 17,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 15.5455,
+            "matchedListings": 17
+          },
+          "longTerm180d": {
+            "sample": 9,
+            "groups": 9,
+            "percent": 11.364,
+            "matchedListings": 88
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11290": {
+          "district": "11290",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 7.04,
+          "groups90d": 8,
+          "groups180d": 20,
+          "observedComplexes": 4,
+          "matchedListings": 177,
+          "actual90d": {
+            "sample": 8,
+            "groups": 8,
+            "percent": 7.0385,
+            "matchedListings": 177
+          },
+          "longTerm180d": {
+            "sample": 20,
+            "groups": 20,
+            "percent": 7.7325,
+            "matchedListings": 462
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11305": {
+          "district": "11305",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 8.63,
+          "groups90d": 5,
+          "groups180d": 12,
+          "observedComplexes": 4,
+          "matchedListings": 101,
+          "actual90d": {
+            "sample": 5,
+            "groups": 5,
+            "percent": 8.626,
+            "matchedListings": 101
+          },
+          "longTerm180d": {
+            "sample": 12,
+            "groups": 12,
+            "percent": 12.664000000000001,
+            "matchedListings": 176
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11320": {
+          "district": "11320",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 6.43,
+          "groups90d": 6,
+          "groups180d": 17,
+          "observedComplexes": 4,
+          "matchedListings": 145,
+          "actual90d": {
+            "sample": 6,
+            "groups": 6,
+            "percent": 6.4285,
+            "matchedListings": 145
+          },
+          "longTerm180d": {
+            "sample": 17,
+            "groups": 17,
+            "percent": 12.941,
+            "matchedListings": 225
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11350": {
+          "district": "11350",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 14.71,
+          "groups90d": 3,
+          "groups180d": 20,
+          "observedComplexes": 4,
+          "matchedListings": 23,
+          "actual90d": {
+            "sample": 3,
+            "groups": 3,
+            "percent": 14.706,
+            "matchedListings": 23
+          },
+          "longTerm180d": {
+            "sample": 20,
+            "groups": 20,
+            "percent": 11.584499999999998,
+            "matchedListings": 136
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11380": {
+          "district": "11380",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 3.98,
+          "groups90d": 2,
+          "groups180d": 19,
+          "observedComplexes": 4,
+          "matchedListings": 24,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 3.9775,
+            "matchedListings": 24
+          },
+          "longTerm180d": {
+            "sample": 19,
+            "groups": 19,
+            "percent": 8.262,
+            "matchedListings": 379
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11410": {
+          "district": "11410",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 4.09,
+          "groups90d": 4,
+          "groups180d": 17,
+          "observedComplexes": 4,
+          "matchedListings": 70,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 4.09,
+            "matchedListings": 70
+          },
+          "longTerm180d": {
+            "sample": 17,
+            "groups": 17,
+            "percent": 6.513,
+            "matchedListings": 262
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11440": {
+          "district": "11440",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 4.75,
+          "groups90d": 2,
+          "groups180d": 11,
+          "observedComplexes": 4,
+          "matchedListings": 188,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 4.7515,
+            "matchedListings": 188
+          },
+          "longTerm180d": {
+            "sample": 11,
+            "groups": 11,
+            "percent": 5.581,
+            "matchedListings": 588
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11470": {
+          "district": "11470",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": -0.66,
+          "groups90d": 4,
+          "groups180d": 19,
+          "observedComplexes": 10,
+          "matchedListings": 174,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": -0.661,
+            "matchedListings": 174
+          },
+          "longTerm180d": {
+            "sample": 19,
+            "groups": 19,
+            "percent": 5.0,
+            "matchedListings": 893
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11500": {
+          "district": "11500",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 3.35,
+          "groups90d": 4,
+          "groups180d": 18,
+          "observedComplexes": 4,
+          "matchedListings": 130,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 3.3475,
+            "matchedListings": 130
+          },
+          "longTerm180d": {
+            "sample": 18,
+            "groups": 18,
+            "percent": 7.3395,
+            "matchedListings": 218
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11530": {
+          "district": "11530",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 11.31,
+          "groups90d": 2,
+          "groups180d": 12,
+          "observedComplexes": 4,
+          "matchedListings": 13,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 11.3105,
+            "matchedListings": 13
+          },
+          "longTerm180d": {
+            "sample": 12,
+            "groups": 12,
+            "percent": 18.231,
+            "matchedListings": 198
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11545": {
+          "district": "11545",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 8.43,
+          "groups90d": 4,
+          "groups180d": 12,
+          "observedComplexes": 4,
+          "matchedListings": 212,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 8.429,
+            "matchedListings": 212
+          },
+          "longTerm180d": {
+            "sample": 12,
+            "groups": 12,
+            "percent": 8.4195,
+            "matchedListings": 320
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11560": {
+          "district": "11560",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 8.58,
+          "groups90d": 2,
+          "groups180d": 11,
+          "observedComplexes": 4,
+          "matchedListings": 9,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 8.5785,
+            "matchedListings": 9
+          },
+          "longTerm180d": {
+            "sample": 11,
+            "groups": 11,
+            "percent": 4.262,
+            "matchedListings": 75
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11590": {
+          "district": "11590",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 3.46,
+          "groups90d": 1,
+          "groups180d": 9,
+          "observedComplexes": 4,
+          "matchedListings": 48,
+          "actual90d": {
+            "sample": 1,
+            "groups": 1,
+            "percent": 3.459,
+            "matchedListings": 48
+          },
+          "longTerm180d": {
+            "sample": 9,
+            "groups": 9,
+            "percent": 3.593,
+            "matchedListings": 238
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11620": {
+          "district": "11620",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 1.36,
+          "groups90d": 2,
+          "groups180d": 6,
+          "observedComplexes": 4,
+          "matchedListings": 187,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 1.356,
+            "matchedListings": 187
+          },
+          "longTerm180d": {
+            "sample": 6,
+            "groups": 6,
+            "percent": 4.2775,
+            "matchedListings": 343
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11650": {
+          "district": "11650",
+          "status": "장기 실측 참고치",
+          "statusCode": "LONG_TERM_180D",
+          "percent": 2.79,
+          "groups90d": 0,
+          "groups180d": 6,
+          "observedComplexes": 3,
+          "matchedListings": 126,
+          "actual90d": {
+            "sample": 0,
+            "groups": 0,
+            "percent": null,
+            "matchedListings": 0
+          },
+          "longTerm180d": {
+            "sample": 6,
+            "groups": 6,
+            "percent": 2.7895,
+            "matchedListings": 126
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11680": {
+          "district": "11680",
+          "status": "장기 실측 참고치",
+          "statusCode": "LONG_TERM_180D",
+          "percent": 0.49,
+          "groups90d": 0,
+          "groups180d": 7,
+          "observedComplexes": 4,
+          "matchedListings": 60,
+          "actual90d": {
+            "sample": 0,
+            "groups": 0,
+            "percent": null,
+            "matchedListings": 0
+          },
+          "longTerm180d": {
+            "sample": 7,
+            "groups": 7,
+            "percent": 0.49,
+            "matchedListings": 60
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11710": {
+          "district": "11710",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 2.46,
+          "groups90d": 3,
+          "groups180d": 16,
+          "observedComplexes": 4,
+          "matchedListings": 141,
+          "actual90d": {
+            "sample": 3,
+            "groups": 3,
+            "percent": 2.459,
+            "matchedListings": 141
+          },
+          "longTerm180d": {
+            "sample": 16,
+            "groups": 16,
+            "percent": 4.0765,
+            "matchedListings": 379
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        },
+        "11740": {
+          "district": "11740",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": -7.02,
+          "groups90d": 1,
+          "groups180d": 8,
+          "observedComplexes": 4,
+          "matchedListings": 116,
+          "actual90d": {
+            "sample": 1,
+            "groups": 1,
+            "percent": -7.023,
+            "matchedListings": 116
+          },
+          "longTerm180d": {
+            "sample": 8,
+            "groups": 8,
+            "percent": 1.1455,
+            "matchedListings": 242
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "산출 대기 (2회차 수집 대기)"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          }
+        }
+      },
+      "qualityCounts": {
+        "targetDay": "2026-11-12",
+        "observedComplexesCount": 103,
+        "totalActiveListings": 11993,
+        "matchedStrataGroups90d": 68,
+        "matchedStrataGroups180d": 290,
+        "analyzedListingsInGroups": 2395,
+        "weightingComparisons": {
+          "equalWeightMedian": 5.12,
+          "districtBalancedMean": 5.24,
+          "complexBalancedMean": 4.77,
+          "stockWeightedMean": 5.34
+        }
+      },
+      "researchHypotheses": {
+        "H1_WideningSpreadPrediction": "가격괴리율 확대(호가 상승 또는 실거래가 하락) 지역은 4~12주 후 실거래가격 상승 탄력 둔화 또는 하락 전환을 선행하는가?",
+        "H2_NarrowingSpreadPrediction": "가격괴리율 축소(호가 현실화 또는 급매 소진) 지역은 4~12주 후 실거래가격 지지선 형성 또는 반등을 선행하는가?",
+        "H3_IncrementalInformationValue": "기존 한국부동산원·KB 지수 모형(Model A)에 가격괴리 변화폭(Model B) 및 요인별 분해(Model C)를 추가할 때 외표본 예측력(DM test)이 통계적으로 개선되는가?",
+        "H4_DominantDriver": "호가 변화(매도자 심리)와 실거래 기준가 변화(체결 확인) 중 어느 요인이 미래 시장 변곡점과 더 밀접한가?"
       }
     }
   },

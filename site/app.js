@@ -3,7 +3,7 @@ const get = id => document.getElementById(id);
 const nf = n => Number(n).toLocaleString('ko-KR');
 let data;
 const state = {metric: 'price', range: 0, selectedDate: null};
-const mapState = {mode: 'spread', selectedCode: '11680'};
+const mapState = {mode: 'spread', selectedCode: '11680', spreadChangePeriod: '1d'};
 
 /* ---------- 날짜·숫자 표시 ---------- */
 const pad = n => String(n).padStart(2, '0');
@@ -291,7 +291,11 @@ function renderSeoulMap() {
     const ab = r.absorption, prov = r.provisionalAbsorption;
     const vitVal = (ab && ab.percent != null) ? ab.percent : ((prov && prov.percent != null) ? prov.percent : null);
 
-    return { code: c, svg: d, r, sp, act, lng, status, displayVal, cc, net, vitVal, isProv: (!ab || ab.percent == null) };
+    // Spread Dynamics
+    const dDyn = data?.market?.spreadDynamics?.districts?.[c];
+    const dChanges = dDyn?.changes || {};
+
+    return { code: c, svg: d, r, sp, act, lng, status, displayVal, cc, net, vitVal, isProv: (!ab || ab.percent == null), dChanges };
   });
 
   // 1. Path elements
@@ -309,6 +313,15 @@ function renderSeoulMap() {
         fillClr = isDark ? '#262624' : '#deded9';
       } else {
         fillClr = getDivergingColor(item.act, isDark);
+      }
+    } else if (mapState.mode === 'spread-change') {
+      const pKey = mapState.spreadChangePeriod || '1d';
+      const ch = item.dChanges?.[pKey];
+      if (ch && ch.deltaPctPoint != null) {
+        fillClr = getDivergingColor(ch.deltaPctPoint * 2, isDark);
+      } else {
+        cls.push('tier-insufficient');
+        fillClr = isDark ? '#262624' : '#deded9';
       }
     } else if (mapState.mode === 'concession') {
       if (item.net != null) {
@@ -344,6 +357,16 @@ function renderSeoulMap() {
       } else {
         valText = signed(item.displayVal);
         valClr = item.displayVal > 0 ? (isDark ? '#ff9a70' : '#b83e10') : (item.displayVal < 0 ? (isDark ? '#8ab4f8' : '#1a5ab0') : valClr);
+      }
+    } else if (mapState.mode === 'spread-change') {
+      const pKey = mapState.spreadChangePeriod || '1d';
+      const ch = item.dChanges?.[pKey];
+      if (ch && ch.deltaPctPoint != null) {
+        valText = signed(ch.deltaPctPoint, '%p');
+        valClr = ch.deltaPctPoint > 0 ? (isDark ? '#ff9a70' : '#b83e10') : (ch.deltaPctPoint < 0 ? (isDark ? '#8ab4f8' : '#1a5ab0') : valClr);
+      } else {
+        valText = (pKey === '1d') ? '대기' : '축적중';
+        valClr = isDark ? '#888880' : '#888880';
       }
     } else if (mapState.mode === 'concession') {
       if (item.net != null) {
@@ -450,6 +473,15 @@ function renderMapLegend() {
         <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 90일 실거래 (${actualCount}개 구)</span>
         <span class="legend-swatch"><span class="swatch-box tier-180"></span> 180일 실거래 (${longCount}개 구)</span>
         <span class="legend-swatch"><span class="swatch-box insufficient"></span> 비교자료 부족 (${insuffCount}개 구)</span>
+      </div>
+    `;
+  } else if (mapState.mode === 'spread-change') {
+    el.innerHTML = `
+      <div class="legend-swatches" style="margin:0">
+        <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 괴리 확대 (+%p, 호가 상승/체결가 하락)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:#1a5ab0"></span> 괴리 축소 (-%p, 호가 인하/체결가 상승)</span>
+        <span class="legend-swatch"><span class="swatch-box" style="background:var(--surface-2)"></span> 변화 미미</span>
+        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 자료 축적 중 / 산출 대기</span>
       </div>
     `;
   } else if (mapState.mode === 'concession') {
@@ -582,6 +614,17 @@ function renderDistrictDetail(c) {
     vitText = `100건당 ${prov.percent.toFixed(1)}건 (잠정)`;
   }
 
+  // Spread Dynamics info
+  const dDyn = data.market?.spreadDynamics?.districts?.[c];
+  const dChanges = dDyn?.changes || {};
+  const ch1 = dChanges['1d'], ch7 = dChanges['7d'];
+  let spreadChangeText = '2회차 관측 대기';
+  if (ch1 && ch1.deltaPctPoint != null) {
+    spreadChangeText = `전일 ${signed(ch1.deltaPctPoint, '%p')}`;
+  } else if (ch1 && ch1.status) {
+    spreadChangeText = ch1.status;
+  }
+
   const asof = fmtDate(data.asking?.lastSuccess || data.market.day);
   const dateSuffix = state.selectedDate ? ` (${state.selectedDate})` : '';
 
@@ -614,6 +657,10 @@ function renderDistrictDetail(c) {
       <div class="detail-cell">
         <span class="detail-cell-l">호가조정 (인하·인상)</span>
         <span class="detail-cell-v small">${adjText}</span>
+      </div>
+      <div class="detail-cell">
+        <span class="detail-cell-l">가격괴리 변화폭</span>
+        <span class="detail-cell-v small">${spreadChangeText}</span>
       </div>
       <div class="detail-cell">
         <span class="detail-cell-l">거래활력</span>
@@ -765,6 +812,81 @@ function renderMarket() {
   setRef('premiumRef', allSpread != null
     ? `참고 괴리율 ${signed(allSpread)} · 90일 실거래 ${actualDistricts}개 구 · 180일 실거래 ${longDistricts}개 구 (대표지수 아님)` : '');
   get('premiumAsof').textContent = `기준일 ${asof}`;
+
+  /* 가격괴리 변화폭 서브 그리드 및 3대 요인 분해 렌더링 */
+  const dyn = data.market?.spreadDynamics || {};
+  const seoulDyn = dyn.seoulOverall || {};
+  const changes = seoulDyn.changes || {};
+
+  const dodEl = get('spreadDodVal');
+  const wowEl = get('spreadWowVal');
+  const momEl = get('spreadMomVal');
+
+  if (dodEl) {
+    if (changes['1d']?.deltaPctPoint != null) {
+      dodEl.textContent = signed(changes['1d'].deltaPctPoint, '%p');
+      dodEl.className = dirClass(changes['1d'].deltaPctPoint);
+    } else {
+      dodEl.textContent = changes['1d']?.status || '산출 대기';
+      dodEl.className = 'na';
+    }
+  }
+
+  if (wowEl) {
+    if (changes['7d']?.deltaPctPoint != null) {
+      wowEl.textContent = signed(changes['7d'].deltaPctPoint, '%p');
+      wowEl.className = dirClass(changes['7d'].deltaPctPoint);
+    } else {
+      wowEl.textContent = changes['7d']?.status || '축적 중';
+      wowEl.className = 'na';
+    }
+  }
+
+  if (momEl) {
+    if (changes['28d']?.deltaPctPoint != null) {
+      momEl.textContent = signed(changes['28d'].deltaPctPoint, '%p');
+      momEl.className = dirClass(changes['28d'].deltaPctPoint);
+    } else {
+      momEl.textContent = changes['28d']?.status || '축적 중';
+      momEl.className = 'na';
+    }
+  }
+
+  // Decomposition Box
+  const decomp = seoulDyn.decomposition || {};
+  const dAskEl = get('decompAskVal');
+  const dTradeEl = get('decompTradeVal');
+  const dCompEl = get('decompCompVal');
+
+  if (dAskEl) {
+    if (decomp.contribAskPctPoint != null) {
+      dAskEl.textContent = signed(decomp.contribAskPctPoint, '%p');
+      dAskEl.className = dirClass(decomp.contribAskPctPoint);
+    } else {
+      dAskEl.textContent = decomp.status || '산출 대기';
+      dAskEl.className = 'na';
+    }
+  }
+
+  if (dTradeEl) {
+    if (decomp.contribTradeBenchmarkPctPoint != null) {
+      dTradeEl.textContent = signed(decomp.contribTradeBenchmarkPctPoint, '%p');
+      dTradeEl.className = dirClass(decomp.contribTradeBenchmarkPctPoint);
+    } else {
+      dTradeEl.textContent = decomp.status || '산출 대기';
+      dTradeEl.className = 'na';
+    }
+  }
+
+  if (dCompEl) {
+    if (decomp.contribSampleCompositionPctPoint != null) {
+      dCompEl.textContent = signed(decomp.contribSampleCompositionPctPoint, '%p');
+      dCompEl.className = dirClass(decomp.contribSampleCompositionPctPoint);
+    } else {
+      dCompEl.textContent = decomp.status || '산출 대기';
+      dCompEl.className = 'na';
+    }
+  }
 
   /* 호가조정지수 */
   const c1 = all.concessions?.['1'] || {}, c7 = all.concessions?.['7'] || {};
@@ -982,6 +1104,13 @@ bindSeg('metricSeg', 'metric', v => { state.metric = v; chart1.reset(); chart1.d
 bindSeg('rangeSeg', 'range', v => { state.range = Number(v); chart1.draw(); });
 bindSeg('mapModeSeg', 'mode', v => {
   mapState.mode = v;
+  const pSeg = get('mapPeriodSeg');
+  if (pSeg) pSeg.style.display = (v === 'spread-change') ? 'inline-flex' : 'none';
+  renderSeoulMap();
+  renderDistrictDetail(mapState.selectedCode);
+});
+bindSeg('mapPeriodSeg', 'period', v => {
+  mapState.spreadChangePeriod = v;
   renderSeoulMap();
   renderDistrictDetail(mapState.selectedCode);
 });
