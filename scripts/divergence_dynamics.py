@@ -888,6 +888,21 @@ def run_spread_dynamics(target_day=None):
                 'decomposition': dynamics_data['seoulOverall']['decomposition']
             }
 
+            # Explicitly unify all.spread with NEGO INDEX 2.0 (P4: 기준 통일)
+            if 'all' in site_data['market']['regions']:
+                if 'spread' not in site_data['market']['regions']['all']:
+                    site_data['market']['regions']['all']['spread'] = {}
+                site_data['market']['regions']['all']['spread'].update({
+                    'percent': curr_val,
+                    'sample': all_agg['sampleGroups'],
+                    'groups': all_agg['sampleGroups'],
+                    'matchedListings': all_agg['matchedListings'],
+                    'status': '실측',
+                    'standardWindowDays': 90,
+                    'minTradesPerStratum': 3,
+                    'basis': '동일 단지·전용면적·층구간 90일 실거래(3건 이상) 68개 그룹 중위값 대비 호가 프리미엄'
+                })
+
             # Unify NEGO INDEX 2.0 with primary calculation
             if 'negoIndex' not in site_data:
                 site_data['negoIndex'] = {}

@@ -72,7 +72,7 @@ def evaluate_quality_gate(planned_count, successful_count):
 def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600, workers=8):
     start_time = datetime.now(ZoneInfo('Asia/Seoul'))
     target_day = day or start_time.date().isoformat()
-    manifest_file = Path(manifest_path) if manifest_path else (ROOT / 'data' / 'seoul-expanded-manifest.json')
+    manifest_file = Path(manifest_path) if manifest_path else (ROOT / 'data' / 'fixed-110-panel.json')
     db_file = ROOT / 'data' / 'history.sqlite3'
     
     print("="*80)

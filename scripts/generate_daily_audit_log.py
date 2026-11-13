@@ -17,11 +17,15 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 
-def build_audit_log(target_day=None, manifest_path=ROOT/'data'/'seoul-100-run-manifest.json'):
+def build_audit_log(target_day=None, manifest_path=ROOT/'data'/'fixed-110-panel.json'):
     db = sqlite3.connect(ROOT / 'data' / 'history.sqlite3')
     if not target_day:
         target_day = db.execute("SELECT MAX(day) FROM listings").fetchone()[0] or '2026-11-12'
-    manifest = json.loads(Path(manifest_path).read_text(encoding='utf-8-sig'))
+    manifest_p = Path(manifest_path)
+    if manifest_p.exists():
+        manifest = json.loads(manifest_p.read_text(encoding='utf-8-sig'))
+    else:
+        manifest = []
     
     target_count = len(manifest)
     
@@ -29,6 +33,11 @@ def build_audit_log(target_day=None, manifest_path=ROOT/'data'/'seoul-100-run-ma
     batches = db.execute("SELECT complex, observed, success FROM batches WHERE day=?", (target_day,)).fetchall()
     successful_complexes = sum(1 for b in batches if b[2] == 1)
     failed_complexes = sum(1 for b in batches if b[2] == 0)
+
+    # Separate successful with listings vs 0 listings
+    listing_counts = dict(db.execute("SELECT complex, COUNT(*) FROM listings WHERE day=? GROUP BY complex", (target_day,)).fetchall())
+    successful_with_listings = sum(1 for b in batches if b[2] == 1 and listing_counts.get(b[0], 0) > 0)
+    successful_zero_listings = sum(1 for b in batches if b[2] == 1 and listing_counts.get(b[0], 0) == 0)
     
     observed_times = [b[1] for b in batches if b[1]]
     start_time = min(observed_times) if observed_times else f"{target_day}T06:00:00+09:00"
@@ -61,6 +70,8 @@ def build_audit_log(target_day=None, manifest_path=ROOT/'data'/'seoul-100-run-ma
         'finishedAt': end_time,
         'targetComplexes': target_count,
         'successfulComplexes': successful_complexes,
+        'successfulWithListings': successful_with_listings,
+        'successfulZeroListings': successful_zero_listings,
         'failedComplexes': failed_complexes,
         'totalObservedListings': total_listings,
         'reobservedListings': reobserved,
@@ -70,7 +81,7 @@ def build_audit_log(target_day=None, manifest_path=ROOT/'data'/'seoul-100-run-ma
         'consecutiveTrackingRatePct': tracking_rate,
         'dbPersistenceStatus': db_status,
         'unmannedExecutionVerified': True,
-        'sampleType': 'Daily Fixed 100 Sample + Yangcheon Baseline (108 complexes)'
+        'sampleType': f'Fixed 110 Panel ({target_count} complexes)'
     }
     
     log_dir = ROOT / 'data' / 'logs'

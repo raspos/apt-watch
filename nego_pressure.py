@@ -126,7 +126,7 @@ def run_analysis(target_day=None):
     
     # 3. Market Regime
     all_region = site_data['market']['regions'].get('all', {})
-    spread_pct = all_region.get('spread', {}).get('percent')
+    spread_pct = site_data.get('market', {}).get('spreadDynamics', {}).get('seoulOverall', {}).get('currentSpreadPct') or all_region.get('spread', {}).get('percent')
     cut_share_pct = all_region.get('concessions', {}).get('1', {}).get('cutShare') or all_region.get('concessions', {}).get('7', {}).get('cutShare')
     absorption_pct = all_region.get('absorption', {}).get('percent')
     
