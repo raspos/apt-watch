@@ -93,7 +93,7 @@ def evaluate_quality_gate(planned_count, successful_count):
     else:
         return 'FULL_SUCCESS', rate, None
 
-def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600, workers=8):
+def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=10800, workers=8):
     start_time = datetime.now(ZoneInfo('Asia/Seoul'))
     target_day = day or start_time.date().isoformat()
     manifest_file = Path(manifest_path) if manifest_path else (ROOT / 'data' / 'fixed-110-panel.json')
@@ -339,7 +339,7 @@ if __name__ == '__main__':
     parser.add_argument('--day', help='Observation day (YYYY-MM-DD)')
     parser.add_argument('--manifest', help='Path to manifest JSON')
     parser.add_argument('--no-resume', action='store_true', help='Force re-scrape all complexes')
-    parser.add_argument('--timeout', type=int, default=3600, help='Collector timeout in seconds')
+    parser.add_argument('--timeout', type=int, default=10800, help='Collector pool timeout in seconds (whole pool, not per complex)')
     parser.add_argument('--workers', type=int, default=8, help='Number of parallel browser workers (default: 8)')
     args = parser.parse_args()
     
