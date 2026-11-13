@@ -54487,17 +54487,16 @@
       "asOf": "2026-11-12"
     },
     "gradeB_Exploratory": {
-      "candidateMatchesCount": 82,
-      "ambiguousMatchesCount": 301,
-      "medianClosingNegoPct": 8.97,
-      "meanClosingNegoPct": 9.07,
-      "medianInitialDiscountPct": 9.07,
-      "medianPublicAskingCutPct": 0.0,
-      "iqrRange": {
-        "p25": 4.12,
-        "p75": 14.02
-      },
-      "notice": "동일 단지·면적·층수 고유 단일 후보(82건) 대상 탐색적 연구 분석치 (공식 확정치 아님)"
+      "candidateMatchesCount": 0,
+      "ambiguousMatchesCount": 3550,
+      "reverseTemporalMatchesCount": 47,
+      "medianClosingNegoPct": null,
+      "meanClosingNegoPct": null,
+      "medianInitialDiscountPct": null,
+      "medianPublicAskingCutPct": null,
+      "iqrRange": null,
+      "status": "WITHHELD_ZERO_VALID_SAMPLES",
+      "notice": "시간적 선행 조건(t_first <= t_contract)을 만족하는 유효 표본 0건으로 산출 유보 (계약 후 등록된 역순 매칭 원천 배제)"
     },
     "gradeC_ProxyDivergence": {
       "role": "선행·대리 지표 (Proxy Leading Indicator)",

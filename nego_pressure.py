@@ -154,6 +154,7 @@ def run_analysis(target_day=None):
 
     b_stats = matching_audit.get('gradeB_AnalysisReport', {})
     summary_counts = matching_audit.get('summaryCounts', {})
+    valid_b_count = summary_counts.get('gradeB_UniqueCandidateMatches', 0)
     
     # 4. NEGO INDEX Architecture (Core Research Metric)
     site_data['negoIndex'] = {
@@ -171,14 +172,16 @@ def run_analysis(target_day=None):
             'asOf': day
         },
         'gradeB_Exploratory': {
-            'candidateMatchesCount': summary_counts.get('gradeB_UniqueCandidateMatches', 82),
-            'ambiguousMatchesCount': summary_counts.get('gradeB_AmbiguousMultipleCandidates', 301),
-            'medianClosingNegoPct': b_stats.get('medianClosingNegoPct', 8.97),
-            'meanClosingNegoPct': b_stats.get('meanClosingNegoPct', 9.07),
-            'medianInitialDiscountPct': b_stats.get('medianInitialDiscountPct', 9.07),
-            'medianPublicAskingCutPct': b_stats.get('medianPublicAskingCutPct', 0.0),
-            'iqrRange': b_stats.get('interquartileRange'),
-            'notice': '동일 단지·면적·층수 고유 단일 후보(82건) 대상 탐색적 연구 분석치 (공식 확정치 아님)'
+            'candidateMatchesCount': valid_b_count,
+            'ambiguousMatchesCount': summary_counts.get('gradeB_DuplicateAmbiguousMatches', 0),
+            'reverseTemporalMatchesCount': summary_counts.get('gradeB_ReverseTemporalMatches', 0),
+            'medianClosingNegoPct': b_stats.get('medianClosingNegoPct', None),
+            'meanClosingNegoPct': b_stats.get('meanClosingNegoPct', None),
+            'medianInitialDiscountPct': b_stats.get('medianInitialDiscountPct', None),
+            'medianPublicAskingCutPct': b_stats.get('medianPublicAskingCutPct', None),
+            'iqrRange': b_stats.get('interquartileRange', None),
+            'status': 'WITHHELD_ZERO_VALID_SAMPLES' if valid_b_count == 0 else 'ACTIVE',
+            'notice': '시간적 선행 조건(t_first <= t_contract)을 만족하는 유효 표본 0건으로 산출 유보 (계약 후 등록된 역순 매칭 원천 배제)' if valid_b_count == 0 else '시간적 선행 조건을 만족하는 고유 단일 후보 분석치'
         },
         'gradeC_ProxyDivergence': {
             'role': '선행·대리 지표 (Proxy Leading Indicator)',

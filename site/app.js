@@ -687,13 +687,21 @@ function renderNegoHero() {
   }
 
   const bExpEl = get('negoBExploratory');
+  const bSubEl = get('negoBSub');
   if (bExpEl) {
     if (gB.medianClosingNegoPct != null) {
       bExpEl.textContent = `중위 ${gB.medianClosingNegoPct.toFixed(1)}%`;
       bExpEl.className = '';
     } else {
-      bExpEl.textContent = '분석 중';
+      bExpEl.textContent = `${gB.candidateMatchesCount ?? 0}건 (산출 유보)`;
       bExpEl.className = 'na';
+    }
+  }
+  if (bSubEl) {
+    if ((gB.candidateMatchesCount ?? 0) === 0) {
+      bSubEl.textContent = '시간적 선행 조건 충족 후보 0건 (역순 매칭 전면 배제)';
+    } else if (gB.notice) {
+      bSubEl.textContent = gB.notice;
     }
   }
 }

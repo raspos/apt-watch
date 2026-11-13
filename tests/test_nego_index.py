@@ -1,16 +1,17 @@
-"""Automated Unit Tests for APT WATCH NEGO INDEX Architecture.
+"""Automated Unit Tests for APT WATCH NEGO INDEX Architecture & Temporal Causality.
+
 Validates:
-  1. Strict separation of 3 prices: P_ask,0, P_ask,last, P_contract
-  2. Distinct discount mathematical identities:
-     - Initial discount: (P_ask,0 - P_contract) / P_ask,0
-     - Closing Nego discount: (P_ask,last - P_contract) / P_ask,last
-     - Public asking cut: (P_ask,0 - P_ask,last) / P_ask,0
-  3. Grade A/B/C verification hierarchy:
-     - Grade A: Requires verified broker/contract evidence, default 0 sample
-     - Grade B: Exploratory candidate tracking, strictly separated from official release
-     - Grade C: Cohort proxy divergence benchmark
-  4. Publication quality gate:
-     - Official publication disallowed when Grade A sample < threshold
+  1. Strict mathematical separation of 3 prices and 3 discounts:
+     - Initial discount: (P_ask,0 - P_contract) / P_ask,0 * 100
+     - Closing Nego discount: (P_ask,last_before - P_contract) / P_ask,last_before * 100
+     - Public asking cut: (P_ask,0 - P_ask,last_before) / P_ask,0 * 100
+  2. Temporal Causality Enforcement:
+     - Listings first observed after contract date (t_first > t_contract) MUST NOT produce a valid nego discount.
+     - Withholding rule: when valid temporal samples == 0, median closing nego must be None.
+  3. Quality Gate & Screen Verification:
+     - Official publication disallowed when Grade A sample == 0
+     - Erroneous 8.97% / 9.0% reverse-temporal value removed from production site_data
+  4. 82-case Reclassification Audit Integrity
 """
 
 import unittest
@@ -42,7 +43,7 @@ class TestNegoIndex(unittest.TestCase):
         self.assertNotEqual(initial_discount, closing_nego)
         self.assertNotEqual(closing_nego, asking_cut)
 
-    def test_nego_index_schema_and_quality_gate(self):
+    def test_temporal_causality_and_quality_gate(self):
         data_path = ROOT / 'site' / 'data.json'
         self.assertTrue(data_path.exists())
         data = json.loads(data_path.read_text(encoding='utf-8'))
@@ -64,16 +65,20 @@ class TestNegoIndex(unittest.TestCase):
 
         # Grade B: Exploratory candidate tracking
         grade_b = nego['gradeB_Exploratory']
-        self.assertGreater(grade_b['candidateMatchesCount'], 0)
-        self.assertGreater(grade_b['medianClosingNegoPct'], 0.0)
-        self.assertIn('공식 확정치 아님', grade_b['notice'])
+        # Strict temporal enforcement: if valid candidate count is 0, median MUST be None
+        if grade_b['candidateMatchesCount'] == 0:
+            self.assertIsNone(grade_b['medianClosingNegoPct'])
+            self.assertEqual(grade_b['status'], 'WITHHELD_ZERO_VALID_SAMPLES')
+            self.assertIn('0건으로 산출 유보', grade_b['notice'])
+        else:
+            self.assertIsNotNone(grade_b['medianClosingNegoPct'])
 
         # Grade C: Proxy indicator linkage
         grade_c = nego['gradeC_ProxyDivergence']
         self.assertEqual(grade_c['role'], '선행·대리 지표 (Proxy Leading Indicator)')
         self.assertIsNotNone(grade_c['currentDivergencePct'])
 
-    def test_matching_audit_report_integrity(self):
+    def test_reclassification_audit_integrity(self):
         audit_path = ROOT / 'data' / 'nego_matching_audit_report.json'
         self.assertTrue(audit_path.exists())
         audit = json.loads(audit_path.read_text(encoding='utf-8'))
@@ -82,7 +87,19 @@ class TestNegoIndex(unittest.TestCase):
         self.assertGreater(summary['totalRecentTransactions180d'], 1000)
         self.assertGreater(summary['totalTrackedListingLifecycles'], 1000)
         self.assertEqual(summary['gradeA_ConfirmedIdentical'], 0)
-        self.assertGreater(summary['gradeB_UniqueCandidateMatches'], 0)
+        
+        # Verify that reverse-temporal matches are identified
+        reclass = audit.get('reclassificationAuditOfHistorical82Candidates', {})
+        self.assertIn('categoryB_ReverseTemporal', reclass)
+        self.assertGreater(reclass['categoryB_ReverseTemporal']['count'], 0)
+        self.assertGreater(reclass['categoryD_DuplicateMapping']['count'], 0)
+        self.assertEqual(reclass['categoryA_TemporallyValid']['count'], 0)
+
+        # Check sensitivity analysis structure
+        self.assertIn('sensitivityAnalysis', audit)
+        self.assertIn('tau_7_days', audit['sensitivityAnalysis'])
+        self.assertIn('tau_14_days', audit['sensitivityAnalysis'])
+        self.assertIn('tau_30_days', audit['sensitivityAnalysis'])
 
 if __name__ == '__main__':
     unittest.main()
