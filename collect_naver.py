@@ -92,10 +92,10 @@ def collect(page, target):
             except Exception:
                 pass
             try:
-                page.get_by_role('tab', name='매물').first.click(timeout=6000)
+                page.get_by_role('tab', name='매물').first.click(timeout=10000)
             except Exception as e_tab:
                 body_txt = page.inner_text('body')
-                if '매물이 없습니다' in body_txt or '등록된 매물이 없습니다' in body_txt or '매물 0' in body_txt:
+                if '매물이 없습니다' in body_txt or '등록된 매물이 없습니다' in body_txt or re.search(r'매물\s*0\s*개', body_txt):
                     return [], 0
                 raise e_tab
 
@@ -232,30 +232,37 @@ def main():
                 print(f'{observed_utc} opening complex {key} ({target.get("name")})', flush=True)
                 t_start = time.monotonic()
                 err_msg = None
-                try:
-                    rows, groups = collect(page, target)
-                    success = True
-                except PermissionError as error:
-                    err_msg = str(error)
-                    duration_sec = round(time.monotonic() - t_start, 2)
-                    import_delivery(db, manifest, [dict(complex=key, observed=observed_utc,
-                                    success=False, rows=[])], day, args.district)
-                    db.execute('''
-                        CREATE TABLE IF NOT EXISTS collection_telemetry (
-                            day TEXT, complex TEXT, district TEXT, name TEXT,
-                            started_at TEXT, duration_sec REAL, listings_count INTEGER,
-                            expected_count INTEGER, success INTEGER, error_message TEXT,
-                            PRIMARY KEY(day, complex)
-                        )
-                    ''')
-                    db.execute('INSERT OR REPLACE INTO collection_telemetry VALUES (?,?,?,?,?,?,?,?,?,?)',
-                               (day, key, target.get('district'), target.get('name'), observed_utc, duration_sec, 0, 0, 0, err_msg))
-                    print(json.dumps(dict(complex=key, error=str(error))), flush=True)
-                    return 75
-                except (ValueError, RuntimeError, BrowserError) as error:
-                    rows, groups, success = [], None, False
-                    err_msg = str(error)
-                    print(json.dumps(dict(complex=key, error=str(error))), flush=True)
+                rows, groups, success = [], None, False
+                for attempt in range(2):
+                    try:
+                        rows, groups = collect(page, target)
+                        success = True
+                        break
+                    except PermissionError as error:
+                        err_msg = str(error)
+                        duration_sec = round(time.monotonic() - t_start, 2)
+                        import_delivery(db, manifest, [dict(complex=key, observed=observed_utc,
+                                        success=False, rows=[])], day, args.district)
+                        db.execute('''
+                            CREATE TABLE IF NOT EXISTS collection_telemetry (
+                                day TEXT, complex TEXT, district TEXT, name TEXT,
+                                started_at TEXT, duration_sec REAL, listings_count INTEGER,
+                                expected_count INTEGER, success INTEGER, error_message TEXT,
+                                PRIMARY KEY(day, complex)
+                            )
+                        ''')
+                        db.execute('INSERT OR REPLACE INTO collection_telemetry VALUES (?,?,?,?,?,?,?,?,?,?)',
+                                   (day, key, target.get('district'), target.get('name'), observed_utc, duration_sec, 0, 0, 0, err_msg))
+                        print(json.dumps(dict(complex=key, error=str(error))), flush=True)
+                        return 75
+                    except (ValueError, RuntimeError, BrowserError) as error:
+                        if attempt == 0:
+                            print(f"{now()} Retrying complex {key} ({target.get('name')}) after transient error: {error}", flush=True)
+                            page.wait_for_timeout(3000)
+                            continue
+                        rows, groups, success = [], None, False
+                        err_msg = str(error)
+                        print(json.dumps(dict(complex=key, error=str(error))), flush=True)
                 
                 duration_sec = round(time.monotonic() - t_start, 2)
                 batch = dict(complex=key, observed=observed_utc, success=success, rows=rows,

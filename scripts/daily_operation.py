@@ -46,6 +46,28 @@ def run_step(name, script_path, args=None):
         print(res.stdout.strip())
     return res.stdout
 
+def find_suspect_collections(cur, target_day, success_ids, min_prev=10, collapse_ratio=0.30):
+    """Complexes flagged success=1 whose listing count collapsed vs. the previous observed day.
+
+    A browser collector can return an empty or truncated page without raising an error. Treating
+    those as successes would make a scrape failure look like a market change. A complex is
+    SUSPECT when the previous day had >= min_prev listings and today has 0 listings or less
+    than collapse_ratio of the previous count. Observations are never modified; only the gate
+    numerator is affected.
+    """
+    prev_day = cur.execute("SELECT MAX(day) FROM listings WHERE day < ?", (target_day,)).fetchone()[0]
+    if not prev_day:
+        return set()
+    prev = dict(cur.execute("SELECT complex, COUNT(*) FROM listings WHERE day=? GROUP BY complex", (prev_day,)).fetchall())
+    curr = dict(cur.execute("SELECT complex, COUNT(*) FROM listings WHERE day=? GROUP BY complex", (target_day,)).fetchall())
+    suspects = set()
+    for cid in success_ids:
+        p, c = prev.get(cid, 0), curr.get(cid, 0)
+        if p >= min_prev and c < p * collapse_ratio:
+            suspects.add(str(cid))
+    return suspects
+
+
 def evaluate_quality_gate(planned_count, successful_count):
     """Evaluate quality gate based on planned denominator vs successful numerator.
     Returns (status, success_rate, error_message or None).
@@ -124,6 +146,41 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
         print("\n".join(last_lines))
     if col_res.returncode != 0:
         print(f"WARNING: Collector exited with code {col_res.returncode}. Proceeding with collected data.")
+
+    # 3-1. Automatic Sequential Retry for Failed Complexes before Quality Gate
+    db = sqlite3.connect(db_file)
+    cur = db.cursor()
+    failed_complex_ids = [str(r[0]) for r in cur.execute("SELECT complex FROM batches WHERE day=? AND success=0", (target_day,)).fetchall()]
+    db.close()
+    if failed_complex_ids:
+        print(f"\n[Step 1-1] Auto-retrying {len(failed_complex_ids)} failed complexes...")
+        retry_manifest = [c for c in json.loads(manifest_file.read_text(encoding='utf-8-sig')) if str(c['complex']) in set(failed_complex_ids)]
+        if retry_manifest:
+            retry_mf_path = ROOT / 'data' / 'staging' / f'retry_{target_day}_manifest.json'
+            retry_mf_path.parent.mkdir(parents=True, exist_ok=True)
+            retry_mf_path.write_text(json.dumps(retry_manifest, ensure_ascii=False, indent=2), encoding='utf-8')
+            retry_store = ROOT / 'data' / 'staging' / f'retry_{target_day}_temp.sqlite3'
+            if retry_store.exists():
+                retry_store.unlink()
+            cmd_retry = [
+                sys.executable, '-u', str(ROOT / 'collect_naver.py'),
+                '--manifest', str(retry_mf_path),
+                '--store', str(retry_store),
+                '--day', target_day
+            ]
+            try:
+                rr = subprocess.run(cmd_retry, capture_output=True, text=True, encoding='utf-8', timeout=1800)
+                if rr.returncode != 0:
+                    print(f"[Step 1-1] WARNING: retry collector exited with code {rr.returncode}; merging only what was stored.")
+            except subprocess.TimeoutExpired:
+                print("[Step 1-1] WARNING: retry collector timed out after 1800s; merging only what was stored.")
+            if retry_store.exists():
+                with sqlite3.connect(retry_store) as rdb, sqlite3.connect(db_file) as mdb:
+                    r_batches = rdb.execute("SELECT day, complex, observed, success FROM batches").fetchall()
+                    r_listings = rdb.execute("SELECT day, complex, id, price, payload FROM listings").fetchall()
+                    mdb.executemany("INSERT OR REPLACE INTO batches VALUES (?, ?, ?, ?)", r_batches)
+                    mdb.executemany("INSERT OR REPLACE INTO listings VALUES (?, ?, ?, ?, ?)", r_listings)
+                print(f"[Step 1-1] Auto-retry merged {len(r_batches)} batches and {len(r_listings)} listings.")
         
     # 4. Save raw listings snapshot to JSONL
     print(f"\n[Step 2] Dumping raw snapshot to {snapshot_dir}...")
@@ -147,7 +204,11 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=3600,
     db = sqlite3.connect(db_file)
     cur = db.cursor()
     success_ids = {str(r[0]) for r in cur.execute("SELECT complex FROM batches WHERE day=? AND success=1", (target_day,)).fetchall()}
+    suspect_ids = find_suspect_collections(cur, target_day, success_ids)
     db.close()
+    if suspect_ids:
+        print(f"  [SUSPECT] 직전 관측일 대비 매물이 급감/소멸한 단지 {len(suspect_ids)}개는 정상 수집으로 인정하지 않습니다: {sorted(suspect_ids)[:20]}")
+    success_ids -= suspect_ids
 
     planned_ids = {str(c['complex']) for c in planned_targets}
     successful_planned = len(planned_ids.intersection(success_ids))
