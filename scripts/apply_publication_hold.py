@@ -176,6 +176,9 @@ def evaluate_gate(site, hold, min_rate=0.95):
         level.append(f'{day} observations have no quality assessment')
     elif q['rate'] < min_rate:
         level.append(f'{day} quality-verified complexes {q["valid"]}/{q["planned"]} < {min_rate:.0%}')
+    vint = (((site.get('market') or {}).get('spreadDynamics') or {}).get('qualityCounts') or {}).get('pointInTimeVintageAudit') or {}
+    if vint.get('targetDay') != day or not vint.get('isContemporaneousLiveVintage'):
+        level.append(f'{day} trade benchmark is not a verified point-in-time (live) vintage')
     min_ref = hold.get('minReferenceDay')
     for h, ch in ((site.get('negoIndex') or {}).get('changes') or {}).items():
         ref = (ch or {}).get('referenceDay')
