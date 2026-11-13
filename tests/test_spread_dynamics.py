@@ -133,8 +133,10 @@ class TestSpreadDynamicsExhaustive(unittest.TestCase):
         # On matched strata (k1), prices didn't change
         self.assertEqual(res['contribAskPctPoint'], 0.0)
         self.assertEqual(res['contribTradeBenchmarkPctPoint'], 0.0)
-        # Composition absorbs the entire shift in median spread
-        self.assertEqual(res['contribSampleCompositionPctPoint'], res['deltaTotalPctPoint'])
+        # Matched sample change is strictly 0.0%p
+        self.assertEqual(res['matchedSampleChange'], 0.0)
+        # Composition absorbs the entire shift in cross-section mean spread (10.0%p)
+        self.assertEqual(res['contribSampleCompositionPctPoint'], res['deltaFullMeanPctPoint'])
         self.assertEqual(res['contribSampleCompositionPctPoint'], 10.0)
 
     # --------------------------------------------------------------------------
@@ -317,6 +319,162 @@ class TestSpreadDynamicsExhaustive(unittest.TestCase):
         self.assertEqual(data['negoIndex']['gradeA']['sample'], 0)
         self.assertIsNone(data['negoIndex']['gradeA']['currentNegoPct'])
         self.assertIn('공표 유예', data['negoIndex']['gradeA']['reliability'])
+
+    # --------------------------------------------------------------------------
+    # Directive 4 Counterexample 1: 3 Groups Median vs Mean Discrepancy
+    # --------------------------------------------------------------------------
+    def test_directive4_counterexample_1_median_vs_mean_aggregation_discrepancy(self):
+        # 3 Strata where median change != mean change
+        # Initial spreads: G1 = 0%, G2 = 5%, G3 = 10% => Median = 5.0%
+        # Final spreads:   G1 = 10%, G2 = 2%, G3 = 0%  => Sorted [0, 2, 10] => Median = 2.0%
+        # Median difference: 2.0% - 5.0% = -3.0%p
+        # Individual changes: Δ1 = +10%p, Δ2 = -3%p, Δ3 = -10%p
+        # Mean of changes: (+10 - 3 - 10) / 3 = -1.0%p
+        k1 = ('11680', '개포동', '1', '단지A', 84, 1)
+        k2 = ('11680', '개포동', '2', '단지B', 84, 1)
+        k3 = ('11680', '개포동', '3', '단지C', 84, 1)
+
+        prev_strata = {
+            k1: {'askMedian': 100.0, 'tradeMedian': 100.0, 'spreadPct': 0.0},
+            k2: {'askMedian': 105.0, 'tradeMedian': 100.0, 'spreadPct': 5.0},
+            k3: {'askMedian': 110.0, 'tradeMedian': 100.0, 'spreadPct': 10.0}
+        }
+        curr_strata = {
+            k1: {'askMedian': 110.0, 'tradeMedian': 100.0, 'spreadPct': 10.0},
+            k2: {'askMedian': 102.0, 'tradeMedian': 100.0, 'spreadPct': 2.0},
+            k3: {'askMedian': 100.0, 'tradeMedian': 100.0, 'spreadPct': 0.0}
+        }
+        listings = {
+            'l1': {'price': 100.0, 'stratumKey': k1},
+            'l2': {'price': 105.0, 'stratumKey': k2},
+            'l3': {'price': 110.0, 'stratumKey': k3}
+        }
+
+        res = decompose_spread_change(curr_strata, prev_strata, listings, listings)
+        self.assertEqual(res['status'], 'VALID')
+
+        # 1. Median level change is -3.0%p
+        self.assertEqual(res['medianLevelChange'], -3.0)
+        # 2. Matched sample mean change is -1.0%p
+        self.assertEqual(res['matchedSampleChange'], -1.0)
+        # 3. Discrepancy is explicitly isolated: -3.0 - (-1.0) = -2.0%p
+        self.assertEqual(res['discrepancyMedianVersusMean'], -2.0)
+        # 4. Shapley components strictly sum to matchedSampleChange (-1.0%p), NOT to medianLevelChange (-3.0%p)
+        comp_sum = round(res['contribAskPctPoint'] + res['contribTradeBenchmarkPctPoint'], 2)
+        self.assertEqual(comp_sum, -1.0)
+
+    # --------------------------------------------------------------------------
+    # Directive 4 Counterexample 2: Within-Stratum Listing Entry Shifts Median Ask
+    # --------------------------------------------------------------------------
+    def test_directive4_counterexample_2_within_stratum_listing_entry_shifts_median_ask(self):
+        k1 = ('11680', '개포동', '138', '디에이치아너힐즈', 84, 1)
+
+        # In stratum k1:
+        # t=0: listing l1 has price 100, benchmark 100 => askMedian=100, spread=0%
+        # t=1: listing l1 still has price 100 (price change = 0%), but l2 enters at 120 => askMedian=110, spread=10%
+        prev_strata = {k1: {'askMedian': 100.0, 'tradeMedian': 100.0, 'spreadPct': 0.0}}
+        curr_strata = {k1: {'askMedian': 110.0, 'tradeMedian': 100.0, 'spreadPct': 10.0}}
+
+        prev_listings = {'l1': {'price': 100.0, 'id': 'l1', 'stratumKey': k1}}
+        curr_listings = {'l1': {'price': 100.0, 'id': 'l1', 'stratumKey': k1}, 'l2': {'price': 120.0, 'id': 'l2', 'stratumKey': k1}}
+
+        res = decompose_spread_change(curr_strata, prev_strata, curr_listings, prev_listings)
+        self.assertEqual(res['status'], 'VALID')
+
+        # Actual price change of identical listing ID l1 is 0.0%p
+        self.assertEqual(res['contribIdenticalAskPctPoint'], 0.0)
+        # Change in median ask is 100% due to within-stratum composition turnover
+        self.assertEqual(res['contribWithinStratumTurnoverPctPoint'], 10.0)
+        # Total ask contribution is 10.0%p
+        self.assertEqual(res['contribAskPctPoint'], 10.0)
+        # Reference trade benchmark did not change
+        self.assertEqual(res['contribTradeBenchmarkPctPoint'], 0.0)
+        # Total matched change is +10.0%p
+        self.assertEqual(res['matchedSampleChange'], 10.0)
+        # Mathematical identity holds
+        self.assertTrue(res['mathematicalIdentities']['askSubdecompositionHolds'])
+
+    # --------------------------------------------------------------------------
+    # Directive 4 Counterexample 3: Future Disclosure Date Filtered from Contemporaneous
+    # --------------------------------------------------------------------------
+    def test_directive4_counterexample_3_future_disclosure_date_exclusion(self):
+        conn = sqlite3.connect(':memory:')
+        conn.execute("CREATE TABLE snapshots (district TEXT, month TEXT, fetched TEXT)")
+        conn.execute("CREATE TABLE trades (district TEXT, month TEXT, payload TEXT)")
+
+        # Target day is 2026-11-07
+        # Snapshot fetched on 2026-11-08 (FUTURE relative to target day!)
+        conn.execute("INSERT INTO snapshots VALUES ('11680', '2026-10', '2026-11-08 14:00:00')")
+        
+        trade_payload = json.dumps({
+            'day': '2026-10-15',
+            'exclusive_area_m2': 84.5,
+            'price': 100000,
+            'district': '11680',
+            'dong': '개포동',
+            'jibun': '138',
+            'name': '디에이치아너힐즈',
+            'floor': 10
+        })
+        conn.execute("INSERT INTO trades VALUES ('11680', '2026-10', ?)", (trade_payload,))
+
+        # Mode CONTEMPORANEOUS_ONLY: MUST BE EXCLUDED!
+        trades_live, audit_live = extract_trades_up_to_day(conn, '2026-11-07', window_days=90, mode='CONTEMPORANEOUS_ONLY')
+        self.assertEqual(len(trades_live), 0)
+        self.assertEqual(audit_live['contemporaneousTrades'], 0)
+        self.assertEqual(audit_live['exPostReconstructedTrades'], 1)
+        self.assertFalse(audit_live['isContemporaneousLiveVintage'])
+
+        # Mode EX_POST_RECONSTRUCTED: Included for ex-post analysis
+        trades_recon, audit_recon = extract_trades_up_to_day(conn, '2026-11-07', window_days=90, mode='EX_POST_RECONSTRUCTED')
+        self.assertEqual(len(trades_recon), 1)
+        self.assertEqual(audit_recon['totalTradesInWindow'], 1)
+        conn.close()
+
+    # --------------------------------------------------------------------------
+    # Directive 4 Counterexample 4: Trade Cancellation Excluded from Reference Benchmark
+    # --------------------------------------------------------------------------
+    def test_directive4_counterexample_4_trade_cancellation_and_revision(self):
+        conn = sqlite3.connect(':memory:')
+        conn.execute("CREATE TABLE snapshots (district TEXT, month TEXT, fetched TEXT)")
+        conn.execute("CREATE TABLE trades (district TEXT, month TEXT, payload TEXT)")
+
+        conn.execute("INSERT INTO snapshots VALUES ('11680', '2026-10', '2026-11-01 10:00:00')")
+
+        # Trade 1: Valid
+        t1 = json.dumps({'day': '2026-10-10', 'exclusive_area_m2': 84.0, 'price': 100000, 'district': '11680', 'dong': '개포동', 'jibun': '138', 'name': '단지A', 'floor': 5})
+        # Trade 2: Cancelled
+        t2 = json.dumps({'day': '2026-10-12', 'exclusive_area_m2': 84.0, 'price': 150000, 'district': '11680', 'dong': '개포동', 'jibun': '138', 'name': '단지A', 'floor': 5, 'cancelled': True})
+        conn.execute("INSERT INTO trades VALUES ('11680', '2026-10', ?)", (t1,))
+        conn.execute("INSERT INTO trades VALUES ('11680', '2026-10', ?)", (t2,))
+
+        trades, _ = extract_trades_up_to_day(conn, '2026-11-02', window_days=90, mode='CONTEMPORANEOUS_ONLY')
+        k = ('11680', '개포동', '138', '단지A', 84, 1)
+        
+        # Only the non-cancelled trade must be present
+        self.assertEqual(len(trades[k]), 1)
+        self.assertEqual(trades[k][0]['price'], 100000)
+        conn.close()
+
+    # --------------------------------------------------------------------------
+    # Directive 4 Counterexample 5: Deterministic Recalculation Reproducibility
+    # --------------------------------------------------------------------------
+    def test_directive4_counterexample_5_reproducibility_and_determinism(self):
+        k1 = ('11680', '개포동', '138', '디에이치아너힐즈', 84, 1)
+        prev_strata = {k1: {'askMedian': 100.0, 'tradeMedian': 100.0, 'spreadPct': 0.0}}
+        curr_strata = {k1: {'askMedian': 98.0, 'tradeMedian': 105.0, 'spreadPct': -6.67}}
+        listings = {'l1': {'price': 98.0, 'id': 'l1', 'stratumKey': k1}}
+
+        run1 = decompose_spread_change(curr_strata, prev_strata, listings, listings)
+        run2 = decompose_spread_change(curr_strata, prev_strata, listings, listings)
+
+        # Bit-exact equivalence across multiple runs
+        self.assertEqual(run1['deltaTotalPctPoint'], run2['deltaTotalPctPoint'])
+        self.assertEqual(run1['contribAskPctPoint'], run2['contribAskPctPoint'])
+        self.assertEqual(run1['contribIdenticalAskPctPoint'], run2['contribIdenticalAskPctPoint'])
+        self.assertEqual(run1['contribWithinStratumTurnoverPctPoint'], run2['contribWithinStratumTurnoverPctPoint'])
+        self.assertEqual(run1['contribTradeBenchmarkPctPoint'], run2['contribTradeBenchmarkPctPoint'])
+        self.assertEqual(run1['contribSampleCompositionPctPoint'], run2['contribSampleCompositionPctPoint'])
 
 if __name__ == '__main__':
     unittest.main()

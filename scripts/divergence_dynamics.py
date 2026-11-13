@@ -74,7 +74,7 @@ def trade_key(row):
 
 def shapley_stratum_decomposition(a0, a1, r0, r1):
     """Symmetric Shapley decomposition for D(A, R) = (A/R - 1) * 100.
-    Guarantees: delta_D == contrib_ask + contrib_trade identically!
+    Guarantees: delta_d == contrib_ask + contrib_trade identically!
     """
     if r0 <= 0 or r1 <= 0:
         return 0.0, 0.0, 0.0
@@ -89,6 +89,47 @@ def shapley_stratum_decomposition(a0, a1, r0, r1):
     contrib_trade = 0.5 * (((a0 / r1 - 1.0) * 100.0 - d0) + (d1 - (a1 / r0 - 1.0) * 100.0))
 
     return round(delta_d, 4), round(contrib_ask, 4), round(contrib_trade, 4)
+
+def decompose_stratum_ask_turnover(a0, a1, r0, r1, identical_pairs):
+    """Sub-decomposes Shapley ask contribution into:
+       A. Actual price revision of identical listing IDs (동일 매물 ID 실제 가격 변경)
+       B. Within-stratum composition/turnover effect (동일 그룹 내 매물 구성 변화 영향)
+       Guarantees: contrib_ask == contrib_identical_ask + contrib_within_turnover identically!
+    """
+    delta_d, contrib_ask, contrib_trade = shapley_stratum_decomposition(a0, a1, r0, r1)
+    
+    # Check identical listings in this stratum
+    if identical_pairs:
+        # identical_pairs is list of (p0, p1) tuples for identical listings
+        pct_changes = [(p1 / p0 - 1.0) for p0, p1 in identical_pairs if p0 > 0]
+        if pct_changes:
+            g_identical = mean(pct_changes)
+            delta_a_identical = a0 * g_identical
+            delta_a_turnover = (a1 - a0) - delta_a_identical
+        else:
+            delta_a_identical = 0.0
+            delta_a_turnover = a1 - a0
+    else:
+        # No identical listings in this stratum (100% turnover effect)
+        delta_a_identical = 0.0
+        delta_a_turnover = a1 - a0
+
+    # Symmetric Shapley ask weight: 0.5 * (1/r0 + 1/r1) * 100
+    if r0 > 0 and r1 > 0:
+        weight_ask = 0.5 * (1.0 / r0 + 1.0 / r1) * 100.0
+    else:
+        weight_ask = 0.0
+
+    contrib_identical_ask = delta_a_identical * weight_ask
+    contrib_within_turnover = delta_a_turnover * weight_ask
+
+    return {
+        'delta_d': delta_d,
+        'contrib_ask': contrib_ask,
+        'contrib_trade': contrib_trade,
+        'contrib_identical_ask': round(contrib_identical_ask, 4),
+        'contrib_within_turnover': round(contrib_within_turnover, 4)
+    }
 
 def extract_listings_for_day(hdb, target_day, crosswalk):
     """Extract and structure all listings for a given date, tracking failure status."""
@@ -138,9 +179,16 @@ def extract_listings_for_day(hdb, target_day, crosswalk):
 
     return listings_by_id, listings_by_stratum, complex_set, failed_batches
 
-def extract_trades_up_to_day(tdb, target_day, window_days=90):
+def extract_trades_up_to_day(tdb, target_day, window_days=90, mode='CONTEMPORANEOUS_ONLY'):
     """Extract MOLIT trades within window strictly on or before target_day,
     recording point-in-time snapshot availability.
+    
+    Modes:
+      - 'CONTEMPORANEOUS_ONLY': Strictly excludes any trade fetched after target_day
+                                (Live real-time observation vintage).
+      - 'EX_POST_RECONSTRUCTED': Includes all trades with contract date in window,
+                                 regardless of fetch date.
+      - 'BOTH': Returns (contemporaneous_dict, reconstructed_dict, audit_info)
     """
     end_date = date.fromisoformat(target_day)
     start_date = end_date - timedelta(days=window_days - 1)
@@ -151,9 +199,13 @@ def extract_trades_up_to_day(tdb, target_day, window_days=90):
     snap_rows = tdb.execute("SELECT district, month, fetched FROM snapshots").fetchall()
     snap_fetch_map = {(r[0], r[1]): r[2] for r in snap_rows}
 
-    trades_by_stratum = defaultdict(list)
+    trades_contemporaneous = defaultdict(list)
+    trades_reconstructed = defaultdict(list)
+    
     total_trades_count = 0
     contemporaneous_trades_count = 0
+    ex_post_trades_count = 0
+    unknown_disclosure_count = 0
 
     for dist, month, p_str in rows:
         p = json.loads(p_str)
@@ -167,39 +219,70 @@ def extract_trades_up_to_day(tdb, target_day, window_days=90):
         t_date = date.fromisoformat(t_day)
         if not (start_date <= t_date <= end_date):
             continue
-        price = float(p.get('price', 0))
+        price = float(p.get('price') or p.get('price_manwon') or 0)
         if price <= 0:
             continue
         try:
             k = trade_key(p)
             fetch_time = snap_fetch_map.get((dist, month))
             
-            # Point-in-time check: was this trade snapshot fetched on or before target_day?
+            # Point-in-time classification:
+            classification = 'UNKNOWN_DISCLOSURE_DATE'
             is_contemporaneous = False
+            
             if fetch_time:
                 fetch_date = fetch_time[:10]
                 if fetch_date <= target_day:
                     is_contemporaneous = True
+                    classification = 'VERIFIED_CONTEMPORANEOUS'
                     contemporaneous_trades_count += 1
+                else:
+                    classification = 'EX_POST_RECONSTRUCTED'
+                    ex_post_trades_count += 1
+            else:
+                unknown_disclosure_count += 1
+
             total_trades_count += 1
 
-            trades_by_stratum[k].append({
+            trade_obj = {
                 'price': price,
                 'day': t_day,
                 'ageDays': (end_date - t_date).days,
                 'isContemporaneous': is_contemporaneous,
+                'classification': classification,
                 'fetchedAt': fetch_time
-            })
+            }
+
+            # Reconstructed gets all trades in contract window
+            trades_reconstructed[k].append(trade_obj)
+
+            # Contemporaneous strictly requires fetch_date <= target_day
+            if is_contemporaneous:
+                trades_contemporaneous[k].append(trade_obj)
+
         except Exception:
             continue
 
     point_in_time_ratio = (contemporaneous_trades_count / total_trades_count * 100.0) if total_trades_count > 0 else 0.0
-    return trades_by_stratum, {
+    audit_meta = {
+        'targetDay': target_day,
+        'windowDays': window_days,
         'totalTradesInWindow': total_trades_count,
         'contemporaneousTrades': contemporaneous_trades_count,
+        'exPostReconstructedTrades': ex_post_trades_count,
+        'unknownDisclosureTrades': unknown_disclosure_count,
         'pointInTimeRatioPct': round(point_in_time_ratio, 1),
-        'isContemporaneousLiveVintage': (point_in_time_ratio >= 90.0)
+        'isContemporaneousLiveVintage': (point_in_time_ratio >= 90.0),
+        'vintageClassification': 'CONTEMPORANEOUS_VERIFIED' if point_in_time_ratio >= 90.0 else 'EX_POST_RECONSTRUCTED',
+        'disclosureBoundaryNote': 'Snapshot fetched timestamp represents crawler observation boundary, not individual MOLIT disclosure second; individual trade first-seen timestamps preserved in future schemas.'
     }
+
+    if mode == 'CONTEMPORANEOUS_ONLY':
+        return trades_contemporaneous, audit_meta
+    elif mode == 'EX_POST_RECONSTRUCTED':
+        return trades_reconstructed, audit_meta
+    else:
+        return trades_contemporaneous, trades_reconstructed, audit_meta
 
 def calculate_strata_divergence(listings_by_stratum, trades_by_stratum, min_trades=3):
     """Compute stratum-level divergence for all valid groups."""
@@ -327,10 +410,29 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
             'explanation': '동일 비교 그룹이 존재하지 않아 전체 변화가 표본 구성 변화에 기인함'
         }
 
+    # Map listings to stratum keys and listing identifiers
+    prev_stratum_listings = defaultdict(dict)
+    curr_stratum_listings = defaultdict(dict)
+    for lid, item in prev_listings.items():
+        sk = item.get('stratumKey')
+        if not sk and len(matched_keys) == 1:
+            sk = matched_keys[0]
+        ident = str(item.get('id') or lid)
+        prev_stratum_listings[sk][ident] = float(item.get('price', 0))
+
+    for lid, item in curr_listings.items():
+        sk = item.get('stratumKey')
+        if not sk and len(matched_keys) == 1:
+            sk = matched_keys[0]
+        ident = str(item.get('id') or lid)
+        curr_stratum_listings[sk][ident] = float(item.get('price', 0))
+
     # Calculate exact Shapley decomposition on each matched stratum
     shapley_ask_list = []
     shapley_trade_list = []
     delta_matched_list = []
+    identical_ask_list = []
+    within_turnover_list = []
     trade_driver_counts = defaultdict(int)
 
     for k in matched_keys:
@@ -340,10 +442,18 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
         a0, a1 = p['askMedian'], c['askMedian']
         r0, r1 = p['tradeMedian'], c['tradeMedian']
 
-        delta_s, ask_s, trade_s = shapley_stratum_decomposition(a0, a1, r0, r1)
-        shapley_ask_list.append(ask_s)
-        shapley_trade_list.append(trade_s)
-        delta_matched_list.append(delta_s)
+        # Find identical listings in this stratum
+        p_map = prev_stratum_listings.get(k, {})
+        c_map = curr_stratum_listings.get(k, {})
+        shared_lids = set(p_map.keys()) & set(c_map.keys())
+        identical_pairs = [(p_map[lid], c_map[lid]) for lid in shared_lids if p_map[lid] > 0]
+
+        sub = decompose_stratum_ask_turnover(a0, a1, r0, r1, identical_pairs)
+        shapley_ask_list.append(sub['contrib_ask'])
+        shapley_trade_list.append(sub['contrib_trade'])
+        delta_matched_list.append(sub['delta_d'])
+        identical_ask_list.append(sub['contrib_identical_ask'])
+        within_turnover_list.append(sub['contrib_within_turnover'])
 
         # Diagnose trade benchmark driver
         t0_days = set(p.get('tradeDaysList', []))
@@ -361,18 +471,35 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
             trade_driver_counts['UNCHANGED_BENCHMARK'] += 1
 
     # Fixed-Sample Matched Panel Aggregate Change (Equal weighting on matched strata)
-    # Linearity: mean(delta_matched) == mean(shapley_ask) + mean(shapley_trade) exactly!
+    # Exact linear consistency under same operator:
+    # mean(delta_matched) == mean(shapley_ask) + mean(shapley_trade)
+    # mean(shapley_ask) == mean(identical_ask) + mean(within_turnover)
     fixed_delta = mean(delta_matched_list)
     contrib_ask = mean(shapley_ask_list)
     contrib_trade = mean(shapley_trade_list)
+    contrib_identical_ask = mean(identical_ask_list)
+    contrib_within_turnover = mean(within_turnover_list)
 
-    # If the set of strata is identical (S0 == S1 == S_matched), composition effect is STRICTLY 0!
+    # Cross-Section Median Levels
+    s_curr_median = median([s['spreadPct'] for s in curr_strata.values()])
+    s_prev_median = median([s['spreadPct'] for s in prev_strata.values()])
+    delta_median_level = round(s_curr_median - s_prev_median, 4)
+
+    # Cross-Section Means (Consistent aggregation with matched mean)
+    s_curr_mean = mean([s['spreadPct'] for s in curr_strata.values()])
+    s_prev_mean = mean([s['spreadPct'] for s in prev_strata.values()])
+    delta_full_mean = round(s_curr_mean - s_prev_mean, 4)
+
+    # If the set of strata is identical (S0 == S1 == S_matched), strata composition effect is STRICTLY 0!
     if set(curr_strata.keys()) == set(prev_strata.keys()):
-        contrib_comp = 0.0
-        delta_total_reported = round(fixed_delta, 2)
+        contrib_strata_comp = 0.0
+        delta_full_reported = fixed_delta
     else:
-        contrib_comp = round(delta_total - fixed_delta, 4)
-        delta_total_reported = round(delta_total, 2)
+        contrib_strata_comp = round(delta_full_mean - fixed_delta, 4)
+        delta_full_reported = delta_full_mean
+
+    # Discrepancy between snapshot median level difference and decomposition target (matched mean)
+    discrepancy_median_vs_matched = round(delta_median_level - fixed_delta, 4)
 
     # Identical Listing Analysis vs Churn
     id_set_0 = set(prev_listings.keys())
@@ -381,7 +508,7 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
     new_entrant_ids = id_set_1 - id_set_0
     exited_ids = id_set_0 - id_set_1
 
-    # Check price changes on strictly identical listings
+    # Check price changes on strictly identical listings across full sample
     identical_price_changes = []
     cuts_count = 0
     rises_count = 0
@@ -403,13 +530,25 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
 
     return {
         'status': 'VALID',
-        'deltaTotalPctPoint': delta_total_reported,
+        'matchedSampleChange': round(fixed_delta, 2),
+        'deltaTotalPctPoint': round(fixed_delta, 2),
+        'deltaFullMeanPctPoint': round(delta_full_reported, 2),
+        'medianLevelChange': round(delta_median_level, 2),
+        'discrepancyMedianVersusMean': round(discrepancy_median_vs_matched, 2),
         'contribAskPctPoint': round(contrib_ask, 2),
+        'contribIdenticalAskPctPoint': round(contrib_identical_ask, 2),
+        'contribWithinStratumTurnoverPctPoint': round(contrib_within_turnover, 2),
         'contribTradeBenchmarkPctPoint': round(contrib_trade, 2),
-        'contribSampleCompositionPctPoint': round(contrib_comp, 2),
+        'contribSampleCompositionPctPoint': round(contrib_strata_comp, 2),
+        'unidentifiedEffectPctPoint': 0.0,
         'fixedSampleSpreadChange': round(fixed_delta, 2),
         'matchedStrataCount': len(matched_keys),
         'matchedListingsCount': len(identical_ids),
+        'mathematicalIdentities': {
+            'matchedIdentityHolds': abs(fixed_delta - (contrib_ask + contrib_trade)) < 1e-4,
+            'askSubdecompositionHolds': abs(contrib_ask - (contrib_identical_ask + contrib_within_turnover)) < 1e-4,
+            'fullMeanIdentityHolds': abs(delta_full_reported - (contrib_identical_ask + contrib_within_turnover + contrib_trade + contrib_strata_comp)) < 1e-4
+        },
         'identicalListingStats': {
             'identicalCount': len(identical_ids),
             'retentionRatePct': round(len(identical_ids) / len(id_set_0) * 100.0, 1) if id_set_0 else 0.0,
@@ -423,10 +562,12 @@ def decompose_spread_change_shapley(curr_strata, prev_strata, curr_listings, pre
         },
         'tradeBenchmarkDrivers': dict(trade_driver_counts),
         'explanation': (
-            f"전체 괴리율 변화 {signed(delta_total_reported, '%p')} 중 "
-            f"호가 조정 기여 {signed(round(contrib_ask, 2), '%p')}, "
-            f"실거래 기준가격 재산정 효과 {signed(round(contrib_trade, 2), '%p')}, "
-            f"표본 구성 변화 영향 {signed(round(contrib_comp, 2), '%p')}"
+            f"동일 표본 평균 변화 {signed(round(fixed_delta, 2), '%p')} = "
+            f"호가 조정 {signed(round(contrib_ask, 2), '%p')} (동일 매물 변경 {signed(round(contrib_identical_ask, 2), '%p')} + "
+            f"그룹 내 매물 교체 {signed(round(contrib_within_turnover, 2), '%p')}) + "
+            f"실거래 기준가격 재산정 {signed(round(contrib_trade, 2), '%p')}. "
+            f"(전체 중위값 수준 변화: {signed(round(delta_median_level, 2), '%p')}, "
+            f"중위값-평균 불일치: {signed(round(discrepancy_median_vs_matched, 2), '%p')})"
         )
     }
 
@@ -473,10 +614,18 @@ def run_spread_dynamics(target_day=None):
         available_days = [r[0] for r in hdb.execute("SELECT DISTINCT day FROM listings ORDER BY day ASC").fetchall()]
         print(f"[Spread Dynamics] Target Day: {target_day} | Available Days: {available_days}")
 
-        # Current Day Data
+        # Current Day Data: Contemporaneous Live Vintage by default
         l_curr_id, l_curr_strata, curr_comps, curr_failed = extract_listings_for_day(hdb, target_day, crosswalk)
-        trades_90d, vintage_meta_90 = extract_trades_up_to_day(tdb, target_day, window_days=90)
-        trades_180d, vintage_meta_180 = extract_trades_up_to_day(tdb, target_day, window_days=180)
+        trades_90d, vintage_meta_90 = extract_trades_up_to_day(tdb, target_day, window_days=90, mode='CONTEMPORANEOUS_ONLY')
+        trades_180d, vintage_meta_180 = extract_trades_up_to_day(tdb, target_day, window_days=180, mode='CONTEMPORANEOUS_ONLY')
+
+        # Fallback to ex-post reconstructed if date is prior to snapshot tracking with zero live trades
+        if vintage_meta_90['contemporaneousTrades'] == 0:
+            trades_90d, vintage_meta_90 = extract_trades_up_to_day(tdb, target_day, window_days=90, mode='EX_POST_RECONSTRUCTED')
+            trades_180d, vintage_meta_180 = extract_trades_up_to_day(tdb, target_day, window_days=180, mode='EX_POST_RECONSTRUCTED')
+            vintage_meta_90['seriesClassification'] = 'EX_POST_RECONSTRUCTED_FALLBACK'
+        else:
+            vintage_meta_90['seriesClassification'] = 'CONTEMPORANEOUS_LIVE_VINTAGE'
 
         strata_90d = calculate_strata_divergence(l_curr_strata, trades_90d, min_trades=3)
         strata_180d = calculate_strata_divergence(l_curr_strata, trades_180d, min_trades=2)
@@ -495,7 +644,9 @@ def run_spread_dynamics(target_day=None):
         def build_horizon_change(day_k, label, days_req):
             if day_k in available_days:
                 l_k_id, l_k_strata, _, f_k = extract_listings_for_day(hdb, day_k, crosswalk)
-                t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90)
+                t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='CONTEMPORANEOUS_ONLY')
+                if not t_k:
+                    t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='EX_POST_RECONSTRUCTED')
                 s_k = calculate_strata_divergence(l_k_strata, t_k, min_trades=3)
                 decomp = decompose_spread_change_shapley(strata_90d, s_k, l_curr_id, l_k_id, f_k)
                 decomp['period'] = label
@@ -546,7 +697,9 @@ def run_spread_dynamics(target_day=None):
             def build_district_decomp(day_k, days_req):
                 if day_k in available_days:
                     l_k_id, l_k_strata, _, _ = extract_listings_for_day(hdb, day_k, crosswalk)
-                    t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90)
+                    t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='CONTEMPORANEOUS_ONLY')
+                    if not t_k:
+                        t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='EX_POST_RECONSTRUCTED')
                     s_k = calculate_strata_divergence(l_k_strata, t_k, min_trades=3)
                     d_k_strata = {k: v for k, v in s_k.items() if k[0] == d}
                     d_k_listings = {k: v for k, v in l_k_id.items() if v['district'] == d}
@@ -686,16 +839,23 @@ def run_spread_dynamics(target_day=None):
                     '28d': decomp_28d
                 },
                 'decomposition': {
-                    'title': '가격괴리는 왜 변했나 (Shapley 3대 요인 분해)',
+                    'title': '가격괴리는 왜 변했나 (Shapley 요인 분해)',
                     'activePeriod': '전일 대비 (DoD)',
                     'status': decomp_1d.get('status', '산출 유보'),
+                    'matchedSampleChange': decomp_1d.get('matchedSampleChange'),
+                    'medianLevelChange': decomp_1d.get('medianLevelChange'),
+                    'discrepancyMedianVersusMean': decomp_1d.get('discrepancyMedianVersusMean'),
                     'contribAskPctPoint': decomp_1d.get('contribAskPctPoint'),
+                    'contribIdenticalAskPctPoint': decomp_1d.get('contribIdenticalAskPctPoint'),
+                    'contribWithinStratumTurnoverPctPoint': decomp_1d.get('contribWithinStratumTurnoverPctPoint'),
                     'contribTradeBenchmarkPctPoint': decomp_1d.get('contribTradeBenchmarkPctPoint'),
                     'contribSampleCompositionPctPoint': decomp_1d.get('contribSampleCompositionPctPoint'),
+                    'unidentifiedEffectPctPoint': decomp_1d.get('unidentifiedEffectPctPoint', 0.0),
+                    'mathematicalIdentities': decomp_1d.get('mathematicalIdentities'),
                     'identicalListingStats': decomp_1d.get('identicalListingStats'),
                     'tradeBenchmarkDrivers': decomp_1d.get('tradeBenchmarkDrivers'),
                     'explanation': decomp_1d.get('explanation', '현재 1일차 기준선 단계로, 2회차 연속 관측 시 호가 인하·기준가 갱신·표본 교체 요인이 수치로 분해됩니다.'),
-                    'mathematicalIdentity': 'ΔSpread_total = Contrib_ask + Contrib_trade_reestimation + Contrib_sample_composition'
+                    'mathematicalIdentity': 'ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation'
                 },
                 'seriesA_FullCrossSection': series_a,
                 'seriesB_FixedSamplePanel': series_b

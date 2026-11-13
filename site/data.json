@@ -54495,16 +54495,23 @@
           }
         },
         "decomposition": {
-          "title": "가격괴리는 왜 변했나 (Shapley 3대 요인 분해)",
+          "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
           "activePeriod": "전일 대비 (DoD)",
           "status": "축적 중 (2일차 대기, 현재 1일 경과)",
+          "matchedSampleChange": null,
+          "medianLevelChange": null,
+          "discrepancyMedianVersusMean": null,
           "contribAskPctPoint": null,
+          "contribIdenticalAskPctPoint": null,
+          "contribWithinStratumTurnoverPctPoint": null,
           "contribTradeBenchmarkPctPoint": null,
           "contribSampleCompositionPctPoint": null,
+          "unidentifiedEffectPctPoint": 0.0,
+          "mathematicalIdentities": null,
           "identicalListingStats": null,
           "tradeBenchmarkDrivers": null,
           "explanation": "2일 전 비교 자료 부재로 산출 유보 (관측 1일차)",
-          "mathematicalIdentity": "ΔSpread_total = Contrib_ask + Contrib_trade_reestimation + Contrib_sample_composition"
+          "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
         }
       }
     },
@@ -54557,16 +54564,23 @@
           }
         },
         "decomposition": {
-          "title": "가격괴리는 왜 변했나 (Shapley 3대 요인 분해)",
+          "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
           "activePeriod": "전일 대비 (DoD)",
           "status": "축적 중 (2일차 대기, 현재 1일 경과)",
+          "matchedSampleChange": null,
+          "medianLevelChange": null,
+          "discrepancyMedianVersusMean": null,
           "contribAskPctPoint": null,
+          "contribIdenticalAskPctPoint": null,
+          "contribWithinStratumTurnoverPctPoint": null,
           "contribTradeBenchmarkPctPoint": null,
           "contribSampleCompositionPctPoint": null,
+          "unidentifiedEffectPctPoint": 0.0,
+          "mathematicalIdentities": null,
           "identicalListingStats": null,
           "tradeBenchmarkDrivers": null,
           "explanation": "2일 전 비교 자료 부재로 산출 유보 (관측 1일차)",
-          "mathematicalIdentity": "ΔSpread_total = Contrib_ask + Contrib_trade_reestimation + Contrib_sample_composition"
+          "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
         },
         "seriesA_FullCrossSection": [
           {
@@ -55725,10 +55739,17 @@
         "matchedStrataGroups180d": 290,
         "analyzedListingsInGroups": 2395,
         "pointInTimeVintageAudit": {
+          "targetDay": "2026-11-12",
+          "windowDays": 90,
           "totalTradesInWindow": 9329,
           "contemporaneousTrades": 0,
+          "exPostReconstructedTrades": 9329,
+          "unknownDisclosureTrades": 0,
           "pointInTimeRatioPct": 0.0,
-          "isContemporaneousLiveVintage": false
+          "isContemporaneousLiveVintage": false,
+          "vintageClassification": "EX_POST_RECONSTRUCTED",
+          "disclosureBoundaryNote": "Snapshot fetched timestamp represents crawler observation boundary, not individual MOLIT disclosure second; individual trade first-seen timestamps preserved in future schemas.",
+          "seriesClassification": "EX_POST_RECONSTRUCTED_FALLBACK"
         },
         "weightingComparisons": {
           "equalWeightMedian": 5.12,
