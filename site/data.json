@@ -49671,10 +49671,10 @@
           "percent": null
         },
         "spread": {
-          "sample": 68,
-          "groups": 68,
-          "matchedListings": 2395,
-          "percent": 5.12,
+          "sample": 50,
+          "groups": 50,
+          "matchedListings": 1921,
+          "percent": 5.27,
           "medianBenchmarkAgeDays": 25.5,
           "tradeVintage": "2026-11-12T12:43:38+09:00",
           "status": "실측",
@@ -54429,100 +54429,250 @@
     },
     "validation": "hypotheses-only",
     "pressure": {
-      "spreadPct": 5.12,
+      "spreadPct": 5.27,
       "cutSharePct": null,
       "absorptionPct": null,
       "tenure": {
-        "count": 11993,
+        "count": 9881,
         "medianDays": 6,
-        "meanDays": 8.7,
+        "meanDays": 8.2,
         "minDays": 0,
-        "maxDays": 30
+        "maxDays": 31
       },
       "weightsComparison": {
-        "equalWeight": 204581.1,
-        "stockWeight": 217404.0,
-        "stratifiedWeight": 157770.2,
-        "equalWeightEok": 20.46,
-        "stockWeightEok": 21.74,
-        "stratifiedWeightEok": 15.78,
-        "analyzedComplexes": 103,
-        "analyzedListings": 11993,
-        "stockVsEqualDiffPct": 6.27
+        "equalWeight": 225810.9,
+        "stockWeight": 242231.9,
+        "stratifiedWeight": 182647.6,
+        "equalWeightEok": 22.58,
+        "stockWeightEok": 24.22,
+        "stratifiedWeightEok": 18.26,
+        "analyzedComplexes": 78,
+        "analyzedListings": 9881,
+        "stockVsEqualDiffPct": 7.27
       },
       "regime": {
         "regime": "데이터 축적 중",
         "explanation": "서울 아파트 시장심리지수는 현재 1일차 기준선 구축 단계로, 7일/30일 연속 수집을 통해 가격 조정 및 거래 활력 지표를 축적하고 있습니다.",
         "leverage": "데이터 축적 중 (판별 유예)",
-        "spreadStatus": "비교 표본 축적 중 (참고 괴리율 +5.1%)",
+        "spreadStatus": "비교 표본 축적 중 (참고 괴리율 +5.3%)",
         "tenureStatus": "중위 체류기간 6일 (평균 7.9일)"
-      }
-    },
-    "spreadDynamics": {
-      "asOf": "2026-11-12",
-      "version": "v1.2.0-shapley",
-      "status": "ACTIVE_MONITORING",
-      "description": "매도 호가와 최근 실거래 기준가격의 간격 변화를 Shapley 3대 요인(호가 조정·실거래 기준가 갱신·표본 구성 변화)으로 엄밀히 분해하는 시계열 동학 체계",
-      "seoulOverall": {
-        "currentSpreadPct": 5.12,
-        "currentSpreadStatus": "실측",
-        "sampleGroupsCount": 68,
-        "matchedListingsCount": 2395,
+      },
+      "spreadDynamics": {
+        "spreadPct": 5.27,
         "changes": {
           "1d": {
+            "status": "VALID",
+            "matchedSampleChange": -0.08,
+            "deltaTotalPctPoint": -0.08,
+            "deltaFullMeanPctPoint": 0.06,
+            "medianLevelChange": 0.15,
+            "discrepancyMedianVersusMean": 0.24,
+            "contribAskPctPoint": -0.08,
+            "contribIdenticalAskPctPoint": -0.01,
+            "contribWithinStratumTurnoverPctPoint": -0.06,
+            "contribTradeBenchmarkPctPoint": -0.01,
+            "contribSampleCompositionPctPoint": 0.15,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.08,
+            "matchedStrataCount": 50,
+            "matchedListingsCount": 7089,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 7089,
+              "retentionRatePct": 59.1,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 42,
+              "riseListingsCount": 10,
+              "holdListingsCount": 7037,
+              "newEntrantsCount": 2792,
+              "exitedCount": 4904
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 48,
+              "WINDOW_EXPIRATION": 2
+            },
+            "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 -0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.2%p)",
             "period": "전일 대비 (DoD)",
-            "referenceDay": "2026-11-11",
-            "status": "축적 중 (2일차 대기, 현재 1일 경과)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0,
-            "explanation": "2일 전 비교 자료 부재로 산출 유보 (관측 1일차)"
+            "referenceDay": "2026-11-12"
           },
           "7d": {
             "period": "7일 변화 (WoW)",
-            "referenceDay": "2026-11-05",
-            "status": "축적 중 (7일차 대기, 현재 1일 경과)",
+            "referenceDay": "2026-11-06",
+            "status": "축적 중 (7일차 대기, 현재 2일 경과)",
             "deltaPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
             "matchedListingsCount": 0,
-            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 1일차)"
+            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 2일차)"
           },
           "28d": {
             "period": "28일 변화 (MoM)",
-            "referenceDay": "2026-10-15",
-            "status": "축적 중 (28일차 대기, 현재 1일 경과)",
+            "referenceDay": "2026-10-16",
+            "status": "축적 중 (28일차 대기, 현재 2일 경과)",
             "deltaPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
             "matchedListingsCount": 0,
-            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 1일차)"
+            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 2일차)"
           }
         },
         "decomposition": {
           "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
           "activePeriod": "전일 대비 (DoD)",
-          "status": "축적 중 (2일차 대기, 현재 1일 경과)",
-          "matchedSampleChange": null,
-          "medianLevelChange": null,
-          "discrepancyMedianVersusMean": null,
-          "contribAskPctPoint": null,
-          "contribIdenticalAskPctPoint": null,
-          "contribWithinStratumTurnoverPctPoint": null,
-          "contribTradeBenchmarkPctPoint": null,
-          "contribSampleCompositionPctPoint": null,
+          "status": "VALID",
+          "matchedSampleChange": -0.08,
+          "medianLevelChange": 0.15,
+          "discrepancyMedianVersusMean": 0.24,
+          "contribAskPctPoint": -0.08,
+          "contribIdenticalAskPctPoint": -0.01,
+          "contribWithinStratumTurnoverPctPoint": -0.06,
+          "contribTradeBenchmarkPctPoint": -0.01,
+          "contribSampleCompositionPctPoint": 0.15,
           "unidentifiedEffectPctPoint": 0.0,
-          "mathematicalIdentities": null,
-          "identicalListingStats": null,
-          "tradeBenchmarkDrivers": null,
-          "explanation": "2일 전 비교 자료 부재로 산출 유보 (관측 1일차)",
+          "mathematicalIdentities": {
+            "matchedIdentityHolds": true,
+            "askSubdecompositionHolds": true,
+            "fullMeanIdentityHolds": true
+          },
+          "identicalListingStats": {
+            "identicalCount": 7089,
+            "retentionRatePct": 59.1,
+            "medianPriceChangePct": 0.0,
+            "meanPriceChangePct": -0.01,
+            "cutListingsCount": 42,
+            "riseListingsCount": 10,
+            "holdListingsCount": 7037,
+            "newEntrantsCount": 2792,
+            "exitedCount": 4904
+          },
+          "tradeBenchmarkDrivers": {
+            "UNCHANGED_BENCHMARK": 48,
+            "WINDOW_EXPIRATION": 2
+          },
+          "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 -0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.2%p)",
+          "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
+        }
+      }
+    },
+    "spreadDynamics": {
+      "asOf": "2026-11-13",
+      "version": "v1.2.0-shapley",
+      "status": "ACTIVE_MONITORING",
+      "description": "매도 호가와 최근 실거래 기준가격의 간격 변화를 Shapley 3대 요인(호가 조정·실거래 기준가 갱신·표본 구성 변화)으로 엄밀히 분해하는 시계열 동학 체계",
+      "seoulOverall": {
+        "currentSpreadPct": 5.27,
+        "currentSpreadStatus": "실측",
+        "sampleGroupsCount": 50,
+        "matchedListingsCount": 1921,
+        "changes": {
+          "1d": {
+            "status": "VALID",
+            "matchedSampleChange": -0.08,
+            "deltaTotalPctPoint": -0.08,
+            "deltaFullMeanPctPoint": 0.06,
+            "medianLevelChange": 0.15,
+            "discrepancyMedianVersusMean": 0.24,
+            "contribAskPctPoint": -0.08,
+            "contribIdenticalAskPctPoint": -0.01,
+            "contribWithinStratumTurnoverPctPoint": -0.06,
+            "contribTradeBenchmarkPctPoint": -0.01,
+            "contribSampleCompositionPctPoint": 0.15,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.08,
+            "matchedStrataCount": 50,
+            "matchedListingsCount": 7089,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 7089,
+              "retentionRatePct": 59.1,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 42,
+              "riseListingsCount": 10,
+              "holdListingsCount": 7037,
+              "newEntrantsCount": 2792,
+              "exitedCount": 4904
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 48,
+              "WINDOW_EXPIRATION": 2
+            },
+            "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 -0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.2%p)",
+            "period": "전일 대비 (DoD)",
+            "referenceDay": "2026-11-12"
+          },
+          "7d": {
+            "period": "7일 변화 (WoW)",
+            "referenceDay": "2026-11-06",
+            "status": "축적 중 (7일차 대기, 현재 2일 경과)",
+            "deltaPctPoint": null,
+            "contribAskPctPoint": null,
+            "contribTradeBenchmarkPctPoint": null,
+            "contribSampleCompositionPctPoint": null,
+            "matchedStrataCount": 0,
+            "matchedListingsCount": 0,
+            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 2일차)"
+          },
+          "28d": {
+            "period": "28일 변화 (MoM)",
+            "referenceDay": "2026-10-16",
+            "status": "축적 중 (28일차 대기, 현재 2일 경과)",
+            "deltaPctPoint": null,
+            "contribAskPctPoint": null,
+            "contribTradeBenchmarkPctPoint": null,
+            "contribSampleCompositionPctPoint": null,
+            "matchedStrataCount": 0,
+            "matchedListingsCount": 0,
+            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 2일차)"
+          }
+        },
+        "decomposition": {
+          "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
+          "activePeriod": "전일 대비 (DoD)",
+          "status": "VALID",
+          "matchedSampleChange": -0.08,
+          "medianLevelChange": 0.15,
+          "discrepancyMedianVersusMean": 0.24,
+          "contribAskPctPoint": -0.08,
+          "contribIdenticalAskPctPoint": -0.01,
+          "contribWithinStratumTurnoverPctPoint": -0.06,
+          "contribTradeBenchmarkPctPoint": -0.01,
+          "contribSampleCompositionPctPoint": 0.15,
+          "unidentifiedEffectPctPoint": 0.0,
+          "mathematicalIdentities": {
+            "matchedIdentityHolds": true,
+            "askSubdecompositionHolds": true,
+            "fullMeanIdentityHolds": true
+          },
+          "identicalListingStats": {
+            "identicalCount": 7089,
+            "retentionRatePct": 59.1,
+            "medianPriceChangePct": 0.0,
+            "meanPriceChangePct": -0.01,
+            "cutListingsCount": 42,
+            "riseListingsCount": 10,
+            "holdListingsCount": 7037,
+            "newEntrantsCount": 2792,
+            "exitedCount": 4904
+          },
+          "tradeBenchmarkDrivers": {
+            "UNCHANGED_BENCHMARK": 48,
+            "WINDOW_EXPIRATION": 2
+          },
+          "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 -0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.2%p)",
           "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
         },
         "seriesA_FullCrossSection": [
@@ -54533,6 +54683,14 @@
             "listings": 2395,
             "type": "FULL_CROSS_SECTION",
             "label": "A계열: 전체 관측 가격괴리율"
+          },
+          {
+            "day": "2026-11-13",
+            "percent": 5.27,
+            "groups": 50,
+            "listings": 1921,
+            "type": "FULL_CROSS_SECTION",
+            "label": "A계열: 전체 관측 가격괴리율"
           }
         ],
         "seriesB_FixedSamplePanel": [
@@ -54541,6 +54699,14 @@
             "percent": 5.12,
             "delta": null,
             "groups": 68,
+            "type": "FIXED_SAMPLE_PANEL",
+            "label": "B계열: 동일 표본 가격괴리 변화"
+          },
+          {
+            "day": "2026-11-13",
+            "percent": 5.27,
+            "delta": -0.08,
+            "groups": 50,
             "type": "FIXED_SAMPLE_PANEL",
             "label": "B계열: 동일 표본 가격괴리 변화"
           }
@@ -54571,7 +54737,7 @@
           "changes": {
             "1d": {
               "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "status": "INSUFFICIENT_DATA"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54583,40 +54749,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
+            "status": "INSUFFICIENT_DATA",
+            "deltaTotalPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "matchedListingsCount": 0,
+            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
           }
         },
         "11140": {
           "district": "11140",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 1.9,
-          "groups90d": 3,
-          "groups180d": 10,
-          "observedComplexes": 3,
-          "matchedListings": 77,
+          "percent": -5.91,
+          "groups90d": 1,
+          "groups180d": 3,
+          "observedComplexes": 2,
+          "matchedListings": 24,
           "actual90d": {
-            "sample": 3,
-            "groups": 3,
-            "percent": 1.8987,
-            "matchedListings": 77
+            "sample": 1,
+            "groups": 1,
+            "percent": -5.914,
+            "matchedListings": 24
           },
           "longTerm180d": {
-            "sample": 10,
-            "groups": 10,
-            "percent": 6.01805,
-            "matchedListings": 172
+            "sample": 3,
+            "groups": 3,
+            "percent": 5.7143,
+            "matchedListings": 72
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54628,40 +54795,68 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": -6.28,
+            "medianLevelChange": -7.81,
+            "discrepancyMedianVersusMean": -7.81,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": -6.28,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 1,
+            "matchedListingsCount": 93,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 93,
+              "retentionRatePct": 36.6,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 93,
+              "newEntrantsCount": 48,
+              "exitedCount": 161
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 1
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -7.8%p, 중위값-평균 불일치: -7.8%p)"
           }
         },
         "11170": {
           "district": "11170",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 1.12,
-          "groups90d": 3,
-          "groups180d": 8,
+          "percent": 2.47,
+          "groups90d": 2,
+          "groups180d": 7,
           "observedComplexes": 4,
-          "matchedListings": 24,
+          "matchedListings": 15,
           "actual90d": {
-            "sample": 3,
-            "groups": 3,
-            "percent": 1.1213,
-            "matchedListings": 24
+            "sample": 2,
+            "groups": 2,
+            "percent": 2.4718,
+            "matchedListings": 15
           },
           "longTerm180d": {
-            "sample": 8,
-            "groups": 8,
-            "percent": 1.91515,
-            "matchedListings": 191
+            "sample": 7,
+            "groups": 7,
+            "percent": 2.9762,
+            "matchedListings": 232
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54673,13 +54868,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.45,
+            "medianLevelChange": 1.35,
+            "discrepancyMedianVersusMean": 1.35,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.45,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 257,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 257,
+              "retentionRatePct": 66.6,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.0,
+              "cutListingsCount": 1,
+              "riseListingsCount": 0,
+              "holdListingsCount": 256,
+              "newEntrantsCount": 152,
+              "exitedCount": 129
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +1.4%p, 중위값-평균 불일치: +1.4%p)"
           }
         },
         "11200": {
@@ -54690,23 +54913,23 @@
           "groups90d": 4,
           "groups180d": 9,
           "observedComplexes": 4,
-          "matchedListings": 301,
+          "matchedListings": 255,
           "actual90d": {
             "sample": 4,
             "groups": 4,
             "percent": 1.1525,
-            "matchedListings": 301
+            "matchedListings": 255
           },
           "longTerm180d": {
             "sample": 9,
             "groups": 9,
-            "percent": 1.1998,
-            "matchedListings": 629
+            "percent": 1.6419,
+            "matchedListings": 574
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": -0.23,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54718,13 +54941,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": -0.23,
+            "deltaTotalPctPoint": -0.23,
+            "deltaFullMeanPctPoint": -0.23,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.23,
+            "contribAskPctPoint": -0.23,
+            "contribIdenticalAskPctPoint": -0.06,
+            "contribWithinStratumTurnoverPctPoint": -0.17,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.23,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 581,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 581,
+              "retentionRatePct": 69.7,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.04,
+              "cutListingsCount": 8,
+              "riseListingsCount": 0,
+              "holdListingsCount": 573,
+              "newEntrantsCount": 225,
+              "exitedCount": 252
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 4
+            },
+            "explanation": "동일 표본 평균 변화 -0.2%p = 호가 조정 -0.2%p (동일 매물 변경 -0.1%p + 그룹 내 매물 교체 -0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: +0.2%p)"
           }
         },
         "11215": {
@@ -54734,24 +54985,24 @@
           "percent": 10.29,
           "groups90d": 1,
           "groups180d": 6,
-          "observedComplexes": 4,
-          "matchedListings": 27,
+          "observedComplexes": 3,
+          "matchedListings": 26,
           "actual90d": {
             "sample": 1,
             "groups": 1,
             "percent": 10.2941,
-            "matchedListings": 27
+            "matchedListings": 26
           },
           "longTerm180d": {
             "sample": 6,
             "groups": 6,
-            "percent": 5.88835,
-            "matchedListings": 196
+            "percent": 5.4564,
+            "matchedListings": 215
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54763,40 +55014,68 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 1,
+            "matchedListingsCount": 205,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 205,
+              "retentionRatePct": 59.9,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 1,
+              "riseListingsCount": 0,
+              "holdListingsCount": 204,
+              "newEntrantsCount": 117,
+              "exitedCount": 137
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 1
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11230": {
           "district": "11230",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 4.31,
+          "percent": 5.14,
           "groups90d": 2,
           "groups180d": 8,
-          "observedComplexes": 4,
-          "matchedListings": 191,
+          "observedComplexes": 3,
+          "matchedListings": 203,
           "actual90d": {
             "sample": 2,
             "groups": 2,
-            "percent": 4.3096499999999995,
-            "matchedListings": 191
+            "percent": 5.14235,
+            "matchedListings": 203
           },
           "longTerm180d": {
             "sample": 8,
             "groups": 8,
-            "percent": 9.41105,
-            "matchedListings": 384
+            "percent": 10.27995,
+            "matchedListings": 403
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.83,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54808,40 +55087,68 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.83,
+            "deltaTotalPctPoint": 0.83,
+            "deltaFullMeanPctPoint": 0.83,
+            "medianLevelChange": 0.83,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.83,
+            "contribIdenticalAskPctPoint": -0.01,
+            "contribWithinStratumTurnoverPctPoint": 0.84,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.83,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 709,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 709,
+              "retentionRatePct": 69.9,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.02,
+              "cutListingsCount": 6,
+              "riseListingsCount": 1,
+              "holdListingsCount": 702,
+              "newEntrantsCount": 291,
+              "exitedCount": 305
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "동일 표본 평균 변화 +0.8%p = 호가 조정 +0.8%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.8%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.8%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11260": {
           "district": "11260",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 15.55,
-          "groups90d": 2,
-          "groups180d": 9,
-          "observedComplexes": 4,
-          "matchedListings": 17,
+          "status": "장기 실측 참고치",
+          "statusCode": "LONG_TERM_180D",
+          "percent": 8.95,
+          "groups90d": 0,
+          "groups180d": 1,
+          "observedComplexes": 2,
+          "matchedListings": 0,
           "actual90d": {
-            "sample": 2,
-            "groups": 2,
-            "percent": 15.545449999999999,
-            "matchedListings": 17
+            "sample": 0,
+            "groups": 0,
+            "percent": null,
+            "matchedListings": 0
           },
           "longTerm180d": {
-            "sample": 9,
-            "groups": 9,
-            "percent": 11.3636,
-            "matchedListings": 88
+            "sample": 1,
+            "groups": 1,
+            "percent": 8.9494,
+            "matchedListings": 13
           },
           "changes": {
             "1d": {
               "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "status": "INSUFFICIENT_DATA"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54853,40 +55160,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
+            "status": "INSUFFICIENT_DATA",
+            "deltaTotalPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "matchedListingsCount": 0,
+            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
           }
         },
         "11290": {
           "district": "11290",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 7.04,
-          "groups90d": 8,
-          "groups180d": 20,
-          "observedComplexes": 4,
-          "matchedListings": 177,
+          "percent": 7.74,
+          "groups90d": 7,
+          "groups180d": 16,
+          "observedComplexes": 3,
+          "matchedListings": 80,
           "actual90d": {
-            "sample": 8,
-            "groups": 8,
-            "percent": 7.038600000000001,
-            "matchedListings": 177
+            "sample": 7,
+            "groups": 7,
+            "percent": 7.7441,
+            "matchedListings": 80
           },
           "longTerm180d": {
-            "sample": 20,
-            "groups": 20,
-            "percent": 7.7325,
-            "matchedListings": 462
+            "sample": 16,
+            "groups": 16,
+            "percent": 9.33125,
+            "matchedListings": 149
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": -1.07,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54898,13 +55206,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": -1.07,
+            "deltaTotalPctPoint": -1.07,
+            "deltaFullMeanPctPoint": -0.52,
+            "medianLevelChange": 0.71,
+            "discrepancyMedianVersusMean": 1.77,
+            "contribAskPctPoint": -1.07,
+            "contribIdenticalAskPctPoint": -0.04,
+            "contribWithinStratumTurnoverPctPoint": -1.03,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.55,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -1.07,
+            "matchedStrataCount": 7,
+            "matchedListingsCount": 199,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 199,
+              "retentionRatePct": 29.6,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.02,
+              "cutListingsCount": 3,
+              "riseListingsCount": 0,
+              "holdListingsCount": 196,
+              "newEntrantsCount": 37,
+              "exitedCount": 473
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 7
+            },
+            "explanation": "동일 표본 평균 변화 -1.1%p = 호가 조정 -1.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -1.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +1.8%p)"
           }
         },
         "11305": {
@@ -54912,26 +55248,26 @@
           "status": "실측",
           "statusCode": "ACTUAL_90D",
           "percent": 8.63,
-          "groups90d": 5,
-          "groups180d": 12,
-          "observedComplexes": 4,
-          "matchedListings": 101,
+          "groups90d": 3,
+          "groups180d": 7,
+          "observedComplexes": 3,
+          "matchedListings": 22,
           "actual90d": {
-            "sample": 5,
-            "groups": 5,
+            "sample": 3,
+            "groups": 3,
             "percent": 8.6262,
-            "matchedListings": 101
+            "matchedListings": 22
           },
           "longTerm180d": {
-            "sample": 12,
-            "groups": 12,
-            "percent": 12.66395,
-            "matchedListings": 176
+            "sample": 7,
+            "groups": 7,
+            "percent": 15.2542,
+            "matchedListings": 62
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54943,40 +55279,68 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 2.95,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 2.95,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 166,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 166,
+              "retentionRatePct": 44.4,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 1,
+              "riseListingsCount": 0,
+              "holdListingsCount": 165,
+              "newEntrantsCount": 32,
+              "exitedCount": 208
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 3
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11320": {
           "district": "11320",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 6.43,
-          "groups90d": 6,
-          "groups180d": 17,
-          "observedComplexes": 4,
-          "matchedListings": 145,
+          "percent": 5.27,
+          "groups90d": 4,
+          "groups180d": 12,
+          "observedComplexes": 3,
+          "matchedListings": 110,
           "actual90d": {
-            "sample": 6,
-            "groups": 6,
-            "percent": 6.42835,
-            "matchedListings": 145
+            "sample": 4,
+            "groups": 4,
+            "percent": 5.2691,
+            "matchedListings": 110
           },
           "longTerm180d": {
-            "sample": 17,
-            "groups": 17,
-            "percent": 12.9412,
-            "matchedListings": 225
+            "sample": 12,
+            "groups": 12,
+            "percent": 11.408850000000001,
+            "matchedListings": 148
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -54988,13 +55352,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": -1.62,
+            "medianLevelChange": -1.16,
+            "discrepancyMedianVersusMean": -1.16,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": -1.62,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 149,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 149,
+              "retentionRatePct": 48.7,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 149,
+              "newEntrantsCount": 28,
+              "exitedCount": 157
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 4
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -1.2%p, 중위값-평균 불일치: -1.2%p)"
           }
         },
         "11350": {
@@ -55003,25 +55395,25 @@
           "statusCode": "ACTUAL_90D",
           "percent": 14.71,
           "groups90d": 3,
-          "groups180d": 20,
+          "groups180d": 18,
           "observedComplexes": 4,
-          "matchedListings": 23,
+          "matchedListings": 29,
           "actual90d": {
             "sample": 3,
             "groups": 3,
             "percent": 14.7059,
-            "matchedListings": 23
+            "matchedListings": 29
           },
           "longTerm180d": {
-            "sample": 20,
-            "groups": 20,
-            "percent": 11.58455,
-            "matchedListings": 136
+            "sample": 18,
+            "groups": 18,
+            "percent": 9.4707,
+            "matchedListings": 143
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55033,40 +55425,69 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 134,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 134,
+              "retentionRatePct": 83.8,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 134,
+              "newEntrantsCount": 32,
+              "exitedCount": 26
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2,
+              "WINDOW_EXPIRATION": 1
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11380": {
           "district": "11380",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 3.98,
-          "groups90d": 2,
-          "groups180d": 19,
-          "observedComplexes": 4,
-          "matchedListings": 24,
+          "status": "장기 실측 참고치",
+          "statusCode": "LONG_TERM_180D",
+          "percent": 11.11,
+          "groups90d": 0,
+          "groups180d": 1,
+          "observedComplexes": 1,
+          "matchedListings": 0,
           "actual90d": {
-            "sample": 2,
-            "groups": 2,
-            "percent": 3.97725,
-            "matchedListings": 24
+            "sample": 0,
+            "groups": 0,
+            "percent": null,
+            "matchedListings": 0
           },
           "longTerm180d": {
-            "sample": 19,
-            "groups": 19,
-            "percent": 8.2621,
-            "matchedListings": 379
+            "sample": 1,
+            "groups": 1,
+            "percent": 11.1111,
+            "matchedListings": 65
           },
           "changes": {
             "1d": {
               "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "status": "INSUFFICIENT_DATA"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55078,13 +55499,14 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
+            "status": "INSUFFICIENT_DATA",
+            "deltaTotalPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "matchedListingsCount": 0,
+            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
           }
         },
         "11410": {
@@ -55092,26 +55514,26 @@
           "status": "실측",
           "statusCode": "ACTUAL_90D",
           "percent": 4.09,
-          "groups90d": 4,
-          "groups180d": 17,
-          "observedComplexes": 4,
-          "matchedListings": 70,
+          "groups90d": 1,
+          "groups180d": 7,
+          "observedComplexes": 2,
+          "matchedListings": 6,
           "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 4.090199999999999,
-            "matchedListings": 70
+            "sample": 1,
+            "groups": 1,
+            "percent": 4.0936,
+            "matchedListings": 6
           },
           "longTerm180d": {
-            "sample": 17,
-            "groups": 17,
-            "percent": 6.5127,
-            "matchedListings": 262
+            "sample": 7,
+            "groups": 7,
+            "percent": 4.6338,
+            "matchedListings": 205
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 2.34,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55123,13 +55545,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 2.34,
+            "deltaTotalPctPoint": 2.34,
+            "deltaFullMeanPctPoint": 0.33,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": -2.34,
+            "contribAskPctPoint": 2.34,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 2.34,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": -2.01,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 2.34,
+            "matchedStrataCount": 1,
+            "matchedListingsCount": 114,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 114,
+              "retentionRatePct": 33.1,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.04,
+              "cutListingsCount": 2,
+              "riseListingsCount": 0,
+              "holdListingsCount": 112,
+              "newEntrantsCount": 116,
+              "exitedCount": 230
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 1
+            },
+            "explanation": "동일 표본 평균 변화 +2.3%p = 호가 조정 +2.3%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 +2.3%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: -2.3%p)"
           }
         },
         "11440": {
@@ -55138,25 +55588,25 @@
           "statusCode": "ACTUAL_90D",
           "percent": 4.75,
           "groups90d": 2,
-          "groups180d": 11,
-          "observedComplexes": 4,
-          "matchedListings": 188,
+          "groups180d": 7,
+          "observedComplexes": 3,
+          "matchedListings": 171,
           "actual90d": {
             "sample": 2,
             "groups": 2,
             "percent": 4.751650000000001,
-            "matchedListings": 188
+            "matchedListings": 171
           },
           "longTerm180d": {
-            "sample": 11,
-            "groups": 11,
-            "percent": 5.5807,
-            "matchedListings": 588
+            "sample": 7,
+            "groups": 7,
+            "percent": 3.5294,
+            "matchedListings": 552
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55168,13 +55618,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": -0.05,
+            "contribWithinStratumTurnoverPctPoint": 0.05,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 530,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 530,
+              "retentionRatePct": 71.3,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 1,
+              "riseListingsCount": 0,
+              "holdListingsCount": 529,
+              "newEntrantsCount": 147,
+              "exitedCount": 213
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 -0.1%p + 그룹 내 매물 교체 +0.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11470": {
@@ -55184,24 +55662,24 @@
           "percent": -0.66,
           "groups90d": 4,
           "groups180d": 19,
-          "observedComplexes": 10,
-          "matchedListings": 174,
+          "observedComplexes": 9,
+          "matchedListings": 142,
           "actual90d": {
             "sample": 4,
             "groups": 4,
             "percent": -0.6609,
-            "matchedListings": 174
+            "matchedListings": 142
           },
           "longTerm180d": {
             "sample": 19,
             "groups": 19,
             "percent": 5.0,
-            "matchedListings": 893
+            "matchedListings": 835
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.35,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55213,40 +55691,68 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.35,
+            "deltaTotalPctPoint": 0.35,
+            "deltaFullMeanPctPoint": 0.35,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": -0.35,
+            "contribAskPctPoint": 0.35,
+            "contribIdenticalAskPctPoint": -0.03,
+            "contribWithinStratumTurnoverPctPoint": 0.39,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.35,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 1084,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 1084,
+              "retentionRatePct": 74.2,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 6,
+              "riseListingsCount": 1,
+              "holdListingsCount": 1077,
+              "newEntrantsCount": 393,
+              "exitedCount": 377
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 4
+            },
+            "explanation": "동일 표본 평균 변화 +0.3%p = 호가 조정 +0.3%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.4%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: -0.3%p)"
           }
         },
         "11500": {
           "district": "11500",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 3.35,
-          "groups90d": 4,
-          "groups180d": 18,
-          "observedComplexes": 4,
-          "matchedListings": 130,
+          "percent": 3.47,
+          "groups90d": 3,
+          "groups180d": 8,
+          "observedComplexes": 3,
+          "matchedListings": 122,
           "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 3.34755,
-            "matchedListings": 130
+            "sample": 3,
+            "groups": 3,
+            "percent": 3.4693,
+            "matchedListings": 122
           },
           "longTerm180d": {
-            "sample": 18,
-            "groups": 18,
-            "percent": 7.33905,
-            "matchedListings": 218
+            "sample": 8,
+            "groups": 8,
+            "percent": 6.4756,
+            "matchedListings": 153
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55258,40 +55764,68 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 1.0,
+            "medianLevelChange": 0.12,
+            "discrepancyMedianVersusMean": 0.12,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 1.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 243,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 243,
+              "retentionRatePct": 69.8,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 243,
+              "newEntrantsCount": 51,
+              "exitedCount": 105
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 3
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.1%p)"
           }
         },
         "11530": {
           "district": "11530",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 11.31,
+          "percent": 10.88,
           "groups90d": 2,
           "groups180d": 12,
           "observedComplexes": 4,
-          "matchedListings": 13,
+          "matchedListings": 12,
           "actual90d": {
             "sample": 2,
             "groups": 2,
-            "percent": 11.31055,
-            "matchedListings": 13
+            "percent": 10.87575,
+            "matchedListings": 12
           },
           "longTerm180d": {
             "sample": 12,
             "groups": 12,
-            "percent": 18.2307,
-            "matchedListings": 198
+            "percent": 17.67675,
+            "matchedListings": 216
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": -0.43,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55303,13 +55837,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": -0.43,
+            "deltaTotalPctPoint": -0.43,
+            "deltaFullMeanPctPoint": -0.43,
+            "medianLevelChange": -0.43,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": -0.43,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": -0.43,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.43,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 345,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 345,
+              "retentionRatePct": 86.2,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.05,
+              "cutListingsCount": 4,
+              "riseListingsCount": 0,
+              "holdListingsCount": 341,
+              "newEntrantsCount": 76,
+              "exitedCount": 55
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "동일 표본 평균 변화 -0.4%p = 호가 조정 -0.4%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -0.4%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -0.4%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11545": {
@@ -55318,25 +55880,25 @@
           "statusCode": "ACTUAL_90D",
           "percent": 8.43,
           "groups90d": 4,
-          "groups180d": 12,
-          "observedComplexes": 4,
-          "matchedListings": 212,
+          "groups180d": 11,
+          "observedComplexes": 2,
+          "matchedListings": 190,
           "actual90d": {
             "sample": 4,
             "groups": 4,
             "percent": 8.4289,
-            "matchedListings": 212
+            "matchedListings": 190
           },
           "longTerm180d": {
-            "sample": 12,
-            "groups": 12,
-            "percent": 8.41985,
-            "matchedListings": 320
+            "sample": 11,
+            "groups": 11,
+            "percent": 8.5064,
+            "matchedListings": 295
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55348,13 +55910,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": -0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 275,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 275,
+              "retentionRatePct": 59.1,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.0,
+              "cutListingsCount": 1,
+              "riseListingsCount": 0,
+              "holdListingsCount": 274,
+              "newEntrantsCount": 41,
+              "exitedCount": 190
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 4
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11560": {
@@ -55365,23 +55955,23 @@
           "groups90d": 2,
           "groups180d": 11,
           "observedComplexes": 4,
-          "matchedListings": 9,
+          "matchedListings": 10,
           "actual90d": {
             "sample": 2,
             "groups": 2,
             "percent": 8.57845,
-            "matchedListings": 9
+            "matchedListings": 10
           },
           "longTerm180d": {
             "sample": 11,
             "groups": 11,
-            "percent": 4.2623,
-            "matchedListings": 75
+            "percent": 7.5949,
+            "matchedListings": 90
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55393,13 +55983,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 231,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 231,
+              "retentionRatePct": 70.9,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.03,
+              "cutListingsCount": 3,
+              "riseListingsCount": 0,
+              "holdListingsCount": 228,
+              "newEntrantsCount": 119,
+              "exitedCount": 95
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11590": {
@@ -55408,25 +56026,25 @@
           "statusCode": "ACTUAL_90D",
           "percent": 3.46,
           "groups90d": 1,
-          "groups180d": 9,
-          "observedComplexes": 4,
-          "matchedListings": 48,
+          "groups180d": 7,
+          "observedComplexes": 3,
+          "matchedListings": 55,
           "actual90d": {
             "sample": 1,
             "groups": 1,
             "percent": 3.4586,
-            "matchedListings": 48
+            "matchedListings": 55
           },
           "longTerm180d": {
-            "sample": 9,
-            "groups": 9,
+            "sample": 7,
+            "groups": 7,
             "percent": 3.5928,
-            "matchedListings": 238
+            "matchedListings": 191
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55438,13 +56056,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 1,
+            "matchedListingsCount": 303,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 303,
+              "retentionRatePct": 57.0,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 1,
+              "riseListingsCount": 0,
+              "holdListingsCount": 302,
+              "newEntrantsCount": 70,
+              "exitedCount": 229
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 1
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11620": {
@@ -55453,25 +56099,25 @@
           "statusCode": "ACTUAL_90D",
           "percent": 1.36,
           "groups90d": 2,
-          "groups180d": 6,
-          "observedComplexes": 4,
-          "matchedListings": 187,
+          "groups180d": 7,
+          "observedComplexes": 3,
+          "matchedListings": 156,
           "actual90d": {
             "sample": 2,
             "groups": 2,
             "percent": 1.3558,
-            "matchedListings": 187
+            "matchedListings": 156
           },
           "longTerm180d": {
-            "sample": 6,
-            "groups": 6,
-            "percent": 4.27735,
-            "matchedListings": 343
+            "sample": 7,
+            "groups": 7,
+            "percent": 4.388,
+            "matchedListings": 338
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55483,23 +56129,51 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 271,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 271,
+              "retentionRatePct": 56.5,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 271,
+              "newEntrantsCount": 155,
+              "exitedCount": 209
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         },
         "11650": {
           "district": "11650",
           "status": "장기 실측 참고치",
           "statusCode": "LONG_TERM_180D",
-          "percent": 2.79,
+          "percent": -0.47,
           "groups90d": 0,
-          "groups180d": 6,
-          "observedComplexes": 3,
+          "groups180d": 4,
+          "observedComplexes": 2,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -55508,15 +56182,15 @@
             "matchedListings": 0
           },
           "longTerm180d": {
-            "sample": 6,
-            "groups": 6,
-            "percent": 2.7895000000000003,
-            "matchedListings": 126
+            "sample": 4,
+            "groups": 4,
+            "percent": -0.47135000000000005,
+            "matchedListings": 103
           },
           "changes": {
             "1d": {
               "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "status": "INSUFFICIENT_DATA"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55528,23 +56202,24 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
+            "status": "INSUFFICIENT_DATA",
+            "deltaTotalPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "matchedListingsCount": 0,
+            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
           }
         },
         "11680": {
           "district": "11680",
           "status": "장기 실측 참고치",
           "statusCode": "LONG_TERM_180D",
-          "percent": 0.49,
+          "percent": 1.49,
           "groups90d": 0,
           "groups180d": 7,
-          "observedComplexes": 4,
+          "observedComplexes": 2,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -55555,13 +56230,13 @@
           "longTerm180d": {
             "sample": 7,
             "groups": 7,
-            "percent": 0.4902,
-            "matchedListings": 60
+            "percent": 1.4851,
+            "matchedListings": 77
           },
           "changes": {
             "1d": {
               "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "status": "INSUFFICIENT_DATA"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55573,40 +56248,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
+            "status": "INSUFFICIENT_DATA",
+            "deltaTotalPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "matchedListingsCount": 0,
+            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
           }
         },
         "11710": {
           "district": "11710",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 2.46,
-          "groups90d": 3,
-          "groups180d": 16,
-          "observedComplexes": 4,
-          "matchedListings": 141,
+          "percent": 2.74,
+          "groups90d": 1,
+          "groups180d": 7,
+          "observedComplexes": 2,
+          "matchedListings": 160,
           "actual90d": {
-            "sample": 3,
-            "groups": 3,
-            "percent": 2.459,
-            "matchedListings": 141
+            "sample": 1,
+            "groups": 1,
+            "percent": 2.7397,
+            "matchedListings": 160
           },
           "longTerm180d": {
-            "sample": 16,
-            "groups": 16,
-            "percent": 4.0764,
-            "matchedListings": 379
+            "sample": 7,
+            "groups": 7,
+            "percent": 1.5625,
+            "matchedListings": 331
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": -0.35,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55618,13 +56294,41 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": -0.35,
+            "deltaTotalPctPoint": -0.35,
+            "deltaFullMeanPctPoint": 0.33,
+            "medianLevelChange": 0.28,
+            "discrepancyMedianVersusMean": 0.63,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": -0.35,
+            "contribSampleCompositionPctPoint": 0.69,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.35,
+            "matchedStrataCount": 1,
+            "matchedListingsCount": 386,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 386,
+              "retentionRatePct": 59.6,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 2,
+              "riseListingsCount": 1,
+              "holdListingsCount": 383,
+              "newEntrantsCount": 194,
+              "exitedCount": 262
+            },
+            "tradeBenchmarkDrivers": {
+              "WINDOW_EXPIRATION": 1
+            },
+            "explanation": "동일 표본 평균 변화 -0.3%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 -0.3%p. (전체 중위값 수준 변화: +0.3%p, 중위값-평균 불일치: +0.6%p)"
           }
         },
         "11740": {
@@ -55633,25 +56337,25 @@
           "statusCode": "ACTUAL_90D",
           "percent": -7.02,
           "groups90d": 1,
-          "groups180d": 8,
+          "groups180d": 9,
           "observedComplexes": 4,
-          "matchedListings": 116,
+          "matchedListings": 133,
           "actual90d": {
             "sample": 1,
             "groups": 1,
             "percent": -7.0234,
-            "matchedListings": 116
+            "matchedListings": 133
           },
           "longTerm180d": {
-            "sample": 8,
-            "groups": 8,
-            "percent": 1.1459,
-            "matchedListings": 242
+            "sample": 9,
+            "groups": 9,
+            "percent": 4.4628,
+            "matchedListings": 269
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (2일차 대기)"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -55663,41 +56367,69 @@
             }
           },
           "decomposition": {
-            "status": "축적 중 (2일차 대기)",
-            "deltaPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.1,
+            "contribWithinStratumTurnoverPctPoint": -0.1,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 1,
+            "matchedListingsCount": 277,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 277,
+              "retentionRatePct": 63.0,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.04,
+              "cutListingsCount": 1,
+              "riseListingsCount": 3,
+              "holdListingsCount": 273,
+              "newEntrantsCount": 174,
+              "exitedCount": 163
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 1
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 +0.1%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)"
           }
         }
       },
       "qualityCounts": {
-        "targetDay": "2026-11-12",
+        "targetDay": "2026-11-13",
         "engineVersion": "v1.2.0-shapley",
-        "observedComplexesCount": 103,
-        "totalActiveListings": 11993,
-        "matchedStrataGroups90d": 68,
-        "matchedStrataGroups180d": 290,
-        "analyzedListingsInGroups": 2395,
+        "observedComplexesCount": 78,
+        "totalActiveListings": 9881,
+        "matchedStrataGroups90d": 50,
+        "matchedStrataGroups180d": 204,
+        "analyzedListingsInGroups": 1921,
         "pointInTimeVintageAudit": {
-          "targetDay": "2026-11-12",
+          "targetDay": "2026-11-13",
           "windowDays": 90,
-          "totalTradesInWindow": 9329,
-          "contemporaneousTrades": 0,
-          "exPostReconstructedTrades": 9329,
+          "totalTradesInWindow": 9220,
+          "contemporaneousTrades": 9220,
+          "exPostReconstructedTrades": 0,
           "unknownDisclosureTrades": 0,
-          "pointInTimeRatioPct": 0.0,
-          "isContemporaneousLiveVintage": false,
-          "vintageClassification": "EX_POST_RECONSTRUCTED",
+          "pointInTimeRatioPct": 100.0,
+          "isContemporaneousLiveVintage": true,
+          "vintageClassification": "CONTEMPORANEOUS_VERIFIED",
           "disclosureBoundaryNote": "Snapshot fetched timestamp represents crawler observation boundary, not individual MOLIT disclosure second; individual trade first-seen timestamps preserved in future schemas.",
-          "seriesClassification": "EX_POST_RECONSTRUCTED_FALLBACK"
+          "seriesClassification": "CONTEMPORANEOUS_LIVE_VINTAGE"
         },
         "weightingComparisons": {
-          "equalWeightMedian": 5.12,
-          "districtBalancedMean": 5.24,
-          "complexBalancedMean": 4.77,
+          "equalWeightMedian": 5.27,
+          "districtBalancedMean": 4.48,
+          "complexBalancedMean": 4.83,
           "stockWeightedMean": null,
           "stockWeightedNotice": "통계청 주택총조사 등록센서스 서울 25개 자치구 아파트 호수 전수 검증 진행 중으로, 비공식 가중치 사용을 배제하고 공식 검증 완료 시까지 공표 유예"
         }
@@ -55734,22 +56466,74 @@
     "status": "ACTIVE_OPERATIONAL",
     "statusLabel": "정상 운영 · 실측 네고 압력",
     "officialPublicationAllowed": true,
-    "asOf": "2026-11-12",
-    "currentNegoPressurePct": 5.12,
-    "currentNegoLevel": 5.12,
+    "asOf": "2026-11-13",
+    "currentNegoPressurePct": 5.27,
+    "currentNegoLevel": 5.27,
     "sampleType": "관측 표본 기준 (동일 단지·전용면적·층구간 90일 실거래 매칭)",
     "changes": {
       "1d": {
-        "deltaPctPoint": null,
-        "status": "산출 대기 (2회차 수집 대기)"
+        "status": "VALID",
+        "matchedSampleChange": -0.08,
+        "deltaTotalPctPoint": -0.08,
+        "deltaFullMeanPctPoint": 0.06,
+        "medianLevelChange": 0.15,
+        "discrepancyMedianVersusMean": 0.24,
+        "contribAskPctPoint": -0.08,
+        "contribIdenticalAskPctPoint": -0.01,
+        "contribWithinStratumTurnoverPctPoint": -0.06,
+        "contribTradeBenchmarkPctPoint": -0.01,
+        "contribSampleCompositionPctPoint": 0.15,
+        "unidentifiedEffectPctPoint": 0.0,
+        "fixedSampleSpreadChange": -0.08,
+        "matchedStrataCount": 50,
+        "matchedListingsCount": 7089,
+        "mathematicalIdentities": {
+          "matchedIdentityHolds": true,
+          "askSubdecompositionHolds": true,
+          "fullMeanIdentityHolds": true
+        },
+        "identicalListingStats": {
+          "identicalCount": 7089,
+          "retentionRatePct": 59.1,
+          "medianPriceChangePct": 0.0,
+          "meanPriceChangePct": -0.01,
+          "cutListingsCount": 42,
+          "riseListingsCount": 10,
+          "holdListingsCount": 7037,
+          "newEntrantsCount": 2792,
+          "exitedCount": 4904
+        },
+        "tradeBenchmarkDrivers": {
+          "UNCHANGED_BENCHMARK": 48,
+          "WINDOW_EXPIRATION": 2
+        },
+        "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 -0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.2%p)",
+        "period": "전일 대비 (DoD)",
+        "referenceDay": "2026-11-12"
       },
       "7d": {
+        "period": "7일 변화 (WoW)",
+        "referenceDay": "2026-11-06",
+        "status": "축적 중 (7일차 대기, 현재 2일 경과)",
         "deltaPctPoint": null,
-        "status": "축적 중 (7일차 대기)"
+        "contribAskPctPoint": null,
+        "contribTradeBenchmarkPctPoint": null,
+        "contribSampleCompositionPctPoint": null,
+        "matchedStrataCount": 0,
+        "matchedListingsCount": 0,
+        "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 2일차)"
       },
       "28d": {
+        "period": "28일 변화 (MoM)",
+        "referenceDay": "2026-10-16",
+        "status": "축적 중 (28일차 대기, 현재 2일 경과)",
         "deltaPctPoint": null,
-        "status": "축적 중 (28일차 대기)"
+        "contribAskPctPoint": null,
+        "contribTradeBenchmarkPctPoint": null,
+        "contribSampleCompositionPctPoint": null,
+        "matchedStrataCount": 0,
+        "matchedListingsCount": 0,
+        "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 2일차)"
       }
     },
     "exploratoryTradeMatching": {
@@ -55779,12 +56563,84 @@
     },
     "gradeC_ProxyDivergence": {
       "role": "선행·대리 지표 (Proxy Leading Indicator)",
-      "currentDivergencePct": 5.12
+      "currentDivergencePct": 5.27
     },
     "researchQuestions": [
       "Q1. 매도자가 요구하는 호가와 최근 거래가격 사이에 얼마나 차이가 발생하는가?",
       "Q2. 그 차이(네고 압력)는 시간에 따라 확대되는가, 축소되는가? (전일, 7일, 28일 변화 %p)",
       "Q3. 네고 압력의 확대·축소 변화가 향후 주택가격 및 거래량의 변화와 어떤 관계가 있는가?"
+    ],
+    "decomposition": {
+      "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
+      "activePeriod": "전일 대비 (DoD)",
+      "status": "VALID",
+      "matchedSampleChange": -0.08,
+      "medianLevelChange": 0.15,
+      "discrepancyMedianVersusMean": 0.24,
+      "contribAskPctPoint": -0.08,
+      "contribIdenticalAskPctPoint": -0.01,
+      "contribWithinStratumTurnoverPctPoint": -0.06,
+      "contribTradeBenchmarkPctPoint": -0.01,
+      "contribSampleCompositionPctPoint": 0.15,
+      "unidentifiedEffectPctPoint": 0.0,
+      "mathematicalIdentities": {
+        "matchedIdentityHolds": true,
+        "askSubdecompositionHolds": true,
+        "fullMeanIdentityHolds": true
+      },
+      "identicalListingStats": {
+        "identicalCount": 7089,
+        "retentionRatePct": 59.1,
+        "medianPriceChangePct": 0.0,
+        "meanPriceChangePct": -0.01,
+        "cutListingsCount": 42,
+        "riseListingsCount": 10,
+        "holdListingsCount": 7037,
+        "newEntrantsCount": 2792,
+        "exitedCount": 4904
+      },
+      "tradeBenchmarkDrivers": {
+        "UNCHANGED_BENCHMARK": 48,
+        "WINDOW_EXPIRATION": 2
+      },
+      "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 -0.0%p. (전체 중위값 수준 변화: +0.1%p, 중위값-평균 불일치: +0.2%p)",
+      "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
+    },
+    "seriesA_FullCrossSection": [
+      {
+        "day": "2026-11-12",
+        "percent": 5.12,
+        "groups": 68,
+        "listings": 2395,
+        "type": "FULL_CROSS_SECTION",
+        "label": "A계열: 전체 관측 가격괴리율"
+      },
+      {
+        "day": "2026-11-13",
+        "percent": 5.27,
+        "groups": 50,
+        "listings": 1921,
+        "type": "FULL_CROSS_SECTION",
+        "label": "A계열: 전체 관측 가격괴리율"
+      }
+    ],
+    "seriesB_FixedSamplePanel": [
+      {
+        "day": "2026-11-12",
+        "percent": 5.12,
+        "delta": null,
+        "groups": 68,
+        "type": "FIXED_SAMPLE_PANEL",
+        "label": "B계열: 동일 표본 가격괴리 변화"
+      },
+      {
+        "day": "2026-11-13",
+        "percent": 5.27,
+        "delta": -0.08,
+        "groups": 50,
+        "type": "FIXED_SAMPLE_PANEL",
+        "label": "B계열: 동일 표본 가격괴리 변화"
+      }
     ]
   }
 }

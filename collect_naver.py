@@ -91,7 +91,13 @@ def collect(page, target):
                 page.get_by_role('heading', name=heading_name).first.wait_for(timeout=5000)
             except Exception:
                 pass
-            page.get_by_role('tab', name='매물').first.click(timeout=8000)
+            try:
+                page.get_by_role('tab', name='매물').first.click(timeout=6000)
+            except Exception as e_tab:
+                body_txt = page.inner_text('body')
+                if '매물이 없습니다' in body_txt or '등록된 매물이 없습니다' in body_txt or '매물 0' in body_txt:
+                    return [], 0
+                raise e_tab
 
         # Wait for article links to render if listings exist
         try:

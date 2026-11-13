@@ -192,8 +192,9 @@ def extract_trades_up_to_day(tdb, target_day, window_days=90, mode='CONTEMPORANE
     """
     end_date = date.fromisoformat(target_day)
     start_date = end_date - timedelta(days=window_days - 1)
+    start_month = start_date.strftime('%Y-%m')
     
-    rows = tdb.execute("SELECT district, month, payload FROM trades WHERE month >= '2024-01'").fetchall()
+    rows = tdb.execute("SELECT district, month, payload FROM trades WHERE month >= ?", (start_month,)).fetchall()
     
     # Read snapshot fetch dates from tracker.sqlite3 snapshots table
     snap_rows = tdb.execute("SELECT district, month, fetched FROM snapshots").fetchall()
@@ -641,13 +642,20 @@ def run_spread_dynamics(target_day=None):
         earliest_day = available_days[0] if available_days else target_day
         elapsed_days = (target_dt - date.fromisoformat(earliest_day)).days + 1
 
-        def build_horizon_change(day_k, label, days_req):
+        # Precompute horizon datasets once to avoid redundant expensive DB scans
+        horizon_cache = {}
+        for day_k in [day_1d, day_7d, day_28d]:
             if day_k in available_days:
                 l_k_id, l_k_strata, _, f_k = extract_listings_for_day(hdb, day_k, crosswalk)
                 t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='CONTEMPORANEOUS_ONLY')
                 if not t_k:
                     t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='EX_POST_RECONSTRUCTED')
                 s_k = calculate_strata_divergence(l_k_strata, t_k, min_trades=3)
+                horizon_cache[day_k] = (l_k_id, s_k, f_k)
+
+        def build_horizon_change(day_k, label, days_req):
+            if day_k in horizon_cache:
+                l_k_id, s_k, f_k = horizon_cache[day_k]
                 decomp = decompose_spread_change_shapley(strata_90d, s_k, l_curr_id, l_k_id, f_k)
                 decomp['period'] = label
                 decomp['referenceDay'] = day_k
@@ -693,14 +701,10 @@ def run_spread_dynamics(target_day=None):
                 st_code = 'INSUFFICIENT'
                 p_disp = None
 
-            # District-level horizon changes
+            # District-level horizon changes using cached horizon data
             def build_district_decomp(day_k, days_req):
-                if day_k in available_days:
-                    l_k_id, l_k_strata, _, _ = extract_listings_for_day(hdb, day_k, crosswalk)
-                    t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='CONTEMPORANEOUS_ONLY')
-                    if not t_k:
-                        t_k, _ = extract_trades_up_to_day(tdb, day_k, window_days=90, mode='EX_POST_RECONSTRUCTED')
-                    s_k = calculate_strata_divergence(l_k_strata, t_k, min_trades=3)
+                if day_k in horizon_cache:
+                    l_k_id, s_k, f_k = horizon_cache[day_k]
                     d_k_strata = {k: v for k, v in s_k.items() if k[0] == d}
                     d_k_listings = {k: v for k, v in l_k_id.items() if v['district'] == d}
                     return decompose_spread_change_shapley(d_strata_90, d_k_strata, d_listings_curr, d_k_listings)
