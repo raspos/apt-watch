@@ -168,6 +168,11 @@ footer a{color:var(--ink-3)}
 .nego-metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
 .metric-card{padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);display:flex;flex-direction:column}
 .metric-card.primary-metric{border-left:3px solid var(--ink)}
+.metric-title{font-size:12px;font-weight:600;color:var(--ink-3)}
+.metric-value{font-size:26px;font-weight:700;color:var(--ink);margin:4px 0 2px;line-height:1.2;font-variant-numeric:tabular-nums}
+.metric-value.na{font-size:17px;font-weight:600;color:var(--ink-3)}
+.metric-value.up{color:var(--up)}.metric-value.down{color:var(--down)}
+.metric-sub{font-size:11px;color:var(--ink-3);line-height:1.45}
 .card-label{font-size:11px;font-weight:600;color:var(--ink-3);letter-spacing:.02em}
 .card-val{font-size:24px;font-weight:700;color:var(--ink);margin:4px 0 2px;line-height:1.2}
 .card-val.na{color:var(--muted);font-size:18px}
@@ -181,7 +186,7 @@ footer a{color:var(--ink-3)}
 .supply-trend,.supply-combo{padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);min-width:0}
 .supply-trend-title{font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
 .supply-trend-title span{font-weight:400;color:var(--ink-3)}
-.supply-trend-chart svg{display:block;width:100%;height:auto;max-height:120px}
+.supply-trend-chart svg{display:block;width:100%;height:auto;max-height:170px}
 .supply-trend-chart .ln{fill:none;stroke:var(--ink);stroke-width:1.6;vector-effect:non-scaling-stroke}
 .supply-trend-chart .pt{fill:var(--ink)}
 .supply-trend-chart .base{stroke:var(--line);stroke-dasharray:3 3;vector-effect:non-scaling-stroke}
@@ -189,6 +194,12 @@ footer a{color:var(--ink-3)}
 .supply-empty{font-size:12px;color:var(--ink-3);line-height:1.5;margin:0}
 .supply-combo-body{font-size:12px;color:var(--ink-2);line-height:1.55}
 .supply-combo-body b{font-size:15px;color:var(--ink);display:block;margin-bottom:2px}
+.supply-trend-chart .grid{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}
+.supply-trend-chart text.sub{font-size:11px;font-weight:700;fill:var(--ink)}
+.supply-empty b{color:var(--ink)}
+.supply-grid{grid-template-columns:repeat(3,1fr)}
+.supply-sample{margin:10px 0 0;font-size:11px;color:var(--muted)}
+.cell-sub{font-size:12px;color:var(--ink-3);font-weight:400}
 
 /* ==========================================================================
    반응형 브레이크포인트
@@ -200,6 +211,7 @@ footer a{color:var(--ink-3)}
   .nego-metrics-grid{grid-template-columns:repeat(2,1fr)}
   .nego-meta-right{text-align:left}
   .supply-lower{grid-template-columns:1fr}
+  .supply-grid{grid-template-columns:repeat(3,1fr)}
 }
 
 @media(max-width:760px){
@@ -216,6 +228,8 @@ footer a{color:var(--ink-3)}
 
 @media(max-width:390px){
   .nego-metrics-grid{grid-template-columns:1fr}
+  .metric-value{font-size:22px}
+  .supply-grid{grid-template-columns:1fr}
   .card-val{font-size:22px}
   .nego-hero-header h2{font-size:19px;flex-direction:column;gap:2px}
 }
