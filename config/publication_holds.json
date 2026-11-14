@@ -9,6 +9,9 @@
   "provisional": {
     "note": "11월 12일 +5.12%는 사후 재구성 실거래 기준의 잠정값이며 품질 검증 완료 전까지 공표하지 않습니다."
   },
+  "observationNotes": {
+    "2026-11-14": "호가 관측 09:21~09:51 KST 재수집(06:00 정기 수집 실패분 미사용) · 실거래 기준 11-14 09:49 조회"
+  },
   "minReferenceDay": "2026-11-14",
   "minValidRate": 0.95,
   "requireTradeFirstSeenVerification": true,

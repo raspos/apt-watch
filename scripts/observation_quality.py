@@ -22,7 +22,10 @@ CREATE TABLE IF NOT EXISTS retry_attempts (
 )
 """
 PRICE_RANGE = (1000, 5_000_000)     # 만원
-AREA_RANGE = (15, 600)              # m2
+# m2 exclusive area. Lower bound 10: MOLIT Seoul apartment trades (2026-08..11, 11,343 versions) go down to
+# 10.78 m2 and 1% are < 15 m2 (도시형/초소형 panel complexes, e.g. 12.21 / 13.83 / 14.22 m2 match MOLIT exactly).
+# Values < 10 (e.g. a 평 figure read as m2 for a studio, 0, 1.0) are still rejected. Was 15 until 2026-11-14.
+AREA_RANGE = (10, 600)
 REFERENCE_MAX_AGE_DAYS = 7
 
 

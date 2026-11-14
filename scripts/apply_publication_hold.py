@@ -162,6 +162,30 @@ def _quality(day, planned):
     return {'valid': valid, 'planned': planned, 'rate': valid / planned if planned else 0.0}
 
 
+def _days_between(a, b):
+    from datetime import date
+    try:
+        return (date.fromisoformat(b) - date.fromisoformat(a)).days
+    except (TypeError, ValueError):
+        return 0
+
+
+def observation_gap_hours(ref_day, day):
+    """Hours between the median per-complex observation times of two days (history.sqlite3 batches)."""
+    import sqlite3
+    import statistics
+    db_path = ROOT / 'data' / 'history.sqlite3'
+    if not db_path.exists() or not ref_day or not day:
+        return None
+    def med(d):
+        with sqlite3.connect(f'file:{db_path}?mode=ro', uri=True) as db:
+            ts = [datetime.fromisoformat(r[0].replace('Z', '+00:00')).timestamp()
+                  for r in db.execute("SELECT observed FROM batches WHERE day=? AND success=1 AND observed IS NOT NULL", (d,))]
+        return statistics.median(ts) if ts else None
+    a, b = med(ref_day), med(day)
+    return round((b - a) / 3600, 2) if a is not None and b is not None else None
+
+
 def evaluate_gate(site, hold, min_rate=0.95):
     """Return (level_reasons, {horizon: reason}) -- reasons are empty when publication is allowed."""
     n = site.get('negoIndex') or {}
@@ -277,6 +301,23 @@ def main():
         print('[hold] CHANGES held:', change_reasons)
     else:
         print('[hold] gate passed; nothing withheld')
+    # Disclose when the day's observations were not taken at the regular 06:00 run.
+    n = site.get('negoIndex')
+    note = (hold.get('observationNotes') or {}).get((n or {}).get('asOf'))
+    if isinstance(n, dict):
+        if note:
+            n['observationNote'] = note
+        else:
+            n.pop('observationNote', None)
+        # Observation interval behind each change (e.g. 11-14 afternoon rerun -> 11-15 06:00 is < 24h).
+        for ch in (n.get('changes') or {}).values():
+            if isinstance(ch, dict) and ch.get('referenceDay'):
+                gap = observation_gap_hours(ch['referenceDay'], n.get('asOf'))
+                ch['observationGapHours'] = gap
+                if gap is not None and abs(gap - 24 * _days_between(ch['referenceDay'], n.get('asOf'))) > 2:
+                    ch['observationGapNote'] = f'관측 간격 {gap:.1f}시간 (정규 간격과 다름)'
+                else:
+                    ch.pop('observationGapNote', None)
     if json.dumps(site, sort_keys=True) != before:
         SITE_FILE.write_text(json.dumps(site, ensure_ascii=False, indent=2), encoding='utf-8')
         print('[hold] site/data.json updated')

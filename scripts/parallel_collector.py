@@ -76,6 +76,7 @@ def merge_all_staging_atomic(worker_stores, main_store_path):
     all_batches = []
     all_listings = []
     all_telemetry = []
+    all_roster = []
     corrupted_stores = []
 
     for w_store in worker_stores:
@@ -96,6 +97,10 @@ def merge_all_staging_atomic(worker_stores, main_store_path):
             all_batches.extend(s_batches)
             all_listings.extend(s_listings)
             all_telemetry.extend(s_telemetry)
+            # listing_roster (district per complex) is written by collect_naver.py; it was never merged,
+            # which left the 25-district coverage audit with 0 districts (found 2026-11-14).
+            if s_conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='listing_roster'").fetchone():
+                all_roster.extend(s_conn.execute("SELECT day, complex, district, payload FROM listing_roster").fetchall())
         except Exception as e:
             corrupted_stores.append((w_store, str(e)))
         finally:
@@ -130,6 +135,10 @@ def merge_all_staging_atomic(worker_stores, main_store_path):
             (day, complex, district, name, started_at, duration_sec, listings_count, expected_count, success, error_message)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, all_telemetry)
+
+            if all_roster:
+                m_conn.execute("CREATE TABLE IF NOT EXISTS listing_roster (day TEXT, complex TEXT, district TEXT, payload TEXT, PRIMARY KEY(day, complex))")
+                m_conn.executemany("INSERT OR REPLACE INTO listing_roster (day, complex, district, payload) VALUES (?, ?, ?, ?)", all_roster)
     except Exception as e:
         m_conn.close()
         raise RuntimeError(f"Atomic merge to main database failed: {e}")

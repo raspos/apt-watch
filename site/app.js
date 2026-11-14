@@ -703,7 +703,7 @@ function renderNegoHero() {
   if (badgeEl) badgeEl.textContent = n.statusLabel || '실측 네고 압력 · 90일 실거래 기준';
 
   const asofEl = get('negoAsof');
-  if (asofEl) asofEl.textContent = asof;
+  if (asofEl) asofEl.textContent = n.observationNote ? `${asof} · ${n.observationNote}` : asof;
 
   if (n.status === 'HELD_VERIFICATION') {
     const heldSample = get('negoSampleCount');
