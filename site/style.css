@@ -209,6 +209,7 @@ footer a{color:var(--ink-3)}
 .supply-ref-rates div{display:flex;flex-direction:column}
 .supply-ref-rates span{font-size:11px;color:var(--ink-3)}
 .supply-ref-rates strong{font-size:15px;font-weight:600;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.supply-ref-more summary{font-size:11px;color:var(--ink-3);cursor:pointer;margin-top:4px}
 .supply-ref-note{font-size:11px;color:var(--ink-3);line-height:1.5;margin:2px 0 0}
 .cell-sub{font-size:12px;color:var(--ink-3);font-weight:400}
 

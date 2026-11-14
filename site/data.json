@@ -56731,7 +56731,7 @@
         "observedFromKST": "2026-11-14T09:22+09:00",
         "observedToKST": "2026-11-14T09:51+09:00",
         "collection": "RERUN",
-        "observationNote": "호가 관측 09:21~09:51 KST 재수집(06:00 정기 수집 실패분 미사용) · 실거래 기준 11-14 09:49 조회",
+        "observationNote": "09:21~09:51 재수집",
         "districts": {
           "11410": 388,
           "11545": 442,
@@ -57661,7 +57661,7 @@
         "label": "B계열: 동일 표본 가격괴리 변화"
       }
     ],
-    "observationNote": "호가 관측 09:21~09:51 KST 재수집(06:00 정기 수집 실패분 미사용) · 실거래 기준 11-14 09:49 조회"
+    "observationNote": "09:21~09:51 재수집"
   },
   "dataChangeLog": [
     {

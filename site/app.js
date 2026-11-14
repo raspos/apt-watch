@@ -187,7 +187,7 @@ const chart1 = makeChart({
     : (data.series[code()] || []).map(p => ({key: p.month, value: p.index, samples: p.samples, matched: p.matched, modelGroups: p.modelGroups, provisional: p.provisional, withheld: p.withheld})),
   read: p => state.metric === 'ask'
     ? `${p.key} · 호가지수 ${p.value === null ? '미산출' : p.value.toFixed(2)} · 비교 매물 ${nf(p.samples)}건 · 첫 관측일 = 100`
-    : `${p.key} · ${p.value === null ? (p.withheld || '표본 부족으로 미산출') : p.value.toFixed(2)} · 거래 ${nf(p.samples)}건 · 비교 표본 ${nf(p.matched)}개` + (p.modelGroups != null ? ` · 모형 그룹 ${nf(p.modelGroups)}개` : '') + (p.provisional ? ' · 잠정' : '')
+    : `${p.key} · ${p.value === null ? (p.withheld || '표본 부족으로 미산출') : p.value.toFixed(2)} · 거래 ${nf(p.samples)}건` + (p.provisional ? ' · 잠정' : '')
 });
 
 const chart2 = makeChart({
@@ -196,7 +196,7 @@ const chart2 = makeChart({
   label: () => '관측일별 네고 압력 (NEGO INDEX)',
   emptyText: () => {
     const sp = data.market.regions.all?.spread;
-    return '관측일별 네고 압력 이력은 비교 표본이 확보된 날부터 쌓입니다.' + (sp && sp.percent != null ? ` 현재 네고 압력 ${signed(sp.percent)}` : '');
+    return (sp && sp.percent != null ? `현재 네고 압력 ${signed(sp.percent)} · ` : '') + '공식 관측일부터 쌓입니다';
   },
   points: () => (data.market.spreadHistory?.[code()] || []).map(p => {
     const v = p.actual90d?.percent ?? p.percent ?? p.longTerm180d?.percent ?? null;
@@ -604,7 +604,7 @@ function renderDistrictDetail(c) {
 
   let noteHtml = '';
   if (isInsufficient || displayVal == null) {
-    noteHtml = `<div class="detail-note warn"><b>안내:</b> 최근 12개월 내 비교 가능한 동일 단지·전용면적·층 구간의 국토부 실거래가 부족하여 네고 압력 산출을 유보했습니다.</div>`;
+    noteHtml = `<div class="detail-note warn">최근 90일 비교 실거래가 3건 이상인 그룹이 없어 미산출</div>`;
   } else if (is180) {
     noteHtml = `<div class="detail-note"><b>안내:</b> 최근 90일 내 거래가 부족하여 180일 장기 실측치(시차 약 ${lagDays != null ? lagDays.toFixed(0) : '30'}일 전)를 적용한 참고치입니다.</div>`;
   } else if (groupsCount <= 1) {
@@ -643,7 +643,7 @@ function renderDistrictDetail(c) {
   }
 
   const asof = fmtDate(data.asking?.lastSuccess || data.market.day);
-  const dateSuffix = state.selectedDate ? ` (${state.selectedDate})` : '';
+  const dateSuffix = state.selectedDate && state.selectedDate !== asof ? ` (${state.selectedDate})` : '';
 
   card.innerHTML = `
     <div class="detail-head">
@@ -733,7 +733,7 @@ function renderNegoHero() {
   const so = data.market?.spreadDynamics?.seoulOverall || {};
   const validGroups = so.sampleGroupsCount ?? so.allSample?.sampleGroups ?? (data.observability?.todayCoreSuccess ?? 35);
   const sampleEl = get('negoSampleCount');
-  if (sampleEl) sampleEl.textContent = `${validGroups}개 비교 그룹 (서울 25개 구)`;
+  if (sampleEl) sampleEl.textContent = `${validGroups}개`;
 
   // 1. 현재 네고 압력
   const curValEl = get('negoCurrentVal');
@@ -822,15 +822,10 @@ function renderObservabilityBar() {
 
   bar.innerHTML = `
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <span><b style="color:var(--ink)">오늘 관측 표본:</b> ${nf(todaySuccess)}개 단지 <span style="color:var(--up);font-weight:600">(작업 성공률 ${successRate})</span></span>
-      <span><b style="color:var(--ink)">핵심 표본 커버리지:</b> ${nf(todaySuccess)}/${coreTotal}개 <span style="color:var(--ink-2);font-weight:600">(${coreCovRate})</span></span>
-      <span><b style="color:var(--ink)">최근 7일:</b> ${nf(obs7d)}개 단지</span>
-      <span><b style="color:var(--ink)">최근 30일:</b> ${nf(obs30d)}개 단지</span>
-      <span><b style="color:var(--ink)">실제 관측 매물:</b> ${nf(activeListings)}건</span>
+      <span><b style="color:var(--ink)">관측 표본:</b> ${nf(todaySuccess)}개 단지 · 매물 ${nf(activeListings)}건</span>
     </div>
     <div style="display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)">
-      <span>고정 표본(375개) · 순환 풀(5,446개) 분리 운영</span>
-      <span>마지막 정상 갱신: ${asOf}</span>
+      <span>마지막 갱신: ${asOf}</span>
     </div>
   `;
 }
@@ -855,7 +850,7 @@ function trendChart(s) {
   const days = [...new Set([...nego.keys(), ...sup.keys()])].sort();
   if (days.length < 2) {
     const n0 = nego.get(days[0]);
-    return `<p class="supply-empty"><b>축적 중</b> · 첫 공식 기준선 ${base}: 네고 압력 ${n0 != null ? signed(n0) : '–'}, 매물 지수 100. 두 번째 공식 관측일부터 두 선이 같은 날짜 축에 그려집니다.</p>`;
+    return `<p class="supply-empty"><b>축적 중</b> · 두 번째 공식 관측일부터 그려집니다.</p>`;
   }
   const W = 600, RH = 62, P = 16, L = 78;
   const x = i => L + (W - L - P) * (i / (days.length - 1));
@@ -927,14 +922,14 @@ function renderSupply() {
       const rate = (lab, v) => `<div><span>${lab}</span><strong>${pctText(v)}</strong></div>`;
       refBox.hidden = false;
       refBox.innerHTML = `
-        <div class="supply-ref-head"><span class="supply-ref-tag">참고 시계열 · 공식 아님 · 시장 신호 아님</span><b>기준선 이전 공통 표본 매물 변동</b>
+        <div class="supply-ref-head"><span class="supply-ref-tag">참고 · 공식 아님</span><b>기준선 이전 공통 표본</b>
           <span>공통 정상 관측 ${ref.commonComplexes}개 단지 고정 (${ref.districtsCovered}개 구) · ${md(ref.points[0].day)}~${md(ref.points[ref.points.length - 1].day)}</span></div>
         <div class="supply-ref-rates">
           ${ref.steps.map(st => rate(`${md(st.from)}→${md(st.to)}`, st.changePct)).join('')}
           ${rate(`${md(ref.cumulative.from)}→${md(ref.cumulative.to)} 누적`, ref.cumulative.changePct)}
         </div>
-        <p class="supply-ref-note">지수(${md(ref.baseDay)}=100): ${ref.points.map(p => `${md(p.day)} ${p.index}`).join(' · ')} · 관측 시각 ${ref.observation.map(o => `${md(o.day)} ${hm(o.observedFromKST)}~${hm(o.observedToKST)}`).join(', ')}</p>
-        <p class="supply-ref-note">${ref.timingNote || ''} 수집 오류 단지(11-13 재수집 탭 오류·가짜 0건)는 모두 뺐습니다. ${ref.note || ''}</p>`;
+        <p class="supply-ref-note">관측 시각이 날마다 달라 방향 판단용이 아닙니다.</p>
+        <details class="supply-ref-more"><summary>자세히</summary><p class="supply-ref-note">지수(${md(ref.baseDay)}=100): ${ref.points.map(p => `${md(p.day)} ${p.index}`).join(' · ')}<br>관측 시각: ${ref.observation.map(o => `${md(o.day)} ${hm(o.observedFromKST)}~${hm(o.observedToKST)}`).join(', ')}<br>${ref.timingNote || ''} 수집 오류 단지는 뺐습니다. ${ref.note || ''}</p></details>`;
     } else {
       refBox.hidden = true;
     }
@@ -946,11 +941,11 @@ function renderSupply() {
   if (cb.quadrant) {
     combo.innerHTML = `<b>${cb.label}</b>네고 압력 ${signed(cb.negoChangePctPoint, '%p')} · 매물 ${pctText(cb.supplyChangePct)}<br><span style="color:var(--ink-3)">관측 기록이며 가격 방향 신호로 검증되지 않았습니다.</span>`;
   } else {
-    combo.innerHTML = `<b>축적 중</b>네고 압력과 매물의 실제 전일 변화가 모두 확보된 날부터 네 가지 조합 중 하나로 기록합니다.`;
+    combo.innerHTML = `<b>축적 중</b>두 지표의 전일 변화가 모두 확보되면 표시`;
   }
 
   // sample information, deliberately small: this is a 110-complex panel, not all Seoul listings
-  get('supplySample').textContent = `관측 표본 정보 · ${s.asOf} 품질 검증 통과 ${lv.validComplexes}/${planned}개 단지, 표본 매물 ${nf(lv.listings)}건 (서울 전체 매물 수가 아닙니다)`;
+  get('supplySample').textContent = `관측 표본 ${lv.validComplexes}/${planned}개 단지 · 매물 ${nf(lv.listings)}건 (서울 전체 아님)`;
 }
 
 function supplyDistrict(c) {
@@ -982,7 +977,6 @@ function renderMarket() {
   const insuffDistricts = districtEntries.length - actualDistricts - longDistricts;
   const obsSpreadCount = actualDistricts + longDistricts;
 
-  get('marketState').textContent = data.market.state || '';
 
   /* 가격괴리지수: 타일이 DOM에 존재하는 경우 안전하게 업데이트 */
   const allSpread = getAllSpread();
@@ -1103,7 +1097,7 @@ function renderMarket() {
     setRef('absorptionRef', '신고 시차(최대 30일) 반영 중');
   } else {
     setTile('absorption', '데이터 축적 중', true);
-    setRef('absorptionRef', `30일 관측 패널 확보 전 · 추적 매물 ${nf(a.listings || 0)}건`);
+    setRef('absorptionRef', '30일 자료가 쌓이면 산출');
   }
   get('absorptionAsof').textContent = `기준일 ${asof}`;
 
@@ -1117,7 +1111,7 @@ function renderMarket() {
   }));
 
   /* 03 지역 표 헤더 집계: 정확한 동적 산출 */
-  get('regionQ').textContent = `호가 관측 ${districtEntries.length}개 구 (${nf(a.successes || 0)}개 단지) · 네고 압력 관측 ${obsSpreadCount}개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 표본 부족으로 미산출 ${insuffDistricts})`;
+  get('regionQ').textContent = `네고 압력 ${actualDistricts + longDistricts}개 구 산출 · ${insuffDistricts}개 구 표본 부족`;
 
   const rank = get('ranking').value;
   const rows = Object.entries(data.districts).map(([c, name]) => {
@@ -1363,6 +1357,6 @@ fetch('./data.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).t
   initDateSelect();
   renderMarket();
   get('coverage').textContent = `실거래가격지수(월별) 기초자료: ${nf(data.districtMonths)}개 구·월 · 원자료 ${nf(data.raw)}건 · 분석 대상 ${nf(data.eligibleTrades)}건`;
-  get('chartNote').textContent = '점선은 잠정 구간(신고 시차 미반영), 끊긴 선은 자료가 없는 기간입니다. 지수는 기준 시점 = 100.';
+  get('chartNote').textContent = '점선은 잠정, 끊긴 선은 자료 없음 · 기준 시점 = 100';
   charts.forEach(c => c.draw());
 }).catch(() => { get('meta').textContent = '자료를 불러오지 못했습니다.'; });
