@@ -68,7 +68,6 @@ class SupplyTest(unittest.TestCase):
         q = [(d, cx, 'VALID') for d in (D0, D1) for cx in ('c0', 'c1', 'c2', 'c3')]
         s = ls.Supply(db_with(rows, q), PANEL, HOLDS)
         c = s.change(D1, D0)
-        self.assertEqual(c['relistSuspected'], 1)
         self.assertEqual((c['newListings'], c['endedListings']), (1, 0))
 
     def test_duplicate_id_across_complexes_counted_once(self):

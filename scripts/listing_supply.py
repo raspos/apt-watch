@@ -171,7 +171,6 @@ class Supply:
                         relist += 1
             return {'commonComplexes': len(cxs), 'listingsRef': n0, 'listings': n1, 'change': n1 - n0,
                     'changePct': round((n1 / n0 - 1) * 100, 2) if n0 else None,
-                    'newIds': new, 'endedIds': ended, 'relistSuspected': relist,
                     'newListings': new - relist, 'endedListings': ended - relist,
                     'continuing': n1 - new}
 
@@ -265,7 +264,7 @@ def build(site, db, panel, holds, day):
         'rules': {'minValidComplexes': s.min_valid, 'plannedComplexes': len(s.panel),
                   'districtRule': '자치구 표본 단지 전부가 두 날짜 모두 정상 관측일 때만 자치구 증감 공표',
                   'endedNote': '관측 종료는 거래 완료를 뜻하지 않음(철회·재등록·노출 종료 포함)',
-                  'relistRule': '같은 단지·면적·층·가격으로 새 ID가 나타나면 재등록 의심으로 분리',
+                  'relistRule': '같은 단지·면적·층·가격으로 새 ID가 나타나면 ID만 바뀐 같은 매물로 보고 신규·관측 종료 모두에서 제외(순수치만 공표)',
                   'combinationNote': '네고 압력과 매물 증감의 조합은 관측 기록이며 가격 신호나 예측이 아님'},
         'level': lvl,
         'changes': changes,
