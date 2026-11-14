@@ -56722,12 +56722,12 @@
       "level": {
         "day": "2026-11-14",
         "listings": 12017,
-        "validComplexes": 110,
+        "validComplexes": 106,
         "plannedComplexes": 110,
         "duplicateIdsSkipped": 0,
         "publishable": true,
         "reasons": [],
-        "observedFromKST": "2026-11-14T09:21+09:00",
+        "observedFromKST": "2026-11-14T09:22+09:00",
         "observedToKST": "2026-11-14T09:51+09:00",
         "collection": "RERUN",
         "observationNote": "호가 관측 09:21~09:51 KST 재수집(06:00 정기 수집 실패분 미사용) · 실거래 기준 11-14 09:49 조회",
@@ -56761,13 +56761,13 @@
       },
       "changes": {
         "1d": {
-          "commonComplexes": 87,
-          "listingsRef": 10039,
+          "commonComplexes": 83,
+          "listingsRef": 10008,
           "listings": 9720,
           "change": null,
           "changePct": null,
           "newListings": 738,
-          "endedListings": 1057,
+          "endedListings": 1026,
           "continuing": 8621,
           "referenceDay": "2026-11-13",
           "observationGapHours": 18.6,
@@ -56776,17 +56776,17 @@
             "2026-11-13: 품질 검증 통과 87/110 < 105",
             "2026-11-13: 공표 유예일(수집 오류 격리)",
             "2026-11-13: 첫 검증 기준선(2026-11-14) 이전",
-            "공통 정상 관측 단지 87개 < 105개"
+            "공통 정상 관측 단지 83개 < 105개"
           ],
           "districts": {
             "11110": {
-              "commonComplexes": 4,
-              "listingsRef": 23,
+              "commonComplexes": 2,
+              "listingsRef": 5,
               "listings": 5,
               "change": null,
               "changePct": null,
               "newListings": 0,
-              "endedListings": 18,
+              "endedListings": 0,
               "continuing": 5,
               "published": false
             },
@@ -56835,13 +56835,13 @@
               "published": false
             },
             "11230": {
-              "commonComplexes": 4,
-              "listingsRef": 1007,
+              "commonComplexes": 3,
+              "listingsRef": 1000,
               "listings": 986,
               "change": null,
               "changePct": null,
               "newListings": 77,
-              "endedListings": 98,
+              "endedListings": 91,
               "continuing": 877,
               "published": false
             },
@@ -56945,13 +56945,13 @@
               "published": false
             },
             "11500": {
-              "commonComplexes": 3,
-              "listingsRef": 294,
+              "commonComplexes": 2,
+              "listingsRef": 288,
               "listings": 278,
               "change": null,
               "changePct": null,
               "newListings": 1,
-              "endedListings": 17,
+              "endedListings": 11,
               "continuing": 263,
               "published": false
             },
@@ -57405,7 +57405,7 @@
         {
           "day": "2026-11-14",
           "listings": 12017,
-          "validComplexes": 110,
+          "validComplexes": 106,
           "sameComplexIndex": 100.0,
           "linkFrom": null,
           "linkChangePct": null,
@@ -57654,6 +57654,12 @@
     {
       "id": "CHANGE-HOLD-2026-11-14-1d",
       "at": "2026-11-14T10:17:19+09:00",
+      "action": "변화폭 공표 유예",
+      "reason": "reference day 2026-11-13 precedes first verified live baseline 2026-11-14"
+    },
+    {
+      "id": "CHANGE-HOLD-2026-11-14-1d",
+      "at": "2026-11-14T12:09:26+09:00",
       "action": "변화폭 공표 유예",
       "reason": "reference day 2026-11-13 precedes first verified live baseline 2026-11-14"
     }

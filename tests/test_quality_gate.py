@@ -26,6 +26,24 @@ def add(db, day, cx, ids_prices, ok=1, name='A단지'):
 
 
 class QualityJudgeTest(unittest.TestCase):
+
+    def test_small_reference_dropping_to_zero_is_suspect(self):
+        db = make_db()
+        add(db, '2026-01-01', 'c1', [(i, 100000) for i in range(7)])
+        add(db, '2026-01-02', 'c1', [])
+        oq.assess_day(db, '2026-01-01')
+        s = oq.assess_day(db, '2026-01-02')
+        self.assertEqual((s['valid'], s['suspect']), (0, 1))
+
+    def test_zero_after_zero_stays_valid(self):
+        db = make_db()
+        add(db, '2026-01-01', 'c1', [(1, 100000)])
+        add(db, '2026-01-02', 'c1', [])
+        add(db, '2026-01-03', 'c1', [])
+        for d in ('2026-01-01', '2026-01-02'):
+            oq.assess_day(db, d)
+        db.execute("UPDATE observation_quality SET status='VALID' WHERE day='2026-01-02'")   # reference confirmed at 0
+        self.assertEqual(oq.assess_day(db, '2026-01-03')['valid'], 1)
     def test_baseline_then_consistent_day_is_valid(self):
         db = make_db()
         add(db, '2026-01-01', 'c1', [(i, 100000 + i) for i in range(30)])

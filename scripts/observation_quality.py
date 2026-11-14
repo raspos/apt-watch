@@ -95,8 +95,12 @@ def latest_valid_reference(db, day, cx):
     return r[0], {x[0]: x[1] for x in db.execute("SELECT id, price FROM listings WHERE day=? AND complex=?", (r[0], cx))}
 
 
-def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=10):
-    """Return (kind, status, reason, ref_n, cmp, basis) for one complex-day observation."""
+def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=1):
+    """Return (kind, status, reason, ref_n, cmp, basis) for one complex-day observation.
+
+    A complex that had listings at its last valid observation and now has 0 is SUSPECT, however small
+    the reference was (until 2026-11-14 the threshold was 10, which let 6-9 -> 0 empty-page reads pass).
+    A complex that was already at 0 stays VALID at 0."""
     own = {str(r[0]): r[1] for r in rows}
     n = len(rows)
     kind = 'ZERO_LISTINGS' if n == 0 else 'COLLECTED'
@@ -105,7 +109,7 @@ def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=10):
             return kind, 'UNKNOWN', 'zero rows and no valid earlier reference', None, None, 'none'
         if len(ref) >= min_ref_for_zero:
             return kind, 'SUSPECT', f'0 rows but valid reference {ref_day} had {len(ref)}', len(ref), None, 'reference'
-        return kind, 'VALID', f'0 rows; reference {ref_day} had only {len(ref)} (below {min_ref_for_zero})', len(ref), None, 'reference'
+        return kind, 'VALID', f'0 rows; reference {ref_day} also had 0', len(ref), None, 'reference'
     probs = structural_check(rows, manifest_entry)
     if probs:
         return kind, 'INVALID', '; '.join(probs), len(ref) if ref else None, None, 'structural'
