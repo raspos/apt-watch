@@ -16,6 +16,7 @@ Final status
 """
 import argparse
 import json
+import os
 import sqlite3
 import subprocess
 import sys
@@ -49,6 +50,10 @@ MARKERS = [
     ('[CRITICAL DEPLOYMENT FAILURE]', 'githubPush', 'FAILED'),
     ('site/data.json is unchanged; no new git commit needed', 'githubPush', 'NOT_NEEDED'),
 ]
+
+# Child Python processes inherit this. Without it, pythonw children wrote cp949 to pipes that the
+# parent decodes as utf-8, which killed subprocess reader threads (seen 2026-11-14).
+os.environ['PYTHONIOENCODING'] = 'utf-8'
 
 if sys.platform == 'win32':
     _orig_init = subprocess.Popen.__init__
