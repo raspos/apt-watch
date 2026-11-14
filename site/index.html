@@ -1,11 +1,25 @@
-<!-- APT WATCH Production Index -->
 <!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>APT워치 · 서울 아파트 시장심리 지도</title>
-<meta name="description" content="서울 25개 자치구 아파트 호가와 실거래가격의 차이, 호가조정 및 거래활력을 인터랙티브 지도로 관측하는 모니터.">
+<meta name="description" content="서울 아파트 집주인 호가와 실거래가의 간격(네고 압력지수)과 매도 매물 증감률을 매일 관측합니다.">
+<link rel="canonical" href="https://raspos.github.io/apt-watch/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="APT워치">
+<meta property="og:title" content="APT워치 · 서울 아파트 시장심리">
+<meta property="og:description" content="서울 아파트 집주인 호가와 실거래가의 간격(네고 압력지수)과 매도 매물 증감률을 매일 관측합니다.">
+<meta property="og:url" content="https://raspos.github.io/apt-watch/">
+<meta property="og:image" content="https://raspos.github.io/apt-watch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="APT워치 서울 아파트 시장심리 - 네고 압력지수와 매물 증감률">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APT워치 · 서울 아파트 시장심리">
+<meta name="twitter:description" content="서울 아파트 집주인 호가와 실거래가의 간격(네고 압력지수)과 매도 매물 증감률을 매일 관측합니다.">
+<meta name="twitter:image" content="https://raspos.github.io/apt-watch/og-image.png">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="watch-tokens.css">
 <link rel="stylesheet" href="style.css">
@@ -134,6 +148,7 @@
     <div style="margin-top:10px;line-height:1.6;">
       <p style="margin:4px 0;"><b>표본 관측:</b> APT워치는 서울 전체 매물을 집계하지 않습니다. 서울 25개 구의 고정 표본 110개 단지를 매일 관측해 같은 표본 안의 변화를 추적합니다. 화면에 작게 나오는 매물 건수는 표본 정보일 뿐 서울 전체 매물 수가 아닙니다.</p>
       <p style="margin:4px 0;"><b>증감률:</b> 비교하는 두 날짜에 모두 품질 검증을 통과한 단지만으로 계산합니다(매물 ID 중복 제거). 전체 매물 수를 단순히 뺀 값은 쓰지 않습니다. 공통 단지가 105개 미만이면 공표하지 않고, 공통 단지가 110개보다 적으면 비교 표본이 바뀌었다고 표시합니다. 자치구 증감률은 그 구의 표본 단지가 두 날짜 모두 정상 관측일 때만 표시합니다.</p>
+      <p style="margin:4px 0;"><b>관측 시각:</b> 공식 증감률은 매일 06시 정규 수집끼리 비교합니다. 두 날 모두 정규 수집이고, 공통 단지의 90% 이상이 단지별 관측 간격 24시간(±2시간)일 때만 정규 증감률로 표시합니다. 재수집이나 정규 시각 밖 수집이 섞이면 같은 수치를 '참고'로만 보여 주고, 네고 압력과의 조합에도 쓰지 않습니다. 같은 날 06시와 09시 관측만으로도 매물이 수% 달라질 수 있기 때문입니다.</p>
       <p style="margin:4px 0;"><b>매물 지수:</b> 첫 공식 기준선(2026-11-14)을 100으로 두고, 공표 가능한 관측일 사이의 동일 단지 증감률을 이어 붙입니다. 기준선 이전에는 검증된 자료가 없어 변화율을 0%로 두지 않고 '축적 중'으로 표시합니다.</p>
       <p style="margin:4px 0;"><b>신규·관측 종료:</b> 매물 ID만 바뀐 경우(같은 단지·면적·층·가격으로 새 ID가 나타난 경우)는 신규와 관측 종료 모두에서 빼고 순수치만 표시합니다. 관측 종료는 거래 완료로 보지 않습니다(철회·노출 종료 포함).</p>
       <p style="margin:4px 0;"><b>네고 압력과의 조합:</b> 두 지표의 실제 변화가 모두 확보된 날만 네 가지 조합(상승·감소, 하락·증가, 상승·증가, 하락·감소) 중 하나로 기록합니다. 관측 기록이며 집값 방향 신호로 검증된 것이 아닙니다. 실거래가격과의 선후 관계는 자료가 쌓인 뒤 검증합니다.</p>

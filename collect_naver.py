@@ -67,6 +67,13 @@ def _rendered_articles_with_fallback(page):
     """)
 
 
+ZERO_CONFIRMED = 'ZERO_CONFIRMED: empty-state message on page'
+
+
+def _empty_state(body_txt):
+    return bool('매물이 없습니다' in body_txt or '등록된 매물이 없습니다' in body_txt or re.search(r'매물\s*0\s*개', body_txt))
+
+
 def collect(page, target):
     blocked = []
     def observe(response):
@@ -93,8 +100,8 @@ def collect(page, target):
                 page.get_by_role('tab', name='매물').first.click(timeout=10000)
             except Exception as e_tab:
                 body_txt = page.inner_text('body')
-                if '매물이 없습니다' in body_txt or '등록된 매물이 없습니다' in body_txt or re.search(r'매물\s*0\s*개', body_txt):
-                    return [], 0
+                if _empty_state(body_txt):
+                    return [], 0, ZERO_CONFIRMED
                 raise e_tab
 
         # Wait for article links to render if listings exist
@@ -130,7 +137,11 @@ def collect(page, target):
         represented = len(raw)
 
         if expected == 0 and not raw:
-            return [], 0
+            # A real empty complex shows an explicit empty-state message. A page that rendered neither
+            # listings nor that message is a failed read (it used to be stored as a successful 0).
+            if _empty_state(page.inner_text('body')):
+                return [], 0, ZERO_CONFIRMED
+            raise RuntimeError('ZERO_UNCONFIRMED: page shows neither listings nor an empty-state message')
 
         if expected > 0 and len(raw) < expected:
             # If partially represented, still accept parsed listings rather than discarding
@@ -148,7 +159,14 @@ def collect(page, target):
                              building_name=row['buildingName'], article_confirm_date=row['articleConfirmDate'],
                              dong=target.get('dong'), source='NAVER_BROWSER',
                              article_url='https://fin.land.naver.com/articles/' + row['articleNo']))
-        return rows, expected
+        if not rows:
+            # Listing cards rendered but none carries a sale (매매) price -> a real zero for sale listings.
+            # (The card parser skips non-sale cards, so count the rendered article links directly.)
+            links = page.locator('a[href^="/articles/"]').count()
+            if raw or links:
+                return [], expected, f'ZERO_CONFIRMED: {links} listing link(s) rendered, none for sale'
+            raise RuntimeError(f'ZERO_UNCONFIRMED: page reports {expected} listing(s) but no card rendered')
+        return rows, expected, None
     finally:
         page.remove_listener('response', observe)
         if blocked:
@@ -233,7 +251,7 @@ def main():
                 rows, groups, success = [], None, False
                 for attempt in range(2):
                     try:
-                        rows, groups = collect(page, target)
+                        rows, groups, err_msg = collect(page, target)   # err_msg = ZERO_CONFIRMED note or None
                         success = True
                         break
                     except PermissionError as error:

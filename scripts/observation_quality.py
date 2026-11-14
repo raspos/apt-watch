@@ -95,7 +95,7 @@ def latest_valid_reference(db, day, cx):
     return r[0], {x[0]: x[1] for x in db.execute("SELECT id, price FROM listings WHERE day=? AND complex=?", (r[0], cx))}
 
 
-def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=1):
+def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=1, zero_confirmed=False):
     """Return (kind, status, reason, ref_n, cmp, basis) for one complex-day observation.
 
     A complex that had listings at its last valid observation and now has 0 is SUSPECT, however small
@@ -108,7 +108,9 @@ def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=1):
         if ref_day is None:
             return kind, 'UNKNOWN', 'zero rows and no valid earlier reference', None, None, 'none'
         if len(ref) >= min_ref_for_zero:
-            return kind, 'SUSPECT', f'0 rows but valid reference {ref_day} had {len(ref)}', len(ref), None, 'reference'
+            if zero_confirmed:   # the page itself said there are no listings
+                return kind, 'VALID', f'confirmed zero (empty-state message); reference {ref_day} had {len(ref)}', len(ref), None, 'empty_state'
+            return kind, 'SUSPECT', f'0 rows but valid reference {ref_day} had {len(ref)} (zero not confirmed by the page)', len(ref), None, 'reference'
         return kind, 'VALID', f'0 rows; reference {ref_day} also had 0', len(ref), None, 'reference'
     probs = structural_check(rows, manifest_entry)
     if probs:
@@ -123,6 +125,15 @@ def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=1):
     return kind, 'SUSPECT', f'inconsistent with valid reference {ref_day} (ids/count/price level)', len(ref), cmpv, 'reference'
 
 
+def _zero_confirmed(db, day, cx):
+    """True when the collector recorded that the page itself showed an empty-state message."""
+    try:
+        r = db.execute("SELECT error_message FROM collection_telemetry WHERE day=? AND complex=?", (day, cx)).fetchone()
+    except sqlite3.OperationalError:
+        return False
+    return bool(r and r[0] and str(r[0]).startswith('ZERO_CONFIRMED'))
+
+
 def assess_day(db, day, manifest=None):
     """Assess every batch of `day` against the latest valid earlier observation. Returns summary dict."""
     db.execute(DDL)
@@ -135,7 +146,8 @@ def assess_day(db, day, manifest=None):
             out.append((day, cx, 'FAILED', 'INVALID', 'collector reported failure', 0, None, None, None, None, 'batches.success=0', now))
             continue
         ref_day, ref = latest_valid_reference(db, day, cx)
-        kind, status, reason, ref_n, cmpv, basis = judge(_rows(db, day, cx), ref_day, ref, man.get(cx))
+        kind, status, reason, ref_n, cmpv, basis = judge(_rows(db, day, cx), ref_day, ref, man.get(cx),
+                                                         zero_confirmed=_zero_confirmed(db, day, cx))
         ov, cr, mr = cmpv if cmpv else (None, None, None)
         n = db.execute("SELECT COUNT(*) FROM listings WHERE day=? AND complex=?", (day, cx)).fetchone()[0]
         out.append((day, cx, kind, status, reason, n, ref_n, ov, cr, mr, basis, now))
@@ -186,7 +198,7 @@ def validate_retry_store(main_db, retry_db, target_day, manifest):
             verdicts[cx] = (False, 'retry collector reported failure')
         else:
             ref_day, ref = latest_valid_reference(main_db, target_day, cx)
-            kind, status, reason, *_ = judge(rows, ref_day, ref, man.get(cx))
+            kind, status, reason, *_ = judge(rows, ref_day, ref, man.get(cx), zero_confirmed=_zero_confirmed(retry_db, target_day, cx))
             verdicts[cx] = (status == 'VALID', f'{status}: {reason}')
         main_db.execute("INSERT INTO retry_attempts VALUES (?,?,?,?,?,?)",
                         (target_day, cx, observed or now, len(rows), int(verdicts[cx][0]), verdicts[cx][1]))

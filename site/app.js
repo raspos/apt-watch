@@ -859,25 +859,30 @@ function trendChart(s) {
   }
   const W = 600, RH = 62, P = 16, L = 78;
   const x = i => L + (W - L - P) * (i / (days.length - 1));
-  const row = (vals, top, fmt, ref) => {
+  const row = (vals, top, fmt, ref, dashed) => {
     const vs = vals.filter(v => v != null).concat(ref != null ? [ref] : []);
     const lo = Math.min(...vs), hi = Math.max(...vs), span = (hi - lo) || 1;
     const y = v => top + 8 + (RH - 20) * (1 - (v - lo) / span);
-    let d = '', prevOk = false;
-    vals.forEach((v, i) => { if (v == null) { prevOk = false; return; } d += (prevOk ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1) + ' '; prevOk = true; });
+    let d = '', dd = '';
+    vals.forEach((v, i) => {
+      if (v == null || i === 0 || vals[i - 1] == null) return;
+      const seg = `M${x(i - 1).toFixed(1)} ${y(vals[i - 1]).toFixed(1)} L${x(i).toFixed(1)} ${y(v).toFixed(1)} `;
+      if (dashed && dashed[i]) dd += seg; else d += seg;
+    });
     return `${ref != null ? `<line class="base" x1="${L}" x2="${W - P}" y1="${y(ref)}" y2="${y(ref)}"></line>` : ''}
-      <path class="ln" d="${d}"></path>
+      <path class="ln" d="${d}"></path>${dd ? `<path class="ln dash" d="${dd}"></path>` : ''}
       ${vals.map((v, i) => v == null ? '' : `<circle class="pt" cx="${x(i)}" cy="${y(v)}" r="2.5"><title>${days[i]} · ${fmt(v)}</title></circle>`).join('')}`;
   };
   const nv = days.map(d => nego.get(d) ?? null);
   const sv = days.map(d => sup.get(d)?.sameComplexIndex ?? null);
+  const refLink = days.map(d => sup.get(d)?.linkComparability === 'TIMING_REFERENCE');
   const last = (arr) => [...arr].reverse().find(v => v != null);
   return `<svg viewBox="0 0 ${W} ${RH * 2 + 18}" role="img" aria-label="네고 압력과 매물 지수 추이">
     ${days.map((d, i) => `<line class="grid" x1="${x(i)}" x2="${x(i)}" y1="4" y2="${RH * 2}"></line>`).join('')}
     <text x="2" y="18">네고 압력</text><text x="2" y="30" class="sub">${signed(last(nv))}</text>
     ${row(nv, 0, v => signed(v))}
     <text x="2" y="${RH + 18}">매물 지수</text><text x="2" y="${RH + 30}" class="sub">${last(sv) ?? '–'}</text>
-    ${row(sv, RH, v => String(v), 100)}
+    ${row(sv, RH, v => String(v), 100, refLink)}
     <text x="${L}" y="${RH * 2 + 14}">${days[0]}</text><text x="${W - P}" y="${RH * 2 + 14}" text-anchor="end">${days[days.length - 1]}</text>
   </svg>`;
 }
@@ -896,11 +901,15 @@ function renderSupply() {
     const ch = s.changes?.[h] || {};
     const v = get(vId), sub = get(sId);
     if (ch.published && ch.changePct != null) {
-      v.textContent = pctText(ch.changePct);
-      v.className = 'metric-value ' + dirClass(ch.changePct);
+      const regular = ch.comparability === 'REGULAR';
+      v.textContent = regular ? pctText(ch.changePct) : `참고 ${pctText(ch.changePct)}`;
+      v.className = 'metric-value ' + (regular ? dirClass(ch.changePct) : 'ref');
       const sampleNote = ch.commonComplexes < planned ? ` · 비교 표본 변경: 공통 ${ch.commonComplexes}/${planned}개 단지` : ` · 공통 ${ch.commonComplexes}개 단지`;
-      const gap = ch.observationGapHours != null ? ` · 관측 간격 ${Number(ch.observationGapHours).toFixed(1)}시간` : '';
-      sub.textContent = `${countText(ch.change)} (신규 ${nf(ch.newListings)} · 관측 종료 ${nf(ch.endedListings)})${sampleNote}${gap}`;
+      const gapH = ch.timing?.medianGapHours ?? ch.observationGapHours;
+      const gap = gapH != null ? ` · 관측 간격 ${Number(gapH).toFixed(1)}시간` : '';
+      const why = regular ? '' : ' · 관측 시각 차이로 참고값(정규 비교 아님)';
+      const longC = ch.timing?.longCollection ? ' · 수집 시간 길어 비교성 낮음' : '';
+      sub.textContent = `${countText(ch.change)} (신규 ${nf(ch.newListings)} · 관측 종료 ${nf(ch.endedListings)})${sampleNote}${gap}${why}${longC}`;
     } else {
       v.textContent = '축적 중'; v.className = 'metric-value na';
       sub.textContent = supplyPendingText(ch);
@@ -915,10 +924,10 @@ function renderSupply() {
     if (ref && ref.steps?.length) {
       const hm = d => (d || '').slice(11, 16);
       const md = d => (d || '').slice(5).replace('-', '/');
-      const rate = (lab, v) => `<div><span>${lab}</span><strong class="${dirClass(v)}">${pctText(v)}</strong></div>`;
+      const rate = (lab, v) => `<div><span>${lab}</span><strong>${pctText(v)}</strong></div>`;
       refBox.hidden = false;
       refBox.innerHTML = `
-        <div class="supply-ref-head"><span class="supply-ref-tag">참고 시계열 · 공식 아님</span><b>기준선 이전 공통 표본 매물 변동</b>
+        <div class="supply-ref-head"><span class="supply-ref-tag">참고 시계열 · 공식 아님 · 시장 신호 아님</span><b>기준선 이전 공통 표본 매물 변동</b>
           <span>공통 정상 관측 ${ref.commonComplexes}개 단지 고정 (${ref.districtsCovered}개 구) · ${md(ref.points[0].day)}~${md(ref.points[ref.points.length - 1].day)}</span></div>
         <div class="supply-ref-rates">
           ${ref.steps.map(st => rate(`${md(st.from)}→${md(st.to)}`, st.changePct)).join('')}

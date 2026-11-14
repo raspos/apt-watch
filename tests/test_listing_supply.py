@@ -101,5 +101,23 @@ class SupplyTest(unittest.TestCase):
         self.assertFalse(r['official'])
 
 
+    def test_regular_needs_two_scheduled_runs_and_aligned_times(self):
+        q = [(d, cx, 'VALID') for d in (D0, D1) for cx in ('c0', 'c1', 'c2', 'c3')]
+        db = db_with(self.base(), q)              # batches observed at 21:10Z = 06:10 KST on both days
+        s = ls.Supply(db, PANEL, HOLDS)
+        c = s.change(D1, D0)
+        self.assertEqual(c['comparability'], 'REGULAR')
+        self.assertEqual(c['timing']['medianGapHours'], 24.0)
+        db.execute("UPDATE batches SET observed=? WHERE day=?", (D1 + 'T01:00:00Z', D1))   # 10:00 KST next day
+        s2 = ls.Supply(db, PANEL, HOLDS)
+        c2 = s2.change(D1, D0)
+        self.assertTrue(c2['published'])
+        self.assertEqual(c2['comparability'], 'TIMING_REFERENCE')
+
+    def test_quality_failure_is_withheld_not_reference(self):
+        q = [(D0, cx, 'VALID') for cx in ('c0', 'c1', 'c2', 'c3')] + [(D1, cx, 'VALID') for cx in ('c0', 'c1')]
+        c = ls.Supply(db_with(self.base(), q), PANEL, HOLDS).change(D1, D0)
+        self.assertEqual(c['comparability'], 'WITHHELD_QUALITY')
+
 if __name__ == '__main__':
     unittest.main()

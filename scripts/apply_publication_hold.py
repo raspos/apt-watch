@@ -272,7 +272,9 @@ def hold_changes_only(site, horizons, reasons):
         so['decomposition'] = {'status': HELD_CODE, 'reason': HELD_STATUS}
         so['seriesB_FixedSamplePanel'] = []
     log = site.setdefault('dataChangeLog', [])
-    log.append({'id': f"CHANGE-HOLD-{(site.get('negoIndex') or {}).get('asOf')}-{','.join(sorted(horizons))}",
+    entry_id = f"CHANGE-HOLD-{(site.get('negoIndex') or {}).get('asOf')}-{','.join(sorted(horizons))}"
+    log[:] = [e for e in log if e.get('id') != entry_id]   # one entry per day/horizon set, latest reason
+    log.append({'id': entry_id,
                 'at': datetime.now(timezone(timedelta(hours=9))).isoformat(timespec='seconds'),
                 'action': '변화폭 공표 유예', 'reason': '; '.join(reasons.values())})
 
@@ -318,6 +320,21 @@ def main():
                     ch['observationGapNote'] = f'관측 간격 {gap:.1f}시간 (정규 간격과 다름)'
                 else:
                     ch.pop('observationGapNote', None)
+    # documented quality / baseline revisions stay visible in the public change log
+    log = site.setdefault('dataChangeLog', [])
+    seen, dedup = set(), []
+    for e in reversed(log):                     # keep the latest entry per id
+        if e.get('id') in seen:
+            continue
+        seen.add(e.get('id'))
+        dedup.append(e)
+    log[:] = list(reversed(dedup))
+    if hold.get('id') and hold.get('holdDays') and not any(e.get('id') == hold['id'] for e in log):
+        log.insert(0, {'id': hold['id'], 'appliedFor': sorted(hold['holdDays']), 'at': hold.get('loggedAt'),
+                       'action': 'NEGO INDEX 수치 공표 유예 (수집 데이터 검증 중)', 'reason': hold.get('reason')})
+    for rev in hold.get('qualityRevisions') or []:
+        if not any(e.get('id') == rev.get('id') for e in log):
+            log.append({k: rev.get(k) for k in ('id', 'day', 'at', 'action', 'reason')})
     if json.dumps(site, sort_keys=True) != before:
         SITE_FILE.write_text(json.dumps(site, ensure_ascii=False, indent=2), encoding='utf-8')
         print('[hold] site/data.json updated')

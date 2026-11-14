@@ -32,6 +32,10 @@ PANEL = ROOT / 'data' / 'fixed-110-panel.json'
 HOLDS = ROOT / 'config' / 'publication_holds.json'
 KST = timezone(timedelta(hours=9))
 HORIZONS = (('1d', 1), ('7d', 7), ('28d', 28))
+TIMING_TOL_H = 2.0          # per-complex observation gap tolerance around 24h x days
+TIMING_SHARE = 0.9          # share of common complexes that must be within tolerance for a REGULAR change
+LONG_COLLECTION_H = 2.0     # a day whose common-complex observations span longer than this is flagged
+KIND_LABEL = {'SCHEDULED': '정규 06시 수집', 'RERUN': '당일 재수집', 'OFF_SCHEDULE': '정규 시각 외 수집'}
 QUADRANTS = {
     ('up', 'down'): ('Q1', '네고 압력 상승 · 매물 감소'),
     ('down', 'up'): ('Q2', '네고 압력 하락 · 매물 증가'),
@@ -127,6 +131,38 @@ class Supply:
         return {'from': ts[0].isoformat(timespec='minutes'), 'to': ts[-1].isoformat(timespec='minutes'),
                 'medianEpoch': ts[len(ts) // 2].timestamp()}
 
+    def obs_times(self, day):
+        return {str(c): _kst(o) for c, o in self.db.execute(
+            "SELECT complex, observed FROM batches WHERE day=? AND success=1", (day,)) if o}
+
+    def comparability(self, day, ref, common, days_apart):
+        """REGULAR only when both days are regular 06:00 runs and, complex by complex, the two observations
+        are 24h x days_apart (+-TIMING_TOL_H) apart for >= TIMING_SHARE of the common complexes."""
+        t1, t0 = self.obs_times(day), self.obs_times(ref)
+        notes = self.holds.get('observationNotes') or {}
+        kind1 = collection_kind(self.window(day, common), notes.get(day))
+        kind0 = collection_kind(self.window(ref, common), notes.get(ref))
+        target = 24.0 * days_apart
+        gaps = [(t1[c] - t0[c]).total_seconds() / 3600 for c in common if c in t1 and c in t0]
+        within = sum(1 for g in gaps if abs(g - target) <= TIMING_TOL_H)
+        share = round(within / len(gaps), 3) if gaps else 0.0
+        span = []
+        for d, tm in ((ref, t0), (day, t1)):
+            ts = sorted(tm[c] for c in common if c in tm)
+            span.append(round((ts[-1] - ts[0]).total_seconds() / 3600, 2) if ts else None)
+        regular = kind1 == 'SCHEDULED' and kind0 == 'SCHEDULED' and share >= TIMING_SHARE
+        why = []
+        if kind0 != 'SCHEDULED' or kind1 != 'SCHEDULED':
+            why.append(f'정규 06시 수집이 아닌 날 포함 ({ref}: {KIND_LABEL[kind0]}, {day}: {KIND_LABEL[kind1]})')
+        if share < TIMING_SHARE:
+            why.append(f'단지별 관측 간격이 {target:.0f}±{TIMING_TOL_H:g}시간인 단지 {share:.0%} < {TIMING_SHARE:.0%}')
+        return {'comparability': 'REGULAR' if regular else 'TIMING_REFERENCE',
+                'collectionRef': kind0, 'collection': kind1,
+                'medianGapHours': round(sorted(gaps)[len(gaps) // 2], 1) if gaps else None,
+                'shareWithinTolerance': share, 'collectionSpanHours': {'ref': span[0], 'day': span[1]},
+                'longCollection': any(x is not None and x > LONG_COLLECTION_H for x in span),
+                'timingReasons': why}
+
     def level(self, day):
         lst, dups = self.listings(day)
         by_d = Counter()
@@ -176,6 +212,9 @@ class Supply:
 
         out = stats(common)
         out.update({'referenceDay': ref, 'observationGapHours': gap, 'published': not reasons, 'reasons': reasons})
+        days_apart = (date.fromisoformat(day) - date.fromisoformat(ref)).days
+        out['timing'] = self.comparability(day, ref, common, days_apart)
+        out['comparability'] = out['timing']['comparability'] if out['published'] else 'WITHHELD_QUALITY'
         if districts:
             out['districts'] = {}
             for d in districts:
@@ -277,13 +316,14 @@ def build(site, db, panel, holds, day):
         else:
             changes[h] = s.change(day, ref, districts)
         nego_ch = ((n.get('changes') or {}).get(h) or {}).get('deltaPctPoint')
-        sup_ch = changes[h].get('changePct') if changes[h].get('published') else None
+        sup_ch = changes[h].get('changePct') if changes[h].get('comparability') == 'REGULAR' else None
         q, label = quadrant(nego_ch, sup_ch)
         dq = {}
         for d in districts:
             dn = (((nego_dist.get(d) or {}).get('changes') or {}).get(h) or {}).get('deltaPctPoint')
             ds = ((changes[h].get('districts') or {}).get(d) or {})
-            dq[d] = dict(zip(('quadrant', 'label'), quadrant(dn, ds.get('changePct') if ds.get('published') else None)))
+            ok = ds.get('published') and changes[h].get('comparability') == 'REGULAR'
+            dq[d] = dict(zip(('quadrant', 'label'), quadrant(dn, ds.get('changePct') if ok else None)))
         combo[h] = {'quadrant': q, 'label': label, 'negoChangePctPoint': nego_ch, 'supplyChangePct': sup_ch, 'districts': dq}
 
     # same-complex chain index over publishable days (first publishable day = 100)
@@ -297,13 +337,14 @@ def build(site, db, panel, holds, day):
         lv = s.level(d)
         if prev is None:
             idx = 100.0
-            link = None
+            link = link_kind = None
         else:
             c = s.change(d, prev)
             link = c.get('changePct') if c['published'] else None
+            link_kind = c.get('comparability')
             idx = round(idx * (1 + link / 100), 2) if (link is not None and idx is not None) else None
         series.append({'day': d, 'listings': lv['listings'], 'validComplexes': lv['validComplexes'],
-                       'sameComplexIndex': idx, 'linkFrom': prev, 'linkChangePct': link,
+                       'sameComplexIndex': idx, 'linkFrom': prev, 'linkChangePct': link, 'linkComparability': link_kind,
                        'collection': lv['collection']})
         prev = d
 
@@ -316,7 +357,9 @@ def build(site, db, panel, holds, day):
                   'districtRule': '자치구 표본 단지 전부가 두 날짜 모두 정상 관측일 때만 자치구 증감 공표',
                   'endedNote': '관측 종료는 거래 완료를 뜻하지 않음(철회·재등록·노출 종료 포함)',
                   'relistRule': '같은 단지·면적·층·가격으로 새 ID가 나타나면 ID만 바뀐 같은 매물로 보고 신규·관측 종료 모두에서 제외(순수치만 공표)',
-                  'combinationNote': '네고 압력과 매물 증감의 조합은 관측 기록이며 가격 신호나 예측이 아님'},
+                  'combinationNote': '네고 압력과 매물 증감의 조합은 관측 기록이며 가격 신호나 예측이 아님. 정규 비교 가능한 매물 증감에서만 표시',
+                  'timingRule': f'정규 비교 = 두 날 모두 06시 정규 수집이고 공통 단지의 {TIMING_SHARE:.0%} 이상이 단지별 관측 간격 24시간×일수±{TIMING_TOL_H:g}시간. '
+                                '그 밖에는 관측 시각 차이로 참고값만 제공, 품질 기준 미달은 공표 유예'},
         'level': lvl,
         'changes': changes,
         'combination': combo,

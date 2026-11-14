@@ -1,0 +1,1232 @@
+{
+  "runs": [
+    {
+      "day": "2026-11-12",
+      "run": "main",
+      "planned": 110,
+      "collected": 110,
+      "qualityValid": 108,
+      "falseZeros": 2,
+      "observedFromKST": "2026-11-12T13:07+09:00",
+      "observedToKST": "2026-11-12T17:17+09:00",
+      "spanHours": 4.17
+    },
+    {
+      "day": "2026-11-13",
+      "run": "main",
+      "planned": 110,
+      "collected": 110,
+      "qualityValid": 87,
+      "falseZeros": 15,
+      "observedFromKST": "2026-11-13T14:39+09:00",
+      "observedToKST": "2026-11-13T15:51+09:00",
+      "spanHours": 1.21
+    },
+    {
+      "day": "2026-11-14",
+      "run": "main",
+      "planned": 110,
+      "collected": 110,
+      "qualityValid": 106,
+      "falseZeros": 4,
+      "observedFromKST": "2026-11-14T09:21+09:00",
+      "observedToKST": "2026-11-14T09:51+09:00",
+      "spanHours": 0.49
+    },
+    {
+      "day": "2026-11-14",
+      "run": "2026-11-14_0600run",
+      "planned": 110,
+      "collected": 40,
+      "qualityValid": 36,
+      "falseZeros": 3,
+      "observedFromKST": "2026-11-14T06:30+09:00",
+      "observedToKST": "2026-11-14T06:55+09:00",
+      "spanHours": 0.41
+    }
+  ],
+  "panel": {
+    "complexes": 110,
+    "meanSuccessRate": 0.841,
+    "meanQualityPassRate": 0.766,
+    "falseZeroIncidents": 24,
+    "falseZeroRatePerComplexRun": 0.0545,
+    "meanDurationSec": 46.5,
+    "complexesAlwaysValid": 29,
+    "scheduledRuns": 1
+  },
+  "weakComplexes": [
+    {
+      "complex": "8742",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.25,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 41.6
+    },
+    {
+      "complex": "105911",
+      "district": "11215",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 46.9
+    },
+    {
+      "complex": "107600",
+      "district": "11230",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 47.8
+    },
+    {
+      "complex": "107073",
+      "district": "11260",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 37.4
+    },
+    {
+      "complex": "126062",
+      "district": "11290",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 46.7
+    },
+    {
+      "complex": "119275",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 43.9
+    },
+    {
+      "complex": "3479",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 48.8
+    },
+    {
+      "complex": "106009",
+      "district": "11500",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 29.9
+    },
+    {
+      "complex": "102814",
+      "district": "11545",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 33.0
+    },
+    {
+      "complex": "1046",
+      "district": "11620",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 33.4
+    },
+    {
+      "complex": "481",
+      "district": "11650",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 39.4
+    },
+    {
+      "complex": "105266",
+      "district": "11680",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 18.9
+    },
+    {
+      "complex": "112407",
+      "district": "11710",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 12.6
+    },
+    {
+      "complex": "609",
+      "district": "11710",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 38.6
+    },
+    {
+      "complex": "118025",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 55.2
+    },
+    {
+      "complex": "3462",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 59.5
+    },
+    {
+      "complex": "101160",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 57.6
+    },
+    {
+      "complex": "405",
+      "district": "11440",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.1
+    },
+    {
+      "complex": "1346",
+      "district": "11500",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.8
+    },
+    {
+      "complex": "374",
+      "district": "11590",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 41.1
+    }
+  ],
+  "complexes": [
+    {
+      "complex": "100500",
+      "district": "11110",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 39.6
+    },
+    {
+      "complex": "100502",
+      "district": "11110",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 39.8
+    },
+    {
+      "complex": "12239",
+      "district": "11110",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 31.7
+    },
+    {
+      "complex": "128388",
+      "district": "11110",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 32.1
+    },
+    {
+      "complex": "15816",
+      "district": "11140",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 32.3
+    },
+    {
+      "complex": "27814",
+      "district": "11140",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 31.6
+    },
+    {
+      "complex": "27820",
+      "district": "11140",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 40.5
+    },
+    {
+      "complex": "3833",
+      "district": "11140",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 30.1
+    },
+    {
+      "complex": "103226",
+      "district": "11170",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 29.8
+    },
+    {
+      "complex": "130505",
+      "district": "11170",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 34.6
+    },
+    {
+      "complex": "3459",
+      "district": "11170",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 34.5
+    },
+    {
+      "complex": "867",
+      "district": "11170",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 33.6
+    },
+    {
+      "complex": "105945",
+      "district": "11200",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 32.6
+    },
+    {
+      "complex": "109910",
+      "district": "11200",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 37.0
+    },
+    {
+      "complex": "118738",
+      "district": "11200",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 45.8
+    },
+    {
+      "complex": "878",
+      "district": "11200",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 52.9
+    },
+    {
+      "complex": "105911",
+      "district": "11215",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 46.9
+    },
+    {
+      "complex": "3178",
+      "district": "11215",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 38.8
+    },
+    {
+      "complex": "81",
+      "district": "11215",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 43.9
+    },
+    {
+      "complex": "84",
+      "district": "11215",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 41.0
+    },
+    {
+      "complex": "107600",
+      "district": "11230",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 47.8
+    },
+    {
+      "complex": "127331",
+      "district": "11230",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 61.5
+    },
+    {
+      "complex": "163360",
+      "district": "11230",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.5
+    },
+    {
+      "complex": "3276",
+      "district": "11230",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.5
+    },
+    {
+      "complex": "107073",
+      "district": "11260",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 37.4
+    },
+    {
+      "complex": "109281",
+      "district": "11260",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 44.7
+    },
+    {
+      "complex": "110773",
+      "district": "11260",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.3
+    },
+    {
+      "complex": "824",
+      "district": "11260",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 61.7
+    },
+    {
+      "complex": "104690",
+      "district": "11290",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 46.6
+    },
+    {
+      "complex": "126062",
+      "district": "11290",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 46.7
+    },
+    {
+      "complex": "3426",
+      "district": "11290",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.1
+    },
+    {
+      "complex": "582",
+      "district": "11290",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 61.7
+    },
+    {
+      "complex": "114671",
+      "district": "11305",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 34.6
+    },
+    {
+      "complex": "26885",
+      "district": "11305",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 48.0
+    },
+    {
+      "complex": "3099",
+      "district": "11305",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 60.6
+    },
+    {
+      "complex": "8206",
+      "district": "11305",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 68.2
+    },
+    {
+      "complex": "104172",
+      "district": "11320",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 35.1
+    },
+    {
+      "complex": "267",
+      "district": "11320",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 44.3
+    },
+    {
+      "complex": "326",
+      "district": "11320",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 41.5
+    },
+    {
+      "complex": "9106",
+      "district": "11320",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 196.5
+    },
+    {
+      "complex": "1094",
+      "district": "11350",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 46.6
+    },
+    {
+      "complex": "116884",
+      "district": "11350",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.2
+    },
+    {
+      "complex": "232",
+      "district": "11350",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 79.4
+    },
+    {
+      "complex": "3367",
+      "district": "11350",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 79.0
+    },
+    {
+      "complex": "118025",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 55.2
+    },
+    {
+      "complex": "119275",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 43.9
+    },
+    {
+      "complex": "123176",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 52.6
+    },
+    {
+      "complex": "134321",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 63.3
+    },
+    {
+      "complex": "3462",
+      "district": "11380",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 59.5
+    },
+    {
+      "complex": "101160",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 57.6
+    },
+    {
+      "complex": "102828",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 63.0
+    },
+    {
+      "complex": "108064",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 52.9
+    },
+    {
+      "complex": "108287",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.7
+    },
+    {
+      "complex": "3479",
+      "district": "11410",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 48.8
+    },
+    {
+      "complex": "104917",
+      "district": "11440",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 60.0
+    },
+    {
+      "complex": "119737",
+      "district": "11440",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 58.0
+    },
+    {
+      "complex": "23117",
+      "district": "11440",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 62.2
+    },
+    {
+      "complex": "405",
+      "district": "11440",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.1
+    },
+    {
+      "complex": "10307",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 42.8
+    },
+    {
+      "complex": "107728",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.4
+    },
+    {
+      "complex": "108438",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 75.5
+    },
+    {
+      "complex": "11708",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.4
+    },
+    {
+      "complex": "117329",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 80.4
+    },
+    {
+      "complex": "129045",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 51.2
+    },
+    {
+      "complex": "26087",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 44.5
+    },
+    {
+      "complex": "3771",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 60.9
+    },
+    {
+      "complex": "661",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 52.1
+    },
+    {
+      "complex": "672",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 91.3
+    },
+    {
+      "complex": "675",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 37.0
+    },
+    {
+      "complex": "8742",
+      "district": "11470",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.25,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 41.6
+    },
+    {
+      "complex": "103305",
+      "district": "11500",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 40.7
+    },
+    {
+      "complex": "106009",
+      "district": "11500",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 29.9
+    },
+    {
+      "complex": "107477",
+      "district": "11500",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.7
+    },
+    {
+      "complex": "1346",
+      "district": "11500",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.8
+    },
+    {
+      "complex": "106",
+      "district": "11530",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 52.8
+    },
+    {
+      "complex": "109714",
+      "district": "11530",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 38.6
+    },
+    {
+      "complex": "27310",
+      "district": "11530",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 50.5
+    },
+    {
+      "complex": "3349",
+      "district": "11530",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 36.8
+    },
+    {
+      "complex": "102814",
+      "district": "11545",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 33.0
+    },
+    {
+      "complex": "107929",
+      "district": "11545",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 42.4
+    },
+    {
+      "complex": "164",
+      "district": "11545",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 36.6
+    },
+    {
+      "complex": "169",
+      "district": "11545",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 36.0
+    },
+    {
+      "complex": "105925",
+      "district": "11560",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 39.2
+    },
+    {
+      "complex": "161259",
+      "district": "11560",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 37.2
+    },
+    {
+      "complex": "3457",
+      "district": "11560",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 37.3
+    },
+    {
+      "complex": "698",
+      "district": "11560",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 53.5
+    },
+    {
+      "complex": "111669",
+      "district": "11590",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 31.4
+    },
+    {
+      "complex": "113292",
+      "district": "11590",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 34.3
+    },
+    {
+      "complex": "3280",
+      "district": "11590",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 44.8
+    },
+    {
+      "complex": "374",
+      "district": "11590",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 41.1
+    },
+    {
+      "complex": "1046",
+      "district": "11620",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 33.4
+    },
+    {
+      "complex": "104774",
+      "district": "11620",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 21.3
+    },
+    {
+      "complex": "2988",
+      "district": "11620",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 46.4
+    },
+    {
+      "complex": "8895",
+      "district": "11620",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 46.8
+    },
+    {
+      "complex": "103712",
+      "district": "11650",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 44.1
+    },
+    {
+      "complex": "169837",
+      "district": "11650",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 22.9
+    },
+    {
+      "complex": "22853",
+      "district": "11650",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.9
+    },
+    {
+      "complex": "481",
+      "district": "11650",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 39.4
+    },
+    {
+      "complex": "105266",
+      "district": "11680",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 18.9
+    },
+    {
+      "complex": "134062",
+      "district": "11680",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 32.1
+    },
+    {
+      "complex": "135644",
+      "district": "11680",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 41.2
+    },
+    {
+      "complex": "483",
+      "district": "11680",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 38.2
+    },
+    {
+      "complex": "111515",
+      "district": "11710",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 44.6
+    },
+    {
+      "complex": "112407",
+      "district": "11710",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 12.6
+    },
+    {
+      "complex": "184857",
+      "district": "11710",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 49.3
+    },
+    {
+      "complex": "609",
+      "district": "11710",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.5,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 38.6
+    },
+    {
+      "complex": "109554",
+      "district": "11740",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 1.0,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 25.6
+    },
+    {
+      "complex": "155817",
+      "district": "11740",
+      "runs": 4,
+      "successRate": 1.0,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 1,
+      "meanDurationSec": 28.2
+    },
+    {
+      "complex": "16590",
+      "district": "11740",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 43.5
+    },
+    {
+      "complex": "3118",
+      "district": "11740",
+      "runs": 4,
+      "successRate": 0.75,
+      "qualityPassRate": 0.75,
+      "falseZeroIncidents": 0,
+      "meanDurationSec": 47.7
+    }
+  ]
+}
