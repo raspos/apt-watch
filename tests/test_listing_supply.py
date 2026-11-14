@@ -88,5 +88,18 @@ class SupplyTest(unittest.TestCase):
         self.assertEqual(ls.quadrant(0.0, 1.0)[0], 'FLAT')
 
 
+    def test_reference_panel_keeps_one_fixed_complex_set(self):
+        D2 = '2026-12-03'
+        rows = self.base() + [(D2, cx, f'{cx}-{k}', 100000 + k, '5') for cx in ('c0', 'c1', 'c2', 'c3') for k in range(2, 12)]
+        q = [(d, cx, 'VALID') for d in (D0, D1, D2) for cx in ('c0', 'c1', 'c2', 'c3') if not (d == D1 and cx == 'c3')]
+        s = ls.Supply(db_with(rows, q), PANEL, {})
+        r = ls.reference_panel(s, {'days': [D0, D1, D2], 'baseDay': D2, 'excludeComplexes': {'c2': 'test'}})
+        self.assertEqual(r['commonComplexes'], 2)            # c3 invalid on D1, c2 excluded
+        self.assertEqual([p['listings'] for p in r['points']], [20, 16, 20])
+        self.assertEqual(r['points'][-1]['index'], 100.0)
+        self.assertEqual(r['steps'][0]['changePct'], -20.0)
+        self.assertFalse(r['official'])
+
+
 if __name__ == '__main__':
     unittest.main()

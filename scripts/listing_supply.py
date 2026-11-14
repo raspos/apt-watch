@@ -209,6 +209,57 @@ def quadrant(nego_change, supply_change):
     return QUADRANTS[(a, b)]
 
 
+def reference_panel(s, cfg):
+    """Fixed common-sample series for days before the official baseline (reference only, never official).
+
+    The complex set is the intersection of VALID complexes on every listed day minus documented
+    exclusions, and it is held fixed across days."""
+    days = cfg.get('days') or []
+    if len(days) < 2 or any(not s.valid(d) for d in days):
+        return None
+    excl = cfg.get('excludeComplexes') or {}
+    common = set.intersection(*(s.valid(d) for d in days)) - set(excl)
+    lst = {d: s.listings(d)[0] for d in days}
+    totals = [sum(len(lst[d].get(c, {})) for c in common) for d in days]
+    base_day = cfg.get('baseDay') or days[-1]
+    base = totals[days.index(base_day)]
+    steps = []
+    for (d0, n0), (d1, n1) in zip(zip(days, totals), zip(days[1:], totals[1:])):
+        new = ended = 0
+        for c in common:
+            a, b = lst[d0].get(c, {}), lst[d1].get(c, {})
+            gone = Counter(a[i] for i in a.keys() - b.keys())
+            came = [b[i] for i in b.keys() - a.keys()]
+            same = 0
+            for sig in came:
+                if gone[sig] > 0:
+                    gone[sig] -= 1
+                    same += 1
+            new += len(came) - same
+            ended += sum(gone.values())
+        steps.append({'from': d0, 'to': d1, 'changePct': round((n1 / n0 - 1) * 100, 2) if n0 else None,
+                      'change': n1 - n0, 'newListings': new, 'endedListings': ended})
+    windows = []
+    for d in days:
+        w = s.window(d, common)
+        windows.append({'day': d, 'observedFromKST': w and w['from'], 'observedToKST': w and w['to']})
+    return {
+        'label': cfg.get('label'), 'official': False,
+        'commonComplexes': len(common), 'plannedComplexes': len(s.panel),
+        'districtsCovered': len({s.panel[c] for c in common}),
+        'excluded': excl, 'baseDay': base_day,
+        'points': [{'day': d, 'listings': n, 'index': round(n / base * 100, 2) if base else None}
+                   for d, n in zip(days, totals)],
+        'steps': steps,
+        'cumulative': {'from': days[0], 'to': days[-1],
+                       'changePct': round((totals[-1] / totals[0] - 1) * 100, 2) if totals[0] else None,
+                       'change': totals[-1] - totals[0]},
+        'observation': windows,
+        'timingNote': cfg.get('timingNote'),
+        'note': '서울 전체가 아닌 고정 표본이며, 공식 매물 증감률이 아닙니다.',
+    }
+
+
 def build(site, db, panel, holds, day):
     s = Supply(db, panel, holds)
     days = [r[0] for r in db.execute("SELECT DISTINCT day FROM observation_quality ORDER BY day")]
@@ -270,6 +321,7 @@ def build(site, db, panel, holds, day):
         'changes': changes,
         'combination': combo,
         'series': series,
+        'reference': reference_panel(s, holds.get('supplyReference') or {}) if holds.get('supplyReference') else None,
     }
 
 

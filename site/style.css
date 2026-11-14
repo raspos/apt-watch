@@ -199,6 +199,15 @@ footer a{color:var(--ink-3)}
 .supply-empty b{color:var(--ink)}
 .supply-grid{grid-template-columns:repeat(3,1fr)}
 .supply-sample{margin:10px 0 0;font-size:11px;color:var(--muted)}
+.supply-ref{margin-top:12px;padding:10px 14px;border:1px dashed var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+.supply-ref-head{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;font-size:12px;color:var(--ink-2)}
+.supply-ref-head b{color:var(--ink)}
+.supply-ref-tag{font-size:11px;padding:1px 6px;border:1px solid var(--line);border-radius:4px;color:var(--ink-3)}
+.supply-ref-rates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 6px}
+.supply-ref-rates div{display:flex;flex-direction:column}
+.supply-ref-rates span{font-size:11px;color:var(--ink-3)}
+.supply-ref-rates strong{font-size:20px;font-variant-numeric:tabular-nums}
+.supply-ref-note{font-size:11px;color:var(--ink-3);line-height:1.5;margin:2px 0 0}
 .cell-sub{font-size:12px;color:var(--ink-3);font-weight:400}
 
 /* ==========================================================================

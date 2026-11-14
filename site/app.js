@@ -909,6 +909,28 @@ function renderSupply() {
 
   get('supplyTrend').innerHTML = trendChart(s);
 
+  // reference series before the official baseline: fixed common sample, clearly not official
+  const ref = s.reference, refBox = get('supplyRef');
+  if (refBox) {
+    if (ref && ref.steps?.length) {
+      const hm = d => (d || '').slice(11, 16);
+      const md = d => (d || '').slice(5).replace('-', '/');
+      const rate = (lab, v) => `<div><span>${lab}</span><strong class="${dirClass(v)}">${pctText(v)}</strong></div>`;
+      refBox.hidden = false;
+      refBox.innerHTML = `
+        <div class="supply-ref-head"><span class="supply-ref-tag">참고 시계열 · 공식 아님</span><b>기준선 이전 공통 표본 매물 변동</b>
+          <span>공통 정상 관측 ${ref.commonComplexes}개 단지 고정 (${ref.districtsCovered}개 구) · ${md(ref.points[0].day)}~${md(ref.points[ref.points.length - 1].day)}</span></div>
+        <div class="supply-ref-rates">
+          ${ref.steps.map(st => rate(`${md(st.from)}→${md(st.to)}`, st.changePct)).join('')}
+          ${rate(`${md(ref.cumulative.from)}→${md(ref.cumulative.to)} 누적`, ref.cumulative.changePct)}
+        </div>
+        <p class="supply-ref-note">지수(${md(ref.baseDay)}=100): ${ref.points.map(p => `${md(p.day)} ${p.index}`).join(' · ')} · 관측 시각 ${ref.observation.map(o => `${md(o.day)} ${hm(o.observedFromKST)}~${hm(o.observedToKST)}`).join(', ')}</p>
+        <p class="supply-ref-note">${ref.timingNote || ''} 수집 오류 단지(11-13 재수집 탭 오류·가짜 0건)는 모두 뺐습니다. ${ref.note || ''}</p>`;
+    } else {
+      refBox.hidden = true;
+    }
+  }
+
   // NEGO x supply pairing: only when both real changes exist (no signal is generated before that)
   const cb = s.combination?.['1d'] || {};
   const combo = get('supplyCombo');
