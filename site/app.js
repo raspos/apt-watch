@@ -221,11 +221,18 @@ const chart2 = makeChart({
    서울 25개 구 시장심리 지도 (Interactive Map)
    ========================================================================== */
 
+// Human labels for engine status codes (never show raw codes on the page).
+const STATUS_LABELS = { HELD_VERIFICATION: '공표 유예', INSUFFICIENT_DATA: '표본 부족', VALID: '정상', UNSTABLE: '표본 불안정' };
+function stLabel(s) { return s ? (STATUS_LABELS[s] || s) : s; }
+
 function getRegionData(c, targetDate = state.selectedDate) {
   if (!data || !data.market) return {};
   const currentDay = data.market.day;
   const base = data.market.regions[c] || {};
   if (!targetDate || targetDate === currentDay) {
+    // District NEGO comes from the same ledger-based engine as the Seoul NEGO INDEX.
+    const dyn = data.market.spreadDynamics?.districts?.[c];
+    if (dyn && base.spread?.percent == null && dyn.status) return { ...base, spread: dyn };
     return base;
   }
   const snap = data.market.dailySnapshots?.[targetDate]?.[c];
@@ -632,7 +639,7 @@ function renderDistrictDetail(c) {
   if (ch1 && ch1.deltaPctPoint != null) {
     spreadChangeText = `전일 ${signed(ch1.deltaPctPoint, '%p')}`;
   } else if (ch1 && ch1.status) {
-    spreadChangeText = ch1.status;
+    spreadChangeText = stLabel(ch1.status);
   }
 
   const asof = fmtDate(data.asking?.lastSuccess || data.market.day);
@@ -719,8 +726,8 @@ function renderNegoHero() {
     return;
   }
 
-  const dyn = data.market?.spreadDynamics?.seoulOverall?.allSample || {};
-  const validGroups = dyn.sampleGroups ?? (data.observability?.todayCoreSuccess ?? 35);
+  const so = data.market?.spreadDynamics?.seoulOverall || {};
+  const validGroups = so.sampleGroupsCount ?? so.allSample?.sampleGroups ?? (data.observability?.todayCoreSuccess ?? 35);
   const sampleEl = get('negoSampleCount');
   if (sampleEl) sampleEl.textContent = `${validGroups}개 비교 그룹 (서울 25개 구)`;
 
@@ -750,9 +757,10 @@ function renderNegoHero() {
       dodEl.className = 'metric-value ' + dirClass(dodVal);
       if (dodSubEl) dodSubEl.textContent = '전일 대비 변화';
     } else {
-      dodEl.textContent = ch1d.status || '산출 대기';
+      const heldCh = ch1d.status === 'HELD_VERIFICATION';
+      dodEl.textContent = heldCh ? '공표 유예' : (ch1d.status || '산출 대기');
       dodEl.className = 'metric-value na';
-      if (dodSubEl) dodSubEl.textContent = '2회차 연속 수집 후 산출';
+      if (dodSubEl) dodSubEl.textContent = heldCh ? '비교 기준일 자료 검증 미완료' : '2회차 연속 수집 후 산출';
     }
   }
 
@@ -868,7 +876,7 @@ function renderMarket() {
       dodEl.textContent = signed(dodVal, '%p');
       dodEl.className = dirClass(dodVal);
     } else {
-      dodEl.textContent = changes['1d']?.status || '산출 대기';
+      dodEl.textContent = stLabel(changes['1d']?.status) || '산출 대기';
       dodEl.className = 'na';
     }
   }
@@ -911,7 +919,7 @@ function renderMarket() {
         dAskSub.textContent = `동일 매물 변경 ${signed(decomp.contribIdenticalAskPctPoint, '%p')} · 매물 교체 ${signed(turnoverVal, '%p')}`;
       }
     } else {
-      dAskEl.textContent = decomp.status || '산출 대기';
+      dAskEl.textContent = stLabel(decomp.status) || '산출 대기';
       dAskEl.className = 'na';
     }
   }
@@ -921,7 +929,7 @@ function renderMarket() {
       dTradeEl.textContent = signed(decomp.contribTradeBenchmarkPctPoint, '%p');
       dTradeEl.className = dirClass(decomp.contribTradeBenchmarkPctPoint);
     } else {
-      dTradeEl.textContent = decomp.status || '산출 대기';
+      dTradeEl.textContent = stLabel(decomp.status) || '산출 대기';
       dTradeEl.className = 'na';
     }
   }
@@ -931,7 +939,7 @@ function renderMarket() {
       dCompEl.textContent = signed(decomp.contribSampleCompositionPctPoint, '%p');
       dCompEl.className = dirClass(decomp.contribSampleCompositionPctPoint);
     } else {
-      dCompEl.textContent = decomp.status || '산출 대기';
+      dCompEl.textContent = stLabel(decomp.status) || '산출 대기';
       dCompEl.className = 'na';
     }
   }
