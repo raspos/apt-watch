@@ -1,0 +1,319 @@
+{
+  "day": "2026-11-14",
+  "benchmark": {
+    "benchmarkSource": "APT_WATCH_TRADE_LEDGER",
+    "tradeLevelFirstSeenVerified": true,
+    "tradesInWindow": 9571,
+    "cutoff": "2026-11-14T23:59:59+09:00"
+  },
+  "tradesUsedInGroups": 279,
+  "groups": 70,
+  "listingsInGroups": 2307,
+  "listingsObservedVerified": 12017,
+  "complexesWithListings": 101,
+  "complexesInGroups": 39,
+  "aggregate": {
+    "medianOfGroups": 3.64,
+    "recomputedMedianUnrounded": 3.6353,
+    "middleValues": [
+      3.4693,
+      3.8012
+    ],
+    "meanOfGroups": 5.02,
+    "listingWeightedMean": 3.31,
+    "districtBalanced": 4.7,
+    "complexBalanced": 4.25,
+    "published": 3.64,
+    "matchesPublished": true,
+    "bootstrap95CIofMedian": [
+      2.37,
+      5.43
+    ],
+    "p10": -0.8,
+    "p25": 0.94,
+    "p75": 7.84,
+    "p90": 13.24,
+    "min": -7.02,
+    "max": 25.0
+  },
+  "sensitivity": {
+    "all": {
+      "groups": 70,
+      "listings": 2307,
+      "median": 3.64
+    },
+    "excludeUnder15m2": {
+      "groups": 70,
+      "listings": 2307,
+      "median": 3.64
+    },
+    "excludeUnder30m2": {
+      "groups": 69,
+      "listings": 2303,
+      "median": 3.47
+    }
+  },
+  "concentration": {
+    "groupsPerComplexTop": [
+      [
+        "정릉풍림아이원",
+        5
+      ],
+      [
+        "DMC래미안e편한세상",
+        3
+      ],
+      [
+        "강서힐스테이트",
+        3
+      ],
+      [
+        "태강아파트(아이파크)",
+        3
+      ],
+      [
+        "한신",
+        3
+      ]
+    ],
+    "complexesInGroups": 39,
+    "groupsWithTrades3to4": 53,
+    "groupsWithListings1": 2
+  },
+  "coverage": {
+    "listingStrataTotal": 710,
+    "strataBy90dTradeCount(0,1,2,3+)": [
+      457,
+      137,
+      46,
+      70
+    ]
+  },
+  "districts": {
+    "종로구": {
+      "groups90d": 0,
+      "median90d": null,
+      "listingsInGroups": 0,
+      "listingsObserved": 5,
+      "listingStrata": 4,
+      "maxLedgerTradesInAnyStratum": 0,
+      "groups180dTracker": 0
+    },
+    "중구": {
+      "groups90d": 2,
+      "median90d": -2.01,
+      "listingsInGroups": 50,
+      "listingsObserved": 267,
+      "listingStrata": 20,
+      "maxLedgerTradesInAnyStratum": 4,
+      "groups180dTracker": 10
+    },
+    "용산구": {
+      "groups90d": 3,
+      "median90d": 6.01,
+      "listingsInGroups": 9,
+      "listingsObserved": 392,
+      "listingStrata": 27,
+      "maxLedgerTradesInAnyStratum": 4,
+      "groups180dTracker": 8
+    },
+    "성동구": {
+      "groups90d": 4,
+      "median90d": 1.15,
+      "listingsInGroups": 238,
+      "listingsObserved": 771,
+      "listingStrata": 30,
+      "maxLedgerTradesInAnyStratum": 4,
+      "groups180dTracker": 9
+    },
+    "광진구": {
+      "groups90d": 1,
+      "median90d": 10.29,
+      "listingsInGroups": 26,
+      "listingsObserved": 323,
+      "listingStrata": 20,
+      "maxLedgerTradesInAnyStratum": 3,
+      "groups180dTracker": 6
+    },
+    "동대문구": {
+      "groups90d": 2,
+      "median90d": 3.92,
+      "listingsInGroups": 196,
+      "listingsObserved": 986,
+      "listingStrata": 27,
+      "maxLedgerTradesInAnyStratum": 6,
+      "groups180dTracker": 8
+    },
+    "중랑구": {
+      "groups90d": 3,
+      "median90d": 9.09,
+      "listingsInGroups": 18,
+      "listingsObserved": 207,
+      "listingStrata": 25,
+      "maxLedgerTradesInAnyStratum": 3,
+      "groups180dTracker": 10
+    },
+    "성북구": {
+      "groups90d": 6,
+      "median90d": 5.83,
+      "listingsInGroups": 183,
+      "listingsObserved": 621,
+      "listingStrata": 33,
+      "maxLedgerTradesInAnyStratum": 6,
+      "groups180dTracker": 17
+    },
+    "강북구": {
+      "groups90d": 5,
+      "median90d": 4.29,
+      "listingsInGroups": 115,
+      "listingsObserved": 384,
+      "listingStrata": 26,
+      "maxLedgerTradesInAnyStratum": 5,
+      "groups180dTracker": 12
+    },
+    "도봉구": {
+      "groups90d": 6,
+      "median90d": 5.66,
+      "listingsInGroups": 123,
+      "listingsObserved": 286,
+      "listingStrata": 38,
+      "maxLedgerTradesInAnyStratum": 11,
+      "groups180dTracker": 16
+    },
+    "노원구": {
+      "groups90d": 3,
+      "median90d": 13.24,
+      "listingsInGroups": 30,
+      "listingsObserved": 150,
+      "listingStrata": 22,
+      "maxLedgerTradesInAnyStratum": 6,
+      "groups180dTracker": 17
+    },
+    "은평구": {
+      "groups90d": 2,
+      "median90d": 3.98,
+      "listingsInGroups": 26,
+      "listingsObserved": 501,
+      "listingStrata": 35,
+      "maxLedgerTradesInAnyStratum": 3,
+      "groups180dTracker": 19
+    },
+    "서대문구": {
+      "groups90d": 4,
+      "median90d": 3.62,
+      "listingsInGroups": 68,
+      "listingsObserved": 388,
+      "listingStrata": 30,
+      "maxLedgerTradesInAnyStratum": 9,
+      "groups180dTracker": 17
+    },
+    "마포구": {
+      "groups90d": 2,
+      "median90d": 4.75,
+      "listingsInGroups": 195,
+      "listingsObserved": 723,
+      "listingStrata": 24,
+      "maxLedgerTradesInAnyStratum": 3,
+      "groups180dTracker": 10
+    },
+    "양천구": {
+      "groups90d": 6,
+      "median90d": 0.21,
+      "listingsInGroups": 184,
+      "listingsObserved": 1607,
+      "listingStrata": 62,
+      "maxLedgerTradesInAnyStratum": 5,
+      "groups180dTracker": 21
+    },
+    "강서구": {
+      "groups90d": 4,
+      "median90d": 3.35,
+      "listingsInGroups": 127,
+      "listingsObserved": 333,
+      "listingStrata": 23,
+      "maxLedgerTradesInAnyStratum": 4,
+      "groups180dTracker": 16
+    },
+    "구로구": {
+      "groups90d": 2,
+      "median90d": 11.31,
+      "listingsInGroups": 9,
+      "listingsObserved": 370,
+      "listingStrata": 29,
+      "maxLedgerTradesInAnyStratum": 4,
+      "groups180dTracker": 12
+    },
+    "금천구": {
+      "groups90d": 4,
+      "median90d": 8.43,
+      "listingsInGroups": 188,
+      "listingsObserved": 442,
+      "listingStrata": 25,
+      "maxLedgerTradesInAnyStratum": 6,
+      "groups180dTracker": 12
+    },
+    "영등포구": {
+      "groups90d": 2,
+      "median90d": 8.58,
+      "listingsInGroups": 10,
+      "listingsObserved": 332,
+      "listingStrata": 39,
+      "maxLedgerTradesInAnyStratum": 3,
+      "groups180dTracker": 11
+    },
+    "동작구": {
+      "groups90d": 1,
+      "median90d": 3.46,
+      "listingsInGroups": 55,
+      "listingsObserved": 499,
+      "listingStrata": 30,
+      "maxLedgerTradesInAnyStratum": 4,
+      "groups180dTracker": 9
+    },
+    "관악구": {
+      "groups90d": 2,
+      "median90d": 2.19,
+      "listingsInGroups": 174,
+      "listingsObserved": 425,
+      "listingStrata": 22,
+      "maxLedgerTradesInAnyStratum": 7,
+      "groups180dTracker": 7
+    },
+    "서초구": {
+      "groups90d": 0,
+      "median90d": null,
+      "listingsInGroups": 0,
+      "listingsObserved": 559,
+      "listingStrata": 37,
+      "maxLedgerTradesInAnyStratum": 2,
+      "groups180dTracker": 5
+    },
+    "강남구": {
+      "groups90d": 0,
+      "median90d": null,
+      "listingsInGroups": 0,
+      "listingsObserved": 300,
+      "listingStrata": 20,
+      "maxLedgerTradesInAnyStratum": 2,
+      "groups180dTracker": 7
+    },
+    "송파구": {
+      "groups90d": 4,
+      "median90d": 1.65,
+      "listingsInGroups": 147,
+      "listingsObserved": 657,
+      "listingStrata": 36,
+      "maxLedgerTradesInAnyStratum": 5,
+      "groups180dTracker": 18
+    },
+    "강동구": {
+      "groups90d": 2,
+      "median90d": -5.66,
+      "listingsInGroups": 136,
+      "listingsObserved": 489,
+      "listingStrata": 26,
+      "maxLedgerTradesInAnyStratum": 7,
+      "groups180dTracker": 9
+    }
+  }
+}

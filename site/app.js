@@ -489,7 +489,7 @@ function renderMapLegend() {
       <div class="legend-swatches">
         <span class="legend-swatch"><span class="swatch-box" style="background:#e65928"></span> 90일 실거래 (${actualCount}개 구)</span>
         <span class="legend-swatch"><span class="swatch-box tier-180"></span> 180일 실거래 (${longCount}개 구)</span>
-        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 비교자료 부족 (${insuffCount}개 구)</span>
+        <span class="legend-swatch"><span class="swatch-box insufficient"></span> 표본 부족으로 미산출 (${insuffCount}개 구)</span>
       </div>
     `;
   } else if (mapState.mode === 'spread-change') {
@@ -551,7 +551,7 @@ function renderMapSummary() {
       <span>서울 자치구:</span> <b>총 ${regions.length}개 구</b>
     </div>
     <div class="map-summary-item">
-      <span>실측 커버리지:</span> <b>90일 실거래 ${actualCount}</b> · <b>180일 실거래 ${longCount}</b> · <b>비교자료 부족 ${insuffCount}</b>
+      <span>실측 커버리지:</span> <b>90일 실거래 ${actualCount}</b> · <b>180일 실거래 ${longCount}</b> · <b>표본 부족으로 미산출 ${insuffCount}</b>
     </div>
     <div class="map-summary-item">
       <span>호가 수준:</span> <b>실거래 상회 ${upCount}개 구</b> · <b>하회 ${downCount}개 구</b>
@@ -574,12 +574,12 @@ function renderDistrictDetail(c) {
   const lng = sp.longTerm180d?.percent ?? null;
   const displayVal = act != null ? act : lng;
 
-  const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : '비교자료 부족');
+  const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : '표본 부족으로 미산출');
   const is180 = (status === '장기 실측 참고치' || status === '180일 실거래' || (sp.longTerm180d?.percent != null && act == null));
-  const isInsufficient = (status === '데이터 부족' || status === '비교자료 부족' || (act == null && lng == null));
+  const isInsufficient = (status === '데이터 부족' || status === '표본 부족으로 미산출' || (act == null && lng == null));
 
   const badgeCls = (!is180 && !isInsufficient) ? 'badge-actual' : (is180 ? 'badge-long' : 'badge-muted');
-  const badgeLabel = (!is180 && !isInsufficient) ? '90일 실거래' : (is180 ? '180일 실거래' : '비교자료 부족');
+  const badgeLabel = (!is180 && !isInsufficient) ? '90일 실거래' : (is180 ? '180일 실거래' : '표본 부족으로 미산출');
 
   const totalObsListings = r.coverage?.listings ?? (r.askingSeries?.[0]?.matched ?? 0);
   const totalObsComps = r.coverage?.success ?? (r.coverage?.roster ?? 0);
@@ -755,7 +755,11 @@ function renderNegoHero() {
     if (dodVal != null) {
       dodEl.textContent = signed(dodVal, '%p');
       dodEl.className = 'metric-value ' + dirClass(dodVal);
-      if (dodSubEl) dodSubEl.textContent = '전일 대비 변화';
+      if (dodSubEl) {
+        const gap = ch1d.observationGapHours;
+        dodSubEl.textContent = `공통 비교 그룹 ${ch1d.matchedStrataCount ?? '-'}개 평균 변화` +
+          (gap != null ? ` · 관측 간격 ${Number(gap).toFixed(1)}시간` : '');
+      }
     } else {
       const heldCh = ch1d.status === 'HELD_VERIFICATION';
       dodEl.textContent = heldCh ? '공표 유예' : (ch1d.status || '산출 대기');
@@ -983,7 +987,7 @@ function renderMarket() {
   }));
 
   /* 03 지역 표 헤더 집계: 정확한 동적 산출 */
-  get('regionQ').textContent = `호가 관측 ${districtEntries.length}개 구 (${nf(a.successes || 0)}개 단지) · 네고 압력 관측 ${obsSpreadCount}개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 비교자료 부족 ${insuffDistricts})`;
+  get('regionQ').textContent = `호가 관측 ${districtEntries.length}개 구 (${nf(a.successes || 0)}개 단지) · 네고 압력 관측 ${obsSpreadCount}개 구 (90일 실거래 ${actualDistricts} · 180일 실거래 ${longDistricts} · 표본 부족으로 미산출 ${insuffDistricts})`;
 
   const rank = get('ranking').value;
   const rows = Object.entries(data.districts).map(([c, name]) => {
@@ -992,7 +996,7 @@ function renderMarket() {
     const act = sp.actual90d?.percent ?? sp.percent ?? null;
     const lng = sp.longTerm180d?.percent ?? null;
     const mdl = sp.modelEst?.percent ?? null;
-    const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : mdl != null ? '모형 추정' : '비교자료 부족');
+    const status = sp.status || (act != null ? '90일 실거래' : lng != null ? '180일 실거래' : mdl != null ? '모형 추정' : '표본 부족으로 미산출');
     const displayVal = act != null ? act : lng != null ? lng : mdl != null ? mdl : null;
     const listingsCount = r.coverage?.listings ?? (r.askingSeries?.[0]?.matched ?? 0);
     const compsCount = r.coverage?.success ?? (r.coverage?.roster ?? 0);
@@ -1007,7 +1011,7 @@ function renderMarket() {
       spreadAct: act,
       spreadLng: lng,
       spreadMdl: mdl,
-      status: (status === '실측' ? '90일 실거래' : status === '장기 실측 참고치' ? '180일 실거래' : status === '데이터 부족' ? '비교자료 부족' : status),
+      status: (status === '실측' ? '90일 실거래' : status === '장기 실측 참고치' ? '180일 실거래' : status === '데이터 부족' ? '표본 부족으로 미산출' : status),
       statusCode: sp.statusCode,
       reason: sp.reason,
       absorption: r.absorption?.percent ?? null
@@ -1071,7 +1075,7 @@ function renderMarket() {
     } else {
       const badge = document.createElement('span');
       badge.className = 'badge badge-muted';
-      badge.textContent = '비교자료 부족';
+      badge.textContent = '표본 부족으로 미산출';
       if (row.reason) badge.title = row.reason;
       tdSpread.appendChild(badge);
     }
@@ -1205,7 +1209,7 @@ fetch('./data.json').then(r => { if (!r.ok) throw Error(); return r.json(); }).t
   ].map(([k, v]) => { const s = document.createElement('span'), b = document.createElement('b'); s.append(k + ' '); b.textContent = v; s.append(b); return s; }));
   initDateSelect();
   renderMarket();
-  get('coverage').textContent = `${nf(data.districtMonths)}개 구·월 · 원자료 ${nf(data.raw)}건 · 분석 대상 ${nf(data.eligibleTrades)}건 · ${data.version}`;
+  get('coverage').textContent = `실거래가격지수(월별) 기초자료: ${nf(data.districtMonths)}개 구·월 · 원자료 ${nf(data.raw)}건 · 분석 대상 ${nf(data.eligibleTrades)}건`;
   get('chartNote').textContent = '점선은 잠정 구간(신고 시차 미반영), 끊긴 선은 자료가 없는 기간입니다. 지수는 기준 시점 = 100.';
   charts.forEach(c => c.draw());
 }).catch(() => { get('meta').textContent = '자료를 불러오지 못했습니다.'; });

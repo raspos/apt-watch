@@ -791,6 +791,12 @@ def run_spread_dynamics(target_day=None):
 
             act_med = median([s['spreadPct'] for s in d_strata_90.values()]) if d_strata_90 else None
             lng_med = median([s['spreadPct'] for s in d_strata_180.values()]) if d_strata_180 else None
+            # The 180-day fallback is built from the tracker snapshot benchmark, not the verified
+            # point-in-time ledger. Once the ledger is the official benchmark it must not stand in for a
+            # missing 90-day value (district shown as "표본 부족으로 미산출" instead).
+            lng_unverified = vintage_meta_90.get('benchmarkSource') == 'APT_WATCH_TRADE_LEDGER'
+            if lng_unverified:
+                lng_med = None
 
             if act_med is not None:
                 st = '실측'
@@ -845,8 +851,10 @@ def run_spread_dynamics(target_day=None):
                     'sample': len(d_strata_180),
                     'groups': len(d_strata_180),
                     'percent': lng_med,
-                    'matchedListings': sum(x['listingCount'] for x in d_strata_180.values())
+                    'matchedListings': sum(x['listingCount'] for x in d_strata_180.values()),
+                    **({'note': '180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음'} if lng_unverified else {})
                 },
+                **({'reason': '90일 검증 실거래가 3건 이상인 비교 그룹 없음'} if act_med is None else {}),
                 'changes': {
                     '1d': {'deltaPctPoint': d_1d.get('deltaTotalPctPoint'), 'status': d_1d.get('status')},
                     '7d': {'deltaPctPoint': d_7d.get('deltaTotalPctPoint'), 'status': d_7d.get('status')},

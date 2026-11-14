@@ -54710,8 +54710,10 @@
             "sample": 0,
             "groups": 0,
             "percent": null,
-            "matchedListings": 0
+            "matchedListings": 0,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
+          "reason": "90일 검증 실거래가 3건 이상인 비교 그룹 없음",
           "changes": {
             "1d": {
               "deltaPctPoint": null,
@@ -54755,8 +54757,9 @@
           "longTerm180d": {
             "sample": 10,
             "groups": 10,
-            "percent": 5.44335,
-            "matchedListings": 178
+            "percent": null,
+            "matchedListings": 178,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -54840,8 +54843,9 @@
           "longTerm180d": {
             "sample": 8,
             "groups": 8,
-            "percent": 3.00325,
-            "matchedListings": 213
+            "percent": null,
+            "matchedListings": 213,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -54925,8 +54929,9 @@
           "longTerm180d": {
             "sample": 9,
             "groups": 9,
-            "percent": 1.6419,
-            "matchedListings": 529
+            "percent": null,
+            "matchedListings": 529,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55010,8 +55015,9 @@
           "longTerm180d": {
             "sample": 6,
             "groups": 6,
-            "percent": 4.81815,
-            "matchedListings": 207
+            "percent": null,
+            "matchedListings": 207,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55095,8 +55101,9 @@
           "longTerm180d": {
             "sample": 8,
             "groups": 8,
-            "percent": 8.484,
-            "matchedListings": 392
+            "percent": null,
+            "matchedListings": 392,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55180,8 +55187,9 @@
           "longTerm180d": {
             "sample": 10,
             "groups": 10,
-            "percent": 12.26285,
-            "matchedListings": 94
+            "percent": null,
+            "matchedListings": 94,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55226,8 +55234,9 @@
           "longTerm180d": {
             "sample": 17,
             "groups": 17,
-            "percent": 6.5789,
-            "matchedListings": 420
+            "percent": null,
+            "matchedListings": 420,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55312,8 +55321,9 @@
           "longTerm180d": {
             "sample": 12,
             "groups": 12,
-            "percent": 13.8305,
-            "matchedListings": 206
+            "percent": null,
+            "matchedListings": 206,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55397,8 +55407,9 @@
           "longTerm180d": {
             "sample": 16,
             "groups": 16,
-            "percent": 11.6393,
-            "matchedListings": 200
+            "percent": null,
+            "matchedListings": 200,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55482,8 +55493,9 @@
           "longTerm180d": {
             "sample": 17,
             "groups": 17,
-            "percent": 7.0175,
-            "matchedListings": 133
+            "percent": null,
+            "matchedListings": 133,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55568,8 +55580,9 @@
           "longTerm180d": {
             "sample": 19,
             "groups": 19,
-            "percent": 8.2621,
-            "matchedListings": 371
+            "percent": null,
+            "matchedListings": 371,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55614,8 +55627,9 @@
           "longTerm180d": {
             "sample": 17,
             "groups": 17,
-            "percent": 6.1919,
-            "matchedListings": 315
+            "percent": null,
+            "matchedListings": 315,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55699,8 +55713,9 @@
           "longTerm180d": {
             "sample": 10,
             "groups": 10,
-            "percent": 4.0245999999999995,
-            "matchedListings": 572
+            "percent": null,
+            "matchedListings": 572,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55784,8 +55799,9 @@
           "longTerm180d": {
             "sample": 21,
             "groups": 21,
-            "percent": 5.0,
-            "matchedListings": 960
+            "percent": null,
+            "matchedListings": 960,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55869,8 +55885,9 @@
           "longTerm180d": {
             "sample": 16,
             "groups": 16,
-            "percent": 5.34825,
-            "matchedListings": 205
+            "percent": null,
+            "matchedListings": 205,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -55954,8 +55971,9 @@
           "longTerm180d": {
             "sample": 12,
             "groups": 12,
-            "percent": 18.1603,
-            "matchedListings": 188
+            "percent": null,
+            "matchedListings": 188,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56039,8 +56057,9 @@
           "longTerm180d": {
             "sample": 12,
             "groups": 12,
-            "percent": 8.41985,
-            "matchedListings": 294
+            "percent": null,
+            "matchedListings": 294,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56124,8 +56143,9 @@
           "longTerm180d": {
             "sample": 11,
             "groups": 11,
-            "percent": 7.5949,
-            "matchedListings": 85
+            "percent": null,
+            "matchedListings": 85,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56209,8 +56229,9 @@
           "longTerm180d": {
             "sample": 9,
             "groups": 9,
-            "percent": 4.2424,
-            "matchedListings": 227
+            "percent": null,
+            "matchedListings": 227,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56294,8 +56315,9 @@
           "longTerm180d": {
             "sample": 7,
             "groups": 7,
-            "percent": 4.7619,
-            "matchedListings": 303
+            "percent": null,
+            "matchedListings": 303,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56363,9 +56385,9 @@
         },
         "11650": {
           "district": "11650",
-          "status": "장기 실측 참고치",
-          "statusCode": "LONG_TERM_180D",
-          "percent": 2.17,
+          "status": "데이터 부족",
+          "statusCode": "INSUFFICIENT",
+          "percent": null,
           "groups90d": 0,
           "groups180d": 5,
           "observedComplexes": 4,
@@ -56379,9 +56401,11 @@
           "longTerm180d": {
             "sample": 5,
             "groups": 5,
-            "percent": 2.1739,
-            "matchedListings": 123
+            "percent": null,
+            "matchedListings": 123,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
+          "reason": "90일 검증 실거래가 3건 이상인 비교 그룹 없음",
           "changes": {
             "1d": {
               "deltaPctPoint": null,
@@ -56409,9 +56433,9 @@
         },
         "11680": {
           "district": "11680",
-          "status": "장기 실측 참고치",
-          "statusCode": "LONG_TERM_180D",
-          "percent": 1.49,
+          "status": "데이터 부족",
+          "statusCode": "INSUFFICIENT",
+          "percent": null,
           "groups90d": 0,
           "groups180d": 7,
           "observedComplexes": 4,
@@ -56425,9 +56449,11 @@
           "longTerm180d": {
             "sample": 7,
             "groups": 7,
-            "percent": 1.4851,
-            "matchedListings": 77
+            "percent": null,
+            "matchedListings": 77,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
+          "reason": "90일 검증 실거래가 3건 이상인 비교 그룹 없음",
           "changes": {
             "1d": {
               "deltaPctPoint": null,
@@ -56471,8 +56497,9 @@
           "longTerm180d": {
             "sample": 18,
             "groups": 18,
-            "percent": 4.0764,
-            "matchedListings": 366
+            "percent": null,
+            "matchedListings": 366,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56556,8 +56583,9 @@
           "longTerm180d": {
             "sample": 9,
             "groups": 9,
-            "percent": 1.3333,
-            "matchedListings": 280
+            "percent": null,
+            "matchedListings": 280,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
@@ -56840,6 +56868,12 @@
     {
       "id": "CHANGE-HOLD-2026-11-14-1d",
       "at": "2026-11-14T09:58:12+09:00",
+      "action": "변화폭 공표 유예",
+      "reason": "reference day 2026-11-13 precedes first verified live baseline 2026-11-14"
+    },
+    {
+      "id": "CHANGE-HOLD-2026-11-14-1d",
+      "at": "2026-11-14T10:17:19+09:00",
       "action": "변화폭 공표 유예",
       "reason": "reference day 2026-11-13 precedes first verified live baseline 2026-11-14"
     }
