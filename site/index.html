@@ -84,6 +84,65 @@
   </details>
 </section>
 
+<!-- ①-B 핵심 지표: 매물 수 증감 -->
+<section class="sec sec-nego-hero" id="section-supply" aria-labelledby="h-supply">
+  <div class="nego-hero-header">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span class="badge" style="background:#e8f0fe;color:#1a73e8;border:1px solid #c2e7ff;font-weight:600;padding:2px 8px;border-radius:4px;font-size:11px;">핵심 지표</span>
+        <span class="badge badge-live" id="supplyStatusBadge">동일 단지 기준</span>
+      </div>
+      <h2 id="h-supply" style="font-size:22px;font-weight:700;margin:0 0 6px;color:var(--ink);">매물 수 증감 <span style="font-size:15px;font-weight:400;color:var(--ink-2);">(매도 물량)</span></h2>
+      <p style="font-size:13px;color:var(--ink-2);margin:0;max-width:760px;line-height:1.5;">시장에 나온 매도 매물이 얼마나 늘거나 줄고 있는지 봅니다. 네고 압력(가격)과 함께 보면 매도자의 가격 기대와 물량이 같은 방향으로 움직이는지 확인할 수 있습니다.</p>
+    </div>
+    <div style="text-align:right;">
+      <span style="font-size:11px;color:var(--muted);display:block;">자료 기준일: <span id="supplyAsof">-</span></span>
+      <span style="font-size:11px;color:var(--muted);display:block;">관측 단지: <span id="supplyCoverage">-</span></span>
+    </div>
+  </div>
+  <div class="nego-metrics-grid">
+    <div class="metric-card primary-metric">
+      <span class="metric-title">현재 매물 수</span>
+      <div class="metric-value" id="supplyCurrentVal">-</div>
+      <span class="metric-sub" id="supplyCurrentSub">품질 검증 통과 단지의 매도 매물</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-title">전일 대비 (DoD)</span>
+      <div class="metric-value" id="supplyDodVal">-</div>
+      <span class="metric-sub" id="supplyDodSub"></span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-title">7일 변화 (WoW)</span>
+      <div class="metric-value" id="supplyWowVal">-</div>
+      <span class="metric-sub" id="supplyWowSub"></span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-title">28일 변화 (MoM)</span>
+      <div class="metric-value" id="supplyMomVal">-</div>
+      <span class="metric-sub" id="supplyMomSub"></span>
+    </div>
+  </div>
+  <div class="supply-lower">
+    <div class="supply-trend">
+      <div class="supply-trend-title">동일 단지 기준 매물 추이 <span>(첫 공식 관측일 = 100)</span></div>
+      <div id="supplyTrend" class="supply-trend-chart"></div>
+    </div>
+    <div class="supply-combo">
+      <div class="supply-trend-title">네고 압력 × 매물 증감 (전일 대비)</div>
+      <div id="supplyCombo" class="supply-combo-body"></div>
+    </div>
+  </div>
+  <details style="margin-top:14px;padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--ink-2);">
+    <summary style="font-weight:600;cursor:pointer;color:var(--ink);">매물 수 증감 산출 방법과 한계 보기</summary>
+    <div style="margin-top:10px;line-height:1.6;">
+      <p style="margin:4px 0;"><b>집계 대상:</b> 고정 표본 110개 단지 가운데 그날 품질 검증을 통과한 단지의 매도 매물입니다. 같은 매물 ID는 한 번만 셉니다. 105개 단지 이상이 통과한 날만 공표합니다.</p>
+      <p style="margin:4px 0;"><b>증감:</b> 비교하는 두 날짜에 모두 정상 관측된 단지만으로 계산합니다. 한쪽 날짜에 수집이 실패한 단지는 양쪽에서 모두 빼므로, 수집 실패가 매물 감소로 보이지 않습니다. 자치구 증감은 그 구의 표본 단지가 두 날짜 모두 정상 관측일 때만 표시합니다.</p>
+      <p style="margin:4px 0;"><b>신규·관측 종료:</b> 사라진 매물은 '관측 종료'로 셉니다. 거래 완료뿐 아니라 철회, 노출 종료, 재등록도 포함되므로 거래로 보지 않습니다. 같은 단지·면적·층·가격으로 새 ID가 나타나면 재등록 의심으로 따로 셉니다.</p>
+      <p style="margin:4px 0;"><b>네고 압력과의 조합:</b> 두 지표의 비교 가능한 변화가 모두 있을 때만 네 가지 조합(상승·감소, 하락·증가, 상승·증가, 하락·감소) 중 하나로 기록합니다. 이 조합은 관측 기록이며, 집값 방향을 알려 주는 신호로 검증된 것이 아닙니다. 실거래가격과의 선후 관계는 자료가 쌓인 뒤 검증합니다.</p>
+    </div>
+  </details>
+</section>
+
 <!-- ② 보조 선행 지표군 (호가조정 및 거래활력) -->
 <div style="max-width:1180px;margin:16px auto 8px;padding:0 16px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;">
   <span style="font-size:13px;font-weight:600;color:var(--ink-2);">보조 선행 지표군</span>
@@ -251,7 +310,7 @@
         <h2 id="h-region">서울 25개 구 비교표</h2>
         <p class="q" id="regionQ"></p>
       </div>
-      <label>정렬 <select id="ranking"><option value="district">자치구</option><option value="spread">네고 압력</option><option value="listings">호가 매물수</option><option value="cuts">호가조정 (7일)</option><option value="absorption">거래활력</option></select></label>
+      <label>정렬 <select id="ranking"><option value="district">자치구</option><option value="spread">네고 압력</option><option value="listings">호가 매물수</option><option value="supply">매물 증감 (전일)</option><option value="cuts">호가조정 (7일)</option><option value="absorption">거래활력</option></select></label>
     </div>
     <div class="panel tbl">
       <table>
@@ -259,6 +318,7 @@
           <tr>
             <th>자치구</th>
             <th>호가 관측</th>
+            <th>매물 증감 (전일)</th>
             <th>호가조정</th>
             <th>네고 압력 (구분)</th>
             <th>거래활력</th>

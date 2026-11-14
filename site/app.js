@@ -680,6 +680,10 @@ function renderDistrictDetail(c) {
         <span class="detail-cell-v small">${spreadChangeText}</span>
       </div>
       <div class="detail-cell">
+        <span class="detail-cell-l">매물 증감 (전일)</span>
+        <span class="detail-cell-v small">${(() => { const sd = supplyDistrict(c); if (!sd) return '–'; if (sd.ch?.published) return supplyChangeText(sd.ch) + (sd.quad?.label ? ` · ${sd.quad.label}` : ''); return sd.level != null ? `현재 ${nf(sd.level)}건 · 증감 산출 대기` : '산출 대기'; })()}</span>
+      </div>
+      <div class="detail-cell">
         <span class="detail-cell-l">거래활력</span>
         <span class="detail-cell-v small">${vitText}</span>
       </div>
@@ -831,8 +835,89 @@ function renderObservabilityBar() {
   `;
 }
 
+/* ---------- 핵심 지표 B: 매물 수 증감 ---------- */
+const supplyChangeText = ch => `${ch.change > 0 ? '+' : ''}${nf(ch.change)}건 (${signed(ch.changePct)})`;
+function supplyPendingText(ch) {
+  const r = (ch?.reasons || []).join(' ');
+  if (/관측 없음/.test(r)) return '비교일 자료 축적 대기';
+  if (/공표 유예일|기준선/.test(r)) return '비교일이 검증 기준선 이전';
+  if (/공통 정상 관측/.test(r) || /품질 검증 통과/.test(r)) return '공통 정상 관측 단지 부족';
+  return '산출 대기';
+}
+
+function renderSupply() {
+  const sec = get('section-supply');
+  const s = data?.market?.listingSupply;
+  if (!sec) return;
+  if (!s) { sec.hidden = true; return; }
+  sec.hidden = false;
+  const lv = s.level || {};
+  get('supplyAsof').textContent = lv.observationNote ? `${s.asOf} · 재수집 ${(lv.observedFromKST || '').slice(11, 16)}~${(lv.observedToKST || '').slice(11, 16)} KST` : s.asOf;
+  get('supplyCoverage').textContent = `${lv.validComplexes}/${lv.plannedComplexes}개 단지 (품질 검증 통과)`;
+  const cur = get('supplyCurrentVal');
+  if (lv.publishable) {
+    cur.textContent = `${nf(lv.listings)}건`; cur.className = 'metric-value';
+    get('supplyCurrentSub').textContent = '품질 검증 통과 단지의 매도 매물 (ID 중복 제거)';
+  } else {
+    cur.textContent = '공표 유예'; cur.className = 'metric-value na';
+    get('supplyCurrentSub').textContent = '품질 검증 통과 단지 부족';
+  }
+  [['1d', 'supplyDodVal', 'supplyDodSub'], ['7d', 'supplyWowVal', 'supplyWowSub'], ['28d', 'supplyMomVal', 'supplyMomSub']].forEach(([h, vId, sId]) => {
+    const ch = s.changes?.[h] || {};
+    const v = get(vId), sub = get(sId);
+    if (ch.published && ch.change != null) {
+      v.textContent = supplyChangeText(ch);
+      v.className = 'metric-value ' + dirClass(ch.change);
+      const gap = ch.observationGapHours != null ? ` · 관측 간격 ${Number(ch.observationGapHours).toFixed(1)}시간` : '';
+      sub.textContent = `공통 ${ch.commonComplexes}개 단지 · 신규 ${nf(ch.newListings)} · 관측 종료 ${nf(ch.endedListings)}${gap}`;
+    } else {
+      v.textContent = '산출 대기'; v.className = 'metric-value na';
+      sub.textContent = supplyPendingText(ch);
+    }
+  });
+
+  // trend: same-complex chain index, line broken where a link is missing
+  const pts = (s.series || []).filter(p => p.sameComplexIndex != null);
+  const box = get('supplyTrend');
+  if (pts.length < 2) {
+    box.innerHTML = `<p class="supply-empty">공식 관측 ${pts.length}일차 (${pts[0]?.day || s.asOf}, ${nf(pts[0]?.listings ?? lv.listings)}건). 추이는 다음 공식 관측일부터 그려집니다.</p>`;
+  } else {
+    const W = 600, H = 96, P = 14;
+    const ys = pts.map(p => p.sameComplexIndex);
+    const lo = Math.min(...ys, 100), hi = Math.max(...ys, 100), span = (hi - lo) || 1;
+    const x = i => P + (W - 2 * P) * (i / (pts.length - 1));
+    const y = v => H - P - (H - 2 * P) * ((v - lo) / span);
+    let d = '';
+    pts.forEach((p, i) => { d += (i === 0 || p.linkChangePct == null ? 'M' : 'L') + x(i).toFixed(1) + ' ' + y(p.sameComplexIndex).toFixed(1) + ' '; });
+    box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="동일 단지 기준 매물 추이">
+      <line class="base" x1="${P}" x2="${W - P}" y1="${y(100)}" y2="${y(100)}"></line>
+      <path class="ln" d="${d}"></path>
+      ${pts.map((p, i) => `<circle class="pt" cx="${x(i)}" cy="${y(p.sameComplexIndex)}" r="2.5"><title>${p.day} · ${p.sameComplexIndex} (${nf(p.listings)}건)</title></circle>`).join('')}
+      <text x="${P}" y="${H - 2}">${pts[0].day}</text><text x="${W - P}" y="${H - 2}" text-anchor="end">${pts[pts.length - 1].day} · ${ys[ys.length - 1]}</text>
+    </svg>`;
+  }
+
+  // NEGO x supply pairing (descriptive only)
+  const cb = s.combination?.['1d'] || {};
+  const combo = get('supplyCombo');
+  if (cb.quadrant) {
+    combo.innerHTML = `<b>${cb.label}</b>네고 압력 ${signed(cb.negoChangePctPoint, '%p')} · 매물 ${signed(cb.supplyChangePct)}<br><span style="color:var(--ink-3)">관측 기록이며 가격 방향 신호로 검증되지 않았습니다.</span>`;
+  } else {
+    const nego = data.negoIndex?.changes?.['1d']?.deltaPctPoint;
+    combo.innerHTML = `<b>산출 대기</b>네고 압력 전일 변화 ${nego != null ? signed(nego, '%p') : '대기'} · 매물 전일 증감 ${s.changes?.['1d']?.published ? '확보' : '대기'}<br><span style="color:var(--ink-3)">두 지표의 비교 가능한 전일 변화가 모두 확보되면 네 가지 조합 중 하나로 표시합니다.</span>`;
+  }
+}
+
+function supplyDistrict(c) {
+  const s = data?.market?.listingSupply;
+  if (!s) return null;
+  const ch = s.changes?.['1d']?.districts?.[c];
+  return { level: s.level?.districts?.[c] ?? null, ch, quad: s.combination?.['1d']?.districts?.[c] };
+}
+
 function renderMarket() {
   renderNegoHero();
+  renderSupply();
   renderObservabilityBar();
   const all = data.market.regions.all;
   const a = data.asking || {};
@@ -1014,7 +1099,9 @@ function renderMarket() {
       status: (status === '실측' ? '90일 실거래' : status === '장기 실측 참고치' ? '180일 실거래' : status === '데이터 부족' ? '표본 부족으로 미산출' : status),
       statusCode: sp.statusCode,
       reason: sp.reason,
-      absorption: r.absorption?.percent ?? null
+      absorption: r.absorption?.percent ?? null,
+      supplyCh: supplyDistrict(c)?.ch,
+      supply: supplyDistrict(c)?.ch?.published ? supplyDistrict(c).ch.changePct : null
     };
   });
 
@@ -1042,6 +1129,17 @@ function renderMarket() {
     const tdObs = document.createElement('td');
     tdObs.textContent = `${row.complexes}단지 ${nf(row.listings)}건`;
     tr.appendChild(tdObs);
+
+    const tdSup = document.createElement('td');
+    if (row.supply != null) {
+      tdSup.textContent = supplyChangeText(row.supplyCh);
+      tdSup.className = dirClass(row.supplyCh.change);
+    } else {
+      tdSup.textContent = row.supplyCh?.reason ? '표본 단지 일부 누락' : '산출 대기';
+      tdSup.className = 'na';
+      if (row.supplyCh?.reason) tdSup.title = row.supplyCh.reason;
+    }
+    tr.appendChild(tdSup);
     
     const tdCut = document.createElement('td');
     if (row.cuts != null) {

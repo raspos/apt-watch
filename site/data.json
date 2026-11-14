@@ -56706,6 +56706,790 @@
         "H3_IncrementalInformationValue": "기존 한국부동산원·KB 지수 모형(Model A) 대비 괴리 변화 모형(Model B) 및 요인 분해 모형(Model C)이 통계적으로 유의미한 외표본 예측력 개선(Diebold-Mariano 검정)을 달성하는가?",
         "H4_DominantDriver": "호가 변화(매도자 심리)와 실거래 기준가 변화(체결 확인) 중 어느 요인이 미래 시장 변곡점과 더 밀접한가?"
       }
+    },
+    "listingSupply": {
+      "version": "listing-supply-v1",
+      "asOf": "2026-11-14",
+      "definition": "고정 표본 110개 단지 중 품질 검증 통과 단지의 매도 매물 수(매물 ID 중복 제거). 증감은 비교하는 두 날짜에 모두 정상 관측된 단지만으로 계산.",
+      "rules": {
+        "minValidComplexes": 105,
+        "plannedComplexes": 110,
+        "districtRule": "자치구 표본 단지 전부가 두 날짜 모두 정상 관측일 때만 자치구 증감 공표",
+        "endedNote": "관측 종료는 거래 완료를 뜻하지 않음(철회·재등록·노출 종료 포함)",
+        "relistRule": "같은 단지·면적·층·가격으로 새 ID가 나타나면 재등록 의심으로 분리",
+        "combinationNote": "네고 압력과 매물 증감의 조합은 관측 기록이며 가격 신호나 예측이 아님"
+      },
+      "level": {
+        "day": "2026-11-14",
+        "listings": 12017,
+        "validComplexes": 110,
+        "plannedComplexes": 110,
+        "duplicateIdsSkipped": 0,
+        "publishable": true,
+        "reasons": [],
+        "observedFromKST": "2026-11-14T09:21+09:00",
+        "observedToKST": "2026-11-14T09:51+09:00",
+        "collection": "RERUN",
+        "observationNote": "호가 관측 09:21~09:51 KST 재수집(06:00 정기 수집 실패분 미사용) · 실거래 기준 11-14 09:49 조회",
+        "districts": {
+          "11410": 388,
+          "11545": 442,
+          "11470": 1607,
+          "11170": 392,
+          "11500": 333,
+          "11650": 559,
+          "11320": 286,
+          "11620": 425,
+          "11290": 621,
+          "11440": 723,
+          "11680": 300,
+          "11215": 323,
+          "11560": 332,
+          "11200": 771,
+          "11530": 370,
+          "11260": 207,
+          "11350": 150,
+          "11740": 489,
+          "11710": 657,
+          "11590": 499,
+          "11305": 384,
+          "11380": 501,
+          "11230": 986,
+          "11110": 5,
+          "11140": 267
+        }
+      },
+      "changes": {
+        "1d": {
+          "commonComplexes": 87,
+          "listingsRef": 10039,
+          "listings": 9720,
+          "change": null,
+          "changePct": null,
+          "newIds": 1099,
+          "endedIds": 1418,
+          "relistSuspected": 361,
+          "newListings": 738,
+          "endedListings": 1057,
+          "continuing": 8621,
+          "referenceDay": "2026-11-13",
+          "observationGapHours": 18.6,
+          "published": false,
+          "reasons": [
+            "2026-11-13: 품질 검증 통과 87/110 < 105",
+            "2026-11-13: 공표 유예일(수집 오류 격리)",
+            "2026-11-13: 첫 검증 기준선(2026-11-14) 이전",
+            "공통 정상 관측 단지 87개 < 105개"
+          ],
+          "districts": {
+            "11110": {
+              "commonComplexes": 4,
+              "listingsRef": 23,
+              "listings": 5,
+              "change": null,
+              "changePct": null,
+              "newIds": 0,
+              "endedIds": 18,
+              "relistSuspected": 0,
+              "newListings": 0,
+              "endedListings": 18,
+              "continuing": 5,
+              "published": false
+            },
+            "11140": {
+              "commonComplexes": 3,
+              "listingsRef": 141,
+              "listings": 142,
+              "change": null,
+              "changePct": null,
+              "newIds": 8,
+              "endedIds": 7,
+              "relistSuspected": 7,
+              "newListings": 1,
+              "endedListings": 0,
+              "continuing": 134,
+              "published": false
+            },
+            "11170": {
+              "commonComplexes": 4,
+              "listingsRef": 409,
+              "listings": 392,
+              "change": null,
+              "changePct": null,
+              "newIds": 66,
+              "endedIds": 83,
+              "relistSuspected": 5,
+              "newListings": 61,
+              "endedListings": 78,
+              "continuing": 326,
+              "published": false
+            },
+            "11200": {
+              "commonComplexes": 4,
+              "listingsRef": 806,
+              "listings": 771,
+              "change": null,
+              "changePct": null,
+              "newIds": 82,
+              "endedIds": 117,
+              "relistSuspected": 24,
+              "newListings": 58,
+              "endedListings": 93,
+              "continuing": 689,
+              "published": false
+            },
+            "11215": {
+              "commonComplexes": 3,
+              "listingsRef": 322,
+              "listings": 311,
+              "change": null,
+              "changePct": null,
+              "newIds": 28,
+              "endedIds": 39,
+              "relistSuspected": 9,
+              "newListings": 19,
+              "endedListings": 30,
+              "continuing": 283,
+              "published": false
+            },
+            "11230": {
+              "commonComplexes": 4,
+              "listingsRef": 1007,
+              "listings": 986,
+              "change": null,
+              "changePct": null,
+              "newIds": 109,
+              "endedIds": 130,
+              "relistSuspected": 32,
+              "newListings": 77,
+              "endedListings": 98,
+              "continuing": 877,
+              "published": false
+            },
+            "11260": {
+              "commonComplexes": 2,
+              "listingsRef": 79,
+              "listings": 75,
+              "change": null,
+              "changePct": null,
+              "newIds": 0,
+              "endedIds": 4,
+              "relistSuspected": 0,
+              "newListings": 0,
+              "endedListings": 4,
+              "continuing": 75,
+              "published": false
+            },
+            "11290": {
+              "commonComplexes": 3,
+              "listingsRef": 236,
+              "listings": 223,
+              "change": null,
+              "changePct": null,
+              "newIds": 11,
+              "endedIds": 24,
+              "relistSuspected": 6,
+              "newListings": 5,
+              "endedListings": 18,
+              "continuing": 212,
+              "published": false
+            },
+            "11305": {
+              "commonComplexes": 3,
+              "listingsRef": 198,
+              "listings": 198,
+              "change": null,
+              "changePct": null,
+              "newIds": 6,
+              "endedIds": 6,
+              "relistSuspected": 3,
+              "newListings": 3,
+              "endedListings": 3,
+              "continuing": 192,
+              "published": false
+            },
+            "11320": {
+              "commonComplexes": 3,
+              "listingsRef": 177,
+              "listings": 157,
+              "change": null,
+              "changePct": null,
+              "newIds": 6,
+              "endedIds": 26,
+              "relistSuspected": 3,
+              "newListings": 3,
+              "endedListings": 23,
+              "continuing": 151,
+              "published": false
+            },
+            "11350": {
+              "commonComplexes": 4,
+              "listingsRef": 166,
+              "listings": 150,
+              "change": null,
+              "changePct": null,
+              "newIds": 7,
+              "endedIds": 23,
+              "relistSuspected": 0,
+              "newListings": 7,
+              "endedListings": 23,
+              "continuing": 143,
+              "published": false
+            },
+            "11380": {
+              "commonComplexes": 2,
+              "listingsRef": 139,
+              "listings": 139,
+              "change": null,
+              "changePct": null,
+              "newIds": 6,
+              "endedIds": 6,
+              "relistSuspected": 5,
+              "newListings": 1,
+              "endedListings": 1,
+              "continuing": 133,
+              "published": false
+            },
+            "11410": {
+              "commonComplexes": 3,
+              "listingsRef": 230,
+              "listings": 197,
+              "change": null,
+              "changePct": null,
+              "newIds": 13,
+              "endedIds": 46,
+              "relistSuspected": 6,
+              "newListings": 7,
+              "endedListings": 40,
+              "continuing": 184,
+              "published": false
+            },
+            "11440": {
+              "commonComplexes": 3,
+              "listingsRef": 677,
+              "listings": 686,
+              "change": null,
+              "changePct": null,
+              "newIds": 55,
+              "endedIds": 46,
+              "relistSuspected": 27,
+              "newListings": 28,
+              "endedListings": 19,
+              "continuing": 631,
+              "published": false
+            },
+            "11470": {
+              "commonComplexes": 11,
+              "listingsRef": 1481,
+              "listings": 1494,
+              "change": null,
+              "changePct": null,
+              "newIds": 216,
+              "endedIds": 203,
+              "relistSuspected": 106,
+              "newListings": 110,
+              "endedListings": 97,
+              "continuing": 1278,
+              "published": false
+            },
+            "11500": {
+              "commonComplexes": 3,
+              "listingsRef": 294,
+              "listings": 278,
+              "change": null,
+              "changePct": null,
+              "newIds": 15,
+              "endedIds": 31,
+              "relistSuspected": 14,
+              "newListings": 1,
+              "endedListings": 17,
+              "continuing": 263,
+              "published": false
+            },
+            "11530": {
+              "commonComplexes": 4,
+              "listingsRef": 421,
+              "listings": 370,
+              "change": null,
+              "changePct": null,
+              "newIds": 15,
+              "endedIds": 66,
+              "relistSuspected": 13,
+              "newListings": 2,
+              "endedListings": 53,
+              "continuing": 355,
+              "published": false
+            },
+            "11545": {
+              "commonComplexes": 3,
+              "listingsRef": 449,
+              "listings": 439,
+              "change": null,
+              "changePct": null,
+              "newIds": 8,
+              "endedIds": 18,
+              "relistSuspected": 3,
+              "newListings": 5,
+              "endedListings": 15,
+              "continuing": 431,
+              "published": false
+            },
+            "11560": {
+              "commonComplexes": 4,
+              "listingsRef": 350,
+              "listings": 332,
+              "change": null,
+              "changePct": null,
+              "newIds": 19,
+              "endedIds": 37,
+              "relistSuspected": 15,
+              "newListings": 4,
+              "endedListings": 22,
+              "continuing": 313,
+              "published": false
+            },
+            "11590": {
+              "commonComplexes": 3,
+              "listingsRef": 373,
+              "listings": 360,
+              "change": null,
+              "changePct": null,
+              "newIds": 25,
+              "endedIds": 38,
+              "relistSuspected": 5,
+              "newListings": 20,
+              "endedListings": 33,
+              "continuing": 335,
+              "published": false
+            },
+            "11620": {
+              "commonComplexes": 3,
+              "listingsRef": 426,
+              "listings": 390,
+              "change": null,
+              "changePct": null,
+              "newIds": 111,
+              "endedIds": 147,
+              "relistSuspected": 10,
+              "newListings": 101,
+              "endedListings": 137,
+              "continuing": 279,
+              "published": false
+            },
+            "11650": {
+              "commonComplexes": 3,
+              "listingsRef": 386,
+              "listings": 417,
+              "change": null,
+              "changePct": null,
+              "newIds": 67,
+              "endedIds": 36,
+              "relistSuspected": 20,
+              "newListings": 47,
+              "endedListings": 16,
+              "continuing": 350,
+              "published": false
+            },
+            "11680": {
+              "commonComplexes": 2,
+              "listingsRef": 218,
+              "listings": 183,
+              "change": null,
+              "changePct": null,
+              "newIds": 16,
+              "endedIds": 51,
+              "relistSuspected": 4,
+              "newListings": 12,
+              "endedListings": 47,
+              "continuing": 167,
+              "published": false
+            },
+            "11710": {
+              "commonComplexes": 2,
+              "listingsRef": 580,
+              "listings": 536,
+              "change": null,
+              "changePct": null,
+              "newIds": 90,
+              "endedIds": 134,
+              "relistSuspected": 33,
+              "newListings": 57,
+              "endedListings": 101,
+              "continuing": 446,
+              "published": false
+            },
+            "11740": {
+              "commonComplexes": 4,
+              "listingsRef": 451,
+              "listings": 489,
+              "change": null,
+              "changePct": null,
+              "newIds": 120,
+              "endedIds": 82,
+              "relistSuspected": 11,
+              "newListings": 109,
+              "endedListings": 71,
+              "continuing": 369,
+              "published": false
+            }
+          }
+        },
+        "7d": {
+          "referenceDay": "2026-11-07",
+          "published": false,
+          "change": null,
+          "changePct": null,
+          "reasons": [
+            "2026-11-07 관측 없음 (7일 전 자료 축적 대기)"
+          ]
+        },
+        "28d": {
+          "referenceDay": "2026-10-17",
+          "published": false,
+          "change": null,
+          "changePct": null,
+          "reasons": [
+            "2026-10-17 관측 없음 (28일 전 자료 축적 대기)"
+          ]
+        }
+      },
+      "combination": {
+        "1d": {
+          "quadrant": null,
+          "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시",
+          "negoChangePctPoint": null,
+          "supplyChangePct": null,
+          "districts": {
+            "11110": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11140": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11170": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11200": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11215": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11230": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11260": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11290": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11305": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11320": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11350": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11380": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11410": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11440": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11470": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11500": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11530": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11545": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11560": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11590": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11620": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11650": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11680": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11710": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11740": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            }
+          }
+        },
+        "7d": {
+          "quadrant": null,
+          "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시",
+          "negoChangePctPoint": null,
+          "supplyChangePct": null,
+          "districts": {
+            "11110": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11140": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11170": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11200": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11215": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11230": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11260": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11290": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11305": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11320": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11350": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11380": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11410": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11440": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11470": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11500": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11530": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11545": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11560": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11590": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11620": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11650": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11680": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11710": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11740": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            }
+          }
+        },
+        "28d": {
+          "quadrant": null,
+          "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시",
+          "negoChangePctPoint": null,
+          "supplyChangePct": null,
+          "districts": {
+            "11110": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11140": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11170": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11200": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11215": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11230": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11260": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11290": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11305": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11320": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11350": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11380": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11410": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11440": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11470": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11500": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11530": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11545": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11560": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11590": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11620": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11650": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11680": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11710": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            },
+            "11740": {
+              "quadrant": null,
+              "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시"
+            }
+          }
+        }
+      },
+      "series": [
+        {
+          "day": "2026-11-14",
+          "listings": 12017,
+          "validComplexes": 110,
+          "sameComplexIndex": 100.0,
+          "linkFrom": null,
+          "linkChangePct": null,
+          "collection": "RERUN"
+        }
+      ]
     }
   },
   "observability": {

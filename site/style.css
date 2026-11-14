@@ -176,6 +176,20 @@ footer a{color:var(--ink-3)}
 .badge-live{background:#e8f0fe;color:#1a73e8;border:1px solid #c2e7ff;font-weight:700;padding:2px 8px;border-radius:4px;font-size:11px}
 [data-theme="dark"] .badge-live{background:rgba(26,115,232,0.25);color:#8ab4f8;border-color:#1a73e8}
 
+/* 매물 수 증감 (핵심 지표 B) */
+.supply-lower{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-top:12px}
+.supply-trend,.supply-combo{padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);min-width:0}
+.supply-trend-title{font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
+.supply-trend-title span{font-weight:400;color:var(--ink-3)}
+.supply-trend-chart svg{display:block;width:100%;height:auto;max-height:120px}
+.supply-trend-chart .ln{fill:none;stroke:var(--ink);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.supply-trend-chart .pt{fill:var(--ink)}
+.supply-trend-chart .base{stroke:var(--line);stroke-dasharray:3 3;vector-effect:non-scaling-stroke}
+.supply-trend-chart text{font-size:10px;fill:var(--ink-3)}
+.supply-empty{font-size:12px;color:var(--ink-3);line-height:1.5;margin:0}
+.supply-combo-body{font-size:12px;color:var(--ink-2);line-height:1.55}
+.supply-combo-body b{font-size:15px;color:var(--ink);display:block;margin-bottom:2px}
+
 /* ==========================================================================
    반응형 브레이크포인트
    ========================================================================== */
@@ -185,6 +199,7 @@ footer a{color:var(--ink-3)}
   .map-container{order:1}
   .nego-metrics-grid{grid-template-columns:repeat(2,1fr)}
   .nego-meta-right{text-align:left}
+  .supply-lower{grid-template-columns:1fr}
 }
 
 @media(max-width:760px){
