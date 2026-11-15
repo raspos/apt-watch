@@ -152,7 +152,11 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=10800
     # 3-1. Automatic Sequential Retry for Failed Complexes before Quality Gate
     db = sqlite3.connect(db_file)
     cur = db.cursor()
-    failed_complex_ids = [str(r[0]) for r in cur.execute("SELECT complex FROM batches WHERE day=? AND success=0", (target_day,)).fetchall()]
+    # every planned complex without a successful batch (failed OR never attempted, e.g. a worker that
+    # aborted early) is retried -- 2026-11-15 only 2 of 110 were retried after a worker stopped
+    _ok = {str(r[0]) for r in cur.execute("SELECT complex FROM batches WHERE day=? AND success=1", (target_day,)).fetchall()}
+    failed_complex_ids = [str(c['complex']) for c in json.loads(manifest_file.read_text(encoding='utf-8-sig'))
+                          if str(c['complex']) not in _ok]
     db.close()
     if failed_complex_ids:
         print(f"\n[Step 1-1] Auto-retrying {len(failed_complex_ids)} failed complexes...")
@@ -169,7 +173,7 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=10800
                 '--day', target_day
             ]
             try:
-                rr = subprocess.run(cmd_retry, capture_output=True, text=True, encoding='utf-8', timeout=1800)
+                rr = subprocess.run(cmd_retry, capture_output=True, text=True, encoding='utf-8', timeout=max(1800, 45 * len(retry_manifest)))
                 if rr.returncode != 0:
                     print(f"[Step 1-1] WARNING: retry collector exited with code {rr.returncode}; merging only what was stored.")
             except subprocess.TimeoutExpired:

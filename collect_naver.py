@@ -68,6 +68,7 @@ def _rendered_articles_with_fallback(page):
 
 
 ZERO_CONFIRMED = 'ZERO_CONFIRMED: empty-state message on page'
+BLOCK_BACKOFF_SEC = (60, 180, 300)   # waits after a Naver 403/429 before retrying the same complex
 
 
 def _empty_state(body_txt):
@@ -249,12 +250,22 @@ def main():
                 t_start = time.monotonic()
                 err_msg = None
                 rows, groups, success = [], None, False
-                for attempt in range(2):
+                blocked_waits = 0
+                attempt = 0
+                while attempt < 2:
                     try:
                         rows, groups, err_msg = collect(page, target)   # err_msg = ZERO_CONFIRMED note or None
                         success = True
                         break
                     except PermissionError as error:
+                        # Naver 403/429: back off and try the same complex again (a single 429 used to
+                        # abort the whole worker, 2026-11-15). Give up only if it persists.
+                        if blocked_waits < len(BLOCK_BACKOFF_SEC):
+                            wait_s = BLOCK_BACKOFF_SEC[blocked_waits]
+                            blocked_waits += 1
+                            print(f"{now()} {error} on complex {key}; backing off {wait_s}s ({blocked_waits}/{len(BLOCK_BACKOFF_SEC)})", flush=True)
+                            page.wait_for_timeout(wait_s * 1000)
+                            continue
                         err_msg = str(error)
                         duration_sec = round(time.monotonic() - t_start, 2)
                         import_delivery(db, manifest, [dict(complex=key, observed=observed_utc,
@@ -272,7 +283,8 @@ def main():
                         print(json.dumps(dict(complex=key, error=str(error))), flush=True)
                         return 75
                     except (ValueError, RuntimeError, BrowserError) as error:
-                        if attempt == 0:
+                        attempt += 1
+                        if attempt == 1:
                             print(f"{now()} Retrying complex {key} ({target.get('name')}) after transient error: {error}", flush=True)
                             page.wait_for_timeout(3000)
                             continue
