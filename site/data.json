@@ -1,7 +1,7 @@
 {
-  "asOf": "2026-11-14T07:00:08+09:00",
-  "raw": 451053,
-  "eligibleTrades": 433330,
+  "asOf": "2026-11-15T10:03:13+09:00",
+  "raw": 451059,
+  "eligibleTrades": 433335,
   "series": {
     "all": [
       {
@@ -732,7 +732,7 @@
       },
       {
         "month": "2024-07",
-        "index": 137.85,
+        "index": 137.86,
         "comparison": "202406",
         "samples": 8902,
         "matched": 2073,
@@ -1029,24 +1029,24 @@
       },
       {
         "month": "2026-10",
-        "index": 175.56,
+        "index": 175.55,
         "comparison": "202609",
-        "samples": 3797,
+        "samples": 3799,
         "matched": 663,
         "covered": 25,
         "provisional": true,
-        "modelGroups": 2780,
+        "modelGroups": 2781,
         "withheld": null
       },
       {
         "month": "2026-11",
-        "index": 172.87,
+        "index": 172.95,
         "comparison": "202610",
-        "samples": 524,
-        "matched": 130,
+        "samples": 527,
+        "matched": 132,
         "covered": 25,
         "provisional": true,
-        "modelGroups": 459,
+        "modelGroups": 462,
         "withheld": null
       }
     ],
@@ -12581,7 +12581,7 @@
       },
       {
         "month": "2019-02",
-        "index": 99.07,
+        "index": 99.08,
         "comparison": "201901",
         "samples": 98,
         "matched": 11,
@@ -12603,7 +12603,7 @@
       },
       {
         "month": "2019-04",
-        "index": 99.1,
+        "index": 99.11,
         "comparison": "201903",
         "samples": 117,
         "matched": 15,
@@ -12614,7 +12614,7 @@
       },
       {
         "month": "2019-05",
-        "index": 100.75,
+        "index": 100.76,
         "comparison": "201904",
         "samples": 98,
         "matched": 16,
@@ -12625,7 +12625,7 @@
       },
       {
         "month": "2019-06",
-        "index": 99.81,
+        "index": 99.82,
         "comparison": "201905",
         "samples": 143,
         "matched": 19,
@@ -12636,7 +12636,7 @@
       },
       {
         "month": "2019-07",
-        "index": 101.97,
+        "index": 101.98,
         "comparison": "201906",
         "samples": 199,
         "matched": 26,
@@ -12658,7 +12658,7 @@
       },
       {
         "month": "2019-09",
-        "index": 104.81,
+        "index": 104.82,
         "comparison": "201908",
         "samples": 215,
         "matched": 41,
@@ -12713,7 +12713,7 @@
       },
       {
         "month": "2020-02",
-        "index": 111.46,
+        "index": 111.47,
         "comparison": "202001",
         "samples": 355,
         "matched": 75,
@@ -12724,7 +12724,7 @@
       },
       {
         "month": "2020-03",
-        "index": 112.31,
+        "index": 112.32,
         "comparison": "202002",
         "samples": 203,
         "matched": 50,
@@ -12746,7 +12746,7 @@
       },
       {
         "month": "2020-05",
-        "index": 113.01,
+        "index": 113.02,
         "comparison": "202004",
         "samples": 235,
         "matched": 33,
@@ -12768,7 +12768,7 @@
       },
       {
         "month": "2020-07",
-        "index": 121.35,
+        "index": 121.36,
         "comparison": "202006",
         "samples": 489,
         "matched": 142,
@@ -12779,7 +12779,7 @@
       },
       {
         "month": "2020-08",
-        "index": 126.52,
+        "index": 126.53,
         "comparison": "202007",
         "samples": 194,
         "matched": 51,
@@ -12790,7 +12790,7 @@
       },
       {
         "month": "2020-09",
-        "index": 128.63,
+        "index": 128.64,
         "comparison": "202008",
         "samples": 150,
         "matched": 22,
@@ -12801,7 +12801,7 @@
       },
       {
         "month": "2020-10",
-        "index": 131.16,
+        "index": 131.17,
         "comparison": "202009",
         "samples": 180,
         "matched": 24,
@@ -12812,7 +12812,7 @@
       },
       {
         "month": "2020-11",
-        "index": 134.42,
+        "index": 134.43,
         "comparison": "202010",
         "samples": 222,
         "matched": 29,
@@ -12834,7 +12834,7 @@
       },
       {
         "month": "2021-01",
-        "index": 141.12,
+        "index": 141.13,
         "comparison": "202012",
         "samples": 197,
         "matched": 50,
@@ -12856,7 +12856,7 @@
       },
       {
         "month": "2021-03",
-        "index": 140.34,
+        "index": 140.35,
         "comparison": "202102",
         "samples": 146,
         "matched": 18,
@@ -12867,7 +12867,7 @@
       },
       {
         "month": "2021-04",
-        "index": 142.27,
+        "index": 142.28,
         "comparison": "202103",
         "samples": 135,
         "matched": 22,
@@ -12911,7 +12911,7 @@
       },
       {
         "month": "2021-08",
-        "index": 153.4,
+        "index": 153.41,
         "comparison": "202107",
         "samples": 178,
         "matched": 33,
@@ -12944,7 +12944,7 @@
       },
       {
         "month": "2021-11",
-        "index": 154.22,
+        "index": 154.23,
         "comparison": "202109",
         "samples": 75,
         "matched": 10,
@@ -12966,7 +12966,7 @@
       },
       {
         "month": "2022-01",
-        "index": 148.37,
+        "index": 148.38,
         "comparison": "202112",
         "samples": 60,
         "matched": 9,
@@ -12977,7 +12977,7 @@
       },
       {
         "month": "2022-02",
-        "index": 145.46,
+        "index": 145.45,
         "comparison": "202112",
         "samples": 46,
         "matched": 8,
@@ -12988,7 +12988,7 @@
       },
       {
         "month": "2022-03",
-        "index": 149.25,
+        "index": 149.26,
         "comparison": "202112",
         "samples": 121,
         "matched": 8,
@@ -12999,7 +12999,7 @@
       },
       {
         "month": "2022-04",
-        "index": 151.21,
+        "index": 151.22,
         "comparison": "202112",
         "samples": 73,
         "matched": 9,
@@ -13010,7 +13010,7 @@
       },
       {
         "month": "2022-05",
-        "index": 148.76,
+        "index": 148.77,
         "comparison": "202112",
         "samples": 72,
         "matched": 8,
@@ -13021,7 +13021,7 @@
       },
       {
         "month": "2022-06",
-        "index": 144.27,
+        "index": 144.28,
         "comparison": "202112",
         "samples": 42,
         "matched": 4,
@@ -13032,7 +13032,7 @@
       },
       {
         "month": "2022-07",
-        "index": 136.94,
+        "index": 136.95,
         "comparison": "202112",
         "samples": 39,
         "matched": 5,
@@ -13043,7 +13043,7 @@
       },
       {
         "month": "2022-08",
-        "index": 137.1,
+        "index": 137.11,
         "comparison": "202112",
         "samples": 36,
         "matched": 2,
@@ -13054,7 +13054,7 @@
       },
       {
         "month": "2022-09",
-        "index": 135.01,
+        "index": 135.03,
         "comparison": "202112",
         "samples": 34,
         "matched": 2,
@@ -13164,7 +13164,7 @@
       },
       {
         "month": "2023-07",
-        "index": 124.35,
+        "index": 124.34,
         "comparison": "202112",
         "samples": 143,
         "matched": 26,
@@ -13186,7 +13186,7 @@
       },
       {
         "month": "2023-09",
-        "index": 128.72,
+        "index": 128.73,
         "comparison": "202112",
         "samples": 120,
         "matched": 23,
@@ -13197,7 +13197,7 @@
       },
       {
         "month": "2023-10",
-        "index": 130.45,
+        "index": 130.46,
         "comparison": "202112",
         "samples": 98,
         "matched": 15,
@@ -13274,7 +13274,7 @@
       },
       {
         "month": "2024-05",
-        "index": 129.56,
+        "index": 129.57,
         "comparison": "202112",
         "samples": 206,
         "matched": 38,
@@ -13318,7 +13318,7 @@
       },
       {
         "month": "2024-09",
-        "index": 134.68,
+        "index": 134.69,
         "comparison": "202112",
         "samples": 129,
         "matched": 26,
@@ -13351,7 +13351,7 @@
       },
       {
         "month": "2024-12",
-        "index": 131.54,
+        "index": 131.55,
         "comparison": "202112",
         "samples": 91,
         "matched": 10,
@@ -13373,7 +13373,7 @@
       },
       {
         "month": "2025-02",
-        "index": 131.82,
+        "index": 131.81,
         "comparison": "202112",
         "samples": 153,
         "matched": 29,
@@ -13384,7 +13384,7 @@
       },
       {
         "month": "2025-03",
-        "index": 134.25,
+        "index": 134.26,
         "comparison": "202112",
         "samples": 262,
         "matched": 44,
@@ -13395,7 +13395,7 @@
       },
       {
         "month": "2025-04",
-        "index": 134.14,
+        "index": 134.15,
         "comparison": "202112",
         "samples": 190,
         "matched": 39,
@@ -13450,7 +13450,7 @@
       },
       {
         "month": "2025-09",
-        "index": 138.06,
+        "index": 138.07,
         "comparison": "202112",
         "samples": 298,
         "matched": 48,
@@ -13472,7 +13472,7 @@
       },
       {
         "month": "2025-11",
-        "index": 139.75,
+        "index": 139.77,
         "comparison": "202112",
         "samples": 184,
         "matched": 60,
@@ -13494,7 +13494,7 @@
       },
       {
         "month": "2026-01",
-        "index": 142.13,
+        "index": 142.14,
         "comparison": "202112",
         "samples": 266,
         "matched": 53,
@@ -13505,7 +13505,7 @@
       },
       {
         "month": "2026-02",
-        "index": 144.23,
+        "index": 144.22,
         "comparison": "202112",
         "samples": 332,
         "matched": 73,
@@ -13527,7 +13527,7 @@
       },
       {
         "month": "2026-04",
-        "index": 144.01,
+        "index": 144.02,
         "comparison": "202112",
         "samples": 338,
         "matched": 83,
@@ -13549,7 +13549,7 @@
       },
       {
         "month": "2026-06",
-        "index": 150.11,
+        "index": 150.09,
         "comparison": "202112",
         "samples": 259,
         "matched": 77,
@@ -13560,7 +13560,7 @@
       },
       {
         "month": "2026-07",
-        "index": 153.82,
+        "index": 153.8,
         "comparison": "202112",
         "samples": 283,
         "matched": 67,
@@ -13571,7 +13571,7 @@
       },
       {
         "month": "2026-08",
-        "index": 154.67,
+        "index": 154.65,
         "comparison": "202112",
         "samples": 210,
         "matched": 51,
@@ -13582,7 +13582,7 @@
       },
       {
         "month": "2026-09",
-        "index": 156.86,
+        "index": 156.88,
         "comparison": "202112",
         "samples": 206,
         "matched": 30,
@@ -13593,24 +13593,24 @@
       },
       {
         "month": "2026-10",
-        "index": 156.81,
+        "index": 156.99,
         "comparison": "202112",
-        "samples": 195,
+        "samples": 198,
         "matched": 24,
         "covered": 1,
         "provisional": true,
-        "modelGroups": 153,
+        "modelGroups": 154,
         "withheld": null
       },
       {
         "month": "2026-11",
         "index": null,
         "comparison": "202112",
-        "samples": 30,
-        "matched": 7,
+        "samples": 33,
+        "matched": 9,
         "covered": 1,
         "provisional": true,
-        "modelGroups": 28,
+        "modelGroups": 31,
         "withheld": "잠정 비교 표본 부족"
       }
     ],
@@ -22015,7 +22015,7 @@
       },
       {
         "month": "2019-03",
-        "index": 97.73,
+        "index": 97.74,
         "comparison": "201901",
         "samples": 84,
         "matched": 5,
@@ -22070,7 +22070,7 @@
       },
       {
         "month": "2019-08",
-        "index": 98.3,
+        "index": 98.31,
         "comparison": "201907",
         "samples": 206,
         "matched": 61,
@@ -22081,7 +22081,7 @@
       },
       {
         "month": "2019-09",
-        "index": 100.42,
+        "index": 100.43,
         "comparison": "201908",
         "samples": 193,
         "matched": 49,
@@ -22103,7 +22103,7 @@
       },
       {
         "month": "2019-11",
-        "index": 102.61,
+        "index": 102.62,
         "comparison": "201910",
         "samples": 401,
         "matched": 86,
@@ -22180,7 +22180,7 @@
       },
       {
         "month": "2020-06",
-        "index": 115.51,
+        "index": 115.52,
         "comparison": "202005",
         "samples": 503,
         "matched": 63,
@@ -22246,7 +22246,7 @@
       },
       {
         "month": "2020-12",
-        "index": 133.74,
+        "index": 133.73,
         "comparison": "202011",
         "samples": 225,
         "matched": 49,
@@ -22268,7 +22268,7 @@
       },
       {
         "month": "2021-02",
-        "index": 141.57,
+        "index": 141.58,
         "comparison": "202101",
         "samples": 133,
         "matched": 35,
@@ -22312,7 +22312,7 @@
       },
       {
         "month": "2021-06",
-        "index": 147.88,
+        "index": 147.89,
         "comparison": "202105",
         "samples": 102,
         "matched": 27,
@@ -22367,7 +22367,7 @@
       },
       {
         "month": "2021-11",
-        "index": 151.59,
+        "index": 151.6,
         "comparison": "202110",
         "samples": 45,
         "matched": 10,
@@ -22488,7 +22488,7 @@
       },
       {
         "month": "2022-10",
-        "index": 126.47,
+        "index": 126.46,
         "comparison": "202111",
         "samples": 15,
         "matched": 2,
@@ -22543,7 +22543,7 @@
       },
       {
         "month": "2023-03",
-        "index": 117.38,
+        "index": 117.39,
         "comparison": "202111",
         "samples": 62,
         "matched": 18,
@@ -22565,7 +22565,7 @@
       },
       {
         "month": "2023-05",
-        "index": 118.81,
+        "index": 118.82,
         "comparison": "202111",
         "samples": 102,
         "matched": 21,
@@ -22587,7 +22587,7 @@
       },
       {
         "month": "2023-07",
-        "index": 123.37,
+        "index": 123.38,
         "comparison": "202111",
         "samples": 99,
         "matched": 22,
@@ -22697,7 +22697,7 @@
       },
       {
         "month": "2024-05",
-        "index": 125.81,
+        "index": 125.82,
         "comparison": "202111",
         "samples": 134,
         "matched": 24,
@@ -22785,7 +22785,7 @@
       },
       {
         "month": "2025-01",
-        "index": 130.97,
+        "index": 130.96,
         "comparison": "202111",
         "samples": 90,
         "matched": 12,
@@ -22906,7 +22906,7 @@
       },
       {
         "month": "2025-12",
-        "index": 143.68,
+        "index": 143.69,
         "comparison": "202111",
         "samples": 162,
         "matched": 32,
@@ -22917,7 +22917,7 @@
       },
       {
         "month": "2026-01",
-        "index": 147.86,
+        "index": 147.87,
         "comparison": "202111",
         "samples": 192,
         "matched": 46,
@@ -22961,7 +22961,7 @@
       },
       {
         "month": "2026-05",
-        "index": 154.47,
+        "index": 154.48,
         "comparison": "202111",
         "samples": 369,
         "matched": 79,
@@ -23005,7 +23005,7 @@
       },
       {
         "month": "2026-09",
-        "index": 159.81,
+        "index": 159.8,
         "comparison": "202111",
         "samples": 115,
         "matched": 22,
@@ -23016,9 +23016,9 @@
       },
       {
         "month": "2026-10",
-        "index": 161.34,
+        "index": 161.12,
         "comparison": "202111",
-        "samples": 153,
+        "samples": 152,
         "matched": 26,
         "covered": 1,
         "provisional": true,
@@ -27255,7 +27255,7 @@
   },
   "districtMonths": 2375,
   "version": "stratum-month-fixed-effects-v1",
-  "calculatedAt": "2026-11-14T09:57:57+09:00",
+  "calculatedAt": "2026-11-15T16:32:11+09:00",
   "researchSeries": {
     "all": [
       {
@@ -28099,7 +28099,7 @@
         "month": "2026-10",
         "index": 297.72,
         "comparison": "202609",
-        "samples": 3797,
+        "samples": 3799,
         "matched": 663,
         "covered": 25,
         "provisional": true
@@ -28108,8 +28108,8 @@
         "month": "2026-11",
         "index": 297.72,
         "comparison": "202610",
-        "samples": 524,
-        "matched": 130,
+        "samples": 527,
+        "matched": 132,
         "covered": 25,
         "provisional": true
       }
@@ -38383,7 +38383,7 @@
         "month": "2026-10",
         "index": null,
         "comparison": "202112",
-        "samples": 195,
+        "samples": 198,
         "matched": 0,
         "covered": 1,
         "provisional": true
@@ -38392,7 +38392,7 @@
         "month": "2026-11",
         "index": null,
         "comparison": "202112",
-        "samples": 30,
+        "samples": 33,
         "matched": 0,
         "covered": 1,
         "provisional": true
@@ -46096,7 +46096,7 @@
         "month": "2026-10",
         "index": null,
         "comparison": "202111",
-        "samples": 153,
+        "samples": 152,
         "matched": 0,
         "covered": 1,
         "provisional": true
@@ -49542,30 +49542,30 @@
   },
   "publicationRule": "provisional-seoul-min-100-v1",
   "asking": {
-    "lastSuccess": "2026-11-14T00:51:04Z",
+    "lastSuccess": "2026-11-15T07:31:09Z",
     "successes": 110,
     "failures": 0,
-    "listings": 12017,
+    "listings": 12118,
     "target": null,
     "sentiment": null,
     "premium": null,
     "changes": {
       "1": {
-        "sample": 8626,
+        "sample": 9767,
         "complexes": 110,
-        "cutShare": 0.2550428935775562,
-        "riseShare": 0.0811500115928588,
-        "holdShare": 99.66,
-        "holdListings": 8597,
-        "netAdjustmentShare": -0.17,
-        "meanCutPct": 2.8890113728434876,
-        "meanRisePct": 2.5105231705100435,
+        "cutShare": 0.24572540186341763,
+        "riseShare": 0.08190846728780588,
+        "holdShare": 99.67,
+        "holdListings": 9735,
+        "netAdjustmentShare": -0.16,
+        "meanCutPct": 2.176637879430816,
+        "meanRisePct": 5.014709152524005,
         "firstToLatestMedianPct": 0.0,
         "consecutiveCutShare": 0.0,
-        "cutToRiseRatio": 3.142857142857143,
-        "cutListings": 22,
-        "riseListings": 7,
-        "cutEvents": 22
+        "cutToRiseRatio": 3.0,
+        "cutListings": 24,
+        "riseListings": 8,
+        "cutEvents": 24
       },
       "7": {
         "sample": 0,
@@ -49604,32 +49604,32 @@
     }
   },
   "market": {
-    "day": "2026-11-14",
+    "day": "2026-11-15",
     "state": "서울 아파트 시장심리 · 데이터 축적 중 (1일차 108개 단지 11,702건 기준선 구축)",
     "regions": {
       "all": {
         "coverage": {
           "roster": 110,
           "success": 110,
-          "listings": 12017
+          "listings": 12118
         },
         "concessions": {
           "1": {
-            "sample": 8626,
+            "sample": 9767,
             "complexes": 110,
-            "cutShare": 0.2550428935775562,
-            "riseShare": 0.0811500115928588,
-            "holdShare": 99.66,
-            "holdListings": 8597,
-            "netAdjustmentShare": -0.17,
-            "meanCutPct": 2.8890113728434876,
-            "meanRisePct": 2.5105231705100435,
+            "cutShare": 0.24572540186341763,
+            "riseShare": 0.08190846728780588,
+            "holdShare": 99.67,
+            "holdListings": 9735,
+            "netAdjustmentShare": -0.16,
+            "meanCutPct": 2.176637879430816,
+            "meanRisePct": 5.014709152524005,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 3.142857142857143,
-            "cutListings": 22,
-            "riseListings": 7,
-            "cutEvents": 22
+            "cutToRiseRatio": 3.0,
+            "cutListings": 24,
+            "riseListings": 8,
+            "cutEvents": 24
           },
           "7": {
             "sample": 0,
@@ -49671,12 +49671,12 @@
           "percent": null
         },
         "spread": {
-          "sample": 70,
-          "percent": 3.64,
+          "sample": 67,
+          "percent": 4.29,
           "medianBenchmarkAgeDays": null,
           "tradeVintage": null,
-          "groups": 70,
-          "matchedListings": 2307,
+          "groups": 67,
+          "matchedListings": 2327,
           "status": "실측",
           "standardWindowDays": 90,
           "minTradesPerStratum": 3,
@@ -49714,6 +49714,12 @@
             "index": 100.0,
             "matched": 8398,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 7671,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -49721,7 +49727,7 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 5
+          "listings": 23
         },
         "concessions": {
           "1": {
@@ -49818,6 +49824,12 @@
             "index": null,
             "matched": 5,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 22,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -49825,16 +49837,16 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 267
+          "listings": 268
         },
         "concessions": {
           "1": {
-            "sample": 134,
+            "sample": 240,
             "complexes": 4,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 134,
+            "holdListings": 240,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -49922,6 +49934,12 @@
             "index": 100.0,
             "matched": 161,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 147,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -49929,25 +49947,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 392
+          "listings": 422
         },
         "concessions": {
           "1": {
-            "sample": 326,
+            "sample": 320,
             "complexes": 4,
-            "cutShare": 0.3067484662576687,
+            "cutShare": 0.625,
             "riseShare": 0.0,
-            "holdShare": 99.69,
-            "holdListings": 325,
-            "netAdjustmentShare": -0.31,
-            "meanCutPct": 2.0000000000000018,
+            "holdShare": 99.38,
+            "holdListings": 318,
+            "netAdjustmentShare": -0.62,
+            "meanCutPct": 2.3361976369495165,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
             "cutToRiseRatio": null,
-            "cutListings": 1,
+            "cutListings": 2,
             "riseListings": 0,
-            "cutEvents": 1
+            "cutEvents": 2
           },
           "7": {
             "sample": 0,
@@ -50026,6 +50044,12 @@
             "index": 100.0,
             "matched": 238,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 264,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50033,25 +50057,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 771
+          "listings": 797
         },
         "concessions": {
           "1": {
-            "sample": 689,
+            "sample": 688,
             "complexes": 4,
-            "cutShare": 0.43541364296081275,
-            "riseShare": 0.14513788098693758,
+            "cutShare": 0.5813953488372093,
+            "riseShare": 0.0,
             "holdShare": 99.42,
-            "holdListings": 685,
-            "netAdjustmentShare": -0.29,
-            "meanCutPct": 4.135738016136692,
-            "meanRisePct": 6.666666666666665,
+            "holdListings": 684,
+            "netAdjustmentShare": -0.58,
+            "meanCutPct": 2.1334670231729054,
+            "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 3.0,
-            "cutListings": 3,
-            "riseListings": 1,
-            "cutEvents": 3
+            "cutToRiseRatio": null,
+            "cutListings": 4,
+            "riseListings": 0,
+            "cutEvents": 4
           },
           "7": {
             "sample": 0,
@@ -50130,6 +50154,12 @@
             "index": 100.0,
             "matched": 523,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 475,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50137,25 +50167,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 323
+          "listings": 344
         },
         "concessions": {
           "1": {
-            "sample": 283,
+            "sample": 235,
             "complexes": 4,
-            "cutShare": 0.35335689045936397,
+            "cutShare": 0.0,
             "riseShare": 0.0,
-            "holdShare": 99.65,
-            "holdListings": 282,
-            "netAdjustmentShare": -0.35,
-            "meanCutPct": 2.3255813953488413,
+            "holdShare": 100.0,
+            "holdListings": 235,
+            "netAdjustmentShare": 0.0,
+            "meanCutPct": null,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
             "cutToRiseRatio": null,
-            "cutListings": 1,
+            "cutListings": 0,
             "riseListings": 0,
-            "cutEvents": 1
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -50234,6 +50264,12 @@
             "index": 100.0,
             "matched": 196,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 185,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50241,18 +50277,18 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 986
+          "listings": 1057
         },
         "concessions": {
           "1": {
-            "sample": 877,
+            "sample": 743,
             "complexes": 4,
-            "cutShare": 0.22805017103762829,
+            "cutShare": 0.2691790040376851,
             "riseShare": 0.0,
-            "holdShare": 99.77,
-            "holdListings": 875,
-            "netAdjustmentShare": -0.23,
-            "meanCutPct": 4.829290206648695,
+            "holdShare": 99.73,
+            "holdListings": 741,
+            "netAdjustmentShare": -0.27,
+            "meanCutPct": 4.682539682539683,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
@@ -50338,6 +50374,12 @@
             "index": 100.0,
             "matched": 646,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 652,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50345,25 +50387,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 207
+          "listings": 209
         },
         "concessions": {
           "1": {
-            "sample": 75,
+            "sample": 199,
             "complexes": 4,
-            "cutShare": 0.0,
+            "cutShare": 1.0050251256281406,
             "riseShare": 0.0,
-            "holdShare": 100.0,
-            "holdListings": 75,
-            "netAdjustmentShare": 0.0,
-            "meanCutPct": null,
+            "holdShare": 98.99,
+            "holdListings": 197,
+            "netAdjustmentShare": -1.01,
+            "meanCutPct": 3.157894736842104,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
             "cutToRiseRatio": null,
-            "cutListings": 0,
+            "cutListings": 2,
             "riseListings": 0,
-            "cutEvents": 0
+            "cutEvents": 2
           },
           "7": {
             "sample": 0,
@@ -50442,6 +50484,12 @@
             "index": 100.0,
             "matched": 169,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 164,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50449,25 +50497,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 621
+          "listings": 585
         },
         "concessions": {
           "1": {
-            "sample": 212,
+            "sample": 540,
             "complexes": 4,
-            "cutShare": 0.4716981132075472,
+            "cutShare": 0.0,
             "riseShare": 0.0,
-            "holdShare": 99.53,
-            "holdListings": 211,
-            "netAdjustmentShare": -0.47,
-            "meanCutPct": 1.4084507042253502,
+            "holdShare": 100.0,
+            "holdListings": 540,
+            "netAdjustmentShare": 0.0,
+            "meanCutPct": null,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
             "cutToRiseRatio": null,
-            "cutListings": 1,
+            "cutListings": 0,
             "riseListings": 0,
-            "cutEvents": 1
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -50546,6 +50594,12 @@
             "index": 100.0,
             "matched": 499,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 464,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50553,24 +50607,24 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 384
+          "listings": 385
         },
         "concessions": {
           "1": {
-            "sample": 192,
+            "sample": 362,
             "complexes": 4,
-            "cutShare": 0.5208333333333334,
-            "riseShare": 0.0,
-            "holdShare": 99.48,
-            "holdListings": 191,
-            "netAdjustmentShare": -0.52,
+            "cutShare": 0.27624309392265195,
+            "riseShare": 0.27624309392265195,
+            "holdShare": 99.45,
+            "holdListings": 360,
+            "netAdjustmentShare": 0.0,
             "meanCutPct": 2.352941176470591,
-            "meanRisePct": null,
+            "meanRisePct": 10.000000000000009,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": null,
+            "cutToRiseRatio": 1.0,
             "cutListings": 1,
-            "riseListings": 0,
+            "riseListings": 1,
             "cutEvents": 1
           },
           "7": {
@@ -50650,6 +50704,12 @@
             "index": 100.0,
             "matched": 294,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 275,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50657,16 +50717,16 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 286
+          "listings": 283
         },
         "concessions": {
           "1": {
-            "sample": 151,
+            "sample": 276,
             "complexes": 4,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 151,
+            "holdListings": 276,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -50754,6 +50814,12 @@
             "index": 100.0,
             "matched": 242,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 236,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50761,7 +50827,7 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 150
+          "listings": 170
         },
         "concessions": {
           "1": {
@@ -50858,6 +50924,12 @@
             "index": 100.0,
             "matched": 111,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 127,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50865,16 +50937,16 @@
         "coverage": {
           "roster": 5,
           "success": 5,
-          "listings": 501
+          "listings": 488
         },
         "concessions": {
           "1": {
-            "sample": 137,
+            "sample": 424,
             "complexes": 5,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 137,
+            "holdListings": 424,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -50962,6 +51034,12 @@
             "index": 100.0,
             "matched": 415,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 347,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -50969,16 +51047,16 @@
         "coverage": {
           "roster": 5,
           "success": 5,
-          "listings": 388
+          "listings": 197
         },
         "concessions": {
           "1": {
-            "sample": 184,
+            "sample": 176,
             "complexes": 5,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 184,
+            "holdListings": 176,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -51066,6 +51144,12 @@
             "index": 100.0,
             "matched": 243,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 132,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51073,16 +51157,16 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 723
+          "listings": 724
         },
         "concessions": {
           "1": {
-            "sample": 632,
+            "sample": 633,
             "complexes": 4,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 632,
+            "holdListings": 633,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -51170,6 +51254,12 @@
             "index": 100.0,
             "matched": 552,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 486,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51177,25 +51267,25 @@
         "coverage": {
           "roster": 12,
           "success": 12,
-          "listings": 1607
+          "listings": 1580
         },
         "concessions": {
           "1": {
-            "sample": 1278,
+            "sample": 1325,
             "complexes": 12,
-            "cutShare": 0.0,
-            "riseShare": 0.0782472613458529,
-            "holdShare": 99.92,
-            "holdListings": 1277,
-            "netAdjustmentShare": 0.08,
-            "meanCutPct": null,
-            "meanRisePct": 1.5037593984962516,
+            "cutShare": 0.37735849056603776,
+            "riseShare": 0.07547169811320754,
+            "holdShare": 99.55,
+            "holdListings": 1319,
+            "netAdjustmentShare": -0.3,
+            "meanCutPct": 1.8100775193798468,
+            "meanRisePct": 1.0204081632652962,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 0.0,
-            "cutListings": 0,
+            "cutToRiseRatio": 5.0,
+            "cutListings": 5,
             "riseListings": 1,
-            "cutEvents": 0
+            "cutEvents": 5
           },
           "7": {
             "sample": 0,
@@ -51274,6 +51364,12 @@
             "index": 100.0,
             "matched": 1041,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 902,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51281,16 +51377,16 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 333
+          "listings": 346
         },
         "concessions": {
           "1": {
-            "sample": 263,
+            "sample": 264,
             "complexes": 4,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 263,
+            "holdListings": 264,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -51378,6 +51474,12 @@
             "index": 100.0,
             "matched": 267,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 223,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51385,25 +51487,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 370
+          "listings": 392
         },
         "concessions": {
           "1": {
-            "sample": 355,
+            "sample": 357,
             "complexes": 4,
-            "cutShare": 0.5633802816901409,
-            "riseShare": 0.28169014084507044,
-            "holdShare": 99.15,
-            "holdListings": 352,
-            "netAdjustmentShare": -0.28,
-            "meanCutPct": 0.9090909090909038,
-            "meanRisePct": 3.0000000000000027,
+            "cutShare": 0.0,
+            "riseShare": 0.0,
+            "holdShare": 100.0,
+            "holdListings": 357,
+            "netAdjustmentShare": 0.0,
+            "meanCutPct": null,
+            "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 2.0,
-            "cutListings": 2,
-            "riseListings": 1,
-            "cutEvents": 2
+            "cutToRiseRatio": null,
+            "cutListings": 0,
+            "riseListings": 0,
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -51482,6 +51584,12 @@
             "index": 100.0,
             "matched": 295,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 301,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51489,25 +51597,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 442
+          "listings": 479
         },
         "concessions": {
           "1": {
-            "sample": 431,
+            "sample": 404,
             "complexes": 4,
-            "cutShare": 0.46403712296983757,
+            "cutShare": 0.0,
             "riseShare": 0.0,
-            "holdShare": 99.54,
-            "holdListings": 429,
-            "netAdjustmentShare": -0.46,
-            "meanCutPct": 1.2820512820512775,
+            "holdShare": 100.0,
+            "holdListings": 404,
+            "netAdjustmentShare": 0.0,
+            "meanCutPct": null,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
             "cutToRiseRatio": null,
-            "cutListings": 2,
+            "cutListings": 0,
             "riseListings": 0,
-            "cutEvents": 2
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -51586,6 +51694,12 @@
             "index": 100.0,
             "matched": 366,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 362,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51593,25 +51707,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 332
+          "listings": 327
         },
         "concessions": {
           "1": {
-            "sample": 313,
+            "sample": 244,
             "complexes": 4,
-            "cutShare": 0.0,
+            "cutShare": 0.819672131147541,
             "riseShare": 0.0,
-            "holdShare": 100.0,
-            "holdListings": 313,
-            "netAdjustmentShare": 0.0,
-            "meanCutPct": null,
+            "holdShare": 99.18,
+            "holdListings": 242,
+            "netAdjustmentShare": -0.82,
+            "meanCutPct": 1.8939393939393923,
             "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
             "cutToRiseRatio": null,
-            "cutListings": 0,
+            "cutListings": 2,
             "riseListings": 0,
-            "cutEvents": 0
+            "cutEvents": 2
           },
           "7": {
             "sample": 0,
@@ -51690,6 +51804,12 @@
             "index": 100.0,
             "matched": 209,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 159,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51697,25 +51817,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 499
+          "listings": 526
         },
         "concessions": {
           "1": {
-            "sample": 335,
+            "sample": 347,
             "complexes": 4,
-            "cutShare": 0.29850746268656714,
-            "riseShare": 0.29850746268656714,
-            "holdShare": 99.4,
-            "holdListings": 333,
-            "netAdjustmentShare": 0.0,
-            "meanCutPct": 2.777777777777779,
-            "meanRisePct": 1.090909090909098,
+            "cutShare": 0.0,
+            "riseShare": 0.2881844380403458,
+            "holdShare": 99.71,
+            "holdListings": 346,
+            "netAdjustmentShare": 0.29,
+            "meanCutPct": null,
+            "meanRisePct": 0.6493506493506551,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 1.0,
-            "cutListings": 1,
+            "cutToRiseRatio": 0.0,
+            "cutListings": 0,
             "riseListings": 1,
-            "cutEvents": 1
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -51794,6 +51914,12 @@
             "index": 100.0,
             "matched": 358,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 313,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51801,16 +51927,16 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 425
+          "listings": 453
         },
         "concessions": {
           "1": {
-            "sample": 279,
+            "sample": 281,
             "complexes": 4,
             "cutShare": 0.0,
             "riseShare": 0.0,
             "holdShare": 100.0,
-            "holdListings": 279,
+            "holdListings": 281,
             "netAdjustmentShare": 0.0,
             "meanCutPct": null,
             "meanRisePct": null,
@@ -51898,6 +52024,12 @@
             "index": 100.0,
             "matched": 264,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 277,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -51905,25 +52037,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 559
+          "listings": 541
         },
         "concessions": {
           "1": {
-            "sample": 350,
+            "sample": 440,
             "complexes": 4,
-            "cutShare": 0.5714285714285714,
-            "riseShare": 0.0,
-            "holdShare": 99.43,
-            "holdListings": 348,
-            "netAdjustmentShare": -0.57,
-            "meanCutPct": 3.7427849927849923,
-            "meanRisePct": null,
+            "cutShare": 0.0,
+            "riseShare": 0.6818181818181818,
+            "holdShare": 99.32,
+            "holdListings": 437,
+            "netAdjustmentShare": 0.68,
+            "meanCutPct": null,
+            "meanRisePct": 5.925925925925927,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": null,
-            "cutListings": 2,
-            "riseListings": 0,
-            "cutEvents": 2
+            "cutToRiseRatio": 0.0,
+            "cutListings": 0,
+            "riseListings": 3,
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -52002,6 +52134,12 @@
             "index": 100.0,
             "matched": 325,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 265,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -52009,25 +52147,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 300
+          "listings": 357
         },
         "concessions": {
           "1": {
-            "sample": 167,
+            "sample": 263,
             "complexes": 4,
-            "cutShare": 0.0,
-            "riseShare": 0.5988023952095808,
-            "holdShare": 99.4,
-            "holdListings": 166,
-            "netAdjustmentShare": 0.6,
-            "meanCutPct": null,
-            "meanRisePct": 2.7397260273972712,
+            "cutShare": 1.1406844106463878,
+            "riseShare": 0.38022813688212925,
+            "holdShare": 98.48,
+            "holdListings": 259,
+            "netAdjustmentShare": -0.76,
+            "meanCutPct": 1.3825469304921383,
+            "meanRisePct": 6.896551724137923,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 0.0,
-            "cutListings": 0,
+            "cutToRiseRatio": 3.0,
+            "cutListings": 3,
             "riseListings": 1,
-            "cutEvents": 0
+            "cutEvents": 3
           },
           "7": {
             "sample": 0,
@@ -52106,6 +52244,12 @@
             "index": 100.0,
             "matched": 231,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 229,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -52113,25 +52257,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 657
+          "listings": 672
         },
         "concessions": {
           "1": {
-            "sample": 446,
+            "sample": 498,
             "complexes": 4,
-            "cutShare": 1.1210762331838564,
-            "riseShare": 0.2242152466367713,
-            "holdShare": 98.65,
-            "holdListings": 440,
-            "netAdjustmentShare": -0.9,
-            "meanCutPct": 3.4129870129870143,
-            "meanRisePct": 1.0101010101010166,
+            "cutShare": 0.0,
+            "riseShare": 0.20080321285140562,
+            "holdShare": 99.8,
+            "holdListings": 497,
+            "netAdjustmentShare": 0.2,
+            "meanCutPct": null,
+            "meanRisePct": 3.7735849056603765,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 5.0,
-            "cutListings": 5,
+            "cutToRiseRatio": 0.0,
+            "cutListings": 0,
             "riseListings": 1,
-            "cutEvents": 5
+            "cutEvents": 0
           },
           "7": {
             "sample": 0,
@@ -52210,6 +52354,12 @@
             "index": 100.0,
             "matched": 450,
             "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 397,
+            "baseDay": "2026-11-12"
           }
         ]
       },
@@ -52217,25 +52367,25 @@
         "coverage": {
           "roster": 4,
           "success": 4,
-          "listings": 489
+          "listings": 493
         },
         "concessions": {
           "1": {
-            "sample": 369,
+            "sample": 360,
             "complexes": 4,
-            "cutShare": 0.27100271002710025,
-            "riseShare": 0.27100271002710025,
-            "holdShare": 99.46,
-            "holdListings": 367,
-            "netAdjustmentShare": 0.0,
-            "meanCutPct": 1.6949152542372836,
-            "meanRisePct": 1.5625,
+            "cutShare": 0.8333333333333334,
+            "riseShare": 0.0,
+            "holdShare": 99.17,
+            "holdListings": 357,
+            "netAdjustmentShare": -0.83,
+            "meanCutPct": 1.3377761827534436,
+            "meanRisePct": null,
             "firstToLatestMedianPct": 0.0,
             "consecutiveCutShare": 0.0,
-            "cutToRiseRatio": 1.0,
-            "cutListings": 1,
-            "riseListings": 1,
-            "cutEvents": 1
+            "cutToRiseRatio": null,
+            "cutListings": 3,
+            "riseListings": 0,
+            "cutEvents": 3
           },
           "7": {
             "sample": 0,
@@ -52313,6 +52463,12 @@
             "day": "2026-11-14",
             "index": 100.0,
             "matched": 298,
+            "baseDay": "2026-11-12"
+          },
+          {
+            "day": "2026-11-15",
+            "index": 100.0,
+            "matched": 267,
             "baseDay": "2026-11-12"
           }
         ]
@@ -54527,83 +54683,288 @@
           "medianBenchmarkAgeDays": null,
           "tradeVintage": null
         }
+      },
+      "2026-11-15": {
+        "11110": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11140": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11170": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11200": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11215": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11230": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11260": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11290": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11305": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11320": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11350": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11380": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11410": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11440": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11470": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11500": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11530": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11545": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11560": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11590": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11620": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11650": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11680": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11710": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "11740": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        },
+        "all": {
+          "sample": 0,
+          "percent": null,
+          "medianBenchmarkAgeDays": null,
+          "tradeVintage": null
+        }
       }
     },
     "validation": "hypotheses-only",
     "pressure": {
       "spreadPct": null,
-      "cutSharePct": 0.2550428935775562,
+      "cutSharePct": 0.24572540186341763,
       "absorptionPct": null,
       "tenure": {
-        "count": 12017,
-        "medianDays": 5,
-        "meanDays": 8.9,
+        "count": 12118,
+        "medianDays": 6.0,
+        "meanDays": 9.0,
         "minDays": 0,
         "maxDays": 30
       },
       "weightsComparison": {
-        "equalWeight": 219237.3,
-        "stockWeight": 221845.9,
-        "stratifiedWeight": 167453.8,
-        "equalWeightEok": 21.92,
-        "stockWeightEok": 22.18,
-        "stratifiedWeightEok": 16.75,
-        "analyzedComplexes": 101,
-        "analyzedListings": 12017,
-        "stockVsEqualDiffPct": 1.19
+        "equalWeight": 217329.7,
+        "stockWeight": 225435.8,
+        "stratifiedWeight": 164313.8,
+        "equalWeightEok": 21.73,
+        "stockWeightEok": 22.54,
+        "stratifiedWeightEok": 16.43,
+        "analyzedComplexes": 104,
+        "analyzedListings": 12118,
+        "stockVsEqualDiffPct": 3.73
       },
       "regime": {
         "regime": "데이터 축적 중",
         "explanation": "서울 아파트 시장심리지수는 현재 1일차 기준선 구축 단계로, 7일/30일 연속 수집을 통해 가격 조정 및 거래 활력 지표를 축적하고 있습니다.",
         "leverage": "데이터 축적 중 (판별 유예)",
         "spreadStatus": "데이터 축적 중",
-        "tenureStatus": "중위 체류기간 5일 (평균 7.9일)"
+        "tenureStatus": "중위 체류기간 6.0일 (평균 7.9일)"
       },
       "spreadDynamics": {
-        "spreadPct": 3.64,
+        "spreadPct": 4.29,
         "changes": {
           "1d": {
-            "status": "HELD_VERIFICATION",
-            "deltaPctPoint": null,
-            "reason": "수집 데이터 검증 중"
+            "status": "VALID",
+            "matchedSampleChange": 0.21,
+            "deltaPctPoint": 0.21,
+            "deltaTotalPctPoint": 0.21,
+            "deltaFullMeanPctPoint": 0.49,
+            "medianLevelChange": 0.65,
+            "discrepancyMedianVersusMean": 0.44,
+            "contribAskPctPoint": 0.21,
+            "contribIdenticalAskPctPoint": -0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.21,
+            "contribWithinTurnoverPctPoint": 0.21,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.28,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.21,
+            "matchedStrataCount": 67,
+            "matchedListingsCount": 9758,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 9758,
+              "retentionRatePct": 81.2,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.0,
+              "cutListingsCount": 24,
+              "riseListingsCount": 8,
+              "holdListingsCount": 9726,
+              "newEntrantsCount": 2350,
+              "exitedCount": 2259
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 67
+            },
+            "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +0.4%p)",
+            "stability": {
+              "matchedGroups": 67,
+              "minMatchedGroups": 30,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 0.267
+            },
+            "period": "전일 대비 (DoD)",
+            "referenceDay": "2026-11-14",
+            "referenceTradeLevelFirstSeenVerified": true
           },
           "7d": {
             "period": "7일 변화 (WoW)",
-            "referenceDay": "2026-11-07",
-            "status": "축적 중 (7일차 대기, 현재 3일 경과)",
+            "referenceDay": "2026-11-08",
+            "status": "축적 중 (7일차 대기, 현재 4일 경과)",
             "deltaPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
             "matchedListingsCount": 0,
-            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 3일차)"
+            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 4일차)"
           },
           "28d": {
             "period": "28일 변화 (MoM)",
-            "referenceDay": "2026-10-17",
-            "status": "축적 중 (28일차 대기, 현재 3일 경과)",
+            "referenceDay": "2026-10-18",
+            "status": "축적 중 (28일차 대기, 현재 4일 경과)",
             "deltaPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
             "matchedListingsCount": 0,
-            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 3일차)"
+            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 4일차)"
           }
         },
         "decomposition": {
           "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
           "activePeriod": "전일 대비 (DoD)",
           "status": "VALID",
-          "matchedSampleChange": -0.08,
-          "medianLevelChange": -1.63,
-          "discrepancyMedianVersusMean": -1.55,
-          "contribAskPctPoint": -0.08,
+          "matchedSampleChange": 0.21,
+          "medianLevelChange": 0.65,
+          "discrepancyMedianVersusMean": 0.44,
+          "contribAskPctPoint": 0.21,
           "contribIdenticalAskPctPoint": -0.0,
-          "contribWithinStratumTurnoverPctPoint": -0.08,
+          "contribWithinStratumTurnoverPctPoint": 0.21,
           "contribTradeBenchmarkPctPoint": 0.0,
-          "contribSampleCompositionPctPoint": -0.79,
+          "contribSampleCompositionPctPoint": 0.28,
           "unidentifiedEffectPctPoint": 0.0,
           "mathematicalIdentities": {
             "matchedIdentityHolds": true,
@@ -54614,69 +54975,149 @@
             "roundedFullMeanIdentityHolds": true
           },
           "identicalListingStats": {
-            "identicalCount": 8621,
-            "retentionRatePct": 85.9,
+            "identicalCount": 9758,
+            "retentionRatePct": 81.2,
             "medianPriceChangePct": 0.0,
-            "meanPriceChangePct": -0.01,
-            "cutListingsCount": 22,
-            "riseListingsCount": 7,
-            "holdListingsCount": 8592,
-            "newEntrantsCount": 3396,
-            "exitedCount": 1418
+            "meanPriceChangePct": -0.0,
+            "cutListingsCount": 24,
+            "riseListingsCount": 8,
+            "holdListingsCount": 9726,
+            "newEntrantsCount": 2350,
+            "exitedCount": 2259
           },
           "tradeBenchmarkDrivers": {
-            "UNCHANGED_BENCHMARK": 46,
-            "NEW_CONTRACT_ENTRY": 2
+            "UNCHANGED_BENCHMARK": 67
           },
-          "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -1.6%p, 중위값-평균 불일치: -1.6%p)",
+          "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +0.4%p)",
           "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
         }
       }
     },
     "spreadDynamics": {
-      "asOf": "2026-11-14",
+      "asOf": "2026-11-15",
       "version": "v1.2.0-shapley",
       "status": "ACTIVE_MONITORING",
       "description": "매도 호가와 최근 실거래 기준가격의 간격 변화를 Shapley 3대 요인(호가 조정·실거래 기준가 갱신·표본 구성 변화)으로 엄밀히 분해하는 시계열 동학 체계",
       "seoulOverall": {
-        "currentSpreadPct": 3.64,
+        "currentSpreadPct": 4.29,
         "currentSpreadStatus": "실측",
-        "sampleGroupsCount": 70,
-        "matchedListingsCount": 2307,
+        "sampleGroupsCount": 67,
+        "matchedListingsCount": 2327,
         "changes": {
           "1d": {
-            "status": "HELD_VERIFICATION",
-            "deltaPctPoint": null,
-            "reason": "수집 데이터 검증 중"
+            "status": "VALID",
+            "matchedSampleChange": 0.21,
+            "deltaPctPoint": 0.21,
+            "deltaTotalPctPoint": 0.21,
+            "deltaFullMeanPctPoint": 0.49,
+            "medianLevelChange": 0.65,
+            "discrepancyMedianVersusMean": 0.44,
+            "contribAskPctPoint": 0.21,
+            "contribIdenticalAskPctPoint": -0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.21,
+            "contribWithinTurnoverPctPoint": 0.21,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.28,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.21,
+            "matchedStrataCount": 67,
+            "matchedListingsCount": 9758,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 9758,
+              "retentionRatePct": 81.2,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.0,
+              "cutListingsCount": 24,
+              "riseListingsCount": 8,
+              "holdListingsCount": 9726,
+              "newEntrantsCount": 2350,
+              "exitedCount": 2259
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 67
+            },
+            "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +0.4%p)",
+            "stability": {
+              "matchedGroups": 67,
+              "minMatchedGroups": 30,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 0.267
+            },
+            "period": "전일 대비 (DoD)",
+            "referenceDay": "2026-11-14",
+            "referenceTradeLevelFirstSeenVerified": true
           },
           "7d": {
             "period": "7일 변화 (WoW)",
-            "referenceDay": "2026-11-07",
-            "status": "축적 중 (7일차 대기, 현재 3일 경과)",
+            "referenceDay": "2026-11-08",
+            "status": "축적 중 (7일차 대기, 현재 4일 경과)",
             "deltaPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
             "matchedListingsCount": 0,
-            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 3일차)"
+            "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 4일차)"
           },
           "28d": {
             "period": "28일 변화 (MoM)",
-            "referenceDay": "2026-10-17",
-            "status": "축적 중 (28일차 대기, 현재 3일 경과)",
+            "referenceDay": "2026-10-18",
+            "status": "축적 중 (28일차 대기, 현재 4일 경과)",
             "deltaPctPoint": null,
             "contribAskPctPoint": null,
             "contribTradeBenchmarkPctPoint": null,
             "contribSampleCompositionPctPoint": null,
             "matchedStrataCount": 0,
             "matchedListingsCount": 0,
-            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 3일차)"
+            "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 4일차)"
           }
         },
         "decomposition": {
-          "status": "HELD_VERIFICATION",
-          "reason": "수집 데이터 검증 중"
+          "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
+          "activePeriod": "전일 대비 (DoD)",
+          "status": "VALID",
+          "matchedSampleChange": 0.21,
+          "medianLevelChange": 0.65,
+          "discrepancyMedianVersusMean": 0.44,
+          "contribAskPctPoint": 0.21,
+          "contribIdenticalAskPctPoint": -0.0,
+          "contribWithinStratumTurnoverPctPoint": 0.21,
+          "contribTradeBenchmarkPctPoint": 0.0,
+          "contribSampleCompositionPctPoint": 0.28,
+          "unidentifiedEffectPctPoint": 0.0,
+          "mathematicalIdentities": {
+            "matchedIdentityHolds": true,
+            "askSubdecompositionHolds": true,
+            "fullMeanIdentityHolds": true,
+            "roundedMatchedIdentityHolds": true,
+            "roundedAskSubdecompositionHolds": true,
+            "roundedFullMeanIdentityHolds": true
+          },
+          "identicalListingStats": {
+            "identicalCount": 9758,
+            "retentionRatePct": 81.2,
+            "medianPriceChangePct": 0.0,
+            "meanPriceChangePct": -0.0,
+            "cutListingsCount": 24,
+            "riseListingsCount": 8,
+            "holdListingsCount": 9726,
+            "newEntrantsCount": 2350,
+            "exitedCount": 2259
+          },
+          "tradeBenchmarkDrivers": {
+            "UNCHANGED_BENCHMARK": 67
+          },
+          "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +0.4%p)",
+          "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
         },
         "seriesA_FullCrossSection": [
           {
@@ -54686,9 +55127,34 @@
             "listings": 2307,
             "type": "FULL_CROSS_SECTION",
             "label": "A계열: 전체 관측 가격괴리율"
+          },
+          {
+            "day": "2026-11-15",
+            "percent": 4.29,
+            "groups": 67,
+            "listings": 2327,
+            "type": "FULL_CROSS_SECTION",
+            "label": "A계열: 전체 관측 가격괴리율"
           }
         ],
-        "seriesB_FixedSamplePanel": []
+        "seriesB_FixedSamplePanel": [
+          {
+            "day": "2026-11-14",
+            "percent": 3.64,
+            "delta": -0.08,
+            "groups": 70,
+            "type": "FIXED_SAMPLE_PANEL",
+            "label": "B계열: 동일 표본 가격괴리 변화"
+          },
+          {
+            "day": "2026-11-15",
+            "percent": 4.29,
+            "delta": 0.21,
+            "groups": 67,
+            "type": "FIXED_SAMPLE_PANEL",
+            "label": "B계열: 동일 표본 가격괴리 변화"
+          }
+        ]
       },
       "districts": {
         "11110": {
@@ -54698,7 +55164,7 @@
           "percent": null,
           "groups90d": 0,
           "groups180d": 0,
-          "observedComplexes": 1,
+          "observedComplexes": 3,
           "matchedListings": 0,
           "actual90d": {
             "sample": 0,
@@ -54743,108 +55209,22 @@
           "district": "11140",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": -2.01,
+          "percent": -2.32,
           "groups90d": 2,
           "groups180d": 10,
           "observedComplexes": 3,
-          "matchedListings": 50,
+          "matchedListings": 51,
           "actual90d": {
             "sample": 2,
             "groups": 2,
-            "percent": -2.00765,
-            "matchedListings": 50
+            "percent": -2.3240999999999996,
+            "matchedListings": 51
           },
           "longTerm180d": {
             "sample": 10,
             "groups": 10,
             "percent": null,
-            "matchedListings": 178,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": null,
-              "status": "WITHHELD_STABILITY"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "WITHHELD_STABILITY",
-            "matchedSampleChange": null,
-            "deltaPctPoint": null,
-            "deltaTotalPctPoint": null,
-            "deltaFullMeanPctPoint": null,
-            "medianLevelChange": null,
-            "discrepancyMedianVersusMean": null,
-            "contribAskPctPoint": null,
-            "contribIdenticalAskPctPoint": null,
-            "contribWithinStratumTurnoverPctPoint": null,
-            "contribWithinTurnoverPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "unidentifiedEffectPctPoint": null,
-            "fixedSampleSpreadChange": null,
-            "matchedStrataCount": 1,
-            "matchedListingsCount": 134,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 134,
-              "retentionRatePct": 95.0,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 0,
-              "riseListingsCount": 0,
-              "holdListingsCount": 134,
-              "newEntrantsCount": 133,
-              "exitedCount": 7
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 1
-            },
-            "explanation": "변화폭 공표 유예: 공통 비교 그룹 1개 < 최소 3개",
-            "stability": {
-              "matchedGroups": 1,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 0.0
-            }
-          }
-        },
-        "11170": {
-          "district": "11170",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 6.01,
-          "groups90d": 3,
-          "groups180d": 8,
-          "observedComplexes": 4,
-          "matchedListings": 9,
-          "actual90d": {
-            "sample": 3,
-            "groups": 3,
-            "percent": 6.0143,
-            "matchedListings": 9
-          },
-          "longTerm180d": {
-            "sample": 8,
-            "groups": 8,
-            "percent": null,
-            "matchedListings": 213,
+            "matchedListings": 179,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -54878,7 +55258,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 2,
-            "matchedListingsCount": 326,
+            "matchedListingsCount": 240,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -54888,15 +55268,15 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 326,
-              "retentionRatePct": 79.7,
+              "identicalCount": 240,
+              "retentionRatePct": 89.9,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.01,
-              "cutListingsCount": 1,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
               "riseListingsCount": 0,
-              "holdListingsCount": 325,
-              "newEntrantsCount": 66,
-              "exitedCount": 83
+              "holdListingsCount": 240,
+              "newEntrantsCount": 28,
+              "exitedCount": 27
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 2
@@ -54907,35 +55287,35 @@
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 0.0
+              "topGroupShareOfAbsChange": 1.0
             }
           }
         },
-        "11200": {
-          "district": "11200",
+        "11170": {
+          "district": "11170",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 1.15,
-          "groups90d": 4,
-          "groups180d": 9,
+          "percent": 1.94,
+          "groups90d": 3,
+          "groups180d": 8,
           "observedComplexes": 4,
-          "matchedListings": 238,
+          "matchedListings": 21,
           "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 1.1525,
-            "matchedListings": 238
+            "sample": 3,
+            "groups": 3,
+            "percent": 1.9368,
+            "matchedListings": 21
           },
           "longTerm180d": {
-            "sample": 9,
-            "groups": 9,
+            "sample": 8,
+            "groups": 8,
             "percent": null,
-            "matchedListings": 529,
+            "matchedListings": 217,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": -0.15,
+              "deltaPctPoint": -1.36,
               "status": "VALID"
             },
             "7d": {
@@ -54949,22 +55329,22 @@
           },
           "decomposition": {
             "status": "VALID",
-            "matchedSampleChange": -0.15,
-            "deltaPctPoint": -0.15,
-            "deltaTotalPctPoint": -0.15,
-            "deltaFullMeanPctPoint": -0.15,
-            "medianLevelChange": 0.0,
-            "discrepancyMedianVersusMean": 0.15,
-            "contribAskPctPoint": -0.15,
+            "matchedSampleChange": -1.36,
+            "deltaPctPoint": -1.36,
+            "deltaTotalPctPoint": -1.36,
+            "deltaFullMeanPctPoint": -1.36,
+            "medianLevelChange": -4.08,
+            "discrepancyMedianVersusMean": -2.72,
+            "contribAskPctPoint": -1.36,
             "contribIdenticalAskPctPoint": 0.0,
-            "contribWithinStratumTurnoverPctPoint": -0.15,
-            "contribWithinTurnoverPctPoint": -0.15,
+            "contribWithinStratumTurnoverPctPoint": -1.36,
+            "contribWithinTurnoverPctPoint": -1.36,
             "contribTradeBenchmarkPctPoint": 0.0,
             "contribSampleCompositionPctPoint": 0.0,
             "unidentifiedEffectPctPoint": 0.0,
-            "fixedSampleSpreadChange": -0.15,
-            "matchedStrataCount": 4,
-            "matchedListingsCount": 689,
+            "fixedSampleSpreadChange": -1.36,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 320,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -54974,26 +55354,112 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 689,
-              "retentionRatePct": 85.5,
+              "identicalCount": 320,
+              "retentionRatePct": 81.6,
               "medianPriceChangePct": 0.0,
               "meanPriceChangePct": -0.01,
-              "cutListingsCount": 3,
-              "riseListingsCount": 1,
-              "holdListingsCount": 685,
-              "newEntrantsCount": 82,
-              "exitedCount": 117
+              "cutListingsCount": 2,
+              "riseListingsCount": 0,
+              "holdListingsCount": 318,
+              "newEntrantsCount": 102,
+              "exitedCount": 72
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 3
+            },
+            "explanation": "동일 표본 평균 변화 -1.4%p = 호가 조정 -1.4%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -1.4%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -4.1%p, 중위값-평균 불일치: -2.7%p)",
+            "stability": {
+              "matchedGroups": 3,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 1.0
+            }
+          }
+        },
+        "11200": {
+          "district": "11200",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 1.15,
+          "groups90d": 4,
+          "groups180d": 9,
+          "observedComplexes": 4,
+          "matchedListings": 246,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 1.1525,
+            "matchedListings": 246
+          },
+          "longTerm180d": {
+            "sample": 9,
+            "groups": 9,
+            "percent": null,
+            "matchedListings": 542,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": 1.13,
+              "status": "VALID"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "VALID",
+            "matchedSampleChange": 1.13,
+            "deltaPctPoint": 1.13,
+            "deltaTotalPctPoint": 1.13,
+            "deltaFullMeanPctPoint": 1.13,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": -1.13,
+            "contribAskPctPoint": 1.13,
+            "contribIdenticalAskPctPoint": -0.02,
+            "contribWithinStratumTurnoverPctPoint": 1.15,
+            "contribWithinTurnoverPctPoint": 1.15,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 1.13,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 688,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 688,
+              "retentionRatePct": 89.2,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 4,
+              "riseListingsCount": 0,
+              "holdListingsCount": 684,
+              "newEntrantsCount": 109,
+              "exitedCount": 83
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 4
             },
-            "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: +0.1%p)",
+            "explanation": "동일 표본 평균 변화 +1.1%p = 호가 조정 +1.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +1.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: -1.1%p)",
             "stability": {
               "matchedGroups": 4,
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 1.0
+              "topGroupShareOfAbsChange": 0.894
             }
           }
         },
@@ -55003,7 +55469,7 @@
           "statusCode": "ACTUAL_90D",
           "percent": 10.29,
           "groups90d": 1,
-          "groups180d": 6,
+          "groups180d": 5,
           "observedComplexes": 4,
           "matchedListings": 26,
           "actual90d": {
@@ -55013,10 +55479,10 @@
             "matchedListings": 26
           },
           "longTerm180d": {
-            "sample": 6,
-            "groups": 6,
+            "sample": 5,
+            "groups": 5,
             "percent": null,
-            "matchedListings": 207,
+            "matchedListings": 189,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -55050,7 +55516,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 1,
-            "matchedListingsCount": 283,
+            "matchedListingsCount": 235,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -55060,15 +55526,15 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 283,
-              "retentionRatePct": 87.9,
+              "identicalCount": 235,
+              "retentionRatePct": 72.8,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.01,
-              "cutListingsCount": 1,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
               "riseListingsCount": 0,
-              "holdListingsCount": 282,
-              "newEntrantsCount": 40,
-              "exitedCount": 39
+              "holdListingsCount": 235,
+              "newEntrantsCount": 109,
+              "exitedCount": 88
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 1
@@ -55087,22 +55553,22 @@
           "district": "11230",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 3.92,
+          "percent": 4.7,
           "groups90d": 2,
           "groups180d": 8,
-          "observedComplexes": 3,
-          "matchedListings": 196,
+          "observedComplexes": 4,
+          "matchedListings": 185,
           "actual90d": {
             "sample": 2,
             "groups": 2,
-            "percent": 3.9159499999999996,
-            "matchedListings": 196
+            "percent": 4.7033499999999995,
+            "matchedListings": 185
           },
           "longTerm180d": {
             "sample": 8,
             "groups": 8,
             "percent": null,
-            "matchedListings": 392,
+            "matchedListings": 413,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -55136,7 +55602,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 2,
-            "matchedListingsCount": 877,
+            "matchedListingsCount": 743,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -55146,15 +55612,15 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 877,
-              "retentionRatePct": 87.1,
+              "identicalCount": 743,
+              "retentionRatePct": 75.4,
               "medianPriceChangePct": 0.0,
               "meanPriceChangePct": -0.01,
               "cutListingsCount": 2,
               "riseListingsCount": 0,
-              "holdListingsCount": 875,
-              "newEntrantsCount": 109,
-              "exitedCount": 130
+              "holdListingsCount": 741,
+              "newEntrantsCount": 314,
+              "exitedCount": 243
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 2
@@ -55188,54 +55654,7 @@
             "sample": 10,
             "groups": 10,
             "percent": null,
-            "matchedListings": 94,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": null,
-              "status": "INSUFFICIENT_DATA"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "INSUFFICIENT_DATA",
-            "deltaTotalPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0,
-            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
-          }
-        },
-        "11290": {
-          "district": "11290",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 5.83,
-          "groups90d": 6,
-          "groups180d": 17,
-          "observedComplexes": 4,
-          "matchedListings": 183,
-          "actual90d": {
-            "sample": 6,
-            "groups": 6,
-            "percent": 5.83215,
-            "matchedListings": 183
-          },
-          "longTerm180d": {
-            "sample": 17,
-            "groups": 17,
-            "percent": null,
-            "matchedListings": 420,
+            "matchedListings": 93,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -55257,19 +55676,19 @@
             "matchedSampleChange": 0.0,
             "deltaPctPoint": 0.0,
             "deltaTotalPctPoint": 0.0,
-            "deltaFullMeanPctPoint": -0.81,
-            "medianLevelChange": -1.91,
-            "discrepancyMedianVersusMean": -1.91,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
             "contribAskPctPoint": 0.0,
-            "contribIdenticalAskPctPoint": -0.02,
-            "contribWithinStratumTurnoverPctPoint": 0.02,
-            "contribWithinTurnoverPctPoint": 0.02,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribWithinTurnoverPctPoint": 0.0,
             "contribTradeBenchmarkPctPoint": 0.0,
-            "contribSampleCompositionPctPoint": -0.81,
+            "contribSampleCompositionPctPoint": 0.0,
             "unidentifiedEffectPctPoint": 0.0,
             "fixedSampleSpreadChange": 0.0,
-            "matchedStrataCount": 5,
-            "matchedListingsCount": 212,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 199,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -55279,23 +55698,108 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 212,
-              "retentionRatePct": 89.8,
+              "identicalCount": 199,
+              "retentionRatePct": 96.1,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.01,
-              "cutListingsCount": 1,
+              "meanPriceChangePct": -0.03,
+              "cutListingsCount": 2,
               "riseListingsCount": 0,
-              "holdListingsCount": 211,
-              "newEntrantsCount": 409,
-              "exitedCount": 24
+              "holdListingsCount": 197,
+              "newEntrantsCount": 10,
+              "exitedCount": 8
             },
             "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 4,
-              "NEW_CONTRACT_ENTRY": 1
+              "UNCHANGED_BENCHMARK": 3
             },
-            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -1.9%p, 중위값-평균 불일치: -1.9%p)",
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)",
             "stability": {
-              "matchedGroups": 5,
+              "matchedGroups": 3,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 0.0
+            }
+          }
+        },
+        "11290": {
+          "district": "11290",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 5.83,
+          "groups90d": 6,
+          "groups180d": 17,
+          "observedComplexes": 4,
+          "matchedListings": 156,
+          "actual90d": {
+            "sample": 6,
+            "groups": 6,
+            "percent": 5.83215,
+            "matchedListings": 156
+          },
+          "longTerm180d": {
+            "sample": 17,
+            "groups": 17,
+            "percent": null,
+            "matchedListings": 390,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaPctPoint": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribWithinTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 6,
+            "matchedListingsCount": 540,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 540,
+              "retentionRatePct": 87.0,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 540,
+              "newEntrantsCount": 45,
+              "exitedCount": 81
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 6
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)",
+            "stability": {
+              "matchedGroups": 6,
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
@@ -55344,19 +55848,19 @@
             "matchedSampleChange": 0.0,
             "deltaPctPoint": 0.0,
             "deltaTotalPctPoint": 0.0,
-            "deltaFullMeanPctPoint": -4.26,
-            "medianLevelChange": -4.34,
-            "discrepancyMedianVersusMean": -4.34,
+            "deltaFullMeanPctPoint": 0.0,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.0,
             "contribAskPctPoint": 0.0,
             "contribIdenticalAskPctPoint": 0.0,
             "contribWithinStratumTurnoverPctPoint": 0.0,
             "contribWithinTurnoverPctPoint": 0.0,
             "contribTradeBenchmarkPctPoint": 0.0,
-            "contribSampleCompositionPctPoint": -4.26,
+            "contribSampleCompositionPctPoint": 0.0,
             "unidentifiedEffectPctPoint": 0.0,
             "fixedSampleSpreadChange": 0.0,
-            "matchedStrataCount": 3,
-            "matchedListingsCount": 192,
+            "matchedStrataCount": 5,
+            "matchedListingsCount": 362,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -55366,22 +55870,22 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 192,
-              "retentionRatePct": 97.0,
+              "identicalCount": 362,
+              "retentionRatePct": 94.3,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.01,
+              "meanPriceChangePct": 0.02,
               "cutListingsCount": 1,
-              "riseListingsCount": 0,
-              "holdListingsCount": 191,
-              "newEntrantsCount": 192,
-              "exitedCount": 6
+              "riseListingsCount": 1,
+              "holdListingsCount": 360,
+              "newEntrantsCount": 23,
+              "exitedCount": 22
             },
             "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 3
+              "UNCHANGED_BENCHMARK": 5
             },
-            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -4.3%p, 중위값-평균 불일치: -4.3%p)",
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)",
             "stability": {
-              "matchedGroups": 3,
+              "matchedGroups": 5,
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
@@ -55408,12 +55912,12 @@
             "sample": 16,
             "groups": 16,
             "percent": null,
-            "matchedListings": 200,
+            "matchedListings": 198,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": 0.0,
+              "deltaPctPoint": 0.25,
               "status": "VALID"
             },
             "7d": {
@@ -55427,22 +55931,22 @@
           },
           "decomposition": {
             "status": "VALID",
-            "matchedSampleChange": 0.0,
-            "deltaPctPoint": 0.0,
-            "deltaTotalPctPoint": 0.0,
-            "deltaFullMeanPctPoint": 1.37,
-            "medianLevelChange": 0.39,
-            "discrepancyMedianVersusMean": 0.39,
-            "contribAskPctPoint": 0.0,
+            "matchedSampleChange": 0.25,
+            "deltaPctPoint": 0.25,
+            "deltaTotalPctPoint": 0.25,
+            "deltaFullMeanPctPoint": 0.25,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": -0.25,
+            "contribAskPctPoint": 0.25,
             "contribIdenticalAskPctPoint": 0.0,
-            "contribWithinStratumTurnoverPctPoint": 0.0,
-            "contribWithinTurnoverPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.25,
+            "contribWithinTurnoverPctPoint": 0.25,
             "contribTradeBenchmarkPctPoint": 0.0,
-            "contribSampleCompositionPctPoint": 1.37,
+            "contribSampleCompositionPctPoint": 0.0,
             "unidentifiedEffectPctPoint": 0.0,
-            "fixedSampleSpreadChange": 0.0,
-            "matchedStrataCount": 4,
-            "matchedListingsCount": 151,
+            "fixedSampleSpreadChange": 0.25,
+            "matchedStrataCount": 6,
+            "matchedListingsCount": 276,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -55452,26 +55956,26 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 151,
-              "retentionRatePct": 85.3,
+              "identicalCount": 276,
+              "retentionRatePct": 96.5,
               "medianPriceChangePct": 0.0,
               "meanPriceChangePct": 0.0,
               "cutListingsCount": 0,
               "riseListingsCount": 0,
-              "holdListingsCount": 151,
-              "newEntrantsCount": 135,
-              "exitedCount": 26
+              "holdListingsCount": 276,
+              "newEntrantsCount": 7,
+              "exitedCount": 10
             },
             "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 4
+              "UNCHANGED_BENCHMARK": 6
             },
-            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.4%p, 중위값-평균 불일치: +0.4%p)",
+            "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: -0.2%p)",
             "stability": {
-              "matchedGroups": 4,
+              "matchedGroups": 6,
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 0.0
+              "topGroupShareOfAbsChange": 1.0
             }
           }
         },
@@ -55481,584 +55985,20 @@
           "statusCode": "ACTUAL_90D",
           "percent": 13.24,
           "groups90d": 3,
-          "groups180d": 17,
+          "groups180d": 18,
           "observedComplexes": 4,
-          "matchedListings": 30,
+          "matchedListings": 29,
           "actual90d": {
             "sample": 3,
             "groups": 3,
             "percent": 13.2353,
-            "matchedListings": 30
+            "matchedListings": 29
           },
           "longTerm180d": {
-            "sample": 17,
-            "groups": 17,
+            "sample": 18,
+            "groups": 18,
             "percent": null,
-            "matchedListings": 133,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": -0.49,
-              "status": "VALID"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "VALID",
-            "matchedSampleChange": -0.49,
-            "deltaPctPoint": -0.49,
-            "deltaTotalPctPoint": -0.49,
-            "deltaFullMeanPctPoint": -0.49,
-            "medianLevelChange": -1.47,
-            "discrepancyMedianVersusMean": -0.98,
-            "contribAskPctPoint": -0.49,
-            "contribIdenticalAskPctPoint": 0.0,
-            "contribWithinStratumTurnoverPctPoint": -0.49,
-            "contribWithinTurnoverPctPoint": -0.49,
-            "contribTradeBenchmarkPctPoint": 0.0,
-            "contribSampleCompositionPctPoint": 0.0,
-            "unidentifiedEffectPctPoint": 0.0,
-            "fixedSampleSpreadChange": -0.49,
-            "matchedStrataCount": 3,
-            "matchedListingsCount": 143,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 143,
-              "retentionRatePct": 86.1,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 0,
-              "riseListingsCount": 0,
-              "holdListingsCount": 143,
-              "newEntrantsCount": 7,
-              "exitedCount": 23
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 2,
-              "NEW_CONTRACT_ENTRY": 1
-            },
-            "explanation": "동일 표본 평균 변화 -0.5%p = 호가 조정 -0.5%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -0.5%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -1.5%p, 중위값-평균 불일치: -1.0%p)",
-            "stability": {
-              "matchedGroups": 3,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 1.0
-            }
-          }
-        },
-        "11380": {
-          "district": "11380",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 3.98,
-          "groups90d": 2,
-          "groups180d": 19,
-          "observedComplexes": 4,
-          "matchedListings": 26,
-          "actual90d": {
-            "sample": 2,
-            "groups": 2,
-            "percent": 3.97725,
-            "matchedListings": 26
-          },
-          "longTerm180d": {
-            "sample": 19,
-            "groups": 19,
-            "percent": null,
-            "matchedListings": 371,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": null,
-              "status": "INSUFFICIENT_DATA"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "INSUFFICIENT_DATA",
-            "deltaTotalPctPoint": null,
-            "contribAskPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "matchedStrataCount": 0,
-            "matchedListingsCount": 0,
-            "explanation": "비교 시점의 관측 데이터 부족으로 분해 산출 유보"
-          }
-        },
-        "11410": {
-          "district": "11410",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 3.62,
-          "groups90d": 4,
-          "groups180d": 17,
-          "observedComplexes": 4,
-          "matchedListings": 68,
-          "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 3.61935,
-            "matchedListings": 68
-          },
-          "longTerm180d": {
-            "sample": 17,
-            "groups": 17,
-            "percent": null,
-            "matchedListings": 315,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": null,
-              "status": "WITHHELD_STABILITY"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "WITHHELD_STABILITY",
-            "matchedSampleChange": null,
-            "deltaPctPoint": null,
-            "deltaTotalPctPoint": null,
-            "deltaFullMeanPctPoint": null,
-            "medianLevelChange": null,
-            "discrepancyMedianVersusMean": null,
-            "contribAskPctPoint": null,
-            "contribIdenticalAskPctPoint": null,
-            "contribWithinStratumTurnoverPctPoint": null,
-            "contribWithinTurnoverPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "unidentifiedEffectPctPoint": null,
-            "fixedSampleSpreadChange": null,
-            "matchedStrataCount": 1,
-            "matchedListingsCount": 184,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 184,
-              "retentionRatePct": 80.0,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 0,
-              "riseListingsCount": 0,
-              "holdListingsCount": 184,
-              "newEntrantsCount": 204,
-              "exitedCount": 46
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 1
-            },
-            "explanation": "변화폭 공표 유예: 공통 비교 그룹 1개 < 최소 3개",
-            "stability": {
-              "matchedGroups": 1,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 1.0
-            }
-          }
-        },
-        "11440": {
-          "district": "11440",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 4.75,
-          "groups90d": 2,
-          "groups180d": 10,
-          "observedComplexes": 4,
-          "matchedListings": 195,
-          "actual90d": {
-            "sample": 2,
-            "groups": 2,
-            "percent": 4.751650000000001,
-            "matchedListings": 195
-          },
-          "longTerm180d": {
-            "sample": 10,
-            "groups": 10,
-            "percent": null,
-            "matchedListings": 572,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": null,
-              "status": "WITHHELD_STABILITY"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "WITHHELD_STABILITY",
-            "matchedSampleChange": null,
-            "deltaPctPoint": null,
-            "deltaTotalPctPoint": null,
-            "deltaFullMeanPctPoint": null,
-            "medianLevelChange": null,
-            "discrepancyMedianVersusMean": null,
-            "contribAskPctPoint": null,
-            "contribIdenticalAskPctPoint": null,
-            "contribWithinStratumTurnoverPctPoint": null,
-            "contribWithinTurnoverPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "unidentifiedEffectPctPoint": null,
-            "fixedSampleSpreadChange": null,
-            "matchedStrataCount": 2,
-            "matchedListingsCount": 631,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 631,
-              "retentionRatePct": 93.2,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 0,
-              "riseListingsCount": 0,
-              "holdListingsCount": 631,
-              "newEntrantsCount": 92,
-              "exitedCount": 46
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 2
-            },
-            "explanation": "변화폭 공표 유예: 공통 비교 그룹 2개 < 최소 3개",
-            "stability": {
-              "matchedGroups": 2,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 0.0
-            }
-          }
-        },
-        "11470": {
-          "district": "11470",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 0.21,
-          "groups90d": 6,
-          "groups180d": 21,
-          "observedComplexes": 11,
-          "matchedListings": 184,
-          "actual90d": {
-            "sample": 6,
-            "groups": 6,
-            "percent": 0.2077,
-            "matchedListings": 184
-          },
-          "longTerm180d": {
-            "sample": 21,
-            "groups": 21,
-            "percent": null,
-            "matchedListings": 960,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": -0.35,
-              "status": "VALID"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "VALID",
-            "matchedSampleChange": -0.35,
-            "deltaPctPoint": -0.35,
-            "deltaTotalPctPoint": -0.35,
-            "deltaFullMeanPctPoint": 0.45,
-            "medianLevelChange": 0.87,
-            "discrepancyMedianVersusMean": 1.22,
-            "contribAskPctPoint": -0.35,
-            "contribIdenticalAskPctPoint": 0.0,
-            "contribWithinStratumTurnoverPctPoint": -0.35,
-            "contribWithinTurnoverPctPoint": -0.35,
-            "contribTradeBenchmarkPctPoint": 0.0,
-            "contribSampleCompositionPctPoint": 0.8,
-            "unidentifiedEffectPctPoint": 0.0,
-            "fixedSampleSpreadChange": -0.35,
-            "matchedStrataCount": 4,
-            "matchedListingsCount": 1278,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 1278,
-              "retentionRatePct": 86.3,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 0,
-              "riseListingsCount": 1,
-              "holdListingsCount": 1277,
-              "newEntrantsCount": 329,
-              "exitedCount": 203
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 4
-            },
-            "explanation": "동일 표본 평균 변화 -0.3%p = 호가 조정 -0.3%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -0.3%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.9%p, 중위값-평균 불일치: +1.2%p)",
-            "stability": {
-              "matchedGroups": 4,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 1.0
-            }
-          }
-        },
-        "11500": {
-          "district": "11500",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 3.35,
-          "groups90d": 4,
-          "groups180d": 16,
-          "observedComplexes": 3,
-          "matchedListings": 127,
-          "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 3.34755,
-            "matchedListings": 127
-          },
-          "longTerm180d": {
-            "sample": 16,
-            "groups": 16,
-            "percent": null,
-            "matchedListings": 205,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": 0.0,
-              "status": "VALID"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "VALID",
-            "matchedSampleChange": 0.0,
-            "deltaPctPoint": 0.0,
-            "deltaTotalPctPoint": 0.0,
-            "deltaFullMeanPctPoint": -1.16,
-            "medianLevelChange": -0.12,
-            "discrepancyMedianVersusMean": -0.12,
-            "contribAskPctPoint": 0.0,
-            "contribIdenticalAskPctPoint": 0.0,
-            "contribWithinStratumTurnoverPctPoint": 0.0,
-            "contribWithinTurnoverPctPoint": 0.0,
-            "contribTradeBenchmarkPctPoint": 0.0,
-            "contribSampleCompositionPctPoint": -1.16,
-            "unidentifiedEffectPctPoint": 0.0,
-            "fixedSampleSpreadChange": 0.0,
-            "matchedStrataCount": 3,
-            "matchedListingsCount": 263,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 263,
-              "retentionRatePct": 89.5,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 0,
-              "riseListingsCount": 0,
-              "holdListingsCount": 263,
-              "newEntrantsCount": 70,
-              "exitedCount": 31
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 3
-            },
-            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -0.1%p, 중위값-평균 불일치: -0.1%p)",
-            "stability": {
-              "matchedGroups": 3,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 0.0
-            }
-          }
-        },
-        "11530": {
-          "district": "11530",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 11.31,
-          "groups90d": 2,
-          "groups180d": 12,
-          "observedComplexes": 4,
-          "matchedListings": 9,
-          "actual90d": {
-            "sample": 2,
-            "groups": 2,
-            "percent": 11.31055,
-            "matchedListings": 9
-          },
-          "longTerm180d": {
-            "sample": 12,
-            "groups": 12,
-            "percent": null,
-            "matchedListings": 188,
-            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
-          },
-          "changes": {
-            "1d": {
-              "deltaPctPoint": null,
-              "status": "WITHHELD_STABILITY"
-            },
-            "7d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (7일차 대기)"
-            },
-            "28d": {
-              "deltaPctPoint": null,
-              "status": "축적 중 (28일차 대기)"
-            }
-          },
-          "decomposition": {
-            "status": "WITHHELD_STABILITY",
-            "matchedSampleChange": null,
-            "deltaPctPoint": null,
-            "deltaTotalPctPoint": null,
-            "deltaFullMeanPctPoint": null,
-            "medianLevelChange": null,
-            "discrepancyMedianVersusMean": null,
-            "contribAskPctPoint": null,
-            "contribIdenticalAskPctPoint": null,
-            "contribWithinStratumTurnoverPctPoint": null,
-            "contribWithinTurnoverPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "unidentifiedEffectPctPoint": null,
-            "fixedSampleSpreadChange": null,
-            "matchedStrataCount": 2,
-            "matchedListingsCount": 355,
-            "mathematicalIdentities": {
-              "matchedIdentityHolds": true,
-              "askSubdecompositionHolds": true,
-              "fullMeanIdentityHolds": true,
-              "roundedMatchedIdentityHolds": true,
-              "roundedAskSubdecompositionHolds": true,
-              "roundedFullMeanIdentityHolds": true
-            },
-            "identicalListingStats": {
-              "identicalCount": 355,
-              "retentionRatePct": 84.3,
-              "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": 0.0,
-              "cutListingsCount": 2,
-              "riseListingsCount": 1,
-              "holdListingsCount": 352,
-              "newEntrantsCount": 15,
-              "exitedCount": 66
-            },
-            "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 2
-            },
-            "explanation": "변화폭 공표 유예: 공통 비교 그룹 2개 < 최소 3개",
-            "stability": {
-              "matchedGroups": 2,
-              "minMatchedGroups": 3,
-              "flaggedGroups": [],
-              "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 1.0
-            }
-          }
-        },
-        "11545": {
-          "district": "11545",
-          "status": "실측",
-          "statusCode": "ACTUAL_90D",
-          "percent": 8.43,
-          "groups90d": 4,
-          "groups180d": 12,
-          "observedComplexes": 4,
-          "matchedListings": 188,
-          "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 8.4289,
-            "matchedListings": 188
-          },
-          "longTerm180d": {
-            "sample": 12,
-            "groups": 12,
-            "percent": null,
-            "matchedListings": 294,
+            "matchedListings": 147,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -56091,8 +56031,8 @@
             "contribSampleCompositionPctPoint": 0.0,
             "unidentifiedEffectPctPoint": 0.0,
             "fixedSampleSpreadChange": 0.0,
-            "matchedStrataCount": 4,
-            "matchedListingsCount": 431,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 143,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -56102,22 +56042,22 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 431,
-              "retentionRatePct": 96.0,
+              "identicalCount": 143,
+              "retentionRatePct": 95.3,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.01,
-              "cutListingsCount": 2,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
               "riseListingsCount": 0,
-              "holdListingsCount": 429,
-              "newEntrantsCount": 11,
-              "exitedCount": 18
+              "holdListingsCount": 143,
+              "newEntrantsCount": 27,
+              "exitedCount": 7
             },
             "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 4
+              "UNCHANGED_BENCHMARK": 3
             },
             "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: 0.0%p)",
             "stability": {
-              "matchedGroups": 4,
+              "matchedGroups": 3,
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
@@ -56125,26 +56065,26 @@
             }
           }
         },
-        "11560": {
-          "district": "11560",
+        "11380": {
+          "district": "11380",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 8.58,
+          "percent": 4.33,
           "groups90d": 2,
-          "groups180d": 11,
+          "groups180d": 18,
           "observedComplexes": 4,
-          "matchedListings": 10,
+          "matchedListings": 27,
           "actual90d": {
             "sample": 2,
             "groups": 2,
-            "percent": 8.57845,
-            "matchedListings": 10
+            "percent": 4.3344000000000005,
+            "matchedListings": 27
           },
           "longTerm180d": {
-            "sample": 11,
-            "groups": 11,
+            "sample": 18,
+            "groups": 18,
             "percent": null,
-            "matchedListings": 85,
+            "matchedListings": 363,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -56178,7 +56118,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 2,
-            "matchedListingsCount": 313,
+            "matchedListingsCount": 424,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -56188,15 +56128,617 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 313,
-              "retentionRatePct": 89.4,
+              "identicalCount": 424,
+              "retentionRatePct": 84.6,
               "medianPriceChangePct": 0.0,
               "meanPriceChangePct": 0.0,
               "cutListingsCount": 0,
               "riseListingsCount": 0,
-              "holdListingsCount": 313,
-              "newEntrantsCount": 19,
-              "exitedCount": 37
+              "holdListingsCount": 424,
+              "newEntrantsCount": 64,
+              "exitedCount": 77
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "변화폭 공표 유예: 공통 비교 그룹 2개 < 최소 3개",
+            "stability": {
+              "matchedGroups": 2,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 1.0
+            }
+          }
+        },
+        "11410": {
+          "district": "11410",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 3.44,
+          "groups90d": 3,
+          "groups180d": 11,
+          "observedComplexes": 2,
+          "matchedListings": 71,
+          "actual90d": {
+            "sample": 3,
+            "groups": 3,
+            "percent": 3.4375,
+            "matchedListings": 71
+          },
+          "longTerm180d": {
+            "sample": 11,
+            "groups": 11,
+            "percent": null,
+            "matchedListings": 128,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaPctPoint": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": -0.13,
+            "medianLevelChange": -0.18,
+            "discrepancyMedianVersusMean": -0.18,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribWithinTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": -0.13,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 167,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 167,
+              "retentionRatePct": 43.0,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 167,
+              "newEntrantsCount": 20,
+              "exitedCount": 221
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 3
+            },
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -0.2%p, 중위값-평균 불일치: -0.2%p)",
+            "stability": {
+              "matchedGroups": 3,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 0.0
+            }
+          }
+        },
+        "11440": {
+          "district": "11440",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 4.75,
+          "groups90d": 2,
+          "groups180d": 11,
+          "observedComplexes": 4,
+          "matchedListings": 197,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 4.751650000000001,
+            "matchedListings": 197
+          },
+          "longTerm180d": {
+            "sample": 11,
+            "groups": 11,
+            "percent": null,
+            "matchedListings": 573,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "WITHHELD_STABILITY"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "WITHHELD_STABILITY",
+            "matchedSampleChange": null,
+            "deltaPctPoint": null,
+            "deltaTotalPctPoint": null,
+            "deltaFullMeanPctPoint": null,
+            "medianLevelChange": null,
+            "discrepancyMedianVersusMean": null,
+            "contribAskPctPoint": null,
+            "contribIdenticalAskPctPoint": null,
+            "contribWithinStratumTurnoverPctPoint": null,
+            "contribWithinTurnoverPctPoint": null,
+            "contribTradeBenchmarkPctPoint": null,
+            "contribSampleCompositionPctPoint": null,
+            "unidentifiedEffectPctPoint": null,
+            "fixedSampleSpreadChange": null,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 633,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 633,
+              "retentionRatePct": 87.6,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 633,
+              "newEntrantsCount": 91,
+              "exitedCount": 90
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "변화폭 공표 유예: 공통 비교 그룹 2개 < 최소 3개",
+            "stability": {
+              "matchedGroups": 2,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 0.0
+            }
+          }
+        },
+        "11470": {
+          "district": "11470",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 0.99,
+          "groups90d": 6,
+          "groups180d": 22,
+          "observedComplexes": 11,
+          "matchedListings": 154,
+          "actual90d": {
+            "sample": 6,
+            "groups": 6,
+            "percent": 0.99305,
+            "matchedListings": 154
+          },
+          "longTerm180d": {
+            "sample": 22,
+            "groups": 22,
+            "percent": null,
+            "matchedListings": 917,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": 1.52,
+              "status": "VALID"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "VALID",
+            "matchedSampleChange": 1.52,
+            "deltaPctPoint": 1.52,
+            "deltaTotalPctPoint": 1.52,
+            "deltaFullMeanPctPoint": 1.52,
+            "medianLevelChange": 0.79,
+            "discrepancyMedianVersusMean": -0.73,
+            "contribAskPctPoint": 1.52,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 1.52,
+            "contribWithinTurnoverPctPoint": 1.52,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 1.52,
+            "matchedStrataCount": 6,
+            "matchedListingsCount": 1325,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 1325,
+              "retentionRatePct": 82.5,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 5,
+              "riseListingsCount": 1,
+              "holdListingsCount": 1319,
+              "newEntrantsCount": 255,
+              "exitedCount": 282
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 6
+            },
+            "explanation": "동일 표본 평균 변화 +1.5%p = 호가 조정 +1.5%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 +1.5%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.8%p, 중위값-평균 불일치: -0.7%p)",
+            "stability": {
+              "matchedGroups": 6,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 0.827
+            }
+          }
+        },
+        "11500": {
+          "district": "11500",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 3.2,
+          "groups90d": 4,
+          "groups180d": 17,
+          "observedComplexes": 4,
+          "matchedListings": 125,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 3.19535,
+            "matchedListings": 125
+          },
+          "longTerm180d": {
+            "sample": 17,
+            "groups": 17,
+            "percent": null,
+            "matchedListings": 221,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": -0.08,
+              "status": "VALID"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "VALID",
+            "matchedSampleChange": -0.08,
+            "deltaPctPoint": -0.08,
+            "deltaTotalPctPoint": -0.08,
+            "deltaFullMeanPctPoint": -0.08,
+            "medianLevelChange": -0.15,
+            "discrepancyMedianVersusMean": -0.07,
+            "contribAskPctPoint": -0.08,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": -0.08,
+            "contribWithinTurnoverPctPoint": -0.08,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.08,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 264,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 264,
+              "retentionRatePct": 79.3,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 264,
+              "newEntrantsCount": 82,
+              "exitedCount": 69
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 4
+            },
+            "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -0.1%p, 중위값-평균 불일치: -0.1%p)",
+            "stability": {
+              "matchedGroups": 4,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 1.0
+            }
+          }
+        },
+        "11530": {
+          "district": "11530",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 11.55,
+          "groups90d": 2,
+          "groups180d": 12,
+          "observedComplexes": 4,
+          "matchedListings": 8,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 11.54805,
+            "matchedListings": 8
+          },
+          "longTerm180d": {
+            "sample": 12,
+            "groups": 12,
+            "percent": null,
+            "matchedListings": 197,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "WITHHELD_STABILITY"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "WITHHELD_STABILITY",
+            "matchedSampleChange": null,
+            "deltaPctPoint": null,
+            "deltaTotalPctPoint": null,
+            "deltaFullMeanPctPoint": null,
+            "medianLevelChange": null,
+            "discrepancyMedianVersusMean": null,
+            "contribAskPctPoint": null,
+            "contribIdenticalAskPctPoint": null,
+            "contribWithinStratumTurnoverPctPoint": null,
+            "contribWithinTurnoverPctPoint": null,
+            "contribTradeBenchmarkPctPoint": null,
+            "contribSampleCompositionPctPoint": null,
+            "unidentifiedEffectPctPoint": null,
+            "fixedSampleSpreadChange": null,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 357,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 357,
+              "retentionRatePct": 96.5,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 357,
+              "newEntrantsCount": 35,
+              "exitedCount": 13
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 2
+            },
+            "explanation": "변화폭 공표 유예: 공통 비교 그룹 2개 < 최소 3개",
+            "stability": {
+              "matchedGroups": 2,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 1.0
+            }
+          }
+        },
+        "11545": {
+          "district": "11545",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 8.43,
+          "groups90d": 4,
+          "groups180d": 12,
+          "observedComplexes": 4,
+          "matchedListings": 202,
+          "actual90d": {
+            "sample": 4,
+            "groups": 4,
+            "percent": 8.4289,
+            "matchedListings": 202
+          },
+          "longTerm180d": {
+            "sample": 12,
+            "groups": 12,
+            "percent": null,
+            "matchedListings": 309,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": -0.19,
+              "status": "VALID"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "VALID",
+            "matchedSampleChange": -0.19,
+            "deltaPctPoint": -0.19,
+            "deltaTotalPctPoint": -0.19,
+            "deltaFullMeanPctPoint": -0.19,
+            "medianLevelChange": 0.0,
+            "discrepancyMedianVersusMean": 0.19,
+            "contribAskPctPoint": -0.19,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": -0.19,
+            "contribWithinTurnoverPctPoint": -0.19,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 0.0,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": -0.19,
+            "matchedStrataCount": 4,
+            "matchedListingsCount": 404,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 404,
+              "retentionRatePct": 91.4,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
+              "riseListingsCount": 0,
+              "holdListingsCount": 404,
+              "newEntrantsCount": 75,
+              "exitedCount": 38
+            },
+            "tradeBenchmarkDrivers": {
+              "UNCHANGED_BENCHMARK": 4
+            },
+            "explanation": "동일 표본 평균 변화 -0.2%p = 호가 조정 -0.2%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 -0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: 0.0%p, 중위값-평균 불일치: +0.2%p)",
+            "stability": {
+              "matchedGroups": 4,
+              "minMatchedGroups": 3,
+              "flaggedGroups": [],
+              "flaggedGroupCount": 0,
+              "topGroupShareOfAbsChange": 1.0
+            }
+          }
+        },
+        "11560": {
+          "district": "11560",
+          "status": "실측",
+          "statusCode": "ACTUAL_90D",
+          "percent": 8.58,
+          "groups90d": 2,
+          "groups180d": 8,
+          "observedComplexes": 4,
+          "matchedListings": 10,
+          "actual90d": {
+            "sample": 2,
+            "groups": 2,
+            "percent": 8.57845,
+            "matchedListings": 10
+          },
+          "longTerm180d": {
+            "sample": 8,
+            "groups": 8,
+            "percent": null,
+            "matchedListings": 76,
+            "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
+          },
+          "changes": {
+            "1d": {
+              "deltaPctPoint": null,
+              "status": "WITHHELD_STABILITY"
+            },
+            "7d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (7일차 대기)"
+            },
+            "28d": {
+              "deltaPctPoint": null,
+              "status": "축적 중 (28일차 대기)"
+            }
+          },
+          "decomposition": {
+            "status": "WITHHELD_STABILITY",
+            "matchedSampleChange": null,
+            "deltaPctPoint": null,
+            "deltaTotalPctPoint": null,
+            "deltaFullMeanPctPoint": null,
+            "medianLevelChange": null,
+            "discrepancyMedianVersusMean": null,
+            "contribAskPctPoint": null,
+            "contribIdenticalAskPctPoint": null,
+            "contribWithinStratumTurnoverPctPoint": null,
+            "contribWithinTurnoverPctPoint": null,
+            "contribTradeBenchmarkPctPoint": null,
+            "contribSampleCompositionPctPoint": null,
+            "unidentifiedEffectPctPoint": null,
+            "fixedSampleSpreadChange": null,
+            "matchedStrataCount": 2,
+            "matchedListingsCount": 244,
+            "mathematicalIdentities": {
+              "matchedIdentityHolds": true,
+              "askSubdecompositionHolds": true,
+              "fullMeanIdentityHolds": true,
+              "roundedMatchedIdentityHolds": true,
+              "roundedAskSubdecompositionHolds": true,
+              "roundedFullMeanIdentityHolds": true
+            },
+            "identicalListingStats": {
+              "identicalCount": 244,
+              "retentionRatePct": 73.5,
+              "medianPriceChangePct": 0.0,
+              "meanPriceChangePct": -0.02,
+              "cutListingsCount": 2,
+              "riseListingsCount": 0,
+              "holdListingsCount": 242,
+              "newEntrantsCount": 83,
+              "exitedCount": 88
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 2
@@ -56217,20 +56759,20 @@
           "statusCode": "ACTUAL_90D",
           "percent": 3.46,
           "groups90d": 1,
-          "groups180d": 9,
+          "groups180d": 8,
           "observedComplexes": 4,
-          "matchedListings": 55,
+          "matchedListings": 44,
           "actual90d": {
             "sample": 1,
             "groups": 1,
             "percent": 3.4586,
-            "matchedListings": 55
+            "matchedListings": 44
           },
           "longTerm180d": {
-            "sample": 9,
-            "groups": 9,
+            "sample": 8,
+            "groups": 8,
             "percent": null,
-            "matchedListings": 227,
+            "matchedListings": 237,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -56264,7 +56806,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 1,
-            "matchedListingsCount": 335,
+            "matchedListingsCount": 347,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -56274,15 +56816,15 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 335,
-              "retentionRatePct": 89.8,
+              "identicalCount": 347,
+              "retentionRatePct": 69.5,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.01,
-              "cutListingsCount": 1,
+              "meanPriceChangePct": 0.0,
+              "cutListingsCount": 0,
               "riseListingsCount": 1,
-              "holdListingsCount": 333,
-              "newEntrantsCount": 164,
-              "exitedCount": 38
+              "holdListingsCount": 346,
+              "newEntrantsCount": 179,
+              "exitedCount": 152
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 1
@@ -56301,22 +56843,22 @@
           "district": "11620",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 2.19,
+          "percent": 3.03,
           "groups90d": 2,
           "groups180d": 7,
           "observedComplexes": 4,
-          "matchedListings": 174,
+          "matchedListings": 176,
           "actual90d": {
             "sample": 2,
             "groups": 2,
-            "percent": 2.1891499999999997,
-            "matchedListings": 174
+            "percent": 3.0282999999999998,
+            "matchedListings": 176
           },
           "longTerm180d": {
             "sample": 7,
             "groups": 7,
             "percent": null,
-            "matchedListings": 303,
+            "matchedListings": 342,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -56350,7 +56892,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 2,
-            "matchedListingsCount": 279,
+            "matchedListingsCount": 281,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -56360,15 +56902,15 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 279,
-              "retentionRatePct": 65.5,
+              "identicalCount": 281,
+              "retentionRatePct": 66.1,
               "medianPriceChangePct": 0.0,
               "meanPriceChangePct": 0.0,
               "cutListingsCount": 0,
               "riseListingsCount": 0,
-              "holdListingsCount": 279,
-              "newEntrantsCount": 146,
-              "exitedCount": 147
+              "holdListingsCount": 281,
+              "newEntrantsCount": 172,
+              "exitedCount": 144
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 2
@@ -56379,7 +56921,7 @@
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
-              "topGroupShareOfAbsChange": 1.0
+              "topGroupShareOfAbsChange": 0.753
             }
           }
         },
@@ -56402,7 +56944,7 @@
             "sample": 5,
             "groups": 5,
             "percent": null,
-            "matchedListings": 123,
+            "matchedListings": 121,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "reason": "90일 검증 실거래가 3건 이상인 비교 그룹 없음",
@@ -56450,7 +56992,7 @@
             "sample": 7,
             "groups": 7,
             "percent": null,
-            "matchedListings": 77,
+            "matchedListings": 73,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "reason": "90일 검증 실거래가 3건 이상인 비교 그룹 없음",
@@ -56483,28 +57025,28 @@
           "district": "11710",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": 1.65,
-          "groups90d": 4,
-          "groups180d": 18,
+          "percent": 1.67,
+          "groups90d": 3,
+          "groups180d": 16,
           "observedComplexes": 4,
-          "matchedListings": 147,
+          "matchedListings": 190,
           "actual90d": {
-            "sample": 4,
-            "groups": 4,
-            "percent": 1.64635,
-            "matchedListings": 147
+            "sample": 3,
+            "groups": 3,
+            "percent": 1.6667,
+            "matchedListings": 190
           },
           "longTerm180d": {
-            "sample": 18,
-            "groups": 18,
+            "sample": 16,
+            "groups": 16,
             "percent": null,
-            "matchedListings": 366,
+            "matchedListings": 398,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
             "1d": {
-              "deltaPctPoint": null,
-              "status": "WITHHELD_STABILITY"
+              "deltaPctPoint": 0.0,
+              "status": "VALID"
             },
             "7d": {
               "deltaPctPoint": null,
@@ -56516,23 +57058,23 @@
             }
           },
           "decomposition": {
-            "status": "WITHHELD_STABILITY",
-            "matchedSampleChange": null,
-            "deltaPctPoint": null,
-            "deltaTotalPctPoint": null,
-            "deltaFullMeanPctPoint": null,
-            "medianLevelChange": null,
-            "discrepancyMedianVersusMean": null,
-            "contribAskPctPoint": null,
-            "contribIdenticalAskPctPoint": null,
-            "contribWithinStratumTurnoverPctPoint": null,
-            "contribWithinTurnoverPctPoint": null,
-            "contribTradeBenchmarkPctPoint": null,
-            "contribSampleCompositionPctPoint": null,
-            "unidentifiedEffectPctPoint": null,
-            "fixedSampleSpreadChange": null,
-            "matchedStrataCount": 1,
-            "matchedListingsCount": 446,
+            "status": "VALID",
+            "matchedSampleChange": 0.0,
+            "deltaPctPoint": 0.0,
+            "deltaTotalPctPoint": 0.0,
+            "deltaFullMeanPctPoint": 1.45,
+            "medianLevelChange": 0.02,
+            "discrepancyMedianVersusMean": 0.02,
+            "contribAskPctPoint": 0.0,
+            "contribIdenticalAskPctPoint": 0.0,
+            "contribWithinStratumTurnoverPctPoint": 0.0,
+            "contribWithinTurnoverPctPoint": 0.0,
+            "contribTradeBenchmarkPctPoint": 0.0,
+            "contribSampleCompositionPctPoint": 1.45,
+            "unidentifiedEffectPctPoint": 0.0,
+            "fixedSampleSpreadChange": 0.0,
+            "matchedStrataCount": 3,
+            "matchedListingsCount": 498,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -56542,22 +57084,22 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 446,
-              "retentionRatePct": 76.9,
+              "identicalCount": 498,
+              "retentionRatePct": 75.8,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.04,
-              "cutListingsCount": 5,
+              "meanPriceChangePct": 0.01,
+              "cutListingsCount": 0,
               "riseListingsCount": 1,
-              "holdListingsCount": 440,
-              "newEntrantsCount": 211,
-              "exitedCount": 134
+              "holdListingsCount": 497,
+              "newEntrantsCount": 174,
+              "exitedCount": 159
             },
             "tradeBenchmarkDrivers": {
-              "UNCHANGED_BENCHMARK": 1
+              "UNCHANGED_BENCHMARK": 3
             },
-            "explanation": "변화폭 공표 유예: 공통 비교 그룹 1개 < 최소 3개",
+            "explanation": "동일 표본 평균 변화 0.0%p = 호가 조정 0.0%p (동일 매물 변경 0.0%p + 그룹 내 매물 교체 0.0%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.0%p, 중위값-평균 불일치: +0.0%p)",
             "stability": {
-              "matchedGroups": 1,
+              "matchedGroups": 3,
               "minMatchedGroups": 3,
               "flaggedGroups": [],
               "flaggedGroupCount": 0,
@@ -56569,22 +57111,22 @@
           "district": "11740",
           "status": "실측",
           "statusCode": "ACTUAL_90D",
-          "percent": -5.66,
-          "groups90d": 2,
-          "groups180d": 9,
+          "percent": -7.02,
+          "groups90d": 1,
+          "groups180d": 7,
           "observedComplexes": 4,
-          "matchedListings": 136,
+          "matchedListings": 153,
           "actual90d": {
-            "sample": 2,
-            "groups": 2,
-            "percent": -5.66015,
-            "matchedListings": 136
+            "sample": 1,
+            "groups": 1,
+            "percent": -7.0234,
+            "matchedListings": 153
           },
           "longTerm180d": {
-            "sample": 9,
-            "groups": 9,
+            "sample": 7,
+            "groups": 7,
             "percent": null,
-            "matchedListings": 280,
+            "matchedListings": 305,
             "note": "180일 값은 검증되지 않은 실거래 스냅샷 기준이라 공표하지 않음"
           },
           "changes": {
@@ -56618,7 +57160,7 @@
             "unidentifiedEffectPctPoint": null,
             "fixedSampleSpreadChange": null,
             "matchedStrataCount": 1,
-            "matchedListingsCount": 369,
+            "matchedListingsCount": 360,
             "mathematicalIdentities": {
               "matchedIdentityHolds": true,
               "askSubdecompositionHolds": true,
@@ -56628,15 +57170,15 @@
               "roundedFullMeanIdentityHolds": true
             },
             "identicalListingStats": {
-              "identicalCount": 369,
-              "retentionRatePct": 81.8,
+              "identicalCount": 360,
+              "retentionRatePct": 73.6,
               "medianPriceChangePct": 0.0,
-              "meanPriceChangePct": -0.0,
-              "cutListingsCount": 1,
-              "riseListingsCount": 1,
-              "holdListingsCount": 367,
-              "newEntrantsCount": 120,
-              "exitedCount": 82
+              "meanPriceChangePct": -0.01,
+              "cutListingsCount": 3,
+              "riseListingsCount": 0,
+              "holdListingsCount": 357,
+              "newEntrantsCount": 133,
+              "exitedCount": 129
             },
             "tradeBenchmarkDrivers": {
               "UNCHANGED_BENCHMARK": 1
@@ -56653,18 +57195,18 @@
         }
       },
       "qualityCounts": {
-        "targetDay": "2026-11-14",
+        "targetDay": "2026-11-15",
         "engineVersion": "v1.2.0-shapley",
-        "observedComplexesCount": 101,
-        "totalActiveListings": 12017,
-        "matchedStrataGroups90d": 70,
-        "matchedStrataGroups180d": 286,
-        "analyzedListingsInGroups": 2307,
+        "observedComplexesCount": 103,
+        "totalActiveListings": 12108,
+        "matchedStrataGroups90d": 67,
+        "matchedStrataGroups180d": 274,
+        "analyzedListingsInGroups": 2327,
         "pointInTimeVintageAudit": {
-          "targetDay": "2026-11-14",
+          "targetDay": "2026-11-15",
           "windowDays": 90,
-          "totalTradesInWindow": 9353,
-          "contemporaneousTrades": 9353,
+          "totalTradesInWindow": 9300,
+          "contemporaneousTrades": 9300,
           "exPostReconstructedTrades": 0,
           "unknownDisclosureTrades": 0,
           "pointInTimeRatioPct": 100.0,
@@ -56675,7 +57217,7 @@
           "tradeLevelFirstSeenVerified": true,
           "tradeLedger": {
             "source": "APT_WATCH_TRADE_LEDGER",
-            "cutoff": "2026-11-14T23:59:59+09:00",
+            "cutoff": "2026-11-15T23:59:59+09:00",
             "windowMonths": [
               "202608",
               "202609",
@@ -56687,15 +57229,15 @@
             "districtMonthsMissing": [],
             "evidenceProblems": [],
             "fetchesUsed": 100,
-            "tradesInWindow": 9571,
+            "tradesInWindow": 9519,
             "tradeLevelFirstSeenVerified": true
           },
           "benchmarkSource": "APT_WATCH_TRADE_LEDGER"
         },
         "weightingComparisons": {
-          "equalWeightMedian": 3.64,
-          "districtBalancedMean": 4.7,
-          "complexBalancedMean": 4.25,
+          "equalWeightMedian": 4.29,
+          "districtBalancedMean": 4.56,
+          "complexBalancedMean": 4.44,
           "stockWeightedMean": null,
           "stockWeightedNotice": "통계청 주택총조사 등록센서스 서울 25개 자치구 아파트 호수 전수 검증 진행 중으로, 비공식 가중치 사용을 배제하고 공식 검증 완료 시까지 공표 유예"
         }
@@ -56709,7 +57251,7 @@
     },
     "listingSupply": {
       "version": "listing-supply-v1",
-      "asOf": "2026-11-14",
+      "asOf": "2026-11-15",
       "definition": "고정 표본 110개 단지 중 품질 검증 통과 단지의 매도 매물 수(매물 ID 중복 제거). 증감은 비교하는 두 날짜에 모두 정상 관측된 단지만으로 계산.",
       "rules": {
         "minValidComplexes": 105,
@@ -56721,81 +57263,76 @@
         "timingRule": "정규 비교 = 두 날 모두 06시 정규 수집이고 공통 단지의 90% 이상이 단지별 관측 간격 24시간×일수±2시간. 그 밖에는 관측 시각 차이로 참고값만 제공, 품질 기준 미달은 공표 유예"
       },
       "level": {
-        "day": "2026-11-14",
-        "listings": 12017,
-        "validComplexes": 106,
+        "day": "2026-11-15",
+        "listings": 12108,
+        "validComplexes": 109,
         "plannedComplexes": 110,
         "duplicateIdsSkipped": 0,
         "publishable": true,
         "reasons": [],
-        "observedFromKST": "2026-11-14T09:22+09:00",
-        "observedToKST": "2026-11-14T09:51+09:00",
+        "observedFromKST": "2026-11-15T16:08+09:00",
+        "observedToKST": "2026-11-15T16:31+09:00",
         "collection": "RERUN",
-        "observationNote": "09:21~09:51 재수집",
+        "observationNote": "06시 정규 수집 실패 후 낮 재수집",
         "districts": {
-          "11410": 388,
-          "11545": 442,
-          "11470": 1607,
-          "11170": 392,
-          "11500": 333,
-          "11650": 559,
-          "11320": 286,
-          "11620": 425,
-          "11290": 621,
-          "11440": 723,
-          "11680": 300,
-          "11215": 323,
-          "11560": 332,
-          "11200": 771,
-          "11530": 370,
-          "11260": 207,
-          "11350": 150,
-          "11740": 489,
-          "11710": 657,
-          "11590": 499,
-          "11305": 384,
-          "11380": 501,
-          "11230": 986,
-          "11110": 5,
-          "11140": 267
+          "11110": 23,
+          "11410": 187,
+          "11545": 479,
+          "11470": 1580,
+          "11170": 422,
+          "11500": 346,
+          "11650": 541,
+          "11320": 283,
+          "11620": 453,
+          "11290": 585,
+          "11440": 724,
+          "11680": 357,
+          "11215": 344,
+          "11560": 327,
+          "11200": 797,
+          "11530": 392,
+          "11260": 209,
+          "11230": 1057,
+          "11350": 170,
+          "11740": 493,
+          "11710": 672,
+          "11590": 526,
+          "11305": 385,
+          "11380": 488,
+          "11140": 268
         }
       },
       "changes": {
         "1d": {
-          "commonComplexes": 83,
-          "listingsRef": 10008,
-          "listings": 9720,
-          "change": null,
-          "changePct": null,
-          "newListings": 738,
-          "endedListings": 1026,
-          "continuing": 8621,
-          "referenceDay": "2026-11-13",
-          "observationGapHours": 18.6,
-          "published": false,
-          "reasons": [
-            "2026-11-13: 품질 검증 통과 87/110 < 105",
-            "2026-11-13: 공표 유예일(수집 오류 격리)",
-            "2026-11-13: 첫 검증 기준선(2026-11-14) 이전",
-            "공통 정상 관측 단지 83개 < 105개"
-          ],
+          "commonComplexes": 105,
+          "listingsRef": 12008,
+          "listings": 12078,
+          "change": 70,
+          "changePct": 0.58,
+          "newListings": 1323,
+          "endedListings": 1253,
+          "continuing": 9758,
+          "referenceDay": "2026-11-14",
+          "observationGapHours": 30.8,
+          "published": true,
+          "reasons": [],
           "timing": {
             "comparability": "TIMING_REFERENCE",
-            "collectionRef": "OFF_SCHEDULE",
+            "collectionRef": "RERUN",
             "collection": "RERUN",
-            "medianGapHours": 18.6,
+            "medianGapHours": 30.8,
             "shareWithinTolerance": 0.0,
             "collectionSpanHours": {
-              "ref": 1.18,
-              "day": 0.48
+              "ref": 0.48,
+              "day": 0.37
             },
             "longCollection": false,
             "timingReasons": [
-              "정규 06시 수집이 아닌 날 포함 (2026-11-13: 정규 시각 외 수집, 2026-11-14: 당일 재수집)",
+              "정규 06시 수집이 아닌 날 포함 (2026-11-14: 당일 재수집, 2026-11-15: 당일 재수집)",
               "단지별 관측 간격이 24±2시간인 단지 0% < 90%"
             ]
           },
-          "comparability": "WITHHELD_QUALITY",
+          "comparability": "TIMING_REFERENCE",
           "districts": {
             "11110": {
               "commonComplexes": 2,
@@ -56806,290 +57343,294 @@
               "newListings": 0,
               "endedListings": 0,
               "continuing": 5,
-              "published": false
+              "published": false,
+              "reason": "자치구 표본 단지 4개 중 공통 정상 관측 2개"
             },
             "11140": {
-              "commonComplexes": 3,
-              "listingsRef": 141,
-              "listings": 142,
-              "change": null,
-              "changePct": null,
-              "newListings": 1,
-              "endedListings": 0,
-              "continuing": 134,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 267,
+              "listings": 268,
+              "change": 1,
+              "changePct": 0.37,
+              "newListings": 7,
+              "endedListings": 6,
+              "continuing": 240,
+              "published": true
             },
             "11170": {
               "commonComplexes": 4,
-              "listingsRef": 409,
-              "listings": 392,
-              "change": null,
-              "changePct": null,
-              "newListings": 61,
-              "endedListings": 78,
-              "continuing": 326,
-              "published": false
+              "listingsRef": 392,
+              "listings": 422,
+              "change": 30,
+              "changePct": 7.65,
+              "newListings": 97,
+              "endedListings": 67,
+              "continuing": 320,
+              "published": true
             },
             "11200": {
               "commonComplexes": 4,
-              "listingsRef": 806,
-              "listings": 771,
-              "change": null,
-              "changePct": null,
-              "newListings": 58,
-              "endedListings": 93,
-              "continuing": 689,
-              "published": false
+              "listingsRef": 771,
+              "listings": 797,
+              "change": 26,
+              "changePct": 3.37,
+              "newListings": 65,
+              "endedListings": 39,
+              "continuing": 688,
+              "published": true
             },
             "11215": {
-              "commonComplexes": 3,
-              "listingsRef": 322,
-              "listings": 311,
-              "change": null,
-              "changePct": null,
-              "newListings": 19,
-              "endedListings": 30,
-              "continuing": 283,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 323,
+              "listings": 344,
+              "change": 21,
+              "changePct": 6.5,
+              "newListings": 43,
+              "endedListings": 22,
+              "continuing": 235,
+              "published": true
             },
             "11230": {
               "commonComplexes": 3,
-              "listingsRef": 1000,
-              "listings": 986,
+              "listingsRef": 986,
+              "listings": 1050,
               "change": null,
               "changePct": null,
-              "newListings": 77,
-              "endedListings": 91,
-              "continuing": 877,
-              "published": false
+              "newListings": 195,
+              "endedListings": 131,
+              "continuing": 743,
+              "published": false,
+              "reason": "자치구 표본 단지 4개 중 공통 정상 관측 3개"
             },
             "11260": {
-              "commonComplexes": 2,
-              "listingsRef": 79,
-              "listings": 75,
-              "change": null,
-              "changePct": null,
-              "newListings": 0,
-              "endedListings": 4,
-              "continuing": 75,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 207,
+              "listings": 209,
+              "change": 2,
+              "changePct": 0.97,
+              "newListings": 7,
+              "endedListings": 5,
+              "continuing": 199,
+              "published": true
             },
             "11290": {
-              "commonComplexes": 3,
-              "listingsRef": 236,
-              "listings": 223,
-              "change": null,
-              "changePct": null,
-              "newListings": 5,
-              "endedListings": 18,
-              "continuing": 212,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 621,
+              "listings": 585,
+              "change": -36,
+              "changePct": -5.8,
+              "newListings": 23,
+              "endedListings": 59,
+              "continuing": 540,
+              "published": true
             },
             "11305": {
-              "commonComplexes": 3,
-              "listingsRef": 198,
-              "listings": 198,
-              "change": null,
-              "changePct": null,
-              "newListings": 3,
-              "endedListings": 3,
-              "continuing": 192,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 384,
+              "listings": 385,
+              "change": 1,
+              "changePct": 0.26,
+              "newListings": 6,
+              "endedListings": 5,
+              "continuing": 362,
+              "published": true
             },
             "11320": {
-              "commonComplexes": 3,
-              "listingsRef": 177,
-              "listings": 157,
-              "change": null,
-              "changePct": null,
+              "commonComplexes": 4,
+              "listingsRef": 286,
+              "listings": 283,
+              "change": -3,
+              "changePct": -1.05,
               "newListings": 3,
-              "endedListings": 23,
-              "continuing": 151,
-              "published": false
+              "endedListings": 6,
+              "continuing": 276,
+              "published": true
             },
             "11350": {
               "commonComplexes": 4,
-              "listingsRef": 166,
-              "listings": 150,
-              "change": null,
-              "changePct": null,
-              "newListings": 7,
-              "endedListings": 23,
+              "listingsRef": 150,
+              "listings": 170,
+              "change": 20,
+              "changePct": 13.33,
+              "newListings": 26,
+              "endedListings": 6,
               "continuing": 143,
-              "published": false
+              "published": true
             },
             "11380": {
-              "commonComplexes": 2,
-              "listingsRef": 139,
-              "listings": 139,
-              "change": null,
-              "changePct": null,
-              "newListings": 1,
-              "endedListings": 1,
-              "continuing": 133,
-              "published": false
+              "commonComplexes": 5,
+              "listingsRef": 501,
+              "listings": 488,
+              "change": -13,
+              "changePct": -2.59,
+              "newListings": 10,
+              "endedListings": 23,
+              "continuing": 424,
+              "published": true
             },
             "11410": {
-              "commonComplexes": 3,
-              "listingsRef": 230,
-              "listings": 197,
+              "commonComplexes": 4,
+              "listingsRef": 379,
+              "listings": 187,
               "change": null,
               "changePct": null,
-              "newListings": 7,
-              "endedListings": 40,
-              "continuing": 184,
-              "published": false
+              "newListings": 13,
+              "endedListings": 205,
+              "continuing": 167,
+              "published": false,
+              "reason": "자치구 표본 단지 5개 중 공통 정상 관측 4개"
             },
             "11440": {
-              "commonComplexes": 3,
-              "listingsRef": 677,
-              "listings": 686,
-              "change": null,
-              "changePct": null,
-              "newListings": 28,
-              "endedListings": 19,
-              "continuing": 631,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 723,
+              "listings": 724,
+              "change": 1,
+              "changePct": 0.14,
+              "newListings": 12,
+              "endedListings": 11,
+              "continuing": 633,
+              "published": true
             },
             "11470": {
-              "commonComplexes": 11,
-              "listingsRef": 1481,
-              "listings": 1494,
-              "change": null,
-              "changePct": null,
-              "newListings": 110,
-              "endedListings": 97,
-              "continuing": 1278,
-              "published": false
+              "commonComplexes": 12,
+              "listingsRef": 1607,
+              "listings": 1580,
+              "change": -27,
+              "changePct": -1.68,
+              "newListings": 74,
+              "endedListings": 101,
+              "continuing": 1325,
+              "published": true
             },
             "11500": {
-              "commonComplexes": 2,
-              "listingsRef": 288,
-              "listings": 278,
+              "commonComplexes": 3,
+              "listingsRef": 333,
+              "listings": 341,
               "change": null,
               "changePct": null,
-              "newListings": 1,
-              "endedListings": 11,
-              "continuing": 263,
-              "published": false
+              "newListings": 34,
+              "endedListings": 26,
+              "continuing": 264,
+              "published": false,
+              "reason": "자치구 표본 단지 4개 중 공통 정상 관측 3개"
             },
             "11530": {
               "commonComplexes": 4,
-              "listingsRef": 421,
-              "listings": 370,
-              "change": null,
-              "changePct": null,
-              "newListings": 2,
-              "endedListings": 53,
-              "continuing": 355,
-              "published": false
+              "listingsRef": 370,
+              "listings": 392,
+              "change": 22,
+              "changePct": 5.95,
+              "newListings": 30,
+              "endedListings": 8,
+              "continuing": 357,
+              "published": true
             },
             "11545": {
-              "commonComplexes": 3,
-              "listingsRef": 449,
-              "listings": 439,
-              "change": null,
-              "changePct": null,
-              "newListings": 5,
-              "endedListings": 15,
-              "continuing": 431,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 442,
+              "listings": 479,
+              "change": 37,
+              "changePct": 8.37,
+              "newListings": 45,
+              "endedListings": 8,
+              "continuing": 404,
+              "published": true
             },
             "11560": {
               "commonComplexes": 4,
-              "listingsRef": 350,
-              "listings": 332,
-              "change": null,
-              "changePct": null,
-              "newListings": 4,
-              "endedListings": 22,
-              "continuing": 313,
-              "published": false
+              "listingsRef": 332,
+              "listings": 327,
+              "change": -5,
+              "changePct": -1.51,
+              "newListings": 32,
+              "endedListings": 37,
+              "continuing": 244,
+              "published": true
             },
             "11590": {
-              "commonComplexes": 3,
-              "listingsRef": 373,
-              "listings": 360,
-              "change": null,
-              "changePct": null,
-              "newListings": 20,
-              "endedListings": 33,
-              "continuing": 335,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 499,
+              "listings": 526,
+              "change": 27,
+              "changePct": 5.41,
+              "newListings": 116,
+              "endedListings": 89,
+              "continuing": 347,
+              "published": true
             },
             "11620": {
-              "commonComplexes": 3,
-              "listingsRef": 426,
-              "listings": 390,
-              "change": null,
-              "changePct": null,
-              "newListings": 101,
-              "endedListings": 137,
-              "continuing": 279,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 425,
+              "listings": 453,
+              "change": 28,
+              "changePct": 6.59,
+              "newListings": 150,
+              "endedListings": 122,
+              "continuing": 281,
+              "published": true
             },
             "11650": {
-              "commonComplexes": 3,
-              "listingsRef": 386,
-              "listings": 417,
-              "change": null,
-              "changePct": null,
-              "newListings": 47,
-              "endedListings": 16,
-              "continuing": 350,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 559,
+              "listings": 541,
+              "change": -18,
+              "changePct": -3.22,
+              "newListings": 38,
+              "endedListings": 56,
+              "continuing": 440,
+              "published": true
             },
             "11680": {
-              "commonComplexes": 2,
-              "listingsRef": 218,
-              "listings": 183,
-              "change": null,
-              "changePct": null,
-              "newListings": 12,
-              "endedListings": 47,
-              "continuing": 167,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 300,
+              "listings": 357,
+              "change": 57,
+              "changePct": 19.0,
+              "newListings": 80,
+              "endedListings": 23,
+              "continuing": 263,
+              "published": true
             },
             "11710": {
-              "commonComplexes": 2,
-              "listingsRef": 580,
-              "listings": 536,
-              "change": null,
-              "changePct": null,
-              "newListings": 57,
-              "endedListings": 101,
-              "continuing": 446,
-              "published": false
+              "commonComplexes": 4,
+              "listingsRef": 657,
+              "listings": 672,
+              "change": 15,
+              "changePct": 2.28,
+              "newListings": 123,
+              "endedListings": 108,
+              "continuing": 498,
+              "published": true
             },
             "11740": {
               "commonComplexes": 4,
-              "listingsRef": 451,
-              "listings": 489,
-              "change": null,
-              "changePct": null,
-              "newListings": 109,
-              "endedListings": 71,
-              "continuing": 369,
-              "published": false
+              "listingsRef": 489,
+              "listings": 493,
+              "change": 4,
+              "changePct": 0.82,
+              "newListings": 94,
+              "endedListings": 90,
+              "continuing": 360,
+              "published": true
             }
           }
         },
         "7d": {
-          "referenceDay": "2026-11-07",
+          "referenceDay": "2026-11-08",
           "published": false,
           "change": null,
           "changePct": null,
           "reasons": [
-            "2026-11-07 관측 없음 (7일 전 자료 축적 대기)"
+            "2026-11-08 관측 없음 (7일 전 자료 축적 대기)"
           ]
         },
         "28d": {
-          "referenceDay": "2026-10-17",
+          "referenceDay": "2026-10-18",
           "published": false,
           "change": null,
           "changePct": null,
           "reasons": [
-            "2026-10-17 관측 없음 (28일 전 자료 축적 대기)"
+            "2026-10-18 관측 없음 (28일 전 자료 축적 대기)"
           ]
         }
       },
@@ -57097,7 +57638,7 @@
         "1d": {
           "quadrant": null,
           "label": "두 지표의 비교 가능한 변화가 모두 있어야 표시",
-          "negoChangePctPoint": null,
+          "negoChangePctPoint": 0.21,
           "supplyChangePct": null,
           "districts": {
             "11110": {
@@ -57429,6 +57970,16 @@
           "linkChangePct": null,
           "linkComparability": null,
           "collection": "RERUN"
+        },
+        {
+          "day": "2026-11-15",
+          "listings": 12108,
+          "validComplexes": 109,
+          "sameComplexIndex": 100.58,
+          "linkFrom": "2026-11-14",
+          "linkChangePct": 0.58,
+          "linkComparability": "TIMING_REFERENCE",
+          "collection": "RERUN"
         }
       ],
       "reference": {
@@ -57508,8 +58059,8 @@
     }
   },
   "observability": {
-    "asOf": "2026-11-14",
-    "lastSuccessObserved": "2026-11-14T00:51:04Z",
+    "asOf": "2026-11-15",
+    "lastSuccessObserved": "2026-11-15T07:31:09Z",
     "todayCoreSuccess": 110,
     "todayCoreFailures": 0,
     "todayCoreTarget": 110,
@@ -57518,7 +58069,7 @@
     "coreCoverageRate": 29.3,
     "observed7d": 110,
     "observed30d": 110,
-    "activeListings": 12017,
+    "activeListings": 12118,
     "mappedUniverseCount": 5821,
     "panelType": "고정 표본 (연속 패널 375개 단지)",
     "rollingType": "비핵심 순환 관측 (5개 권역 5,446개 단지)"
@@ -57531,40 +58082,89 @@
     "status": "ACTIVE_OPERATIONAL",
     "statusLabel": "정상 운영 · 실측 네고 압력",
     "officialPublicationAllowed": true,
-    "asOf": "2026-11-14",
-    "currentNegoPressurePct": 3.64,
-    "currentNegoLevel": 3.64,
+    "asOf": "2026-11-15",
+    "currentNegoPressurePct": 4.29,
+    "currentNegoLevel": 4.29,
     "sampleType": "관측 표본 기준 (동일 단지·전용면적·층구간 90일 실거래 매칭)",
     "changes": {
       "1d": {
-        "status": "HELD_VERIFICATION",
-        "deltaPctPoint": null,
-        "reason": "수집 데이터 검증 중"
+        "status": "VALID",
+        "matchedSampleChange": 0.21,
+        "deltaPctPoint": 0.21,
+        "deltaTotalPctPoint": 0.21,
+        "deltaFullMeanPctPoint": 0.49,
+        "medianLevelChange": 0.65,
+        "discrepancyMedianVersusMean": 0.44,
+        "contribAskPctPoint": 0.21,
+        "contribIdenticalAskPctPoint": -0.0,
+        "contribWithinStratumTurnoverPctPoint": 0.21,
+        "contribWithinTurnoverPctPoint": 0.21,
+        "contribTradeBenchmarkPctPoint": 0.0,
+        "contribSampleCompositionPctPoint": 0.28,
+        "unidentifiedEffectPctPoint": 0.0,
+        "fixedSampleSpreadChange": 0.21,
+        "matchedStrataCount": 67,
+        "matchedListingsCount": 9758,
+        "mathematicalIdentities": {
+          "matchedIdentityHolds": true,
+          "askSubdecompositionHolds": true,
+          "fullMeanIdentityHolds": true,
+          "roundedMatchedIdentityHolds": true,
+          "roundedAskSubdecompositionHolds": true,
+          "roundedFullMeanIdentityHolds": true
+        },
+        "identicalListingStats": {
+          "identicalCount": 9758,
+          "retentionRatePct": 81.2,
+          "medianPriceChangePct": 0.0,
+          "meanPriceChangePct": -0.0,
+          "cutListingsCount": 24,
+          "riseListingsCount": 8,
+          "holdListingsCount": 9726,
+          "newEntrantsCount": 2350,
+          "exitedCount": 2259
+        },
+        "tradeBenchmarkDrivers": {
+          "UNCHANGED_BENCHMARK": 67
+        },
+        "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +0.4%p)",
+        "stability": {
+          "matchedGroups": 67,
+          "minMatchedGroups": 30,
+          "flaggedGroups": [],
+          "flaggedGroupCount": 0,
+          "topGroupShareOfAbsChange": 0.267
+        },
+        "period": "전일 대비 (DoD)",
+        "referenceDay": "2026-11-14",
+        "referenceTradeLevelFirstSeenVerified": true,
+        "observationGapHours": 30.76,
+        "observationGapNote": "관측 간격 30.8시간 (정규 간격과 다름)"
       },
       "7d": {
         "period": "7일 변화 (WoW)",
-        "referenceDay": "2026-11-07",
-        "status": "축적 중 (7일차 대기, 현재 3일 경과)",
+        "referenceDay": "2026-11-08",
+        "status": "축적 중 (7일차 대기, 현재 4일 경과)",
         "deltaPctPoint": null,
         "contribAskPctPoint": null,
         "contribTradeBenchmarkPctPoint": null,
         "contribSampleCompositionPctPoint": null,
         "matchedStrataCount": 0,
         "matchedListingsCount": 0,
-        "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 3일차)",
+        "explanation": "7일 전 비교 자료 부재로 산출 유보 (관측 4일차)",
         "observationGapHours": null
       },
       "28d": {
         "period": "28일 변화 (MoM)",
-        "referenceDay": "2026-10-17",
-        "status": "축적 중 (28일차 대기, 현재 3일 경과)",
+        "referenceDay": "2026-10-18",
+        "status": "축적 중 (28일차 대기, 현재 4일 경과)",
         "deltaPctPoint": null,
         "contribAskPctPoint": null,
         "contribTradeBenchmarkPctPoint": null,
         "contribSampleCompositionPctPoint": null,
         "matchedStrataCount": 0,
         "matchedListingsCount": 0,
-        "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 3일차)",
+        "explanation": "28일 전 비교 자료 부재로 산출 유보 (관측 4일차)",
         "observationGapHours": null
       }
     },
@@ -57595,7 +58195,7 @@
     },
     "gradeC_ProxyDivergence": {
       "role": "선행·대리 지표 (Proxy Leading Indicator)",
-      "currentDivergencePct": 3.64
+      "currentDivergencePct": 4.29
     },
     "researchQuestions": [
       "Q1. 매도자가 요구하는 호가와 최근 거래가격 사이에 얼마나 차이가 발생하는가?",
@@ -57606,14 +58206,14 @@
       "title": "가격괴리는 왜 변했나 (Shapley 요인 분해)",
       "activePeriod": "전일 대비 (DoD)",
       "status": "VALID",
-      "matchedSampleChange": -0.08,
-      "medianLevelChange": -1.63,
-      "discrepancyMedianVersusMean": -1.55,
-      "contribAskPctPoint": -0.08,
+      "matchedSampleChange": 0.21,
+      "medianLevelChange": 0.65,
+      "discrepancyMedianVersusMean": 0.44,
+      "contribAskPctPoint": 0.21,
       "contribIdenticalAskPctPoint": -0.0,
-      "contribWithinStratumTurnoverPctPoint": -0.08,
+      "contribWithinStratumTurnoverPctPoint": 0.21,
       "contribTradeBenchmarkPctPoint": 0.0,
-      "contribSampleCompositionPctPoint": -0.79,
+      "contribSampleCompositionPctPoint": 0.28,
       "unidentifiedEffectPctPoint": 0.0,
       "mathematicalIdentities": {
         "matchedIdentityHolds": true,
@@ -57624,21 +58224,20 @@
         "roundedFullMeanIdentityHolds": true
       },
       "identicalListingStats": {
-        "identicalCount": 8621,
-        "retentionRatePct": 85.9,
+        "identicalCount": 9758,
+        "retentionRatePct": 81.2,
         "medianPriceChangePct": 0.0,
-        "meanPriceChangePct": -0.01,
-        "cutListingsCount": 22,
-        "riseListingsCount": 7,
-        "holdListingsCount": 8592,
-        "newEntrantsCount": 3396,
-        "exitedCount": 1418
+        "meanPriceChangePct": -0.0,
+        "cutListingsCount": 24,
+        "riseListingsCount": 8,
+        "holdListingsCount": 9726,
+        "newEntrantsCount": 2350,
+        "exitedCount": 2259
       },
       "tradeBenchmarkDrivers": {
-        "UNCHANGED_BENCHMARK": 46,
-        "NEW_CONTRACT_ENTRY": 2
+        "UNCHANGED_BENCHMARK": 67
       },
-      "explanation": "동일 표본 평균 변화 -0.1%p = 호가 조정 -0.1%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 -0.1%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: -1.6%p, 중위값-평균 불일치: -1.6%p)",
+      "explanation": "동일 표본 평균 변화 +0.2%p = 호가 조정 +0.2%p (동일 매물 변경 -0.0%p + 그룹 내 매물 교체 +0.2%p) + 실거래 기준가격 재산정 0.0%p. (전체 중위값 수준 변화: +0.7%p, 중위값-평균 불일치: +0.4%p)",
       "mathematicalIdentity": "ΔMatched = Contrib_identical_ask + Contrib_within_turnover + Contrib_trade_reestimation"
     },
     "seriesA_FullCrossSection": [
@@ -57647,6 +58246,14 @@
         "percent": 3.64,
         "groups": 70,
         "listings": 2307,
+        "type": "FULL_CROSS_SECTION",
+        "label": "A계열: 전체 관측 가격괴리율"
+      },
+      {
+        "day": "2026-11-15",
+        "percent": 4.29,
+        "groups": 67,
+        "listings": 2327,
         "type": "FULL_CROSS_SECTION",
         "label": "A계열: 전체 관측 가격괴리율"
       }
@@ -57659,9 +58266,17 @@
         "groups": 70,
         "type": "FIXED_SAMPLE_PANEL",
         "label": "B계열: 동일 표본 가격괴리 변화"
+      },
+      {
+        "day": "2026-11-15",
+        "percent": 4.29,
+        "delta": 0.21,
+        "groups": 67,
+        "type": "FIXED_SAMPLE_PANEL",
+        "label": "B계열: 동일 표본 가격괴리 변화"
       }
     ],
-    "observationNote": "09:21~09:51 재수집"
+    "observationNote": "06시 정규 수집 실패 후 낮 재수집"
   },
   "dataChangeLog": [
     {
@@ -57673,12 +58288,6 @@
       "at": "2026-11-13T21:00:00+09:00",
       "action": "NEGO INDEX 수치 공표 유예 (수집 데이터 검증 중)",
       "reason": "11월 13일 수집에서 13개 재수집 단지와 15개 '성공·0건' 단지의 관측이 진단 재수집과 일치하지 않아 수집 오류로 확인/의심됨. 11월 12일 기준선에도 0건 단지 7개가 있어 검증 전까지 NEGO INDEX 수준·변화폭·요인 분해를 공표 유예함. 원본 관측(SQLite)은 삭제·수정하지 않음."
-    },
-    {
-      "id": "CHANGE-HOLD-2026-11-14-1d",
-      "at": "2026-11-14T12:18:51+09:00",
-      "action": "변화폭 공표 유예",
-      "reason": "reference day 2026-11-13 precedes first verified live baseline 2026-11-14"
     },
     {
       "id": "QREV-2026-11-14-001",
