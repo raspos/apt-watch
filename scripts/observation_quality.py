@@ -108,9 +108,10 @@ def judge(rows, ref_day, ref, manifest_entry=None, min_ref_for_zero=1, zero_conf
         if ref_day is None:
             return kind, 'UNKNOWN', 'zero rows and no valid earlier reference', None, None, 'none'
         if len(ref) >= min_ref_for_zero:
-            if zero_confirmed:   # the page itself said there are no listings
-                return kind, 'VALID', f'confirmed zero (empty-state message); reference {ref_day} had {len(ref)}', len(ref), None, 'empty_state'
-            return kind, 'SUSPECT', f'0 rows but valid reference {ref_day} had {len(ref)} (zero not confirmed by the page)', len(ref), None, 'reference'
+            # Page-level "confirmed zero" signals proved unreliable (2026-11-16/17: partially rendered pages
+            # and empty-state text on complexes with 19-277 listings), so they never override this.
+            note = ' (page claimed zero; not trusted)' if zero_confirmed else ''
+            return kind, 'SUSPECT', f'0 rows but valid reference {ref_day} had {len(ref)}{note}', len(ref), None, 'reference'
         return kind, 'VALID', f'0 rows; reference {ref_day} also had 0', len(ref), None, 'reference'
     probs = structural_check(rows, manifest_entry)
     if probs:

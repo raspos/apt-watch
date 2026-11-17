@@ -192,7 +192,20 @@ def collect_facts(day, manifest_path):
     return out
 
 
+def heartbeat(msg):
+    """Append to a log on the local disk (outside OneDrive) so a run that freezes before its own
+    log exists still leaves a trace (2026-11-17: task started 06:00, no log until a reboot at 08:48)."""
+    try:
+        d = Path(os.environ.get('LOCALAPPDATA', str(Path.home()))) / 'apt-watch'
+        d.mkdir(parents=True, exist_ok=True)
+        with open(d / 'heartbeat.log', 'a', encoding='utf-8') as f:
+            f.write(f"{datetime.now().isoformat(timespec='seconds')} pid={os.getpid()} {msg}" + "\n")
+    except Exception:
+        pass
+
+
 def main(argv=None):
+    heartbeat('start')
     ap = argparse.ArgumentParser()
     ap.add_argument('--day')
     ap.add_argument('--manifest', default=str(ROOT / 'data' / 'fixed-110-panel.json'))
@@ -211,6 +224,7 @@ def main(argv=None):
         'day': day, 'startedAt': _now(), 'finishedAt': None, 'exitCode': None, 'status': 'RUNNING',
         'python': sys.executable, 'root': str(ROOT), 'log': str(log_path), 'staleRunsReclassified': stale})
 
+    heartbeat(f'log {log_path.name}')
     log = open(log_path, 'w', encoding='utf-8', buffering=1)
     tee = TeeTracker(log, summary)
     sys.stdout = sys.stderr = tee
@@ -233,6 +247,7 @@ def main(argv=None):
             summary.stage('githubPush', 'NOT_ATTEMPTED')
         summary.data.update(collect_facts(day, a.manifest))
         summary.data['error'] = error
+        heartbeat(f'end code={code} error={error}')
         summary.data['exitCode'] = code
         summary.data['finishedAt'] = _now()
         summary.data['status'] = classify(code, summary.data['stages'], error)

@@ -198,6 +198,14 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=10800
     with sqlite3.connect(db_file) as qdb:
         qsum = oq.assess_day(qdb, target_day, json.loads(manifest_file.read_text(encoding='utf-8-sig')))
     print(f"[Quality] {qsum}")
+    # 3-3. Re-collect SUSPECT / INVALID complexes once (partial pages, unconfirmed zeros), then re-assess
+    if qsum.get('suspect', 0) + qsum.get('invalid', 0) > 0:
+        import recheck_nonvalid
+        rc = recheck_nonvalid.recheck(db_file, json.loads(manifest_file.read_text(encoding='utf-8-sig')), target_day)
+        print(f"[Recheck] re-collected {rc['rechecked']}, accepted {len(rc['accepted'])}, rejected {len(rc['rejected'])}")
+        with sqlite3.connect(db_file) as qdb:
+            qsum = oq.assess_day(qdb, target_day, json.loads(manifest_file.read_text(encoding='utf-8-sig')))
+        print(f"[Quality] {qsum}")
 
     # 4. Save raw listings snapshot to JSONL
     print(f"\n[Step 2] Dumping raw snapshot to {snapshot_dir}...")
