@@ -238,6 +238,7 @@ def run_worker_pool(targets, day, main_store_path, num_workers=8, timeout_per_wo
         # Monitor loop
         completed_workers = set()
         while True:
+          try:
             alive = 0
             for proc, log_fp, w_idx, count, t0 in processes:
                 if proc.poll() is None:
@@ -277,6 +278,9 @@ def run_worker_pool(targets, day, main_store_path, num_workers=8, timeout_per_wo
                             proc.kill()
                 break
 
+            time.sleep(10)
+          except Exception as loop_err:   # never let one monitoring error orphan the workers (2026-11-18)
+            print(f"[Monitor] ignored error: {loop_err!r}", flush=True)
             time.sleep(10)
 
     finally:

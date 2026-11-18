@@ -148,6 +148,9 @@ def run_daily_operation(day=None, manifest_path=None, resume=True, timeout=10800
         print("\n".join(last_lines))
     if col_res.returncode != 0:
         print(f"WARNING: Collector exited with code {col_res.returncode}. Proceeding with collected data.")
+        if col_res.stderr:
+            print("[Collector stderr tail]")
+            print(chr(10).join(col_res.stderr.strip().splitlines()[-15:]))
 
     # 3-1. Automatic Sequential Retry for Failed Complexes before Quality Gate
     db = sqlite3.connect(db_file)
