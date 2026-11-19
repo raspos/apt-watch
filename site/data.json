@@ -58602,8 +58602,8 @@
         "reasons": [],
         "observedFromKST": "2026-11-19T19:14+09:00",
         "observedToKST": "2026-11-19T20:03+09:00",
-        "collection": "OFF_SCHEDULE",
-        "observationNote": null,
+        "collection": "RERUN",
+        "observationNote": "19:14~20:03 재수집",
         "districts": {
           "11110": 23,
           "11410": 434,
@@ -58649,7 +58649,7 @@
           "timing": {
             "comparability": "TIMING_REFERENCE",
             "collectionRef": "RERUN",
-            "collection": "OFF_SCHEDULE",
+            "collection": "RERUN",
             "medianGapHours": 33.9,
             "shareWithinTolerance": 0.0,
             "collectionSpanHours": {
@@ -58658,7 +58658,7 @@
             },
             "longCollection": false,
             "timingReasons": [
-              "정규 06시 수집이 아닌 날 포함 (2026-11-18: 당일 재수집, 2026-11-19: 정규 시각 외 수집)",
+              "정규 06시 수집이 아닌 날 포함 (2026-11-18: 당일 재수집, 2026-11-19: 당일 재수집)",
               "단지별 관측 간격이 24±2시간인 단지 0% < 90%"
             ]
           },
@@ -58963,7 +58963,7 @@
           "timing": {
             "comparability": "TIMING_REFERENCE",
             "collectionRef": "OFF_SCHEDULE",
-            "collection": "OFF_SCHEDULE",
+            "collection": "RERUN",
             "medianGapHours": 174.1,
             "shareWithinTolerance": 0.0,
             "collectionSpanHours": {
@@ -58972,7 +58972,7 @@
             },
             "longCollection": true,
             "timingReasons": [
-              "정규 06시 수집이 아닌 날 포함 (2026-11-12: 정규 시각 외 수집, 2026-11-19: 정규 시각 외 수집)",
+              "정규 06시 수집이 아닌 날 포함 (2026-11-12: 정규 시각 외 수집, 2026-11-19: 당일 재수집)",
               "단지별 관측 간격이 168±2시간인 단지 0% < 90%"
             ]
           },
@@ -59640,7 +59640,7 @@
           "linkFrom": "2026-11-18",
           "linkChangePct": 3.72,
           "linkComparability": "TIMING_REFERENCE",
-          "collection": "OFF_SCHEDULE"
+          "collection": "RERUN"
         }
       ],
       "reference": {
@@ -59980,7 +59980,8 @@
         "type": "FIXED_SAMPLE_PANEL",
         "label": "B계열: 동일 표본 가격괴리 변화"
       }
-    ]
+    ],
+    "observationNote": "19:14~20:03 재수집"
   },
   "dataChangeLog": [
     {
