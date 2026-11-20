@@ -196,7 +196,7 @@ def heartbeat(msg):
     """Append to a log on the local disk (outside OneDrive) so a run that freezes before its own
     log exists still leaves a trace (2026-11-17: task started 06:00, no log until a reboot at 08:48)."""
     try:
-        d = Path(os.environ.get('LOCALAPPDATA', str(Path.home()))) / 'apt-watch'
+        d = Path.home() / '.apt-watch'   # not AppData: packaged apps redirect AppData writes
         d.mkdir(parents=True, exist_ok=True)
         with open(d / 'heartbeat.log', 'a', encoding='utf-8') as f:
             f.write(f"{datetime.now().isoformat(timespec='seconds')} pid={os.getpid()} {msg}" + "\n")

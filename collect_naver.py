@@ -216,10 +216,16 @@ def main():
         print(f'{now()} Playwright driver ready', flush=True)
         import_delivery(db, manifest, [], day, args.district)
         launch_args = ['--disable-blink-features=AutomationControlled', '--no-sandbox']
-        try:
-            browser = playwright.chromium.launch(channel=args.channel, headless=True, timeout=15000, args=launch_args)
-        except Exception:
-            browser = playwright.chromium.launch(headless=True, timeout=15000, args=launch_args)
+        browser = None
+        for launch_try in range(1, 4):
+            try:
+                browser = playwright.chromium.launch(channel=args.channel, headless=True, timeout=60000, args=launch_args)
+                break
+            except Exception as e:
+                print(f'{now()} {args.channel} launch failed (try {launch_try}/3): {type(e).__name__}: {str(e)[:300]}', flush=True)
+                time.sleep(10 * launch_try)
+        if browser is None:
+            browser = playwright.chromium.launch(headless=True, timeout=60000, args=launch_args)
         print(f'{now()} browser ready', flush=True)
         try:
             context = browser.new_context(

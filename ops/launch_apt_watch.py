@@ -19,7 +19,7 @@ from datetime import datetime
 from pathlib import Path
 
 PROJECT = Path(r"C:\Users\kimwo\OneDrive\문서\New project\apt-watch")
-HERE = Path(__file__).resolve().parent
+HERE = Path.home() / '.apt-watch'   # outside AppData: packaged apps redirect AppData writes
 LOG = HERE / 'heartbeat.log'
 FILE_WAIT_S = 15 * 60
 NET_WAIT_S = 10 * 60
