@@ -242,14 +242,14 @@ class TestSpreadDynamicsExhaustive(unittest.TestCase):
         # When history duration is less than 7 days, 7d change must be withheld
         self.assertIn('7d', changes)
         if changes['7d']['deltaPctPoint'] is None:
-            self.assertTrue('축적 중' in changes['7d']['status'] or changes['7d']['status'] == 'HELD_VERIFICATION')
+            self.assertTrue('축적 중' in changes['7d']['status'] or changes['7d']['status'] in ('HELD_VERIFICATION', 'WITHHELD_STABILITY'))
         else:
             self.assertEqual(changes['7d']['status'], 'VALID')
 
         # When history duration is less than 28 days, 28d change must be withheld
         self.assertIn('28d', changes)
         if changes['28d']['deltaPctPoint'] is None:
-            self.assertTrue('축적 중' in changes['28d']['status'] or changes['28d']['status'] == 'HELD_VERIFICATION')
+            self.assertTrue('축적 중' in changes['28d']['status'] or changes['28d']['status'] in ('HELD_VERIFICATION', 'WITHHELD_STABILITY'))
         else:
             self.assertEqual(changes['28d']['status'], 'VALID')
 

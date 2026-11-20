@@ -222,7 +222,7 @@ const chart2 = makeChart({
    ========================================================================== */
 
 // Human labels for engine status codes (never show raw codes on the page).
-const STATUS_LABELS = { HELD_VERIFICATION: '공표 유예', INSUFFICIENT_DATA: '표본 부족', VALID: '정상', UNSTABLE: '표본 불안정' };
+const STATUS_LABELS = { HELD_VERIFICATION: '공표 유예', WITHHELD_STABILITY: '공표 유예', INSUFFICIENT_DATA: '표본 부족', VALID: '정상', UNSTABLE: '표본 불안정' };
 function stLabel(s) { return s ? (STATUS_LABELS[s] || s) : s; }
 
 function getRegionData(c, targetDate = state.selectedDate) {
