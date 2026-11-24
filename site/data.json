@@ -59196,8 +59196,8 @@
         "reasons": [],
         "observedFromKST": "2026-11-24T10:29+09:00",
         "observedToKST": "2026-11-24T18:31+09:00",
-        "collection": "OFF_SCHEDULE",
-        "observationNote": null,
+        "collection": "RERUN",
+        "observationNote": "10:29~11:46 수집, 21개 단지 18:02~18:31 재수집",
         "districts": {
           "11110": 23,
           "11410": 435,
@@ -59252,7 +59252,7 @@
           "timing": {
             "comparability": "TIMING_REFERENCE",
             "collectionRef": "RERUN",
-            "collection": "OFF_SCHEDULE",
+            "collection": "RERUN",
             "medianGapHours": 168.3,
             "shareWithinTolerance": 0.813,
             "collectionSpanHours": {
@@ -59261,7 +59261,7 @@
             },
             "longCollection": true,
             "timingReasons": [
-              "정규 06시 수집이 아닌 날 포함 (2026-11-17: 당일 재수집, 2026-11-24: 정규 시각 외 수집)",
+              "정규 06시 수집이 아닌 날 포함 (2026-11-17: 당일 재수집, 2026-11-24: 당일 재수집)",
               "단지별 관측 간격이 168±2시간인 단지 81% < 90%"
             ]
           },
@@ -59962,7 +59962,7 @@
           "linkFrom": "2026-11-22",
           "linkChangePct": 0.58,
           "linkComparability": "TIMING_REFERENCE",
-          "collection": "OFF_SCHEDULE"
+          "collection": "RERUN"
         }
       ],
       "reference": {
@@ -60350,7 +60350,8 @@
         "type": "FIXED_SAMPLE_PANEL",
         "label": "B계열: 동일 표본 가격괴리 변화"
       }
-    ]
+    ],
+    "observationNote": "10:29~11:46 수집, 21개 단지 18:02~18:31 재수집"
   },
   "dataChangeLog": [
     {
